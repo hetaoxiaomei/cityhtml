@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>配送设置</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/order.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
+    <style>
+        .city-distribution{margin-right: 0;line-height: 1.25}
+        .city-distribution .d-flex{line-height: 1.25}
+    </style>
+</head>
+<body>
+    <div class="fix-tl">
+        <div class="basewrap d-flex d-flex-center top-nav" style="background:#ff5a00;font-size: 1.6rem;">
+            <a class="flex qr-bt-js cfff" href="javascript:history.go(-1);"><i class="icon-back-arrow"></i> 返回</a>
+            <div class="flex ta-c cfff">达达配送</div>
+            <a class="flex js-sign cfff ta-r"></a>
+        </div>
+    </div>
+
+    <div class="basewrap" style="padding:44px 0 6rem;">
+        <div class="bg-f" style="padding: 0 1.5rem;">
+            <div class="city-distribution bottom-line">
+                <p class="f01 f14 c666">同城配送（较快）</p>
+                <div class="d-flex d-flex-center">
+                    <div class="f16 bold flex">广州建国酒店</div>
+                </div>                  
+            </div>
+            <div class="city-distribution">
+                <p class="f01 f14 c666">业务类型</p>
+                <div class="d-flex d-flex-center">
+                    <div class="f16 bold flex">餐饮-快餐-炸鸡汉堡</div>
+                    <div class="arrow"></div>
+                </div>                  
+            </div>
+        </div>
+
+        <div class="bg-f" style="padding: 0 1.5rem;margin: 1rem 0 0;">
+            <div class="city-distribution bottom-line">
+                <p class="f01 f14 c666">城市区域</p>
+                <div class="d-flex d-flex-center">
+                    <div class="f16 bold flex">
+                        广州市<div class="arrow" style="display: inline-block;margin-left: 1.5rem;"></div>
+                    </div>
+                    <div class="f16 bold flex">
+                        天河区<div class="arrow" style="display: inline-block;margin-left: 1.5rem;"></div>
+                    </div>                   
+                </div>   
+                <p class="c999" style="margin-top: 1rem;">若找不到所在城市区域，则表示达达尚未覆盖此区域</p>               
+            </div>
+            <div class="city-distribution bottom-line">
+                <p class="f01 f14 c666">详细地址</p>
+                <div class="d-flex d-flex-center">
+                    <div class="f16 bold flex">广州市天河区林和街道258号天安人寿天安人寿天安人寿</div>              
+                </div>   
+                <p class="c999" style="margin-top: 1rem;">温馨提示：如果地址不准确会引起接单等系列问题：门店地址(如： 上海市浦东南路1036号隆宇大厦6楼）</p>               
+            </div>
+            <div class="city-distribution bottom-line">
+                <p class="f01 f14 c666">经纬度</p>
+                <div class="d-flex d-flex-center">
+                    <div class="f16 bold flex"><i class="icon-location" style="background-position:-5.7rem -15.3rem;"></i>东经120°；北纬30°</div>              
+                </div>   
+            </div>            
+        </div>
+
+        <div class="bg-f" style="padding: 0 1.5rem;margin: 1rem 0 0;">
+            <div class="city-distribution bottom-line">
+                <p class="f01 f14 c666">联系人电话</p>
+                <div class="d-flex d-flex-center">
+                    <div class="f16 bold flex">18680296698</div>              
+                </div>   
+            </div>    
+            <div class="city-distribution bottom-line">
+                <p class="f01 f14 c666">联系人姓名</p>
+                <div class="d-flex d-flex-center">
+                    <div class="f16 bold flex">林同学</div>              
+                </div>   
+            </div>                      
+        </div>
+
+    </div>
+
+    <div class="fix-bl">
+        <div class="d-flex basewrap order-nav">
+            <a class="flex right f16">编辑</a>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.coupon-use-js').on('click',function(){
+            $('.coupon-use-layer-js').fadeIn(200);
+        })
+
+        $('.dialog-black-mask').on('click',function(){
+            $('.coupon-use-layer-js').fadeOut(200);
+        })  
+
+        $('.dialog-black-mask').bind("touchmove",function(e){
+            e.preventDefault();
+        });
+    </script>
+</body>    
+</html>

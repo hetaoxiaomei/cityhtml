@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>同城卡03</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/new-card.css">
+</head>
+<body>
+    <div class="basewrap bz rel" style="padding:0 0 5rem;">
+        <div class="rel">
+            <img src="../img/tc-pic54.jpg" style="width:100%;">
+            <div class="d-flex d-flex-center card-top bz">
+                <img class="head" src="../img/02.jpg">
+                <div class="flex">
+                    <p class="f16" style="color:#fff">林校长</p>
+                    <p class="f12" style="color:#d9ae6f;margin-top: 10px;">开通立享优惠</p>
+                </div>
+            </div>
+        </div>
+
+        <!--开通同城卡-->
+        <div class="bg-f bz" style="margin-top:1rem;padding:1.5rem 1.2rem;">
+            <p class="bold c333 f14" style="margin-bottom:1.5rem;">开通同城卡</p>
+            <ul class="pay-cell clearfix bz">
+                <li>
+                    <div class="d-flex d-flex-center">
+                        <div class="flex bold f16">周卡</div>
+                        <div class="radio"></div>
+                    </div>
+                    <div style="font-size:10px;margin-top:8px">￥<i class="money">9.99</i></div>
+                    <div class="f10 c999 bold line-through" style="margin-top:3px;">￥19.99</div>
+                </li>
+                <li class="active">
+                    <div class="d-flex d-flex-center">
+                        <div class="flex bold f16">月卡</div>
+                        <div class="radio"></div>
+                    </div>
+                    <div style="font-size:10px;margin-top:8px">￥<i class="money">29.99</i></div>
+                    <div class="f10 c999 bold line-through" style="margin-top:3px;">￥49.99</div>
+                    <div class="hot"></div>
+                </li>        
+                <li>
+                    <div class="d-flex d-flex-center">
+                        <div class="flex bold f16">季卡</div>
+                        <div class="radio"></div>
+                    </div>
+                    <div style="font-size:10px;margin-top:8px">￥<i class="money">69.99</i></div>
+                    <div class="f10 c999 bold line-through" style="margin-top:3px;">￥89.99</div>
+                </li>    
+                <li>
+                    <div class="d-flex d-flex-center">
+                        <div class="flex bold f16">年卡</div>
+                        <div class="radio"></div>
+                    </div>
+                    <div style="font-size:10px;margin-top:8px">￥<i class="money">9.99</i></div>
+                    <div class="f10 c999 bold line-through" style="margin-top:3px;">￥19.99</div>
+                    <div class="recommend">推荐</div>
+                </li>                    
+            </ul>
+
+            <!--月卡权益-->
+            <div class="monthly-interest-cell">
+                <div class="d-flex d-flex-center bz" style="padding:1rem 1.5rem 1.5rem 0;">
+                    <div class="left">月卡权益</div>
+                    <div class="flex"></div>
+                    <a class="right f12">权益详情<i class="arrow-right01" style="background-position:-16.9rem -8.8rem;"></i></a>
+                </div>
+
+                <div class="d-flex d-flex-center privilege-cell">
+                    <div class="flex">
+                        <i class="icon" style="background-position:-4.7rem -29.3rem;"></i>
+                        <p style="color:#333;">赠送7次优惠</p>
+                    </div>
+                    <div class="flex">
+                        <i class="icon" style="background-position:-4.7rem -34rem;"></i>
+                        <p style="color:#333;">40天内有效</p>
+                    </div>
+                    <div class="flex">
+                        <i class="icon" style="background-position:-4.7rem -38.7rem;"></i>
+                        <p style="color:#333;">价值178元大礼包</p>
+                    </div>                                
+                </div>
+            </div>
+
+        </div>
+
+        <!--底部导航-->
+        <div class="fix-bl">
+            <div class="basewrap bz d-flex d-flex-center bg-f top-line" style="height:4.9rem;padding:0 1.5rem;">
+                <div class="f16 bold flex" style="color:#f90606;">总计：￥19.99</div>
+                <div class="f16 bold" style="color:#d9ae6f;height: 4rem;width: 12rem;background: #2f2d23;border-radius: 2rem;line-height: 4rem;text-align: center">立即购买</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.pay-cell li').click(function(){
+            $(this).addClass('active').siblings('li').removeClass('active');
+            var a=$(this).index();
+            alert(a);
+            if(a==0){
+               $('.monthly-interest-cell .left').html('周卡权益');
+            }else if(a==1){
+                $('.monthly-interest-cell .left').html('月卡权益');
+            }else if(a==2){
+                $('.monthly-interest-cell .left').html('季卡权益');
+            }else{
+                $('.monthly-interest-cell .left').html('年卡权益');
+            }
+        })
+    </script>
+
+</body>
+</html>

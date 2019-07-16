@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>名片</title>
+    <link rel="stylesheet" type="text/css" href="http://j.vzan.cc/fcontent/styles/base.css?v=1608040730">
+</head> 
+<body>
+	<div>
+        <img src="img/ranking25.png" style="display: block;margin:50% auto 0;width: 35px;">
+        <p style="display: block;text-align: center;font-size:15px;color: #666;margin-top: 20px;">你还没有名片，<a style="color:#17B5EE">创建一个</a></p>
+        <p style="color: #999;text-align: center;position: fixed;bottom: 30px;width: 100%;font-size: 13px;"><img src="img/ranking26.png" style="display: inline-block;width:13px;vertical-align: -1px;margin-right: 6px;">创建名片，身份验证有什么用？</p>
+    </div>
+
+    <!--轮播弹框-->
+    <div class="fix-tl-100 namelist-swiper-js">
+        <div class="swipermask"></div>
+        <div class="swiper-container swiper-container-horizontal dialog">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="display: block;">
+                    <div style="padding: 0 20px;">
+                        <p style="padding: 20px 0 0;font-size: 18px;font-weight: bold;text-align:center;">拥有一张电子名片，可分享可保存</p>
+                        <img src="img/ranking27.jpg" style="margin-top: 17px;width: 100%">
+                    </div>
+                </div>
+                <div class="swiper-slide" style="display: block;">
+                    <div style="padding: 0 20px;">
+                        <p style="padding: 20px 0 0;font-size: 18px;font-weight: bold;text-align:center;">个人中心一眼就看出你的身份</p>
+                        <img src="img/ranking28.jpg" style="margin-top: 17px;width: 100%">
+                    </div>
+                </div>  
+                <div class="swiper-slide" style="display: block;">
+                    <div style="padding: 0 20px;">
+                        <p style="padding: 20px 0 0;font-size: 18px;font-weight: bold;text-align:center;">拥有一张电子名片，可分享可保存</p>
+                        <img src="img/ranking29.jpg" style="margin-top: 17px;width: 100%">
+                    </div>
+                </div>  
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <style>
+        .swipermask{background:rgba(0,0,0,.5);width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
+        .fix-tl-100{position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;}
+        .swiper-container {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .swiper-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            display: -webkit-box;
+            -webkit-transition-property: -webkit-transform;
+            -moz-transition-property: -moz-transform;
+            -o-transition-property: -o-transform;
+            -ms-transition-property: -ms-transform;
+            transition-property: transform;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+
+        .swiper-container-android .swiper-slide, .swiper-wrapper {
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -o-transform: translate(0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        .swiper-slide {
+            -webkit-flex-shrink: 0;
+            -ms-flex: 0 0 auto;
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .swiper-container-horizontal .swiper-slide {
+            font-size: 18px;
+            background: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .namelist-swiper-js .dialog{
+        background: transparent;position: absolute;top: 50%;left: 50%;max-width: 320px;width: 85%;height: 260px;background: #fff;transform: translate(-50%,-50%);border-radius: 5px;overflow: hidden;box-sizing:border-box;
+        }
+
+        /*轮播点*/
+        .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{bottom: 15px;left: 0;width: 100%;}
+
+        .swiper-pagination {
+            position: absolute;
+            text-align: center;
+            -webkit-transition: .3s;
+            -moz-transition: .3s;
+            -o-transition: .3s;
+            transition: .3s;
+            -webkit-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            z-index: 10;
+        }
+
+        .swiper-pagination-bullet {
+            width:7px;
+            height:7px;
+            display: inline-block;
+            border-radius: 100%;
+            background:transparent;
+            opacity: .2;
+            border:1px solid #acacac;
+            box-sizing:border-box;
+        }
+
+        .swiper-pagination-bullet-active {opacity: 1;background: #3236d5;border-radius: 3px;border:none;}
+
+        .swiper-pagination-clickable .swiper-pagination-bullet {cursor: pointer;}
+
+        .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin: 0 5px;}
+
+    </style>
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/swiper.min.js"></script>
+
+    <script>
+        var swiper = new Swiper('.namelist-swiper-js .dialog', {
+            pagination: '.namelist-swiper-js .swiper-pagination',
+            paginationClickable: true,
+            autoplay:false,
+            centeredSlides: true,
+            autoplayDisableOnInteraction: false
+        });
+
+        $(document).ready(function(){
+            $('.namelist-swiper-js .swiper-slide').css('width','100%')
+        })  
+        
+        $(document).ready(function(){
+            $('.swipermask').click(function(){
+                $('.namelist-swiper-js').hide();
+            })
+        })  
+    </script>    
+
+</body>
+</html>

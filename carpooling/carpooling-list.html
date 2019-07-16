@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>拼车列表</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/new-swiper.css">
+    <link rel="stylesheet" type="text/css" href="../css/carpooling.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
+</head>
+<body class="basewrap">
+    <div style="padding:0 0 7rem;">
+        <!--banner图-->
+        <div class="swiper-container swiper-container-horizontal swiper-container-topbanner" style="margin:1.5rem 1.5rem 0;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="img-w-100" src="../img/tc-yh-179.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img class="img-w-100" src="../img/tc-yh-179.jpg" />
+                </div>		
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>		
+        </div>  
+
+         <!--搜索-->
+         <div class="d-flex d-flex-center carpooling-serach">
+            <div class="bottom-line flex">
+                <input placeholder="出发地">
+            </div>
+            <img src="../img/tc-pic86.png" style="display: block;transform: rotate(90deg);width: 18px;margin: 0 1.2rem">
+            <div class="bottom-line flex">
+                <input placeholder="目的地">
+            </div>            
+            <div class="bt">查询</div>           
+         </div>
+
+        <div class="select-nav">
+            <a class="bt">车找人</a>
+            <a class="bt active">人找车</a>
+        </div>      
+        
+        <!--拼车列表-->
+        <div>
+            <ul class="carpooling-ul">
+                <div class="zhiding"></div> 
+                <img class="call" src="../img/tc-pic88.png">
+                <li class="d-flex d-flex-center li01">
+                    <div>6月20日11:42</div>
+                    <div class="flex need">4空位，130/位</div>
+                </li>
+                <li class="d-flex d-flex-center li02">
+                    <div class="clamp1">重庆重庆重庆重庆</div>
+                    <img class="arrow" src="../img/tc-pic87.png">
+                    <div class="clamp1">梁平汽车站重庆重庆重庆</div>
+                </li>
+                <li class="li03">途径：珠江新城，广州塔，客村</li>
+                <li class="li04">备注：备注备注备注备注备注备注备注备注</li>
+                <div class="mask"></div>           
+            </ul>  
+            <ul class="carpooling-ul gray">
+                <img class="call" src="../img/tc-pic88.png">
+                <img class="fache" src="../img/tc-pic89.png">
+                <li class="d-flex d-flex-center li01">
+                    <div class="flex">6月20日11:42</div>
+                    <div class="flex need">4空位，130/位</div>
+                </li>
+                <li class="d-flex d-flex-center li02">
+                    <div>重庆</div>
+                    <img class="arrow" src="../img/tc-pic87.png">
+                    <div>梁平汽车站</div>
+                </li>
+                <li class="li03">途径：珠江新城，广州塔，客村</li>
+                <li class="li04">备注：备注备注备注备注备注备注备注备注</li>
+                <div class="mask"></div>       
+            </ul>  
+            <ul class="carpooling-ul gray">
+                <img class="call" src="../img/tc-pic88.png">
+                <img class="fache" src="../img/tc-pic90.png">
+                <li class="d-flex d-flex-center li01">
+                    <div class="flex">6月20日11:42</div>
+                    <div class="flex need">4空位，130/位</div>
+                </li>
+                <li class="d-flex d-flex-center li02">
+                    <div>重庆</div>
+                    <img class="arrow" src="../img/tc-pic87.png">
+                    <div>梁平汽车站</div>
+                </li>
+                <li class="li03">途径：珠江新城，广州塔，客村</li>
+                <li class="li04">备注：备注备注备注备注备注备注备注备注</li>
+                <div class="mask"></div>       
+            </ul>      
+        </div>
+
+    </div> 
+
+
+    <div class="fix-bl">
+        <div class="basewrap d-flex index-bottom-nav release"> 
+            <a class="flex">
+                <i class="home"></i>
+                <p>顺风车</p>
+            </a>
+            <a class="flex">
+                <i class="haodian"></i>
+                <p>本地商家</p>
+            </a>   
+            <div class="circleicon">
+                <a href="javascript:;"></a>
+            </div>  
+            <a class="flex">
+                <i class="me"></i>
+                <p>个人中心</p>
+                <em class="dot"></em>
+            </a>                             
+        </div>
+    </div>
+
+    <div style="position:fixed;right: 1.2rem;bottom: 10rem;position: fixed;z-index: 10;">
+        <a class="icon-lahuo">拉货</a>
+        <a class="icon-lahuo" style="margin:1rem 0 0;">首页</a>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+	<script src="../js/swiper.min.js"></script>	
+    <!--展开-->
+	<script>
+        $('.spread-js').click(function(){
+            event.stopPropagation();
+            event.preventDefault();
+            var a=$(this);
+            var b=a.siblings('.title');
+            b.toggleClass('clamp2');
+
+            if(a.html()=="展开"){
+                a.html('收起')
+                $('.convenience-infor .title').css('max-height','none')
+            }else{
+                a.html('展开')
+                $('.convenience-infor .title').css('max-height','3.75rem')
+            }		
+        })
+
+
+    	/*广告图*/
+	    var swiper = new Swiper('.swiper-container-topbanner', {
+	        pagination: '.swiper-container-topbanner .swiper-pagination',
+	        paginationClickable: true,
+	        autoplay:1500,
+	        centeredSlides: true,
+	        autoplayDisableOnInteraction: false,
+			loop:1
+	    });     
+
+
+        $('.carpooling-sort .flex').on('click',function(){
+            $(this).addClass('active').siblings('.flex').removeClass('active');
+        })  
+    </script>	
+</body>
+</html>

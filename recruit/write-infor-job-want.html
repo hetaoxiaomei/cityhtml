@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>发布求职</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/release.css">
+    <link rel="stylesheet" type="text/css" href="../css/LArea.css">
+</head>
+<body class="bg-f">
+    <div class="basewrap bz" style="padding:1.2rem 1.2rem 9rem;">
+        <div class="box-shadow-kuang" style="padding:1.2rem 1.2rem 0;">
+            <div class="people-head"><img src="../img/02.jpg"></div>
+            <p class="f12 c999 ta-c" style="padding:0.8rem 0 0;">点击更换头像</p>
+
+            <div class="write-cells">
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">性<i style="color:transparent">性别</i>别</div>
+                    <div class="flex right">
+                        <div class="recruit-type">
+                            <span class="active" style="margin-right:6%;">男</span>
+                            <span>女</span>
+                        </div>
+                    </div>                                                          
+                </div> 
+            </div>          
+
+        </div> 
+
+
+        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
+            <!--职位信息-->
+            <i class="icon-required"></i>
+            <div class="write-cells">
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">求职类型</div>
+                    <div class="flex right">
+                        <div class="recruit-type">
+                            <span class="active" style="margin-right:6%;">全职</span>
+                            <span>兼职</span>
+                        </div>
+                    </div>                                                          
+                </div>                 
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">求职标题</div>
+                    <div class="flex right">
+                        <input class="write" placeholder="请输入求职标题">
+                    </div>                                                          
+                </div>   
+
+                 
+                <div class="d-flex d-flex-center write-cell top-line">
+                        <div class="left bold">职业类别</div>
+                    <div class="flex right" style="margin-left:0">
+                        <select class="c333">
+                            <option>销售</option>
+                            <option>客服</option>
+                        </select>
+                        <i class="arrow-right"></i>
+                    </div>                
+                </div>   
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">期望工资</div>
+                    <div class="flex right">
+                        <input class="write" placeholder="请输入期望工资">
+                    </div>
+                    <div class="sex left-line">
+                        <div class="radio active"><span></span>面议</div>
+                    </div>                             
+                </div>      
+            </div>               
+        </div>    
+
+        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
+            <!--任职描述-->
+            <i class="icon-required"></i>
+            <div class="f14 bold" style="padding:1.2rem 0 0;">自我描述</div>
+            <div class="write-cells" style="padding:1.2rem 0;">
+                <div>
+                    <textarea class="describe" placeholder="请输入你的自我描述/工作经验"></textarea>  
+                </div>    
+                <ul class="upload-company-pic">
+                    <li><img src="../img/02.jpg"><i class="close"></i></li>
+                    <li><img src="../img/tc-pic32.png"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
+            <i class="icon-required"></i>
+            <div class="write-cells">
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">联系姓名</div>
+                    <div class="flex right">
+                        <input class="write" placeholder="请输入联系姓名">
+                    </div>                                                          
+                </div>   
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">联系电话</div>
+                    <div class="flex right">
+                        <input class="write" placeholder="请输入联系电话">
+                    </div>                                                          
+                </div>  
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">联系邮箱</div>
+                    <div class="flex right">
+                        <input class="write" placeholder="请输入联系邮箱（选填）">
+                    </div>                                                          
+                </div>                                                                          
+            </div>               
+        </div>       
+
+        <p id="more-infor" class="f12 ta-c more-infor">填写更多资料，提高求职成功率<i class="arrow"></i></p>
+        
+        <div id="more-infor-js" class="box-shadow-kuang none" style="margin-top:1.2rem;">
+            <!--任职描述-->
+            <div class="write-cells">
+                <div class="d-flex d-flex-center write-cell">
+                    <div class="left bold">年龄</div>
+                    <div class="flex right">
+                        <input class="write" placeholder="请输入年龄">
+                    </div>               
+                </div> 
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">学历</div>
+                    <div class="flex right" style="margin-left:0">
+                        <select class="change" style="color:#999">
+                            <option>请选择你的学历</option>
+                            <option>高中以下</option>
+                            <option>高中</option>
+                            <option>中专/技校</option>
+                            <option>大专</option>
+                            <option>本科</option>
+                            <option>硕士</option>
+                            <option>博士</option>
+                            <option>MBA/EMBA</option>
+                            <option>其他</option>
+                        </select>
+                        <i class="arrow-right"></i>
+                    </div>                
+                </div>  
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">工作经验</div>
+                    <div class="flex right" style="margin-left:0">
+                        <select class="change" style="color:#999">
+                            <option>请选择工作经验</option>
+                            <option>无工作经验</option>
+                            <option>应届毕业生</option>
+                            <option>1年以下工作经验</option>
+                            <option>1-3年工作经验</option>
+                            <option>3-5年工作经验</option>
+                            <option>5-10年工作经验</option>
+                            <option>10年以上工作经验</option>
+                        </select>
+                        <i class="arrow-right"></i>
+                    </div>                
+                </div> 
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">所属区域</div>
+                    <div class="flex right">
+                        <input class="area" id="demo1" type="text" readonly="" placeholder="请选择所在区域">
+                        <input id="value1" type="hidden" value="20,234,504">
+                        <i class="arrow-right"></i>
+                    </div>               
+                </div>                
+                
+            </div>
+        </div>      
+
+    </div>
+
+    <!--底部-->
+    <div class="fix-bl" style="box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
+        <p class="basewrap f12 c666 bz" style="padding:0 1.2rem;background:rgba(0,0,0,.8);line-height: 2.4rem;color: #fff">您为入驻企业，免费发布的招聘信息有4条，剩余1条</p>
+        <!--开启积分-->
+        <div class="basewrap d-flex d-flex-center write-cell none" style="padding:0 1.2rem;">
+            <div class="top-radio flex top-radio-js"><span></span>置顶                   
+                <div class="right fr" style="margin-left:0">
+                    <select class="change" style="padding-right:1.2rem;direction: rtl">
+                        <option>请选择</option>
+                        <option>￥1一天</option>
+                    </select>
+                </div>     
+            </div>
+            <div class="flex right left-line" style="margin-left:0;padding-left: 1.8rem;">
+
+                <div class="top-radio fl integral-js active" data-integral="0"><span></span>积分</div>
+                <svg aria-hidden="true" class="icon-exclamatory-mark">
+                    <use xlink:href="../css/icon.svg#exclamatory-mark"></use>
+                </svg>
+
+                <div class="fr" id="integral-number01">
+                    <div class="fr" style="color: #ffb400;margin-top: .1rem;">1234</div>
+                    <i class="icon-integral fr" style="margin-right:0.4rem;"></i>
+                </div>
+
+                <div style="color:#ff3a1b" class="fr none" id="integral-number02">-￥0.1</div>
+            </div>   
+        </div>
+        <!--未开启积分-->
+        <div class="basewrap d-flex d-flex-center write-cell none" style="padding:0 1.2rem;">
+            <div class="top-radio flex top-radio-js"><span></span>置顶</div>
+            <div class="flex right" style="margin-left:0">
+                <select class="change" style="direction: rtl;padding: 0">
+                    <option>选择后信息显示在顶部</option>
+                    <option>18岁以上</option>
+                </select>
+            </div>   
+        </div>
+        <div class="basewrap d-flex release-nav top-line" style="box-shadow:none">
+            <div class="f14 money flex">需付款&nbsp;<span class="f18 mc bold"><i class="f14">￥</i>2</span></div>
+            <div class="bt f16">确认发布</div>
+        </div>
+    </div>
+    
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/LAreaData1.js"></script>
+    <script src="../js/LAreaData2.js"></script>
+    <script src="../js/LArea.js"></script>
+    <script>   
+        $("#more-infor").on('click',function(){
+            $('#more-infor-js').show();
+            $(this).hide();
+        })
+
+
+        $("select.change").change(function () {
+            var selItem = $(this).val();
+            if (selItem == $(this).find('option:first').val()) {
+                $(this).css('color','#999999');
+                $(this).parent('.right').siblings('.pay-top').removeClass('active');
+            } else {
+                $(this).css('color','#333333');
+                $(this).parent('.right').siblings('.pay-top').addClass('active');
+            }
+        });
+
+        $(".write-cell .sex .radio").on('click',function(){
+            $(this).addClass('active').siblings('.radio').removeClass('active');
+        })
+
+        $(".write-cell .pay-top").on('click',function(){
+            $(this).toggleClass('active');
+        })
+
+        $(".recruit-type span").on('click',function(){
+            $(this).addClass('active').siblings('span').removeClass('active');
+        })
+
+        $("#add-bt").on('click',function(){
+            $(".company-infor-dialog-js").show();
+        })    
+
+        $("#settled-company").on('click',function(){
+            $("#settled-company-spread").show();
+        })
+
+        $("#settled-company-no").on('click',function(){
+            $("#settled-company-spread").hide();
+        })        
+
+        $(".close-js").on('click',function(){
+            $(".company-infor-dialog-js").hide();
+        })  
+
+        $(".write-cell .some").on('click',function(){
+            $(this).toggleClass("active");
+        })  
+
+        $("#company-welfare-js span").on('click',function(){
+            $(this).toggleClass("active");
+        })  
+
+    </script>
+    <script>
+        var area1 = new LArea();
+        area1.init({
+            'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+            'valueTo': '#value1', //选择完毕后id属性输出到该位置
+            'keys': {
+                id: 'id',
+                name: 'name'
+            }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+            'type': 1, //数据源类型
+            'data': LAreaData //数据源
+        });
+        area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
+        var area2 = new LArea();
+        area2.init({
+            'trigger': '#demo2',
+            'valueTo': '#value2',
+            'keys': {
+                id: 'value',
+                name: 'text'
+            },
+            'type': 2,
+            'data': [provs_data,citys_data, dists_data]
+        });
+    </script>
+
+
+</body>
+</html>

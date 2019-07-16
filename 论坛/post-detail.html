@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>帖子详情</title>
+	<link rel="stylesheet" type="text/css" href="http://j.vzan.cc/fcontent/styles/base.css?v=1608040730">
+	<div class="fix-tl">
+			<div class="top-nav bottom-line">
+				<a class="left">
+				   <i class="arrow"></i>
+				</a>
+				<div class="center">相约微赞</div>
+				<a class="right">关注</a>
+			</div>
+		</div>
+</head> 
+<body>
+	<div style="padding:10px;background:#fafafa;">
+		<div style="font-size: 15px;">你觉得该贴有付费价值吗？</div>
+		<div style="background: #4F973A;height: 20px;border-radius: 10px;margin: 25px 0 20px;position:relative;">
+			<div style="position: absolute;top: 0;left: 0;height: 20px;border-radius: 10px;background: #BE4238;width: 50%"></div>
+			<div class="readpay-red-zan" data-isactive="0"></div>
+			<div class="readpay-green-zan"></div>
+		</div>	
+		<div class="d-flex d-flex-center" style="font-size:14px">
+			<div class="flex">值得：200人</div>
+			<div>不值得：120人</div>
+		</div>
+	</div>
+
+	<style>
+		.readpay-red-zan,.readpay-green-zan{width: 44px;height: 44px;background: url(img/post-pic.png);background-size: 500px;display: block;top: 0;position: absolute;top: -12px}
+		.readpay-red-zan{background-position: 0 -57px;left: 0;}
+		.readpay-red-zan.active{background-position:-46px -57px;}
+		.readpay-green-zan{background-position:-92px -57px;right: 0;}
+		.readpay-green-zan.active{background-position:-138px -57px;right: 0;}
+	</style>
+
+    <script src="https://j.vzan.cc/content/Home/js/jquery.min.js"> </script> 
+    <script>
+        $('.readpay-red-zan').on('click',function(){
+        	$(this).toggleClass('active').siblings('.readpay-green-zan').removeClass('active');
+        })
+        $('.readpay-green-zan').on('click',function(){
+        	$(this).toggleClass('active').siblings('.readpay-red-zan').removeClass('active');
+        })
+     </script>
+</body>
+</html>

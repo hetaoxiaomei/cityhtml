@@ -1,0 +1,138 @@
+.bg-f{background: transparent}
+
+body{background: #ffe9ea}
+
+.basewrap{
+    position: relative;
+    z-index: 1;}
+
+.gap{
+    background: #ffebeb;
+    height: .8rem;
+}
+
+.bg-fix{    
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: url(../img/trade-17.jpg);
+    background-size:100%;
+}
+
+.convenience-infor .top .label span.gongji{
+    color: #fff;
+    background: #0ccf83;
+}
+
+.convenience-infor .top .label span.xuqiu{
+    color: #fff;
+    background: #f63b3e;
+}
+
+.convenience-infor .content.bottom-line:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #ffcece;}
+
+.spread-js{background: #ffe9ea}
+
+.convenience-infor .top .label span.gongji:before, .convenience-infor .top .label span.xuqiu:before{
+    display: none;
+}
+
+.chain-ul li .icon-link{background-position: -15.7rem -4.6rem;}
+
+.chain-ul li:before{
+    border: 1px solid #ffd5d4;
+}
+
+.index-type-select-nav.coupon{background: transparent;}
+
+.business-nav li{background: #fff}
+
+.commodity-activity,.business-nav{background: transparent}
+
+.notice-cell .icon-notice{background-position: -20rem -6.9rem;}
+
+.commodity-infor-all{
+    box-shadow:0 4px 20px rgba(255,64,106,.1);
+ 
+    background: rgba(255,255,255,.9)
+}
+
+.swiper-container-horizontal .chain-ul li.swiper-slide{
+    background: #fff;
+}
+
+.activity-swiper ul.swiper-slide{
+    box-shadow: 0 -1px 15px rgba(255,64,106,.1);
+}
+
+.chain-ul li p{color: #666}
+
+.business-nav li:before{display: none}
+
+
+.notice-cell marquee{color: #ff6687;}
+
+.commodity-infor .focus{background: #fff;}
+
+.commodity-infor .focus:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius:50%;
+}    
+
+.commodity-infor .focus.active::before{
+    display: none
+}
+
+.convenience-infor,.characteristic-ul{background: transparent}
+
+.icon-eye{background-position: -32.6rem -5rem}
+
+.icon-comment{background-position: -34.8rem -5rem}
+
+.icon-transmit{background-position: -37rem -5rem}
+
+
+.commodity-infor .center .icon-focus{background-position: -11.8rem 0;}
+
+.commodity-infor .center .focus.active .icon-focus{background-position: -13.7rem 0;}
+
+.activity-swiper .buy-bt,.activity-swiper .qiang-bt,.commodity-infor .focus.active{background-color:#ff406a;}
+
+.p_list .p_pro {background: #fff;}
+
+.convenience-infor.mb{margin-bottom: 0}
+
+.write-down{background: transparent !important}
+
+.write-down .bt,.index-bottom-nav .bt01{background:#ff406a !important;}
+
+.bottom-line:after {border-bottom: 1px solid #ffabab;}
+
+.activity-title .more{background: #ffa2a2;}
+
+.index-type-select-nav li:before,.commodity-activity .bt,.cantact-dialog-js .bt{background: #ff406a;}
+
+.commodity-infor .center .f01,.activity-swiper .money,.index-type-select-nav li.active,.commodity-activity.vote .f01,
+.business-nav li.active,.p_list .p_pro p a{color: #ff406a;}
+
+

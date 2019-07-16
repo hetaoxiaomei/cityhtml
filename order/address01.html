@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>收货地址</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/order.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
+    <style>body{background: #fff;}</style>
+</head>
+<body>
+    <div class="fix-tl">
+        <div class="basewrap d-flex d-flex-center top-nav" style="background:#ff5a00;font-size: 1.6rem;">
+            <a class="flex qr-bt-js cfff" href="javascript:history.go(-1);"><i class="icon-back-arrow"></i> 返回</a>
+            <div class="flex ta-c cfff">收货地址</div>
+            <a class="flex js-sign cfff ta-r"></a>
+        </div>
+    </div>
+
+    <div class="basewrap bz" style="padding:44px 15px 90px;">
+        <div>
+            <div class="bold c333 f16" style="padding: 3rem 0 2rem;">收货人<i class="must">*</i></div>
+            <div class="bottom-line" style="padding:0 0 2rem;">
+                <input class="write" placeholder="点击填写收货人姓名">
+            </div>
+        </div>
+
+        <div>
+            <div class="bold c333 f16" style="padding: 3rem 0 2rem;">联系电话<i class="must">*</i></div>
+            <div class="bottom-line" style="padding:0 0 2rem;">
+                <input class="write" type="tel" placeholder="点击填写收货人手机号">
+            </div>
+        </div>
+
+        <div>
+            <div class="bold c333 f16" style="padding: 3rem 0 2rem;">详细地址<i class="must">*</i></div>
+            <div class="d-flex d-flex-center f16">
+                <div class="flex">林和西路285号林和西路285号林和西路285号林和西路285号林和西路285号</div>
+                <div style="color:#FB1717"><i class="icon-location"></i>获取定位</div>
+            </div>
+            <div class="bottom-line" style="padding: 3rem 0 2rem;">
+                <input id="detail-add" class="write"  placeholder="点击填写详细地址">
+
+                <!--详细地址-->
+                <div class="address-tan-all none">
+                    <div class="d-flex address-tan bottom-line">
+                        <div class="icon-address-detail"></div>
+                        <div class="flex f01">
+                            <p style="font-size:16px;">天安人寿中心</p>
+                            <p class="c999" style="font-size:12px;margin: 5px auto 0;">林和东路285号</p>
+                        </div>
+                    </div>
+                    <div class="d-flex address-tan bottom-line">
+                        <div class="icon-address-detail"></div>
+                        <div class="flex f01">
+                            <p style="font-size:16px;">天安人寿中心</p>
+                            <p class="c999" style="font-size:12px;margin: 5px auto 0;">林和东路285号</p>
+                        </div>
+                    </div>   
+                    <div class="d-flex address-tan bottom-line">
+                        <div class="icon-address-detail"></div>
+                        <div class="flex f01">
+                            <p style="font-size:16px;">天安人寿中心</p>
+                            <p class="c999" style="font-size:12px;margin: 5px auto 0;">林和东路285号</p>
+                        </div>
+                    </div>  
+                                                                                     
+                </div>
+            </div>
+        </div>
+
+        <div style="padding:26px 0 0">
+            <div class="d-flex d-flex-center f16">
+                <div class="flex">设为默认地址</div>
+                <div class="weui-cell__ft">
+                    <input class="weui-switch" type="checkbox" />
+                </div>
+            </div>           
+        </div>
+
+    </div>
+
+    <div class="fix-bl">
+        <div style="padding:10px;background:#f0f0f0;color:#666;text-align:center;font-size:12px;">请先选择地区</div>
+        <div class="d-flex basewrap order-nav">
+            <a class="flex right f16">保存</a>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        // $('#detail-add').on('click',function(){
+        //     $('html,body').animate({scrollTop:$('.bottom').offset().top}, 0);
+        //     var a=$('#detail-add').offset().top-$(window).scrollTop();
+        //     var b=$(window).height();
+        //     var c=a+20;
+        //     var d=b-c;
+        //     $('.address-tan-all').css({
+        //        'top':c,
+        //        'left':'0',
+        //        'height':d
+        //     })
+        // })
+
+        $("#detail-add").bind('input propertychange',function(){
+            $('.address-tan-all').show();
+        })
+    </script>
+   
+</body>    
+</html>

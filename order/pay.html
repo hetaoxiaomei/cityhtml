@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>确认发货</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
+    <style>
+        .pay-cell{margin:10px 0 0;background:#fff;padding: 10px 15px 0;}
+        .pay-cell .f01{padding:10px 0}
+        .pay-cell .f02{font-size:25px;margin-top: 1rem;}
+        .pay-cell .f03{font-size:29px;display: block;width: 100%;}
+        .pay-cell .f03 input{font-size: 29px;font-weight: bold;width: 100%;}
+        .pay-cell .f04{font-size:16px;padding:15px 0;}
+        .pay-bt{height:40px;background:#FF5A00;color:#fff;font-size: 18px;text-align: center;line-height: 40px;margin:20px 0 0;font-weight: bold}
+    </style>
+</head>
+<body>
+    <div class="fix-tl">
+        <div class="basewrap d-flex d-flex-center top-nav" style="background:#ff5a00;font-size: 1.6rem;">
+            <a class="flex qr-bt-js cfff" href="javascript:history.go(-1);"><i class="icon-back-arrow"></i> 返回</a>
+            <div class="flex ta-c cfff">达达配送</div>
+            <a class="flex js-sign cfff ta-r"></a>
+        </div>
+    </div>
+
+    <div class="basewrap" style="padding:44px 15px 6rem;">
+        <div class="pay-cell">
+            <p class="f14 c999 f01">充值金额（单位元，可以精确到分）</p>
+            <div class="d-flex bottom-line" style="padding:20px 0">
+                <div class="f02">￥</div>
+                <div class="flex f03"><input type="text" class="bold" autofocus="autofocus" placeholder=""></div>
+            </div>
+            <div class="bold f04">达达钱包：￥2.00</div>
+        </div>
+        <div class="pay-bt">立即支付</div>
+    </div>
+
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".pay-cell .f03 input")[0].focus();
+        });
+    </script>
+
+
+</body>
+</html>    

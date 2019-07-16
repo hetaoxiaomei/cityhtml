@@ -1,0 +1,335 @@
+.cash-coupon-all .out-date,.cash-coupon-all .start,.cash-coupon-all .out-date02{
+    background-image: url(../img/tc-pic04.png);
+    background-repeat: no-repeat;
+    background-size: 50rem;
+}
+
+.cash-coupon-all .shadow{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    background:rgba(0,0,0,.12);
+    width:100%;
+    height:100%;
+    filter:blur(5px);
+    -webkit-filter:blur(5px);
+}
+
+.cash-coupon-all .cell{
+    height:11rem;
+    border-radius:10px;
+    margin-bottom:8px;
+    position:relative;
+    overflow:hidden;
+}
+
+.cash-coupon-all .cell .left-line{
+    width:5px;
+    background:#ff3a1b;
+    display:block;
+    height:100%;
+}
+
+.cash-coupon-all .cell .content{padding:1.5rem 0 0 1.5rem;}
+
+.cash-coupon-all .cell .content .f01{color:#ff3a1b}
+
+.cash-coupon-all .cell .content .icon-coupon-shop{
+    width: 1.8rem;
+    height: 1.8rem;
+    fill: #ccc;
+    vertical-align: -.4rem;
+    margin-right: .7rem;
+}
+
+.cash-coupon-all .cell .content .date{
+    padding:.7rem 0 1.2rem;
+    margin-top:1rem;
+    border-top:1px #e5e5e5 dashed;
+}
+
+.cash-coupon-all .cell .right{
+    display:block;
+    width:9rem;
+    position: relative;
+}
+
+.cash-coupon-all .cell .right .pic01{width:9rem;}
+
+.cash-coupon-all .cell .pic02{
+    display: block;
+    width: 1.1rem;
+}
+.cash-coupon-all .cell .right .f01{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    font-size: 1.6rem;
+    color: #fff;
+    width: 100%;
+    text-align: center
+}
+
+.cash-coupon-all .out-date,.cash-coupon-all .start,.cash-coupon-all .out-date02{
+    height: 2rem;
+    width: 7.4rem;
+    position: absolute;
+    top:-.1rem;
+    left:-.3rem;
+}
+
+
+.cash-coupon-all .out-date{background-position:-2.8rem -4.5rem;}
+
+.cash-coupon-all .out-date02{background-position:-2.8rem -9.5rem;}
+
+.cash-coupon-all .start{background-position:-2.8rem -7rem;}
+
+.cash-coupon-all .out-date,.cash-coupon-all .start{
+    text-align: center;
+    color: #fff;
+    line-height: 1.5rem;}
+
+
+/*同城卡打折*/
+.cash-coupon-all.card{text-align: center;}
+
+.cash-coupon-all.card .icon-right-arrow{
+    display: inline-block;
+    vertical-align: -.4rem;
+}
+
+.cash-coupon-all.card .f02{
+    line-height: 1.35;
+    margin-top: .7rem;}
+
+.cash-coupon-all.card .cell .content .date{
+    border: none;
+    padding: 0;
+    margin-top: .7rem;
+}
+
+.monthly-calendar{
+    overflow: hidden;
+    height: 30rem;
+}
+
+.week-calendar{
+    overflow: hidden;
+    height: 30rem;
+}
+
+.monthly-calendar li{
+    width: 14.28%;
+    float: left;
+    margin-top: 1.9rem;
+}
+
+.monthly-calendar li span{
+    width: 3.4rem;
+    height: 3.4rem;
+    display: block;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    text-align:center;
+    line-height: 3.4rem;
+    color: #ccc;
+    margin: 0 auto;
+}
+
+.monthly-calendar li.active span{
+    background: #ff3a1b;
+    color: #fff;
+}
+
+.week-calendar{
+    height: 20rem;
+    padding: 1.6rem 0 0 1.2rem;
+}
+
+.week-calendar li{
+    width: 8rem;
+    height: 3rem;
+    line-height: 3rem;
+    background: #ccc;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1.4rem;
+    text-align:center;
+    margin-right: .8rem;
+    float: left;
+    margin-bottom: .8rem;
+}
+
+.week-calendar li.active{
+    background:#ff3a1b; 
+}
+
+/*新的优惠券*/
+.vip-cell .icon-new{
+    background-image: url(../img/tc-pic04.png);
+    background-repeat: no-repeat;
+    background-size: 50rem;
+}
+
+.vip-cell {
+    height: 7.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    border-radius: 5px;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 19px rgba(0,0,0,.06)
+}
+
+.vip-cell .icon-new {
+    width: 5.2rem;
+    height: 5.2rem;
+    display: block;
+    background-position: -9.7rem -18.9rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.vip-cell .left {
+    height: 100%;
+    width: 90px;
+    background: linear-gradient(to right,#fa0f67,#ff5400);
+}
+
+.vip-cell .discount {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+}
+
+.vip-cell .title {
+    margin-right: 5.5rem;
+    line-height: 1.5;
+}
+
+.vip-cell .bt {
+    box-sizing: border-box;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    width: 75px;
+    border-radius: 1.2rem;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to right,#4699ff,#55bdff);
+    color: #fff;
+}
+
+.vip-cell .bt.active {
+    opacity: .4;
+}
+
+.vip-cell .icon-zhuanshu {
+    display: inline-block;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    font-size: 10px;
+    background: linear-gradient(to right,#eedaa3,#d6bd78);
+    color: #333;
+    text-align: center;
+    width: 5rem;
+    font-weight: normal;
+    border-radius: 1.2rem;
+    margin-right: 1rem;
+}
+
+
+/*新优惠券*/
+.vip-cell {
+    height: 7.5rem;
+    color: #333;
+    border-radius: 5px;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.vip-cell .icon-new {
+    width: 5.2rem;
+    height: 5.2rem;
+    display: block;
+    background-position: -9.7rem -18.9rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url(../img/tc-pic04.png);
+    background-repeat: no-repeat;
+    background-size: 50rem;
+}
+
+.vip-cell .left {
+    height: 100%;
+    width: 90px;
+    background: linear-gradient(to right,#fa0f67,#ff5400);
+}
+
+.vip-cell .discount {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+}
+
+.vip-cell .title {
+    margin-right: 5.5rem;
+    line-height: 1.5;
+}
+
+.vip-dialog{
+    position:fixed;
+    top:50%;
+    left:50%;
+    z-index: 5;
+    transform: translate(-50%,-50%);
+    background: url(../img/tc-pic56.png);
+    background-size: 100%;
+    height:140px;
+    width: 295px;
+    box-sizing: border-box;
+    padding:45px 12px 0;
+}
+
+.vip-dialog img.jinbi{
+    display:block;
+    position:absolute;
+    left:42px;
+    top:-45px;
+    width: 180px;
+}
+
+.vip-dialog .bt{
+    width:160px;
+    height:32px;
+    background:linear-gradient(to right,#4699ff,#55bdff);
+    border-radius: 32px;
+    color:#fff;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translate(-50%,0);
+    line-height: 32px;
+    text-align: center;}
+
+    .vip-dialog .close{
+        position:absolute;
+        top:-50px;
+        right:0;
+        width:30px;
+        height:30px;
+    }

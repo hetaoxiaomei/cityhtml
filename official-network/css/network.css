@@ -1,0 +1,510 @@
+.banner-swiper img{
+    width:100%;
+    display:block
+}
+
+.top-nav{
+    width:1180px;
+    margin:0 auto;
+    display:block;
+    padding:24px 40px;
+    box-sizing:border-box;
+    top:0;
+    left:50%;
+    position:absolute;
+    transform:translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+    color:#fff;
+    line-height:28px;
+    z-index:1;
+}
+
+.top-nav a{color: #fff;}
+
+.top-nav .f01{font-size:28px;}
+
+.top-nav .f02{font-size:18px;margin-left:80px;}
+
+.top-nav .f03{font-size:18px;margin-left:60px;}
+
+/*盈利模式*/
+.profit-ul{width: 1180px;margin: 0 auto;} 
+
+.profit-ul li{
+    height:300px;
+    width:340px;
+    border-radius: 4px;
+    background: #fff;
+    line-height: 1.6;
+    box-shadow: 0 0 35px rgba(125,139,243,.3);
+    padding-top: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    float: left
+}
+
+.profit-ul li:nth-child(2){margin: 0 80px;}
+
+.profit-ul li img{
+    width:160px;
+    height:160px;
+    display: block;
+    margin: 0 auto;
+}
+
+.profit-ul li .f01{font-size:18px;margin-top: 15px}
+
+.profit-ul li .f02{font-size:14px;}
+
+.online-fans{
+    background:#001eff;
+    padding-top:130px;
+    height:720px;
+    box-sizing:border-box;
+    position: relative;
+    overflow: hidden
+}
+
+.online-fans .title{
+    font-size:34px;
+    color:#fff;
+    text-align:center
+}
+
+.profit-ul02{
+    padding-top: 180px;
+    width: 1180px;
+    margin: 0 auto;
+    position:relative;
+    z-index: 2
+}
+
+.profit-ul02 li{
+    width:25%;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    float: left;
+} 
+
+.online-fans .bg{
+    position: absolute;
+    bottom: 0;
+    left:0; 
+    width: 100%;
+    display:block;
+    z-index: 1;
+}
+
+.jiameng-bg01{
+    position: absolute;
+    top:88px;
+    right: -180px;
+}
+
+
+.jiameng-bg02{
+    position: absolute;
+    bottom:-160px;
+    left:10%;
+}
+
+
+.profit-ul02 li .f01{font-size: 18px;margin-top:14px;}
+
+.profit-ul02 li .f02{font-size: 16px}
+
+.profit-ul02 li img{
+    display: block;
+    height: 120px;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.function-word .dot{color: #010df7;margin-right:10px;}
+
+.function-word .f01{font-size: 16px;margin-bottom: 18px;}
+
+.profit-ul03{width: 1180px;margin: 0 auto;text-align: center;}
+
+.profit-ul03 li{float:left;width: 33.33%;}
+
+.profit-ul03 li .f01{font-size: 18px;color: #333;margin:30px 0 14px;}
+
+.profit-ul03 li .f02{color: #333;font-size: 14px;line-height: 1.4}
+
+.tips{width: 380px;height: 340px;border: 1px solid #d9e0ec;float: left;box-sizing: border-box}
+
+.tips-all .tips:nth-child(2){margin: 0 20px;}
+
+.tips .title{color: #333;font-size: 24px;text-align: center;height: 64px;background: #d9e0ec;line-height: 64px;}
+
+.tips .content{padding: 14px 20px 0 10px;color: #999;font-size: 16px;line-height: 1.6;font-size: 16px;}
+
+.tips .content .triangle{
+    width:0; 
+    height:0;
+    border-width:6px; 
+    border-color:transparent  transparent transparent #999999 ;
+    border-style:dashed dashed dashed solid; 
+    overflow:hidden;
+    margin-top: 6px;
+}
+
+.tips .content .f01{overflow: hidden;cursor: pointer}
+
+.tips .content .f02{margin-left: 15px;margin-top: 1px;}
+
+.tips-all{overflow: hidden;}
+
+.network-bottom-nav{
+    padding-top: 70px;
+    box-sizing: border-box;
+    background: #060c1f;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.network-bottom-nav .f01{font-size: 20px;margin-bottom: 20px;}
+
+.network-bottom-nav .f02{font-size: 16px;}
+
+.function-word01{margin-top:180px;}
+
+.function-word02{margin-top:254px;}
+
+.profit-rank{
+    overflow: hidden;
+    margin:70px auto 0;
+    width: 1120px;
+    position: relative;
+    z-index: 2;
+}
+
+.profit-rank-title{
+    width: 1120px;
+    margin: 70px auto 0;
+}
+
+.profit-rank-title li{
+    color: #fff;
+    font-size: 24px;
+    float: left;
+    width: 25%;
+    text-align: center;
+    height: 54px;
+    position: relative;
+    cursor: pointer
+}
+
+
+.profit-rank-title li .line{
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+    display: none
+}
+
+.profit-rank-title li.active .line{display: block}
+
+.profit-rank li{
+    width: 300px;
+    height: 300px;
+    border-radius:4px;
+    float: left;
+    position: relative;
+    background: #fff;
+    margin:0 110px 80px 0;
+}
+
+.profit-rank li:hover .city-infor{display: none}
+
+
+.profit-rank li .city-infor {width: 100%;height: 100%}
+
+.city-infor img{width: 100%;height: 100%;display: block}
+
+.profit-rank li:hover .city-qr{display:block}
+
+.profit-rank li:nth-child(3n){
+    margin:0 0 80px 0; 
+}
+
+.profit-rank .city-infor .number{
+   border-radius: 4px;
+   background: #fff000;
+   color: #333;
+   font-size: 30px;
+   text-align: center;
+   line-height: 40px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 60px;
+   height: 40px;
+}
+
+.profit-rank .city-infor .data{
+    width: 260px;
+    height: 84px;
+    border-radius: 4px;
+    background: #001eff;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    padding-top: 15px;
+    box-sizing: border-box
+
+}
+
+.profit-rank .city-infor .data .f01{
+    font-size: 28px;
+    margin-bottom:6px;}
+
+.profit-rank .city-infor .data .f02{font-size:22px;}
+
+.profit-rank .city-qr{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/*侧边栏*/
+.side-nav{
+    position: fixed;
+    bottom: 25%;
+    right: 80px;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.side-nav img{display: block;}
+
+.side-nav .qr{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right:60px;
+    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+    width: 136px;
+    height: 136px;
+    border: 1px solid #ccc;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.side-nav .call{
+    font-size: 18px;
+    position: absolute;
+    top:0;
+    right:0;
+    margin-right:60px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #0b40ee;
+    width:240px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 50px;
+}
+
+.side-nav .call-hover:hover .call{display: block}
+
+.side-nav .qr-hover:hover .qr{display: block}
+
+.bottom-ul {
+    width: 1120px;
+    overflow: hidden;
+    margin: 0 auto 100px;
+}
+
+.bottom-ul li{
+    font-size: 16px;
+    float: left;
+    text-align: left;
+    margin-right: 100px;
+    line-height: 1.25
+}
+
+.bottom-ul li.other a{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.bottom-ul li.other a .icon{
+    height: 26px;
+    width: 26px;
+    margin-top:-4px;
+}
+
+.bottom-ul li.other a p{margin-bottom: 0}
+
+.bottom-ul li a{color: #fff;display: block;margin-bottom: 20px;}
+
+.bottom-ul li a .icon{margin-right:10px;vertical-align: -.2rem;}
+
+.bottom-ul li p{margin-bottom: 45px;}
+
+/*轮播*/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.swiper-container-android .swiper-slide, .swiper-wrapper {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.swiper-slide {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-pagination {
+    position: absolute;
+    text-align: center;
+    -webkit-transition: .3s opacity;
+    -o-transition: .3s opacity;
+    transition: .3s opacity;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    z-index: 10;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+}
+
+.swiper-container .swiper-notification {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+    z-index: -1000;
+}
+
+.swiper-pagination-bullet {
+    width:16px;
+    height:16px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #fff;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 10px;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 66px;
+    border-radius:8px;
+}
+
+/*轮播箭头*/
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 32px;
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    background-size: 20px 32px;
+    background-position:0 0;
+    background-repeat: no-repeat;
+}
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+    background-image: url(../img/network04.png);
+    right: 18px;
+    transform: rotate(-180deg)
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    background-image: url(../img/network04.png);
+    left: 18px;
+}
+
+.rank-swiper{width: 1120px;}
+
+@media screen and (max-width: 1366px){
+    .function-word01{margin-top:100px;}
+    .function-word02{margin-top:85px;}
+    .profit-ul li img{width:120px;height: 120px;}
+}
+
+

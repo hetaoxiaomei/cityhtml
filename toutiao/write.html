@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>顺风车</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/release.css">
+    <style>
+        .select-nav {overflow: hidden;width: 23rem;margin: 0 auto;box-sizing: border-box;border: 1px solid #ff5a00;height: 2.4em;border-radius: 1.2rem;}
+        .select-nav .bt {height: 2.2rem;width: 11.4rem;background: #fff;color: #333;border-radius: 1.2rem;text-align: center;
+    font-size: 14px;line-height: 2.2rem;box-sizing: border-box;float: left;}
+        .select-nav .bt.active:first-child{width: 11.4rem;background: #ff5a00;color: #fff;border-radius: 1.2rem;float: left;margin-left: 0;border-top-right-radius:0;border-bottom-right-radius:0;}
+        .select-nav .bt.active:nth-child(2){width: 11.4rem;background: #ff5a00;color: #fff;border-radius: 1.2rem;float: left;margin-left: 0;border-top-left-radius:0;border-bottom-left-radius:0;}
+        .icon-require {width: .7rem;height: .7rem;display: block;background-position: -26.7rem -9.2rem;margin-left: 5px;}
+        .icon-require{background-image: url(../img/tc-pic04.png);background-size: 50rem;background-repeat: no-repeat;}
+        .write-cell .arrow {width: .7rem;height: 1.1rem;background-position: -24.5rem -9.2rem;margin-left: 5px;}
+        .write-cell .arrow{background-image: url(../img/tc-pic04.png);background-size: 50rem;background-repeat: no-repeat;}
+
+        .post-wrap-function-bt {height: 52px;width: 100%;background: #f5f5f5;padding-top: 4px;}
+        .post-wrap-function-bt li {width: 16.66%;cursor: pointer;color: #949494;font-size: 10px;text-align: center;display:block;float: left;}
+        .post-wrap-function-bt li i {display: block;width: 26px;height: 26px;margin: 0 auto;margin-bottom: 3px;background-image: url(http://j.vzan.cc//content/images/imgpost2/01/post-big-pic-01.png);background-size: 100%;}
+    </style>
+</head>
+<body>
+    <div class="basewrap" style="padding:0 0 6rem;">
+        <!--单次拼-->
+        <div style="padding:2rem 0 2.5rem;background: #fff;">
+            <div class="select-nav">
+                <div class="bt active">通用模式</div>
+                <div class="bt">转发公众号文章</div>
+            </div>  
+        </div>
+        <div class="select-nav-js">
+            <!--通用模式-->
+            <div>
+                <div class="bg-f bz" style="padding:0 1.5rem;">
+                    <div class="d-flex flex-end" style="margin:0 0 20px;">
+                        <div style="width:150px;height:100px;background:#f0f0f0;position: relative;">
+                            <img src="../img/tc-pic97.png" style="width:21px;height:21px;display:block;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)">
+                        </div>
+                        <div class="flex" style="color:#999;font-size:12px;margin:0 0 0 15px;">封面图（300×200px最佳）</div>
+                    </div>
+                    <div class="d-flex d-flex-center write-cell top-line">
+                        <div class="bold">文章标题</div>
+                        <i class="icon-require"></i>
+                        <div class="flex right">
+                            <input class="write ta-r" placeholder="必填，2-50个字">
+                        </div>                                                          
+                    </div>
+                    <div class="d-flex d-flex-center write-cell top-line">
+                        <div class="bold">头条分类</div>
+                        <div class="flex right">
+                            <input class="write ta-r" placeholder="选择分类">
+                        </div>     
+                        <div class="arrow"></div>                                                  
+                    </div> 
+                    <div class="d-flex d-flex-center write-cell top-line">
+                        <div class="bold">头条内容</div>
+                        <i class="icon-require"></i>                                                        
+                    </div>
+                </div>
+                <!--内容-->
+                <div class="bg-f" style="padding:0 1.5rem 1rem;">
+                    <ul class="upload-company-pic" style="overflow: hidden;">
+                        <li><img src="../img/02.jpg"><i class="close"></i></li>
+                        <li><img src="../img/02.jpg"><i class="close"></i></li>
+                        <li><img src="../img/02.jpg"><i class="close"></i></li>
+                        <li><img src="../img/02.jpg"><i class="close"></i></li>
+                    </ul>
+                    <div class="rel" style="padding:1rem 0 0;">
+                        <img src="../img/03.jpg" style="width:100%;display: block;">
+                        <img src="../img/tc-pic98.png" style="width:100%;display: block;position: absolute;top: 5px;right:0;width: 24px;">
+                    </div>
+                    <div class="d-flex d-flex-center" style="padding:1rem 0 0;">
+                        <div style="width:70px;height:70px;">
+                            <img src="../img/02.jpg"  style="display:block;width:100%;height:100%">
+                        </div>
+                        <div class="flex" style="background: #f0f0f0;font-size: 15px;padding: 1rem 1rem 0;height: 70px;box-sizing: border-box;line-height: 1.4;">负压吸收拔罐原价98一次，现砍 到底价0元，免费体验一次</div>
+                        <img src="../img/tc-pic98.png" style="width:100%;display: block;width: 24px;height: 24px;margin-left: 20px;">
+                    </div>
+                    <div class="d-flex d-flex-center" style="padding:1rem 0 0;">
+                        <div style="width:70px;height:70px;">
+                            <img src="../img/tc-pic99.png" style="display:block;width:100%;height:100%">
+                        </div>
+                        <div class="flex" style="background: #f0f0f0;font-size: 15px;padding: 1rem 1rem 0;height: 70px;box-sizing: border-box;line-height: 1.4;">负压吸收拔罐原价98一次，现砍 到底价0元，免费体验一次</div>
+                        <img src="../img/tc-pic98.png" style="width:100%;display: block;width: 24px;height: 24px;margin-left: 20px;">
+                    </div>            
+                </div>
+                <ul class="post-wrap-function-bt bz rel clearfix top-linr" id="upload-ext-container">
+                    <li class="fl icon-post-pic" id="reply-upload-img-btn" style="cursor:pointer;">
+                        <i style="background-position:0 -286px"></i>
+                        <span>图片</span>
+                    </li>
+                    <li class="fl icon-post-video temp-video-local" id="selectfiles" data-loadstate="0" data-areacode="110107">
+                        <i style="background-position:0 -390px"></i>
+                        <span>本地视频</span>
+                    </li>
+                    <li class="fl icon-post-pic" id="reply-upload-img-btn" style="cursor:pointer;">
+                        <i style="background-position:0 -286px"></i>
+                        <span>网络视频</span>
+                    </li>
+                    <li class="fl icon-post-video temp-video-local" id="selectfiles" data-loadstate="0" data-areacode="110107">
+                        <i style="background-position:0 -390px"></i>
+                        <span>链接</span>
+                    </li>            
+                </ul>
+                <div class="bg-f" style="padding:0 1.5rem;">
+                    <div class="d-flex d-flex-center write-cell top-line">
+                        <div class="bold">来源名称</div> 
+                        <div class="flex right">
+                            <input class="write ta-r" placeholder="没有可不填">
+                        </div>                                                                   
+                    </div>
+                </div>
+            </div>
+            <!--转发公众号文章-->
+            <div class="none">
+                <div class="bg-f bz" style="padding:0 1.5rem;">
+                    <div class="d-flex d-flex-center write-cell">
+                        <div class="bold">文章标题</div>
+                        <i class="icon-require"></i>
+                        <div class="flex right">
+                            <input class="write ta-r" placeholder="必填，2-50个字">
+                        </div>                                                          
+                    </div>
+                    <div class="d-flex d-flex-center write-cell top-line">
+                        <div class="bold">头条分类</div>
+                        <div class="flex right">
+                            <input class="write ta-r" placeholder="选择分类">
+                        </div>     
+                        <div class="arrow"></div>                                                  
+                    </div> 
+                </div>
+                <div class="bg-f" style="padding:0 1.5rem;">
+                    <div class="d-flex d-flex-center write-cell top-line">
+                        <div class="bold">来源名称</div> 
+                        <div class="flex right">
+                            <input class="write ta-r" placeholder="没有可不填">
+                        </div>                                                                   
+                    </div>
+                </div>
+                <div style="font-size:12px;color:12px;color:#999;line-height:1.6;padding:1.5rem;">
+                    <p>请在获取公众号同意后转载公众号的文章并标注来源。 </p>
+                    <p>为避免与公众号主题纠纷，谨慎转载标注原创的公众号文章。</p>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+
+    <!--底部-->
+    <div class="fix-bl">
+        <div class="basewrap d-flex release-nav bz basewrap" style="box-shadow:none;padding-left:0;">
+            <div class="bt flex f-16rem">确认发布</div>
+        </div>
+    </div>
+    
+    <!--积分规则-->
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="integral-rule-dialog" style="max-width: 300px;width: 80%;background: #fff;border-radius: 10px;position: fixed;top:50%;left:50%;
+        transform: translate(-50%,-50%);">
+            <p class="f16 c333 ta-c bold" style="padding: 25px 0 15px;">插入网络链接</p>
+            <div style="padding:0 1.5rem 1.5rem;background:#fff;">
+                <textarea placeholder="请输入http://或http://为开头的网址" style="display:block;padding:10px;border:1px solid #f0f0f0;width: 100%;box-sizing: border-box;height: 8rem;"></textarea>
+                <p class="f14 c666" style="padding:12px 0 0">支持插入同城内的活动链接</p>
+            </div>
+            <div class="d-flex top-line f16 ta-c bold" style="height:45px;line-height:45px;">
+                <div class="flex" style="color:#999">取消</div>
+                <div class="flex left-line" style="color:#ff5a00">确定</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.select-nav .bt').on('click',function(){
+            $(this).addClass('active').siblings('.bt').removeClass('active');
+            var a=$(this).index();
+            $('.select-nav-js').children('div').hide().eq(a).show();
+        })
+    </script>
+</body>
+</html>

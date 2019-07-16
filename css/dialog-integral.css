@@ -1,0 +1,163 @@
+
+
+.dialog-integral{
+    overflow: visible;
+    width: 300px;
+}
+
+.dialog-integral .pic01{
+    width: 100%;
+    display: block;
+}
+
+.dialog-integral .f01{
+    margin: -70px 0 5px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.35;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.dialog-integral .day{
+    margin: 0 0 15px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+}
+
+.dialog-integral .bt{
+    width: 160px;
+    height:40px;
+    border-radius: 20px;
+    background: linear-gradient(to right,#f20300,#ff450c);
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    margin: 12px auto 20px;
+    box-shadow: 0 2px 5px rgba(255, 58, 27, .35)
+}
+
+.dialog-integral .f02{
+    color: #999;
+    font-size:12px;
+    text-align: center;
+    padding:15px 0 0;
+}
+
+.dialog-integral .icon-circle-arrow{
+    width:16px;
+    height: 16px;
+    fill: #fff;
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: -3px
+}
+
+.dialog-integral .icon-arrow{font-size: 12px;} 
+
+.dialog-integral .close{
+    width: 3.4rem;
+    height:3.2rem;
+    position: absolute;
+    z-index: 1;
+    top: -19px;
+    right: 0;
+}
+
+.dialog-integral .day .f03{
+    font-size: 1.6rem;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: -22px;
+    line-height: 1;
+}
+
+.dialog-integral ul.sign{
+    padding: 33px 15px 0;
+    overflow: hidden;
+}
+
+.dialog-integral ul.sign li{
+    width: 60px;
+    height: 60px;
+    background:#f2f2f2;
+    border-radius: 4px;
+    text-align: center;
+    color: #666;
+    box-sizing: border-box;
+    float: left;
+    position: relative
+}
+
+
+.dialog-integral ul.sign .f04{
+    font-size: 10px;
+    line-height: 1;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+    width: 100%;
+    color: #666;
+}
+
+.dialog-integral ul.sign .f05{
+    font-size: 12px;
+    line-height: 1;
+}
+
+.dialog-integral ul.sign li:nth-child(2),.dialog-integral ul.sign li:nth-child(3),
+.dialog-integral ul.sign li:nth-child(4),.dialog-integral ul.sign li:nth-child(6)
+,.dialog-integral ul.sign li:nth-child(7){margin-left: 10px;}
+
+.dialog-integral ul.sign li:nth-child(7){width: 130px;}
+
+.dialog-integral ul.sign li:nth-child(5),.dialog-integral ul.sign li:nth-child(6),
+.dialog-integral ul.sign li:nth-child(7){margin-top: 33px;}
+
+.dialog-integral ul.sign li.active{
+    background: #ffddc6;
+    color: #ff3a1b;
+}
+
+.dialog-integral ul.sign li.active .f05{font-weight:bold}
+
+.dialog-integral ul.sign li .img01{
+    display: block;
+    height: 25px;
+    width: 21px;
+    margin: 8px auto 6px;
+    background: url(../img/tc-pic25.png);
+    background-size: 21px;
+}
+
+.dialog-integral ul.sign li .img02{
+    display: block;
+    height:25px;
+    width: 32px;
+    margin: 8px auto 6px;
+    background: url(../img/tc-pic27.png);
+    background-size: 32px;
+}
+
+.dialog-integral ul.sign li.active .img01{
+    background: url(../img/tc-pic26.png);
+    background-size: 21px;
+ }
+
+.dialog-integral ul.sign li.active .img02{
+    background: url(../img/tc-pic28.png);
+    background-size: 32px;
+ }
+
+
+

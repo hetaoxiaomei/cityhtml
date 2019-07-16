@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>发货</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/order.css">
+</head>
+<body>
+    <div class="d-flex d-flex-center address-cell">
+        <div class="icon-location"></div>
+        <div class="flex">
+            <div class="f01">广州市天河区林和街道林和西路285号天安人寿27楼2014</div>
+            <div class="f02">
+                <span style="margin-right:30px;">杨先生</span>
+                <span>12345678912</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-cell-all" style="padding:0 1.5rem;">
+        <a id="order-nav" class="d-flex d-flex-center order-cell bottom-line">
+            <div class="option active">普通快递<i class="line"></i></div>
+            <div class="option">无需物流<i class="line"></i></div>
+        </a>                                                  
+    </div>
+
+    <!--切换选项-->
+    <div id="order-nav-js">
+        <!--快递发货-->
+        <div class="order-cell-all" style="margin:0;padding:0 1.5rem;">
+            <a class="d-flex d-flex-center order-cell bottom-line">
+                <div>快递物流</div>
+                <div class="flex ta-r bold">
+                    <select class="bold">
+                        <option>点击选择</option>
+                        <option>蜂鸟</option>
+                        <option>达达</option>
+                        <option>点我达</option>
+                    </select>
+                </div>
+                <div class="icon-arrow"></div>
+            </a>        
+            <a class="d-flex d-flex-center order-cell bottom-line">
+                <div>快递单号</div>
+                <div class="flex ta-r bold">
+                    <input class="write ta-r bold" placeholder="点击输入快递单号">
+                </div>
+            </a>      
+        </div>        
+        <!--商家自送-->
+        <div class="order-cell-all" style="padding: 0 0 30px;margin:0;display: none;">
+            <image src="../img/tc-pic60.png" style="width:62px;display:block;padding:30px 0 15px;margin: 0 auto;"></image>
+            <p class="c999 f14 ta-c">商家自送无需物流信息</p>
+        </div>   
+
+        
+    </div>
+
+    <!--买家留言-->
+    <div class="order-cell-all">
+        <div class="f16 bold" style="padding:1.5rem 0 0;">买家留言</div>
+        <div class="distribution-scope" style="height: 120px;background:#fff;">
+            <textarea style="padding:10px 0"></textarea>
+        </div>      
+    </div>
+
+    <div class="fix-bl">
+        <div class="d-flex basewrap order-nav">
+            <a class="flex right f16">确认发货</a>
+        </div>
+    </div>               
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        /*商家列表*/	 
+        $(document).ready(function(){
+            $('#order-nav .option').click(function () {
+                var $thisobj = $(this);
+                var index = $thisobj.index();
+                $thisobj.addClass('active').siblings().removeClass('active');
+                $('#order-nav-js').children('div').hide().eq(index).show();	     
+                $('#order-nav-js02').children('div').hide().eq(index).show();	  
+            })
+        })
+    </script>
+
+</body>    
+</html>

@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+/*导航文字滑动*/
+.swiper-container { margin-left: auto; margin-right: auto; position: relative; overflow: hidden; z-index: 1; }
+
+.swiper-wrapper { position: relative; width: 100%; height: 100%; z-index: 1; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; display: -webkit-box; -webkit-transition-property: -webkit-transform; -moz-transition-property: -moz-transform; -o-transition-property: -o-transform; -ms-transition-property: -ms-transform; transition-property: transform; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; }
+
+.swiper-slide { -webkit-flex-shrink: 0; -ms-flex: 0 0 auto; flex-shrink: 0; width: 100%; height: 100%; position: relative; }
+
+.swiper-container-android .swiper-slide, .swiper-wrapper { -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -o-transform: translate(0, 0); -ms-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+
+.swiper-container-free-mode > .swiper-wrapper { -webkit-transition-timing-function: ease-out; -moz-transition-timing-function: ease-out; -ms-transition-timing-function: ease-out; -o-transition-timing-function: ease-out; transition-timing-function: ease-out; margin: 0 auto; }
+
+.swiper-container-free-mode.swiper-container { width: 100%; }
+
+.swiper-container-free-mode.tc-select-top-nav.little .swiper-slide { width: auto; }
+
+.swiper-container-free-mode .swiper-slide {display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; }
+
+.swiper-container-horizontal .swiper-container { width: 100%; height: 100%; }
+
+.swiper-container-horizontal .swiper-slide {font-size: 18px; background: #fff; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center; }
+
+.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction { bottom: 15px; left: 0; width: 100%; }
+
+.swiper-pagination { position: absolute; text-align: center; -webkit-transition: .3s; -moz-transition: .3s; -o-transition: .3s; transition: .3s; -webkit-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); z-index: 10; }
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet { margin:0; }
+
+.swiper-pagination-clickable .swiper-pagination-bullet { cursor: pointer; }
+
+.swiper-pagination-bullet { width: 15px; height: 3px; display: inline-block; border-radius: 2px; background:rgba(0, 0, 0, .3);}
+
+.swiper-pagination-bullet-active { 
+    opacity: 1;background:#fff;
+    border-radius: 5px;
+    width: 10px;
+}
+
+/*图标轮播*/
+.swiper-container-icon .swiper-pagination-bullet,.swiper-container-huodong .swiper-pagination-bullet{background:rgba(255,90,0,.2);}
+
+.swiper-container-icon .swiper-pagination-bullet-active,.swiper-container-huodong .swiper-pagination-bullet-active{ background:#ff5a00;}
+
+.swiper-container-icon.swiper-container-horizontal > .swiper-pagination-bullets{bottom:16px;}
+
+/*关注垂直轮播*/
+/* .focus_people_lunbo.swiper-container-vertical > .swiper-wrapper { -webkit-box-orient: vertical; -moz-box-orient: vertical; -ms-flex-direction: column; -webkit-flex-direction: column; flex-direction: column; }
+
+.focus_people_lunbo { height: 30px; } */
+
+/*本地生活轮播*/
+.local-life-swiper{ 
+    height: 34px;
+    color: #333;
+    font-size: 1.4rem;
+    padding:0 1.2rem 0 0;
+    position: relative
+}
+
+.local-life-swiper p{ 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box; 
+    -webkit-line-clamp: 1;
+    line-height: 1.45;}
+
+.local-life-swiper .swiper-wrapper { -webkit-box-orient: vertical; flex-direction: column; }
+
+
+/*特别关注商家*/
+/* .shangjia_focus { background: #fff; padding: 10px 0; }
+.shangjia_focus .swiper-wrapper { box-sizing: border-box; }
+.shangjia_focus .swiper-slide { width: 75px; }
+.shangjia_focus a { display: block; }
+.shangjia_focus a i { display: block; width: 75px; height: 75px; color: #ff5a00; font-size: 1.4rem; background: #fff; text-align: center; position: relative; }
+.shangjia_focus a i em { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; }
+.shangjia_focus a img { width: 75px; height: 75px; }
+.shangjia_focus a p { font-size: 1.4rem; color: #666; padding: 0 5px; margin-top: 5px; }
+.shangjia_focus .swiper-slide:first-child { margin-left: 10px; }
+.shangjia_focus .swiper-slide:last-child { margin-right: 10px; }
+.shangjia_focus.jizan { padding-top: 0; }
+.shangjia_focus.jizan .swiper-slide { width: 100px; }
+.shangjia_focus.jizan a img { width: 100%; height: 100%; }
+.shangjia_focus.jizan a p.money { color: #ff5a00; font-size: 14px; text-align: left; padding: 0; } */
+
+
+/*2017-1-5弹窗广告*/
+.swiper-dialog-ad{ 
+    width:100%;
+    height: 100%;
+    display:block;
+    position:fixed;  
+    top: 0;
+    left: 0;  
+    background: rgba(0, 0, 0, .5)
+}
+
+.swiper-dialog-ad .swiper-slide{ 
+    background:transparent;  
+} 
+
+.swiper-dialog-ad .swiper-slide .ad-all{
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    transform: translate(-50%,-50%);
+    background: #fff;
+}
+
+.swiper-dialog-ad .swiper-slide .ad-all span{
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.swiper-dialog-ad .swiper-slide .ad-f{
+    padding: 15px;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.65;
+    height: 310px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.swiper-dialog-ad .swiper-slide .ad-title{
+    height: 45px;
+    line-height: 45px;
+    background: #ff5a00;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 16px;
+    padding:0 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.swiper-dialog-ad .swiper-slide .check-detail{
+    color: #ff5a00;
+    line-height: 45px;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+}
+
+.swiper-dialog-ad .swiper-container{overflow: auto;border-radius: 10px;}
+
+.swiper-dialog-ad .swiper-pagination{bottom: 50px;}
+
+.swiper-dialog-ad .close01{
+    background-image: url(../images/icon01.png);
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: -147px -348px;
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top:-40px;
+    right:0;
+    display: block;
+    left: auto;
+}
+
+/*招聘轮播*/
+.authentic-enterprise .swiper-slide{
+    width: 220px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    margin-right: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fafafa
+}
+
+.authentic-enterprise .swiper-slide:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #e5e5e5;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}    
+
+
+.authentic-enterprise .head{
+    width:70px;
+    height:70px;
+    margin-right:10px;
+}
+
+.authentic-enterprise  .f01{
+    margin-bottom: .5rem;
+    line-height: 1.5
+}
+
+.swiper-container-huodong{
+    padding-bottom: 15px;
+}
+
+.swiper-container-huodong.swiper-container-horizontal > .swiper-pagination-bullets{bottom:0;}
+
+
+@media only screen and (min-width: 320px) and (max-width: 350px) { 
+    .swiper-container-horizontal.dialog{width: 260px; height: 345px;} 
+    .swiper-dialog-ad .swiper-slide .ad-all{
+        width: 270px;height: 360px;
+    }
+    .swiper-dialog-ad .swiper-slide .ad-f{
+        height: 270px;
+    }
+}
+

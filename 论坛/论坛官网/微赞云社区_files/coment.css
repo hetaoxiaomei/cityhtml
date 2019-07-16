@@ -1,0 +1,18 @@
+html{
+-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;
+font-family: "微软雅黑";
+/* font-size: 100px; */
+}
+body,div,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p{margin:0;padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
+display:block;}
+a{text-decoration: none;color: #bcbcbc;}
+ul,ol{list-style: none;}
+img{
+max-width:100%;
+height:auto;
+display: inline;
+border:none;
+;
+}
+em,i{font-style:normal}

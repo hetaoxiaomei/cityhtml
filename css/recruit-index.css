@@ -1,0 +1,216 @@
+.recruit-icon a span i,.icon-hot-job,.recruit-title-cell .arrow,.icon-recommend,
+.icon-id-company{
+    background-image: url(../img/tc-pic04.png);
+    background-size: 50rem;}
+
+.index-search-bar .center{margin: 0 auto}
+
+
+/*图标*/
+.recruit-icon{
+    padding:1.2rem 0;
+    overflow: hidden;
+    background:#fff;
+    text-align: center;
+}
+
+.recruit-icon>a{display: block;}
+
+.recruit-icon span{
+    width: 4.3rem;
+    height: 4.3rem;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.recruit-icon span i{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.recruit-icon a:nth-child(1) span i{background-position:-12.3rem -2.4rem;}
+
+.recruit-icon a:nth-child(2) span i{background-position:-16.8rem -2.4rem;}
+
+.recruit-icon a:nth-child(3) span i{background-position:-21.3rem -2.4rem;}
+
+.recruit-icon a:nth-child(1) span{
+    background:linear-gradient(to bottom,#ee0000,#ff7b61) ;
+    box-shadow: 0 2px 5px rgba(255,58,27,.35)
+}
+
+.recruit-icon a:nth-child(2) span{
+    background:linear-gradient(to bottom,#fd781f,#fd971f) ;
+    box-shadow: 0 2px 5px rgba(253,120,31,.35)
+}
+
+.recruit-icon a:nth-child(3) span{
+    background:linear-gradient(to bottom,#107af1,#3fcbff) ;
+    box-shadow: 0 2px 5px rgba(0,145,255,.35)
+}
+
+
+.recruit-icon p{
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: .8rem;
+}
+
+/*标题*/
+.recruit-title-cell .subscribe-bt{
+    height: 2.4rem;
+    line-height: 2.4rem;
+    width: 6rem;
+    font-size: 1.2rem;
+    color: #ff3a1b;
+    text-align: center;
+    position: relative
+}
+
+.recruit-title-cell{
+    padding:1.2rem;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    height: 4.5rem;
+    box-sizing: border-box
+}
+
+.recruit-title-cell .number{
+    font-size: 1rem;
+    color: #fff;
+    background: #fd781f;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding: 0 3px;
+    border-radius: 4px;
+    margin-right: 4px;
+    display: inline-block;
+}
+
+.recruit-title-cell .arrow{
+    height: 1.6rem;
+    width: 1.6rem;
+    display: inline-block;
+    background-position:-8.8rem -2.2rem;
+    vertical-align: -.4rem;
+}
+
+.recruit-title-cell .shadow{
+    height: 1px;
+    background: #f5f5f5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -1px 15px rgba(0,0, 0,.25);
+    z-index: 2;
+}
+
+.recruit-title-cell .subscribe-bt:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ff3a1b;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.icon-hot-job,.icon-id-company,.icon-recommend{
+    width: 1.6rem;
+    height: 1.9rem;
+    display: inline-block;
+    vertical-align: -.4rem;
+    margin-right: .2rem;
+}
+
+.icon-hot-job{background-position:-23.7rem 0;}
+
+.icon-id-company{background-position:-25.5rem 0;}
+
+.icon-recommend{background-position:-27.4rem 0;}
+
+.hot-position{
+    overflow: hidden;
+    background: #fff;
+    border-top: 1px solid #f4f4f4;
+    max-height: 8.8rem;
+}
+
+.hot-position a{
+    height:4.4rem;
+    line-height:4.4rem;
+    width: 33.33%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 1.2rem;
+    color: #666;
+    position: relative;
+    border-bottom: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+}
+
+.hot-position a:nth-child(3n){
+    border-right: none;
+}
+
+/*认证企业*/
+.swiper-container-free-mode.recruit{
+    text-align: left;
+
+}
+
+.recruit .swiper-slide {
+    width: 23rem;
+    text-align: left;
+
+    align-items: initial;
+    height: 7rem;
+    width: 220px;
+}
+
+.swiper-container-horizontal.recruit .swiper-slide{
+    background: #f7f7f7;
+    border-radius: 4px;
+}
+
+.recruit .swiper-slide .head {
+    width: 7rem;
+    height: 7rem;
+
+}
+
+.recruit .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.index-type-select-nav li.active {
+    color: #ff3a1b;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+
+
+
+
+

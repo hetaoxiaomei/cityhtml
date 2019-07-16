@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>同城名称</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/new-coupon.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
+    <link rel="stylesheet" type="text/css" href="../css/online-purchase.css">
+</head>
+<body>
+    <div class="basewrap">
+        <div class="d-flex d-flex-center bg-f online-purchase-cell">
+            <div class="flex c333 f16">                               
+                <i class="icon-shop"></i>提拉米酥烘焙坊（东方宝泰店）
+            </div>
+            <svg class="icon-right-arrow" aria-hidden="true">
+                <use xlink:href="../css/icon.svg#left-arrow"></use>
+            </svg>
+        </div>
+
+        <div class="bg-f" style="padding:0 1.2rem">
+            <div class="d-flex d-flex-center money-input-cell">
+                <div class="bold f16">消费金额(元)</div>
+                <div class="flex ta-r right">
+                    <input class="money" placeholder="请与服务员核对消费金额">
+                </div>
+            </div>
+        </div>
+
+        <a class="d-flex d-flex-center bg-f online-purchase-cell card-use-js" href="../card/card01.html">
+            <div class="flex f14"><i class="discount">折</i>同城卡享<i style="color:#f90606;">9.2折</i></div>
+            <div class="c333 f14">立即开通</div>
+            <svg class="icon-right-arrow" aria-hidden="true">
+                <use xlink:href="../css/icon.svg#left-arrow"></use>
+            </svg>    
+        </a>
+
+        <a class="d-flex d-flex-center bg-f online-purchase-cell coupon-use-js">
+            <div class="flex f14"><i class="discount" style="background: #ff7105;">券</i>代金券</div>
+            <div class="f14 c999">暂无可用</div>
+            <svg class="icon-right-arrow" aria-hidden="true">
+                <use xlink:href="../css/icon.svg#left-arrow"></use>
+            </svg>    
+        </a>
+
+        <div class="mc bg-f ta-r bold" style="padding:1.5rem 1.2rem;"><i class="f16 c333">合计：</i><i class="f12 bold">￥</i><i class="f16 bold">99</i></div>
+        
+        <div class="bg-f">
+            <div class="top-line" style="padding: 1.5rem 0;margin: 0 1.2rem;color: #333;font-size: 1.4rem;line-height: 1.4">使用须知：本店周一、周三、周五不可用</div>
+        </div>
+
+    </div>
+
+    <!--键盘弹框-->
+    <div class="fix-bl keyboard-layer-js">
+        <div class="bg-f basewrap top-line">
+            <!-- <div class="d-flex d-flex-center bg-f receive-coupons-cell receive-coupons-js">
+                <div class="f14 flex clamp1">
+                    <div class="swiper-container swiper-container-vertical local-life-swiper" style="height:4.9rem">
+                        <ul class="swiper-wrapper" style="height:4.9rem">
+                            <li class="swiper-slide">
+                                <i class="tag">代金券</i>有一张￥20的代金券
+                            </li>
+                            <li class="swiper-slide">
+                                <i class="tag">同城卡</i>有一张健身同城卡
+                            </li>    
+                        </ul>    
+                    </div>
+                </div>
+                <svg class="icon-right-arrow" aria-hidden="true">
+                    <use xlink:href="../css/icon.svg#left-arrow"></use>
+                </svg>    
+            </div> -->
+            <!--键盘-->
+
+            <div class="d-flex keyboard-layer">
+                <ul class="flex ta-c keyboard-number">
+                    <li class="number" data-num='1'>1</li>
+                    <li class="number" data-num='2'>2</li>
+                    <li class="number" data-num='3'>3</li>
+                    <li class="number" data-num='4'>4</li>
+                    <li class="number" data-num='5'>5</li>
+                    <li class="number" data-num='6'>6</li>
+                    <li class="number" data-num='7'>7</li>
+                    <li class="number" data-num='8'>8</li>
+                    <li class="number" data-num='9'>9</li>
+                    <li class="close"><i></i></li>
+                    <li class="number" data-num='0'>0</li>
+                    <li class="dot" data-num='.'><i></i></li>
+                </ul>
+                <div class="d-flex flex-col bz" style="width:27.2%;border-top: 1px solid #f2f2f2;">
+                    <div class="bz cancel-bt"><i class="cancel"></i></div>
+                    <div class="flex pay-bt active">
+                       <p class="f01"> 确认<br/>支付</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--使用同城卡弹框-->
+    <div class="fix-tl-100 card-use-layer-js none">
+        <div class="dialog-black-mask"></div>
+        <div class="fix-bl bg-f">
+            <div class="bold c333 ta-c f16 bottom-line" style="line-height:4.9rem;">选择同城卡折扣</div>
+            <div class="bg-f" style="padding:1.6rem 1.2rem .8rem;height: 25.5rem;box-sizing: border-box;overflow: auto">
+                <!--去开通-->
+                <div class="rel cash-coupon-all card">
+                    <div class="shadow"></div>
+                    <div class="d-flex cell">
+                        <div class="flex bg-f content" style="padding: 3rem 0 0 1.5rem;">
+                            <div class="f16 f01"><i class="bold" style="font-size:30px;">5</i>折</div>
+                            <div class="f14 c333 f02 clamp1 bold">凤台优质农家干果特产打折卡</div>
+                        </div>
+                        <img class="pic02" src="../img/tc-pic21.png">
+                        <div class="right">
+                            <img class="pic01" src="../img/tc-pic18.png">
+                            <p class="f01">使用</p>
+                        </div> 
+                    </div>
+                </div>
+                <!--已开通-->
+                <div class="rel cash-coupon-all card">
+                    <div class="shadow"></div>
+                    <div class="d-flex cell">
+                        <div class="flex bg-f content" style="padding: 3rem 0 0 1.5rem;">
+                            <div class="f16 f01"><i class="bold" style="font-size:30px;">5</i>折</div>
+                            <div class="f14 c333 f02 clamp1 bold">凤台优质农家干果特产打折卡</div>
+                        </div>
+                        <img class="pic02" src="../img/tc-pic21.png">
+                        <div class="right">
+                            <img class="pic01" src="../img/tc-pic19.png">
+                            <p class="f01">已选择</p>
+                        </div> 
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    
+    <!--使用优惠券弹框-->
+    <div class="fix-tl-100 coupon-use-layer-js none">
+        <div class="dialog-black-mask"></div>
+        <div class="fix-bl bg-f">
+            <div class="bold c333 ta-c f16 bottom-line" style="line-height:4.9rem;">选择代金券</div>
+            <div class="bg-f" style="padding:1.6rem 1.2rem .8rem;height: 25.5rem;box-sizing: border-box;overflow: auto">
+                <!--立即领取-->
+                <div class="rel cash-coupon-all">
+                    <div class="shadow"></div>
+                    <div class="d-flex cell">
+                        <div class="left-line"></div>
+                        <div class="flex bg-f content">
+                            <div class="f14 f01">￥<i class="bold" style="font-size:30px;">20</i>&nbsp;满100用20</div>
+                            <div class="f12 c666 f02" style="margin-top:.6rem">                                
+                                <svg class="icon-coupon-shop" aria-hidden="true">
+                                    <use xlink:href="../css/icon.svg#coupon-shop"></use>
+                                </svg>音乐西餐厅
+                            </div>
+                            <div class="f10 c999 date">2018.07.15-2018.08.15</div>
+                        </div>
+                        <img class="pic02" src="../img/tc-pic21.png">
+                        <div class="right">
+                            <img class="pic01" src="../img/tc-pic18.png">
+                            <p class="f01">使用</p>
+                        </div> 
+                    </div>
+                </div>                    
+                <!--去使用-->
+                <div class="rel cash-coupon-all">
+                    <div class="shadow"></div>
+                    <div class="d-flex cell">
+                        <div class="left-line" style="background:#fd781f"></div>
+                        <div class="flex bg-f content">
+                            <div class="f14 f01">￥<i class="bold" style="font-size:30px;">20</i>&nbsp;满100用20</div>
+                            <div class="f12 c666 f02" style="margin-top:.6rem">                                
+                                <svg class="icon-coupon-shop" aria-hidden="true">
+                                    <use xlink:href="../css/icon.svg#coupon-shop"></use>
+                                </svg>音乐西餐厅
+                            </div>
+                            <div class="f10 c999 date">2018.07.15-2018.08.15</div>
+                        </div>
+                        <img class="pic02" src="../img/tc-pic21.png">
+                        <div class="right">
+                            <img class="pic01" src="../img/tc-pic19.png">
+                            <p class="f01">已选择</p>
+                        </div> 
+                    </div>
+                </div> 
+            </div>  
+        </div>
+    </div>
+
+    <!--优惠券与同城卡弹框-->
+    <div class="fix-tl-100 coupon-layer-js none">
+        <div class="dialog-black-mask"></div>
+        <div class="fix-bl bg-f">
+            <ul class="d-flex index-type-select-nav bottom-line" style="border-top:1px solid #f2f2f2;">
+                <li class="active flex">代金券</li>
+                <li class="flex">同城卡</li>
+            </ul>
+            <div class="bg-f receive-coupons-cell clamp1 ta-c bottom-line f14 bold" style="line-height:4.9rem">代金券</div>
+            <div class="bg-f BusinessList01" style="padding:1.6rem 1.2rem .8rem;height: 25.5rem;box-sizing: border-box;overflow: auto">
+                <!--代金券-->
+                <div>               
+                    <!--立即领取-->
+                    <div class="rel cash-coupon-all">
+                        <div class="shadow"></div>
+                        <div class="d-flex cell">
+                            <div class="left-line"></div>
+                            <div class="flex bg-f content">
+                                <div class="f14 f01">￥<i class="bold" style="font-size:30px;">20</i>&nbsp;满100用20</div>
+                                <div class="f12 c666 f02" style="margin-top:.6rem">                                
+                                    <svg class="icon-coupon-shop" aria-hidden="true">
+                                        <use xlink:href="../css/icon.svg#coupon-shop"></use>
+                                    </svg>音乐西餐厅
+                                </div>
+                                <div class="f10 c999 date">2018.07.15-2018.08.15</div>
+                            </div>
+                            <img class="pic02" src="../img/tc-pic21.png">
+                            <div class="right">
+                                <img class="pic01" src="../img/tc-pic18.png">
+                                <p class="f01">立即领取</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <!--去使用-->
+                    <div class="rel cash-coupon-all">
+                        <div class="shadow"></div>
+                        <div class="d-flex cell">
+                            <div class="left-line" style="background:#ccc"></div>
+                            <div class="flex bg-f content">
+                                <div class="f14 f01">￥<i class="bold" style="font-size:30px;">20</i>&nbsp;满100用20</div>
+                                <div class="f12 c666 f02" style="margin-top:.6rem">                                
+                                    <svg class="icon-coupon-shop" aria-hidden="true">
+                                        <use xlink:href="../css/icon.svg#coupon-shop"></use>
+                                    </svg>音乐西餐厅
+                                </div>
+                                <div class="f10 c999 date">2018.07.15-2018.08.15</div>
+                            </div>
+                            <img class="pic02" src="../img/tc-pic21.png">
+                            <div class="right">
+                                <img class="pic01" src="../img/tc-pic20.png">
+                                <p class="f01">已领取</p>
+                            </div> 
+                        </div>
+                    </div> 
+                </div>
+
+                <!--同城卡打折-->
+                <div class="none">
+                    <!--去开通-->
+                    <div class="rel cash-coupon-all card">
+                        <div class="shadow"></div>
+                        <div class="d-flex cell">
+                            <div class="flex bg-f content">
+                                <div class="f16 f01"><i class="bold" style="font-size:30px;">5</i>折</div>
+                                <div class="f14 c333 f02 clamp1 bold">凤台优质农家干果特产打折卡</div>
+                                <div class="f12 c999 date calendar-js">查看折扣可用时间<svg class="icon-right-arrow" aria-hidden="true"><use xlink:href="../css/icon.svg#left-arrow"></use></svg>  </div>
+                            </div>
+                            <img class="pic02" src="../img/tc-pic21.png">
+                            <div class="right">
+                                <img class="pic01" src="../img/tc-pic18.png">
+                                <p class="f01">立即领取</p>
+                            </div> 
+                        </div>
+                    </div>
+                    <!--已开通-->
+                    <div class="rel cash-coupon-all card">
+                        <div class="shadow"></div>
+                        <div class="d-flex cell">
+                            <div class="flex bg-f content">
+                                <div class="f16 f01"><i class="bold" style="font-size:30px;">5</i>折</div>
+                                <div class="f14 c333 f02 clamp1 bold">凤台优质农家干果特产打折卡</div>
+                                <div class="f12 c999 date calendar-js">查看折扣可用时间<svg class="icon-right-arrow" aria-hidden="true"><use xlink:href="../css/icon.svg#left-arrow"></use></svg>  </div>
+                            </div>
+                            <img class="pic02" src="../img/tc-pic21.png">
+                            <div class="right">
+                                <img class="pic01" src="../img/tc-pic34.png">
+                                <p class="f01">去开通</p>
+                            </div> 
+                        </div>
+                    </div> 
+                </div>
+
+            </div>  
+
+        </div>
+    </div>
+
+    <!--月份弹框-->
+    <div class="fix-tl-100 monthly-calendar-layer-js none">
+        <div class="dialog-black-mask"></div>
+        <div class="fix-bl bg-f">
+            <div class="bg-f receive-coupons-cell clamp1 ta-c bottom-line f14 bold" style="line-height:4.9rem">凤台优质农家干果特产打折卡</div>
+            <ul class="monthly-calendar">
+                <li><span>1</span></li>
+                <li><span>2</span></li>
+                <li><span>3</span></li>
+                <li><span>4</span></li>
+                <li><span>5</span></li>
+                <li><span>6</span></li>
+                <li><span>7</span></li>
+                <li><span>8</span></li>
+                <li><span>9</span></li>
+                <li><span>10</span></li>
+                <li><span>11</span></li>
+                <li><span>12</span></li>
+                <li><span>13</span></li>
+                <li><span>14</span></li>
+                <li><span>15</span></li>
+                <li class="active"><span>16</span></li>
+                <li class="active"><span>17</span></li>
+                <li class="active"><span>18</span></li>
+                <li class="active"><span>19</span></li>
+                <li class="active"><span>20</span></li>
+                <li class="active"><span>21</span></li>
+                <li class="active"><span>22</span></li>
+                <li class="active"><span>23</span></li>
+                <li><span>24</span></li>
+                <li><span>25</span></li>
+                <li><span>26</span></li>
+                <li><span>27</span></li>
+                <li><span>28</span></li>
+                <li><span>29</span></li>
+                <li><span>30</span></li>
+                <li><span>31</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--星期弹框-->
+    <div class="fix-tl-100 week-calendar-layer-js none">
+        <div class="dialog-black-mask"></div>
+        <div class="fix-bl bg-f">
+            <div class="bg-f receive-coupons-cell clamp1 ta-c bottom-line f14 bold" style="line-height:4.9rem">凤台干果特产优惠卡</div>
+            <ul class="week-calendar">
+                <li class="active">星期一</li>
+                <li>星期二</li>
+                <li>星期三</li>
+                <li>星期四</li>
+                <li>星期五</li>
+                <li>星期六</li>
+                <li>星期日</li>
+            </ul>
+        </div>
+    </div>
+
+    <!--你未开通同城卡-->
+    <div class="fix-tl-100 open-card-js none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle ta-c" style="width:80%;max-width:300rpx;background:#fff;border-radius:8px;background:#fff;">
+            <div style="padding:30px 0 35px;">
+                <p class="f16 bold">你未开通同城卡</p>
+                <p class="f14 c666" style="margin-top:2.3rem;">领取同城卡折扣须先开通同城卡</p>
+            </div>
+            <div class="d-flex d-flex-center ta-c top-line" style="line-height:4.4rem;height:4.4rem;">
+                <div class="flex c999 f14">取消</div>
+                <div class="flex f14 left-line">去开通</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+
+    	$(document).ready(function(){
+			$('.index-type-select-nav li').click(function () {
+		        var a= $(this);
+		        var b= a.index();
+		        a.addClass('active').siblings().removeClass('active');
+                $('.BusinessList01').children('div').hide().eq(b).show();	 
+		    })
+
+            $('.card-use-js').click(function(){
+                $('.card-use-layer-js').show();	
+            })
+
+            $('.coupon-use-js').click(function(){
+                $('.coupon-use-layer-js').show();	
+            })
+
+            $('.BusinessList01 .cash-coupon-all .right').on('click',function(){
+                $(this).siblings('.left-line').css('background','#ccc');
+                $(this).children('img').attr("src","../img/tc-pic20.png");
+                $(this).children('p').html('已领取');
+            })
+
+            $('.card-use-layer-js .cash-coupon-all.card .right').on('click',function(){
+                $(this).children('img').attr("src","../img/tc-pic19.png");
+                $(this).children('p').html('已选择');
+            })
+
+            $('.coupon-use-layer-js .cash-coupon-all .right').on('click',function(){
+                $(this).children('img').attr("src","../img/tc-pic19.png");
+                $(this).children('p').html('已选择');
+            })
+
+            $('.money-input-cell input.money').on('focus',function(){
+                $('.keyboard-layer-js').fadeIn(200);
+                document.activeElement.blur(); 
+                // if($(this).val()!==""){
+                //     $('.keyboard-layer .pay-bt').addClass('active');
+                // }else{
+                //     $('.keyboard-layer .pay-bt').removeClass('active');
+                // }
+            })
+
+            $('.keyboard-number li.close,.receive-coupons-js').on('click',function(){
+                $('.keyboard-layer-js').fadeOut(200);
+            })
+
+            $('.receive-coupons-js').on('click',function(){
+                $('.coupon-layer-js').fadeIn(200);
+            })
+
+            $('.calendar-js').on('click',function(){
+                $('.monthly-calendar-layer-js').fadeIn(200);
+                $('.coupon-layer-js').fadeOut(200);
+            })
+
+            $('.monthly-calendar li').on('click',function(){
+                $(this).toggleClass('active');
+            })
+
+            $('.week-calendar li').on('click',function(){
+                $(this).toggleClass('active');
+            })         
+            
+            $('.dialog-black-mask').on('click',function(){
+                $('.coupon-layer-js,.monthly-calendar-layer-js,.week-calendar-layer-js,.card-use-layer-js,.coupon-use-layer-js,.open-card-js').fadeOut(200);
+            })  
+
+            $('.dialog-black-mask').bind("touchmove",function(e){
+                e.preventDefault();
+            });
+
+
+             /*本地头条*/
+            var swiper = new Swiper('.local-life-swiper', {
+                paginationClickable: true,
+                direction: 'vertical',
+                autoplay:3000,
+                centeredSlides: true,
+                autoplayDisableOnInteraction: false
+            });
+
+            $(document).ready(function(){
+                $('.local-life-swiper .swiper-slide').css(
+                    {'line-height':'4.9rem'})
+            })	
+
+            /*键盘*/
+           
+            $(document).on('click','.keyboard-layer-js .cancel',function(){var money=$('.money').val();if(!money || 0){$('.money').val('')}else{$('.money').val(money.substr(0,money.length - 1))}})
+            $(document).on('click','.keyboard-number .number',function(){var num =$(this).data('num');console.log(num);var money=$('.money').val();if(!money || 0){$('.money').val(num)}else{$('.money').val(money+`${num}`)} $('.keyboard-layer .pay-bt').addClass('active');})
+
+		})
+    </script>       
+
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>名片</title>
+    <link rel="stylesheet" type="text/css" href="http://j.vzan.cc/fcontent/styles/base.css?v=1608040730">
+    <link rel="stylesheet" type="text/css" href="http://j.vzan.cc/content/??20170306/css/new.css,20170306/css/weui/weui-min.css,20170306/css/persional.css,20170306/css/index-other.css,20170306/css/otherPersional.css,20170306/css/myNote.css,20170306/css/persional.css?v=0.07">
+    <link rel="stylesheet" type="text/css" href="http://j.vzan.cc/content/20170408/??css/post-min.css,css/choice-min.css?v=0.0299">
+</head> 
+<body>
+    <div class="other_nav" style="position: relative;">
+        <div class="o_nav">
+            <div class="o_nav_l">
+                <a href="javascript:history.go(-1)"><i></i></a>
+            </div>
+            <div class="o_center">名片审核</div>
+            <div class="o_nav_l"></div>
+        </div>
+    </div>
+
+    <div class="header" style="position: relative;">
+        <div class="h_ul" style="padding: 0">
+            <ul>
+                <li class="active">
+                    <a><span class="c_title">待审核</span></a>
+                </li>
+                <li>
+                    <a><span class="c_title">已通过</span></a>
+                </li>
+                <li>
+                    <a><span class="c_title">不通过</span></a>
+                </li> 
+                <li>
+                    <a><span class="c_title">已过期</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+
+        <div style="margin-top:10px;">
+            <!--这里放名片-->
+            <div></div>  
+
+            <!--上传图片-->
+            <ul class="pic-ul">
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>   
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>                      
+            </ul>
+
+            <!--按钮-->
+            <div class="examine-bt">
+                <a class="fr active">通过</a>
+                <a class="fr">不通过</a>
+            </div>
+        </div>
+        
+        <div style="margin-top:10px;">
+            <!--这里放名片-->
+            <div></div>  
+
+            <!--上传图片-->
+            <ul class="pic-ul">
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>   
+                <li>
+                    <img src="img/0.jpg">
+                    <i class="close"></i>
+                </li>                      
+            </ul>
+
+            <!--按钮-->
+            <div class="examine-bt">
+                <a class="fr active">通过</a>
+                <a class="fr">不通过</a>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        .h_ul ul li a:after{display: none;}
+        .pic-ul{overflow: hidden;background: #fff;padding: 0 12px 12px;}
+        .pic-ul li{height: 60px;width: 60px;border-radius: 4px;overflow: hidden;float: left;margin:12px 12px 0 0;position: relative;}
+        .pic-ul li img{display: block;width: 100%;height: 100%;}
+        .pic-ul li .close{width: 16px;height: 16px;display:block;position: absolute;top: 0;right: 0;background: url(img/ranking32.png);background-size: 16px;}
+        .examine-bt{overflow:hidden;background: #fff;padding: 0 1.2rem 1.2rem;}
+        .examine-bt a{height:2.4rem;width: 6.4rem;text-align: center;line-height: 2.4rem;border:1px solid #ccc;font-size: 1.4rem;border-radius: 2px;border-radius: 2px;color: #999;margin-left: 12px;}
+        .examine-bt a.active{border:1px solid #17b5ee;color:#17b5ee}
+    </style>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/swiper.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.swipermask').click(function(){
+                $('.namelist-swiper-js').hide();
+            })
+        })  
+    </script>    
+
+</body>
+</html>

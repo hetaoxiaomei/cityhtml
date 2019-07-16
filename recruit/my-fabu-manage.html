@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>我的发布</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        .new-recommend-list {white-space: nowrap;height:4.4rem;background: #fff;line-height: 4.4rem;font-size: 1.6rem;margin-bottom: 1rem;}
+        .new-recommend-item{position: relative}
+        .new-recommend-item.active {color: #ff5a00;font-weight: bold;}
+        .new-recommend-item:before{content: "";height:.4rem;width: 2.8rem;background:#ff5a00;border-radius: 2px;
+    position: absolute;bottom: -1.3rem;left: 50%;transform: translate(-50%,0);-webkit-transform: translate(-50%,0);display: block;display: none;}
+        .new-recommend-item.active {color: #ff5a00;font-weight: bold;}
+        .new-recommend-item:before {bottom:0;}
+        .new-recommend-item.active::before {display: block;}
+        .function-bt{padding:1rem 0;}
+        .function-bt .bt{width: 5rem;height:2.2rem;text-align: center;line-height:2.2rem;position:relative;color: #FF5A00;font-size: 1.2rem;
+           box-sizing: border-box;margin-right: 1rem;z-index:1;}
+        .function-bt .bt:before{content: " ";width: 200%;height: 200%;position: absolute;top: 0;left: 0;
+        border: 1px solid #ff5a00; -webkit-transform: scale(0.5);transform: scale(0.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;
+        box-sizing: border-box;border-radius:8px;} 
+        .function-bt .bt:last-child{margin-right:0;}
+        .function-bt .bt.report{color: #F90606;}
+        .function-bt .bt.report:before{border: 1px solid #F90606;}
+        .function-bt .little-dialog{width: 5.8rem;text-align: center;top: 1rem;right:-6rem;padding: 0 0 1rem;
+            box-shadow: 0 0 10px rgba(0,0,0,.05);z-index: 10;display:none}
+    </style>
+</head>
+<body>
+    <div class="fix-tl">
+        <div class="basewrap d-flex new-recommend-list ta-c">
+            <a class="flex new-recommend-item active" style="margin-right:0">分类信息</a>
+            <a class="flex new-recommend-item" style="margin-right:0">头条爆料</a>
+        </div>
+    </div>
+
+    <div class="basewrap" style="padding:5.4rem 0 0;">
+        <div style="padding: 0 1.5rem;background: #fff;margin: 0 0 1rem;">
+            <div class="f15" style="padding:1.5rem 0 1rem;">我要拼车啊啊啊</div>
+            <div class="d-flex c999 bottom-line" style="padding: 0 0 1.5rem;">
+                <div class="f14 flex">状态：过期</div>
+                <div class="f12">发布：05-08 17:30</div>
+            </div>
+                    
+            <div class="d-flex d-flex-center function-bt">
+                <div class="f14 c333 rel more">更多
+                    <div class="abs bg-f little-dialog">
+                        <p style="margin:1rem 0 0;">删除</p>
+                        <p style="margin:1rem 0 0;">投诉</p>
+                    </div>
+                </div>
+                <div class="flex"></div>
+                <div class="bt">删除</div>
+                <div class="bt">刷新</div>
+                <div class="bt">置顶</div>
+                <div class="bt">续费</div>
+            </div>
+        </div>
+        <div style="padding: 0 1.5rem;background: #fff;margin: 0 0 1rem;">
+            <div class="f15" style="padding:1.5rem 0 1rem;">我要拼车啊啊啊</div>
+            <div class="d-flex c999 bottom-line" style="padding: 0 0 1.5rem;">
+                <div class="f14 flex">状态：过期</div>
+                <div class="f12">发布：05-08 17:30</div>
+            </div>
+                    
+            <div class="d-flex d-flex-center function-bt">
+                <div class="flex"></div>
+                <div class="bt report">投诉</div>
+                <div class="bt">删除</div>
+                <div class="bt">刷新</div>
+                <div class="bt">置顶</div>
+            </div>
+        </div>        
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.function-bt .more').on('click',function(){
+            $(this).children('.little-dialog').show();
+        }) 
+
+        $('.little-dialog p').on('click',function(){
+            $(this).parent().hide();
+            event.stopPropagation();
+            event.preventDefault();
+        }) 
+    </script>
+</body>
+</html>

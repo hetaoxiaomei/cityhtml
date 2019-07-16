@@ -1,0 +1,496 @@
+
+.icon-ziti,.icon-peisong,.icon-arrow,.gwc-shop .icon-shop,.city-distribution .radio.active,
+.address-cell .icon-location,.city-distribution .arrow{
+    background-image: url(../img/tc-pic04.png);
+    background-size: 50rem;
+}
+
+.express-type{
+    padding: 1.5rem 0;
+    overflow: hidden;
+}
+
+.express-type li{padding: 0 .5rem 0 1rem;width: 50%;box-sizing: border-box;float: left;text-align: center}
+
+.express-type li:nth-child(2){padding: 0 1rem 0 .5rem}
+
+.express-type li .bt{
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    color: #999;
+    font-size:16px;
+    line-height: 60px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.express-type li.active .icon-ziti{background-position: -37.6rem -2.3rem;}
+
+.express-type li.active .bt{color:#ff5a00;font-weight: bold;background: #FFF5F0}
+
+.express-type li.active .bt::before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ff5a00;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+}    
+
+
+.express-type li.active .icon-peisong{background-position: -45.3rem -2.3rem;}
+
+.icon-ziti{
+    width: 3.1rem;
+    height: 3.1rem;
+    display: inline-block;
+    margin-right: .6rem;
+    background-position: -34.3rem -2.3rem;
+    vertical-align: -.8rem;
+}
+
+.icon-peisong{
+    width: 4.2rem;
+    height: 3.1rem;
+    display: inline-block;
+    margin-right: .6rem;
+    background-position: -40.9rem -2.3rem;
+    vertical-align: -.8rem;
+}
+
+.icon-arrow{
+    margin-left: 1rem;
+    width: .7rem;
+    height: 1.2rem;
+    display: block;
+    background-position: -22rem -9.2rem;
+}
+
+.address-cell{background:#fff;padding:1rem 1.5rem 1.5rem;}
+
+.address-cell .f01{font-size:1.8rem;line-height: 1.6;font-weight: bold}
+
+.address-cell .f02{font-size: 1.4rem;overflow: hidden;margin-top: .8rem}
+
+.gwc-shop-all{
+    background: #fff;
+    margin-top:1rem;
+    padding: 0 1rem
+}
+
+.gwc-shop {
+    padding: 1.5rem 0;
+    font-size: 1.4rem;
+    position: relative;
+    color: #999;
+    background: #fff;
+}
+
+.gwc-shop a{color: #999;}
+
+.gwc-shop .icon-shop{
+    width: 1.7rem;
+    height: 1.7rem;
+    display: inline-block;
+    margin-right: 1rem;
+    vertical-align: -.4rem;
+    background-position: -40.2rem 0;
+}
+
+
+.gwc-commodity {
+    background: #fff;
+    padding:1rem 1.5rem;
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.gwc-commodity .head{
+    height: 7.6rem;
+    width: 7.6rem;
+    margin-right: 1rem;
+}
+
+.gwc-commodity .price{
+    font-size:1.4rem;color:#FB1717;
+    position: absolute;
+    width: 100%;
+
+}
+
+.gwc-commodity .title{font-weight: bold;line-height: 1.6}
+
+.gwc-commodity .number{line-height:7.6rem;margin-left: 1.5rem;}
+
+.order-cell select{font-size: 1.6rem;}
+
+select{color: #333;direction: rtl;}
+
+.gwc-commodity .price{
+    position: absolute;
+    bottom: .5rem;
+    left: 0;
+}
+
+.order-cell{
+    background: #fff;
+    padding: 2rem 0 1rem;
+    font-size: 1.6rem;
+    position: relative;}
+
+.order-cell .flex i{font-weight: normal}  
+
+.order-cell-all{
+    margin:1rem 0 0;
+    padding: 0 1.5rem 1rem;
+    background: #fff;
+}
+
+.order-nav{
+    height: 4.9rem;
+    background: #fff;
+    font-size: 1.6rem;
+}
+
+.order-nav .left{
+    padding:0 0 0 10.6%;
+    line-height: 4.9rem;
+    color: #FB1717;
+    width: 58%;
+    box-sizing: border-box
+}
+
+.order-nav .right{
+    width:42%;
+    background: #ff5a00;
+    color: #fff;
+    text-align: center;
+    line-height: 4.9rem;
+    font-weight: bold
+}
+
+.service-provider{padding:0 1rem;margin: -10px 0 0;}
+
+.service-provider .pic{width: 100%;display: block}
+
+.service-provider .bt{
+    height:25px;
+    width:70px;
+    font-size: 1.4rem;
+    position: absolute;
+    top:30%;
+    right:40px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 13px;
+    font-weight: bold;
+}
+
+.service-provider .f01{
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 58%;
+    left: 0;
+    width: 100%;
+}
+
+/*配送方式*/
+.city-distribution-dialiog .title{
+    height:50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.city-distribution .d-flex{
+    padding:2rem 0 1rem;
+    line-height: 1;
+}
+
+.city-distribution{
+    padding:1.5rem 0 1rem;
+}
+
+.city-distribution .f02{
+    margin-right:25%;
+}
+
+.city-distribution .arrow{
+    width: 1.5rem;
+    height: .8rem;
+    display: block;
+    background-position: -22.9rem -9.2rem;
+}
+
+.city-distribution .price a{color: #F61D1D;font-weight: normal;font-size: 1.4rem;}
+
+.city-distribution .radio{
+    width:1.9rem;
+    height:1.9rem;
+    border-radius:50%;
+    border:1px solid #333;
+    box-sizing: border-box
+}
+
+.city-distribution .radio.active{
+    border:none;
+    background-position: -42.1rem 0;
+}
+
+.city-distribution .gray .f02{
+    color: #999;
+}
+
+.city-distribution .d-flex.gray .price{
+    color: #999;
+} 
+
+.city-distribution .gray .radio{
+    border:1px solid #999;
+}
+
+.address-cell .icon-location{
+    width: 4.3rem;
+    height: 4.3rem;
+    display: block;
+    margin-right: 1rem;
+    background-position:-9.7rem -24.3rem;
+}
+
+
+/*配送设置*/
+.order-cell .express{
+    height:3.4rem;
+    width:10rem;
+    padding:0 1.5rem;
+    margin: 0 1rem;
+    position: relative;
+}
+
+.order-cell .express:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #999;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+}
+
+.order-cell .express input{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.distribution-scope{
+    height:86px;
+    background:#f0f0f0;
+}
+
+.distribution-scope textarea{
+    padding: 10px;
+    width:100%;
+    display: block;
+    background: transparent;
+    height:100%;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+}
+
+#order-nav{
+    height:50px;
+    padding:0
+}
+
+#order-nav .option{
+    margin-right:30px;
+    position: relative;
+    height: 100%;
+    line-height: 50px;
+    color: #999;
+    font-size: 16px;
+}
+
+#order-nav .option .line{
+    height: 6px;
+    width: 50px;
+    background:#FF5A00;
+    border-radius: 3px;
+    display: block;
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: none
+}
+
+#order-nav .option.active{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    font-weight: bold
+}
+
+#order-nav .option.active .line{display:block;}
+
+.address-tan-all{
+    background: #fff;
+    /* position: fixed;;
+    top:60px;
+    left: 0; */
+    /* height: 160px; */
+    box-sizing: border-box;
+    /* padding: 0 12px; */
+}
+
+.address-tan{
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin: 0 0 1rem;
+    padding: 1rem 0;
+}
+
+.address-tan-all .address-tan.bottom-line:last-child:after{
+    display: none;
+}
+
+.address-tan .icon-address-detail{
+    width:1.2rem;
+    height:1.4rem;
+    display:block;
+    background: url(../img/tc-pic04.png);
+    background-size: 50rem;
+    background-position: -12.4rem -11.1rem;
+    margin:.2rem .5rem 0 0;
+}
+
+.address-tan .f01{font-size: 1.4rem;}
+
+
+/*收货地址*/
+.back-bt{
+    height:44px;
+    line-height:44px;
+    width:300px;
+    background:#FF5A00;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    margin:70px auto 0;
+    border-radius: 22px;
+    display: block;
+    font-weight: bold;
+}
+input.write{font-size:16px;color:#333;display: block;width: 100%;}
+.must{color:#FB1717}
+.icon-location{
+    width: 1.2rem;
+    height: 1.4rem;
+    display: inline-block; 
+    background-position: -6.3rem -13.8rem;
+    margin-right:1rem;
+    vertical-align: -.2rem;
+}
+.icon-location{
+    background-image: url(../img/tc-pic04.png);
+    background-size: 50rem;
+}
+
+
+.weui-cells_form .weui-cell__ft{font-size: 0;}
+.weui-cell__ft {
+text-align: right;
+color: #808080;
+}
+.weui-cells_form input, .weui-cells_form textarea, .weui-cells_form label[for] {
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.weui-switch:checked, .weui-switch-cp__input:checked ~ .weui-switch-cp__box {
+border-color: #ff5a00;
+background-color: #ff5a00;
+}
+.weui-switch-cp__box {
+display: block;
+}
+.weui-switch, .weui-switch-cp__box {
+position: relative;
+width: 52px;
+height: 32px;
+border: 1px solid #dfdfdf;
+outline: 0;
+border-radius: 16px;
+box-sizing: border-box;
+background-color: #fdfdfd;
+-webkit-transition: background-color 0.1s, border 0.1s;
+transition: background-color 0.1s, border 0.1s;
+}
+.weui-switch:checked:before, .weui-switch-cp__input:checked, .weui-switch-cp__box:before {
+-webkit-transform: scale(0);
+transform: scale(0);
+}
+
+.weui-switch:checked:after, .weui-switch-cp__input:checked ~ .weui-switch-cp__box:after {
+-webkit-transform: translateX(20px);
+transform: translateX(20px);
+}
+
+.weui-switch:after, .weui-switch-cp__box:after {
+content: " ";
+position: absolute;
+top: 0;
+left: 0;
+width: 30px;
+height: 30px;
+border-radius: 15px;
+background-color: #FFFFFF;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+-webkit-transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35), -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+}
+
+.weui-switch:before, .weui-switch-cp__box:before {
+content: " ";
+position: absolute;
+top: 0;
+left: 0;
+width: 50px;
+height: 30px;
+border-radius: 15px;
+background-color: #FDFDFD;
+-webkit-transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1), -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+.weui-switch {
+-webkit-appearance: none;
+appearance: none;
+}
+
+.weui-switch-cp__input {
+position: absolute;
+left: -9999px;
+}
+

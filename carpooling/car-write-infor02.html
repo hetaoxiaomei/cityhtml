@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>顺风车</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/car-release.css">
+</head>
+<body>
+    <div class="basewrap" style="padding:0 0 10rem;">
+        <!--目的地-->
+        <div class="free-ride mr-1 bz" style="padding:1.5rem 1.5rem 0">
+            <div class="select-nav">
+                <a class="bt active">车找人</a>
+                <a class="bt">人找车</a>
+            </div>
+            <div class="write bottom-line">
+                <input class="bz" placeholder="请输入出发地">
+                <i class="dot" style="background:#3be1ff"></i>
+            </div>
+            <div class="d-flex d-flex-center write bottom-line">
+                <input class="bz" placeholder="请输入途径点，逗号隔开">
+                <img src="../img/tc-pic86.png" style="display: block;width: 18px;">
+            </div>            
+            <div class="write bottom-line">
+                <input class="bz" placeholder="请输入目的地">
+                <i class="dot" style="background: #ff5a00;"></i>
+            </div>
+        </div>
+
+        <!--单次拼-->
+        <div class="free-ride mr-1 bz" style="padding:0 1.5rem">
+            <div class="d-flex d-flex-center write bottom-line">
+                <div class="f15 bold">拼车类型：</div>
+                <div class="bold circle-select">
+                    <a href="car-write-infor.html" class="fl" style="margin-left:30px;">
+                        <i class="radio"></i>单次拼
+                    </a>
+                    <a href="car-write-infor02.html" class="fl" style="margin-left:30px;">
+                        <i class="radio active"></i>天天拼
+                    </a>
+                </div>
+            </div>
+            <div class="d-flex d-flex-center write bottom-line">
+                <div class="f15 bold">出发时间</div>
+                <i class="icon-require"></i>
+                <div class="ta-r flex" style="height:3rem;">
+                    <input class="bz ta-r" placeholder="点击选择">
+                </div>
+                <div class="arrow"></div>
+            </div>      
+            <div class="d-flex d-flex-center write bottom-line">
+                <div class="f15 bold">截止时间</div>
+                <i class="icon-require"></i>
+                <div class="ta-r flex" style="height:3rem;">
+                    <input class="bz ta-r" placeholder="点击选择">
+                </div>
+                <div class="arrow"></div>
+            </div>                   
+            <div class="d-flex d-flex-center write bottom-line">
+                <div class="f15 bold">空<i style="color:transparent;">的的</i>位</div>
+                <i class="icon-require"></i>
+                <div class="ta-r flex" style="height:3rem;">
+                    <input class="bz ta-r" type="tel" placeholder="点击输入">
+                </div>
+                <div class="arrow" style="background:transparent"></div>
+            </div>
+            <div class="d-flex d-flex-center write bottom-line">
+                <div class="f15 bold">联系号码</div>
+                <i class="icon-require"></i>
+                <div class="ta-r flex" style="height:3rem;">
+                    <input class="bz ta-r" type="tel" placeholder="点击输入">
+                </div>
+                <div class="arrow" style="background:transparent"></div>
+            </div>            
+            <div class="d-flex d-flex-center write bottom-line">
+                <div class="f15 bold">车<i style="color:transparent;">的的</i>型</div>
+                <div class="ta-r flex" style="height:3rem;">
+                    <input class="bz ta-r" type="tel" placeholder="选填">
+                </div>
+                <div class="arrow" style="background:transparent"></div>
+            </div>
+            <div class="d-flex d-flex-center write bottom-line">
+                <div class="f15 bold ta-r">车牌号</div>
+                <div class="ta-r flex" style="height:3rem;">
+                    <input class="bz ta-r" type="tel" placeholder="选填">
+                </div>
+                <div class="arrow" style="background:transparent"></div>
+            </div>                
+            <div class="d-flex d-flex-center write bottom-line">
+                <div class="f15 bold">预估车费</div>
+                <div class="ta-r flex" style="height:3rem;">
+                    <input class="bz ta-r" type="tel" placeholder="x元/位">
+                </div>
+                <div class="arrow" style="background:transparent"></div>
+            </div>                    
+        </div>
+
+        <!--备注-->
+        <div class="write-infor-cells bg-f mr-1" style="padding:0 1.5rem;margin: 1.5rem 1.5rem 0;border-radius: 4px;">
+            <p style="font-weight:bold;font-size:1.6rem;padding: 1.5rem 0 .5rem;">备注</p>
+            <div class="shop-miaoshu">
+                <textarea placeholder="选填项，对其它事宜做简要说明，例如时间，行李"></textarea>
+            </div>
+        </div> 
+        
+        <div class="f10" style="padding:1rem 3rem;line-height:1.5">
+            <p>规则说明：</p>
+            <p>单次拼，当前日期时间>出发日期时间，则变为已发车且排序下沉；</p>
+            <p>天天拼，当前日期时间>截止日期时间，则变为已结束且排序下沉；</p>
+            <p>已发车或已结束，置顶权益将会失效；</p>
+        </div>
+    </div>
+
+    <!--底部-->
+    <div class="fix-bl">
+        <div class="d-flex d-flex-center bg-f basewrap bz" style="padding:1.2rem 1.5rem;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
+            <div class="f15 bold flex">信息置顶</div>
+            <div class="weui-cell__ft">
+                <input class="weui-switch" type="checkbox" />
+            </div>
+        </div>
+        <div class="basewrap d-flex release-nav bz basewrap" style="box-shadow:none;padding-left:0;">
+            <div class="bt flex f-16rem">发布</div>
+        </div>
+    </div>
+    
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.spread-bt-js').on('click',function(){
+            $(this).hide();
+            $('.spread-js').show();
+        })
+    </script>
+</body>
+</html>

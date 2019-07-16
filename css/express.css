@@ -1,0 +1,45 @@
+
+
+        body{background: #fff;}
+        .return-goods-pic{margin:4rem auto 0;display: block;}
+        .return-goods-f{color:#333;margin: 20px 0 0;text-align: center;font-weight: bold}
+        .shouhou-zhuangtai-cell {position: relative;padding: 12px 0 47px;margin: 45px 40px 0;}
+        .shouhou-zhuangtai-cell li .dot{position: absolute;width: 2.1rem;height: 2.1rem;
+            transform: translate(-50%,-50%);display: block;box-sizing: border-box;
+            border: 2px solid #f0f0f0;border-radius: 50%;background-color: #fff;
+        }
+        .shouhou-zhuangtai-cell .line.active .dot{border: none;background-position:-44.2rem 0;
+            background-image: url(../img/tc-pic04.png);background-size: 50rem;
+        }
+        .shouhou-zhuangtai-cell .line .word {position: absolute;top: 0;left: 0;font-size: 16px;
+            transform: translate(-50%,0%);-webkit-transform: translate(-50%,0);margin-top:3rem;color: #999;text-align: center;width: 60px;
+        }
+        .shouhou-zhuangtai-cell .line.active .word {font-size:18px;color: #333;font-weight: bold;}
+        .shouhou-zhuangtai-cell .line {border-bottom: 2px solid #f0f0f0;position: relative;}
+        .shouhou-zhuangtai-cell .line.active {border-bottom: 1px solid #ff5a00;}
+        .shouhou-zhuangtai-cell .line:last-child {border: none;position: absolute;right: 0;display: block;}
+        .back-bt{background: #ff5a00;color: #fff;font-size: 18px;font-weight: bold;border-radius: 20px;height: 40px;text-align: center;
+        line-height: 40px;margin: 90px 35px 0;display: block}
+
+        .order-nav{
+            background: #ff5a00;
+            color: #fff;
+            text-align: center;
+            line-height: 4.9rem;
+            font-weight: bold;
+            font-size: 16px;
+            display: block
+        }
+
+        .cancel-order-bt{
+            height: 30px;
+            width: 160px;
+            display: block;
+            border: 1px solid #ccc;
+            border-radius:15px;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            line-height: 30px;
+            margin: 80px auto 0;
+        }

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>发帖</title>
+    <link rel="stylesheet" type="text/css" href="http://j.vzan.cc/fcontent/styles/base.css?v=1608040730">
+    <link rel="stylesheet" type="text/css" href="css/fatie.css">
+    <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/css/qq-face.css?v=051602">
+</head> 
+<body>
+    <div class="basewrap">
+        <div class="d-flex d-flex-center top-nav bottom-line">
+            <a style="width: 60px;">
+               <i class="arrow"></i>
+            </a>
+            <div class="f-16rem c666 flex ta-c">发话题</div>
+            <a class="fabiao-bt">发表</a>
+        </div>
+
+        <div class="d-flex d-flex-center" style="color:#b37400;background:#ffd68b;padding: 8px 10px;">
+            <p class="flex">发布后可能需进行数分钟的审核流程，请勿重复发布</p>
+            <div class="icon-close" style="margin: 0 0 0 10px;"></div>
+        </div>        
+
+        <div class="bg-f" style="padding: 0 15px">
+            <div class="biaoti-input bottom-line"><input class="bz" placeholder="标题，可不填..."></input></div>
+            <div class="biaoti-textarea">
+                <textarea class="bz" placeholder="这一刻的想法..."></textarea>
+                <div class="read-pay-show">你已开启付费阅读。该段内容与该贴的图片，语音，视频会被隐藏，需要付费才能阅读。<span class="close"></span></div>
+            </div>
+        </div>
+
+        <!--联系电话-->
+        <div style="background: #fff;padding: 0 15px;">
+            <div class="d-flex d-flex-center bottom-line contact-tel">
+                <div class="icon"></div>
+                <div class="flex">
+                    <input type="tel" placeholder="请输入手机号或座机，将在首页展示（非必填）"></input>
+                </div>
+            </div>
+        </div>
+
+        <div class="original-article bg-f">尊重原创，人人有责<i class="close"></i></div>
+        <div class="d-flex d-flex-center bg-f bz" style="padding: 10px 15px;">
+            <div class="flex clamp1" style="color: #5a7cab;"><i class="icon-location"></i>广州市，天河区，林和中路林和中路林和中路</div><div class="draft-bt">存稿箱</div>
+            <div class="draft-bt">草稿箱</div>
+            <div class="icon-expression"></div>
+        </div>
+
+        <!--放表情-->
+        <div></div>
+
+        <ul class="function-bt">
+            <li>
+                <span class="icon-pic"></span>
+                <p>图片</p>
+            </li> 
+            <li>
+                <span class="icon-voice"></span>
+                <p>语音</p>
+            </li>       
+            <li>
+                <span class="icon-video"></span>
+                <p>视频</p>
+            </li>    
+            <li>
+                <span class="icon-link"></span>
+                <p>链接</p>
+            </li>    
+            <li>
+                <span class="icon-red-packet"></span>
+                <p>红包</p>
+            </li>  
+
+            <li>
+                <span class="icon-voice-packet"></span>
+                <p>语音红包</p>
+            </li> 
+            <li>
+                <span class="icon-gongzhong"></span>
+                <p>转发公众</p>
+            </li>       
+            <li>
+                <span class="icon-offer-reward"></span>
+                <p>悬赏</p>
+            </li>    
+            <li>
+                <span class="icon-anonymous"></span>
+                <p>匿名</p>
+            </li>  
+            <li>
+                <span class="icon-read-pay"></span>
+                <p>付费阅读</p>
+            </li>                                                             
+        </ul>
+
+        <!--上传内容-->
+        <div class="bg-f bz" style="padding: 15px;">
+            <!--图片-->
+            <ul class="d-flex d-flex-center clearfix upload-pic">
+                <li>
+                    <img src="img/0.jpg">
+                    <span class="close"></span>
+                </li>
+                <li>
+                    <img src="img/0.jpg">
+                    <span class="close"></span>
+                </li>   
+                <li>
+                    <img src="img/0.jpg">
+                    <span class="close"></span>
+                </li>                              
+            </ul>
+
+            <!--语音-->
+            <div style="overflow: hidden;margin: 15px 0 0;">
+                <div id="voice-bar" class="d-flex d-flex-center voice-bar fl">
+                    <div class="icon-voice"></div>
+                    <img class="volume-pic" src="img/ranking34.png" data-voice="0">
+                    <div class="flex"></div>
+                    <div>3s</div>
+                </div>
+                <div class="icon-close"></div>
+            </div>
+
+            <!--视频-->
+            <div style="overflow: hidden;margin: 15px 0 0;">
+                <div class="d-flex d-flex-center video-bar fl">
+                    <div class="left">
+                        <i class="video-pic"></i>
+                    </div>
+                    <div class="flex right">
+                        <p class="f01 clamp1">上传本地视频成功</p>
+                        <p class="f02">暂不支持预览</p>
+                    </div>
+                </div>
+                <div class="icon-close" style="margin: 24px 0 0 15px;"></div>
+            </div>
+
+            <!--视频-->
+            <div style="overflow: hidden;margin: 15px 0 0;">
+                <div class="d-flex d-flex-center video-bar fl" style="width: 85%;">
+                    <div class="left">
+                        <img src="img/0.jpg">
+                    </div>
+                    <div class="flex right">
+                        <p class="f01 clamp1">发布页-站酷（zcool）-原创搜索</p>
+                    </div>
+                </div>
+                <div class="icon-close" style="margin: 24px 0 0 15px;"></div>
+            </div>
+
+            <!--悬赏-->
+            <div style="overflow: hidden;margin: 15px 0 0;">
+                <div class="d-flex d-flex-center voice-bar other fl" style="background: #ff5a00;">
+                    <div class="icon"></div>
+                    <div class="flex">悬赏￥5.00</div>
+                </div>
+                <div class="icon-close"></div>
+            </div>            
+
+            <!--红包-->
+            <div style="overflow: hidden;margin: 15px 0 0;">
+                <div class="d-flex d-flex-center voice-bar other fl" style="background: #ff3c3c;">
+                    <div class="icon" style="background-position:-94px -26px;"></div>
+                    <div class="flex">红包2个/￥5.00</div>
+                </div>
+                <div class="icon-close"></div>
+            </div>  
+
+            <!--匿名发帖-->
+            <div style="overflow: hidden;margin: 15px 0 0;">
+                <div class="d-flex d-flex-center voice-bar other fl" style="background: #17b5ee;">
+                    <div class="icon" style="background-position:-118px -26px;"></div>
+                    <div class="flex">匿名发帖￥12.00</div>
+                </div>
+                <div class="icon-close"></div>
+            </div>  
+
+        </div>
+
+        <!--版块-->
+        <div class="bg-f" style="padding:10px 5px;margin: 5px 0 0">
+            <ul class="bankuai">
+                <li>早餐</li>
+                <li>投票版块</li>
+                <li>一起睡午觉</li>
+                <li>新建版块01</li>
+                <li>新建版块02</li>
+                <li>新建版块03</li>
+                <li>新建版块04</li>
+                <li>新建版块05</li>
+                <li>新建版块06</li>
+                <li>新建版块07</li>
+                <li>新建版块08</li>
+                <li>新建版块09</li>
+            </ul>
+        </div>
+
+        <!--版块付费-->
+        <div class="bg-f" style="padding: 0 15px;margin-top: 5px;">
+            <ul class="bankuai bottom-line">
+                <li class="active">一级按时板块收费</li>
+                <span class="close"></span>
+            </ul>
+            <div class="d-flex bg-f c666 f-14rem mode-select" style="overflow: hidden;">
+                <div class="left">方式：</div>
+                <div class="flex">
+                    <div class="fl radio-div"><i class="radio"></i>3元/条</div>
+                    <div class="fl radio-div"><i class="radio"></i>100元/20条</div>
+                </div>
+            </div>
+            <div class="d-flex d-flex-center bg-f c666 f-14rem mode-select" style="overflow: hidden;padding: 15px 0;">
+                <div class="left" style="margin: 0">时长：</div>
+                <div class="write-input">
+                    <input placeholder="请填写条数" type="tel"></input>
+                </div>
+                <div style="margin-left:10px">条</div>
+            </div>
+        </div>
+
+        <!--我要置顶-->
+        <div class="bg-f" style="padding: 0 15px;margin-top: 5px;">
+            <div class="d-flex d-flex-center bg-f c666 f-16rem mode-select bottom-line" style="height: 35px;">
+                <div class="f16rem" style="color: #333">
+                   <div class="radio-div active" style="margin: 0">我要置顶<i class="radio" style="margin-left: 15px;"></i></div>
+                </div>
+            </div>
+            <div class="d-flex bg-f c666 f-14rem mode-select">
+                <div class="left f16-rem">范围：</div>
+                <div class="flex">
+                    <div class="fl radio-div"><i class="radio"></i>本站置顶</div>
+                </div>
+            </div>            
+            <div class="d-flex bg-f c666 f-14rem mode-select">
+                <div class="left f16-rem">方式：</div>
+                <div class="flex">
+                    <div class="fl radio-div"><i class="radio"></i>时</div>
+                    <div class="fl radio-div"><i class="radio"></i>天</div>
+                    <div class="fl radio-div"><i class="radio"></i>月</div>
+                </div>
+            </div>
+            <div class="d-flex d-flex-center bg-f c666 f-14rem mode-select" style="padding: 15px 0;">
+                <div class="left" style="margin: 0">时长：</div>
+                <div class="write-input">
+                    <input placeholder="请填写时长"></input>
+                </div>
+                <div style="margin-left:10px">条</div>
+            </div>
+        </div>
+
+        <!--活动参与-->
+        <div class="bg-f" style="padding: 0 15px;margin-top: 5px;">
+            <div class="d-flex d-flex-center bg-f f-16rem mode-select bottom-line" style="padding:10px 0;">
+                <div class="flex">活动参与</div>
+                <div class="weui-cell__ft">
+                    <input class="weui-switch" checked="" type="checkbox" />
+                </div>
+            </div>          
+            <div class="d-flex bg-f c666 f-14rem mode-select" style="padding: 0 0 15px;">
+                <div class="flex">
+                    <div class="fl radio-div"><i class="radio"></i>喜迎元旦，微赞论坛贺词征招</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--弹框-->
+    <div class="dialog-read-pay-js none">
+        <div style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,.5);z-index: 99"></div>
+        <div style="position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);z-index: 100;width: 275px;background: #fff;border-radius: 12px;">
+            <p style="font-size: 17px;text-align: center;padding-top: 26px;">请输入付费阅读金额（元）</p>
+            <input type="tel" style="text-align: center;font-size: 30px;color: #333;display: block;width: 100%;padding:25px 0;" placeholder="0.1-100"></input>
+            <p style="font-size: 12px;color: #999;padding:0 15px 15px;line-height: 1.4">开启付费阅读后，用户需支付你规定金额才能继续阅读全贴。请确定你发布信息是有价值后谨慎使用。论坛收取10%收益分成。</p>
+            <div class="d-flex top-line" style="height: 50px;text-align: center;line-height: 50px;font-size: 16px;">
+                <div class="flex" style="color: #333;">取消</div>
+                <div class="flex left-line" style="color: #17B5EE">确定</div>
+            </div>
+        </div>
+    </div>
+
+
+     <script src="https://j.vzan.cc/content/Home/js/jquery.min.js"> </script> 
+     <script>
+        $(document).ready(function(){
+            $('.radio-div').click(function () {
+                $(this).toggleClass('active').siblings('div').removeClass('active');   
+            })
+
+            $('#voice-bar').click(function () {
+                if($(this).data('voice')==0){
+                     $(this).data('voice',1);
+                    $('.volume-pic').attr('src','img/ranking35.gif');   
+                }else{
+                    $(this).data('voice',0);
+                    $('.volume-pic').attr('src','img/ranking34.png');  
+                }
+            })
+        })
+     </script>
+</body>
+</html>

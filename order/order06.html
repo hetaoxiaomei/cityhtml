@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>确认发货</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
+    <style>
+        body{background: #fff;}
+        .return-goods-pic{margin:4rem auto 0;width:14.1rem;display: block}
+        .return-goods-f{color:#ff5a00;margin: 20px 0 0;text-align: center}
+        .shouhou-zhuangtai-cell {position: relative;padding: 12px 0 47px;margin: 45px 40px 0;}
+        .shouhou-zhuangtai-cell li .dot{position: absolute;width: 2.1rem;height: 2.1rem;
+            transform: translate(-50%,-50%);display: block;box-sizing: border-box;
+            border: 2px solid #ff5a00;border-radius: 50%;background-color: #fff;
+        }
+        .shouhou-zhuangtai-cell .line.active .dot{border: none;background-position:-44.2rem 0;
+            background-image: url(../img/tc-pic04.png);background-size: 50rem;
+        }
+        .shouhou-zhuangtai-cell .line .word {position: absolute;top: 0;left: 0;
+            transform: translate(-50%,0%);-webkit-transform: translate(-50%,0);margin-top:3rem;color: #999;
+            text-align: center;width: 60px;
+        }
+        .shouhou-zhuangtai-cell .line.active .word {font-size:18px;color: #333;font-weight: bold;}
+        .shouhou-zhuangtai-cell .line {border-bottom: 1px solid #ccc;position: relative;}
+        .shouhou-zhuangtai-cell .line.active {border-bottom: 1px solid #ff5a00;}
+        .shouhou-zhuangtai-cell .line:last-child {border: none;position: absolute;right: 0;display: block;}
+        .back-bt{background: #ff5a00;color: #fff;font-size: 18px;font-weight: bold;border-radius: 20px;height: 40px;text-align: center;
+        line-height: 40px;margin: 90px 35px 0;display: block}
+    </style>
+</head>
+<body>
+    <div class="fix-tl">
+        <div class="basewrap d-flex d-flex-center top-nav" style="background:#ff5a00;font-size: 1.6rem;">
+            <a class="flex qr-bt-js cfff" href="javascript:history.go(-1);"><i class="icon-back-arrow"></i> 返回</a>
+            <div class="flex ta-c cfff">确认发货</div>
+            <a class="flex js-sign cfff ta-r"></a>
+        </div>
+    </div>
+
+    <div class="basewrap" style="padding:44px 0 2rem;">
+        <img class="return-goods-pic" src="../img/tc-pic58.png">
+        <p class="f18 bold ta-c return-goods-f">发货成功</p>
+
+        <ul class="d-flex shouhou-zhuangtai-cell">
+            <li class="flex line active">
+                <div class="dot"></div>
+                <span class="word">已接单</span>
+            </li>
+            <li class="flex line">
+                <div class="dot"></div>
+                <span class="word">待取货</span>			
+            </li>
+            <li class="flex line">
+                <div class="dot"></div>
+                <span class="word">配送中</span>			
+            </li>		
+            <li class="flex line">
+                <div class="dot"></div>
+                <span class="word">已完成</span>			
+            </li>		
+        </ul>
+        
+        <a class="back-bt">返回</a>
+        
+    </div>
+
+</body>    
+</html>

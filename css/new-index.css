@@ -1,0 +1,247 @@
+.gonggao-cell .icon-notice,.notice-cell .icon-notice{
+    background: url(../img/tc-pic04.png);
+    background-size: 50rem;
+}
+
+
+/*数据*/
+.index-data-cell {
+    padding: 1rem 1.5rem 0;
+    background: #fff;
+    color: #333;
+    font-size: 1.2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.index-data-cell .data-pic{
+    display: block;
+    width: 1.5rem;
+}
+
+.index-data-cell .data {
+    position: relative;
+    float: left;
+    width: 33.33%;
+    line-height: 1;
+}
+
+/*图标*/
+.swiper-container-icon .shadow{
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0,0, 0,.25);
+    z-index: 2;
+ }
+ 
+/*公告*/
+.gonggao-cell{
+    padding: 0 0 0 1.2rem;
+    background: #fff;
+    position: relative;
+    font-size: 1.2rem;
+    height: 2rem;
+    line-height: 2rem;
+    overflow: hidden
+}
+
+.gonggao-cell p{line-height: 2rem;}
+
+.gonggao-cell a{color: #333;}
+
+.gonggao-cell .icon-notice{
+    width:7.5rem;
+    height: 2rem;
+    background-position:-8.2rem -8.8rem; 
+    margin-right: 1rem;
+    display: block;
+    margin-top: .1rem;
+}
+
+.gonggao-cell marquee{
+    line-height: 2rem;
+    height: 100%;
+    display: block;
+}
+
+/*本地头条*/
+.local-life-cell{
+    padding:0 1.2rem;
+    height:6rem;
+    position: relative;
+}
+
+
+
+/*活动专区*/
+.index-activity {
+    background: #fff;
+    overflow:hidden;
+}
+
+.index-activity li{
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    padding: 10px 5px 0 0;
+}
+
+.index-activity li:nth-child(even){padding:10px 0 0 5px;}
+
+.index-activity li a{
+    display: block;
+    padding-top: 52.1%;
+    position: relative;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.index-activity li .f01{
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.index-activity li .f02{
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 1.3;
+    margin-top: .6rem;
+}
+
+.index-activity li img.pic01{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+/* .index-activity .pic01{
+    width: 65px;
+    height:65px;
+} */
+
+.index-activity .content{
+    position:absolute;
+    left:0;
+    padding: 0 8.6%;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 100%;
+}
+
+
+
+/*导航*/
+
+.index-type-select-nav li {font-size: 1.6rem;color:#999;}
+
+.index-type-select-nav li.active{color: #333;}
+
+.index-type-select-nav li:before {
+    bottom:8px;
+    width: 34px;
+    background: #ff5a00;
+}
+
+
+/*热卖*/
+.hot-sale-ul{
+    overflow: hidden;
+    padding: 1rem .5rem 0;
+}
+
+.hot-sale-ul li{
+    float: left;
+    padding: 0 .5rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    width: 50%;
+}
+
+.hot-sale-ul li .head{
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+}
+
+.hot-sale-ul li .head img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hot-sale-ul li .name {
+    line-height: 1.6rem;
+    height: 1.6rem;
+    font-size: 1.6rem;
+    font-weight: bold
+}
+
+.hot-sale-ul li .money {
+    overflow: hidden;
+    font-size: 2rem;
+    color: #ff5a00;
+    font-weight: bold;
+    margin-top: .8rem;
+}
+
+.hot-sale-ul li .bt {
+    background: #ff5a00;
+    color: #fff;
+    border-radius: 1.1rem;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    padding: 0 2px;
+    display: block;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    font-weight: normal
+}
+
+/*公告*/
+.notice-cell {
+    padding: 1rem 0 0 1.2rem;
+    background: #fff;
+    height: 2rem;
+}
+
+.notice-cell .icon-notice {
+    width: 3.1rem;
+    height: 1.5rem;
+    margin-top: -3px;
+    fill: #ff5a00;
+}
+
+.notice-cell marquee {
+    height: 2rem;
+    display: block;
+    font-size: 1.4rem;
+    margin-left: .8rem;
+    color: #333;
+}
+
+.notice-cell marquee p {
+    width: auto;
+    white-space: nowrap;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.notice-cell .icon-notice{
+    width: 2rem;
+    height: 1.8rem;
+    background-position: -46.5rem 0;
+    margin-top:.2rem;
+}

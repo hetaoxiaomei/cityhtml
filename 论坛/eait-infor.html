@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>编辑资料</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/edit-infor.css">
+</head> 
+<body>
+    <div class="fix-tl">
+        <div class="top-nav bottom-line">
+            <a class="left">
+               <i class="arrow"></i>
+            </a>
+            <div class="center">编辑资料</div>
+            <a class="right"></a>
+        </div>
+    </div>
+
+    <div class="basewrap" style="padding:4rem 0 6rem">   
+        <div class="write-cells">
+             <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left">头像</div>
+                <div class="flex right"></div>  
+                <image class="head"></image>                                                        
+            </div>    
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left">昵称</div>
+                <div class="flex right">
+                    <input class="write ta-r" placeholder="用户昵称最多八个字" maxlength="8">
+                </div>         
+                <div class="arrow-right"></div>                                                 
+            </div>                 
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left">认证称号</div>
+                <div class="flex right">
+                    <input class="write ta-r" value="广州微赞直播二流设计师">
+                </div>        
+                <div class="arrow-right"></div>                                                    
+            </div>                
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left">性别</div>
+                <div class="flex right">
+                    <select class="change">
+                        <option>请选择性别</option>
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+                </div> 
+                <div class="arrow-right"></div>                
+            </div>   
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left">感情状况</div>
+                <div class="flex right">
+                    <select class="change">
+                        <option>请选择感情状况</option>
+                        <option>单身</option>
+                        <option>已婚</option>
+                    </select>
+                </div> 
+                <div class="arrow-right"></div>                
+            </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left">出生年月日</div>
+                <div class="flex right ta-r">
+                    <input class="write ta-r" type="date" placeholder="请选择出生日期">
+                </div> 
+                <div class="arrow-right"></div>                
+            </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left">所在地</div>
+                <div class="flex right ta-r">
+                    <input class="write ta-r" placeholder="请选择所在地">
+                </div> 
+                <div class="arrow-right"></div>                
+            </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left">家乡</div>
+                <div class="flex right ta-r">
+                   <input class="write ta-r" placeholder="请输入详细地址">
+                </div> 
+                <div class="arrow-right"></div>                
+            </div>  
+            <div style="padding: 0 0 1.5rem;">
+                <div class="textarea-all">
+                    <textarea class="textarea bz" style="display: block;height: 8rem;width: 100%;padding: 1.5rem;"></textarea>
+                </div> 
+            </div>           
+        </div> 
+
+        <!--身份切换-->     
+        <div class="bottom-line bg-f" style="padding:1.5rem;margin: .5rem 0 0;font-size: 14px">身份切换</div>
+        <div class="write-cells">
+            <div class="d-flex d-flex-center write-cell top-line">
+                <image class="head"></image>
+                <div class="left flex" style="margin-left: 1rem;">派大鑫</div>
+                <div class="icon-select"></div>                                               
+            </div>    
+            <div class="d-flex d-flex-center write-cell top-line">
+                <image class="head"></image>
+                <div class="left flex" style="margin-left: 1rem;">派大鑫</div>
+                <div class="icon-select none"></div>                                               
+            </div>  
+            <div class="d-flex d-flex-center write-cell top-line">
+                <image class="head"></image>
+                <div class="left flex" style="margin-left: 1rem;">派大鑫</div>
+                <div class="icon-select none"></div>                                               
+            </div>              
+        </div>
+    </div>
+
+    <!--底部导航一-->
+    <div class="fix-bl">
+        <div class="basewrap d-flex edit-infor-nav top-line bz">
+            <div class="bt01 flex">使用微信昵称和头像</div>
+            <div style="width: .5rem;"></div>
+            <div class="bt02 flex">确定修改</div>
+        </div>
+    </div>
+
+    <!--底部导航二-->
+    <div class="fix-bl">
+        <div class="basewrap d-flex edit-infor-nav top-line bz">
+            <div class="bt01 flex">使用微信昵称和头像</div>
+            <div style="width: .5rem;"></div>
+            <div class="bt03 flex">用户信息审核中...</div>
+        </div>
+    </div>
+
+    <!--弹框一-->
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle" style="border-radius: 15px;width: 300px;">
+            <div class="f15 bold ta-c" style="padding: 3rem 0;">温馨提示</div>
+            <div class="ta-c f14" style="padding: 0 0 3rem;">确定离开该页面，进入认证页面吗?</div>
+            <div class="d-flex f14 ta-c" style="line-height: 5rem;background: #f6f6f6;">
+                <div class="flex c888">取消</div>
+                <div class="flex mc">确定</div>
+            </div>
+        <div>
+    </div>
+
+    <!--弹框二-->
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle" style="border-radius: 15px;width: 300px;">
+            <div class="f15 bold ta-c" style="padding: 3rem 0;">等待管理员审核</div>
+            <div class="ta-c f14" style="padding: 0 0 3rem;">修改资料，请等候管理员审核</div>
+            <div class="d-flex f14 ta-c" style="line-height: 5rem;background: #f6f6f6;">
+                <div class="flex mc">我知道了</div>
+            </div>
+        <div>
+    </div>   
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script>
+        $("select.change").change(function () {
+            var selItem = $(this).val();
+            if (selItem == $(this).find('option:first').val()) {
+                $(this).css('color','#888888');
+                // $(this).parent('.right').siblings('.pay-top').removeClass('active');
+            } else {
+                $(this).css('color','#333333');
+                // $(this).parent('.right').siblings('.pay-top').addClass('active');
+            }
+        });
+
+    </script>
+
+</body>
+</html>

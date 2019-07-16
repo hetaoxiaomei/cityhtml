@@ -1,0 +1,124 @@
+
+
+.icon-turn,.me-cell .icon,.me-cell .arrow{
+    background-image: url(../img/tc-pic04.png);
+    background-repeat:no-repeat;
+    background-size:50rem;
+}
+
+.me-top-cell{
+    padding: 1.6rem 2rem;
+    background: #fff;
+    position: relative;
+}
+
+.me-top-cell .head{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.me-top-cell .head .tag{
+    width: 4.4rem;
+    height: 1.6rem;
+    color: #fff;
+    font-size: 1.2rem;
+    background: #fd781f;
+    border-radius:.8rem;
+    border-bottom-left-radius: 0;
+    text-align: center;
+    line-height: 1.6rem;
+    position: absolute;
+    right:-2.8rem;
+    top: .4rem;
+}
+
+.me-top-cell .head img{border-radius: 50%;}
+
+.me-top-cell .name{
+    max-width: 50%;
+    text-align: center;
+    margin: .8rem auto 1.6rem
+} 
+
+.me-top-cell .shadow{
+    height: 1px;
+    position: absolute;
+    background: transparent;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 15px rgba(0,0, 0,.25);
+    z-index: 2;
+}
+
+.turn-bt{
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background:#ff3a1b;
+    text-align: center;
+    line-height: 3rem;
+    border-radius:1.5rem;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(255, 58, 27,.35);
+    display: block;
+}
+
+.icon-turn{
+    width:1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    background-position:-12.3rem -6.9rem ;
+    margin-right: .4rem;
+    vertical-align: -.3rem;
+}
+
+.me-cells{
+    padding: 0 1.2rem;
+    background: #fff;
+}
+
+.me-cell {
+    background: #fff;
+    height: 4.5rem;
+    font-size:1.4rem;
+}
+
+.me-cell .icon {
+    height: 1.7rem;
+    width: 1.7rem;
+    margin-right: .8rem;
+}
+
+.me-cell .arrow{
+    height: 1.6rem;
+    width: 1.6rem;
+    display:block;
+    background-position: -8.8rem -2.2rem;
+}
+
+.me-cell .number{margin-right: .8rem;color: #999;position: relative}
+
+.me-cell .number .dot{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ff3a1b;
+    position: absolute;
+    top: -2px;
+    right: -4px;
+}
+
+.icon-release-find{background-position:-32.6rem 0;}
+
+.icon-applied-position{background-position:-34.5rem 0;}
+
+.icon-enterprise{background-position:-36.4rem 0;}
+
+.icon-release-recruit{background-position:-38.3rem 0;}
+
+

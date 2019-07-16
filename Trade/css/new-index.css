@@ -1,0 +1,378 @@
+
+.icon-qr-code,.icon-message,.icon-search,.icon-price-reduction,.icon-price-reduction,
+.icon-robbing-concession,.icon-fight-group,.icon-customer-service,.notice-cell .icon-notice {
+    background-image: url(../img/big-pic.png);
+    background-repeat: no-repeat;
+    background-size: 50rem;
+}
+
+/*首页顶部栏*/
+.index-search-bar{
+    padding:0 1.2rem;
+    background:#fff;
+    height: 4rem;
+    box-sizing: border-box;
+    position: relative;
+    padding-top: .5rem;
+}
+
+.icon-qr-code,.icon-message{
+    width: 1.8rem;
+    height: 1.8rem;
+    display: block;
+    margin: 0 auto .2rem;
+}
+
+.icon-message .dot{
+    display: block;
+    border-radius: 50%;
+    width:6px;
+    height:6px;
+    background: #f8272a;
+    border: 1px solid #fff;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
+
+.index-search-bar p{font-size: .9rem;}
+
+.icon-qr-code{background-position:-2.4rem 0;}
+
+.icon-message{background-position:-4.4rem 0;}
+
+.icon-search{background-position:-4.4rem 0;}
+
+.index-search-bar .left{left:1rem;}
+
+.index-search-bar .right{right:1rem;}
+
+.index-search-bar .right,.index-search-bar .left{
+    transform: translate(0,-50%);
+    position: absolute;
+    top: 50%;
+    color: #666;
+}
+
+.index-search-bar .right .icon-smiling-face{
+    width: 1.8rem;
+    height:1.8rem;
+    display: block;
+    fill: #666;
+    margin: 0 auto .2rem;
+}
+
+.index-search-bar .center{
+    position: relative;
+    height: 3rem;
+    background: #f2f2f3;
+    margin:0 3.5rem;
+    border-radius: 1.5rem;
+    padding:0 1.5rem 0 3.9rem;
+    box-sizing: border-box
+}
+
+.index-search-bar .center input{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 1.4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.index-search-bar .icon-search{
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    top:50%;
+    left: 1.5rem;
+    transform: translate(0,-50%);
+    background-position:0 -5.6rem;
+}
+
+.index-search-bar .center:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ededed;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 3rem;
+}    
+
+/*图标*/
+.swiper-container-icon .shadow{
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0,0, 0,.25);
+    z-index: 2;
+ }
+ 
+/*公告*/
+/* .gonggao-cell{
+    padding: 0 0 0 1.2rem;
+    background: #fff6f0;
+    position: relative;
+    font-size: 1.2rem;
+    height: 2rem;
+    line-height: 2rem;
+    overflow: hidden
+}
+
+.gonggao-cell p{line-height: 2rem;}
+
+.gonggao-cell a{color: #ff3a1b;}
+
+.gonggao-cell .icon-notice{
+    width: 3.1rem;
+    height: 1.5rem;
+    fill: #ff3a1b;
+    margin-right: 1rem;
+    display: block;
+    margin-top: .1rem;
+}
+
+.gonggao-cell marquee{
+    line-height: 2rem;
+    height: 100%;
+    display: block;
+} */
+
+/*本地头条*/
+.local-life-cell{
+    padding:0 1.2rem;
+    height:6rem;
+    position: relative;
+    border: 1px solid #f2f2f2;
+    overflow: hidden;
+}
+
+.local-life-cell .bt{
+    width: 4.9rem;
+    height: 2.4rem;
+    border-radius: 2px;
+    color: #fff;
+    background: #f8272a;
+    text-align: center;
+    line-height:2.4rem;
+    font-size: 1.4rem;
+}
+
+/*活动专区*/
+.index-activity {
+    background: #fff;
+    overflow:hidden;
+    position: relative;
+}
+
+.index-activity li {
+    width: 50%;
+    float: left;
+    height: 8.2rem;
+    box-sizing: border-box;
+    position: relative;
+    border-left: 1px solid #f5f5f5;
+    line-height: 1.25;
+    padding: 0 1.2rem;
+}
+
+.index-activity li img{width: 60px;display: block;}
+
+.index-activity  li .p01{
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 1.35;
+}
+
+.index-activity  li .p02{
+    color: #999;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: .2rem;
+    margin-right: .2rem;
+}
+
+.index-activity .shadow{
+    height: 1px;
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* box-shadow: 0 -1px 15px rgba(0,0, 0,.25); */
+    z-index: 2;
+
+
+    box-shadow: 0 2px 24px rgba(0,0,0,.1);                                        
+
+}
+
+/* 
+.index-activity li:nth-child(5){border-bottom: 0}
+.index-activity li:nth-child(6){border-bottom: 0}
+.index-activity li:nth-child(7){border-bottom: 0}
+.index-activity li:nth-child(8){border-bottom: 0}
+
+.index-activity li a{display: block;width: 100%;height: 100%;}
+
+.index-activity li .p01 {
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-top:1.2rem;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    padding: 1.2rem .5rem 0;
+} */
+
+.iconul {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 3.2rem;
+}
+
+.iconul a i{
+    display: block;
+    margin: 0 auto;
+    width: 4.3rem;
+    height: 4.3rem;
+    background-image: url(../img/tc-pic03.png);
+    background-repeat: no-repeat;
+    background-size: 50rem;
+}
+
+.iconul a {
+    width: 20%;
+    height: auto;
+    padding: 1.2rem 0 0;
+    box-sizing: border-box;
+    float: left;
+    display: block;
+    text-align: center;
+}
+
+.iconul a img{
+    display: block;
+    margin: 0 auto;
+    width: 4.3rem;
+    height: 4.3rem;
+    border-radius: 50%;
+}
+
+.iconul a span {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1;
+    width: 100%;
+    margin-top: .6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    height: 12px;
+    padding: 0 3px;
+    box-sizing: border-box;
+}
+
+.icon-price-reduction,.icon-robbing-concession,.icon-fight-group{
+    width: 1.9rem;
+    height:1.7rem;
+    display: inline-block;
+    vertical-align: -.2rem;
+    margin-left: .4rem;
+}
+
+.icon-price-reduction{background-position: -1.8rem -5.6rem;}
+
+.icon-robbing-concession{background-position: -3.9rem -5.6rem;}
+
+.icon-fight-group{background-position: -6rem -5.6rem;}
+
+
+
+/*侧边按钮*/
+.icon-customer-service-fix{
+    position: fixed;
+    left:1.2rem;
+    top: 31.5rem;
+    width: 4.9rem;
+    height: 4.9rem;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0, 0,.2);
+    z-index: 5;
+}
+
+.icon-customer-service{
+    width: 2rem;
+    height: 1.9rem;
+    display: block;
+    margin: .8rem auto .3rem;
+    background-position: -6.4rem 0;
+}
+
+.grab-red-envelope{
+    width:5.8rem;
+    position: fixed;
+    top: 30.5rem;
+    right: 1.2rem;
+    z-index: 5;
+    animation:tada 1s infinite;
+    -webkit-animation:tada 1s infinite;
+}
+
+.notice-cell {
+    padding: 1rem 0 0 1.2rem;
+    background: #fff;
+    height:1.4rem;
+}
+
+
+.notice-cell .icon-notice {
+    width: 1.6rem;
+    height: 1.4rem;
+    margin-top: -.2rem;
+    background-position: -42rem 0;
+}
+
+.notice-cell marquee {
+    height: 1.4rem;
+    display: block;
+    font-size: 1.2rem;
+    margin-left: .8rem;
+    color: #333;
+}
+
+@-webkit-keyframes tada {
+	0% {-webkit-transform: scale(1);}
+	10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%{-webkit-transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80%{-webkit-transform: scale(1.1) rotate(-3deg);}
+	100% {-webkit-transform: scale(1) rotate(0);}
+}
+
+
+@keyframes tada {
+	0% {transform: scale(1);}
+	10%, 20% {transform: scale(0.9) rotate(-3deg);}
+	30%, 50%, 70%{transform: scale(1.1) rotate(3deg);}
+	40%, 60%, 80%{transform: scale(1.1) rotate(-3deg);}
+	100% {transform: scale(1) rotate(0);}
+}
+

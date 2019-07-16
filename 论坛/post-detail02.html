@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/post-content.css">
+</head> 
+<body>
+    <div class="fix-tl">
+        <div class="top-nav bottom-line">
+            <a class="left">
+               <i class="arrow"></i>
+            </a>
+            <div class="center">相约微赞</div>
+            <a class="right">关注</a>
+        </div>
+    </div>
+
+    <div class="basewrap" style="padding: 4rem 0 0">
+        <div class="post-content-top">
+            <div class="post-head">
+                <img class="pic01" src="img/0.jpg">
+                <i class="icon-vip"></i>
+            </div>
+
+            <div class="right">
+                <div class="person-infor">
+                    <i class="name">派大鑫</i>
+                    <div class="zhuanjia">
+                        微赞直播二流设计师<i class="icon-authentication"></i>
+                    </div>
+                </div>
+                <div class="c888 f12 little-infor">
+                    <i class="mc">摄影美食</i>
+                    <i>14小时前</i>
+                    <i>浏览289</i>
+                    <i class="first-posting">首次发帖</i>
+                </div>
+            </div>
+            <ul class="post-label" style="right:1.5rem">
+                <li class="icon-jing"></li>
+                <li class="icon-tui"></li>
+                <li class="icon-huo"></li>
+                <li class="icon-ding"></li>
+            </ul>            
+            <div class="focus-ta-bt">关注Ta</div>
+        </div>
+        <div class="post-detail-content">
+            <div class="title">阿迪发的顺丰发顺丰</div>
+            <div>阿迪说分手的分手，大发达饭撒的发12达分的撒分手大饭撒的粉丝发生发生12发达发大饭撒的粉丝发生发生发达发多少发 阿迪是非得失范</div>
+            <img src="img/03.jpg">
+        </div>
+        <div class="bg-f" style="padding: 0 1.5rem;">
+            <!--分享给好友-->
+            <div class="none">
+                <div class="big-share-bt"></div>
+                <p class="ta-c f12">分享给好友</p>
+            </div> 
+            
+            <!--打赏作者-->
+            <div>
+                <div class="big-reward-bt"></div>
+                <p class="ta-c f12">打赏作者</p>
+            </div>   
+            <!--打赏人-->   
+            <div class="reward-head">
+                <img src="img/0.jpg">
+                <img src="img/0.jpg">
+                <img src="img/0.jpg">
+                <img src="img/0.jpg">
+                <img src="img/0.jpg">
+                <img src="img/0.jpg">
+                <img src="img/0.jpg">
+                <img src="img/0.jpg">
+                <img src="img/0.jpg">
+                <img src="img/0.jpg">
+                <img src="img/0.jpg">            
+            </div>
+
+            <div class="function-bt top-line">
+                <div class="fl"><i class="icon-poster-location"></i>广东省 广州市 天河区</div>
+                <div class="fr" style="margin-left: 2.5rem"><i class="icon-poster-more"></i>更多</div>                
+                <div id="save-js" class="fr" data-active="0"><i class="icon-poster-save active"></i>收藏</div>
+            </div>            
+        </div>
+    </div>
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script>
+        $('#save-js').on('click',function(){
+            if($(this).data('active')==0){
+                $(this).data('active',1);
+                $(this).html("<i class='icon-poster-save active'></i>已收藏")
+            }else{
+                $(this).data('active',0);
+                $(this).html("<i class='icon-poster-save'></i>收藏")          
+            }
+        })
+    </script>
+</body>
+</html>

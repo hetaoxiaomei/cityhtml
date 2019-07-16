@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>高级版</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/release.css">
+    <style>
+        .write-cell .left{width:auto;margin: 0 .4rem 0 0}
+        .release-nav{padding: 0}
+        .ruzhu-title-dialog{background: #fff;padding: 0 0 20px;border-top-left-radius: 4px;border-top-right-radius: 4px;}
+        .ruzhu-title-dialog .bt01{margin:15px auto 0;height: 3.2rem;line-height: 3.2rem;text-align: center;width: 275px;
+        border-radius: 1.6rem;font-size: 16px;position: relative}
+        .ruzhu-title-dialog .bt01,.ruzhu-title-dialog .bt01.active{border: 1px solid #ff5a00;color: #333;line-height: 3rem;}
+        .ruzhu-title-dialog .bt01.active{background: #ff5a00;color: #fff;}
+        .ruzhu-title-dialog .bt01 .discount{font-size: 12px;color: #fff;width:42px;height:18px;position: absolute;top:-9px;right:-10px;
+            background:#F90606;display: block;line-height: 18px;border-top-left-radius:9px;border-bottom-right-radius:9px;position: absolute}
+        
+    </style>
+</head>
+<body>
+    <div class="basewrap" style="padding:0 1.2rem 14rem;">
+        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
+            <div class="write-cells">
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">店铺名称</div>
+                    <div style="color: #E50909;margin: .6rem 2.2rem 0 0;">*</div>
+                    <div class="flex right">
+                        <input class="write" placeholder="点击输入店铺名">
+                    </div>                                                          
+                </div>   
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">主营业务</div>
+                    <div style="color: #E50909;margin: .6rem 2.2rem 0 0;">*</div>
+                    <div class="flex right" style="margin-left:0">
+                        <select class="c333">
+                            <option>点击选择业务</option>
+                            <option>客服</option>
+                        </select>
+                        <i class="arrow-right"></i>
+                    </div>                                                         
+                </div>    
+
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">所属区域</div>
+                    <div style="color: #E50909;margin: .6rem 2.2rem 0 0;">*</div>
+                    <div class="flex right">
+                        <input class="area" id="demo1" type="text" readonly="" placeholder="请选择所在区域">
+                        <input id="value1" type="hidden" value="20,234,504">
+                        <i class="arrow-right"></i>
+                    </div>               
+                </div>   
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">详细地址</div>
+                    <div style="color: #E50909;margin: .6rem 2.2rem 0 0;">*</div>
+                    <div class="flex right" style="margin-right:1.2rem">
+                        <input class="write" placeholder="请输入详细地址">
+                    </div>   
+                    <div class="location left-line">
+                        <i class="icon-fill-location"></i>定位
+                    </div>                                                       
+                </div>      
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold">手机号码</div>
+                    <div style="color: #E50909;margin: .6rem 2.2rem 0 0;">*</div>
+                    <div class="flex right">
+                        <input class="write" placeholder="请输入手机号码">
+                    </div>                                                          
+                </div>                               
+            </div> 
+        </div>    
+
+        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
+            <div class="write-cells">
+                <div class="d-flex d-flex-center write-cell top-line">
+                    <div class="left bold" style="width:86px;">邀请码</div>
+                    <div class="flex right">
+                        <input class="write" type="tel" placeholder="选填">
+                    </div>                                                          
+                </div>                              
+            </div> 
+        </div>
+
+        <!--店铺入驻须知-->
+        <div class="f12" style="margin: 1.5rem 0 0;"><div class="value-select active" style="display:inline-block;margin:0 1rem 0 1.2rem;vertical-align: -.4rem;"></div>我已阅读并同意<i style="color: #F90606;">“店铺入驻须知”</i></div>
+
+    </div>
+
+    <!--店铺入驻须知-->
+    <div class="fix-tl-100">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle" style="width: 288px;border-radius: 4px">
+            <p class="bold ta-c f16" style="padding:25px 0 10px;">店铺入驻须知</p>
+            <div style="padding:0 25px 25px;font-size: 1.4rem;line-height: 1.65;height: 250px;overflow: auto;-webkit-overflow-scrolling:touch">
+                <p>1.文案文案文案文案文案文案文案文案</p>
+                <p>2.文案文案文案文案文案文案文案文案</p>
+                <p>3.文案文案文案文案文案文案文案文案</p>
+                <p>4.文案文案文案文案文案文案文案文案</p>
+                <p>5.文案文案文案文案文案文案文案文案</p>
+                <p>6.文案文案文案文案</p>
+                <p>1.文案文案文案文案文案文案文案文案</p>
+                <p>2.文案文案文案文案文案文案文案文案</p>
+                <p>3.文案文案文案文案文案文案文案文案</p>
+                <p>4.文案文案文案文案文案文案文案文案</p>
+                <p>5.文案文案文案文案文案文案文案文案</p>
+                <p>6.文案文案文案文案</p>        
+                <p>1.文案文案文案文案文案文案文案文案</p>
+                <p>2.文案文案文案文案文案文案文案文案</p>
+                <p>3.文案文案文案文案文案文案文案文案</p>
+                <p>4.文案文案文案文案文案文案文案文案</p>
+                <p>5.文案文案文案文案文案文案文案文案</p>
+                <p>6.文案文案文案文案</p>
+                <p>1.文案文案文案文案文案文案文案文案</p>
+                <p>2.文案文案文案文案文案文案文案文案</p>
+                <p>3.文案文案文案文案文案文案文案文案</p>
+                <p>4.文案文案文案文案文案文案文案文案</p>
+                <p>5.文案文案文案文案文案文案文案文案</p>
+                <p>6.文案文案文案文案</p>                        
+            </div>
+            <div class="top-line ta-c bold f16" style="color: #ff5a00;line-height: 45px;">我知道了</div>
+        </div>
+    </div>
+
+    <div class="fix-bl">
+        <div class="basewrap d-flex release-nav top-line">
+            <div class="bt f16 flex" style="width:auto">入驻</div>
+        </div>
+    </div>
+
+    <!--入驻时长-->
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="fix-bl ruzhu-title-dialog">
+            <p class="bold f16 ta-c bottom-line" style="line-height:45px;">入驻时长套餐</p>
+            <div class="bt01 active">免费试用X天</div>
+            <div class="bt01">三个月/￥0.01
+                <i class="discount">优惠</i>
+            </div>
+            <div class="bt01">半年/￥10.00</div>
+            <div class="bt01">一年/￥9999.00</div>
+            <div class="bt01">两年/￥99999.00</div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.dialog-black-mask').bind("touchmove",function(e){
+            e.preventDefault();
+        });
+    </script>
+
+</body>
+</html>

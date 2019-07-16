@@ -1,0 +1,28 @@
+.company-list .head{position: relative;height: 8rem;width: 8rem;border-radius: 4px;margin-right: 1.2rem;}
+.company-list .head img{border-radius: 4px;}
+.company-list .type{overflow:hidden;position: absolute;left: 0;bottom:4.2rem;height: 1.6rem;}
+.company-list .right{height:8rem;position:relative;padding:1.6rem 1.2rem 1.6rem 0;}
+.company-list .right .f01{margin-top: .2rem}
+.company-list .type span{font-size: 1.2rem;background: #fff6f0;color: #fd781f;padding: 0 .5rem;display: block;
+height: 1.6rem;line-height: 1.6rem;border-radius: 4px;position: relative;margin-right: .4rem;float: left;}
+.company-list .type span:before{content: " ";width: 200%;height: 200%;position: absolute;top: 0;left: 0;
+border: 1px solid #ffddc6;-webkit-transform: scale(0.5);transform: scale(0.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;box-sizing: border-box;border-radius: 4px;}
+.top_ding,.tuijian,.index-search-bar .right .icon-qiye-ruzhu{background-image: url(../img/tc-pic04.png);background-repeat: no-repeat;background-size: 50rem;}
+.top_ding{width: 2.1rem; height: 2rem;position: absolute;top: -.2rem;left: -.3rem;background-position: 0 0;}
+.tuijian{background-position:0 -23.7rem;width:1.6rem;height: 1.3rem;display: inline-block;margin-right: .4rem;vertical-align:-.2rem;}
+.index-search-bar .center{margin: 0 5.2rem 0 0;}
+.index-search-bar .right .icon-qiye-ruzhu{width: 2rem;height: 1.8rem;display: block; background-position:-28.7rem -3.3rem; margin: 0 auto .2rem;}
+.shaixuan-all .f01{font-size: 1.6rem;padding: 3rem 0 0}
+.shaixuan-all ul.type{overflow: hidden;}
+.shaixuan-all ul.type li{width: 31%;height:2.4rem;line-height:2.4rem;
+text-align: center;color: #999;position: relative;display: block;float: left;margin: 1.2rem 3.5% 0 0;font-size:1.2rem;border-radius: 4px;
+overflow: hidden;text-overflow: ellipsis;-webkit-box-orient: vertical;display: -webkit-box;-webkit-line-clamp: 1;}
+.shaixuan-all ul.type li:nth-child(3n){margin: 1.2rem 0 0 0;}
+.shaixuan-all ul.type li.active{background: #ff3a1b;color: #fff}
+.shaixuan-all ul.type li:before{content: " ";width:196%;height: 196%;position: absolute;
+top: 0;left: 0;border: 1px solid #ccc;-webkit-transform: scale(0.5);transform: scale(0.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;
+box-sizing: border-box;border-radius: 8px;}
+.shaixuan-all ul.type li.active:before{display: none}
+.screen-select .save-bt {height:4.9rem;line-height:4.9rem;text-align: center;font-size:1.6rem;background: #ff3a1b;position: absolute;
+bottom: 0;left: 0;width: 100%;color: #fff;}
+.shaixuan-all{display:block;padding: 0 1.2rem;height: 100%;padding-bottom:8rem;box-sizing: border-box;}

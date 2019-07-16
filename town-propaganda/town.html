@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>同镇宣传</title>
+</head>
+<body>
+	<div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/town-01.png" />
+            </div>
+            <div class="swiper-slide">
+                <img src="img/town-02.png" />
+            </div>		
+            <div class="swiper-slide">
+                <img src="img/town-03.png" />
+            </div>	
+            <div class="swiper-slide">
+                <img src="img/town-04.png" />
+            </div>	
+            <div class="swiper-slide">
+                <img src="img/town-05.png" />
+            </div>	       
+            <div class="swiper-slide">
+                <img src="img/town-06.png" />
+            </div>	       
+            <div class="swiper-slide">
+                <img src="img/town-07.png" />
+            </div>	 
+            <div class="swiper-slide">
+
+                <img src="img/town-08.png" />
+                <div style="position: absolute;top: 37.3%;left: 50%;transform: translate(-50%,0);width: 100%">
+                    <img class="qr-img"  src="https://www.vzan.com/QrCode/GetQrCode?code=1360357681">
+                    <p style="margin-top:20px;text-align:center;color:#fff">电话：186 *** ***</p>
+                </div>
+            </div>	 
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>		
+    </div>  
+
+    <img class="music-pic rotato" src="img/music.png" />
+
+    <audio autoplay="" id="audio" loop="" src="img/father.mp3"></audio>
+
+    <style> 
+        body,html,div,img{margin: 0;padding: 0}
+        body,html{width: 100%;height: 100%;}
+        .music-pic{position:fixed;top:15px;right:15px; width:40px;display: block;z-index: 5;}
+        .music-pic.rotato{animation: 1s rotato linear infinite;}
+        @keyframes rotato{
+            0%{transform:rotate(0)}
+            100%{transform:rotate(360deg)}
+        }
+        .swiper-container {margin-left: auto;margin-right: auto;position: relative;overflow: hidden;z-index: 1;}
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    display: -webkit-box;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    -ms-transition-property: -ms-transform;
+    transition-property: transform;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.swiper-slide {
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.swiper-container-horizontal .swiper-slide {
+    font-size: 18px;
+    background:url(img/bg.jpg);
+    background-size: 100% 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-container{width: 100%;height: 100%;}
+.swiper-slide img{width: 100%;}
+
+.swiper-slide .qr-img{
+    width: 50%;
+    border: 15px solid #fff;
+    margin: 0 auto;
+    display: block
+
+
+}
+    </style>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+        /*广告图*/
+        var swiper = new Swiper('.swiper-container-topbanner', {
+            pagination: '.swiper-container-topbanner .swiper-pagination',
+            paginationClickable: true,
+            autoplay:2000,
+            centeredSlides: true,
+            autoplayDisableOnInteraction: false,
+            loop:1
+        });
+
+            
+       $(function(){
+            function pauseMusic(){
+                $('.music-pic').on('click',function(){
+                    $(this).toggleClass('rotato');
+                    if($(this).hasClass('rotato')){
+                        $('#audio').get(0).play();
+                    }else{
+                        $('#audio').get(0).pause();
+                    }
+                })  
+            }  
+            pauseMusic() 
+        }) 
+    </script>
+    
+</body>
+</html>

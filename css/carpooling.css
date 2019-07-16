@@ -1,0 +1,302 @@
+
+.carpooling-arrow,.icon-people,.icon-vacancy,.carpooling-ul .zhiding{
+    background-image: url(../img/tc-pic04.png);
+    background-size: 50rem;
+    background-repeat: no-repeat;
+} 
+
+.subscribe-cell .close{
+    background-image: url(../images/tc-yh-01.png);
+    background-size: 25rem;
+    background-repeat: no-repeat;
+} 
+
+.select-nav {
+    overflow: hidden;
+    width: 17.2rem;
+    margin:1.5rem auto 0;
+    box-sizing: border-box;
+    border: 1px solid #ff5a00;
+    height: 2.4em;
+    border-radius: 1.2rem;
+}
+
+.select-nav .bt {
+    height: 2.2rem;
+    width: 8rem;
+    color: #333;
+    border-radius: 1.2rem;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    box-sizing: border-box;
+    float: left;
+}
+
+
+.select-nav .bt.active {
+    width: 9rem;
+    background: #ff5a00;
+    color: #fff;
+    border-radius: 1.2rem;
+    font-size: 16px;
+    float: left;
+    margin-left: 0;
+}
+
+.carpooling-serach{
+    margin: 1.5rem 1.5rem 0;
+    height:7.5rem;
+    background: #fff;
+    box-sizing: border-box;
+    padding:1rem 1.5rem 2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+}
+
+.carpooling-serach input{
+    font-size: 1.6rem;
+    display: block;
+    height: 4.5rem;
+    text-align: center;
+    width: 100%
+}
+
+.carpooling-serach .bt{ 
+    width:23%;
+    height: 3rem;
+    margin-left: 1.5rem;
+    line-height: 3rem;
+    border-radius: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    background: #ff5a00;
+}
+
+
+.carpooling-type-bt{
+    padding: .7rem 1rem 0;
+    background: #fff;
+}    
+
+.carpooling-type-bt .bt{
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 4.2rem;
+    border-radius: .2rem;
+    margin-right: .5rem;
+}
+
+.carpooling-type-bt .bt:last-child{margin-right: 0;}
+
+.carpooling-ul{
+    padding:2rem 1.5rem;
+    background: #fff;
+    line-height: 1.2;
+    margin:1.5rem 1.5rem 0;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+}
+
+.carpooling-ul .need{
+    font-size: 1.6rem;
+    height:1.8rem;
+    line-height: 1.8rem;
+    position: relative;
+    text-align: right;
+}
+
+ 
+.carpooling-ul .cong{
+    margin: 0 1rem;
+}
+
+.carpooling-ul .li01{
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 0 5rem 0 0;
+}
+
+.carpooling-ul .li02{margin-top: 1rem;font-size: 1.6rem;padding: 0 5rem 0 0;}
+
+.carpooling-ul .li03,.carpooling-ul .li04{
+    position: relative;
+    font-size: 1.4rem;
+    color:#666;
+    margin-top: 1rem;
+}
+
+.carpooling-ul .call{
+    width: 5.6rem;
+    display: block;
+    position: absolute;
+    top:1.3rem;
+    right:.4rem;
+}
+
+.carpooling-ul .icon-shi-call{color: #fff;vertical-align: -.1rem;}
+
+.carpooling-ul .arrow{
+    width:2.5rem;
+    display:block;
+    margin:0 1rem;
+}
+
+
+.carpooling-sort .flex:first-child{margin-right:5px;}
+
+.carpooling-sort .flex:last-child{margin-left:5px;}
+
+.carpooling-sort .flex{
+    height: 3.2rem;
+    line-height: 3.2rem;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.carpooling-sort .active.flex{
+    color: #ff5a00;
+}
+
+.carpooling-sort .iconfont{margin-right:.5rem;vertical-align:-2px;font-size: 18px; }
+
+.carpooling-ul .zhiding{
+    height:2rem;
+    width:3.3rem;
+    line-height: 1.5rem;
+    border-radius: 2px;
+    margin-right: .5rem;
+    text-align: center;
+    background-position: -26.7rem -11.1rem;
+    position: absolute;
+    top: -.5rem;
+    left: -.6rem;
+}
+
+.carpooling-ul.gray{
+    box-shadow: none;
+}
+
+.carpooling-ul .mask{display:none;}
+
+.carpooling-ul.gray .mask{
+    background: rgba(238,238,238,.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block
+}
+
+.carpooling-ul.gray .fache{
+    width: 9rem;
+    display: block;
+    position: absolute;
+    top: 5.2rem;
+    right:2.5rem;
+    z-index: 2;
+}
+
+.icon-lahuo{
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    display: block;
+    background: rgba(0, 0, 0, .7);
+    z-index: 10;
+    color:#fff;
+    text-align: center;
+}
+
+/*搜索栏*/
+.free-ride{
+    background: #fff;
+}
+
+.free-ride .bt{
+    height: 44px;
+    font-size: 16px;
+    background: #ff5a00;
+    color: #fff;
+    text-align: center;
+    line-height: 44px;
+}
+
+.free-ride .write{
+    height:65px;
+}
+
+.free-ride .write .dot{
+    width: 1.1rem;
+    height: 1.1rem;
+    box-sizing: border-box;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    display: block;
+}
+
+.free-ride .write input{
+    height: 100%;
+    font-size: 1.6rem;
+    width: 100%;
+    padding-left: 9%;}
+
+.carpooling-arrow{
+    width: 2rem;
+    height: 1.8rem;
+    background-position: -6rem 0;
+}   
+
+.icon-people{
+    margin:1.1rem 1.5rem 0;
+    width:2rem;
+    height:2.1rem;
+    display:block;
+    background-position: -6rem -1.9rem;
+}
+
+
+
+/*选择栏*/
+.index-type-select-nav{background: #fff;}
+
+.index-type-select-nav li{padding: 0 10px;height: 4.4rem;font-size: 1.6rem;position: relative;line-height: 4.4rem;text-align: center;color: #999;}
+
+.index-type-select-nav li.active{color: #ff5a00;}
+
+.index-type-select-nav li:after{content:""; width:3rem;height: .4rem;position: absolute;bottom: 0;left: 50%;transform: translate(-50%,0);
+background: #ff5a00;display: none;}
+
+.index-type-select-nav li.active:after{display:block;}
+
+.index-type-select-nav li.active i{display: block}
+
+.index-type-select-nav.bottom-line:after{z-index: 10;}
+
+.search-cell{padding: 1rem 0;background: #fff;margin: 0 1rem;}
+
+.search-cell .head{width: 6rem;height: 6rem;border-radius: 50%;margin-right: 1rem;}
+
+.search-cell .head img{width: 100%;height: 100%;border-radius: 50%;}
+
+.search-cell .call{height: 3rem;width: 3rem;border:1px solid #ff5a00;border-radius: 50%;line-height: 3rem;text-align: center;margin-left: 1rem;}
+
+.search-cell .call .icon-dianhua{font-size: 24px;color: #ff5a00;}
+
+
+/*底部栏*/
+
+@media only screen and (min-width: 320px) and (max-width: 350px) {
+    html{font-size: 50%}
+}

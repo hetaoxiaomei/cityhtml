@@ -1,0 +1,206 @@
+.bg-f{background: transparent}
+
+.c333{color: #fff}
+
+.c666{color:rgba(255, 255, 255, .6)}
+
+.dc{color:#0ccf83}
+
+body{
+    background: #09161e;
+    color: #fff
+}
+
+.white-mask{
+    background:linear-gradient(to bottom,rgba(53,60,72,0),rgba(53,60,72,1))
+}
+
+.basewrap{
+    position: relative;
+    z-index: 1;}
+
+.gap{
+    background: #0c1922;
+    height: .8rem;
+}
+
+.commodity-infor-all .c666{
+    color: #fff
+}
+
+.convenience-infor .title .c666{
+    color: #fff;
+}
+
+.activity-swiper .time em{background: #353c48;}
+
+.activity-swiper .content{
+    background: rgba(74,80,91,.5);
+}
+
+.bg-fix{    
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: url(../img/trade-18.jpg);
+    background-size:100%;
+}
+
+.commodity-infor .center .f01,.activity-swiper .title{color: #fff}
+
+.convenience-infor .top .label span.gongji{
+    color: #0ccf83;
+}
+
+.icon-claim{
+    background: #0ccf83;
+    color: #fff;
+}
+
+.convenience-infor .top .label span.xuqiu{
+    color: #f8272a;
+    background:transparent;
+}
+
+.convenience-infor .content.bottom-line:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #0e1e27;}
+
+.spread-js{background: #0c1922}
+
+.convenience-infor .top .label span.gongji:before{
+    border: 1px solid #0ccf83;
+}
+
+.chain-ul li .icon-link{background-position: -20.6rem -10.8rem;}
+
+.chain-ul li:before{
+    display: none
+}
+
+.index-type-select-nav.coupon{background: transparent;}
+
+.business-nav li{
+    background: #353c48;
+    color: #fff
+}
+
+.commodity-activity,.business-nav{background: transparent}
+
+.notice-cell .icon-notice{background-position: -23rem -6.9rem;}
+
+.commodity-infor-all{
+    box-shadow:0 4px 20px rgba(8,1,3,.35);
+    background: rgba(53,60,72,.8);
+}
+
+
+.commodity-infor .head{border: 1px solid #353c48}
+
+
+.swiper-container-horizontal .chain-ul li.swiper-slide{background: #0077f3; }
+
+.chain-ul li p,.activity-swiper .money,.notice-cell marquee,.commodity-activity .center .f03,
+.business-nav li.active,.p_list .p_content .p_txt,.p_list .p_bot a{color: #fff !important;}
+
+.activity-swiper ul.swiper-slide{box-shadow: 0 -1px 15px rgba(255,64,106,.1);}
+
+.business-nav li:before{display: none}
+
+.commodity-infor .focus{background: #fff;}
+
+.commodity-infor .focus:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius:50%;
+}    
+
+.commodity-infor .focus.active::before{
+    display: none
+}
+
+.convenience-infor,.characteristic-ul{background: transparent}
+
+.icon-eye{background-position: -39.2rem -5rem}
+
+.icon-comment{background-position: -41.4rem -5rem}
+
+.icon-transmit{background-position: -43.6rem -5rem}
+
+.commodity-infor .focus.active{background-color:#f8272a;}
+
+.commodity-infor .center .icon-focus{background-position: -15.7rem 0;}
+
+.commodity-infor .center .focus.active .icon-focus{background-position: -13.7rem 0;}
+
+.activity-swiper .buy-bt,.activity-swiper .qiang-bt{background-color:#0ccf83}
+
+.commodity-infor .right .icon-locl{background-position: -6.7rem -4.2rem;}
+
+.commodity-album-swiper{background: transparent}
+
+.p_list .p_pro {background: #282f3a;}
+
+.convenience-infor.mb{margin-bottom: 0}
+
+.write-down{background: transparent !important}
+
+.write-down .c999{color: #fff}
+
+.write-down .bt,.index-bottom-nav .bt01,.business-nav li.active{background:#0ccf83 !important;}
+
+.bottom-line:after {border-bottom: 1px solid #050d11;}
+
+.icon-wifi{background-position: -22.6rem -8.8rem;}
+
+.icon-wired-internet {background-position: -34rem -8.8rem;}
+
+.icon-parking-lot {background-position: -24.5rem -8.8rem;}
+
+.icon-toilet {background-position: -28.3rem -8.8rem;}
+
+.icon-hot-shower {background-position: -26.4rem -8.8rem;}
+
+.icon-luggage-deposit {background-position: -30.2rem -8.8rem;}
+
+.icon-delivery-service {background-position: -35.9rem -8.8rem;}
+
+.icon-provide-home {background-position: -32.1rem -8.8rem;}
+
+
+.cantact-dialog-js .title{color: #353c48 !important;}
+
+.cantact-dialog-js .c666{color: #353c48 !important;}
+
+
+.activity-title .more{background: #353c48;}
+
+.index-type-select-nav li,.commodity-activity .center .f02,.commodity-activity .center .f03,.convenience-infor .c999,
+.convenience-infor .function,.p_header,.characteristic-ul li
+{color: rgba(255,255,255,.6) !important;}
+
+.index-type-select-nav li:before,.commodity-activity .bt,.cantact-dialog-js .bt{background: #0ccf83}
+
+.index-type-select-nav li.active,
+.p_list .p_pro p a{color: #0ccf83 !important;}
+
+
+
+

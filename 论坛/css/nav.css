@@ -1,0 +1,128 @@
+.top-nav a .arrow,.top-nav .more{
+    background-image: url(../img/post-pic02.png);
+    background-size: 50rem;
+    background-repeat: no-repeat;
+}
+
+.top-nav {
+    height: 4rem;
+    padding: 0 1.5rem;
+    background: #fff;
+    display: flex;
+    -webkit-display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+}
+
+.top-nav a .arrow {
+    width: 1.1rem;
+    height:1.8rem;
+    display: block;
+    background-position: 0 0;
+}
+
+.top-nav .center {
+    flex: 1;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+}
+
+.top-nav .right{color:#0096FF;font-size: 1.4rem;width: 6rem;text-align:right;}
+
+.top-nav .left{width: 6rem}
+
+.title-nav{
+    padding: 1.5rem 0;
+    background: #fff;
+    font-size: 1.5rem;
+}
+
+.title-nav .blue-line{
+    width: .3rem;
+    height: 1rem;
+    background: #0096FF;
+    margin: 0 1.2rem 0 0;
+}
+
+.top-nav .more{
+    float: right;
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    background-position: -10.9rem -4.2rem;
+}
+
+/*底部导航栏*/
+.shadowTop{
+    height: 5rem;
+    box-shadow: 0 -2px 10px 0 rgba(0,0,0,0.05);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    background: #fff;
+}
+
+.shadowTop>a{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+footer a {
+    text-align: center;
+    color: #888888;
+    text-decoration: none;
+    font-size:1rem;
+    line-height: 1;
+}
+
+footer .active {color: #0096FF;}
+
+.footer-icon {
+    display: block;
+    margin: 0 auto .6rem;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+
+.active .icon-recommand,.active .icon-home,.active .icon-action,.active .icon-mine{display:none}
+
+.icon-homeActive,.icon-recommandActive,.icon-actionActive,.icon-mineActive{display: none;}
+
+.active .icon-homeActive, .active .icon-recommandActive, .active .icon-actionActive, .active .icon-mineActive {
+    display:block;
+}
+
+.publish svg {
+    display: block;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 2rem;
+    height:2rem;
+}
+
+.publish::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 5rem;
+    height: 5rem;
+    background: url(../img/new-pic01.png);
+    background-size: 100%;
+}

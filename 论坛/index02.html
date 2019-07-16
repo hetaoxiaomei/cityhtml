@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>首页改版</title>
+    <link rel="stylesheet" type="text/css" href="http://j.vzan.cc/fcontent/styles/base.css?v=1608040730">
+    <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/??minisns/css/swiper.min.css,minisns/css/public.css,minisns/css/listHead.css?v=451">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head> 
+<body>
+<body>
+    <div id="index-nav" class="d-flex bg-f bz">
+        <div class="left">
+            <i class="follow"></i>关注
+        </div>  
+        <div class="center">
+            <i class="search"></i>
+            <input placeholder="搜索帖子，用户昵称，用户ID"></input>
+        </div>  
+        <div class="right"><i class="sign"></i>签到</div>   
+    </div>
+
+    <div id="index-bg">
+        <img src="img/03.jpg">
+    </div>
+
+    <div id="index-local" class="d-flex d-flex-center">
+        <div class="left">
+            <img src="img/sign-bg05.jpg">
+        </div>
+        <div class="center">话题 8100 · 访问 6965w</div>
+        <div class="right">
+            <i class="manage"></i>管理
+        </div>
+    </div>
+    
+    <!--轮播-->
+    <div id="swiper-ad" class="swiper-container swiper-container-horizontal">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/03.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/03.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/03.jpg">
+            </div>                        
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!--广告-->
+    <div class="bg-f" style="padding: 0 0 0 .32rem;">
+        <a class="d-flex d-flex-center bottom-line ad-cell red">
+           <div class="icon-ad"></div>
+           <div class="clamp1 f01">请大家遵守本版发帖规则，文明发帖~文明发帖~文明发帖~</div>
+        </a>
+        <a class="d-flex d-flex-center bottom-line ad-cell">
+           <div class="icon-ad"></div>
+           <div class="clamp1 f01">请大家遵守本版发帖规则，文明发帖文明发帖~</div>
+        </a>
+        <a class="d-flex d-flex-center bottom-line ad-cell">
+           <div class="icon-ad"></div>
+           <div class="clamp1 f01">中国民航报消息，2月24日10时20分，一架奖状~</div>
+        </a>
+    </div>
+
+    <!--自助广告图-->
+    <div id="self-serve-advertising">
+        <img src="img/03.jpg">
+    </div>      
+    
+
+    <!--轮播自助广告文字-->  
+    <div id="self-serve-words">
+        图片广告位招商，点击自助上传广告(1元/天)
+    </div>              
+
+    <!--广告-->
+    <div class="bg-f ad-cell-all">
+        <a class="d-flex d-flex-center bottom-line ad-cell red">
+           <div class="icon-ad02">AD</div>
+           <div class="clamp1 f01">请大家遵守本版发帖规则，文明发帖~文明发帖~文明发帖~</div>
+        </a>
+        <a class="d-flex d-flex-center bottom-line ad-cell">
+           <div class="icon-ad02">AD</div>
+           <div class="clamp1 f01">请大家遵守本版发帖规则，文明发帖文明发帖~</div>
+        </a>
+        <a class="d-flex d-flex-center bottom-line ad-cell">
+           <div class="icon-ad02">AD</div>
+           <div class="clamp1 f01">中国民航报消息，2月24日10时20分，一架奖状~</div>
+        </a>
+    </div>
+
+    <!--自助广告-->
+    <div id="swiper-word" class="swiper-container swiper-container-vertical" style="margin-top: 10px;background: #fff;height:.986rem">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="bg-f ad-cell-all">
+                    <a class="d-flex d-flex-center bottom-line ad-cell red">
+                       <div class="icon-ad02">AD</div>
+                       <div class="clamp1 f01">请大家遵守本版发帖规则，文明发帖~文明发帖~文明发帖~</div>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="bg-f ad-cell-all">
+                    <a class="d-flex d-flex-center bottom-line ad-cell red">
+                       <div class="icon-ad02">AD</div>
+                       <div class="clamp1 f01">请大家遵守本版发帖规则，文明发帖~文明发帖~文明发帖~</div>
+                    </a>
+                </div>
+            </div>            
+        </div>
+    </div>
+
+
+
+    <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js"></script>
+    <script src="https://j.vzan.cc/content/??minisns/js/rem.js,minisns/js/fastclick.js"></script>
+    <script src="https://j.vzan.cc/fcontent/script/swiper.min.js"></script>  
+    <script>
+        var swiper = new Swiper('#swiper-ad', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+
+        var swiper = new Swiper('#swiper-word', {
+            direction: 'vertical',
+            pagination: '.swiper-pagination',
+            autoplay:3000,
+            loop:1
+        });
+    </script>  
+</body>
+</html>

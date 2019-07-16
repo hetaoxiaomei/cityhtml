@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>招聘列表</title>
+    <link rel="stylesheet" type="text/css" href="http://j.vzan.cc/fcontent/styles/base.css?v=1608040730">
+    <link rel="stylesheet" type="text/css" href="../css/recruit.css">
+</head> 
+<body class="basewrap">
+	<div class="fix-tl">
+		<div class="d-flex bottom-line bg-f list-nav">
+			<div class="flex rel">
+				<p class="f01">招聘</p>
+				<i class="line"></i>
+				<ul class="select">
+					<li class="bottom-line active">招聘</li>
+					<li class="bottom-line">求职</li>
+				</ul>
+			</div>
+			<div class="flex rel left-line">
+				<p class="f01">默认排序</p>
+				<i class="line"></i>
+				<ul class="select">
+					<li class="bottom-line active">默认排序</li>
+					<li class="bottom-line">按浏览量</li>
+				</ul>				
+			</div>
+		</div>
+	</div>
+
+	<div style="padding:45px 0 80px;">
+		<div class="recruit-list-all mt">
+			<div class="bottom-line" style="padding: 0 0 15px;">
+				<div class="d-flex recruit-list rel">
+					<div class="head">
+						<img src="../img/0.jpg">
+						<i class="icon-emergency"></i>
+					</div>
+					<div class="flex">
+						<div class="f01 clamp1">快递员</div>
+						<div class="f02">3000-4000元/月</div>
+						<ul class="welfare-ul">
+							<li class="welfare">加班补助</li>
+							<li class="welfare">加班补助</li>
+							<li class="welfare">加班补助</li>
+						</ul>
+						<div class="bt">查看招聘</div>
+					</div>
+				</div>
+				<div class="d-flex c666" style="padding: 0 12px 0 0;">
+					<div class="flex clamp1">广州市天河区林和中路</div>
+					<div>发布时间:2018-12-26</div>
+				</div>
+			</div>
+			<div class="bottom-line" style="padding: 0 0 15px;">
+				<div class="d-flex recruit-list rel">
+					<div class="head">
+						<img src="../img/0.jpg">
+					</div>
+					<div class="flex">
+						<div class="f01 clamp1">快递员</div>
+						<div class="f02">3000-4000元/月</div>
+						<ul class="welfare-ul">
+							<li class="welfare">加班补助</li>
+							<li class="welfare">加班补助</li>
+							<li class="welfare">加班补助</li>
+						</ul>
+						<div class="bt">查看招聘</div>
+					</div>
+				</div>
+				<div class="d-flex c666" style="padding: 0 12px 0 0;">
+					<div class="flex clamp1">广州市天河区林和中路</div>
+					<div>发布时间:2018-12-26</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="recruit-list-all mt">
+			<div class="bottom-line" style="padding: 0 0 15px;">
+				<div class="d-flex recruit-list rel">
+					<div class="head">
+						<img src="../img/0.jpg">
+						<i class="icon-recommend"></i>
+					</div>
+					<div class="flex">
+						<div class="f01 clamp1">快递员快递员快递员快递员快递员快递员</div>
+						<div class="f02" style="margin: 8px 0">34000元</div>
+						<div style="font-size:12px;color:#666;">男，25岁</div>
+						<div class="bt">查看求职</div>
+					</div>
+				</div>
+				<div class="d-flex c666" style="padding: 0 12px 0 0;">
+					<div class="flex clamp1">李大刀</div>
+					<div>发布时间:2018-12-26</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<a id="#more-bt-js" href="" style="position: fixed;right: 0;bottom: 8rem;"><img style="width:65px" src="../img/ranking48.png"></a> 
+
+
+	<div id="more-dialog-js" class="fix-tl-100 none" style="display: block;">
+		<div class="blackmask"></div>
+		<div class="more-dialog">
+			<div class="edit-bt">
+				<div class="bt bottom-line">
+					<p class="f01 bold" style="line-height: 50px">招聘</p>
+				</div>
+				<div class="bt bottom-line">
+					<p class="f01 bold" style="line-height: 50px">求职</p>				
+				</div>
+			</div>
+			<div id="close" class="cancel-bt" style="color: #17B5EE;">取消</div>
+		</div>
+	</div>
+
+
+	<script src="https://j.vzan.cc/content/Home/js/jquery.min.js"> </script> 
+    <script>
+        $(document).ready(function(){
+            $('#way-js .select').click(function () {
+				$(this).children('.radio').addClass('active');
+				$(this).siblings('.select').children('.radio').removeClass('active')
+            })
+
+            $('#xinzi-js').click(function () {
+            	$(this).children('.radio').toggleClass('active');
+            })
+
+            $('.recruit-write-cell .welfare').click(function () {
+				$(this).toggleClass('active');
+            })
+
+            $('.list-nav .flex').click(function () {
+            	$(this).children('.select').show();
+            	$(this).siblings('.flex').children('.select').hide();
+            })
+
+            $('.select li').click(function () {
+            	$(this).addClass('active').siblings('li').removeClass('active');
+            	$(this).parents('.select').hide();
+            	event.stopPropagation();
+                event.preventDefault();
+            })
+        })
+
+
+	    $(document).ready(function(){
+	        $('#more-bt-js').click(function () {
+				$('#more-dialog-js').show();
+	        })   
+	        $('#close').click(function () {
+				$('#more-dialog-js').hide();
+	        }) 	               
+	    })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>同城服务系统</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        .customer-time{font-size:1rem;color:#97a8b9;line-height:2rem;padding:0 1rem}
+        .customer-cell{position: relative;margin:0 1rem;background: #fff;margin-bottom:10px;overflow: hidden;}
+        .customer-cell img{width:100%;}
+        .customer-cell .online,.customer-cell .busy{height: 1.7rem;width: 3.6rem;display: block;position: absolute;top:9%;left: 2.8%;
+            background-size: 3.6rem;background-position: 0 0;z-index: 1} 
+        .customer-cell .online{background-image:url(img/customer07.jpg);}
+        .customer-cell .busy{background-image:url(img/customer09.jpg);}
+        .customer-cell.gray .busy{background-image:url(img/customer10.jpg);}
+        .customer-cell.gray{background: #ccd2d8}
+        .customer-cell.gray .online{background-image:url(img/customer08.jpg)}
+
+        .customer-cell.gray img{filter: grayscale(1);-webkit-filter: grayscale(1)}
+        .public-position{position: absolute;top:6.8%;left: 50%;transform: translate(-50%,0);-webkit-transform: translate(-50%,0);border:5px solid #fff;box-shadow: 0 0 6px rgba(15,4,154,.3);width: 26%;}
+        .public-position img{display:block}
+        .public-f01{position: absolute;bottom: 9px;left: 50%;transform: translate(-50%,0);-webkit-transform: translate(-50%,0);width: 100%;text-align: center;color: #fff}
+
+        .customer-cell .blank{width: 32%;padding-top: 32%;background: #fff;position: absolute;top: 0;right: 0;display: block;z-index: 1}
+        .customer-cell.gray .blank{width: 32%;padding-top: 32%;background: #ccd2d8;position: absolute;top: 0;right: 0;display: block;z-index: 1}
+    </style>
+</head>
+<body>
+    <div class="basewrap">
+        <img src="img/customer14.jpg" style="display:block;width:100%;">
+        <p class="customer-time">服务时间：（工作日）09:00-18:00</p>
+        <div>
+            <div class="rel customer-cell">
+                <img src="img/customer01.png">
+                <i class="online"></i>
+                <span class="blank"></span>
+            </div>
+            <div class="rel customer-cell">
+                <img src="img/customer02.png">
+                <i class="online"></i>
+                <span class="blank"></span>
+            </div>
+            <div class="rel customer-cell">
+                <img src="img/customer03.png">
+                <i class="online"></i>
+                <span class="blank"></span>
+            </div>
+            <div class="rel customer-cell">
+                <img src="img/customer04.png">
+                <i class="online"></i>
+                <span class="blank"></span>
+            </div>
+            <div class="rel customer-cell gray">
+                <img src="img/customer05.png">
+                <i class="online"></i>
+                <span class="blank"></span>
+            </div>
+            <div class="rel customer-cell gray">
+                <img src="img/customer06.png">
+                <i class="busy"></i>
+                <span class="blank"></span>
+            </div>
+            <div class="rel customer-cell gray">
+                <img src="img/customer11.png">
+                <i class="online"></i>
+                <span class="blank"></span>
+            </div>
+            <div class="rel customer-cell gray">
+                <img src="img/customer12.png">
+                <i class="online"></i>
+                <span class="blank"></span>
+            </div>
+        </div>
+
+        <div class="rel">
+            <img src="img/customer15.jpg" style="display:block;width:100%;">
+            <div class="public-position">
+                <img class="public-qr img-wh-100" src="img/customer13.jpg">
+            </div>
+            <p class="public-f01">非正常服务时间请通过上方公众号留言</p>
+        </div>
+
+    </div>
+
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?f90382ec8c5c8d075e87e3df10618560";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+     </script>
+
+</body>
+</html>

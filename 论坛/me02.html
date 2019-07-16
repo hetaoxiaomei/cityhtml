@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>个人主页</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/me.css">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <style>
+        .me-top{height: 27rem;}
+        .data-ul02{margin: 0;}
+        .data-ul01 {margin: 3rem 0 0;}
+        .data-ul02 li .f02 {margin: .5rem 0 0;}
+        .person-infor-cell .f01{display: inline;float: none;max-width:none}
+        .icon-boy, .icon-girl{display: inline-block;float: none;vertical-align: -.3rem;margin: 0 0 0 .2rem;}
+        .icon-grade{display: inline-block;background: linear-gradient(to right,#D3D0FD,#A39FFB);float: none;vertical-align:.1rem;margin: 0 0 0 .2rem;}
+    </style>
+</head> 
+<body>
+    <div id="topNav" class="fix-tl none">
+        <div class="top-nav bottom-line">
+            <a class="left">
+               <i class="arrow"></i>
+            </a>
+            <div class="center">派大鑫主页</div>
+            <a class="right">
+                <i class="more"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="basewrap" style="padding:0 0 7rem">
+        <div class="me-top">
+            <div class="person-infor-cell">
+                <div class="head" style="margin:0 auto;">
+                    <img src="img/0.jpg">
+                    <i class="icon-vip"></i>
+                </div>
+                <div class="ta-c" style="overflow: hidden;margin:1rem 0 0;">
+                    <p class="f01">派大鑫派大鑫派大鑫</p>
+                    <i class="icon-boy"></i>
+                    <i class="icon-girl"></i>
+                    <i class="icon-grade">青铜玩家</i>
+                </div>
+                <p class="f02 ta-c">简介：留下一句话让大家认识你</p>
+            </div>
+            <div class="ta-c" style="margin: 1.5rem 0 0;">
+                <div class="sixin-bt"><i class="icon-sixin"></i>私信</div>
+                <div class="focus-bt" data-isactive="0"><i class="icon-focus"></i>关注</div>
+            </div>
+            <i class="icon-edit" style="background-position:-24.7rem 0;"></i>
+            <i class="icon-back" style="background-position:-27.4rem 0;"></i>
+            <ul class="d-flex d-flex-center data-ul01">
+                <li class="flex right-line">
+                    <p class="f01">234</p>
+                    <p class="f02">我的发帖</p>
+                </li>
+                <li class="flex right-line">
+                    <p class="f01">234</p>
+                    <p class="f02">我的发帖</p>
+                </li>
+                <li class="flex right-line">
+                    <p class="f01">234</p>
+                    <p class="f02">我的发帖</p>
+                </li>         
+                <li class="flex right-line">
+                    <p class="f01">234</p>
+                    <p class="f02">我的发帖</p>
+                </li>                                       
+            </ul>
+        </div>
+
+        <ul class="data-ul02">
+            <li>
+                <i class="icon icon-my-participate"></i>
+                <p class="f01">Ta的参与</p>
+                <p class="f02">8</p>
+            </li>          
+
+            <li>
+                <i class="icon icon-kind-infor"></i>
+                <p class="f01">分类信息</p>
+                <p class="f02">8</p>
+            </li> 
+            <li>
+                <i class="icon icon-my-post"></i>
+                <p class="f01">Ta的资料</p>
+            </li>
+            <li>
+                <i class="icon icon-about-us02"></i>
+                <p class="f01">关于我们</p>
+            </li>                                     
+        </ul> 
+
+        <div style="height: 600px;"></div>
+    </div>
+
+    <!--底部导航栏-->
+    <footer class="fix-bl">
+        <div class="basewrap shadowTop">
+            <a href="" class="home active">
+                <svg aria-hidden="true" class="footer-icon icon-home">
+                    <use xlink:href="../img/iconfont.svg#icon-home"></use>
+                </svg>
+                <svg aria-hidden="true" class="footer-icon icon-homeActive">
+                    <use xlink:href="../img/iconfont.svg#icon-homeActive"></use>
+                </svg>
+                <p>首页</p>
+             </a>
+            <a href="" class="recommand">
+                <svg aria-hidden="true" class="footer-icon icon-recommand">
+                    <use xlink:href="../img/iconfont.svg#icon-recommand"></use>
+                </svg>
+                <svg aria-hidden="true" class="footer-icon icon-recommandActive">
+                    <use xlink:href="../img/iconfont.svg#icon-recommandActive"></use>
+                </svg>
+                <p>精选</p>
+            </a>
+            <a class="publish">
+                <div class="footer-icon"></div>
+                <p>发帖</p>
+            </a>
+            <a href="" class="action MsgAllRead">
+                <svg aria-hidden="true" class="footer-icon icon-action">
+                    <use xlink:href="../img/iconfont.svg#icon-action"></use>
+                </svg>
+                <svg aria-hidden="true" class="footer-icon icon-actionActive">
+                    <use xlink:href="../img/iconfont.svg#icon-actionActive"></use>
+                </svg>
+                <p>动态<i class="dt_msgnum" style="display:none">0</i></p>
+            </a>
+            <a href="" class="mine">
+                <svg aria-hidden="true" class="footer-icon icon-mine">
+                    <use xlink:href="../img/iconfont.svg#icon-mine"></use>
+                </svg>
+                <svg aria-hidden="true" class="footer-icon icon-mineActive">
+                    <use xlink:href="../img/iconfont.svg#icon-mineActive"></use>
+                </svg>
+                <p>我的</p>
+            </a>
+        </div>
+    </footer>
+    
+    <script src="js/jquery-1.10.2.js"></script>
+    <script>;
+        $('.focus-bt').on('click',function(){
+            if($(this).data('isactive') == 0){
+                $(this).data('isactive',1);
+                $(this).html('已关注');
+                $(this).addClass('active');
+            }else{
+                $(this).data('isactive',0);
+                $(this).html("<i class='icon-focus'></i>关注");
+                $(this).removeClass('active');
+             }
+         })
+
+        $(window).scroll(function() {      
+            var a=$(window).scrollTop();
+            if (a>10) {
+                $('#topNav').removeClass('none');
+            }else{
+                 $('#topNav').addClass('none');
+            }
+        });
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+body{background: #f0f0f0;}
+
+.fix-tl{position:fixed;top: 0;left: 0;width: 100%;z-index: 10;}
+
+.none{display:none;}
+
+.bold{font-weight: bold}
+
+.c333{color: #333}
+
+.c666{color: #666}
+
+.c999{color: #999}
+
+input::-webkit-input-placeholder {color: #999;}
+input::-moz-placeholder {color: #999}
+input::-moz-placeholder {color: #999;}
+input::-ms-input-placeholder {color: #999;}
+
+textarea::-webkit-input-placeholder {color: #999;}
+textarea::-moz-placeholder {color: #999}
+textarea::-moz-placeholder {color: #999;}
+textarea::-ms-input-placeholder {color: #999;}
+
+.bottom-line,.right-line,.top-line{
+	position: relative;
+}
+
+.bottom-line:after{
+	content:" ";
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:1px;
+	border-bottom: 1px solid #e5e5e5;
+	-webkit-transform-origin:0 100%;
+	transform-origin:0 100%;
+	-webkit-transform:scaleY(0.5);
+	transform:scaleY(0.5);
+}
+
+.top-line:before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.right-line:after{
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+    border-left: 1px solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+}
+
+.ta-c{text-align: center;}
+
+.none{display: none}
+
+/*返回导航*/
+.top-nav {
+    height: 44px;
+    padding: 0 15px;
+    background: #fff;
+}
+
+.top-nav a .arrow {
+    width: 11px;
+    height: 18px;
+    display: block;
+    background-position: 0 0;
+}
+
+.top-nav .center{flex:1;color: #333;font-size: 16px;}
+
+.top-nav a .arrow,.notice-cell .arrow,.icon-expression{
+    background-image: url(../img/post-pic.png);
+    background-size: 500px;
+}
+
+.top-nav>a {
+    display: block;
+}
+
+.top-nav .fabiao-bt {
+    width: 60px;
+    height: 27px;
+    line-height: 27px;
+    color: #fff;
+    font-size: 14px;
+    background: #17b5ee;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.notice-cell-all{
+	padding:0 15px;
+	line-height: 1.6;
+	background: #fff;
+	margin-bottom: 10px;
+}
+
+.notice-cell{
+	padding: 10px 0;
+}	
+
+.notice-cell .arrow{
+	width: 13px;
+	height: 8px;
+	display: block;
+	background-position: -148px -103px;
+}
+
+.notice-cell .arrow.active{
+	transform: rotate(180deg);
+}
+
+.notice-cell .f01{font-size: 16px;color: #333;font-weight: bold;}
+
+.notice-cell-all .detail{color: #999;font-size: 14px;}
+
+.notice-cell-all .watch-more{color: #17B5EE;font-size: 14px;padding: 10px 0 15px;display:block;}
+
+.notice-cell-all .bt-all{overflow: hidden;padding: 10px 0;} 
+
+.notice-cell-all .bt01,.notice-cell-all .bt02{
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 30px;
+	border-radius: 15px;
+	display: block;
+	position: relative;
+	margin-left: 20px
+} 
+
+.notice-cell-all .bt-all .bt01{
+	overflow:hidden;
+	color: #fff;
+	background: #17B5EE;
+}
+
+.notice-cell-all .bt-all .bt02{color: #333;}
+
+.notice-cell-all .bt-all .bt02:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #999;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+	border-radius: 30px;
+}    
+
+.plus-bt{
+	position: fixed;
+	bottom:60px;
+	right:10px;
+	width: 60px;
+	border-radius: 50%;
+	box-shadow: 0 5px 10px rgba(69,172,251,.3);
+	z-index: 2;
+}
+
+.plus-bt img{width: 100%;}
+
+.notice-cell02{padding: 0 15px;font-size: 14px;color: #333;}
+
+.notice-cell02 .f01{padding: 20px 0 0;}
+
+.notice-cell02 .f02{padding: 15px 0;}
+
+.notice-cell02 input{color: #333;font-size: 14px;display: block;width: 100%;}
+
+.notice-cell02 textarea{
+	height: 140px;
+	padding: 10px;
+	box-sizing:border-box;
+	color: #333;
+	font-size: 14px;
+	width: 100%;
+	border:1px solid #f0f0f0;
+}
+
+.icon-expression{
+    width: 21px;
+    height: 21px;
+    margin: 15px 15px 0;
+    background-position: -39px 0;
+}

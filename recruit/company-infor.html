@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>企业信息</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
+    <link rel="stylesheet" type="text/css" href="../css/LArea.css">
+    <link rel="stylesheet" type="text/css" href="../css/company-list.css">
+</head>
+<body class="bg-f" style="height:100%;">
+    <div id="vue_recruit" class="basewrap">
+        <!--顶部选择导航-->
+        <div class="rel fix-tl">
+            <!--顶部栏-->
+            <div class="basewrap index-search-bar">
+                <div class="center">
+                    <svg class="icon-search" aria-hidden="true">
+                        <use xlink:href="../css/icon.svg#search"></use>
+                    </svg>
+                    <input readonly placeholder="搜索" />
+                </div>
+                <div class="right js-sign" data-sign="0">
+                    <i class="icon-qiye-ruzhu"></i>           
+                    <p class="f10 ta-c">企业入驻</p>			
+                </div>                   
+            </div>
+
+            <div class="d-flex ta-c recruit-select-nav">
+                <div id="demo1" class="flex">
+                    <span>区域</span>       
+                    <i class="tc-list-top-triangle"></i>
+                </div>
+                <div class="flex"> 
+                    <span>筛选</span>
+                    <i class="tc-list-top-triangle"></i>
+                </div>  
+                <div class="flex"> 
+                    <span>排序</span>
+                    <i class="tc-list-top-triangle"></i>
+                </div>                                
+            </div>
+
+            <!--筛选-->
+            <div class="dialog-screen-select-js01 abs none" style="width:100%;">
+                <div class="screen-select bg-f" style="height: 100%;">
+                    <!--分类-->
+                    <div class="shaixuan-all rel" style="overflow:auto;">
+                        <p class="f01">行业选择</p>
+                        <ul class="type infinite">
+                            <li class="active">不限</li>
+                            <li>IT/互联网/通信/通信/通信</li>
+                            <li>金融业</li>
+                            <li>房地产/建筑业</li>
+                            <li>商业服务</li>
+                            <li>贸易/批发/零售</li>   
+                            <li>文体教育/工艺</li>                            
+                        </ul>
+                        <p class="f01">企业规模</p>
+                        <ul class="type selectone">
+                            <li class="active">不限</li>
+                            <li>1~49人</li>
+                            <li>50~99人</li>
+                            <li>100~499人</li>
+                            <li>500~999人</li>
+                            <li>1000人以上</li>                             
+                        </ul>
+                        <p class="f01">企业性质</p>
+                        <ul class="type selectone">
+                            <li class="active">不限</li>
+                            <li>私营</li>
+                            <li>个体户</li>
+                            <li>国有</li>
+                            <li>股份制</li>
+                            <li>外商独资/办事处</li>         
+                            <li>中外合资/合作</li>    
+                            <li>上市公司</li>   
+                            <li>事业单位</li>       
+                            <li>政府机关</li>   
+                            <li>非盈利机构</li>                                             
+                        </ul>
+                        <p class="f01">企业福利</p>
+                        <ul class="type selectmore">
+                            <li>交通补贴</li>
+                            <li>加班补贴</li>
+                            <li>餐补</li>
+                            <li>房补</li>
+                            <li>话补</li>
+                            <li>包吃</li>         
+                            <li>包住</li>    
+                            <li>医保</li>   
+                            <li>社保</li>       
+                            <li>年终奖</li>   
+                            <li>住房公积金</li>
+                            <li>节日福利</li>     
+                            <li>年假</li>                                            
+                        </ul>
+                    </div>
+                    <div class="save-bt">保存</div>
+                </div>
+            </div>
+
+            <!--排序-->
+            <div class="dialog-screen-select-js02 abs none" style="width:100%;">
+                <div class="dialog-black-mask"></div>
+                <div class="screen-select bg-f">
+                    <div class="d-flex screen-local sort-js">
+                        <ul class="flex">
+                            <li class="bottom-line">默认排序</li>
+                            <li class="bottom-line">最新入驻</li>
+                            <li class="bottom-line">最新发布职位</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-1 bg-f" style="padding:8.4rem 0 7.6rem 1.2rem;">
+            <div class="d-flex d-flex-center company-list bg-f">
+                <div class="head">
+                    <img class="img-wh-100" src="../img/companyInfor.img">
+                    <i class="top_ding"></i>
+                </div>
+                <div class="flex right bottom-line">
+                    <p class="f01 f14 bold clamp1" style="line-height: 1.35;"><i class="tuijian"></i>GPLAY海外业务信息科技有限公司</p>
+                    <p class="f02 f10 c666" style="margin-top:.4rem;">互联网/IT行业</p>
+                    <div class="type">
+                        <span v-for="welfare in companyInfor.welfares">五险一金</span>
+                        <span v-for="welfare in companyInfor.welfares">五险一金</span>
+                    </div>
+                    <p class="f03 f12 c666" style="margin-top:3rem;">已发布&nbsp;<i class="mc">12</i>&nbsp;条招聘信息</p>
+                </div>
+            </div>
+
+            <div class="d-flex d-flex-center company-list bg-f">
+                <div class="head">
+                    <img class="img-wh-100" src="../img/companyInfor.img">
+                    <i class="top_ding"></i>
+                </div>
+                <div class="flex right bottom-line">
+                    <p class="f01 f14 bold clamp1" style="line-height: 1.35;"><i class="tuijian"></i>GPLAY海外业务信息科技有限公司</p>
+                    <p class="f02 f10 c666" style="margin-top:.4rem;">互联网/IT行业</p>
+                    <div class="type">
+                        <span v-for="welfare in companyInfor.welfares">五险一金</span>
+                        <span v-for="welfare in companyInfor.welfares">五险一金</span>
+                    </div>
+                    <p class="f03 f12 c666" style="margin-top:3rem;">已发布&nbsp;<i class="mc">12</i>&nbsp;条招聘信息</p>
+                </div>
+            </div> 
+
+        </div>
+        
+    </div>
+
+  
+    <script src="../js/jquery-1.10.2.js"></script>
+    <!-- <script src="../js/vue.min.js"></script> -->
+    <script src="../js/LAreaData1.js"></script>
+    <script src="../js/LAreaData2.js"></script>
+    <script src="../js/LArea.js"></script>
+
+    <script>
+        var area1 = new LArea();
+        area1.init({
+            'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
+            'valueTo': '#value1', //选择完毕后id属性输出到该位置
+            'keys': {
+                id: 'id',
+                name: 'name'
+            }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
+            'type': 1, //数据源类型
+            'data': LAreaData,
+            callback:function(){
+                $('.recruit-select-nav .flex').removeClass('active');
+                $('.recruit-select-nav .flex i').removeClass('active')
+                //console.log(1)
+            }//数据源
+        });
+        area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
+        var area2 = new LArea();
+        area2.init({
+            'trigger': '#demo2',
+            'valueTo': '#value2',
+            'keys': {
+                id: 'value',
+                name: 'text'
+            },
+            'type': 2,
+            'data': [provs_data, citys_data, dists_data],
+            callback:function(){
+                $('.recruit-select-nav .flex').removeClass('active');
+                $('.recruit-select-nav .flex i').removeClass('active')
+            }
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            var a=$('body').height();
+            $('.dialog-screen-select-js01,.dialog-screen-select-js02').css('height',a-84);
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.recruit-select-nav .flex').on('click', function () {
+                var a = $(this).index();
+                $(this).toggleClass('active').siblings('.flex').removeClass('active');
+            })
+
+            $('.recruit-select-nav .flex:first-child').on('click', function () {
+                $('.dialog-screen-select-js01,.dialog-screen-select-js02').hide();
+            })
+
+            $('.recruit-select-nav .flex:nth-child(2)').on('click', function () {
+                $('.dialog-screen-select-js02').hide();
+                $('.dialog-screen-select-js01').toggle();
+            })
+
+            $('.screen-select .save-bt').on('click', function(){
+                $('.dialog-screen-select-js01').hide();
+                $('.recruit-select-nav .flex:nth-child(2)').removeClass('active');
+                if ($(this).hasClass('active')) {
+                    $('.dialog-screen-select-js').show();
+                } else {
+                    $('.dialog-screen-select-js').hide();
+                }
+            })
+
+            $('.shaixuan-all ul.type.infinite li:not(:first)').on('click', function(){
+                $(this).toggleClass('active');
+                $('.shaixuan-all ul.type.infinite li:first-child').removeClass('active');
+            })   
+
+             $('.shaixuan-all ul.type.infinite li:first-child').on('click', function(){
+                $(this).addClass('active').siblings('li').removeClass('active');
+            })   
+
+             $('.shaixuan-all ul.type.infinite li:first-child').on('click', function(){
+                $(this).addClass('active').siblings('li').removeClass('active');
+            })  
+
+            $('.shaixuan-all ul.type.selectone li').on('click', function(){
+                $(this).addClass('active').siblings('li').removeClass('active');
+            })  
+
+            $('.shaixuan-all ul.type.selectmore li').on('click', function(){
+                $(this).toggleClass('active');
+            })  
+
+            $('.recruit-select-nav .flex:nth-child(3)').on('click', function () {
+                $('.dialog-screen-select-js01').hide();
+                $('.dialog-screen-select-js02').toggle();
+            })
+
+            $('.dialog-black-mask,.screen-local.sort-js ul li').on('click', function(){
+                $('.dialog-screen-select-js02').hide();
+            })
+
+            $('.dialog-black-mask').bind("touchmove", function (e) {
+                e.preventDefault();
+            });
+
+            $('.screen-local.sort-js ul li').on('click', function(){
+                $(this).addClass('active').siblings('li').removeClass('active');
+            })
+
+        })
+    </script>
+    
+    <!-- <script>
+         var vm = new Vue({
+                el: '#vue_recruit',
+                data: {
+                    companyInfors:[
+                        {
+                            img:'../img/02.jpg',
+                            name:'广州市创盈网络信息科技有限公司',
+                            number:'1',
+                            industry:'互联网/IT行业',
+                            recommend:true,
+                            top:false,
+                            requires:[              
+                                {item: '性别不限'},
+                                {item: '经验不限'},
+                                {item: '学历不限'},
+                                {item: '年龄不限'}
+                            ],
+                            welfares:[
+                                {item: '社保'},
+                                {item: '公积金'},
+                                {item: '饭补'},
+                                {item: '交通补贴'},
+                                {item: '话补'}
+                            ],
+                        },
+
+                        {
+                            img:'../img/02.jpg',
+                            name:'广州市创盈网络信息科技有限公司',
+                            number:'1',
+                            industry:'互联网/IT行业',
+                            recommend:false,
+                            top:true,                            
+                            requires:[              
+                                {item: '性别不限'},
+                                {item: '经验不限'},
+                                {item: '学历不限'},
+                                {item: '年龄不限'}
+                            ],
+                            welfares:[
+                                {item: '社保'},
+                                {item: '公积金'},
+                                {item: '饭补'},
+                                {item: '交通补贴'},
+                                {item: '话补'}
+                            ],
+                        }                        
+                    ]                  
+                    
+                } 
+        })
+    </script> -->
+    
+</body>
+</html>

@@ -1,0 +1,221 @@
+.index-type-select-nav li.active{font-size: 1.4rem;}
+
+.icon-gray-solid-triangle,.keyboard-layer .cancel,
+.keyboard-number .close i,.icon-shop{
+        background-image: url(../img/tc-pic04.png);
+        background-size: 50rem;
+}
+
+.icon-shop{
+    width:2.2rem;
+    height:2rem;
+    display: inline-block;
+    margin-right:.6rem;
+    vertical-align: -.5rem;
+    background-position: -14.6rem -14rem;
+}
+
+
+.icon-right-arrow{
+    display: block;
+    width: 1rem;
+    height: 1.6rem;
+    transform: rotate(-180deg);
+    fill: #999;
+    margin-left: .6rem;
+ }    
+
+ .online-purchase-cell{
+     padding: 1.5rem 1.2rem;
+     background: #fff;
+}
+
+.money-input-cell{
+     background: #fafafa;
+     font-size: 1.8rem;
+     height:6rem;
+     padding: 0 1rem;
+     position: relative;
+ }
+
+ .money-input-cell:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+ }
+
+ .cash-coupon-all{
+    height: 11rem;
+    margin-bottom: 8px;
+ }
+
+.money-input-cell input{
+     display: block;
+     width: 100%;
+     text-align: right;
+     font-size: 1.6rem;
+     font-weight: bold;
+     position: relative;
+    z-index:2;
+}
+
+.money-input-cell input::-webkit-input-placeholder {
+    color: #999;font-size: 1.4rem;font-weight: normal;line-height: 1.8}
+
+.money-input-cell input::placeholder {
+    color: #999;font-size: 1.4rem;font-weight: normal;line-height: 1.8}
+
+
+.online-purchase-cell .discount{
+    width:1.6rem;
+    height: 1.6rem;
+    border-radius: 2px;
+    background: #070606;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    line-height:1.6rem;
+    margin-right: .8rem;
+    font-size: 1.2rem;
+}
+
+.icon-gray-solid-triangle{
+    width: 1.2rem;
+    height: 0.8rem;
+    display: inline-block;
+    background-position: -29.5rem -.1rem;
+    margin-left: .8rem;
+}
+
+.receive-coupons-cell{
+    height: 4.9rem;
+    padding: 0 1.2rem;
+    line-height: 1.35;
+}
+
+.receive-coupons-cell .tag{
+    display: inline-block;
+    padding: 0 .5rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    text-align: center;
+    color: #ff3a1b;
+    margin-right: .8rem;
+    font-size: 1.2rem;
+    position: relative
+}
+
+.receive-coupons-cell .tag:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ff3a1b;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.cash-coupon-all .cell{margin-bottom: 0}
+
+/*键盘*/
+.keyboard-number{overflow: hidden}
+
+.keyboard-number li{
+    text-align: center;
+    line-height: 6rem;
+    height: 6rem;
+    font-size: 2.5rem;
+    width: 33.33%;
+    float: left;
+    border-right: 1px solid #f2f2f2;
+    border-top: 1px solid #f2f2f2;
+    box-sizing: border-box;
+    cursor: pointer
+}
+
+.keyboard-layer .cancel{
+    display: block;
+    width: 4rem;
+    height: 2.2rem;
+    background-position: 0 -12.3rem;
+    margin: 0 auto;
+}
+
+.keyboard-layer .pay-bt{
+    background:#ff3a1b;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    position: relative;
+   opacity: .5;
+}
+
+.keyboard-layer .pay-bt.active{
+    opacity: 1;
+}
+
+.keyboard-layer .cancel-bt{
+    height:6rem;
+    padding-top:1.8rem;
+}
+
+.keyboard-layer .f01{
+    line-height:1.8;
+    position: absolute;
+    top:50%;
+    left: 0;
+    transform: translate(0,-50%);
+    width: 100%;
+}
+
+.keyboard-number .close i{
+    width: 1.6rem;
+    height: 1rem;
+    display: block;
+    background-position:-29.4rem -1.1rem; 
+    margin: 2.6rem auto 0;
+}
+
+.keyboard-layer .dot i{
+    width:.5rem;
+    height:.5rem;
+    border-radius: 50%;
+    background: #333;
+    margin:2.8rem auto 0;
+    display: block;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 350px) {
+    .keyboard-number li{line-height: 4.4rem;height: 4.4rem;font-size: 1.8rem;}
+    .keyboard-layer .cancel-bt {height: 4.4rem;padding-top: 1rem;}
+    .money-input-cell{height: 4.4rem;}
+    .keyboard-number .close i{margin: 1.6rem auto 0;}
+    .keyboard-layer .dot i{margin: 2rem auto 0;}
+}
+
+
+
+
+
+
+
+
+
+

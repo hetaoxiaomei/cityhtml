@@ -1,0 +1,1055 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>抽奖页面</title>
+    <link rel="stylesheet" type="text/css" href="http://j.vzan.cc/fcontent/styles/base.css?v=1608040730">
+    <link rel="stylesheet" type="text/css" href="css/big-draw-dialog.css">
+
+    <link rel="stylesheet" type="text/css" href="http://j.vzan.cc/fcontent/styles/base.css?v=1608040730">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <link href="https://j.vzan.cc/content/city/lottery/css/common.css" rel="stylesheet" />
+    <link href="css/pay-result.css" rel="stylesheet" />
+    <link href="https://j.vzan.cc/content/asset/css/i-common.css" rel="stylesheet" />
+    <link href="https://j.vzan.cc/content/asset/css/iconfont.css" rel="stylesheet" />
+    <script src="js/jQueryRotate.js"></script>
+    <style>
+        body{background: #FEA42F;}
+        .big-draw-bt{font-size: 20px;color: #fff;font-weight: bold;background:linear-gradient(to bottom,#FB6030,#DD2717);height: 46px;line-height: 46px;border-radius: 23px;text-align: center;margin: 30px 12px 0;}
+        .big-draw-pic01{width: 100%;display: block;}
+        .big-draw-f01{font-size: 16px;color: #333;text-align: center;margin: 15px 0 0;line-height: 1.6}
+        .big-draw-f02{font-size: 14px;color: #fff;text-align: center;}
+        .big-draw-f02 .icon-laba{display: inline-block;width: 14px;height: 11px;
+            background: url(images/big-draw11.png);background-size: 15px 12px;margin-right: 5px;
+        }
+        .big-draw-f03{font-weight:bold;text-align: center;font-size: 17px;padding:40px 0 20px;}
+        .big-draw-cell{border: 1px solid #CE7400;border-right:0;border-bottom:0;margin:0 12px;}
+        .big-draw-cell .tr{height: 35px;line-height: 35px;text-align: center;font-size: 15px;}
+        .big-draw-cell .td{border: 1px solid #CE7400;border-left: 0;border-top: 0;}
+        .big-draw-f04{font-size: 13px;margin-top: 15px;}
+        .slide-bt{position: fixed;bottom: 30px;right: 8px;width: 50px;}
+        .slide-bt a{display: block;text-align: center;color: #fff;height: 40px;width: 40px;line-height: 40px;border-radius: 50%;background: linear-gradient(100deg,#FC9553,#F2452F);box-shadow: 0 2px 5px rgba(0,0,0,.2);box-sizing: border-box;margin-bottom: 15px;}
+    </style>
+</head> 
+<body>
+    <div style="padding: 20px 0;box-sizing:border-box;background: linear-gradient(to bottom,#ffbf27,#f28e00);">
+        <div style="padding:0 12px;">
+            <img class="big-draw-pic01" src="images/02.jpg">
+            <p class="big-draw-f01">
+                <span>今天抽奖剩余次数：<i class="cfff">1次</i>，</span>
+                <span>积分剩余：<i class="cfff">49550</i></span>
+            </p>
+        </div>
+
+        <!-- 转盘 -->
+        <div id="wrapper">
+            <section class="prize-rotate-wrapper"> 
+                <main id="main" v-bind:class="{noRadius:ltype==1}" v-if="show" v-show="isLoad">   
+                    <wheel-bar v-bind:items="awardList" @run="showResult" v-bind:count="count" :lid="lid" :areacode="areacode" @before="beforeRun"></wheel-bar>
+                </main>
+            </section>
+        </div>
+
+        <div style="padding:0 12px;margin: -40px 0 0">
+            <div class="big-draw-f02">
+                <i class="icon-laba"></i>今晚打老虎获得“小米note5手机”
+            </div>
+            <div class="big-draw-bt">分享再抽一次</div>
+            <p class="big-draw-f03">我的中奖记录</p>
+            <div class="big-draw-cell">
+                <div class="d-flex tr">
+                    <div class="flex td">奖品</div>
+                    <div class="flex td">获奖日期</div>
+                </div>
+                <div class="d-flex tr">
+                    <div class="flex td">积分100</div>
+                    <div class="flex td">2018-09-03</div>
+                </div>            
+            </div>
+            <p class="big-draw-f04">该抽奖奖品有XXXX赞助提供。中奖后工作人员会在3个工作日联系你领取。</p>
+        </div>
+    </div>
+
+    <div class="slide-bt">
+        <a>首页</a>
+    </div>
+
+    <!--弹框领取填写资料-->
+    <div class="fix-tl-100" style="display: none;">
+        <div class="blackmask"></div>
+        <div class="receive-dialog">
+            <p class="f01">恭喜中奖</p>
+            <p class="f02">恭喜获得“小米note5手机”</p>
+            <div class="d-flex d-flex-center w-cell">
+                <div class="left">真实姓名：</div>
+                <div class="flex right"></div>
+            </div>
+            <div class="d-flex d-flex-center w-cell">
+                <div class="left">联系方式：</div>
+                <div class="flex right"></div>
+            </div>
+            <div class="d-flex d-flex-center w-cell">
+                <div class="left">邮寄地址：</div>
+                <div class="flex right"></div>
+            </div> 
+            <div class="bt">领取</div>   
+            <p class="f01">放弃领取</p>                    
+        </div>
+    </div>
+
+    <!--弹框幸运大抽奖-->
+    <div class="fix-tl-100" style="display: none;">
+        <div class="blackmask"></div>
+        <div class="luck-dialog">
+            <img class="pic01" src="images/big-draw03.png">
+            <p class="f01">论坛积分</p>
+            <div class="f02"> 
+                <img class="pic02" src="images/big-draw02.png">论坛积分X分    
+            </div>
+            <p class="f03">恭喜您中奖了</p>
+            <p class="f04">论坛积分可用于兑换装饰和兑换活动</p>
+            <div class="bt">立即领取</div>
+        </div>
+    </div>
+
+    <!--弹框幸运大抽奖01-->
+    <div class="fix-tl-100" style="display: none;">
+        <div class="blackmask"></div>
+        <div class="luck-dialog02">
+            <p class="f01">恭喜发财</p>
+            <p class="f02">大吉大利</p>
+            <img class="pic01" src="images/big-draw04.png">
+            <img class="pic02" src="images/big-draw05.png">
+        </div>
+    </div>
+
+    <!--弹框幸运大抽奖02-->
+    <div class="fix-tl-100" style="display: none;">
+        <div class="blackmask"></div>
+        <div class="luck-dialog02">
+            <p class="f01">100元</p>
+            <p class="f02">恭喜你获得轮盘红包，请继续努力</p>
+            <img class="pic01" src="images/big-draw04.png">
+        </div>
+    </div>    
+
+    <script type="text/html" id="wheel-bar">
+        <div style="z-index:999;">
+            <div class="wheel-wrapper anim">
+                <canvas id="wheelCanvas" width="414" height="414"></canvas>
+                <!-- <div class="wheel-shadow"></div> -->
+                <div id="pointer" class="global-relative" @click="runWheel">
+                    <img src="images/big-draw10.png" class="global-img icon-point-inactive" v-show="isRun">
+                    <img src="images/big-draw10.png" class="global-img icon-point-active" v-show="!isRun">
+                </div>
+            </div>
+            <result-dialog :item="winItem" :is-win="isWin" :is-again="count>0" :show="showResult" @again="runWheel" @hide="hideRun" :areacode="areacode"></result-dialog>
+        </div>
+    </script>
+    <script type="text/javascript">
+        var wheelBar = Vue.extend({
+            template: "#wheel-bar",
+            data() {
+                return {
+                    award: [],//奖品列表,Rank=0不中项
+                    colors: ["#9b23f4", "#fdec50", "#9b23f4", "#fdec50", "#9b23f4", "#fdec50", "#9b23f4", "#fdec50", "#9b23f4", "#fdec50"], //转盘奖品区块对应背景颜色
+                    outsideRadiusL: 0,
+                    textRadius: 0,
+                    insideRadius: 0,
+                    isRun: false,
+                    isWin: false,
+                    winItem: {},
+                    showResult: false
+                }
+            },
+            props: {
+                items: {
+                    type: Array,
+                    default: function () {
+                        return [];
+                    }
+                },
+                count: {
+                    type: Number,
+                    default: 0
+                },
+                lid: {
+                    type: Number,
+                    default: 0
+                },
+                areacode: {
+                    type: Number,
+                    default: 0
+                }
+            },
+            mounted() {
+                var self = this;
+                self.award = self.items;
+                self.shuffle();
+                self.preloadImages(self.award).done(function (l) {
+                    self.drawWheelCanvas();
+                })
+            },
+            watch: {
+                items() {
+                    var self = this;
+                    this.shuffle();
+                    this.preloadImages(this.award).done(function (l) {
+                        self.drawWheelCanvas();
+                    })
+                }
+            },
+            methods: {
+                //洗牌算法
+                shuffle() {
+                    if (this.items.length < 1) return;
+                    var array = Object.assign([], this.items); //拷贝
+                    //array = this.$root.bubbleSort(array, "RemainNum", true);
+                    var len = array.length;
+                    var newArr = array; //最终数组
+                    //倍数增加 1，2，3个奖品
+                    //if (6 % len == 0 && len < 6) {
+                    //    for (var i = 0; i < (6 / len); i++) {
+                    //        newArr = newArr.concat(array);
+                    //    }
+                    //} else if (len < 6) {
+                    //    var other = 6 % len;
+                    //    var arr = array.splice(0, other);
+                    //    newArr = this.items.concat(arr); //填充最多项
+                    //} else {
+                    //    newArr = array;
+                    //}
+                    //重新洗牌
+                    for (var i = 0, l = newArr.length; i < l; i++) {
+                        var n = parseInt(Math.random() * l);
+                        newArr[i] = [newArr[n], newArr[n] = newArr[i]][0];
+                    }
+                    //2，6 插入
+                    //newArr.splice(2, 0, { RankName: "谢 谢 惠 顾", Id: 0, Rank: 0 });
+                    //newArr.splice(4, 0, { RankName: "谢 谢 惠 顾", Id: 0, Rank: 0 });
+                    //newArr.splice(6, 0, { RankName: "谢 谢 惠 顾", Id: 0, Rank: 0 });
+                    //newArr.splice(8, 0, { RankName: "谢 谢 惠 顾", Id: 0, Rank: 0 });
+                    this.award = newArr;
+                },
+                //预加载
+                preloadImages(arr) {
+                    var newimages = [],
+                        loadedimages = 0;
+                    var postaction = function () { }//此处增加了一个postaction函数
+                    var arr = (typeof arr != "object") ? [arr] : arr
+                    function imageloadpost() {
+                        loadedimages++;
+                        if (loadedimages == arr.length) {
+                            postaction(newimages)
+                        }
+                    }
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i].ImgUrl) {
+                            newimages[i] = new Image()
+                            newimages[i].src = arr[i].ImgUrl
+                            newimages[i].onload = function () {
+                                imageloadpost()
+                            }
+                            newimages[i].onerror = function () {
+                                imageloadpost()
+                            }
+                        } else {
+                            imageloadpost()
+                        }
+                    }
+                    return {//此处返回一个空白对象的done方法
+                        done: function (f) {
+                            postaction = f || postaction
+                        }
+                    }
+                },
+                //绘制转盘
+                drawWheelCanvas: function () {
+                    var self = this;
+                    var canvas = document.getElementById("wheelCanvas");
+                    var ctx = canvas.getContext("2d");
+                    var canvasW = canvasH = document.documentElement.clientWidth * 2
+                    if (canvasW >= 1280) {
+                        canvasW = canvasH = 1280
+                    }
+                    //边框大小
+                    self.outsideRadius = canvasW * .205;
+                    self.textRadius = canvasW * .180; //165
+                    self.insideRadius = canvasW * .035
+
+                    canvas.setAttribute("width", canvasW)
+                    canvas.setAttribute("height", canvasH)
+                    canvas.style.width = canvasW / 2 + 'px'
+                    canvas.style.height = canvasH / 2 + 'px'
+                    var baseAngle = Math.PI / (self.award.length / 2); //根据奖品个数计算圆周角度
+                    ctx.clearRect(0, 0, canvasW, canvasH);
+
+                    // 绘制外圆
+                    ctx.beginPath();
+                    ctx.strokeStyle = '#ffe93b' //#cf3a06
+                    ctx.lineWidth = canvasW * .025
+                    ctx.arc(canvasW * .5, canvasH * .5, self.outsideRadius * 2 - canvasW * .013, 0, Math.PI * 2, true)
+                    ctx.stroke()
+
+                    // ctx.beginPath();
+                    // ctx.strokeStyle = '#000' //#d477ff
+                    // ctx.lineWidth = canvasW * 0.042666667
+                    // ctx.arc(canvasW * .5, canvasH * .5, self.outsideRadius * 2 - canvasW * 0.0746666667, 0, Math.PI * 2, true)
+                    // ctx.stroke()
+
+                    // 绘制每一个扇面
+                    for (var i = 0, len = self.award.length; i < len; i++) {
+                        //根据当前奖品索引 计算绘制的扇形开始弧度
+                        var angle = -5 * baseAngle / 2 + i * baseAngle
+                        //开始绘制扇形
+                        ctx.beginPath();
+                        //if (i === 0) {
+                        //    var linear = ctx.createLinearGradient(100, 600, 100, 0);
+                        //    linear.addColorStop(.7, self.colors[0]);
+                        //    linear.addColorStop(0.3, '#fff');
+                        //    linear.addColorStop(.8, self.colors[0]);
+                        //    ctx.fillStyle = linear;
+                        //} else {
+                        //    ctx.fillStyle = self.colors[i];
+                        //}
+                        ctx.fillStyle = self.colors[i];
+
+                        //arc(x,y,r,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）
+                        ctx.arc(canvasW * .5, canvasH * .5, self.outsideRadius * 2 - canvasW * 0.025, angle, angle + baseAngle, false);
+                        ctx.arc(canvasW * .5, canvasH * .5, self.insideRadius * 2 - canvasW * 0.025, angle + baseAngle, angle, true);
+                        ctx.fill();
+                        ctx.save();
+
+                        //font 属性设置或返回画布上文本内容的当前字体属性
+                        ctx.fillStyle = "#333"; 
+                        ctx.font = 'bold 28px Microsoft YaHei';
+                        var rewardName = self.award[i].RankName; //等级名
+                        //// 谢谢惠顾
+                        //if (i === 2 || i === 6) {
+                        //    rewardName = rewardName.split('');
+                        //    for (var k = 0; k < rewardName.length; k++) {
+                        //        var translateX = canvasW * .5 + Math.cos(angle + baseAngle / 2) * (self.textRadius * 2 - 20 * k);
+                        //        var translateY = canvasH * .5 + Math.sin(angle + baseAngle / 2) * (self.textRadius * 2 - 20 * k);
+                        //        ctx.translate(translateX, translateY + 20 * k);
+                        //        ctx.rotate(angle + baseAngle / 2 + Math.PI * (2 * k + 1) / 2);
+                        //        ctx.fillText(rewardName[k], -ctx.measureText(rewardName[k]).width / 2, 32)
+                        //        ctx.translate(-translateX, -translateY - 20 * k);
+                        //    }
+                        //    // 奖项
+                        //} else {
+                        //    var translateX = canvasW * .5 + Math.cos(angle + baseAngle / 2) * (self.textRadius * 2);
+                        //    var translateY = canvasH * .5 + Math.sin(angle + baseAngle / 2) * (self.textRadius * 2);
+                        //    ctx.translate(translateX, translateY);
+                        //    ctx.rotate(angle + baseAngle / 2 + Math.PI / 2);
+                        //    ctx.fillText(rewardName, -ctx.measureText(rewardName).width / 2, 32)
+                        //}
+                        var translateX = canvasW * .5 + Math.cos(angle + baseAngle / 2) * (self.textRadius * 2);
+                        var translateY = canvasH * .5 + Math.sin(angle + baseAngle / 2) * (self.textRadius * 2);
+                        ctx.translate(translateX, translateY);
+                        ctx.rotate(angle + baseAngle / 2 + Math.PI / 2);
+                        ctx.fillText(rewardName, -ctx.measureText(rewardName).width / 2, 32)
+
+                        try {
+                            var img = new Image();
+                            img.src = self.award[i].ImgUrl;
+                            ctx.drawImage(img, -44, 50, 88, 88)
+                        } catch (err) {
+                            console.log(err)
+                        }
+                        ctx.restore();
+                        ctx.save();
+                        //----绘制奖品结束----
+                    }
+                },
+                //运行抽奖
+                runWheel() {
+                    // 判断是否拥有点击次数
+                    var self = this;
+                    self.isWin = false;
+                    self.showResult = false;
+                    self.winItem = {};
+                    if (self.count > 0) {
+                        // 正在转动，直接返回
+                        if (self.isRun) return;
+                        self.isRun = !self.isRun;
+                        // 开始抽奖滚动
+                        var num = 2
+                        var rand = Math.floor(Math.random() * 10 + 1);
+                        num = rand < 6 ? 2 : 6;
+                        $('#wheelCanvas').stopRotate();
+                        $('#wheelCanvas').rotate({
+                            angle: 0,
+                            animateTo: (330 - (num - 2 / 3) * (360 / (self.award.length))) + 360 * 5,
+                            duration: 8000,
+                            callback: function () {
+                                self.isRun = !self.isRun;
+                                self.showResult = true;                                
+                            }
+                        });
+                        // 在这里发出请求拿到中奖结果
+                        //$.ajax({
+                        //    url: "/store/LotteryStart",
+                        //    method: "post",
+                        //    data: { lid: self.lid },
+                        //    beforeSend: function () {
+                        //        self.$emit("before");
+                        //    },
+                        //    success: function (res) {
+                        //        if (res.code == 0) {
+                        //            alert(res.msg);
+                        //            return;
+                        //        }
+                        //        // 开始抽奖滚动
+                        //        var num = 2
+                        //        if (!res.data.isWin) {
+                        //            var rand = Math.floor(Math.random() * 10 + 1);
+                        //            num = rand < 6 ? 2 : 6;
+                        //        } else {
+                        //            var list = []; //中奖index集
+                        //            for (var i = 0; i < self.award.length; i++) {
+                        //                if (self.award[i].Rank === res.data.rank) {
+                        //                    list.push(i);
+                        //                }
+                        //            }
+                        //            if (list.length > 0) {
+                        //                var rand = Math.floor(Math.random() * list.length);
+                        //                num = list[rand];
+                        //            }
+                        //        }
+                        //        $('#wheelCanvas').stopRotate();
+                        //        $('#wheelCanvas').rotate({
+                        //            angle: 0,
+                        //            animateTo: (330 - (num - 2 / 3) * (360 / (self.award.length))) + 360 * 5,
+                        //            duration: 8000,
+                        //            callback: function () {
+                        //                self.isRun = !self.isRun;
+                        //                self.showResult = true;
+                        //                self.isWin = res.data.isWin;
+                        //                self.winItem = self.award[num];
+                        //                self.winItem.lwid = res.data.lwid;
+                        //                self.$emit("run", res.data);
+                        //            }
+                        //        });
+                        //    },
+                        //    error: function (r, status, errMsg) {
+                        //        alert("网络延时，请刷新界面")
+                        //    }
+                        //});
+                    } else {
+                        alert("抽奖次数已用完");
+                    }
+                },
+                //关闭
+                hideRun() {
+                    this.isWin = false;
+                    this.showResult = false;
+                    this.winItem = {};
+                }
+            }
+        });
+        Vue.component("wheelBar", wheelBar);
+    </script>
+    <script type="text/html" id="win-bar">
+        <div class="global-flex global-relative anim">
+            <div class="global-flex global-flex-center prize-record-wrapper" v-if="rList.length>0">
+                <img :src="rList[index].awardImgUrl" class="prize-record-avatar" />
+                <div class="font-12 prize-record-content">
+                    <div class="font-blue font-ellipsis font-ellipsis-1">{{rList[index].nickName}}</div>
+                    <div class="font-red">中奖了</div>
+                </div>
+            </div>
+            <a :href="'/store/mul-'+areacode+subId" class="prize-record-btn global-flex global-align-right global-flex-justify-center global-flex-column global-flex-center">
+                <img src="https://j.vzan.cc/content/city/lottery/img/icon-prize-record.png" class="global-img">
+            </a>
+        </div>
+    </script>
+    <script type="text/javascript">
+        var winBar = Vue.extend({
+            template: "#win-bar",
+            data() {
+                return {
+                    clear: null,
+                    clearScroll: null,
+                    subId: '0',
+                    loading: false,
+                    rList: [],
+                    index: 0,
+                    allData2: {
+                        "code": 1,
+                        "msg": "ok",
+                        "success": true,
+                        "data": [{
+                            "userId": 30561212,
+                            "nickName": "Bruce",
+                            "telephone": null,
+                            "awardImgUrl": "https://thirdwx.qlogo.cn/mmopen/wcLBdiaDTlsuqIj0ibFGANqmicZvWwpEMqElD48icODrqjUWicqlFkR2U1d8T5Ob0eDDGrqUy6Vy2kpHaHyptmibvpa8LxrcceV8n4/132",
+                            "addtime": "2019/04/03 14:10",
+                            "shortAddtime": "04月03日 14:10",
+                            "rankName": "嘎达",
+                            "remark": "方大化工",
+                            "state": 0,
+                            "id": 61052,
+                            "lid": 0,
+                            "itemid": 0,
+                            "itemtype": 0,
+                            "awardtype": 0
+                        }, {
+                            "userId": 30561212,
+                            "nickName": "Bruce",
+                            "telephone": null,
+                            "awardImgUrl": "https://thirdwx.qlogo.cn/mmopen/wcLBdiaDTlsuqIj0ibFGANqmicZvWwpEMqElD48icODrqjUWicqlFkR2U1d8T5Ob0eDDGrqUy6Vy2kpHaHyptmibvpa8LxrcceV8n4/132",
+                            "addtime": "2019/04/03 13:03",
+                            "shortAddtime": "04月03日 13:03",
+                            "rankName": "公司",
+                            "remark": "1元代金券",
+                            "state": 0,
+                            "id": 61050,
+                            "lid": 0,
+                            "itemid": 0,
+                            "itemtype": 0,
+                            "awardtype": 0
+                        }, {
+                            "userId": 3599,
+                            "nickName": "J",
+                            "telephone": "",
+                            "awardImgUrl": "https://i.vzan.cc/image/jpg/2017/12/29/1003083d199335e0b84cd29152ca4185f9dad3.jpg",
+                            "addtime": "2019/04/03 12:26",
+                            "shortAddtime": "04月03日 12:26",
+                            "rankName": "公司",
+                            "remark": "1元代金券",
+                            "state": 0,
+                            "id": 61049,
+                            "lid": 0,
+                            "itemid": 0,
+                            "itemtype": 0,
+                            "awardtype": 0
+                        }, {
+                            "userId": 3599,
+                            "nickName": "J",
+                            "telephone": "",
+                            "awardImgUrl": "https://i.vzan.cc/image/jpg/2017/12/29/1003083d199335e0b84cd29152ca4185f9dad3.jpg",
+                            "addtime": "2019/04/03 12:24",
+                            "shortAddtime": "04月03日 12:24",
+                            "rankName": "嘎达",
+                            "remark": "方大化工",
+                            "state": 0,
+                            "id": 61047,
+                            "lid": 0,
+                            "itemid": 0,
+                            "itemtype": 0,
+                            "awardtype": 0
+                        }, {
+                            "userId": 15568,
+                            "nickName": "眞xin",
+                            "telephone": "",
+                            "awardImgUrl": "https://i2.vzan.cc/image/jpg/2019/4/8/165621b24c716f6b924bbfa9bfb4430b542d7b.jpg",
+                            "addtime": "2019/03/25 15:55",
+                            "shortAddtime": "03月25日 15:55",
+                            "rankName": "嘎达",
+                            "remark": "方大化工",
+                            "state": 0,
+                            "id": 60898,
+                            "lid": 0,
+                            "itemid": 0,
+                            "itemtype": 0,
+                            "awardtype": 0
+                        }]
+                    },
+                }
+            },
+            props: {
+                lid: {
+                    type: Number,
+                    default: 0
+                },
+                areacode: {
+                    type: Number,
+                    default: 0
+                },
+                start: {
+                    type: Boolean,
+                    default: false
+                }
+            },
+            created() {
+                clearInterval(self.clear)
+                this.interval()
+            },
+            watch: {
+                start() {
+                    clearInterval(this.clear);
+                    if (!this.start) {
+                        // console.log(2)
+                        var self = this;
+                        setTimeout(function () {
+                            //console.log(3)
+                            self.interval();
+                        }, 1000);
+                    }
+                }
+            },
+            methods: {
+                loadNew() {
+                    var self = this;
+                    clearInterval(self.clearScroll)
+                    if (!this.loading) {
+                        this.loading = true;
+                        self.rList = self.allData2.data;
+                        //$.ajax({
+                        //    url: "/store/GetLotteryRecord",
+                        //    data: { lid: self.lid, ps: 5 },
+                        //    method: "post",
+                        //    success: function (res) {
+                        //        self.loading = false;
+                        //        if (res.code > 0 && res.data && res.data.length > 0) {
+                        //            self.rList = res.data;
+                        //            var len = res.data.length, i = 0;
+                        //            if (len <= 5) {
+                        //                self.clearScroll = setInterval(function () {
+                        //                    if (i >= len)
+                        //                        i = 0;
+                        //                    self.index = i;
+                        //                    i++;
+                        //                }, 2200);
+                        //            }
+                        //        }
+                        //    },
+                        //    complete: function () {
+                        //        self.loading = false;
+                        //    }
+                        //});
+                    }
+                },
+                interval() {
+                    var self = this;
+                    self.loadNew();
+                    self.clear = setInterval(function () {
+                        self.loadNew();
+                    }, 6000)
+                }
+            },
+            destroyed() {
+                clearInterval(self.clearScroll);
+                clearInterval(self.clear);
+            }
+        });
+        Vue.component("winBar", winBar);
+    </script>
+    <script type="text/html" id="award-bar">
+        <section class="global-card-wrapper prize-list-wrapper global-relative" v-show="items.length>0">
+            <h2 class="block-title">活动奖品</h2>
+            <ul class="prize-list">
+                <li class="global-flex prize-item" v-for="item in items">
+                    <div class="prize-item-cover">
+                        <img :src="item.ImgUrl" class="global-img">
+                    </div>
+                    <div class="global-flex-1 global-flex global-flex-column global-flex-justify-center">
+                        <div style="margin-bottom:1.4rem">
+                            <span class="font-red font-bold font-16">{{item.RankName}}</span>
+                            <span class="font-666 font-14">&nbsp;({{item.Num}}名)</span>
+                        </div>
+                        <div class="font-14 font-ellipsis font-ellipsis-1">{{item.Remark}}</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </script>
+    <script type="text/javascript">
+        var awardBar = Vue.extend({
+            template: "#award-bar",
+            data() {
+                return {
+                    list: []
+                }
+            },
+            props: {
+                items: {
+                    type: Array,
+                    default: function () {
+                        return [];
+                    }
+                }
+            },
+            watch: {
+                items() {
+                    if (this.items.length > 0) {
+                        this.$root.bubbleSort(this.items, "Rank")
+                    }
+                }
+            }
+        });
+        Vue.component("awardBar", awardBar);
+    </script>
+    <script type="text/html" id="resultDialog">
+        <div>
+            <!-- 未中奖 -->
+            <!--<modal @ok="againTag" @cancel="closeTap" :show-ok="isAgain" ok-text="再来一次" cancel-text="知道了" title="感谢参与" :visible="show&&!isWin">
+                <p class="font-12 font-999" style="padding-bottom:1.5rem;">很遗憾，没有抽中奖品</p>
+            </modal>-->
+            <div v-show="show&&isWin" class="global-fix" style="z-index:999;">
+                <!-- 遮罩层 -->
+                <div class="global-fix global-fix-mask" v-show="show"></div>
+                <!-- 中奖 -->
+                <div class="prize-get global-fix">
+                    <div class="prize-get-container global-relative global-img">
+                        <div class="prize-get-content font-center anim show-prize">
+                            <figure style="margin-bottom:1rem">
+                                <figcaption class="font-18 font-red font-bold" style="margin-bottom:1.5rem">{{item.RankName}}</figcaption>
+                                <img :src="item.ImgUrl" class="prize-item-cover" style="margin-right:0">
+                            </figure>
+                            <p class="font-14">{{item.Remark}}</p>
+                        </div>
+                        <img src="https://j.vzan.cc/content/city/lottery/img/red-cover.png" class="prize-get-cover">
+                        <div class="prize-get-cover global-flex global-flex-column">
+                            <h2 class="prize-get-tips global-align-top font-center">恭喜您中奖了</h2>
+                            <!-- 没有剩余抽奖的样式 -->
+                            <button class="global-btn global-btn-default prize-get-active-btn prize-count-none" v-if="!isAgain" @click="gotoDetail">查看详情</button>
+                            <!-- 还有剩余抽奖的样式 -->
+                            <div class="global-flex global-flex-between prize-get-btn-wrapper" v-else>
+                                <button class="global-btn global-btn-default" @click="gotoDetail">查看详情</button>
+                                <button class="global-btn global-btn-default prize-get-active-btn" @click="againTag">再抽一次</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prize-close global-box" @click="closeTap"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript">
+        var resultDialog = Vue.extend({
+            template: "#resultDialog",
+            data() {
+                return {
+
+                }
+            },
+            props: {
+                show: {
+                    type: Boolean,
+                    default: false
+                },
+                isWin: {
+                    type: Boolean,
+                    default: false
+                },
+                isAgain: {
+                    type: Boolean,
+                    default: false
+                },
+                item: {
+                    type: Object,
+                    default: function () {
+                        return {};
+                    }
+                },
+                areacode: {
+                    type: Number,
+                    default: 0
+                }
+            },
+            methods: {
+                closeTap() {
+                    this.$emit("hide");
+                },
+                againTag() {
+                    this.$emit("again");
+                },
+                gotoDetail() {
+                    if (this.item.AwardType == 1) {
+                        //window.location.href = `/sc/uvlist-${this.areacode}`
+                    } else {
+                        //window.location.href = `/store/mulqrcode-${this.areacode}?lid=${this.item.LId}&lwid=${this.item.lwid}`
+                    }
+
+                }
+            }
+        });
+        Vue.component("resultDialog", resultDialog)
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var vm = new Vue({
+                el: "#wrapper",
+                data: {
+                    count: 0,
+                    awardList: [],
+                    areacode: 0,
+                    storeid: 0,
+                    remark: '',
+                    model: {},
+                    lid: 0,
+                    gifts: [],
+                    ltype: 0,
+                    show: true,
+                    start: false,
+                    isLoad: false,
+                    allData: {
+                        "code": 1,
+                        "msg": "ok",
+                        "success": true,
+                        "data": {
+                            "LoginCUser": {
+                                "Id": 30561212,
+                                "OpenId": "oaPY9wZfm2SrPR-FRMEheGICn2U8",
+                                "WzLiveOpenId": null,
+                                "MsgOpenId": null,
+                                "UnionId": "oW2wBwdqmkbBNdguIkY-LLxlbfyg",
+                                "NickName": "Bruce",
+                                "HeadImgUrl": "https://thirdwx.qlogo.cn/mmopen/wcLBdiaDTlsuqIj0ibFGANqmicZvWwpEMqElD48icODrqjUWicqlFkR2U1d8T5Ob0eDDGrqUy6Vy2kpHaHyptmibvpa8LxrcceV8n4/132",
+                                "Sex": 1,
+                                "TelePhone": null,
+                                "IsValidTelePhone": 0,
+                                "Address": null,
+                                "AreaCode": 0,
+                                "StoreId": 0,
+                                "Cash": 0,
+                                "HistoryCash": 0,
+                                "appId": "",
+                                "zbSiteId": 0,
+                                "Integration": 0,
+                                "roleId": 0,
+                                "isBlack": false
+                            },
+                            "CityInfo": null,
+                            "LotteryModel": {
+                                "Id": 2336,
+                                "ItemId": 8699338,
+                                "ItemType": 1,
+                                "IsOpen": true,
+                                "IsYetOpen": true,
+                                "Remark": "初级",
+                                "SingleTime": 3,
+                                "CreateDate": "\/Date(1553497636000)\/",
+                                "CityInfoId": 695,
+                                "State": 0,
+                                "AwardRate": 90,
+                                "LimitNum": 0,
+                                "GiftNumConfig": "[{\"Num\":1,\"ConsumeAmt\":10},{\"Num\":2,\"ConsumeAmt\":20}]",
+                                "Gifts": [{
+                                    "Num": 1,
+                                    "ConsumeAmt": 10
+                                }, {
+                                    "Num": 2,
+                                    "ConsumeAmt": 20
+                                }],
+                                "usercount": 0,
+                                "wincount": 0,
+                                "RemainNum": 0,
+                                "LotteryNum": 0,
+                                "StoreName": null
+                            },
+                            "awardList": [{
+                                "Id": 1132,
+                                "LId": 2334,
+                                "Rank": 1,
+                                "RankName": "奖品1",
+                                "Num": 222,
+                                "RemainNum": 29,
+                                "Remark": "1元代金券",
+                                "ImgUrl": "images/big-draw09.png",
+                                "State": 1,
+                                "CreateUserId": 15568,
+                                "CreateDate": "\/Date(1553497649000)\/",
+                                "AwardType": 1,
+                                "ItemId": 12593,
+                                "canEdit": false,
+                                "VoucherMoney": 0,
+                                "Deducting": 0,
+                                "UseStartDate": "\/Date(-62135596800000)\/",
+                                "UseStartDateStr": "",
+                                "UseEndDate": "\/Date(-62135596800000)\/",
+                                "UseEndDateStr": "",
+                                "ValidDays": 0,
+                                "timeType": 0
+                            },
+                                {
+                                "Id": 1133,
+                                "LId": 2335,
+                                "Rank": 2,
+                                "RankName": "奖品2",
+                                "Num": 222,
+                                "RemainNum": 218,
+                                "Remark": "方大化工",
+                                "ImgUrl": "images/big-draw07.png",
+                                "State": 1,
+                                "CreateUserId": 15568,
+                                "CreateDate": "\/Date(1553497641000)\/",
+                                "AwardType": 0,
+                                "ItemId": 0,
+                                "canEdit": false,
+                                "VoucherMoney": 0,
+                                "Deducting": 0,
+                                "UseStartDate": "\/Date(-62135596800000)\/",
+                                "UseStartDateStr": "",
+                                "UseEndDate": "\/Date(-62135596800000)\/",
+                                "UseEndDateStr": "",
+                                "ValidDays": 0,
+                                "timeType": 0
+                                },
+                                {
+                                    "Id": 11321,
+                                    "LId": 23341,
+                                    "Rank": 3,
+                                    "RankName": "奖品3",
+                                    "Num": 2222,
+                                    "RemainNum": 2191,
+                                    "Remark": "10元代金券",
+                                    "ImgUrl": "images/big-draw06.png",
+                                    "State": 1,
+                                    "CreateUserId": 15568,
+                                    "CreateDate": "\/Date(1553497649000)\/",
+                                    "AwardType": 1,
+                                    "ItemId": 12593,
+                                    "canEdit": false,
+                                    "VoucherMoney": 0,
+                                    "Deducting": 0,
+                                    "UseStartDate": "\/Date(-62135596800000)\/",
+                                    "UseStartDateStr": "",
+                                    "UseEndDate": "\/Date(-62135596800000)\/",
+                                    "UseEndDateStr": "",
+                                    "ValidDays": 0,
+                                    "timeType": 0
+                                },
+                                {
+                                    "Id": 11321,
+                                    "LId": 23341,
+                                    "Rank": 4,
+                                    "RankName": "奖品4",
+                                    "Num": 2222,
+                                    "RemainNum": 2192,
+                                    "Remark": "10元代金券",
+                                    "ImgUrl": "images/big-draw06.png",
+                                    "State": 1,
+                                    "CreateUserId": 15568,
+                                    "CreateDate": "\/Date(1553497649000)\/",
+                                    "AwardType": 1,
+                                    "ItemId": 12593,
+                                    "canEdit": false,
+                                    "VoucherMoney": 0,
+                                    "Deducting": 0,
+                                    "UseStartDate": "\/Date(-62135596800000)\/",
+                                    "UseStartDateStr": "",
+                                    "UseEndDate": "\/Date(-62135596800000)\/",
+                                    "UseEndDateStr": "",
+                                    "ValidDays": 0,
+                                    "timeType": 0
+                                }],
+
+                            "myAwardCount": 2,
+                            "remainTime": 0,
+                            "isadmin": 0,
+                            "ShareLogo": null
+                        }
+                    },
+                    allData3: {
+                        "code": 1,
+                        "data": [{
+                            "Id": 71615,
+                            "CityInfoId": 695,
+                            "AnnouncementTitle": "咔咔",
+                            "Announcement": "播放哪个放假你是\u003cbr/\u003e后买家一条勘界\u003cbr/\u003e\u003cbr/\u003e更待何时太\u003cbr/\u003e\u003cbr/\u003e和钛合金",
+                            "AnnouncementLink": "https://mp.weixin.qq.com/s/OR0cdMTBy6wCSN7Lbtkk8g",
+                            "ImageUrl": "http://i2.vzan.cc/image/jpg/2018/12/20/09291782559c63fb34449eb2d600f51ab63008.jpg",
+                            "AnnouncementType": 110,
+                            "Sort": 0,
+                            "Status": 1,
+                            "UserID": 0,
+                            "CreateTime": "\/Date(1545269382000)\/",
+                            "ExpireTime": "\/Date(1574299500000)\/",
+                            "ItemId": 0,
+                            "CitySubId": 0,
+                            "AdType": 0,
+                            "RateHours": 24,
+                            "cityPage": "",
+                            "ShowExpireTime": null
+                        }]
+                    }
+                },
+                created() {
+                    var self = this;
+                    var model = self.allData.data.LotteryModel;
+                    self.awardList = self.allData.data.awardList;                    
+                    //self.count = self.allData.data.remainTime;
+                    self.count = 3;//抽奖次数
+                    self.gifts = self.bubbleSort(model.Gifts, "Num", "desc");
+                    self.remark = model.Remark;
+                    self.model = model;
+                    self.lid = model.Id;
+                    self.isLoad = true;
+                    //没有抽奖机会
+                    //if ((self.ltype == 0 && self.allData.data.remainTime == 0)) {
+                    //    self.show = false;
+                    //}
+                    //$.post("/store/GetLotteryInfo", {
+                    //    id: self.areacode,
+                    //    itemid: self.storeid,
+                    //    lid: self.lid
+                    //}, function (res) {
+                    //    //console.log(res)
+                    //    self.isLoad = true;
+                    //    if (res.code > 0) {
+                    //        var model = res.data.LotteryModel;
+                    //        self.awardList = res.data.awardList;
+                    //        self.count = res.data.remainTime;
+                    //        self.gifts = self.bubbleSort(model.Gifts, "Num", "desc");
+                    //        self.remark = model.Remark;
+                    //        self.model = model;
+                    //        self.lid = model.Id;
+                    //        //没有抽奖机会
+                    //        if ((self.ltype == 0 && res.data.remainTime == 0)) {
+                    //            self.show = false;
+                    //        }
+                    //    } else if (self.ltype == 0) {
+                    //        self.show = false;
+                    //    } else if (self.ltype == 1) {
+                    //        alert(res.msg);
+                    //    }
+                    //});
+                },
+                mounted() {
+                    
+                },
+                methods: {
+                    beforeRun() {
+                        this.start = true;
+                    },
+                    showResult(res) {
+                        this.count -= 1;
+                        this.start = false;
+                    },
+                    //冒泡算法
+                    bubbleSort(arr, tag, desc) {
+                        var len = arr.length, j;
+                        var temp;
+                        while (len > 1) {
+                            for (j = 0; j < len - 1; j++) {
+                                var isFlag = false;
+                                if (tag)
+                                    isFlag = desc ? arr[j][tag] < arr[j + 1][tag] : arr[j][tag] > arr[j + 1][tag];
+                                else
+                                    isFlag = desc ? arr[j] < arr[j + 1] : arr[j] > arr[j + 1];
+                                if (isFlag) {
+                                    temp = arr[j];
+                                    arr[j] = arr[j + 1];
+                                    arr[j + 1] = temp;
+                                }
+                            }
+                            len--;
+                        }
+                        return arr;
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

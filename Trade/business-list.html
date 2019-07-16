@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html style="height:100%">
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>拼团列表</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/new-swiper.css">
+    <link rel="stylesheet" type="text/css" href="css/activity-list.css">
+    <link rel="stylesheet" type="text/css" href="css/bottom-navigation.css">
+    <link rel="stylesheet" type="text/css" href="css/new-recommend-business.css">
+</head>
+<body style="height:100%">
+    <div class="fix-tl">
+        <ul class="d-flex ta-c recruit-select-nav">
+            <li class="flex"> 
+                <a>
+                    <i class="tc-list-top-filter-f">类别</i>
+                    <em class="tc-list-top-triangle"></em>
+                </a>
+            </li>
+            <li class="flex"> 
+                <a>
+                    <i class="tc-list-top-filter-f">排序</i>
+                    <em class="tc-list-top-triangle"></em>
+                </a>
+            </li>        
+        </ul>
+
+        <!--筛选-->
+        <div class="dialog-screen-select-js none">
+            <div class="dialog-black-mask"></div>
+            <div class="screen-select">
+                <!--类别-->
+                <div class="none">
+                    <div class="d-flex screen-local type-js">
+                        <ul class="flex">
+                            <li class="active">招聘求职</li>
+                            <li>房产租售</li>
+                            <li>车辆交易</li>
+                            <li>二手买卖</li>
+                            <li>拼车</li>
+                            <li>生活服务</li>
+                            <li>商铺生意</li>
+                            <li>生活服务</li>
+                            <li>宠物</li>
+                        </ul>
+                        <ul class="flex">
+                            <li>全部</li>
+                            <li>销售</li>
+                            <li>营业员</li>
+                            <li>餐饮服务</li>
+                            <li>酒店/旅游</li>
+                            <li>超市/零售</li>
+                            <li>美容/美发</li>
+                            <li>保健/按摩</li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!--排序-->
+                <div class="none">
+                    <div class="d-flex screen-local sort-js">
+                        <ul class="flex">
+                            <li class="bottom-line active">默认排序</li>
+                            <li class="bottom-line">最新发布</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+
+    </div>
+
+    <div class="basewrap">
+        <div class="d-flex recommend-business" style="margin-top:44px;">
+            <div class="head">
+                <img src="../img/02.jpg">
+                <i class="top-ding"></i>
+            </div>
+            <div class="flex content bottom-line">
+                <div class="d-flex d-flex-center">
+                    <div class="flex name clamp1">麦当劳麦当劳麦当劳麦当劳麦当劳麦当劳麦当劳麦当劳麦当劳员村店</div>
+                </div>
+                <div class="d-flex d-flex-center" style="margin-top:.4rem;">
+                    <div class="yiji">技术</div>
+                    <div class="flex ta-r f12 c666">365<i class="icon-visitor" aria-hidden="true"></i></div>   
+                </div>          
+                <div class="d-flex d-flex-center c999" style="margin-top:1.7rem;">
+                    <span class="address clamp1 flex">天河区天河区黄埔大道89号89楼</span>
+                    <span class="come">1.2km</span>
+                </div>
+            </div>
+        </div>
+
+        <!--底部导航-->
+        <div class="fix-bl">
+            <div class="basewrap d-flex index-bottom-nav"> 
+                <a class="flex">
+                    <i class="home"></i>
+                    <p>首页</p>
+                </a>
+                <a class="flex">
+                    <i class="shequ"></i>
+                    <p>论坛</p>
+                </a>  
+                <a class="flex">
+                    <i class="ruzhu"></i>
+                    <p>我要入驻</p>
+                </a>   
+                <a class="flex">
+                    <i class="me"><em class="dot"></em></i>
+                    <p>我的</p>
+                </a>     
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function (){
+            var a=$('body').height();
+            $('.dialog-screen-select-js').height(a-44);
+
+            $('.recruit-select-nav li').on('click', function () {
+                var a = $(this).index();
+                var b=$(this)
+                var c=b.children('a');
+                var e=b.siblings('li');
+                var f=e.children('a');
+
+                $('.dialog-screen-select-js').show();
+                c.toggleClass('active');
+                f.removeClass('active');
+                $('.dialog-screen-select-js .screen-select').children().hide().eq(a).show();
+                $('.dialog-black-mask').bind("touchmove", function (e) {
+                    e.preventDefault();
+                });
+
+                if (c.hasClass('active')) {
+                    $('.dialog-screen-select-js').show();
+                } else {
+                    $('.dialog-screen-select-js').hide();
+                }
+            })
+
+            $('.type-js ul:first-child li').on('click', function () {
+                $(this).addClass('active').siblings('li').removeClass('active');
+            })
+
+            $('.type-js ul:not(:first) li').on('click', function () {
+                $('.dialog-screen-select-js').hide();
+                $('.local-js ul:not(:first)').hide();
+                $('.local-js ul:first-child li').css('background', '#fff');
+                $(this).addClass('active').siblings('li').removeClass('active');
+                var a = $(this).html();
+                $('.recruit-select-nav .flex:first-child i').html(a);
+                $('.recruit-select-nav .flex a').removeClass('active');
+            })
+
+            $('.dialog-black-mask,.sort-js').on('click', function () {
+                $('.dialog-screen-select-js').hide();
+                $('.recruit-select-nav .flex a').removeClass('active');
+            })
+
+            $('.sort-js ul li').on('click', function () {
+                var a = $(this).html();
+                $('.recruit-select-nav .flex:nth-child(3) span').html(a);
+            })
+
+             $('.sort-js ul li').on('click', function () {
+                $(this).addClass('active').siblings('li').removeClass('active');
+            })
+
+            $('.sort-js ul li').on('click', function () {
+                var a = $(this).html();
+                $('.recruit-select-nav .flex:nth-child(3) span').html(a);
+            })            
+
+        })
+    </script>
+</body>
+</html>

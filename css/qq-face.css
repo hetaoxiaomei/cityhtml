@@ -1,0 +1,115 @@
+@charset "utf-8";
+/*mui.css开始*/
+.mui-slider{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+}
+
+.mui-slider .mui-slider-group.mui-slider-loop {
+    -webkit-transform: translate(-100%,0);
+    transform: translate(-100%,0);
+}
+
+.mui-slider .mui-slider-group {
+    font-size: 0;
+    position: relative;
+    -webkit-transition: all 0s linear;
+    transition: all 0s linear;
+    white-space: nowrap;
+}
+
+.mui-slider .mui-slider-group .mui-slider-item {
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    white-space: normal;
+}
+
+.mui-slider .mui-slider-group .mui-slider-item>a:not(.mui-control-item) {
+    line-height: 0;
+    position: relative;
+    display: block;
+}
+
+.mui-slider-indicator {
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    background: 0 0;
+}
+
+.mui-slider-indicator .mui-active.mui-indicator {
+    background: #fff;
+}
+
+.mui-slider-indicator .mui-indicator {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 1px 6px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #aaa;
+    -webkit-box-shadow: 0 0 1px 1px rgba(130,130,130,.7);
+    box-shadow: 0 0 1px 1px rgba(130,130,130,.7);
+}
+/*mui.css结束*/
+
+/*新版的qq表情触摸滑动*/
+.qq-face-position{position: relative;}
+
+.qq-face-position:before{
+	content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #f0f0f0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+	z-index: 5;}
+
+/*.qq-face-position .basewrap{box-shadow: 0 -2px 3px rgba(0,0,0,0.1);}*/
+
+.post-qq-face-all{
+        width: 100%;
+        height: 187px;
+        padding: 10px 0 30px;}
+
+.post-qq-face-all span{
+  width: 14.28%;
+  margin: 8px 0px;
+  text-align: center;
+  height: 33px;
+  display: inline-block;
+  float: left;}
+
+.post-qq-face-all span i{display: inline-block;}
+
+.qqface-img{
+            background: url(../img/qqface.jpg) no-repeat left top;
+            background-size: 100%;
+            width: 33px;
+            height: 33px;
+            margin-top: 0px;
+            font-size: 0;}
+
+.qq-face-gif i{
+                width: 24px;
+                height: 24px;
+                display: inline-block;
+                float: left;
+                background-size: 100%;}
+
+
+
+

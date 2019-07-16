@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>同城卡06</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/new-card.css">
+    <style>
+        .code-bt{margin:30% 3rem 0;height:4rem;line-height: 4rem;padding: 0 5rem;
+            font-weight: bold;background: linear-gradient(to right,#fa0f67,#ff5400);
+            color: #fff;font-size: 1.6rem;border-radius:2rem; text-align: center;opacity: .5;}
+        .code-bt.active{opacity: 1;}
+        .exchange-dialog{position: fixed;;top:50%;left:50%;transform:translate(-50%,-50%);background: #191817;border-radius: 5px;
+            width:285px;padding-bottom: 2.5rem;}
+        .exchange-dialog .img01{width:100%;margin-top: -6rem;}
+        .exchange-dialog .f01{color:#d9ae6f;font-size: 2.7rem;margin-top: 2.7rem;}
+        .exchange-dialog .dot01,.exchange-dialog .dot02{width: 1.9rem;height: 1.5rem;display: inline-block;background-image: url(../img/tc-pic04.png);
+        background-repeat: no-repeat;background-size:50rem;background-position: -17.8rem -8.8rem;}
+        .exchange-dialog .dot01{background-position: -17.8rem -8.8rem;margin-right: 1.5rem;}
+        .exchange-dialog .dot02{background-position: -19.9rem -9.2rem;margin-left: 1.5rem;}
+        .exchange-dialog .f02{color:#d9ae6f;font-size: 1.4rem;text-align: center;margin-top: 2.3rem;}
+        .exchange-dialog .bt{height: 4.4rem;width: 200px;background: #f8e26b;font-size: 1.6rem;line-height:4.4rem;text-align: center;font-weight: bold;
+        border-radius: 2.2rem;margin: 2rem auto 0;}
+    </style>
+</head>
+<body style="background: #fff;">
+    <div class="basewrap bz rel" style="padding:7rem 2rem 8rem;">
+        <div class="code-input">
+            <input type="tel" placeholder="请输入兑换码">
+        </div>
+        <div class="code-bt">确认兑换</div>
+    </div>
+
+    <!--兑换弹框-->
+    <div class="exchange-dialog-js fix-tl-100 none">
+        <div class="dialog-black-mask abs"></div>
+        <div class="exchange-dialog">
+            <img class="img01" src="../img/tc-pic54.png">
+            <p class="bold ta-c f01"><i class="dot01"></i>兑换成功<i class="dot02"></i></p>
+            <p class="f02">成功获得月卡一张</p>
+            <div class="bt">返回账户查看</div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+    	$(document).ready(function(){
+            $('.code-input input').change(function(){
+                if($(this).val() ==""){
+                    $('.code-bt').removeClass('active');
+                }else{
+                    $('.code-bt').addClass('active');
+                    $('.code-bt.active').click(function(){
+                        $('.exchange-dialog-js').fadeIn(200);
+                    })
+                    $('.exchange-dialog-js .bt').click(function(){
+                        $('.exchange-dialog-js').hide();
+                    })
+                }
+            })
+		})
+
+    </script>
+
+</body>
+</html>

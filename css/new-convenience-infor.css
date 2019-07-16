@@ -1,0 +1,650 @@
+.pic-ul li.more .go,.shop-activity .size,.convenience-infor .icon-post-packet,
+.icon-prompt-love01,.icon-prompt-love02,.convenience-infor .icon-focus,
+.convenience-infor .to-top,.icon-eye,.convenience-infor .icon-location{
+    background-image: url(../img/tc-pic04.png);
+    background-repeat: no-repeat;
+    background-size:50rem;
+}
+
+.convenience-infor{
+    padding:2rem 1.2rem;;
+    margin: 0 1.2rem 2rem;
+    position: relative;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1)
+}
+
+.convenience-infor-all.business{padding: 0 1.2rem;}
+
+.convenience-infor-all.business .convenience-infor{
+    padding:2rem 0;
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+    margin: 0;
+}
+
+.convenience-infor .icon-post-admin{
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: #666;
+    display: block
+} 
+
+.convenience-infor .top{
+    margin-bottom: .8rem;
+}
+
+.convenience-infor .top .head{
+    height:3.8rem;
+    width:3.8rem;
+    margin-right: .8rem;
+    overflow: hidden;
+    border-radius:50%;
+    position: relative
+}
+
+.convenience-infor .top .name{
+    margin-bottom: 1rem;
+    height: 12px;
+}
+
+.convenience-infor .top .name i{
+    max-width: 45%;
+    color: #333;
+    float: left;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+}
+
+.convenience-infor .top .label{
+    overflow: hidden;
+}
+
+.convenience-infor .top .head img {
+    width: 100%;
+    height: 100%;
+}
+
+.convenience-infor .to-top{
+    width: 4rem;
+    height: 1.6rem;
+    display: block;
+    background-position: -8.2rem -11.1rem;
+}
+
+.convenience-infor .content{
+    position: relative;
+}
+
+.convenience-infor .top .label span.job{
+    display: block;
+    float: left;
+    margin-right: .5rem;
+    font-size: 1.4rem;
+    background: #ff5a00;
+    color: #fff;
+    padding: 0 .8rem;
+    height: 2rem;
+    line-height: 2rem;
+    position: relative;
+    max-width: 50%;
+}
+
+.convenience-infor .top .label span.job02{
+    display: block;
+    float: left;
+    margin-right: .5rem;
+    font-size: 1.4rem;
+    background:rgba(255,90,0,.1);
+    border: 1px solid #ff5a00;
+    color: #ff5a00;
+    padding: 0 .8rem;
+    height: 2rem;
+    line-height:1.8rem;
+    position: relative;
+    max-width: 50%;
+    box-sizing: border-box;
+}
+
+/* .convenience-infor .top .label span.job:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ffddc6;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+} */
+
+.convenience-infor .top .call{
+    background:linear-gradient(to right,#ff360e,#fa670f);
+    display: block;
+    width:3rem;
+    height: 3rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(255,90,0,.35);
+    position: relative;
+} 
+
+.convenience-infor .top .call .icon-call{
+    width:1.4rem;
+    height: 1.4rem;
+    fill: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.convenience-infor .title{
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: .2rem;
+    position: relative;
+}
+
+.spread-js{
+    display: block;
+    position: absolute;
+    bottom:0;
+    right: 0;
+    background: #fff;
+    padding-left: 5rem;
+    font-size: 1.4rem;
+}
+
+.convenience-infor .passage{
+    color: #666;
+    line-height: 1.45;
+    font-size: 1.4rem;
+}
+
+.convenience-infor .pic-ul{
+    padding-top: 0;
+}
+
+.convenience-infor .pic-ul li {
+    width: 31.3%;
+    overflow: hidden;
+    margin-top: 2%;
+    float: left;
+    position: relative;
+    margin-left: 3%;
+    padding-top:30%;
+}
+
+.convenience-infor .pic-ul li img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.convenience-infor .pic-ul li .more{
+    display:block;
+    padding: 0 .6rem;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1.5rem;
+    line-height: 1.5rem
+}
+
+.pic-ul li.more .position{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
+}
+
+.pic-ul li.more .go{
+    width:1.6rem;
+    height: 1.6rem;
+    display: block;
+    background-position: -8.8rem -2.2rem; 
+    margin: 2% auto .3rem;
+}
+
+.convenience-infor .pic-ul li:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #e5e5e5;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.convenience-infor .pic-ul li:first-child{
+    margin-left: 0%;
+}
+
+.convenience-infor .pic-ul li .number {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1px 5px;
+    color: #fff;
+    font-size: 10px;
+}
+
+.convenience-infor .shop-activity{
+    margin-top: .8rem;
+    font-size: 1.2rem;
+}
+
+.convenience-infor .shop-activity .icon-post-link{
+    font-size: 14px;
+    color: #999;
+    margin-right: .5rem;
+    display: block;
+}
+
+.convenience-infor .shop-activity .shopname {
+    font-size: 1.2rem;
+    color: #999;
+    max-width: 50%;
+    line-height: 1.25;
+}
+
+.convenience-infor .shop-activity .size {
+    color: #fff;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: .4rem;
+    display: block;
+    margin-top: -.2rem;
+}
+
+.shop-activity .rob{background-position: -11.8rem 0;}
+
+.shop-activity .reduce{background-position: -9.9rem 0;}
+
+.shop-activity .group{background-position: -8rem 0;}
+
+.shop-activity .city{background-position: -4.2rem 0;}
+
+.convenience-infor .place-time{
+    font-size: 1.2rem;
+}
+
+.convenience-infor .packet {
+    margin-top: .8rem;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.convenience-infor .icon-post-packet{
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    vertical-align: -.35rem;
+    margin-right: .5rem;
+    background-position: -2.3rem 0;
+}
+
+.convenience-infor .vedio {
+    margin-top: .7rem;
+    display: block;
+    width: 100%;
+    position: relative;
+    border-radius:4px; 
+    overflow: hidden;
+    margin-bottom: .3rem;
+}
+
+.convenience-infor .vedio .mask{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.convenience-infor .vedio img.start{
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
+
+.youhuiquan{margin-top:.8rem;}
+
+
+.youhuiquan .left:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #e5e5e5;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.shop-activity .icon-link{
+    width: 1.3rem;
+    height: 1.3rem;
+    display: block;
+    float: left;
+    fill:#ccc;
+    margin-right: .3rem;
+    margin-top: -.1rem
+}
+
+.coinrotate{
+    -webkit-animation: coinrotate .5s forwards infinite;
+    animation: coinrotate .5s forwards infinite;}
+
+.convenience-infor-all{padding: 1rem 0;}
+
+.convenience-infor-all .convenience-infor.bottom-line:last-child:after{display: none}  
+  
+  @keyframes coinrotate{
+    0%{
+      -webkit-transform:rotatey(180deg);}
+
+    100% {
+      -webkit-transform:rotatey(0deg);} 
+}
+
+@-webkit-keyframes coinrotate{
+    0%{
+      -webkit-transform:rotatey(180deg);}
+
+    100% {
+      -webkit-transform:rotatey(0deg);} 
+}
+
+
+.convenience-infor .function{
+    position: relative;
+    color: #999;
+    margin-top: 1rem
+}
+
+
+.convenience-infor .icon-liulan,.convenience-infor .icon-bianmin-pinglun{
+    vertical-align: -1px;
+}
+
+.convenience-infor .icon-arrow-copy-copy{
+    font-size:12px;margin-left:5px;
+}
+
+.convenience-infor .icon-arrow-copy{
+    font-size:12px;margin-left:5px;
+}
+
+.convenience-infor .icon-post-share{font-size: 1.2rem;margin-right: 2px;}
+
+.dingyue_cell {
+    padding:1rem;
+    position: relative;
+    background: #fbfbfb;
+}
+
+.dingyue_cell .f01 {
+    font-size: 1.6rem;
+}
+
+.dingyue_cell .f02 {
+    font-size: 1.4rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.dingyue_cell .bt {
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ff5a00;
+    color: #ff5a00;
+    padding: 0 10px;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    line-height: 28px;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+}
+
+.icon-eye {
+    width: 1.8rem;
+    height: 1.3rem;
+    display: inline-block;
+    margin-right: .4rem;
+    vertical-align: -.3rem;
+    background-position: -4.3rem -13.8rem;
+}
+
+.icon-comment{
+    width: 1.1rem;
+    height: 1.1rem;
+    display: inline-block;
+    fill: #ccc;
+    margin-right: .4rem;
+    vertical-align: -.3rem
+}
+
+.icon-transmit{
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    fill: #ccc;
+    margin-right: .4rem;
+    vertical-align: -.2rem
+}
+
+/*底部弹框*/
+.actionsheet-menu{
+    background: #f5f5f5;
+    z-index: 5000;
+    position: fixed;
+    left: 0;
+    bottom:-100%;;
+    width: 100%;}
+
+.actionsheet-menu .cell{
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1.6rem;
+    background: #fff;
+}
+
+/*拼车帖子*/
+.city-arrow{
+    width:36px;
+    margin:-4px 6px 0;
+}
+.convenience-infor .title .carpooling{
+    display: block;
+}
+
+.convenience-infor .carpooling .left{
+    width: 56px;
+    display: inline-block;
+    text-align-last:justify;
+}
+
+
+/*优惠券*/
+.youhuiquan .left{
+    padding:2rem 1.5rem 0 1rem;
+    height:8rem;
+    background:#fff6f0;
+}
+
+.youhuiquan .left .p01{
+    color:#ff3a1b;
+    line-height:1.4;
+    margin-bottom:.5rem;
+}
+
+.youhuiquan .right{
+    margin-left:-.5rem;
+    position:relative;
+    z-index:2
+}
+
+.youhuiquan .right .pic01{height:8rem;display:block}
+
+.youhuiquan  .recommend{
+    position:absolute;
+    top:0;
+    left:0;
+    background:#0091ff;
+    padding:0 .6rem;
+    height:1.4rem;
+    line-height:1.4rem;
+    border-top-left-radius:4px;
+    border-bottom-right-radius:4px;
+}
+
+/*约车*/
+/* .convenience-infor.car .top .car-type{
+    width: 4.9rem;
+    height: 2.4rem;
+    border-radius: 4px;
+    color: #fff;
+    line-height: 2.4rem;
+    text-align: center;
+    margin-right: 1.2rem;
+    font-size: 1.2rem;
+}
+
+.convenience-infor.car .function{
+    padding: 0 1.2rem;
+    font-size: 1.2rem;
+}
+
+.convenience-infor.car .direction{font-size: 1.6rem;}
+
+.convenience-infor.car .direction .vacancy{
+    font-size: 1.2rem;
+    background: #fff6f0;
+    color: #fd781f;
+    padding: 0 .8rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    border-radius: 2px;
+    position: relative;
+    display: block;
+}
+
+.convenience-infor.car .direction .vacancy:before {
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #ffddc6;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.convenience-infor.car .direction .green-circle{
+    height: .8rem;
+    width: .8rem;
+    border-radius:50%;
+    border:2px solid #12b270;
+    box-sizing: border-box;
+}
+
+.convenience-infor.car .direction .blue-circle{
+    height: .8rem;
+    width: .8rem;
+    border-radius:50%;
+    border:2px solid #0091ff;
+    box-sizing: border-box;
+}
+
+.convenience-infor.car .place-time{
+    line-height: 1.3;
+    margin-top: 1.5rem
+} */
+
+.icon-prompt-love01{
+    margin:0 auto 1.2rem;
+    width:2.3rem;
+    height:2rem;
+    background-position: -17.6rem 0;
+}
+
+.icon-prompt-love02{
+    margin:0 auto 1.2rem;
+    width:3rem;
+    height:2.2rem;
+    background-position: -20.3rem 0;
+}
+
+.convenience-infor .icon-location{
+    vertical-align: -.3rem;
+    margin-right: .6rem;
+    width: 1.2rem;
+    height: 1.4rem;
+    display: inline-block;
+    background-position: -5.3rem -12.3rem;
+}
+
+.convenience-infor .car{margin-top: 1.4rem;}
+
+.convenience-infor  .dot{
+    width: 1.1rem;
+    height: 1.1rem;
+    box-sizing: border-box;
+    border-radius: 50%;
+    transform: translate(0,-50%);
+    display: inline-block;
+    vertical-align: -.5rem;
+    margin-right: 1.5rem;
+}
+
+.convenience-infor .icon-focus{
+    height: 2.6rem;
+    width: 6rem;
+    display: block;
+    background-position: -8.2rem -13rem;
+}
+
+.convenience-infor .icon-focus.active{background-position: -8.2rem -15.9rem;}

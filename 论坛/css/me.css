@@ -1,0 +1,221 @@
+
+.icon-vip,.icon-boy,.icon-girl,.icon-edit,.data-ul02 li .icon,.icon-back,.icon-sixin,.icon-focus{
+	background-image: url(../img/post-pic02.png);
+	background-size: 50rem;
+	background-repeat: no-repeat;
+}
+
+.me-top{
+	height: 21rem;
+	background: url(../img/ranking69.png);
+	background-size:cover;
+	position: relative;
+}
+
+.person-infor-cell{
+	padding:3.5rem 1.5rem 0;
+	position: relative;
+	color: #fff
+}
+
+.person-infor-cell .head{
+	width: 5rem;
+	height: 5rem;
+	border: 1px solid #fff;
+	box-sizing:border-box;
+	border-radius: 50%;
+	position:relative;
+	margin: 0 .8rem 0 0;
+}
+
+.person-infor-cell .head img{border-radius: 50%;width: 100%;height: 100%;}
+
+.person-infor-cell .head .icon-vip{
+	display: block;
+	width:1.6rem;
+	height: 1.6rem;
+	display: block;
+	background-position:-14.2rem 0;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.person-infor-cell .f01{
+	font-size: 1.6rem;
+	font-weight: bold;
+	float: left;
+	max-width: 40%;
+	line-height: 1.25;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+
+}
+
+.person-infor-cell .f02{
+	margin: 1rem 0 0;
+	overflow: hidden;
+	line-height: 1.25;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+}
+
+.icon-boy,.icon-girl{
+	float: left;
+	width: 1.6rem;
+	height: 1.6rem;
+	display: block;
+	margin:0 0 0 .5rem;
+}
+
+.icon-boy{background-position:-15.9rem 0;}
+
+.icon-girl{background-position:-17.6rem 0;}
+
+.icon-grade{
+	height: 1.6rem;
+	padding: 0 .3rem;
+	color: #fff;
+	line-height: 1.6rem;
+	font-size: 1rem;
+	margin:0 0 0 .5rem;
+	display: block;
+	float: left;
+}
+
+.icon-edit,.icon-back{
+	width: 2.6rem;
+	height: 2.6rem;
+	display: block;
+	position: absolute;
+}
+
+.icon-edit{
+	top:1.5rem;
+	right:1.5rem;
+	background-position: -19.3rem 0;}
+
+.icon-back{
+	top:1.5rem;
+	left:1.5rem;
+	background-position: -19.3rem 0; 
+}	
+
+.data-ul01{text-align: center;color: #fff;margin: 2.5rem 0 0;}
+
+.data-ul01 .f01{font-size: 1.5rem;font-weight: bold;}
+
+.data-ul01 .f02{font-size: 1.2rem;margin: .6rem 0 0;}
+
+.data-ul02{
+	margin: -4.5rem 1.5rem 0;
+	background: #fff;
+	position: relative;
+	z-index: 1;
+	border-radius: .3rem;
+	text-align: center;
+	font-size: 1.2rem;
+	padding: 1.2rem 0;
+	overflow: hidden;+
+}
+
+.data-ul02 li .icon{
+	width: 3rem;
+	height: 3rem;
+	display: block;
+	margin:0 auto ;
+}
+
+.data-ul02 li{float: left;width: 25%;padding: 1.2rem 0}
+
+.data-ul02 li .f01{
+	margin: .8rem 0 0;
+}
+
+.data-ul02 li .f02{margin: 1rem 0 0;color: #0096FF;}
+
+.data-ul02 li .icon-my-post{background-position: 0 -2.4rem;}
+
+.icon-my-save{background-position: 0 -5.5rem;}
+
+.icon-my-participate{background-position: 0 -8.6rem;}
+
+.icon-my-integral{background-position: 0 -11.7rem;}
+
+.icon-card-holder{background-position: 0 -14.8rem;}
+
+.icon-news-center{background-position: 0 -17.9rem;}
+
+.icon-my-coupon{background-position: 0 -21rem;}
+
+.icon-my-ad{background-position: 0 -24.1rem;}
+
+.icon-my-chat{background-position: 0 -27.2rem;}
+
+.icon-clean-cache{background-position: 0 -30.3rem;}
+
+.icon-contact-manage{background-position: 0 -33.4rem;}
+
+.icon-about-us{background-position: 0 -36.5rem;}
+
+.icon-about-us02{background-position:-3.1rem -5.5rem;}
+
+.icon-categorization-infor{background-position: 0 -39.6rem;}
+
+.icon-kind-infor{background-position:-3.1rem -2.4rem;}
+
+.manage-bt{
+	height: 4.4rem;
+	line-height: 4.4rem;
+	text-align: center;
+	color: #fff;
+	font-size: 1.4rem;
+	background:#0096FF;
+	border-radius: 2px;
+	margin: 1rem 1.5rem 0
+}
+
+.sixin-bt,.focus-bt{
+	width: 6rem;
+	height: 3rem;
+	line-height: 3rem;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	font-size: 1.2rem;
+	margin: 0 .3rem;
+}
+
+.sixin-bt{background: rgba(255,255,255,.16);}
+
+.focus-bt{background:#0096FF;}
+
+.icon-sixin{width: 1rem;height: 0.9rem;display: inline-block;background-position:-14.2rem -1.7rem;margin-right:.5rem}
+
+.icon-focus{width:0.9rem;height: 0.9rem;display: inline-block;background-position:-15.3rem -1.7rem;margin-right:.5rem}
+
+.data-ul01 .right-line:last-child:before{display: none}
+
+.right-line:before {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background:rgba(255,255,255,.2);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+}
+
+.focus-bt.active{
+	color: #fff;
+	background: rgba(255,255,255,.16);
+}
+

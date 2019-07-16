@@ -1,0 +1,380 @@
+
+  
+.write .arrow,.icon-require,.shop-ruzhu-pic-ul li i,.circle-select .radio.active{
+    background-image: url(../img/tc-pic04.png);
+    background-size: 50rem;
+    background-repeat: no-repeat;
+}
+
+ .carpooling-ul02 .li01 .call,.icon-resign,.icon-integral,.icon-exclamatory-mark{
+    background-image: url(../images/tc-yh-001.png);
+    background-size: 50rem;
+    background-repeat: no-repeat;
+}
+
+.circle-select{overflow: hidden;font-size: 1.5rem}
+
+.circle-select .radio{
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    width:2rem;
+    height:2rem;
+    margin-right:.5rem;
+    display: inline-block;
+    vertical-align: -.5rem;
+}
+
+.circle-select>a{display: block}
+
+.circle-select .radio.active{
+    border:1px solid #ff5a00;
+    background-position:-22.1rem -14.1rem;
+}
+
+.select-nav{
+	overflow: hidden;
+	width: 17.2rem;
+	margin: 0 auto;
+    box-sizing: border-box;
+    border: 1px solid #ff5a00;
+    height: 2.4em;
+    border-radius: 1.2rem;
+}
+
+.select-nav .bt{
+	height: 2.2rem;
+	width: 8rem;
+	background: #fff;
+	color: #333;
+	border-radius: 1.2rem;
+	text-align: center;
+	font-size: 16px;
+	line-height: 2.2rem;
+	box-sizing:border-box;
+	float: left;
+}
+
+.select-nav .bt.active{
+    width: 9rem;
+	background: #ff5a00;
+	color: #fff;
+	border-radius: 1.2rem;
+	font-size: 16px;
+	float: left;
+	margin-left: 0;}
+
+select {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+}
+  
+  
+  .write-cell .recruit-type span.active{background: #ff5a00;}
+    .weui-switch:checked, .weui-switch-cp__input:checked ~ .weui-switch-cp__box {border-color: #ff5a00;background-color: #ff5a00;}
+    .release-nav .bt{background-color: #ff5a00;}
+    
+.write-cell .car-dot{
+    margin-right: 1.2rem;
+    width: 1.1rem;
+    background: #3be1ff;
+    height: 1.1rem;
+    box-sizing: border-box;
+    border-radius: 50%;
+    display:block;
+}
+
+.free-ride{
+    background:#fff;
+    padding: 0 1.5rem 0;
+    border-radius: 4px;
+    box-shadow: 0 0 0 0;
+    margin: 1.5rem 1.5rem 0;
+}
+
+.free-ride .write {
+    height:4.5rem;
+}
+
+.free-ride .write input {
+    height: 100%;
+    font-size: 1.5rem;
+    width: 100%;
+    padding-left: 2.5rem;
+}
+
+.free-ride .write .dot {
+    width: 1.1rem;
+    height: 1.1rem;
+    box-sizing: border-box;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+    display: block;
+}
+
+.icon-resign{
+    display:inline-block;
+    margin-left: .5rem;
+    vertical-align: -.1rem;
+    width: 2.6rem;
+    height: 1.5rem;
+    background-position: -17.7rem 0;
+}
+
+.write-infor-cells{padding: 0 1.5rem;box-sizing: border-box}
+
+.write-infor-cell{
+    position: relative;
+    padding: 1.5rem 0;
+    color: #333;
+    font-size: 1.6rem;
+    line-height: 1.25;
+    height: 1.6rem;
+}
+
+.write-infor-cell .shuru-input {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+    display: block;
+    color: #333;
+    font-size: 1.6rem;
+}
+
+
+.right-arrow:after {
+    content: " ";
+    display:block;
+    height: 6px;
+    width: 6px;
+    border-width: 1px 1px 0 0;
+    border-color: #999;
+    border-style: solid;
+    transform: translate(0, -50%) rotate(45deg);
+    -webkit-transform: translate(0, -50%) rotate(45deg);
+    margin-left: 3px;
+    margin-top: .8rem;
+}
+
+.write-infor-cell select {
+    font-size: 1.6rem;
+    padding-right: 2.8rem;
+    position: relative;
+    height: 100%;
+    color: #999;
+}
+
+.shop-miaoshu {
+    padding:.5rem 0 1rem;
+    height: 9rem;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.shop-miaoshu textarea {
+    font-size: 1.5rem;
+    color: #666;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    line-height: 1.25;
+    overflow: auto;
+}
+
+.shop-ruzhu-pic-ul.pintuan {
+    padding: 0 0 1.5rem;
+}
+
+.shop-ruzhu-pic-ul.pintuan li {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    float: left;
+    display: block;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.shop-ruzhu-pic-ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+.shop-ruzhu-pic-ul li i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: rgba(0,0,0,.5);
+    background-position: -14rem -6.9rem;
+}
+
+.top-radio span{
+    height: 1.6rem;
+    width: 1.6rem;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    box-sizing: border-box;
+    vertical-align: -.3rem;
+    background-image: url(../images/tc-yh-001.png);
+    background-repeat: no-repeat;
+    background-size: 50rem;
+    background-position: -20.7rem 0;
+}
+
+.top-radio.active span{background-position:-22.5rem 0}
+
+.release-nav {
+    height: 4.9rem;
+    background: #fff;
+    font-size: 1.6rem;
+    padding-left: 1.2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+}
+
+.release-nav .money {
+    line-height: 4.9rem;
+}
+
+.release-nav .bt {
+    width: 53%;
+    color: #fff;
+    background: #ff5a00;
+    font-size: 1.6rem;
+    line-height: 4.9rem;
+    text-align: center;
+}
+
+.left-line{position: relative;}
+
+.icon-integral {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    background-position: -24.3rem 0;
+    margin-top: .2rem;
+}
+
+.icon-exclamatory-mark{
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-block;
+    margin-left: .4rem;
+    margin-top: .1rem;
+    background-position:-26.1rem 0; 
+    vertical-align: -.3rem;
+}
+
+.icon-require{
+    width:.7rem;
+    height:.7rem;
+    display: block;
+    background-position: -26.7rem -9.2rem;
+    margin-left: 5px;
+}
+
+.write .arrow{
+    width: .7rem;
+    height: 1.1rem;
+    background-position: -24.5rem -9.2rem;
+    margin-left: 5px;
+}
+
+
+
+/*滑动开关*/
+.weui-cells_form .weui-cell__ft{font-size: 0;}
+.weui-cell__ft {
+text-align: right;
+color: #808080;
+}
+.weui-cells_form input, .weui-cells_form textarea, .weui-cells_form label[for] {
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.weui-switch:checked, .weui-switch-cp__input:checked ~ .weui-switch-cp__box {
+border-color: #ff5a00;
+background-color: #ff5a00;
+}
+.weui-switch-cp__box {
+display: block;
+}
+.weui-switch, .weui-switch-cp__box {
+position: relative;
+width: 52px;
+height: 32px;
+border: 1px solid #dfdfdf;
+outline: 0;
+border-radius: 16px;
+box-sizing: border-box;
+background-color: #fdfdfd;
+-webkit-transition: background-color 0.1s, border 0.1s;
+transition: background-color 0.1s, border 0.1s;
+}
+.weui-switch:checked:before, .weui-switch-cp__input:checked, .weui-switch-cp__box:before {
+-webkit-transform: scale(0);
+transform: scale(0);
+}
+
+.weui-switch:checked:after, .weui-switch-cp__input:checked ~ .weui-switch-cp__box:after {
+-webkit-transform: translateX(20px);
+transform: translateX(20px);
+}
+
+.weui-switch:after, .weui-switch-cp__box:after {
+content: " ";
+position: absolute;
+top: 0;
+left: 0;
+width: 30px;
+height: 30px;
+border-radius: 15px;
+background-color: #FFFFFF;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+-webkit-transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+transition: -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35), -webkit-transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+}
+
+.weui-switch:before, .weui-switch-cp__box:before {
+content: " ";
+position: absolute;
+top: 0;
+left: 0;
+width: 50px;
+height: 30px;
+border-radius: 15px;
+background-color: #FDFDFD;
+-webkit-transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+transition: -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1), -webkit-transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+.weui-switch {
+-webkit-appearance: none;
+appearance: none;
+}
+
+.weui-switch-cp__input {
+position: absolute;
+left: -9999px;
+}
+
+

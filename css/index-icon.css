@@ -1,0 +1,121 @@
+
+.iconul{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 3.2rem;
+}
+
+.iconul a{
+    width: 20%;
+    height: auto;
+    padding: 1.5rem 0 0;
+    box-sizing: border-box;
+    float: left;
+    display: block;
+    text-align: center;
+}
+
+
+.iconul a span {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1;
+    width: 100%;
+    margin-top: 1rem;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    height: 12px;  
+    padding: 0 3px;     
+    box-sizing: border-box;
+}
+
+.iconul a i {
+    display: block;
+    margin: 0 auto;
+    width: 4.3rem;
+    height: 4.3rem;
+	background-image: url(../img/tc-pic03.png);
+	background-repeat: no-repeat;
+    background-size: 50rem;    
+}
+
+/*旧版图标*/
+.icon-declious-food{background-position: 0 -10rem;}
+
+.icon-entertainment{background-position:-5rem -10rem;}
+
+.icon-around{background-position:-10rem -10rem;;}
+
+.icon-love-car{background-position:-15rem -10rem;}
+
+.icon-hotel{background-position:-20rem -10rem;}
+
+.icon-beauty{background-position:-25rem -10rem;}
+
+.icon-SYshexiang{background-position:-30rem -10rem;}
+
+.icon-BDmaimai{background-position:-35rem -10rem;}
+
+.icon-DSwanggou{background-position:-40rem -10rem;}
+
+.icon-exercise{background-position:-45rem -10rem;;}
+
+.icon-baby{background-position:0 -15rem;}
+
+.icon-HQliyi{background-position:-5rem -15rem;}
+
+.icon-YYzhensuo{background-position:-10rem -15rem;}
+
+.icon-FCxiangguan{background-position:-15rem -15rem;}
+
+.icon-yangshengbaojian{background-position:-20rem -15rem;}
+
+.icon-pifadianshang{background-position:-45rem 0;}
+
+.icon-cundian{background-position:-25rem -15rem;}
+
+.icon-school{background-position:-30rem -15rem;}
+
+.icon-jiadiantongxun{background-position:-35rem -15rem;}
+
+.icon-HuoDong{background-position:-40rem -15rem;}
+
+
+/*首页图标*/
+
+.icon-JYpeixun{background-position:-40rem 0;}
+
+.icon-SWfuwu{background-position:-35rem 0;}
+
+.icon-NYmuyu{background-position:-30rem 0;}
+
+.icon-decorate-home{background-position:-20rem -5rem;}
+
+.icon-life-service{background-position:-25rem 0;}
+
+.icon-full-time{background-position: 0 0;}
+
+.icon-rental{background-position:-5rem 0;}
+
+.icon-car-transaction{background-position:-10rem 0;}
+
+.icon-second-hand{background-position:-15rem 0;}
+
+.icon-pinche-in{background-position:-20rem 0;}
+
+.icon-SPSY{background-position: 0 -5rem;}
+
+.icon-Chongwu{background-position: -5rem -5rem;}
+
+.icon-YHquan{background-position:-10rem -5rem;}
+
+.icon-BJCX{background-position:-15rem -5rem;}
+
+.icon-bianmin{background-position:-25rem -5rem;}
+
+.icon-chengshi114{background-position:-30rem -5rem;}
+
+.icon-index-vote{background-position:-45rem -15rem;}

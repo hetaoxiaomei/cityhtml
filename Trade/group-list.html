@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>拼团列表</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/activity-list.css">
+    <link rel="stylesheet" type="text/css" href="css/bottom-navigation.css">
+</head>
+<body>
+    <div class="basewrap">
+
+        <!--拼团活动-->
+        <div style="padding-bottom:5rem">
+            <div class="activity-swiper">
+                <ul>
+                    <li>
+                        <div class="pic">
+                            <img src="img/04.jpg">
+                            <div class="regiment">100人团</div>
+                            <div class="d-flex d-flex-center bottom">
+                                <div class="time flex">
+                                    <em>25</em>天<em>19</em>:<em>52</em>:<em>12</em>
+                                </div>
+                                <div class="cfff f12" style="margin-right:1.2rem;">26人参与</div>
+                                <div class="people">
+                                    <img class="head" src="img/0.jpg">
+                                    <img class="head" src="img/0.jpg">
+                                    <img class="head" src="img/0.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p class="clamp1 title bold">装饰小鸟摆件 夹子 鸟巢鸟窝鸟蛋 羽毛鸟胸针×美式乡村</p>
+                            <div class="d-flex d-flex-center" style="padding:0 1.2rem;">
+                                <div class="money bold f18"><i class="f14">￥</i>299<i class="f14 c333" style="font-weight:normal">起</i></div>
+                                <div class="flex original">￥13299</div>
+                                <div class="sign" style="background:#f8272a">拼团</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--已结束-->
+                <ul>
+                    <li>
+                        <div class="pic">
+                            <img src="img/04.jpg">
+                            <div class="regiment gray">100人团</div>
+                            <div class="d-flex d-flex-center bottom">
+                                <div class="f12 flex cfff">已结束</div>
+                                <div class="cfff f12" style="margin-right:1.2rem;">26人参与</div>
+                                <div class="people">
+                                    <img class="head" src="img/0.jpg">
+                                    <img class="head" src="img/0.jpg">
+                                    <img class="head" src="img/0.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p class="clamp1 title bold" style="color:#999;">装饰小鸟摆件 夹子 鸟巢鸟窝鸟蛋 羽毛鸟胸针×美式乡村</p>
+                            <div class="d-flex d-flex-center" style="padding:0 1.2rem;">
+                                <div class="money bold f18" style="color:#999;"><i class="f14">￥</i>299<i class="f14" style="font-weight:normal">起</i></div>
+                                <div class="flex original">￥13299</div>
+                                <div class="sign" style="background:#ccc;color:#666">结束</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--已售罄-->
+                <ul>
+                    <li>
+                        <div class="pic">
+                            <img src="img/04.jpg">
+                            <div class="regiment gray">100人团</div>
+                            <div class="d-flex d-flex-center bottom">
+                                <div class="f12 flex cfff gray">已售罄</div>
+                                <div class="cfff f12" style="margin-right:1.2rem;">26人参与</div>
+                                <div class="people">
+                                    <img class="head" src="img/0.jpg">
+                                    <img class="head" src="img/0.jpg">
+                                    <img class="head" src="img/0.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p class="clamp1 title bold" style="color:#999;">装饰小鸟摆件 夹子 鸟巢鸟窝鸟蛋 羽毛鸟胸针×美式乡村</p>
+                            <div class="d-flex d-flex-center" style="padding:0 1.2rem;">
+                                <div class="money bold f18" style="color:#999;"><i class="f14">￥</i>299<i class="f14" style="font-weight:normal">起</i></div>
+                                <div class="flex original">￥13299</div>
+                                <div class="sign" style="background:#ccc;color:#666">结束</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>  
+        </div>
+    </div>
+
+    <!--底部导航-->
+    <div class="fix-bl">
+        <div class="basewrap d-flex index-bottom-nav"> 
+            <a class="flex">
+                <i class="home"></i>
+                <p>首页</p>
+            </a>
+            <a class="flex active">
+                <i class="group"></i>
+                <p>拼团</p>
+            </a>  
+            <a class="flex">
+                <i class="order"></i>
+                <p>我的订单</p>
+            </a>   
+            <a class="flex">
+                <i class="me"><em class="dot"></em></i>
+                <p>我的</p>
+            </a>     
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+    	/*广告图*/
+	    var swiper = new Swiper('.swiper-container-topbanner', {
+	        pagination: '.swiper-container-topbanner .swiper-pagination',
+	        paginationClickable: true,
+	        autoplay:3000,
+	        centeredSlides: true,
+	        autoplayDisableOnInteraction: false,
+			loop:1
+	    });
+    </script>
+</body>
+</html>
+

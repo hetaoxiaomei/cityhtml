@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>商品发布</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/release.css">
+    <style>
+        .guige-plus,.upload-pic-ul li .f01,.upload-pic-ul li .close,.icon-help,.write-cell .arrow,.arrow02,.icon-delete{background-image: url(../img/tc-pic04.png);background-size: 50rem;}
+        .write-cell .left{width:auto;}
+        .upload-pic-ul{padding:2rem 0 0;overflow: hidden;}
+        .upload-pic-ul li{background:#F0F0F0;width:30%;padding: 30% 0 0;position: relative;margin: 0 3.3% 1rem 0;float: left}
+        .upload-pic-ul li img{position:absolute;top:0;left:0;width:100%;height:100%;}
+        .upload-pic-ul li .close{position: absolute;z-index: 1;top: -1rem;right: -.5rem;width: 2.3rem;height:2.3rem;display: block;background-position: -35.6rem -10.4rem;}
+        .upload-pic-ul li .f01{position: absolute;top:25%;left: 50%;transform: translate(-50%,0);width:2rem;height:2rem;display: block;background-position: -48rem -6.9rem;}
+        .upload-pic-ul li .f02{position: absolute;top: 55%;left: 0;width: 100%;line-height: 1.3}
+        .upload-pic-ul li:nth-child(3n){margin: 0 0 1rem 0;}
+        .guige-plus{width:1.1rem;height:1.1rem;display:inline-block;background-position:-31.7rem -9.1rem;margin-right: .3rem;vertical-align: -.1rem;}
+        .icon-help{width: 1.6rem;height: 1.6rem;display: block;background-position:-38.1rem -10.4rem;}
+        .express-ul{overflow: hidden;padding: 2.5rem 0;}
+        .express-ul li{width: 28.5%;height: 2.7rem;float: left;line-height: 2.7rem;font-size: 1.4rem;text-align: center;color: #333;border: 1px solid #ff5a00;border-radius: 4px;}
+        .express-ul li.active{background: #ff5a00;color: #fff;}
+        .write-cell .arrow{width: .7rem;height: 1.1rem;background-position: -24.5rem -9.2rem;margin-left: 5px;}
+        .arrow02{width:.7rem;height: 1.1rem;display: inline-block;background-position: -16.9rem -8.8rem;transform: rotate(90deg);margin:0 0 0 .5rem;vertical-align:-.2rem}
+        .icon-delete{width:2.5rem;height: 2.5rem;display: block;background-position: -29.9rem -13.4rem;margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div style="padding: 0 0 6.5rem;">
+        <!--进度条-->
+        <div class="bg-f" style="margin:1.5rem 1.5rem 0;border-radius: 4px;padding: 1.5rem 0;box-shadow: 0 0 10px rgba(0,0,0,.05);">
+            <div class="bg-f" style="padding:0 4rem">
+                <img src="../img/tc-pic101.png" style="width: 100%">
+            </div>
+            <ul class="d-flex c999 f12 rel" style="margin:1rem 4rem 0;">
+                <li class="c333" style="position:absolute;bottom:0;left:0;transform: translate(-50%,0);;margin: 0 0 0 1rem">商品信息</li>
+                <li class="flex ta-c c333">商品信息</li>
+                <li style="position:absolute;bottom:0;right:0;transform: translate(50%,0);margin: 0 1rem 0 0">商品信息</li>
+            </ul>
+        </div>
+
+        <!--基本信息-->
+        <div class="box-shadow-kuang" style="margin:1.5rem 1.5rem 0;padding: 1.5rem 1.5rem .5rem;">
+            <div class="d-flex d-flex-center">
+                <div class="flex"></div>
+                <i style="background: #ccc;display: block;width: 1.6rem;height: .1rem;"></i>
+                <div class="bold f16">&nbsp;&nbsp;详细信息&nbsp;&nbsp;</div>
+                <i style="background: #ccc;display: block;width: 1.6rem;height: .1rem;"></i>
+                <div class="flex"></div>
+            </div>
+
+            <ul class="upload-pic-ul">
+                <li style="margin:0 auto;float:none;">
+                    <i class="f01"></i>
+                    <p class="f02 f12 c999 ta-c">添加商品主图<br><span>0/1</span></p>
+                </li>            
+            </ul>  
+
+            <div class="top-line" style="display: block;padding: 1.5rem 0 0;margin: 2.5rem 0 0;">
+                <textarea class="f14 c333" style="display:block;width:100%;height:10rem;" placeholder="点击输入商品详情，描述一下商品亮点~"></textarea>
+                <ul class="upload-pic-ul">
+                    <li>
+                        <img src="">
+                        <i class="close"></i>
+                    </li>
+                    <li>
+                        <img src="">
+                        <i class="close"></i>
+                    </li>
+                    <li>
+                        <i class="f01"></i>
+                        <p class="f02 f12 c999 ta-c">添加商品主图<br><span>0/9</span></p>
+                    </li>            
+                </ul>
+            </div>
+        </div>
+    </div> 
+
+    <div class="fix-bl">
+        <div class="d-flex cfff f16 ta-c bold" style="line-height: 4.9rem;">
+            <a class="flex cfff" style="background:#FFB504">上一步</a>
+            <a class="flex cfff" style="padding:0;background: #ff5a00;">发布</a>
+        </div>
+    </div>
+      
+</body>
+</html>

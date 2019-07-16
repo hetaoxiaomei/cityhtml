@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>同城首页</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/detail.css">
+</head>
+<body>
+    <div class="basewrap" style="padding: 0 0 4.9rem 0;">
+        <div style="width: 100%;">
+            <img src="../img/04.jpg" style="width: 100%;">
+        </div>
+        <div class="bg-f commodity">
+            <div class="bold title">Copper Colour铜彩 夜神MOON主音箱线HIFI喇 叭线高纯铜功放音响线</div>
+            <div class="d-flex d-flex-center price" style="margin:5px 0 0;">
+                <div class="flex">
+                    <div class="bold" style="color:#F90606"><i style="font-size: 2.5rem;">￥1620</i><i class="line-through f14" style="opacity:.7;margin-left:5px;">￥2500.00</i></div>
+                    <div class="vip">
+                        <i class="left">会员</i>
+                        <i class="right">￥1500</i>
+                    </div>                    
+                </div> 
+                <!--分享-->
+                <div>
+                    <i class="icon-share"></i>
+                    <p class="c666 f12 ta-c">分享</p>
+                </div>
+
+                <!--赚钱-->
+                <div>
+                    <i class="icon-earn"></i>
+                    <p class="c666 f12 ta-c">赚</p>
+                </div>                
+            </div>
+            <div class="d-flex d-flex-center c999 f13" style="margin:1.8rem 0 0 ">
+                <div class="flex">运费：免运费</div>
+                <div class="flex ta-r">销量：9999</div>
+            </div>
+        </div>
+
+        <div class="bg-f cell-line">
+            <div id="coupon" class="d-flex d-flex-center bg-f bottom-line" style="padding:1.5rem 0;">
+                <div class="f14 c666" style="margin:0 24px 0 0;">领券</div>
+                <div class="flex" style="height: 2.1rem;overflow: hidden;">
+                    <view class="icon-coupon fl">100元</view>
+                    <view class="icon-coupon fl">100元</view>
+                    <view class="icon-coupon fl">100元</view>
+                </div>
+                <div class="icon-arrow"></div>
+            </div>
+
+            <div id="buy01" class="bg-f" style="margin:0;">
+                <div class="d-flex d-flex-center bg-f bottom-line" style="padding:1.5rem 0;">
+                    <div class="f14 c666" style="margin:0 24px 0 0;">已选</div>
+                    <div class="flex c999 f14">颜色·尺码</div>
+                    <div class="icon-arrow"></div>
+                </div>        
+            </div>               
+
+        </div>
+
+        <div class="d-flex d-flex-center bg-f shop-detail" style="margin:1rem 0 0;padding:1.3rem 2.2rem 1.3rem 1.5rem">
+            <img src="../img/04.jpg" style="height:4.5rem;width:4.5rem;display:block;margin: 0 1rem 0 0;">
+            <div class="flex" style="margin-right: 1rem">
+                <div class="f16 bold clamp1">夜神信号线专卖店</div>
+                <div class="clamp1 f13" style="margin: 10px 0 0;"><i class="icon-location"></i>广州市天河区林和西路285号5216</div>
+            </div>
+            <div class="icon-call"></div>
+        </div>
+
+        <!--商品详情-->
+        <div class="commodity-describe" style="margin-top:1rem">
+            <div class="f16 bold ta-c d-flex d-flex-center" style="line-height:4.5rem;">
+                <div class="flex"></div>
+                <div class="line01"></div>
+                <div>&nbsp;&nbsp;商品详情&nbsp;&nbsp;</div>
+                <div class="line01"></div>
+                <div class="flex"></div>
+            </div>
+            <div class="content">
+                <p>夜神MOON主音箱线HIFI喇叭线高纯铜功放音响线夜 神主音箱线HIFI喇叭线高纯铜功放音响线高纯铜功放 音响线夜神主音箱高纯</p>
+                <img src="../img/01.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!--底部导航-->
+    <div class="fix-bl">
+        <ul class="d-flex d-flex-center basewrap detail-footer-nav">
+            <li class="rel sd-shopping-cart top-line" style="width:15.4%">
+                <a class="left-line">
+                    <i class="icon icon-sd-kefu"></i>
+                    <p>客服</p>
+                </a>
+            </li>
+            <li class="rel sd-shopping-cart top-line" style="width:15.4%">
+                <a class="left-line">
+                    <i class="icon icon-sd-dianpu"></i>
+                    <p>店铺</p>
+                </a>
+            </li>
+            <li class="rel sd-shopping-cart top-line" style="width:15.4%">
+                <a class="left-line">
+                    <i class="icon icon-sd-cart">
+                        <em class="red-dot" id="cart_goods_count" style="display:none;">0</em>
+                    </i>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li id="buy02" class="flex bt" style="background: #FFB504;">加入购物车</li>
+            <li class="flex bt" style="background: #FF5A00;">立刻购买</li>
+        </ul>
+    </div>
+
+    <!--购买弹框-->
+    <div id="buy-dialog" class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="fix-bl bg-f">
+            <div class="d-flex bottom-line commodity bottom-line" style="padding:0 3rem 1.5rem 1.5rem;">
+                <img src="../img/04.jpg" style="width:9rem;height:9rem;border-radius: 4px;margin: -2.6rem 1rem 0 0;">
+                <div class="flex" style="margin:.5rem 0 0;">
+                    <div class="clamp2 f14 c333 bold" style="line-height:1.3">Copper Colour铜彩 夜神MOON主音箱线HIFI喇叭线高纯铜功放音响线</div>
+
+                    <!-- <div class="f14 bold" style="margin:.5rem 0 0;">￥1500</div> -->
+                    
+                    <div class="vip">
+                        <i class="left">会员</i>
+                        <i class="right">￥1500</i>
+                    </div>     
+
+                </div>
+                <i class="icon-close"></i>    
+            </div>
+            <div style="max-height:200px;overflow:auto;">
+                <div style="padding:1.5rem 0 0;margin:0 1.5rem;">
+                    <div class="f14 c333">颜色:</div>
+                    <div class="sd-option-all"><span class="stock active">蓝色</span><span class="stock">红色</span><span>黑色</span></div>
+                </div>
+                <div style="padding:1.5rem 0 0;margin:0 1.5rem;">
+                    <div class="f14 c333">尺寸:</div>
+                    <div class="sd-option-all"><span>S</span><span class="stock active">M</span><span class="stock">L</span></div>
+                </div>
+                <div style="padding:1.5rem 0 0;margin:0 1.5rem;">
+                    <div class="f14 c333">尺寸:</div>
+                    <div class="sd-option-all"><span>S</span><span class="stock active">M</span><span class="stock">L</span></div>
+                </div>
+                <div style="padding:1.5rem 0 0;margin:0 1.5rem;">
+                    <div class="f14 c333">尺寸:</div>
+                    <div class="sd-option-all"><span>S</span><span class="stock active">M</span><span class="stock">L</span></div>
+                </div>                                              
+            </div>
+            <div style="margin:1rem 1.5rem 0;">
+                <div class="d-flex d-flex-center top-line" style="padding: 1.5rem 1.5rem 1rem 0;">
+                    <div class="flex f14">购买数量:</div>
+                    <div class="number-reduce"></div>
+                    <div class="number-show">1</div>
+                    <div class="number-plus"></div>
+                </div>
+                <div class="d-flex" style="padding:0 1.5rem 0 0;">   
+                    <div class="f14 flex">剩余：999</div>
+                    <div class="f12" style="color:#F90606;">限购1件</div>
+                </div>
+            </div>
+            <div class="d-flex detail-footer-nav" style="margin: 1.5rem 0 0;">
+                <li class="flex bt" style="background: #FFB504;">加入购物车</li>
+                <li class="flex bt" style="background: #FF5A00;">立刻购买</li>
+            </div>
+        </div>
+    </div>
+
+    <!--活动弹框-->
+    <div id="activity-dialog" class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle activity-dialog">
+            <p class="c333 ta-c f16 bold">活动</p>
+            <div class="d-flex" style="line-height: 1.4;margin:10px 0 0 ;">
+                <div class="f10" style="font-size:.6rem;margin:.3rem 1rem 0 0;">●&nbsp;</div> 
+                <div>满一件送10元代金券×1、20元代金券×2、30元代金 券×2、40元代金券×1</div> 
+            </div>
+            <div class="d-flex" style="line-height: 1.4;margin:10px 0 0;">
+                <div class="f10" style="font-size:.6rem;margin:.3rem 1rem 0 0;">●&nbsp;</div> 
+                <div>满一件送10元代金券×1、20元代金券×2、30元代金 券×2、40元代金券×1</div> 
+            </div>
+            <div class="d-flex" style="line-height: 1.4;margin:10px 0 0;">
+                <div class="f10" style="font-size:.6rem;margin:.3rem 1rem 0 0;">●&nbsp;</div> 
+                <div>满一件送10元代金券×1、20元代金券×2、30元代金 券×2、40元代金券×1</div> 
+            </div> 
+            <i class="icon-close"></i>           
+        </div>
+    </div>
+
+    <!--优惠券弹框-->
+    <div id="coupon-dialog" class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="fix-bl bg-f coupon-dialog">
+            <div class="bold f16 c333 ta-c title">代金券</div>
+            <div class="d-flex coupon-nav">
+                <div class="flex active">已领取代金券</div>
+                <div class="flex">未领取代金券</div>
+            </div>  
+            <div id="coupon-zhang" style="height:300px;overflow: auto;">
+                <!--已领取代金券-->
+                <div>
+                    <div class="rel coupon-zhang none">
+                        <img src="../img/tc-pic67.png" style="width:100%"> 
+                        <p class="bold cfff money">
+                            <i class="i01">100</i><i style="font-size:17px;">元</i>
+                        </p>
+                        <p class="abs no-threshold">
+                            <img src="../img/tc-pic68.png">
+                            <i class="f01">无门槛使用</i>
+                        </p>
+                        <div class="coupon-title">美食店优惠券美食店优惠券美食店优惠券</div>
+                        <div class="coupon-time">2018.07.15-2019.07.15</div>
+                        <div class="rel coupon-bt">
+                            <img src="../img/tc-pic69.png">
+                            <p class="f01">使用</p>
+                        </div>
+                    </div>  
+
+                    <!--没有已领取代金券-->
+                    <div class="none" style="padding:5rem 0 4rem;">
+                        <img src="../img/tc-pic71.png" style="display:block;width:15rem;margin: 0 auto;">
+                        <p class="ta-c c999 f18" style="padding:2.5rem 0 0;">亲，你还没有可用的代金券哦~</p>
+                    </div>   
+                </div>
+
+                <!--未领取代金券-->
+                <div class="none">
+                    <div class="rel coupon-zhang">
+                        <img src="../img/tc-pic67.png" style="width:100%"> 
+                        <p class="bold cfff money">
+                            <i class="i01">100</i><i style="font-size:17px;">元</i>
+                        </p>
+                        <p class="abs no-threshold">
+                            <img src="../img/tc-pic68.png">
+                            <i class="f01">无门槛使用</i>
+                        </p>
+                        <div class="coupon-title">美食店优惠券美食店优惠券美食店优惠券</div>
+                        <div class="coupon-time">2018.07.15-2019.07.15</div>
+                        <div class="rel coupon-bt">
+                            <img src="../img/tc-pic69.png">
+                            <p class="f01">领取</p>
+                        </div>
+                        <div class="label">
+                            <div class='vip fl'>会员</div>
+                            <div class='new fl'>新用户</div>
+                        </div>
+                    </div>
+                    <div class="rel coupon-zhang">
+                        <img src="../img/tc-pic67.png" style="width:100%"> 
+                        <p class="bold cfff money">
+                            <i class="i01">100</i><i style="font-size:17px;">元</i>
+                        </p>
+                        <p class="abs no-threshold">
+                            <img src="../img/tc-pic68.png">
+                            <i class="f01">无门槛使用</i>
+                        </p>
+                        <div class="coupon-title">美食店优惠券美食店优惠券美食店优惠券</div>
+                        <div class="coupon-time">2018.07.15-2019.07.15</div>
+                        <div class="rel coupon-bt">
+                            <img src="../img/tc-pic69.png">
+                            <p class="f01">领取</p>
+                        </div>
+                        <div class="label">
+                            <div class='vip fl'>会员</div>
+                            <div class='new fl'>新用户</div>
+                        </div>
+                    </div>     
+                    <div class="rel coupon-zhang">
+                        <img src="../img/tc-pic67.png" style="width:100%"> 
+                        <p class="bold cfff money">
+                            <i class="i01">100</i><i style="font-size:17px;">元</i>
+                        </p>
+                        <p class="abs no-threshold">
+                            <img src="../img/tc-pic68.png">
+                            <i class="f01">无门槛使用</i>
+                        </p>
+                        <div class="coupon-title">美食店优惠券美食店优惠券美食店优惠券</div>
+                        <div class="coupon-time">2018.07.15-2019.07.15</div>
+                        <div class="rel coupon-bt">
+                            <img src="../img/tc-pic69.png">
+                            <p class="f01">领取</p>
+                        </div>
+                        <div class="label">
+                            <div class='vip fl'>会员</div>
+                            <div class='new fl'>新用户</div>
+                        </div>
+                    </div>     
+
+                    <!--没有未领取代金券-->
+                    <div class="none" style="padding:5rem 0 4rem;">
+                        <img src="../img/tc-pic71.png" style="display:block;width:15rem;margin: 0 auto;">
+                        <p class="ta-c c999 f18" style="padding:2.5rem 0 0;">亲，你没有可领取的代金券哦~</p>
+                    </div>                                                         
+                </div>  
+            </div> 
+            <i class="icon-close"></i>  
+        </div>
+    </div>
+
+    <!--生成海报按钮-->
+    <!-- <div style="position:fixed;right:0;top:2.5rem;width: 6.4rem;height:2.5rem;background: #2F2D23;font-size: 12px;color:#D9AE6F;font-weight: bold;">
+        <img style="width:2.5rem;display: inline-block;margin: 0 .2rem 0 -1.25rem;" src="../img/tc-pic86.png">生成海报
+    </div> -->
+
+    <!--分享赚钱按钮-->
+    <!-- <div style="position:fixed;right:0;top:2.5rem;width: 6.4rem;height:2.5rem;background: #2F2D23;font-size: 12px;color:#D9AE6F;font-weight: bold;">
+        <img style="width:2.5rem;display: inline-block;margin: 0 .2rem 0 -1.25rem;" src="../img/tc-pic85.png">分享赚钱
+    </div> -->
+
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.dialog-black-mask').bind("touchmove",function(e){
+            e.preventDefault();
+        });
+
+        $('#activity').on('click',function(){
+            $('#activity-dialog').fadeIn(200);
+        }) 
+
+        $('.icon-close,.dialog-black-mask').on('click',function(){
+            $('#activity-dialog,#buy-dialog,#coupon-dialog').fadeOut(200);
+            $('body').addClass('stop-scroll');
+            $('body').removeClass('stop-scroll');
+        }) 
+
+        $('#buy01,#buy02').on('click',function(){
+            $('#buy-dialog').fadeIn(200);
+            $('body').addClass('stop-scroll');
+        }) 
+
+        $('#coupon').on('click',function(){
+            $('#coupon-dialog').fadeIn(200);
+            $('body').addClass('stop-scroll');
+        }) 
+
+        $('.sd-option-all span.stock').on('click',function(){
+            $(this).toggleClass('active').siblings('.stock').removeClass('active');
+        }) 
+
+        $('.coupon-nav .flex').on('click',function(){
+            var thisindex=$(this).index();
+            $(this).addClass('active').siblings('.flex').removeClass('active');
+            $('#coupon-zhang').children('div').hide().eq(thisindex).show();	    
+        }) 
+            
+    </script>
+</body>
+</html>    
