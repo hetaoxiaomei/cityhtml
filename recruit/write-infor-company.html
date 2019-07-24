@@ -10,123 +10,108 @@
     <meta charset="utf-8">
     <title>企业入驻</title>
     <link rel="stylesheet" type="text/css" href="../css/common.css">
-    <link rel="stylesheet" type="text/css" href="../css/release.css">
-    <link rel="stylesheet" type="text/css" href="../css/LArea.css">
+    <style>
+        .write-cell .arrow-right,.icon-require,.upload-pic-ul li .f01,.people-head i{background-image: url(../img/tc-pic04.png);background-repeat: no-repeat;background-size:50rem;}
+        .people-head{border-radius:4px;overflow: hidden;padding: 2.5rem 0 0;background: #fff}
+        .people-head i{position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%); width: 2rem;height: 2rem;display: block;background-position: -48rem -6.9rem;}
+        .people-head img{display:block;width:100%;height:100%;position: relative;z-index: 2;}
+        .write-cell {background: #fff;height: 5.5rem;font-size: 1.5rem;padding: 0 1.5rem 0 0;}
+        .icon-require{width: .7rem;height: .7rem;margin: 0 0 0 .4rem;display: inline-block;vertical-align: .1rem;
+            background-position:-26.7rem -9.2rem;}
+        .write-cell .left{width: 30%;}
+        .write-cell .right input.write {display: block;width: 100%;height: 100%;font-size: 1.5rem;color: #333;}
+        .write-cell select{font-size: 1.5rem;}
+        .write-cell .arrow-right{width: .7rem;height: 1.1rem;background-position: -24.5rem -9.2rem;margin-left: 5px;}
+        .company-welfare span{width: 23%;height: 2.4rem;line-height: 2.4rem;border-radius: .2rem;
+    color: #999;position: relative;display: block;float: left;text-align: center;margin-top: 1.5rem;margin-right:2.6%;font-size: 1.2rem;}
+        .company-welfare span.active{background: #ff5a00;color: #fff;}
+        .company-welfare span:nth-child(4n){margin-right:0;}
+        .company-welfare span:after {content: " ";width: 200%;height: 200%;position: absolute;top: 0;left: 0;border: 1px solid #e5e5e5;-webkit-transform: scale(0.5);
+    transform: scale(0.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;box-sizing: border-box;border-radius: .4rem;}
+        textarea::-webkit-input-placeholder{color: #999;}
+        .upload-pic-ul{overflow: hidden;}
+        .upload-pic-ul li{background: #F0F0F0;width:7.5rem;height: 7.5rem;position: relative;margin: 0 3.3% 0 0;float: left;}
+        .upload-pic-ul li .f01{position: absolute;top: 30%;left: 50%;transform: translate(-50%,0);width: 2rem;height: 2rem;display: block;background-position: -48rem -6.9rem;}
+        .upload-pic-ul li .f02{position: absolute;top:67%;left: 0;width: 100%;line-height: 1.3;}   
+        .upload-pic-ul li .close{position: absolute;z-index: 1;top: -.5rem;right: -.5rem;width: 1.5rem;height: 1.5rem;display: block;}   
+        .upload-pic-ul li img.pic{position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
+        .company-welfare span.active:after{display: none;}
+   </style>
 </head>
-<body class="bg-f">
-    <div class="basewrap" style="padding:1.2rem 1.2rem 14rem;">
-        <div class="box-shadow-kuang" style="padding:1.2rem 1.2rem 0;">
-            <i class="icon-required"></i>
-            <div class="people-head" style="border-radius:4px"><img src="../img/tc-pic32.png"></div>
-            <p class="f12 c999 ta-c" style="padding:0.8rem 0 0;">点击更换头像</p>
-            <div class="write-cells">
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">企业名称</div>
-                    <div class="flex right">
-                        <input class="write" placeholder="请输入企业名称">
-                    </div>                                                          
-                </div>   
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">企业性质</div>
-                    <div class="flex right" style="margin-left:0">
-                        <select class="c999">
-                            <option>请选择企业性质</option>
-                            <option>销售</option>
-                            <option>客服</option>
-                        </select>
-                        <i class="arrow-right"></i>
-                    </div>                
-                </div>    
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">企业规模</div>
-                    <div class="flex right" style="margin-left:0">
-                        <select>
-                            <option>1~49</option>
-                            <option>49-100</option>
-                        </select>
-                        <i class="arrow-right"></i>
-                    </div>                
-                </div>   
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">所属行业</div>
-                    <div class="flex right" style="margin-left:0">
-                        <select class="c999 change">
-                            <option>请选择所属行业</option>
-                            <option>服务业</option>
-                        </select>
-                        <i class="arrow-right"></i>
-                    </div>                
-                </div>  
+<body>
+    <div class="basewrap" style="padding:0 0 7rem;">
+        <div class="people-head">
+            <div class="rel" style="width: 10rem;height: 10rem;display: block;margin: 0 auto;">
+                <i></i>
+                <img style="">
             </div>
+            <p class="f12 ta-c" style="padding:1.5rem 0 2rem;color:#FF5A00;">点击更换企业logo（推荐200*200）</p>
         </div>
 
-        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
-            <i class="icon-required"></i>
-            <div class="write-cells">
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">联系姓名</div>
-                    <div class="flex right">
-                        <input class="write" placeholder="请输入联系姓名">
-                    </div>                                                          
-                </div>   
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">联系电话</div>
-                    <div class="flex right">
-                        <input class="write" placeholder="请输入联系电话">
-                    </div>                                                          
+        <div class="write-cells top-line bg-f" style="padding:0 0 2rem 1.5rem;">
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">企业名称<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入企业名称">
+                </div>                                                          
+            </div>   
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">企业性质<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <select class="c999 change">
+                        <option>请选择企业性质</option>
+                        <option>销售</option>
+                        <option>客服</option>
+                    </select>
                 </div>  
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">联系邮箱</div>
-                    <div class="flex right">
-                        <input class="area" id="demo1" type="text" readonly="" placeholder="请输入联系邮箱（选填）">
-                        <input id="value1" type="hidden" value="20,234,504">
-                        <i class="arrow-right"></i>
-                    </div>               
-                </div>                                                                           
+                <div class="arrow-right"></div>              
+            </div>    
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">企业规模<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <select class="c999 change">
+                        <option>1~49</option>
+                        <option>49-100</option>
+                    </select>
+                </div>  
+                <div class="arrow-right"></div>                  
             </div>   
-        </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">所属行业<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <select class="c999 change">
+                        <option>请选择所属行业</option>
+                        <option>服务业</option>
+                    </select>
+                </div>  
+                <div class="arrow-right"></div>                 
+            </div>  
 
-        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
-            <div class="write-cells">
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">企业地区</div>
-                    <div class="flex right">
-                        <input class="area" id="demo1" type="text" readonly="" placeholder="请选择所在区域">
-                        <input id="value1" type="hidden" value="20,234,504">
-                        <i class="arrow-right"></i>
-                    </div>               
-                </div>
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">详细地址</div>
-                    <div class="flex right" style="margin-right:1.2rem">
-                        <input class="write" placeholder="请输入详细地址（选填）">
-                    </div>   
-                    <div class="location left-line">
-                        <i class="icon-fill-location"></i>定位
-                    </div>                                                       
-                </div>                
-            </div>   
-        </div>              
-
-        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
-            <!--任职描述-->
-            <i class="icon-required"></i>
-            <div class="f14 bold" style="padding:1.2rem 0 0;">企业介绍</div>
-            <div class="write-cells" style="padding:1.2rem 0;">
-                <div>
-                    <textarea class="describe" placeholder="请输入你的自我描述/工作经验"></textarea>  
-                </div>    
-                <ul class="upload-company-pic">
-                    <li><img src="../img/02.jpg"><i class="close"></i></li>
-                    <li><img src="../img/tc-pic32.png"></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
-            <!--单位福利-->
-            <div class="f14 bold" style="padding:1.2rem 0 0;">单位福利</div>
-            <div class="write-cells" style="padding:1.6rem 0;">
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">企业地区<i class="icon-require"></i></div>
+                <div class="flex right clamp1">
+                    <select class="c999 change">
+                        <option>区域</option>
+                        <option>荔湾区</option>
+                    </select>
+                </div>  
+                <div class="arrow-right"></div>    
+                <div class="flex right clamp1" style="margin:0 0 0 30px">
+                    <select class="c999 change">
+                        <option>街道</option>
+                        <option>沃街道</option>
+                    </select>
+                </div>  
+                <div class="arrow-right"></div>                               
+            </div> 
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">详细地址<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入详细地址">
+                </div>                                                          
+            </div>  
+            <div class="top-line" style="padding:0 1.5rem 0 0;">
+                <p class="f15 bold" style="padding:2rem 0 0;">企业福利</p>
                 <div id="company-welfare-js" class="company-welfare clearfix">
                     <span class="active">交通补贴</span>
                     <span>加班补贴</span>
@@ -143,127 +128,228 @@
                     <span>年假</span>
                     <span>其他补贴</span>
                 </div>
-            </div>
+            </div> 
+            <div style="padding:0 1.5rem 0 0;">
+                <p class="f15 bold" style="padding:2.5rem 0 0;">企业介绍</p>
+                <div>
+                    <textarea placeholder="简单描述公司经营业务或公司环境" style="height: 15rem;display: block;width: 100%;font-size: 1.5rem;box-sizing: border-box;padding: 1.5rem 0"></textarea>
+                </div>
+                <ul class="upload-pic-ul">
+                    <li>
+                        <i class="f01"></i>
+                        <p class="f02 f12 c999 ta-c">添加图片</p>
+                    </li>      
+                    <li>
+                        <i class="f01"></i>
+                        <p class="f02 f12 c999 ta-c">添加视频</p>
+                    </li>                             
+                </ul>
+                <ul class="upload-pic-ul" style="padding:2rem 0 0;">
+                    <li>
+                        <img class="pic" src="">
+                        <img class="close" src="../img/tc-pic98.png">
+                    </li>
+                    <li>
+                        <img class="pic" src="">
+                        <img class="close" src="../img/tc-pic98.png">
+                    </li>                             
+                </ul>
+
+                <div class="rel" style="width:160px;height:90px;display:block;margin:2rem 0 0;background: #f0f0f0">
+                    <video style="width:100%;height:100%;display:block;position: relative;"></video>
+                    <img class="close" src="../img/tc-pic98.png" style="position: absolute;z-index: 1;top: -.5rem;right: -.5rem;width: 1.5rem;height: 1.5rem;display: block;">
+                    <img src="../img/tc-pic104.png" style="display:block;width: 4.5rem;height: 4.5rem;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);z-index: 2;">
+                </div>                           
+            </div> 
+
         </div>
 
-    </div>
 
-    <!--底部-->
-    <div class="fix-bl" style="box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
-        <p class="basewrap f12 c666" style="padding:0 1.2rem;background:rgba(0,0,0,.8);line-height: 2.4rem;color: #fff">您为入驻企业，免费发布的招聘信息有4条，剩余1条</p>
-        <!--开启积分-->
-        <div class="basewrap d-flex d-flex-center write-cell" style="padding:0 1.2rem;">
-            <div class="top-radio flex top-radio-js"><span></span>置顶                   
-                <div class="right fr" style="margin-left:0">
-                    <select class="change" style="padding-right:1.2rem;direction: rtl">
-                        <option>请选择</option>
-                        <option>￥1一天</option>
+        <div class="write-cells bg-f" style="padding:0 0 2rem 1.5rem;margin: 1rem 0 0;">
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">企业名称<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入企业名称">
+                </div>                                                          
+            </div>   
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">企业性质<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <select class="c999 change">
+                        <option>请选择企业性质</option>
+                        <option>销售</option>
+                        <option>客服</option>
                     </select>
-                </div>     
-            </div>
-            <div class="flex right left-line" style="margin-left:0;padding-left: 1.8rem;">
+                </div>  
+                <div class="arrow-right"></div>              
+            </div>    
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">企业规模<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <select class="c999 change">
+                        <option>1~49</option>
+                        <option>49-100</option>
+                    </select>
+                </div>  
+                <div class="arrow-right"></div>                  
+            </div>   
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">所属行业<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <select class="c999 change">
+                        <option>请选择所属行业</option>
+                        <option>服务业</option>
+                    </select>
+                </div>  
+                <div class="arrow-right"></div>                 
+            </div>  
 
-                <div class="top-radio fl integral-js active" data-integral="0"><span></span>积分</div>
-                <svg aria-hidden="true" class="icon-exclamatory-mark">
-                    <use xlink:href="../css/icon.svg#exclamatory-mark"></use>
-                </svg>
-
-                <div class="fr" id="integral-number01">
-                    <div class="fr" style="color: #ffb400;margin-top: .1rem;">1234</div>
-                    <i class="icon-integral fr" style="margin-right:0.4rem;"></i>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">企业地区<i class="icon-require"></i></div>
+                <div class="flex right clamp1">
+                    <select class="c999 change">
+                        <option>区域</option>
+                        <option>荔湾区</option>
+                    </select>
+                </div>  
+                <div class="arrow-right"></div>    
+                <div class="flex right clamp1" style="margin:0 0 0 30px">
+                    <select class="c999 change">
+                        <option>街道</option>
+                        <option>沃街道</option>
+                    </select>
+                </div>  
+                <div class="arrow-right"></div>                               
+            </div> 
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">详细地址<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入详细地址">
+                </div>                                                          
+            </div>  
+            <div class="top-line" style="padding:0 1.5rem 0 0;">
+                <p class="f15 bold" style="padding:2rem 0 0;">企业福利</p>
+                <div id="company-welfare-js" class="company-welfare clearfix">
+                    <span class="active">交通补贴</span>
+                    <span>加班补贴</span>
+                    <span>餐补</span>
+                    <span>房补</span>
+                    <span>话补</span>
+                    <span>包吃</span>
+                    <span>包住</span>
+                    <span>医保</span>
+                    <span>社保</span>
+                    <span>年终奖</span>
+                    <span>住房公积金</span>
+                    <span>节日福利</span>
+                    <span>年假</span>
+                    <span>其他补贴</span>
                 </div>
+            </div> 
+            <div style="padding:0 1.5rem 0 0;">
+                <p class="f15 bold" style="padding:2rem 0 0;">企业介绍</p>
+                <div>
+                    <textarea placeholder="简单描述公司经营业务或公司环境" style="height: 15rem;display: block;width: 100%;font-size: 1.5rem;box-sizing: border-box;padding: 1.5rem 0"></textarea>
+                </div>
+                <ul class="upload-pic-ul">
+                    <li>
+                        <i class="f01"></i>
+                        <p class="f02 f12 c999 ta-c">添加图片</p>
+                    </li>      
+                    <li>
+                        <i class="f01"></i>
+                        <p class="f02 f12 c999 ta-c">添加视频</p>
+                    </li>                             
+                </ul>
+                <ul class="upload-pic-ul" style="padding:2rem 0 0;">
+                    <li>
+                        <img class="pic" src="">
+                        <img class="close" src="../img/tc-pic98.png">
+                    </li>
+                    <li>
+                        <img class="pic" src="">
+                        <img class="close" src="../img/tc-pic98.png">
+                    </li>                             
+                </ul>
 
-                <div style="color:#ff3a1b" class="fr none" id="integral-number02">-￥0.1</div>
+                <div class="rel" style="width:160px;height:90px;display:block;margin:2rem 0 0;background: #f0f0f0">
+                    <video style="width:100%;height:100%;display:block;position: relative;"></video>
+                    <img class="close" src="../img/tc-pic98.png" style="position: absolute;z-index: 1;top: -.5rem;right: -.5rem;width: 1.5rem;height: 1.5rem;display: block;">
+                    <img src="../img/tc-pic104.png" style="display:block;width: 4.5rem;height: 4.5rem;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);z-index: 2;">
+                </div>                           
+            </div> 
+        </div>
+
+        <div class="write-cells bg-f" style="padding:0 0 0 1.5rem;margin: 1rem 0 0;">
+            <div class="d-flex d-flex-center write-cell">
+                <div class="left bold">联系姓名<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入联系姓名">
+                </div>                                                          
             </div>   
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">联系电话<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入联系电话或座机号">
+                </div>                                                          
+            </div>      
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">联系微信号</div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入联系客服微信号">
+                </div>                   
+            </div> 
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">联系邮箱</div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入联系邮箱">
+                </div>                   
+            </div> 
         </div>
-        <!--未开启积分-->
-        <div class="basewrap d-flex d-flex-center write-cell" style="padding:0 1.2rem;">
-            <div class="top-radio flex top-radio-js"><span></span>置顶</div>
-            <div class="flex right" style="margin-left:0">
-                <select class="change" style="direction: rtl;padding: 0">
-                    <option>选择后信息显示在顶部</option>
-                    <option>18岁以上</option>
-                </select>
+
+        <div class="write-cells bg-f" style="padding:0 0 2rem 1.5rem;margin: 1rem 0 0;">
+            <div class="d-flex d-flex-center write-cell bottom-line">
+                <div class="left bold">营业执照</div>
+                <div class="flex right">
+                    <input class="write" placeholder="15位营业执照注册号或18位社会信用码">
+                </div>                                                          
             </div>   
-        </div>
-        <div class="basewrap d-flex release-nav top-line" style="box-shadow:none">
-            <div class="f14 money flex">需付款&nbsp;<span class="f18 mc bold"><i class="f14">￥</i>2</span></div>
-            <div class="bt f16">确认发布</div>
-        </div>
+            <ul class="upload-pic-ul" style="padding:2rem 0 0;">
+                <li style="width:9rem;height:12rem;">
+                    <i class="f01" style="top:35%"></i>
+                    <p class="f02 f12 c999 ta-c" style="top:60%">添加营业执照</p>
+                </li>                                  
+            </ul>
+            <div style="color:#F90606;font-size:1.2rem;margin: 1.5rem 0 0;">*营业执照注册号或营业执照只做为内容审核用，不做展示</div>     
+        </div>        
+
     </div>
 
-    <div class="fix-tl-100 company-infor-dialog-js none">
-        <div class="dialog-black-mask"></div>
-        <div class="dialog-content company-infor">
-            <img class="pic" src="../img/tc-pic33.png">
-            <div class="content">
-                <div class="d-flex f01">
-                    <div class="icon01"></div>
-                   <div class="flex">获得企业标识，招聘快人一步。</div>
-                </div>
-                <div class="d-flex f01">
-                    <div class="icon02"></div>
-                    <div class="flex">招聘主页展示，提升企业形象。</div>
-                </div>
-                <div class="d-flex f01">
-                    <div class="icon03"></div>
-                    <div class="flex">专属企业主页，展示多个岗位，提升招聘成功率。</div>
-                </div>
-                <a class="bt01" href="release-company-settled.html">去添加</a>
-            </div>
-            
-            <svg class="close close-js" aria-hidden="true">
-                <use xlink:href="../css/icon.svg#close"></use>
-            </svg>
-        </div>
-    </div>   
-    
-    <!--积分规则-->
-    <div class="fix-tl-100 integral-rule-dialog-js none">
-        <div class="dialog-black-mask"></div>
-        <div class="integral-rule-dialog" style="max-width: 300px;width: 80%;background: #fff;border-radius: 10px;position: fixed;top:50%;left:50%;
-        transform: translate(-50%,-50%);">
-            <p class="f16 c333 ta-c" style="line-height:45px;">积分规则</p>
-            <p class="f14 ta-c" style="padding:30px 0;">积分抵用比例为：100积分=1元</p>
-            <p class="c666 f14 ta-c top-line bt" style="height:45px;line-height:45px;">知道了</p>
+    <!--底部1-->
+    <div class="fix-bl none" style="box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
+        <div class="f12" style="background:#FFB504;padding:.8rem 1.5rem;color: #fff;">入驻企业后，将获取XX条免费发布的招聘信息</div>
+        <div class="f16 ta-c bold" style="background:#ff5a00;color:#fff;height: 4.9rem;line-height: 4.9rem">保存信息</div>
+    </div>
+
+    <!--底部2-->
+    <div class="fix-bl" style="box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
+        <div class="f12" style="background:#FFB504;padding:.8rem 1.5rem;color: #fff;">入驻企业后，将获取XX条免费发布的招聘信息</div>
+        <div class="d-flex bg-f" style="height: 4.9rem;line-height: 4.9rem">
+            <div style="padding:0 0 0 1.5rem;color:#ff5a00;font-size: 1.5rem;">入驻时长：</div>
+            <div>
+                <select style="color:#ff5a00;font-size: 1.5rem;line-height:4.9rem;width: auto">
+                    <option>300元/半年</option>
+                    <option>5000元/一年</option>
+                </select>
+            </div>  
+            <div class="flex" style="margin:0 0 0 .5rem;">
+                <div style="vertical-align:.2rem; display: inline-block;width: 0;height: 0;border-style: solid;border-width:0 6px 6px 6px;border-color:transparent transparent #ff5a00 transparent;"></div>  
+            </div> 
+            <div class="f16 ta-c bold" style="background:#ff5a00;color:#fff;width:45%">￥30入驻</div>
         </div>
     </div>
 
     <script src="../js/jquery-1.10.2.js"></script>
-    <script src="../js/LAreaData1.js"></script>
-    <script src="../js/LAreaData2.js"></script>
-    <script src="../js/LArea.js"></script>
-    <script>
-        $('.icon-exclamatory-mark').on('click',function(){
-            $('.integral-rule-dialog-js').show();
-        })   
-        $('.integral-rule-dialog-js .bt,.dialog-black-mask').on('click',function(){
-            $('.integral-rule-dialog-js').hide();
-        })
-        $('.dialog-black-mask').bind("touchmove",function(e){
-            e.preventDefault();
-        });
-        $('.top-radio-js').on('click',function(){
-            $(this).toggleClass('active')
-        })
-
-        $('.integral-js').on('click',function(){
-            
-            if($(this).data('integral')== 0){
-                $(this).data('integral',1);
-                $('#integral-number01').hide();
-                $('#integral-number02').show();
-                $(this).removeClass('active');
-            }else{
-                $(this).data('integral',0);
-                $('#integral-number01').show();
-                $('#integral-number02').hide();
-                $(this).addClass('active');
-            }
-        })
-
-
-    </script>
 
     <script>   
         $("select.change").change(function () {
@@ -277,69 +363,10 @@
             }
         });
 
-        $(".write-cell .sex .radio").on('click',function(){
-            $(this).addClass('active').siblings('.radio').removeClass('active');
-        })
-
-        $(".write-cell .pay-top").on('click',function(){
-            $(this).toggleClass('active');
-        })
-
-        $(".recruit-type span").on('click',function(){
-            $(this).addClass('active').siblings('span').removeClass('active');
-        })
-
-        $("#add-bt").on('click',function(){
-            $(".company-infor-dialog-js").show();
-        })    
-
-        $("#settled-company").on('click',function(){
-            $("#settled-company-spread").show();
-        })
-
-        $("#settled-company-no").on('click',function(){
-            $("#settled-company-spread").hide();
-        })        
-
-        $(".close-js").on('click',function(){
-            $(".company-infor-dialog-js").hide();
-        })  
-
-        $(".write-cell .some").on('click',function(){
-            $(this).toggleClass("active");
-        })  
-
         $("#company-welfare-js span").on('click',function(){
             $(this).toggleClass("active");
         })  
-
     </script>
-    <script>
-        var area1 = new LArea();
-        area1.init({
-            'trigger': '#demo1', //触发选择控件的文本框，同时选择完毕后name属性输出到该位置
-            'valueTo': '#value1', //选择完毕后id属性输出到该位置
-            'keys': {
-                id: 'id',
-                name: 'name'
-            }, //绑定数据源相关字段 id对应valueTo的value属性输出 name对应trigger的value属性输出
-            'type': 1, //数据源类型
-            'data': LAreaData //数据源
-        });
-        area1.value=[1,13,3];//控制初始位置，注意：该方法并不会影响到input的value
-        var area2 = new LArea();
-        area2.init({
-            'trigger': '#demo2',
-            'valueTo': '#value2',
-            'keys': {
-                id: 'value',
-                name: 'text'
-            },
-            'type': 2,
-            'data': [provs_data,citys_data, dists_data]
-        });
-    </script>
-
 
 </body>
 </html>
