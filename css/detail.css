@@ -37,11 +37,12 @@
 
 .icon-share{display:block;width:1.8rem;height: 1.8rem;background-position:-25rem -6.9rem;margin: 0 auto .3rem;}
 .icon-earn{
-    display:block;
-    width:2rem;
-    height:2rem;
+    display:inline-block;
+    margin: 0 .3rem 0 0;
+    width:1.2rem;
+    height:1.3rem;
+    vertical-align: -.2rem;
     background-position:-45.9rem -6.9rem;
-    margin: 0 auto .3rem;
 }
 
 .bottom-line:after{border-bottom: 1px solid #f1f1f1;}
