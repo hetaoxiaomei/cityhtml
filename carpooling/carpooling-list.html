@@ -10,93 +10,211 @@
     <meta charset="utf-8">
     <title>拼车列表</title>
     <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
     <link rel="stylesheet" type="text/css" href="../css/new-swiper.css">
     <link rel="stylesheet" type="text/css" href="../css/carpooling.css">
-    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
 </head>
 <body class="basewrap">
     <div style="padding:0 0 7rem;">
+        <!--导航-->
+        <ul class="d-flex index-type-select-nav">
+            <li class="active flex">全部</li>
+            <li class="flex">车找人</li>
+            <li class="flex">人找车</li>				
+        </ul>
+
         <!--banner图-->
-        <div class="swiper-container swiper-container-horizontal swiper-container-topbanner" style="margin:1.5rem 1.5rem 0;">
+        <div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img class="img-w-100" src="../img/tc-yh-179.jpg" />
+                    <img class="img-w-100" src="http://i2cut.vzan.cc/image/jpg/2018/12/29/190349616b4d588e834dc78a1d3f7e4ac04001.jpg!640x210" />
                 </div>
                 <div class="swiper-slide">
-                    <img class="img-w-100" src="../img/tc-yh-179.jpg" />
+                    <img class="img-w-100" src="http://i2cut.vzan.cc/image/jpg/2018/12/29/190423c4f7d3be424340adb7025ba5625b007f.jpg!640x210" />
                 </div>		
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>		
         </div>  
 
-         <!--搜索-->
-         <div class="d-flex d-flex-center carpooling-serach">
-            <div class="bottom-line flex">
+        <!--搜索-->
+        <div class="d-flex d-flex-center carpooling-serach">
+            <div class="flex">
                 <input placeholder="出发地">
             </div>
-            <img src="../img/tc-pic86.png" style="display: block;transform: rotate(90deg);width: 18px;margin: 0 1.2rem">
-            <div class="bottom-line flex">
+            <div class="flex" style="margin:0 0 0 1.5rem;">
                 <input placeholder="目的地">
             </div>            
             <div class="bt">查询</div>           
-         </div>
+        </div> 
 
-        <div class="select-nav">
-            <a class="bt">车找人</a>
-            <a class="bt active">人找车</a>
-        </div>      
+        <!--订阅-->
+        <div class="d-flex d-flex-center subscribe-cell">
+            <div class="flex">
+                <p class="f16">拼车·赞赏市</p>
+                <p class="f14 c666" style="margin:1rem 0 0;">订阅我，每天推送最新消息</p>
+            </div>
+            <div class="bt">立即订阅</div>
+        </div>
         
         <!--拼车列表-->
-        <div>
-            <ul class="carpooling-ul">
-                <div class="zhiding"></div> 
-                <img class="call" src="../img/tc-pic88.png">
-                <li class="d-flex d-flex-center li01">
-                    <div>6月20日11:42</div>
-                    <div class="flex need">4空位，130/位</div>
-                </li>
-                <li class="d-flex d-flex-center li02">
-                    <div class="clamp1">重庆重庆重庆重庆</div>
-                    <img class="arrow" src="../img/tc-pic87.png">
-                    <div class="clamp1">梁平汽车站重庆重庆重庆</div>
-                </li>
-                <li class="li03">途径：珠江新城，广州塔，客村</li>
-                <li class="li04">备注：备注备注备注备注备注备注备注备注</li>
-                <div class="mask"></div>           
-            </ul>  
-            <ul class="carpooling-ul gray">
-                <img class="call" src="../img/tc-pic88.png">
-                <img class="fache" src="../img/tc-pic89.png">
-                <li class="d-flex d-flex-center li01">
-                    <div class="flex">6月20日11:42</div>
-                    <div class="flex need">4空位，130/位</div>
-                </li>
-                <li class="d-flex d-flex-center li02">
-                    <div>重庆</div>
-                    <img class="arrow" src="../img/tc-pic87.png">
-                    <div>梁平汽车站</div>
-                </li>
-                <li class="li03">途径：珠江新城，广州塔，客村</li>
-                <li class="li04">备注：备注备注备注备注备注备注备注备注</li>
-                <div class="mask"></div>       
-            </ul>  
-            <ul class="carpooling-ul gray">
-                <img class="call" src="../img/tc-pic88.png">
-                <img class="fache" src="../img/tc-pic90.png">
-                <li class="d-flex d-flex-center li01">
-                    <div class="flex">6月20日11:42</div>
-                    <div class="flex need">4空位，130/位</div>
-                </li>
-                <li class="d-flex d-flex-center li02">
-                    <div>重庆</div>
-                    <img class="arrow" src="../img/tc-pic87.png">
-                    <div>梁平汽车站</div>
-                </li>
-                <li class="li03">途径：珠江新城，广州塔，客村</li>
-                <li class="li04">备注：备注备注备注备注备注备注备注备注</li>
-                <div class="mask"></div>       
-            </ul>      
+        <div style="margin:1rem 0 0;">
+            <div class="carpooling-ul-all">
+                <ul class="carpooling-ul">
+                    <li class="d-flex d-flex-center bottom-line f17" style="height:5rem;padding: 0 1.5rem;">
+                        <div class="zhiding">置顶</div>
+                        <div class="flex bold" style="color:#ff5a00;"><i class="icon-clock"></i>每天10:00 出发</div>  
+                    </li>
+                    <li class="d-flex top">
+                        <div class="head">
+                            <img src="../img/02.jpg">
+                        </div>
+                        <div class="flex center">
+                            <div class="clamp1 f16">阿哲leon</div>
+                            <div style="margin:.6rem 0 0;overflow: hidden;">
+                                <div class="label03">人找车</div>
+                                <div class="label04">4人</div>
+                            </div>
+                        </div>
+                        <div style="padding:.8rem 0 0 .8rem;height: 2rem;">
+                            <i class="icon-shenglve"></i>
+                        </div>
+                    </li>
+                    <li class="d-flex d-flex-center starting-point">
+                        <div class="flex">
+                            <div class="d-flex f16" style="margin:1rem 0 0;">
+                                <div class="dot01">起</div>
+                                <div class="flex">天河区林和天安人寿</div>
+                            </div>
+                            <div class="d-flex f16" style="margin:1rem 0 0;">
+                                <div class="dot02">终</div>
+                                <div class="flex">海珠区黄埔大道236号</div>
+                            </div>
+                        </div>
+                        <div class="call">
+                            <i></i>拨打电话
+                        </div>
+                    </li>
+                    <li class="li04">备注：备注备注备注备注备注备注备注备注</li>        
+                </ul>   
+  
+                <ul class="carpooling-ul">
+                    <li class="d-flex d-flex-center bottom-line f17" style="height:5rem;padding: 0 1.5rem;">
+                        <div class="zhiding">置顶</div>
+                        <div class="flex bold" style="color:#ff5a00;"><i class="icon-clock"></i>每天10:00 出发</div> 
+                        <div class="bold" style="color:#F90606;">￥130/人</div>   
+                    </li>
+                    <li class="d-flex top">
+                        <div class="head">
+                            <img src="../img/02.jpg">
+                        </div>
+                        <div class="flex center">
+                            <div class="clamp1 f16">阿哲leon</div>
+                            <div style="margin:.6rem 0 0;overflow: hidden;">
+                                <div class="label01">车找人</div>
+                                <div class="label02">4空位</div>
+                            </div>
+                        </div>
+                        <div style="padding:.8rem 0 0 .8rem;height: 2rem;">
+                            <i class="icon-shenglve"></i>
+                        </div>
+                    </li>
+                    <li class="d-flex d-flex-center starting-point">
+                        <div class="flex">
+                            <div class="d-flex f16" style="margin:1rem 0 0;">
+                                <div class="dot01">起</div>
+                                <div class="flex">天河区林和天安人寿</div>
+                            </div>
+                            <div class="d-flex f16" style="margin:1rem 0 0;">
+                                <div class="dot02">终</div>
+                                <div class="flex">海珠区黄埔大道236号</div>
+                            </div>
+                        </div>
+                        <div class="call">
+                            <i></i>拨打电话
+                        </div>
+                    </li>
+                    <li class="li03">途径：珠江新城，广州塔，客村</li>
+                    <li class="li04">备注：备注备注备注备注备注备注备注备注</li>        
+                </ul>                   
+
+                <!--已发车-->
+                <ul class="carpooling-ul gray">
+                    <li class="d-flex d-flex-center bottom-line f17" style="height:5rem;padding: 0 1.5rem;">
+                        <div class="flex bold" style="color:#ccc;"><i class="icon-clock" style="background-position: -46.3rem -10.4rem;"></i>每天10:00 出发</div> 
+                        <div class="bold" style="color:#ccc;">￥130/人</div>   
+                    </li>                    
+                    <li class="d-flex top">
+                        <div class="head">
+                            <img src="../img/02.jpg">
+                        </div>
+                        <div class="flex center">
+                            <div class="clamp1 f16" style="color:#ccc;">阿哲leon</div>
+                            <div style="margin:.6rem 0 0;overflow: hidden;">
+                                <div class="label01">车找人</div>
+                                <div class="label02">4空位</div>
+                            </div>
+                        </div>
+                        <div style="padding:.8rem 0 0 .8rem;height: 2rem;">
+                            <i class="icon-shenglve"></i>
+                        </div>
+                    </li>
+                    <li class="d-flex d-flex-center starting-point">
+                        <div class="flex" style="color:#ccc">
+                            <div class="d-flex f16" style="margin:1rem 0 0;">
+                                <div class="dot01" style="background:#ccc">起</div>
+                                <div class="flex">天河区林和天安人寿</div>
+                            </div>
+                            <div class="d-flex f16" style="margin:1rem 0 0;">
+                                <div class="dot02" style="background:#ccc">终</div>
+                                <div class="flex">海珠区黄埔大道236号</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="li03" style="color: #ccc;">途径：珠江新城，广州塔，客村</li>
+                    <li class="li04" style="color: #ccc;">备注：备注备注备注备注备注备注备注备注</li>  
+                    <img class="fache" src="../img/tc-pic89.png">      
+                </ul>                 
+
+                <!--已结束-->
+                <ul class="carpooling-ul gray">
+                    <li class="d-flex d-flex-center bottom-line f17" style="height:5rem;padding: 0 1.5rem;">
+                        <div class="flex bold" style="color:#ccc;"><i class="icon-clock" style="background-position: -46.3rem -10.4rem;"></i>每天10:00 出发</div> 
+                        <div class="bold" style="color:#ccc;">￥130/人</div>   
+                    </li>                    
+                    <li class="d-flex top">
+                        <div class="head">
+                            <img src="../img/02.jpg">
+                        </div>
+                        <div class="flex center">
+                            <div class="clamp1 f16" style="color:#ccc;">阿哲leon</div>
+                            <div style="margin:.6rem 0 0;overflow: hidden;">
+                                <div class="label01">车找人</div>
+                                <div class="label02">4空位</div>
+                            </div>
+                        </div>
+                        <div style="padding:.8rem 0 0 .8rem;height: 2rem;">
+                            <i class="icon-shenglve"></i>
+                        </div>
+                    </li>
+                    <li class="d-flex d-flex-center starting-point">
+                        <div class="flex" style="color:#ccc">
+                            <div class="d-flex f16" style="margin:1rem 0 0;">
+                                <div class="dot01" style="background:#ccc">起</div>
+                                <div class="flex">天河区林和天安人寿</div>
+                            </div>
+                            <div class="d-flex f16" style="margin:1rem 0 0;">
+                                <div class="dot02" style="background:#ccc">终</div>
+                                <div class="flex">海珠区黄埔大道236号</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="li03" style="color: #ccc;">途径：珠江新城，广州塔，客村</li>
+                    <li class="li04" style="color: #ccc;">备注：备注备注备注备注备注备注备注备注</li>  
+                    <img class="fache" src="../img/tc-pic90.png">      
+                </ul>     
+
+            </div>                  
         </div>
 
     </div> 
