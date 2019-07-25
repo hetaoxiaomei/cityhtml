@@ -168,7 +168,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
 }
-.coupon-zhang .coupon-time{position: absolute;bottom:25%;left:34%;width: 37%;color: #fff;font-size: 12px}
+.coupon-zhang .coupon-time{position: absolute;bottom:25%;left:34%;width: 37%;color: #fff;font-size: 11px}
 .coupon-zhang .coupon-bt{width: 14.39%;position: absolute;top:48%;right: 8.5%;transform: translate(0,-50%);}
 .coupon-zhang .coupon-bt img{display: block;width: 100%;}
 .coupon-zhang .coupon-bt .f01{width:100%;color:#fff;font-size: 16px;position: absolute;top: 50%;left: 50%;width: 100%;
