@@ -11,64 +11,155 @@
     <title>企业信息</title>
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
-    <link rel="stylesheet" type="text/css" href="../css/company-list.css">
     <link rel="stylesheet" type="text/css" href="../css/recruit-list.css">
+    <style>
+        .company-infor-top .icon,.icon-fabu{background-image: url(../img/tc-pic04.png);background-repeat: no-repeat;background-size:50rem;}
+        .company-infor-top .icon{display: inline-block;vertical-align: -.2rem;margin: .1rem .7rem 0 0;}
+        .new-recommend-list{height: auto;padding:3rem 0 1.8rem;}
+        .icon-location{width:1rem;height:1.1rem;display:inline-block;background-image: url(../img/tc-pic04.png);background-repeat: no-repeat;background-size: 50rem;
+        background-position:-7rem -12.3rem;margin-right:.4rem;vertical-align: -.1rem;}
+        .new-recommend-item:before{bottom: -1.8rem;}
+        .new-recommend-list .new-recommend-item.active{color: #ff5a00;}
+        .new-recommend-item:before {background:#ff5a00;}
+        .company-welfare span {width: 23%;height: 2.4rem;line-height: 2.4rem;border-radius: .2rem;color: #999;position: relative;display: block;float: left;text-align: center;margin-top: 1.5rem;margin-right: 2.6%;font-size: 1.2rem;}
+        .company-welfare span:after {content: " ";width: 200%;height: 200%;position: absolute;
+        top: 0;left: 0;border: 1px solid #e5e5e5;-webkit-transform: scale(0.5);transform: scale(0.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;box-sizing: border-box;border-radius: .4rem;}
+        .company-welfare span.active {background: #ff5a00;color: #fff;}
+        .company-welfare span:nth-child(4n) {margin-right: 0;}
+        .icon-fabu{display:inline-block;width: 2.3rem;height: 2.3rem;display: inline-block;background-position: -47.8rem -12.6rem;} 
+        .new-recommend-item:before{width: 34px;}
+    </style>
 </head>
 <body class="bg-f">
     <div class="basewrap" style="padding:0 0 6rem;">
-        <div class="bg-f" style="margin:1.2rem;padding:0 1.2rem;border-radius: 4px;box-shadow: 0 0 15px rgba(0,0, 0,.1);">
-            <div class="d-flex bottom-line" style="padding:1.6rem 0;">
-                <img class="head" src="../img/02.jpg" style="width:8rem;height:8rem;border-radius:2px;display: block;margin-right:.9rem">
+        <div class="bg-f">
+            <div class="d-flex company-infor-top" style="padding:2.5rem 1.5rem 0 1.5rem;">
                 <div class="flex">
-                    <div><span style="padding:0 .5rem;height: 1.6rem;line-height:1.6rem;color: #fff;background:#1689fe;border-radius: 2px;">上市公司</span></div>
-                    <div class="clamp2 bold f14" style="line-height:1.4;margin-top:.6rem;">鸽派亚斯人力资源海外业务信息科技有限公司有限公司有限公司有限公司有限公司</div>
-                    <div class="f12 c666" style="line-height:1.45;margin-top:.5rem">互联网/电子商务<i>丨</i>企业规模：1~49人</div>
+                    <div class="clamp1 bold" style="line-height:1.4;font-size: 1.9rem;">鸽派亚斯人力资源海外业务信息科技有限公司有限公司有限公司有限公司有限公司</div>
+                    <div class="f15" style="line-height:1.45;margin: 1rem 0 0;">
+                        <i class="icon" style="width: 1.5rem;height: 1.5rem;background-position: -42.6rem -13.4rem;"></i>房地产/建筑/工程
+                    </div>
+                    <div class="f15" style="overflow: hidden;margin:.5rem 0 0;">
+                        <div class="fl" style="margin:0 2rem 0 0;">
+                            <i class="icon" style="width: 1.7rem;height: 1.5rem;background-position: -44.3rem -13.4rem;"></i>私营
+                        </div>
+                        <div class="fl">
+                            <i class="icon" style="width: 1.5rem;height: 1.5rem;background-position: -46.2rem -13.4rem;"></i>1-49人
+                        </div>                        
+                    </div>
                 </div>
+                <img class="head" src="../img/02.jpg" style="width:8rem;height:8rem;border-radius:2px;display: block;margin-left:.9rem">
             </div>
-            <div class="f12" style="height:3.7rem;line-height: 3.7rem;"><i class="icon-location"></i>辽宁省沈阳市沈河区市府大路262号甲新华科技大厦16楼</div>
+           
         </div>
 
-        <div class="new-recommend-wrapper f14">
-            <div class="d-flex new-recommend-list ta-c">
+        <div class="f16 bg-f">
+            <div class="d-flex new-recommend-list ta-c bottom-line">
                 <a class="flex new-recommend-item active" style="margin-right:0">企业信息</a>
                 <a class="flex new-recommend-item" style="margin-right:0">招聘信息</a>
             </div>
         </div>
 
         <div class="CompanySelect">
-            <!--企业信息-->
-            <div style="padding:0 1.2rem">
-                <p class="f16">企业福利</p>
-                <div class="recurit-list" style="box-shadow:none;margin-top: 1rem;">
-                    <div class="type">
-                        <span>五险一金</span>
-                        <span>年终奖</span>
-                        <span>其他</span>
+            <div>
+                <!--企业信息-->
+                <div class="bg-f" style="padding:2.5rem 1.5rem 1rem">
+                    <p class="f16 bold">公司介绍</p>
+                    <div>
+                        <div class="rel" style="margin:2rem 0 0;">
+                            <video width="320" height="240" controls="" style="width:100%;">
+                                <source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4" style="width:100%;">
+                                您的浏览器不支持 HTML5 video 标签。
+                            </video>
+                            <img src="../img/tc-pic104.png" style="width:4.5rem;height: 4.5rem;display:block;position: absolute;top:50%;left:50%;transform: translate(-50%,-50%)">
+                        </div>
+                        <div class="f15" style="margin:1rem 0 0;line-height: 1.6">我们立志用卓越的技术帮助用户发现有价值的信息。我们高效、简单、极致、务实。我们每月有数千万的用户通过我们的产品了解世界、启发思考、开怀一笑，
+                            并活跃地参与互动我们提供媲美名企的薪资，外加股票期权同时提供健康叁餐，娱乐活动设施丰富，精彩building不间断。
+                        </div>
+                        <img src="../img/01.jpg" style="display: block;margin:1rem 0 0;width: 100%;">
+                    </div>
+
+                    <div class="f14 c666" style="line-height: 1.6;margin-top:.8rem">
+                        <p>1. 熟练运用PS,AI,Sketch,等相关设计软件；2.具有很强的UI整体风格策划能力和实际技能与经验，
+                                能够主动与前端、交互沟通协调，确保UI效果的无缝整
+                                合以及最终实现； </p>
+                        <img src="../img/01.jpg" style="display:block;width:100%;margin-top: .6rem">
+                        <img src="../img/01.jpg" style="display:block;width:100%;margin-top: .6rem">
                     </div>
                 </div>
-                <p class="f16" style="margin-top:2.5rem;">企业简介</p>
-                <div class="f14 c666" style="line-height: 1.6;margin-top:.8rem">
-                    <p>1. 熟练运用PS,AI,Sketch,等相关设计软件；2.具有很强的UI整体风格策划能力和实际技能与经验，
-                            能够主动与前端、交互沟通协调，确保UI效果的无缝整
-                            合以及最终实现； </p>
-                    <img src="../img/03.jpg" style="display:block;width:100%;margin-top: .6rem">
-                    <img src="../img/03.jpg" style="display:block;width:100%;margin-top: .6rem">
+                <!--企业福利-->
+                <div style="height:1rem;background:#f5f5f5"></div>
+                <div class="bg-f" style="padding:2rem 1.5rem;margin:1rem 0 0;">
+                    <p class="f16 bold">企业福利</p>
+                    <div class="company-welfare clearfix">
+                        <span class="active">交通补贴</span>
+                        <span>加班补贴</span>
+                        <span>餐补</span>
+                        <span>房补</span>
+                        <span>话补</span>
+                        <span>包吃</span>
+                        <span>包住</span>
+                        <span>医保</span>
+                        <span>社保</span>
+                        <span>年终奖</span>
+                        <span>住房公积金</span>
+                        <span>节日福利</span>
+                        <span>年假</span>
+                        <span>其他补贴</span>
+                    </div>
                 </div>
-            </div>
 
+                <!--公司地址--> 
+                <div style="height:1rem;background:#f5f5f5"></div>
+                <div class="bg-f" style="padding:2rem 1.5rem .5rem;">
+                    <p class="f16 bold">公司地址</p>
+                    <div class="d-flex" style="padding:1.5rem 0">
+                        <div class="icon-location" style="width: 1.2rem;height: 1.7rem;background-position:-17.8rem -16.3rem;margin:.1rem 1rem 0 0;"></div>
+                        <div class="f15 flex" style="line-height:1.4">辽宁省沈阳市沈河区市府大路262号甲新华科技大厦16楼</div>
+                    </div>
+                </div>
+
+                <!--联系我们--> 
+                <div style="height:1rem;background:#f5f5f5"></div>
+                <div class="bg-f" style="padding:2rem 1.5rem 2rem">
+                    <p class="f16 bold">联系我们</p>
+                    <div class="d-flex d-flec-center" style="padding:1.5rem 0 0">
+                        <div class="icon-location" style="width: 1.4rem;height: 1.1rem;background-position:-19.3rem -16.3rem;margin:0 1rem 0 0;display: block;"></div>
+                        <div class="f15 flex">孙文焕</div>
+                    </div>
+                    <div class="d-flex d-flec-center" style="padding:1.5rem 0 0">
+                        <div class="icon-location" style="width: 1.5rem;height: 1.5rem;background-position:-20.9rem -16.3rem;margin:0 1rem 0 0;display: block;"></div>
+                        <div class="f15 flex">18886886541</div>
+                    </div>      
+                    <div class="d-flex d-flec-center" style="padding:1.5rem 0 0">
+                        <div class="icon-location" style="width: 1.8rem;height: 1.5rem;background-position:-22.6rem -16.3rem;margin:0 1rem 0 0;display: block;"></div>
+                        <div class="f15 flex">wx5598lh</div>
+                    </div>   
+                    <div class="d-flex d-flec-center" style="padding:1.5rem 0 0">
+                        <div class="icon-location" style="width: 1.5rem;height: 1.5rem;background-position:-24.6rem -16.3rem;margin:0 1rem 0 0;display: block;"></div>
+                        <div class="f15 flex">1888561@163.com</div>
+                    </div>                                                 
+                </div>  
+            </div>          
 
             <!--招聘信息-->   
-            <div class="none" style="padding:1.2rem;">
-                <div class="bg-f recurit-list">
-                    <div class="d-flex top">
-                        <div class="flex left">
-                            <p class="clamp1 f14 f01">熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
-                            <p class="f02 clamp1">
+            <div class="none">
+                <div class="recurit-list" style="padding:0 1.5rem;">
+                    <div class="top bottom-line">
+                        <div class="d-flex d-flex-center">
+                            <p class="clamp1 f16 f01 flex">熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
+                            <p class="f16 money bold" style="color:#ff5a00;margin: 0 0 0 2rem">5000元/月</p>
+                        </div>
+                        <div class="d-flex d-flex-center">
+                            <p class="f02 clamp1 flex">
                                 <span>性别不限</span>
                                 <span>经验不限</span>
                                 <span>学历不限</span>
                                 <span>年龄不限</span>
                             </p> 
+                            <p class="f12 c999" style="margin-top:1rem;">1小时前</p>
+                        </div>
+                        <div class="left">
                             <div class="type">
                                 <span>社保</span>
                                 <span>公积金</span>
@@ -76,41 +167,75 @@
                                 <span>交通补贴</span>
                                 <span>话补</span>
                             </div> 
-                            <div class="f03 clamp1">
-                                <i class="qi">企</i>广州市创盈网络信息科技有限公司
-                            </div>
                         </div> 
-                        <div class="right">
-                            <p class="f16 mc money">3000-5000</p>
-                            <div class="apply-bt fr">申请</div>
-                        </div>
                     </div> 
-                    <div class="d-flex bottom f10 c666">
-                        <div class="f01">广州市-天河区</div> 
-                        <div class="flex f02">2018.05.05</div> 
-                        <svg aria-hidden="true" class="icon-post-admin">
-                            <use xlink:href="../css/icon.svg#post-admin"></use>
-                        </svg>
-                        <i class="top_ding"></i>
-                    </div>
-                </div>
-            </div>
-      
-        </div>
 
-        <div class="fix-bl">
-            <div class="basewrap d-flex index-bottom-nav release"> 
-                <a class="flex bt01" style="background: #ff3a1b">一键拨号</a>             
+                    <div class="top bottom-line">
+                        <div class="d-flex d-flex-center">
+                            <p class="clamp1 f16 f01 flex">熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
+                            <p class="f16 money bold" style="color:#ff5a00;margin: 0 0 0 2rem">5000元/月</p>
+                        </div>
+                        <div class="d-flex d-flex-center">
+                            <p class="f02 clamp1 flex">
+                                <span>性别不限</span>
+                                <span>经验不限</span>
+                                <span>学历不限</span>
+                                <span>年龄不限</span>
+                            </p> 
+                            <p class="f12 c999" style="margin-top:1rem;">1小时前</p>
+                        </div>
+                        <div class="left">
+                            <div class="type">
+                                <span>社保</span>
+                                <span>公积金</span>
+                                <span>饭补</span>
+                                <span>交通补贴</span>
+                                <span>话补</span>
+                            </div> 
+                        </div> 
+                    </div> 
+
+
+                    <p class="f15 c999 ta-c" style="margin:4rem 0 0;">查看更多</p>
+                </div>
+                
             </div>
+
+
         </div>
 
     </div>
 
-    <style>
-        .icon-location{width:1rem;height:1.1rem;display:inline-block;background-image: url(../img/tc-pic04.png);background-repeat: no-repeat;background-size: 50rem;
-        background-position:-7rem -12.3rem;margin-right:.4rem;vertical-align: -.1rem;}
-        .new-recommend-item:before{bottom: 1rem;}
-    </style>
+    <!--发布招聘-->
+    <div class="fix-bl">
+        <div class="basewrap d-flex ta-c" style="height:4.9rem;line-height:4.9rem"> 
+            <a class="flex bt01 f16 bold" style="background: #ff5a00;color:#fff;vertical-align: -.2rem;">
+                <i class="icon-fabu" style="margin-right:1rem;vertical-align: -.5rem;"></i>发布招聘</a>             
+        </div>
+    </div>
+
+    <!--咨询-->
+    <div class="fix-bl">
+        <div class="basewrap d-flex ta-c" style="height:4.9rem;line-height:4.9rem"> 
+            <a class="flex bt01 f16 bold" style="background: #ff5a00;color:#fff;vertical-align: -.2rem;">
+                <i class="icon-fabu" style="background-position: -15.1rem -18.9rem;margin-right:1rem;vertical-align: -.5rem;"></i>咨询</a>             
+        </div>
+    </div> 
+    
+    <!--付费置顶企业-->
+    <div class="fix-bl">
+        <div class="basewrap d-flex ta-c" style="height:4.9rem;line-height:4.9rem"> 
+            <a class="bt01 f16" style="background: #fff;color:#ff5a00;vertical-align: -.2rem;box-shadow: 0 0 15px rgba(0, 0, 0, .1);width: 40%;">
+                <i class="icon-fabu" style="width:1.6rem;height: 1.6rem;background-position: -17.6rem -18.9rem;margin-right:1rem;vertical-align: -.3rem;"></i>发布招聘
+            </a> 
+                
+            <a class="bt01 f16" style="background: #ff5a00;color:#fff;width: 60%">
+                <i class="icon-fabu" style="width:1.6rem;height: 1.6rem;background-position: -19.4rem -18.9rem;margin-right:1rem;vertical-align: -.3rem;"></i>付费置顶企业
+            </a> 
+        </div>
+    </div> 
+
+
     <script src="../js/jquery-1.10.2.js"></script>
     <script>
         /*商家列表*/	 
