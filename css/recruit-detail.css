@@ -1,16 +1,26 @@
 
     
-.icon-triangle{
+.icon-triangle,.icon-nan,.icon-exclamatory-mark,.icon-nv,.icon-fabu,.icon-location {
     background-image: url(../img/tc-pic04.png);
     background-size: 50rem;}
 
 .detail-recruit{
     background: #fff;
-    margin: 1.2rem 0 0;
-    box-shadow: 0 0 15px rgba(0,0, 0,.1);
-    padding:1.2rem 1.2rem 1.6rem;
+    padding:2.5rem 1.2rem 2rem;
     border-radius: 4px;
 }
+
+.icon-nv,.icon-nan{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0 0 .5rem;
+    display: inline-block;
+    vertical-align: -.1rem;
+}
+
+.icon-nan{background-position: -31.5rem -16.3rem;}
+
+.icon-nv{background-position: -33.2rem -16.3rem;}
 
 .detail-recruit .top .f01{line-height: 1.35;margin-top: 1rem;}
 
@@ -49,29 +59,13 @@
     background: #fff6f0;
     color: #fd781f;
     padding: 0 .5rem;
-    height: 1.6rem;
-    line-height: 1.6rem;
+    height: 2rem;
+    line-height: 2rem;
     border-radius: 2px;
     position: relative;
-    margin-right: .4rem;
+    margin-right: 1rem;
     float: left;
-    margin-top: .4rem;
-}
-
-.detail-recruit .top .type span:after{
-    content: " ";
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 1px solid #ffddc6;
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    box-sizing: border-box;
-    border-radius: 4px;
+    display: block;
 }
 
 .detail-recruit .top .money{color: #ff0012;margin-top: 1.4rem;line-height: 0.9}
@@ -145,37 +139,146 @@
 
 .icon-exclamatory-mark{
     display: inline-block;
-    width:1.2rem;
-    height:1.2rem;
-    fill: #fd781f;
-    margin-right: .4rem;
+    width:1.6rem;
+    height:1.5rem;
+    margin-right: .2rem;
     vertical-align: -.2rem;
+    background-position: -16rem -16.3rem;
 }
 
-.reminder .bt{color: #fd781f;}
+.reminder .bt{color: #F90606;}
 
 .reminder{
-    background: #f2f2f2;
+    background: #fff;
     border-radius: 2px;
-    margin-top: 1.6rem;
-    padding: 1.2rem;
+    margin-top: 1rem;
+    padding: 1.5rem;
 }
 
-.reminder .f01{margin-bottom: .8rem;}
+.reminder .f01{margin-bottom:1rem;}
 
 /*求职详情*/
 .detail-job-wanted .head {
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
     display: block;
-    margin: 1.5rem auto 0;
+    margin: 2.5rem auto 0;
+    position: absolute;
+    top: 0;
+    right: 2.5rem;
 }
 
 .detail-job-wanted .self-condition span:after {content: "丨";}
 
 .moveUp{
     animation:moveup .3s linear forwards;
+}
+
+/*求职*/
+.qiuzhi .head{
+    width:40px;
+    height:40px;
+    margin: 0 1rem 0 0;
+}
+
+.qiuzhi .infor{margin:.8rem 0 0;}
+
+.qiuzhi .infor span{color: #666;}
+
+.qiuzhi .infor span:after{content: "丨";}
+
+.qiuzhi .infor span:last-child:after{display: none;}
+
+.qiuzhi .type{
+    overflow: hidden;
+    margin-top: 1rem;
+    height: 2rem;
+}
+
+.qiuzhi .type span{
+    font-size: 1.2rem;
+    background: #fff6f0;
+    color: #fd781f;
+    padding: 0 .5rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 2px;
+    position: relative;
+    margin-right: 1rem;
+    float: left;
+    display: block;}
+
+.qiuzhi .bt{
+    font-size: 1.5rem;
+    color: #fd781f;
+    height: 2.8rem;
+    width: 6.5rem;
+    border: 1px solid #ff5a00;
+    border-radius: 1.4rem;
+    text-align:center;
+    line-height: 2.8rem;
+}
+
+.icon-fabu {
+    display: inline-block;
+    width: 2.3rem;
+    height: 2.3rem;
+    display: inline-block;
+    background-position: -47.8rem -12.6rem;
+}
+
+.icon-location {
+    width: 1rem;
+    height: 1.1rem;
+    display: inline-block;
+    background-position: -7rem -12.3rem;
+    margin-right: .4rem;
+    vertical-align: -.1rem;}
+
+
+/*底部导航*/
+.detail-footer-nav {
+    height: 4.9rem;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+}
+
+.detail-footer-nav .icon {
+    margin: .7rem auto .4rem;
+    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.detail-footer-nav li {
+    height: 100%;
+}
+
+.detail-footer-nav li a {
+    display: block;
+    width: 100%;
+}
+
+.detail-footer-nav .icon {
+    margin: .7rem auto .4rem;
+    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.detail-footer-nav p {
+    text-align: center;
+    color: #333;
+    font-size: 1rem;
+    margin-top: .2rem;
+}
+
+.detail-footer-nav .icon {
+    background-image: url(../img/icon01.png);
+    background-size: 50rem;
+    background-repeat: no-repeat
 }
 
 @keyframes moveup{
