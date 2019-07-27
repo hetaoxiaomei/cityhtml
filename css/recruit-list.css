@@ -1,4 +1,4 @@
-.recurit-list .top_ding,.icon-people{
+.recurit-list .top_ding,.icon-people,.recurit-list .vip{
     background-image: url(../img/tc-pic04.png);
     background-repeat: no-repeat;
     background-size: 50rem;
@@ -33,7 +33,7 @@
 }
 
 
-.recurit-list .top{padding: 2rem 0 2rem;}
+.recurit-list .top{padding: 2rem 1.5rem 2rem;}
 
 .recurit-list .top .f01{
     font-weight: bold;
@@ -123,24 +123,56 @@
     display: block
 }
 
-/* .recurit-list .type span:after{
-    content: " ";
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 1px solid #ffddc6;
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    box-sizing: border-box;
-    border-radius: 4px;
-} */
 
-/*搜索*/
-.index-search-bar .center{
-    margin:0 5.2rem 0 0;
+.recurit-list .company-head{
+    width:4rem;
+    height:4rem;
+    border-radius:2px;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.recurit-list .company-head img{
+    display:block;
+    width:100%;
+    height:100%
+}
+
+.recurit-list .bt{
+    font-size: 1.5rem;
+    color: #fd781f;
+    height: 2.8rem;
+    width: 6.5rem;
+    border: 1px solid #ff5a00;
+    border-radius: 1.4rem;
+    text-align: center;
+    line-height: 2.8rem;
+    margin: 1.2rem 0 0
+}
+
+.recurit-list .vip{
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    float: left;
+    background-position: -32.6rem -13.4rem;
+    margin: 0 .5rem 0 0;
+}
+
+.recurit-list .company-name{
+    float: left;
+    max-width: 80%;
+    line-height: 1.3
+}
+
+.recurit-list .zhiding{
+    height: 1.6rem;
+    line-height: 1.6rem;
+    border-radius: 2px;
+    background: #F90606;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0 .8rem;
+    margin: 0 .5rem 0 0;
 }
 

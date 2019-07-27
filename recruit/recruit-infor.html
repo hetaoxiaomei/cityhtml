@@ -12,28 +12,28 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
     <link rel="stylesheet" type="text/css" href="../css/recruit-list.css">
+    <link rel="stylesheet" type="text/css" href="../css/recruit-detail.css">
 </head>
 
-<body style="height: 100%;">
-    <div id="vue_recruit" v-on:scroll="scroll" style="height: 100%;-webkit-overflow-scrolling: touch;padding-top: 84px">
+<body class="bg-f">
+    <div style="height: 100%;padding-top: 84px;padding-bottom:7rem">
         <!--顶部选择导航-->
         <div class="rel fix-tl" style="z-index: 2;">
             <!--顶部栏-->
-            <div class="basewrap index-search-bar">
-                <div class="center" style="margin: 0 auto">
-                    <svg class="icon-search" aria-hidden="true">
-                        <use xlink:href="../css/icon.svg#search"></use>
-                    </svg>
-                    <input readonly placeholder="搜索" />
+            <div class="basewrap d-flex d-flex-center index-search-bar">
+                <a class="index"></a>
+                <div class="center flex" style="margin:0 1rem;">
+                    <a href="javascript:;">
+                        <svg class="icon-search" aria-hidden="true">
+                            <use xlink:href="../sc/content/citytool/css/icon.svg#search"></use>
+                        </svg>
+                        <img src="https://j.vzan.cc/content/city/img/search_icon.png" style="display: block;width: 1.6rem;height: 1.6rem;position: absolute;top: 50%;left: 1.5rem;transform: translate(0,-50%);">
+                    </a>
+                    <input type="search" id="txtVal" placeholder="搜索">
                 </div>
+                <div class="f16" style="color:#ff5a00;">搜索</div>
+            </div>            
 
-                <!-- <div class="right js-sign" data-sign="0">
-                    <svg class="icon-subscribe" aria-hidden="true">
-                        <use xlink:href="../css/icon.svg#subscribe"></use>
-                    </svg>                      
-                    <p class="f10 ta-c">立即订阅</p>			
-                </div>                 -->
-            </div>
             <ul class="d-flex ta-c recruit-select-nav">
                 <li class="flex"> 
                     <a>
@@ -43,7 +43,7 @@
                 </li>
                 <li class="flex"> 
                     <a>
-                        <i class="tc-list-top-filter-f">分类</i>
+                        <i class="tc-list-top-filter-f">职位</i>
                         <em class="tc-list-top-triangle"></em>
                     </a>
                 </li>      
@@ -52,13 +52,7 @@
                         <i class="tc-list-top-filter-f">排序</i>
                         <em class="tc-list-top-triangle"></em>
                     </a>
-                </li>
-                <li class="flex"> 
-                    <a>
-                        <i class="tc-list-top-filter-f">求职</i>
-                        <em class="tc-list-top-triangle"></em>
-                    </a>
-                </li>                           
+                </li>                         
             </ul>
 
             <!--筛选-->
@@ -83,8 +77,18 @@
                     <!--分类-->
                     <div class="none">
                         <div class="job-all job-js">
-                            <span>销售</span>
-                            <span>客服</span>
+                            <span class="active">不限</span>
+                            <span>KTV/影视/娱乐</span>
+                            <span>活动策划</span>
+                            <span>礼仪/模特</span>      
+                            <span>保险</span>
+                            <span>收银员</span>     
+                            <span>文员/助理</span>
+                            <span>金融行业</span>        
+                            <span>医生/护士</span>
+                            <span>会计员</span>     
+                            <span>医疗/制药</span>
+                            <span>传单派发</span>                                                                                                        
                         </div>
                     </div>
 
@@ -115,205 +119,169 @@
         </div>
 
         <!--最新推荐-->
-        <div class="bg-f basewrap bz" style="padding:1.2rem 1.2rem 7.6rem;">
-            <!--招聘复杂版-->
-            <div class="bg-f recurit-list">
-                <div class="d-flex top">
-                    <div class="flex left">
-                        <p class="clamp1 f14 f01">熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
-                        <p class="f02 clamp1">
-                            <span v-for="require in recruitList.requires">性别不限</span>
-                            <span v-for="require in recruitList.requires">学历不限 </span>
-                            <span v-for="require in recruitList.requires">经验不限</span>
-                        </p>
-                        <div class="type">
-                            <span>五险一金</span>
-                            <span>话补</span>
-                            <span>交通补贴</span>
+        <div class="bg-f basewrap">
+            <!--招聘-->
+            <div>
+                <div class="recurit-list">
+                    <div class="top bottom-line">
+                        <div class="d-flex d-flex-center">
+                            <p class="clamp1 f16 f01 flex"><i class="zhiding">置顶</i>熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
+                            <p class="f16 money bold" style="color:#ff5a00;margin: 0 0 0 2rem">5000元/月</p>
                         </div>
-                        <div class="f03 clamp1">
-                            <i class="qi">企</i>广州立信互动信息科技有限公司</div>
-                    </div>
-                    <div class="right">
-                        <p class="f16 mc money">3000-5000</p>
-                        <div class="apply-bt fr">申请</div>
-                    </div>
-                </div>
-                <div class="d-flex bottom f10 c666">
-                    <div class="f01">广州市-天河区</div>
-                    <div class="flex f02">2018.05.05</div>
-                    <svg class="icon-post-admin" aria-hidden="true">
-                        <use xlink:href="../css/icon.svg#post-admin"></use>
-                    </svg>
-                </div>
-                <i class="top_ding"></i>
-            </div>
-
-            <div class="bg-f recurit-list">
-                <div class="d-flex top">
-                    <div class="flex left">
-                        <p class="clamp1 f14 f01">熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
-                        <p class="f02 clamp1">
-                            <span v-for="require in recruitList.requires">性别不限</span>
-                            <span v-for="require in recruitList.requires">学历不限 </span>
-                            <span v-for="require in recruitList.requires">经验不限</span>
-                        </p>
-                        <div class="type">
-                            <span>五险一金</span>
-                            <span>话补</span>
-                            <span>交通补贴</span>
+                        <div class="d-flex d-flex-center">
+                            <p class="f02 clamp1 flex">
+                                <span>性别不限</span>
+                                <span>经验不限</span>
+                                <span>学历不限</span>
+                                <span>年龄不限</span>
+                            </p> 
+                            <p class="f12 c999" style="margin-top:1rem;">1小时前</p>
                         </div>
-                        <div class="f03 clamp1">
-                            <i class="qi" style="background:#fd781f;color:#fff">个</i>广州立信互动信息科技有限公司</div>
+                        <div class="left">
+                            <div class="type">
+                                <span>社保</span>
+                                <span>公积金</span>
+                                <span>饭补</span>
+                                <span>交通补贴</span>
+                                <span>话补</span>
+                            </div> 
+                        </div> 
+
+                        <div class="d-flex d-flex-center" style="margin:2rem 0 0;"> 
+                            <div class="company-head">
+                                <img src="../img/02.jpg">
+                            </div>
+                            <div class="flex">
+                                <div class="f15" style="overflow:hidden">
+                                    <span class="company-name clamp1">理智责任有限公司理智责任有限公司理智责任有限公司</span>
+                                    <i class="vip"></i>
+                                </div>
+                                <div class="f12 c666" style="margin:10px 0 0;" >广州市天河区林和东路285号</div>
+                            </div>
+                            <div class="bt">申请</div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="recurit-list">
+                    <div class="top bottom-line">
+                        <div class="d-flex d-flex-center">
+                            <p class="clamp1 f16 f01 flex"><i class="zhiding">置顶</i>熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
+                            <p class="f16 money bold" style="color:#ff5a00;margin: 0 0 0 2rem">5000元/月</p>
+                        </div>
+                        <div class="d-flex d-flex-center">
+                            <p class="f02 clamp1 flex">
+                                <span>性别不限</span>
+                                <span>经验不限</span>
+                                <span>学历不限</span>
+                                <span>年龄不限</span>
+                            </p> 
+                            <p class="f12 c999" style="margin-top:1rem;">1小时前</p>
+                        </div>
+                        <div class="left">
+                            <div class="type">
+                                <span>社保</span>
+                                <span>公积金</span>
+                                <span>饭补</span>
+                                <span>交通补贴</span>
+                                <span>话补</span>
+                            </div> 
+                        </div> 
+
+                        <div class="d-flex d-flex-center" style="margin:2rem 0 0;"> 
+                            <div class="company-head">
+                                <img src="../img/02.jpg">
+                            </div>
+                            <div class="flex">
+                                <div class="f15" style="overflow:hidden">
+                                    <span class="company-name clamp1">理智责任有限公司理智责任有限公司理智责任有限公司</span>
+                                    <i class="vip"></i>
+                                </div>
+                                <div class="f12 c666" style="margin:10px 0 0;" >广州市天河区林和东路285号</div>
+                            </div>
+                            <div class="bt">申请</div>
+                        </div>
+                    </div> 
+                </div>  
+            </div>          
+
+            <!--求职-->
+            <div>
+                <div class="qiuzhi bottom-line" style="padding:2rem 1.5rem;">
+                    <div class="d-flex d-flex-center">
+                        <div class="head">
+                            <img src="../img/02.jpg" style="display:block;width:40px;height:40px;border-radius: 50%;">
+                        </div>
+                        <div class="flex">
+                            <div class="d-flex f16">
+                                <div class="clamp1">小夏</div>
+                                <div class="icon-nan"></div>
+                                <div class="icon-nv"></div>
+                                <div class="zhiding">置顶</div>
+                                <div class="bold flex ta-r" style="color:#FF5A00;margin: 0 0 0 2rem">5000元/月</div>
+                            </div>
+                            <div class="f12 infor">
+                                <span>32岁</span><span>大专</span><span>5年工作经验</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="right">
-                        <p class="f16 mc money">3000-5000</p>
-                        <div class="apply-bt fr">申请</div>
+
+                    <div class="d-flex" style="margin:2rem 0 0;">
+                        <div class="flex">
+                            <div class="f16 bold">求职实习老师</div>
+                        </div>
+                        <div class="bt">联系</div>
                     </div>
                 </div>
-                <div class="d-flex bottom f10 c666">
-                    <div class="f01">广州市-天河区</div>
-                    <div class="flex f02">2018.05.05</div>
-                    <svg class="icon-post-admin" aria-hidden="true">
-                        <use xlink:href="../css/icon.svg#post-admin"></use>
-                    </svg>
-                </div>
-                <i class="top_ding"></i>
+                <div class="qiuzhi bottom-line" style="padding:2rem 1.5rem;">
+                    <div class="d-flex d-flex-center">
+                        <div class="head">
+                            <img src="../img/02.jpg" style="display:block;width:40px;height:40px;border-radius: 50%;">
+                        </div>
+                        <div class="flex">
+                            <div class="d-flex f16">
+                                <div class="clamp1">小夏</div>
+                                <div class="icon-nan"></div>
+                                <div class="icon-nv"></div>
+                                <div class="zhiding">置顶</div>
+                                <div class="bold flex ta-r" style="color:#FF5A00;margin: 0 0 0 2rem">5000元/月</div>
+                            </div>
+                            <div class="f12 infor">
+                                <span>32岁</span><span>大专</span><span>5年工作经验</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex" style="margin:2rem 0 0;">
+                        <div class="flex">
+                            <div class="f16 bold">求职实习老师</div>
+                        </div>
+                        <div class="bt">联系</div>
+                    </div>
+                </div>                
             </div>
-
-            <div class="bg-f recurit-list">
-                <div class="d-flex top">
-                    <div class="flex left">
-                        <p class="clamp1 f14 f01">熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
-                        <p class="f02 clamp1">
-                            <span v-for="require in recruitList.requires">性别不限</span>
-                            <span v-for="require in recruitList.requires">学历不限 </span>
-                            <span v-for="require in recruitList.requires">经验不限</span>
-                        </p>
-                        <div class="type">
-                            <span>五险一金</span>
-                            <span>话补</span>
-                            <span>交通补贴</span>
-                        </div>                       
-                        <div class="f03 clamp1"><i class="icon-people" style="background-position: -17.2rem -6.9rem;"></i>梁小姐</div>
-                    </div>
-                    <div class="right">
-                        <p class="f16 mc money">3000-5000</p>
-                        <div class="apply-bt fr">申请</div>
-                    </div>
-                </div>
-                <div class="d-flex bottom f10 c666">
-                    <div class="f01">广州市-天河区</div>
-                    <div class="flex f02">2018.05.05</div>
-                    <svg class="icon-post-admin" aria-hidden="true">
-                        <use xlink:href="../css/icon.svg#post-admin"></use>
-                    </svg>
-                </div>
-                <i v-bind:class="{top_ding:recruitList.top}"></i>
-            </div>
-
-            <div class="bg-f recurit-list">
-                <div class="d-flex top">
-                    <div class="flex left">
-                        <p class="clamp1 f14 f01">熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
-                        <p class="f02 clamp1">
-                            <span v-for="require in recruitList.requires">性别不限</span>
-                            <span v-for="require in recruitList.requires">学历不限 </span>
-                            <span v-for="require in recruitList.requires">经验不限</span>
-                        </p>
-                        <div class="type">
-                            <span>五险一金</span>
-                            <span>话补</span>
-                            <span>交通补贴</span>
-                        </div>                       
-                        <div class="f03 clamp1"><i class="icon-people"></i>梁小姐</div>
-                    </div>
-                    <div class="right">
-                        <p class="f16 mc money">3000-5000</p>
-                        <div class="apply-bt fr">申请</div>
-                    </div>
-                </div>
-                <div class="d-flex bottom f10 c666">
-                    <div class="f01">广州市-天河区</div>
-                    <div class="flex f02">2018.05.05</div>
-                    <svg class="icon-post-admin" aria-hidden="true">
-                        <use xlink:href="../css/icon.svg#post-admin"></use>
-                    </svg>
-                </div>
-                <i v-bind:class="{top_ding:recruitList.top}"></i>
-            </div>            
-
-            <!--招聘简单版-->
-            <div class="bg-f recurit-list">
-                <div class="d-flex top">
-                    <div class="flex left">
-                        <p class="clamp1 f14 f01">熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
-                        <p class="f02 clamp2" style="line-height:1.4">吃苦耐劳，能适应夜班/白班轮班节奏，40岁以下，限阿姨。</p>
-                        <div class="f03 clamp1">
-                            <i class="qi">企</i>广州立信互动信息科技有限公司</div>
-                    </div>
-                    <div class="right">
-                        <p class="f16 mc money">3000-5000</p>
-                        <div class="apply-bt fr">申请</div>
-                    </div>
-                </div>
-                <div class="d-flex bottom f10 c666">
-                    <div class="f01">广州市-天河区</div>
-                    <div class="flex f02">2018.05.05</div>
-                    <svg class="icon-post-admin" aria-hidden="true">
-                        <use xlink:href="../css/icon.svg#post-admin"></use>
-                    </svg>
-                </div>
-                <i class="top_ding"></i>
-            </div>
-            
-             <!--求职版-->
-             <div class="bg-f recurit-list">
-                <div class="d-flex top">
-                    <div class="flex left">
-                        <p class="clamp1 f14 f01">寻找酒吧前台或者酒店前台的工作</p>
-                        <p class="f02 clamp2" style="line-height:1.4">吃苦耐劳，能适应夜班/白班轮班节奏，40岁以下，限阿姨。</p>
-                        <div class="f03 clamp1"><i class="icon-people"></i>梁先生</div>
-                    </div>
-                   
-                    <div class="right">
-                        <p class="f16 mc money">3000-5000</p>
-                        <div class="apply-bt fr">联系</div>
-                    </div>
-                </div>
-                <div class="d-flex bottom f10 c666">
-                    <div class="f01">广州市-天河区</div>
-                    <div class="flex f02">2018.05.05</div>
-                    <svg class="icon-post-admin" aria-hidden="true">
-                        <use xlink:href="../css/icon.svg#post-admin"></use>
-                    </svg>
-                </div>
-                <i class="top_ding"></i>
-            </div>             
-
         </div>
 
         <!--底部导航-->
         <div class="fix-bl">
             <div class="basewrap d-flex index-bottom-nav release">
-                <a class="flex active" >
-                    <i class="home"></i>
-                    <p>首页</p>
-                </a>
                 <a class="flex">
                     <i class="icon_nav_zhaopinqiuzhi"></i>
                     <p>招聘求职</p>
                 </a>
+                <a class="flex active">
+                    <i class="icon-find"></i>
+                    <p>发现</p>
+                </a>                
                 <a class="flex">
                     <i></i>
                     <p>发布</p>
                 </a>
                 <a class="flex">
-                    <i class="icon-enterprise-entry"></i>
+                    <i class="icon-enterprise-entry" style="width:2.6rem"></i>
                     <p>企业信息</p>
                 </a>
                 <a class="flex">
-                    <i class="me"></i>
+                    <i class="me02"></i>
                     <p>我的招聘</p>
                     <em class="dot"></em>
                 </a>
@@ -418,135 +386,6 @@
             })
         })
     </script>
-
-    <!-- <script>
-        var vm = new Vue({
-            el: '#vue_recruit',
-            data: {
-                navBarFixed: false,
-                selectindex:'-1',
-                showDialog:true,
-                companyStrength: 12,
-
-                recruitLists: [{
-                        position: '熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨',
-                        companyName: '广州市创盈网络信息科技有限公司',
-                        money: '3000-5000',
-                        area: '广州市-天河区',
-                        data: '2018.05.05',
-                        top: true,
-                        qi: true,
-                        ge: false,
-                        requires: [{
-                                item: '性别不限'
-                            },
-                            {
-                                item: '经验不限'
-                            },
-                            {
-                                item: '学历不限'
-                            },
-                            {
-                                item: '年龄不限'
-                            }
-                        ],
-                        welfares: [{
-                                item: '社保'
-                            },
-                            {
-                                item: '公积金'
-                            },
-                            {
-                                item: '饭补'
-                            },
-                            {
-                                item: '交通补贴'
-                            },
-                            {
-                                item: '话补'
-                            }
-                        ]
-                }],
-                selectNavs:[
-                    {item:'地区'},
-                    {item:'分类'},
-                    {item:'排序'},
-                    {item:'招聘'}
-                ],
-                locals:[
-                    {
-                        oneLevels:[
-                            {item:'全部'},
-                            {item:'上林县'}
-                        ],
-                        twoLevels:[
-                            {item:'三里镇'},
-                            {item:'大丰镇'},
-                            {item:'明亮镇'},
-                            {item:'西燕镇'},
-                            {item:'西樵西樵镇'},
-                            {item:'九江镇'},
-                        ]                      
-                    }
-                ],
-                jobs:[
-                    {item:'全部'},
-                    {item:'餐饮服务'},
-                    {item:'家政/保安'},
-                    {item:'行政/后勤'},
-                    {item:'销售岗位'},
-                    {item:'促销/导购'},
-                    {item:'司机/交通'},
-                    {item:'司机/交通'},
-                ],
-                sorts:[
-                    {item:'默认排序'},
-                    {item:'最新发布'},
-                ],
-                recruitJobs:[
-                    {item:'全部'},
-                    {item:'招聘'},
-                    {item:'求职'},
-                ],
-                dialogHeight:0,
-                styles:{}
-            },
-
-
-            methods: {
-                // checkItem: function (index) {
-                //     var _this = this;
-                //     _this.selectindex = index;
-                //     _this.$refs.screenSelect
-                // },
-
-                blackMask:function () {var _this = this; _this.showDialog=false;},
-
-                // 上拉加载更多
-                scroll: function () {
-                    var _this = this;
-                    var recruitHeight = _this.$refs.recruit.offsetHeight,
-                        recruitTop = _this.$refs.recruit.scrollTop;                    
-                    if(recruitTop >= _this.$refs.banner.offsetHeight+ _this.$refs.topBar.offsetHeight){
-                        _this.navBarFixed = true;
-                    }else{
-                        _this.navBarFixed = false;
-                    }
-                },
-
-            },
-
-            mounted: function () {
-                var _this = this;
-                _this.dialogHeight=_this.$refs.recruit.offsetHeight - _this.$refs.recruitSelectNav.offsetHeight;
-                //添加高度
-                _this.styles ={'height':_this.dialogHeight+'px'};
-                console.log(_this.dialogHeight);
-            }
-
-        })
-    </script>
- -->
 
 </body>
 

@@ -182,6 +182,17 @@
     margin: 0 1rem 0 0;
 }
 
+.qiuzhi .zhiding{
+    height: 1.6rem;
+    line-height: 1.6rem;
+    border-radius: 2px;
+    background: #F90606;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0 .8rem;
+    margin: 0 0 0 .5rem;
+}
+
 .qiuzhi .infor{margin:.8rem 0 0;}
 
 .qiuzhi .infor span{color: #666;}

@@ -5,11 +5,14 @@
     background-size:50rem;
 }
 
-.recruit-select-nav .tc-list-top-triangle,.icon-back-arrow{
+.recruit-select-nav .tc-list-top-triangle,.icon-back-arrow,
+.index-search-bar .index{
     background-image: url(../img/tc-pic04.png);
     background-repeat:no-repeat;
     background-size:50rem;
 }
+
+/*选择栏*/
 
 .index-bottom-nav{
     background-color: #fff;
@@ -80,6 +83,10 @@
 .index-bottom-nav>a .me{background-position:-7.8rem 0}
 
 .index-bottom-nav>a.active .me{background-position:-7.8rem -2.3rem}
+
+.index-bottom-nav>a .me02{background-position:-26.6rem 0}
+
+.index-bottom-nav>a.active .me02{background-position:-26.6rem -2.3rem}
 
 .index-bottom-nav>a .coupon-center{background-position:-10.4rem 0}
 
@@ -184,11 +191,13 @@
 
 .icon_dynamic_pinglun{background-position: -15.6rem 0;}
 
-
+.icon-find{background-position: -18.3rem 0;}
 
 .index-bottom-nav>a.active .icon_nav_zhaopinqiuzhi{background-position: -10.4rem -2.3rem;}
 
 .index-bottom-nav>a.active .icon-enterprise-entry{background-position: -13rem -2.3rem;}
+
+.index-bottom-nav>a.active .icon-find{background-position: -18.3rem -2.3rem;}
 
 .index-bottom-nav .bt01{
     font-size: 1.6rem;
@@ -402,18 +411,18 @@
     box-sizing: border-box;
     overflow: auto;
     max-height: 20rem;
+    padding: 2rem 0;
 }
 
 .job-all span {
     box-sizing: border-box;
     float: left;
     font-size:1.4rem;
-    color: #666;
-    text-align: center;
+    color: #333;
     display: block;
-    line-height:4rem;
-    height: 4rem;
-    padding:0 1.2rem;
+    /* line-height:4rem;
+    height: 4rem; */
+    padding:2rem 1.5rem 2rem 4rem;
     width: 50%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -422,7 +431,7 @@
     -webkit-line-clamp: 1;
 }
 
-.job-all span.active{font-weight: bold;color: #333;}
+.job-all span.active{color: #ff5a00;}
 
 .dialog-screen-select-js{
     pointer-events: absolute;
@@ -507,6 +516,12 @@
     left: 1.5rem;
     fill: #999;
     transform: translate(0,-50%);
+}
+
+.index-search-bar .index{
+    width: 2.1rem;
+    height: 2.1rem;
+    background-position: -21.2rem -18.9rem;
 }
 
 /* .index-search-bar .center:before{
