@@ -18,7 +18,7 @@
         vertical-align: -.4rem;
     }
     .icon-shop,.commodity .vip,.icon-vip,.number-reduce,.number-plus,.icon-close,
-    .gwc-select-gray.active{
+    .gwc-select-gray.active,.select-submit-dialog .radio.active{
         background-image: url(../../img/tc-pic04.png);
         background-position: -2.3rem -23.5rem;
         background-size: 50rem
@@ -145,10 +145,27 @@
         background-position: -19.4rem -14rem;
     }
 
-    .select-submit-dialog{background:#fff;border-top-left-radius:4px;border-top-right-radius:4px;}
+    .select-submit-dialog{
+        background:#fff;
+        border-top-left-radius:4px;
+        border-top-right-radius:4px;
+        padding: 0 0 5rem;
+    }
     
     .select-submit-dialog .submit-bt{height:2.4rem;width:7rem;font-size:1.4rem;color: #fff;background:linear-gradient(to right,#ff9000,#ff6200);border-radius: 1.2rem;border-radius:3.5rem;text-align: center;line-height: 2.4rem;}
     
+    .select-submit-dialog .radio{
+        width:2rem;
+        height: 2rem;
+        border: 1px solid #999;
+        border-radius:50%;
+        box-sizing: border-box
+    }
+
+    .select-submit-dialog .radio.active{
+        border:none;
+        background-position: -22rem -14rem;}
+
     .icon-close{width:1.2rem;height: 1.2rem;background-position:-25.3rem -9.2rem;display: block;position: absolute;top:1rem;right:1rem;}
 
     .clean-bt{height:3.2rem;width:12.5rem;background:linear-gradient(to right,#ff9000,#ff6200);font-size: 1.6rem;line-height: 3.2rem;text-align: center;
