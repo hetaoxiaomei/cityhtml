@@ -149,7 +149,16 @@
         background:#fff;
         border-top-left-radius:4px;
         border-top-right-radius:4px;
-        padding: 0 0 5rem;
+    }
+
+    .select-submit-dialog .bt{
+        height: 4.9rem;
+        background: #ff5a00;
+        color: #fff;
+        line-height: 4.9rem;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.6rem;
     }
     
     .select-submit-dialog .submit-bt{height:2.4rem;width:7rem;font-size:1.4rem;color: #fff;background:linear-gradient(to right,#ff9000,#ff6200);border-radius: 1.2rem;border-radius:3.5rem;text-align: center;line-height: 2.4rem;}
