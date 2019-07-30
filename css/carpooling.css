@@ -128,16 +128,29 @@
 }
 
 .carpooling-ul .label01,.carpooling-ul .label03{
-    height:2rem;
-    width:5rem;
+    height:1.6rem;
+    width:3.8rem;
     background: #009CFF;
     border-radius: 2px;
     float: left;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #fff;
     text-align: center;
-    line-height: 2rem;
+    line-height: 1.6rem;
     margin: 0 .5rem 0 0;
+}
+
+
+.carpooling-ul .label02,.carpooling-ul .label04{
+    height:1.6rem;
+    width:3.8rem;
+    border-radius: 2px;
+    float: left;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.6rem;
+    margin: 0 .5rem 0 0;
+    position: relative;
 }
 
 .carpooling-ul.gray .label01,.carpooling-ul.gray .label03{
@@ -148,17 +161,6 @@
 
 .carpooling-ul .label03{background: #ff5a00}
 
-.carpooling-ul .label02,.carpooling-ul .label04{
-    height:2rem;
-    width:5rem;
-    border-radius: 2px;
-    float: left;
-    font-size: 1.3rem;
-    text-align: center;
-    line-height: 2rem;
-    margin: 0 .5rem 0 0;
-    position: relative;
-}
 
 .carpooling-ul .label02{
     color: #009CFF;
@@ -351,11 +353,11 @@
 
 .icon-clock{
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width:1.7rem;
+    height:1.7rem;
     background-position:-44.1rem -10.4rem;
     margin:0 .5rem 0 0;
-    vertical-align:-.4rem;
+    vertical-align:-.3rem;
 }
 
 .carpooling-ul .top{
