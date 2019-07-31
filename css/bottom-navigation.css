@@ -215,7 +215,7 @@
     overflow-x: scroll;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    margin-left: 1.6rem;
+    margin-left: 1.5rem;
     height: 5.6rem;
     line-height: 4.5rem
 }
@@ -228,18 +228,18 @@
     position: relative;
 }
 
-.new-recommend-list .new-recommend-item.active{color: #ff3a1b;font-weight: bold}
+.new-recommend-list .new-recommend-item.active{color: #ff5a00;font-weight: bold}
 
 .new-recommend-list .new-recommend-item.active::before{display: block;}
 
 .new-recommend-item:before {
     content: "";
-    height: 4px;
-    width: 12px;
-    background: linear-gradient(to right,#f20300,#ff450c);
-    border-radius: 2px;
+    height:5px;
+    width:34px;
+    background: #ff5a00;
+    border-radius: 3px;
     position: absolute;
-    bottom:-1.3rem;
+    bottom:-1rem;
     left: 50%;
     transform: translate(-50%,0);
     -webkit-transform: translate(-50%,0);
@@ -524,21 +524,6 @@
     background-position: -21.2rem -18.9rem;
 }
 
-/* .index-search-bar .center:before{
-    content: " ";
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 1px solid #ededed;
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    box-sizing: border-box;
-    border-radius: 3rem;
-}     */
 
 .recurit-list .money{text-align: right}
 
