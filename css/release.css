@@ -1,4 +1,4 @@
-.write-cell .arrow-right,.icon-required,.write-cell .location .icon-fill-location,
+.write-cell .arrow-right,.icon-require,.write-cell .location .icon-fill-location,
 .upload-company-pic li .close,.write-cell .sex .radio span,.write-cell .some .radio,
 .company-infor .icon01,.company-infor .icon02,.company-infor .icon03,.top-radio span,.icon-integral,
 .more-infor .arrow,.value-select.active{
@@ -41,12 +41,18 @@
     margin-left: .7rem;
 }
 
-
+/* 
 .write-cell{
     background: #fff;
     height: 4.4rem;
     font-size:1.4rem;
-}
+} */
+
+.write-cell {
+    background: #fff;
+    height: 5.5rem;
+    font-size: 1.4rem;
+    padding: 0 1.5rem 0 0;}
 
 
 .write-cell .must{
@@ -94,19 +100,24 @@
 
 .write-cell .sex .radio.active span,.write-cell .pay-top.active .radio,
 .write-cell .some.active .radio{
-    background-position:-2.4rem -15.3rem;
+    background-position:-2.4rem -19.5rem;
 }
 
 .write-cells .write-cell:first-child.top-line:before{display: none}
 
 .write-cell .arrow-right{
-    height: 1.6rem;
+    /* height: 1.6rem;
     width: 1.6rem;
     display: inline-block;
     background-position: -8.8rem -2.2rem;
     position: absolute;
     right: 0;
-    top:.2rem;
+    top:.2rem; */
+
+    width: .7rem;
+    height: 1.1rem;
+    background-position: -24.5rem -9.2rem;
+    margin-left: 5px;
 }
 
 
@@ -203,26 +214,26 @@
 .company-welfare{margin-top: -0.8rem;overflow: hidden}
 
 .company-welfare span{
-    width: 31.4%;
-    height:2.4rem;
-    line-height:2.4rem;
-    border-radius:1.2rem;
+    width: 23%;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    border-radius: .2rem;
     color: #999;
     position: relative;
     display: block;
     float: left;
     text-align: center;
-    margin-top: .8rem;
-    margin-right:2.9%;
-    font-size:1.2rem;
+    margin-top: 1.5rem;
+    margin-right:2.6%;
+    font-size: 1.2rem;
 }
 
-.company-welfare span.active{background: #ff3a1b;color: #fff;}
+.company-welfare span.active{background: #ff5a00;color: #fff;}
 
 
 .company-welfare span.active::after{display: none}
 
-.company-welfare span:nth-child(3n){
+.company-welfare span:nth-child(4n){
     margin-right:  0;
 }
 
@@ -239,12 +250,12 @@
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
     box-sizing: border-box;
-    border-radius: 2.4rem;
+    border-radius: .4rem;
 }
 
 .write-cell .location{
     padding-left: 1.6rem;
-    color: #E50909;
+    color: #ff5a00;
     vertical-align: -.2rem;
 }
 
@@ -345,17 +356,13 @@
     text-align: center;
 }
 
-.icon-required{
-    width: 3rem;
-    height: 1.8rem;
-    display:block;
-    background-position: -4.4rem -17rem;
-    position: absolute;
-    left: -.6rem;
-    top: -.6rem;
-    z-index: 2;
-}
-
+.icon-require{
+    width: .7rem;
+    height: .7rem;
+    margin: 0 0 0 .4rem;
+    display: inline-block;
+    vertical-align: .1rem;
+    background-position:-26.7rem -9.2rem;}
 
 .icon-compete{
     font-size: 1rem;
@@ -397,8 +404,8 @@
 }
 
 .people-head{
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     display: block;
     border-radius: 50%;
     overflow: hidden;

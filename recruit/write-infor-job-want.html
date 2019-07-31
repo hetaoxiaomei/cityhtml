@@ -13,77 +13,45 @@
     <link rel="stylesheet" type="text/css" href="../css/release.css">
     <link rel="stylesheet" type="text/css" href="../css/LArea.css">
 </head>
-<body class="bg-f">
-    <div class="basewrap bz" style="padding:1.2rem 1.2rem 9rem;">
-        <div class="box-shadow-kuang" style="padding:1.2rem 1.2rem 0;">
-            <div class="people-head"><img src="../img/02.jpg"></div>
-            <p class="f12 c999 ta-c" style="padding:0.8rem 0 0;">点击更换头像</p>
-
-            <div class="write-cells">
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">性<i style="color:transparent">性别</i>别</div>
-                    <div class="flex right">
-                        <div class="recruit-type">
-                            <span class="active" style="margin-right:6%;">男</span>
-                            <span>女</span>
-                        </div>
-                    </div>                                                          
-                </div> 
-            </div>          
-
-        </div> 
-
-
-        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
-            <!--职位信息-->
-            <i class="icon-required"></i>
-            <div class="write-cells">
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">求职类型</div>
-                    <div class="flex right">
-                        <div class="recruit-type">
-                            <span class="active" style="margin-right:6%;">全职</span>
-                            <span>兼职</span>
-                        </div>
-                    </div>                                                          
-                </div>                 
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">求职标题</div>
-                    <div class="flex right">
-                        <input class="write" placeholder="请输入求职标题">
-                    </div>                                                          
-                </div>   
-
-                 
-                <div class="d-flex d-flex-center write-cell top-line">
-                        <div class="left bold">职业类别</div>
-                    <div class="flex right" style="margin-left:0">
-                        <select class="c333">
-                            <option>销售</option>
-                            <option>客服</option>
-                        </select>
-                        <i class="arrow-right"></i>
-                    </div>                
-                </div>   
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">期望工资</div>
-                    <div class="flex right">
-                        <input class="write" placeholder="请输入期望工资">
-                    </div>
-                    <div class="sex left-line">
-                        <div class="radio active"><span></span>面议</div>
-                    </div>                             
-                </div>      
-            </div>               
-        </div>    
-
-        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
+<body>
+    <div class="basewrap" style="padding: 0 0 10rem;">
+        <div class="write-cells bg-f" style="padding:0 0 0 1.5rem;">
+            <div class="d-flex d-flex-center write-cell">
+                <div class="left bold">求职标题<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入求职标题">
+                </div>                                                          
+            </div>  
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">职位类别<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <select class="c999 change" style="padding-right:1rem;">
+                        <option>请选择所属行业</option>
+                        <option>服务业</option>
+                    </select>
+                </div>
+                <div class="arrow-right"></div>
+                <div class="right left-line" style="width:6rem;margin-left: 1.5rem;direction: rtl;">
+                    <select class="c999" style="padding: 0;color:#333;">
+                        <option>全职</option>
+                        <option>兼职</option>
+                    </select>
+                </div>                                                         
+            </div> 
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">工资待遇<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入期望工资">
+                </div>
+                <div class="sex left-line">
+                    <div class="radio active"><span></span>面议</div>
+                </div>                             
+            </div>    
             <!--任职描述-->
-            <i class="icon-required"></i>
-            <div class="f14 bold" style="padding:1.2rem 0 0;">自我描述</div>
+            <div class="f15 bold top-line" style="padding:2rem 0 0;">职位描述</div>
             <div class="write-cells" style="padding:1.2rem 0;">
                 <div>
-                    <textarea class="describe" placeholder="请输入你的自我描述/工作经验"></textarea>  
+                    <textarea class="describe" placeholder="请输入岗位职责与要求"></textarea>  
                 </div>    
                 <ul class="upload-company-pic">
                     <li><img src="../img/02.jpg"><i class="close"></i></li>
@@ -92,130 +60,114 @@
             </div>
         </div>
 
-        <div class="box-shadow-kuang" style="margin-top:1.2rem;">
-            <i class="icon-required"></i>
-            <div class="write-cells">
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">联系姓名</div>
-                    <div class="flex right">
-                        <input class="write" placeholder="请输入联系姓名">
-                    </div>                                                          
-                </div>   
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">联系电话</div>
-                    <div class="flex right">
-                        <input class="write" placeholder="请输入联系电话">
-                    </div>                                                          
-                </div>  
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">联系邮箱</div>
-                    <div class="flex right">
-                        <input class="write" placeholder="请输入联系邮箱（选填）">
-                    </div>                                                          
-                </div>                                                                          
-            </div>               
-        </div>       
-
-        <p id="more-infor" class="f12 ta-c more-infor">填写更多资料，提高求职成功率<i class="arrow"></i></p>
-        
-        <div id="more-infor-js" class="box-shadow-kuang none" style="margin-top:1.2rem;">
-            <!--任职描述-->
-            <div class="write-cells">
-                <div class="d-flex d-flex-center write-cell">
-                    <div class="left bold">年龄</div>
-                    <div class="flex right">
-                        <input class="write" placeholder="请输入年龄">
-                    </div>               
-                </div> 
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">学历</div>
-                    <div class="flex right" style="margin-left:0">
-                        <select class="change" style="color:#999">
-                            <option>请选择你的学历</option>
-                            <option>高中以下</option>
-                            <option>高中</option>
-                            <option>中专/技校</option>
-                            <option>大专</option>
-                            <option>本科</option>
-                            <option>硕士</option>
-                            <option>博士</option>
-                            <option>MBA/EMBA</option>
-                            <option>其他</option>
-                        </select>
-                        <i class="arrow-right"></i>
-                    </div>                
-                </div>  
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">工作经验</div>
-                    <div class="flex right" style="margin-left:0">
-                        <select class="change" style="color:#999">
-                            <option>请选择工作经验</option>
-                            <option>无工作经验</option>
-                            <option>应届毕业生</option>
-                            <option>1年以下工作经验</option>
-                            <option>1-3年工作经验</option>
-                            <option>3-5年工作经验</option>
-                            <option>5-10年工作经验</option>
-                            <option>10年以上工作经验</option>
-                        </select>
-                        <i class="arrow-right"></i>
-                    </div>                
-                </div> 
-                <div class="d-flex d-flex-center write-cell top-line">
-                    <div class="left bold">所属区域</div>
-                    <div class="flex right">
-                        <input class="area" id="demo1" type="text" readonly="" placeholder="请选择所在区域">
-                        <input id="value1" type="hidden" value="20,234,504">
-                        <i class="arrow-right"></i>
-                    </div>               
-                </div>                
-                
+        <div class="bg-f" style="margin:1rem 0 0;">
+            <div class="bottom-line" style="padding:2rem 0">
+                <div class="people-head"><img src="../img/02.jpg"></div>
+                <p class="f12 ta-c" style="padding:1rem 0 0;color: #ff5a00">点击更换头像</p>
             </div>
-        </div>      
+        </div>
 
+        <div class="write-cells bg-f" style="padding:0 0 0 1.5rem;">
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">联系姓名<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入联系姓名">
+                </div>                                                          
+            </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">联系电话<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write" type="tel" placeholder="请输入联系电话">
+                </div>                                                          
+            </div>        
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">联系邮箱</div>
+                <div class="flex right">
+                    <input class="write" placeholder="请输入联系邮箱">
+                </div>                                                          
+            </div>    
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">性别要求</div>               
+                <div class="flex sex"> 
+                    <div class="radio active" style="margin:0 12% 0 0;"><span></span>不限</div>
+                    <div class="radio" style="margin:0 12% 0 0;"><span></span>男</div>
+                    <div class="radio" style="margin:0;"><span></span>女</div>
+                </div>
+            </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">年<i style="color:#fff">年年</i>龄</div>
+                <div class="flex right">
+                    <input class="write" type="tel" placeholder="请输入你的年龄">
+                </div>                                                          
+            </div>             
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">学<i style="color:#fff">年年</i>历</div>
+                <div class="flex right" style="margin-left:0">
+                    <select class="c999 change">
+                        <option>请选择你的学历</option>
+                        <option>高中以下</option>
+                        <option>高中</option>
+                        <option>中专/技校</option>
+                        <option>大专</option>
+                        <option>本科</option>
+                        <option>硕士</option>
+                        <option>博士</option>
+                        <option>MBA/EMBA</option>
+                        <option>其他</option>
+                    </select>
+                </div>       
+                <div class="arrow-right"></div>          
+            </div>  
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">工作经验</div>
+                <div class="flex right" style="margin-left:0">
+                    <select class="c999 change">
+                        <option>请选择工作经验</option>
+                        <option>无工作经验</option>
+                        <option>应届毕业生</option>
+                        <option>1年以下工作经验</option>
+                        <option>1-3年工作经验</option>
+                        <option>3-5年工作经验</option>
+                        <option>5-10年工作经验</option>
+                        <option>10年以上工作经验</option>
+                    </select>
+                </div>  
+                <div class="arrow-right"></div>              
+            </div>   
+        </div>
+
+        <div class="bg-f" style="margin-top:1rem;padding: 0 1.5rem;">
+            <!--单位福利-->
+            <div class="f14 bold" style="padding:1.2rem 0 0;">个人技能</div>
+            <div class="write-cells" style="padding:1.6rem 0;">
+                <div id="company-welfare-js" class="company-welfare clearfix">
+                    <span class="active">会开车</span>
+                    <span>会英语</span>
+                    <span>懂电脑</span>
+                    <span>能三班倒</span>
+                    <span>接受夜班</span>
+                    <span>懂电工</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="f12" style="padding:1.5rem;color:#ff5a00;">· 置顶信息可有效提升浏览量</div>
     </div>
+
+
 
     <!--底部-->
     <div class="fix-bl" style="box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
-        <p class="basewrap f12 c666 bz" style="padding:0 1.2rem;background:rgba(0,0,0,.8);line-height: 2.4rem;color: #fff">您为入驻企业，免费发布的招聘信息有4条，剩余1条</p>
-        <!--开启积分-->
-        <div class="basewrap d-flex d-flex-center write-cell none" style="padding:0 1.2rem;">
-            <div class="top-radio flex top-radio-js"><span></span>置顶                   
-                <div class="right fr" style="margin-left:0">
-                    <select class="change" style="padding-right:1.2rem;direction: rtl">
-                        <option>请选择</option>
-                        <option>￥1一天</option>
-                    </select>
-                </div>     
+        <div class="basewrap d-flex d-flex-center write-cell bz" style="padding:0 1.2rem;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
+            <div class="top-radio flex top-radio-js bold">付费置顶                
+
             </div>
-            <div class="flex right left-line" style="margin-left:0;padding-left: 1.8rem;">
-
-                <div class="top-radio fl integral-js active" data-integral="0"><span></span>积分</div>
-                <svg aria-hidden="true" class="icon-exclamatory-mark">
-                    <use xlink:href="../css/icon.svg#exclamatory-mark"></use>
-                </svg>
-
-                <div class="fr" id="integral-number01">
-                    <div class="fr" style="color: #ffb400;margin-top: .1rem;">1234</div>
-                    <i class="icon-integral fr" style="margin-right:0.4rem;"></i>
-                </div>
-
-                <div style="color:#ff3a1b" class="fr none" id="integral-number02">-￥0.1</div>
-            </div>   
+            <div class="weui-cell__ft">
+                <input class="weui-switch" type="checkbox">
+            </div> 
         </div>
-        <!--未开启积分-->
-        <div class="basewrap d-flex d-flex-center write-cell none" style="padding:0 1.2rem;">
-            <div class="top-radio flex top-radio-js"><span></span>置顶</div>
-            <div class="flex right" style="margin-left:0">
-                <select class="change" style="direction: rtl;padding: 0">
-                    <option>选择后信息显示在顶部</option>
-                    <option>18岁以上</option>
-                </select>
-            </div>   
-        </div>
-        <div class="basewrap d-flex release-nav top-line" style="box-shadow:none">
-            <div class="f14 money flex">需付款&nbsp;<span class="f18 mc bold"><i class="f14">￥</i>2</span></div>
-            <div class="bt f16">确认发布</div>
+        <div class="basewrap d-flex release-nav top-line" style="box-shadow:none;padding:0;">
+            <div class="bt f16 flex bold">发布</div>
         </div>
     </div>
     
