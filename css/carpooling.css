@@ -1,30 +1,38 @@
 
-.carpooling-arrow,.icon-people,.icon-vacancy,.carpooling-ul .call>i,.icon-clock,
-.icon-shenglve{
+.carpooling-arrow,.icon-people,.icon-vacancy,.carpooling-ul .call>i,
+.icon-shenglve,.carpooling-serach .turn{
     background-image: url(../img/tc-pic04.png);
     background-size: 50rem;
     background-repeat: no-repeat;
 } 
 
-.subscribe-cell .close{
-    background-image: url(../images/tc-yh-01.png);
-    background-size: 25rem;
+.index-bottom-nav>a .home,.index-bottom-nav>a .me {
+    background-image: url(https://j.vzan.cc/content/city2018/images/icon01.png);
+    background-size: 50rem;
     background-repeat: no-repeat;
 } 
 
+.index-bottom-nav>a .home{background-position: -30.3rem -32.3rem;}
+
+.index-bottom-nav>a.active .home {background-position: -30.3rem -34.8rem;}
+
+.index-bottom-nav>a .me {background-position: -37.8rem -32.3rem;}
+
+.index-bottom-nav>a.active .me {background-position: -37.8rem -34.8rem;}
+
+/*导航*/
 .subscribe-cell{
-    padding: 1.5rem;
+    padding: 1.2rem;
     background: #fff;
-    margin: 1rem 0 0
 }
 
 .subscribe-cell .bt{
-    width:8rem;
-    height: 2.8rem;
-    font-size:1.5rem;
+    width:7.5rem;
+    height: 3rem;
+    font-size:1.3rem;
     color: #ff5a00;
     text-align: center;
-    line-height: 2.8rem;
+    line-height: 3rem;
     box-sizing: border-box;
     position: relative;
 }
@@ -42,40 +50,60 @@
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
     box-sizing: border-box;
-    border-radius:.4rem;
+    border-radius:3rem;
 }
 
 .carpooling-serach{
     box-sizing: border-box;
-    padding: 0 1.5rem;
+    padding: 0 1.2rem 0 0;
     margin: 1rem 0 0;
+    background: #fff;
+    height: 5rem;
 }
 
-.carpooling-serach .flex{
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+.carpooling-serach .turn{
+    width: 1.9rem;
+    height: .6rem;
+    display: block;
+    background-position:-32.6rem -15.1rem;
+}
+
+.carpooling-serach .flex:nth-child(1){
+    padding: 0 2rem 0;
+}
+
+.carpooling-serach .flex:nth-child(3){
+    padding: 0 2rem 0;
+    text-align: right;
+    color: #333;
+}
+
+.carpooling-serach .flex:nth-child(3) input{
+    text-align:right;
 }
 
 .carpooling-serach input{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     display: block;
     height: 3.5rem;
     width: 100%;
-    padding: 0 1rem;
     box-sizing: border-box;
 }
 
+.carpooling-serach input::-webkit-input-placeholder {color: #666;}
+.carpooling-serach input::-moz-placeholder {color: #666}
+.carpooling-serach input::-moz-placeholder {color: #666;}
+.carpooling-serach input::-ms-input-placeholder {color: #666;}
+
 .carpooling-serach .bt{ 
-    width:6rem;
-    height: 3.5rem;
-    margin-left: 1.5rem;
-    line-height: 3.5rem;
-    font-size: 1.6rem;
-    font-weight: bold;
+    width:7.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.3rem;
     color: #fff;
     text-align: center;
     background: #ff5a00;
-    border-radius: .2rem;
+    border-radius:1.5rem;
 }
 
 .icon-shenglve{
@@ -110,74 +138,89 @@
     line-height: 1.2;
     position: relative;
     border-radius: 4px;
-    margin:0 0 1rem;
-    padding: 0 0 1.5rem;
+    margin:2.6rem 0 0;
+    padding: 0 0 2rem;
 }
 
-.carpooling-ul .top img{
+.carpooling-ul .top .head{
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    border:2px solid #fff;
+    overflow: hidden;
+    margin: -2.4rem .3rem 0 0;
+    box-shadow: 0 5px 10px rgba(167,167,167,.4);
+    box-sizing: border-box
+}
+
+.carpooling-ul.gray{
+    -webkit-filter: grayscale(1); /* Webkit */
+    filter: gray; /* IE6-9 */  
+    filter: grayscale(1); /* W3C */
+}
+
+
+.carpooling-ul .top .head img{
     width: 100%;
     height: 100%;
 }
 
-.carpooling-ul .top .head{
-    width: 4.5rem;
-    height: 4.5rem;
-    margin: 0 1.2rem 0 0;
-    border-radius: 50%;
-    overflow: hidden;
-}
 
-.carpooling-ul .label01,.carpooling-ul .label03{
+.carpooling-ul .label01{
     height:1.6rem;
-    width:3.8rem;
-    background: #009CFF;
     border-radius: 2px;
-    float: left;
-    font-size: 1.2rem;
-    color: #fff;
-    text-align: center;
-    line-height: 1.6rem;
-    margin: 0 .5rem 0 0;
-}
-
-
-.carpooling-ul .label02,.carpooling-ul .label04{
-    height:1.6rem;
-    width:3.8rem;
-    border-radius: 2px;
-    float: left;
     font-size: 1.2rem;
     text-align: center;
     line-height: 1.6rem;
-    margin: 0 .5rem 0 0;
     position: relative;
+    padding: 0 .3rem;
+    margin:0 0 0 .4rem;
 }
 
-.carpooling-ul.gray .label01,.carpooling-ul.gray .label03{
-    background: #ccc;
-}
 
-.carpooling-ul .label01{background: #009CFF;}
-
-.carpooling-ul .label03{background: #ff5a00}
-
-
-.carpooling-ul .label02{
-    color: #009CFF;
+.carpooling-ul .label01{
+    color: #2073F0;
     background: rgba(0,156,255,.1);
 }
 
-.carpooling-ul.gray .label02,.carpooling-ul.gray .label04{
-    color: #ccc;
-    background: rgba(204,204,204,.1);
+.carpooling-ul .label01.gray{
+    color: #2073F0;
+    background: rgba(0,156,255,.1);
 }
 
-.carpooling-ul .label04{
+.carpooling-ul .start-time{
+    height:2.2rem;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 2.2rem;
+    position: relative;
+    padding: 0 1rem;
     color: #ff5a00;
-    background: rgba(255,90,0,.1);
+    margin-right: .5rem;
+    background: rgba(255,90, 0,.1);
+    border-radius: 1.1rem;
 }
 
-.carpooling-ul .label02:before,.carpooling-ul .label04:before{
+
+.carpooling-ul .start-time:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 2.2rem;
+    border: 1px solid #ff5a00;
+}
+
+
+
+.carpooling-ul .label01:before,.carpooling-ul .label04:before{
     content: " ";
     width: 200%;
     height: 200%;
@@ -190,6 +233,21 @@
     transform-origin: 0 0;
     box-sizing: border-box;
     border-radius: 4px;
+    border: 1px solid #2073F0;
+}
+
+
+
+
+.carpooling-ul.gray .label02,.carpooling-ul.gray .label04{
+    color: #ccc;
+    background: rgba(204,204,204,.1);
+}
+
+
+.carpooling-ul .label04{
+    color: #ff5a00;
+    background: rgba(255,90,0,.1);
 }
 
 .carpooling-ul.gray .label02:before,.carpooling-ul.gray .label04:before{
@@ -212,24 +270,32 @@
     margin: 0 1rem;
 }
 
+
+.carpooling-ul .li03{
+    margin-bottom: 1rem;
+}
+
 .carpooling-ul .li03,.carpooling-ul .li04{
     position: relative;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color:#666;
-    margin-top: 1rem;
-    padding: 0 1.5rem;
+    padding: 0 1.2rem;
 }
 
 .carpooling-ul .call{
     margin: 0 0 0 1rem;
     width:9rem;
     height:2.8rem;
-    background:#FF5A00;
+    background:#2073F0;
     color: #fff;
     border-radius: 1.4rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 2.8rem;
     text-align: center;
+}
+
+.carpooling-ul.gray .call{
+    background: #ccc
 }
 
 .carpooling-ul .call>i{
@@ -269,19 +335,17 @@
 .carpooling-sort .iconfont{margin-right:.5rem;vertical-align:-2px;font-size: 18px; }
 
 .carpooling-ul .zhiding{
-    height:1.8rem;
-    width:3.4rem;
-    line-height: 1.8rem;
-    font-size: 1.2rem;
-    border-radius: 2px;
-    border-top-left-radius:0;
-    border-bottom-left-radius:0;
-    margin-right: 1rem;
-    margin-left: -1.5rem;
+    height:2.2rem;
+    line-height: 2.2rem;
+    width:4.5rem;
+    margin-right: .5rem;
+    margin-left: -1.2rem;
     text-align: center;
-    background-position: -26.7rem -11.1rem;
     background: #F90606;
     color: #fff;
+    font-size: 1.4rem;
+    border-top-right-radius:1.1rem; 
+    border-bottom-right-radius:1.1rem; 
 }
 
 .carpooling-ul.gray{
@@ -302,11 +366,11 @@
 }
 
 .carpooling-ul.gray .fache{
-    width: 9rem;
+    width: 6.6rem;
     display: block;
     position: absolute;
-    top: 11rem;
-    right:1.5rem;
+    top: 10rem;
+    right:2.6rem;
     z-index: 2;
 }
 
@@ -323,45 +387,41 @@
     text-align: center;
 }
 
-.starting-point{padding:.5rem 1.5rem 0;}
+.starting-point{margin:1.5rem 1.2rem;position: relative;}
 
-.starting-point .dot01{
+.starting-point .dot01,.starting-point .dot02{
     width:1.9rem;
     height:1.9rem;
     line-height: 1.9rem;
     border-radius: 50%;
-    background:#009CFF;
-    border-radius: 50%;
-    margin: 0 .5rem 0 0;
+    margin: 0 .7rem 0 0;
     text-align: center;
     color:#fff;
     font-size: 1.2rem;
+    position: relative;
+    z-index:2;
+}
+
+.starting-point .dot01{
+    background:#2073F0;
 }
 
 .starting-point .dot02{
-    width:1.9rem;
-    height:1.9rem;
-    line-height: 1.9rem;
-    border-radius: 50%;
     background:#ff5a00;
-    border-radius: 50%;
-    margin: 0 .5rem 0 0;
-    text-align: center;
-    color:#fff;
-    font-size: 1.2rem;
 }
 
-.icon-clock{
-    display: inline-block;
-    width:1.7rem;
-    height:1.7rem;
-    background-position:-44.1rem -10.4rem;
-    margin:0 .5rem 0 0;
-    vertical-align:-.3rem;
+.starting-point .xu-line{
+    position: absolute;
+    height: 80%;
+    top: 10%;
+    width: 1px;
+    left: .9rem;
+    border-left:1px dashed #ff5a00;
 }
 
 .carpooling-ul .top{
-    padding: 1.5rem 1.5rem 0
+    padding: 0 1.2rem 0;
+    height: 5.3rem
 }
 
 /*搜索栏*/
@@ -422,14 +482,22 @@
     line-height: 5rem;
 }
 
-.index-type-select-nav li{margin: 0;padding: 0 10px;height: 5rem;font-size: 1.8rem;position: relative;line-height:5rem;text-align: center;color: #333;}
+.index-type-select-nav li{
+    margin: 0;
+    padding: 0 10px;
+    height: 5rem;
+    font-size: 1.5rem;
+    position: relative;
+    line-height:5rem;
+    text-align: center;
+    color: #333;}
 
 .index-type-select-nav li.active{color: #ff5a00;}
 
 .index-type-select-nav li:before{
     content:"";
-    width:3.4rem;
-    height: .4rem;
+    width:3rem;
+    height: .2rem;
     position: absolute;
     bottom: 0;
     left: 50%;
