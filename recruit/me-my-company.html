@@ -10,42 +10,80 @@
     <meta charset="utf-8">
     <title>我的企业</title>
     <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
     <link rel="stylesheet" type="text/css" href="../css/company-list.css">
 </head>
-<body class="bg-f">
+<body>
     <div id="vue_recruit" class="basewrap">
-        <div class="mb-1 bg-f" style="padding:0 0 7.6rem 1.2rem;">
-            <div class="d-flex d-flex-center company-list bg-f">
-                <div class="head">
-                    <img class="img-wh-100" src="../img/02.jpg">
-                    <i class="top_ding"></i>
-                </div>
-                <div class="flex right bottom-line">
-                    <p class="f01 f14 bold clamp1" style="line-height: 1.35;"><i class="tuijian"></i>GPLAY海外业务信息科技有限公司</p>
-                    <p class="f02 f10 c666" style="margin-top:.4rem;">互联网/IT行业</p>
-                    <div class="type">
-                        <span v-for="welfare in companyInfor.welfares">五险一金</span>
-                        <span v-for="welfare in companyInfor.welfares">五险一金</span>
+        <div class="fix-tl">
+            <div class="basewrap d-flex d-flex-center index-search-bar" style="background:#ff5a00;height: 4.5rem;">
+                <a><i class="icon-back-arrow"></i></a>
+                <div class="flex f16 cfff ta-c">我的公司</div> 
+                <a class="f16 ta-r cfff">入驻</a>
+            </div>
+        </div>
+
+        <div style="padding:4.5rem 0 0 0;">
+            <div class="company-edit">
+                <div class="d-flex d-flex-center company-list bg-f bottom-line">  
+                    <div class="head">
+                        <img class="img-wh-100" src="../img/02.jpg">
                     </div>
-                    <p class="f03 f12 c666" style="margin-top:3rem;">已发布&nbsp;<i class="mc">12</i>&nbsp;条招聘信息</p>
+                    <div class="flex right">
+                        <p class="f01 f14 bold clamp1" style="line-height: 1.35;"><i class="tuijian"></i>GPLAY海外业务信息科技有限公司</p>
+                        <p class="f02 f10 c666" style="margin-top:1.5rem;">互联网/IT行业</p>
+                        <p class="f03 f12 c666" style="margin-top:1.5rem;">已发布&nbsp;<i class="mc">12</i>&nbsp;个职位</p>
+                    </div>
+                    <div class="shenhe" style="background:#FFB504">待审核</div>
                 </div>
+                <ul class="edit-bt">
+                    <li>编辑</li>
+                </ul>
             </div>
 
-            <div class="d-flex d-flex-center company-list bg-f">
-                <div class="head">
-                    <img class="img-wh-100" src="../img/02.jpg">
-                    <i class="top_ding"></i>
-                </div>
-                <div class="flex right bottom-line">
-                    <p class="f01 f14 bold clamp1" style="line-height: 1.35;"><i class="tuijian"></i>GPLAY海外业务信息科技有限公司</p>
-                    <p class="f02 f10 c666" style="margin-top:.4rem;">互联网/IT行业</p>
-                    <div class="type">
-                        <span v-for="welfare in companyInfor.welfares">五险一金</span>
-                        <span v-for="welfare in companyInfor.welfares">五险一金</span>
+            <div class="company-edit">
+                <div class="d-flex d-flex-center company-list bg-f bottom-line">  
+                    <div class="head">
+                        <img class="img-wh-100" src="../img/02.jpg">
                     </div>
-                    <p class="f03 f12 c666" style="margin-top:3rem;">已发布&nbsp;<i class="mc">12</i>&nbsp;条招聘信息</p>
+                    <div class="flex right">
+                        <p class="f01 f14 bold clamp1" style="line-height: 1.35;"><i class="tuijian"></i>GPLAY海外业务信息科技有限公司</p>
+                        <p class="f02 f10 c666" style="margin-top:1.5rem;">互联网/IT行业</p>
+                        <p class="f03 f12 c666" style="margin-top:1.5rem;">已发布&nbsp;<i class="mc">12</i>&nbsp;个职位</p>
+                    </div>
+                    <div class="shenhe" style="background:#ccc">已过期</div>
                 </div>
-            </div> 
+                <div class="edit-welfare">
+                    <span>五险一金</span>
+                    <span>五险一金</span>
+                </div>
+                <ul class="edit-bt">
+                    <li class="active">续费</li>                    
+                    <li>编辑</li>
+                </ul>
+            </div>
+
+            <div class="company-edit">
+                <div class="d-flex d-flex-center company-list bg-f bottom-line">  
+                    <div class="head">
+                        <img class="img-wh-100" src="../img/02.jpg">
+                    </div>
+                    <div class="flex right">
+                        <p class="f01 f14 bold clamp1" style="line-height: 1.35;"><i class="tuijian"></i>GPLAY海外业务信息科技有限公司</p>
+                        <p class="f02 f10 c666" style="margin-top:1.5rem;">互联网/IT行业</p>
+                        <p class="f03 f12 c666" style="margin-top:1.5rem;">已发布&nbsp;<i class="mc">12</i>&nbsp;个职位</p>
+                    </div>
+                    <div class="shenhe" style="background:#ff5a00">已过期</div>
+                </div>
+                <div class="edit-welfare">
+                    <span>五险一金</span>
+                    <span>五险一金</span>
+                </div>
+                <ul class="edit-bt">                 
+                    <li>编辑</li>
+                </ul>
+            </div>
+
 
         </div>
         

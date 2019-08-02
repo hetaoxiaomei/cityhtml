@@ -1,46 +1,37 @@
 
 
-.icon-turn,.me-cell .icon,.me-cell .arrow{
+.me-cell .icon,.me-cell .arrow{
     background-image: url(../img/tc-pic04.png);
     background-repeat:no-repeat;
     background-size:50rem;
 }
 
 .me-top-cell{
-    padding: 1.6rem 2rem;
     background: #fff;
     position: relative;
+    height: 13.7rem;
+    border-radius: 10px;
+    padding: 4.7rem 0 0;
+    box-sizing: border-box
 }
 
 .me-top-cell .head{
-    width: 6rem;
-    height: 6rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
-    margin: 0 auto;
-    position: relative;
+    top: -3.5rem;
+    left: 50%;
+    transform: translate(-50%,0);
+    position: absolute;
 }
 
-.me-top-cell .head .tag{
-    width: 4.4rem;
-    height: 1.6rem;
-    color: #fff;
-    font-size: 1.2rem;
-    background: #fd781f;
-    border-radius:.8rem;
-    border-bottom-left-radius: 0;
-    text-align: center;
-    line-height: 1.6rem;
-    position: absolute;
-    right:-2.8rem;
-    top: .4rem;
-}
 
 .me-top-cell .head img{border-radius: 50%;}
 
 .me-top-cell .name{
-    max-width: 50%;
+    max-width: 80%;
+    margin: 0 auto 0;
     text-align: center;
-    margin: .8rem auto 1.6rem
 } 
 
 .me-top-cell .shadow{
@@ -55,31 +46,46 @@
 }
 
 .turn-bt{
-    width: 12rem;
-    height: 3rem;
-    font-size: 1.4rem;
-    color: #fff;
-    background:#ff3a1b;
+    height: 3.4rem;
+    background:#fff;
     text-align: center;
-    line-height: 3rem;
+    line-height: 3.4rem;
     border-radius:1.5rem;
-    margin: 0 auto;
-    box-shadow: 0 2px 5px rgba(255, 58, 27,.35);
-    display: block;
+    margin: 1.6rem auto 0;
+    width: 20rem;
+    position: relative;
+    font-size: 1.6rem;
 }
 
-.icon-turn{
-    width:1.5rem;
-    height: 1.5rem;
-    display: inline-block;
-    background-position:-12.3rem -6.9rem ;
-    margin-right: .4rem;
-    vertical-align: -.3rem;
+.turn-bt::before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 3.4rem;
+    border: 1px solid #ff5a00;}
+
+.turn-bt a{
+    color: #333; 
+    height: 100%;
+    border-radius: 1.7rem;
 }
+
+
+
+.turn-bt a.active{background: #ff5a00;color: #fff;}
 
 .me-cells{
     padding: 0 1.2rem;
     background: #fff;
+    border-radius:4px;
 }
 
 .me-cell {
@@ -95,13 +101,13 @@
 }
 
 .me-cell .arrow{
-    height: 1.6rem;
-    width: 1.6rem;
-    display:block;
-    background-position: -8.8rem -2.2rem;
+    width: .7rem;
+    height: 1.1rem;
+    background-position: -24.5rem -9.2rem;
+    margin-left: 5px;
 }
 
-.me-cell .number{margin-right: .8rem;color: #999;position: relative}
+.me-cell .number{color: #999;position: relative}
 
 .me-cell .number .dot{
     width: 4px;

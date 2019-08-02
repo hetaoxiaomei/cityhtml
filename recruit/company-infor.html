@@ -19,18 +19,19 @@
         <!--顶部选择导航-->
         <div class="rel fix-tl">
             <!--顶部栏-->
-            <div class="basewrap index-search-bar">
-                <div class="center">
-                    <svg class="icon-search" aria-hidden="true">
-                        <use xlink:href="../css/icon.svg#search"></use>
-                    </svg>
-                    <input readonly placeholder="搜索" />
+            <div class="basewrap d-flex d-flex-center index-search-bar">
+                <a class="index"></a>
+                <div class="center flex" style="margin:0 1rem;">
+                    <a href="javascript:;">
+                        <svg class="icon-search" aria-hidden="true">
+                            <use xlink:href="../sc/content/citytool/css/icon.svg#search"></use>
+                        </svg>
+                        <img src="https://j.vzan.cc/content/city/img/search_icon.png" style="display: block;width: 1.6rem;height: 1.6rem;position: absolute;top: 50%;left: 1.5rem;transform: translate(0,-50%);">
+                    </a>
+                    <input type="search" id="txtVal" placeholder="搜索">
                 </div>
-                <div class="right js-sign" data-sign="0">
-                    <i class="icon-qiye-ruzhu"></i>           
-                    <p class="f10 ta-c">企业入驻</p>			
-                </div>                   
-            </div>
+                <div class="f16" style="color:#ff5a00;">搜索</div>
+            </div>   
 
             <div class="d-flex ta-c recruit-select-nav">
                 <div id="demo1" class="flex">
@@ -121,38 +122,26 @@
             </div>
         </div>
 
-        <div class="mb-1 bg-f" style="padding:8.4rem 0 7.6rem 1.2rem;">
-            <div class="d-flex d-flex-center company-list bg-f">
+        <div class="mb-1 bg-f" style="padding:8.4rem 0 7.6rem 0;">
+            <div class="d-flex d-flex-center company-list bg-f bottom-line">
                 <div class="head">
                     <img class="img-wh-100" src="../img/companyInfor.img">
                     <i class="top_ding"></i>
                 </div>
-                <div class="flex right bottom-line">
+                <div class="flex right">
                     <p class="f01 f14 bold clamp1" style="line-height: 1.35;"><i class="tuijian"></i>GPLAY海外业务信息科技有限公司</p>
-                    <p class="f02 f10 c666" style="margin-top:.4rem;">互联网/IT行业</p>
+                    <p class="f02 clamp1">
+                        <span>物业管理</span>
+                        <span>商业中心</span>
+                    </p>
                     <div class="type">
                         <span v-for="welfare in companyInfor.welfares">五险一金</span>
                         <span v-for="welfare in companyInfor.welfares">五险一金</span>
                     </div>
-                    <p class="f03 f12 c666" style="margin-top:3rem;">已发布&nbsp;<i class="mc">12</i>&nbsp;条招聘信息</p>
+                    <p class="f03 f12 c666 clamp1" style="margin-top:3rem;">广州市天河区林和东路285号</p>
                 </div>
+                <div class="f16" style="color:#ff5a00;">1-49人</div>
             </div>
-
-            <div class="d-flex d-flex-center company-list bg-f">
-                <div class="head">
-                    <img class="img-wh-100" src="../img/companyInfor.img">
-                    <i class="top_ding"></i>
-                </div>
-                <div class="flex right bottom-line">
-                    <p class="f01 f14 bold clamp1" style="line-height: 1.35;"><i class="tuijian"></i>GPLAY海外业务信息科技有限公司</p>
-                    <p class="f02 f10 c666" style="margin-top:.4rem;">互联网/IT行业</p>
-                    <div class="type">
-                        <span v-for="welfare in companyInfor.welfares">五险一金</span>
-                        <span v-for="welfare in companyInfor.welfares">五险一金</span>
-                    </div>
-                    <p class="f03 f12 c666" style="margin-top:3rem;">已发布&nbsp;<i class="mc">12</i>&nbsp;条招聘信息</p>
-                </div>
-            </div> 
 
         </div>
         
