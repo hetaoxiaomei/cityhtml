@@ -10,59 +10,185 @@
     <meta charset="utf-8">
     <title>收到的简历</title>
     <link rel="stylesheet" type="text/css" href="../css/common.css">
-    <link rel="stylesheet" type="text/css" href="../css/recruit-list.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
+    <link rel="stylesheet" type="text/css" href="../css/recruit-detail.css">
+    <style>
+        .edit-bt {background: #fff;padding: 1.5rem 1.2rem;}
+        .edit-bt li {font-size: 1.4rem;color: #666;height: 2.4rem;width: 5rem;line-height: 2.4rem;border-radius: 2px;position: relative;margin-left: 1rem;float: right;display: block;text-align: center;}
+        .edit-bt li:nth-child(2):before{display: none}
+        .edit-bt li:first-child{margin-left:0;color: #333;text-align: left}
+        .edit-bt li:first-child:before{display: none}
+        .edit-bt li:before {content: " ";width: 200%;height: 200%;position: absolute;top: 0;left: 0;
+            -webkit-transform: scale(0.5);transform: scale(0.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;box-sizing: border-box;border-radius: .4rem;border: 1px solid #999;}
+        .edit-bt li.active:before {border: 1px solid #ff5a00;}
+        .edit-bt li.active{color:#ff5a00;}
+        .edit-bt li a{color:#666;}
+        .edit-bt li.active a{color:#ff5a00;}
+        .more-bt{position: absolute;top:3rem;left:.5rem;width: 6.6rem;z-index: 2;text-align: center}
+        .more-bt span{height: 3.3rem;width: 6.5rem;display: block;background:#7e7e7e;color:#fff;line-height: 3.3rem;border-bottom: 1px solid #fff;}
+        .more-bt .triangle-up{position: absolute;top: -5px;left: 10px;width:0;height:0;border-bottom:10px solid #7e7e7e;border-left:10px solid transparent;transform: rotate(-135deg)}
+        .job-all span{width:100%}
+        .job-all{max-height:50vh;}
+    </style>
 </head>
-<body class="bg-f">
+<body>
     <!--最新推荐-->
-    <div class="bg-f basewrap bz" style="padding:1.2rem 1.2rem 7.6rem;">
-        <!--求职版-->
-        <div class="bg-f recurit-list">
-            <div class="d-flex top">
-                <div class="flex left">
-                    <p class="clamp1 f14 f01">寻找酒吧前台或者酒店前台的工作</p>
-                    <p class="f02 clamp2" style="line-height:1.4">吃苦耐劳，能适应夜班/白班轮班节奏，40岁以下，限阿姨。</p>
-                    <div class="f03 clamp1"><i class="icon-people" style="background-position: -17.2rem -6.9rem;"></i>梁小姐</div>
-                </div>
-                
-                <div class="right">
-                    <p class="f16 mc money">3000-5000</p>
-                    <div class="apply-bt fr">联系</div>
-                </div>
-            </div>
-            <div class="d-flex bottom f10 c666">
-                <div class="f01">广州市-天河区</div>
-                <div class="flex f02">2018.05.05</div>
-                <svg class="icon-post-admin" aria-hidden="true">
-                    <use xlink:href="../css/icon.svg#post-admin"></use>
-                </svg>
-            </div>
-            <i class="top_ding"></i>
-        </div>  
+    <div class="basewrap bz" style="padding: 50px 0 0;">
+        <div class="rel fix-tl" style="z-index: 2;">
+            <ul class="d-flex ta-c recruit-select-nav" style="line-height:50px;height:50px;">
+                <li class="flex"> 
+                    <a>
+                        <i class="tc-list-top-filter-f" style="max-width:80%">企业/个人主体</i>
+                        <em class="tc-list-top-triangle"></em>
+                    </a>
+                </li>
+                <li class="flex"> 
+                    <a>
+                        <i class="tc-list-top-filter-f" style="max-width:80%">收到的简历</i>
+                        <em class="tc-list-top-triangle"></em>
+                    </a>
+                </li>              
+            </ul>
+            
+            <!--筛选弹框-->
+            <div class="dialog-screen-select-js abs none" style="height: 100vh;top: 50px;">
+                <div class="dialog-black-mask"></div>
+                <div class="screen-select">
+                    <!--企业/个人主体-->
+                    <div class="none">
+                        <div class="job-all company-js">
+                            <span class="active">不限</span>
+                            <span>理智君责任有限公司</span>
+                            <span>广州赞赏信息科技有限公司</span>
+                            <span>小夏同学</span>      
+                            <span>小琪女士</span>                                                                                                       
+                        </div>
+                    </div>
 
-        <div class="bg-f recurit-list">
-            <div class="d-flex top">
-                <div class="flex left">
-                    <p class="clamp1 f14 f01">寻找酒吧前台或者酒店前台的工作</p>
-                    <p class="f02 clamp2" style="line-height:1.4">吃苦耐劳，能适应夜班/白班轮班节奏，40岁以下，限阿姨。</p>
-                    <div class="f03 clamp1"><i class="icon-people"></i>梁先生</div>
-                </div>
-                
-                <div class="right">
-                    <p class="f16 mc money">3000-5000</p>
-                    <div class="apply-bt fr">联系</div>
+                    <!--发布的职位-->
+                    <div class="none">
+                        <div class="job-all job-js">
+                            <span class="active">不限</span>
+                            <span>招聘美团快递员</span>
+                            <span>招聘客服专员实习生</span>                                                                                                     
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="d-flex bottom f10 c666">
-                <div class="f01">广州市-天河区</div>
-                <div class="flex f02">2018.05.05</div>
-                <svg class="icon-post-admin" aria-hidden="true">
-                    <use xlink:href="../css/icon.svg#post-admin"></use>
-                </svg>
-            </div>
-            <i class="top_ding"></i>
-        </div>  
+
+        </div>
+
+        <div>
+            <div class="bg-f" style="margin:1rem 0 0">
+                <div class="qiuzhi bottom-line" style="padding:2rem 1.5rem;">
+                    <div class="d-flex d-flex-center">
+                        <div class="head">
+                            <img src="../img/02.jpg" style="display:block;width:40px;height:40px;border-radius: 50%;">
+                        </div>
+                        <div class="flex">
+                            <div class="d-flex f16">
+                                <div class="clamp1">小夏</div>
+                                <div class="icon-nan"></div>
+                                <div class="icon-nv"></div>
+                                <div class="zhiding">置顶</div>
+                                <div class="bold flex ta-r" style="color:#FF5A00;margin: 0 0 0 2rem">5000元/月</div>
+                            </div>
+                            <div class="f12 infor">
+                                <span>32岁</span><span>大专</span><span>5年工作经验</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex" style="margin:2rem 0 0;">
+                        <div class="flex">
+                            <div class="f16 bold">求职实习老师</div>
+                            <div class="type">
+                                <span>社保</span>
+                                <span>公积金</span>
+                                <span>饭补</span>
+                                <span>交通补贴</span>
+                                <span>话补</span>
+                            </div>
+                        </div>
+                        <div class="bt">联系</div>
+                    </div>
+                </div>  
+                <div class="c666 f13" style="padding:1.5rem;">
+                    <p>申请时间：2019-07-13 20:01:21</p>
+                    <p style="margin: 1rem 0 0;">应聘岗位：理智君教育有限公司-实习老师</p>
+                </div>
+            </div>    
+
+        </div>
 
     </div>
 
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.recruit-select-nav li').on('click', function () {
+                var a = $(this).index();
+                var b=$(this);
+                var c=b.children('a');
+                var e=b.siblings('li');
+                var f=e.children('a');
+
+                $('.dialog-screen-select-js').show();
+                c.toggleClass('active');
+                f.removeClass('active');
+                $('.dialog-screen-select-js .screen-select').children().hide().eq(a).show();
+                $('.dialog-black-mask').bind("touchmove", function (e) {
+                    e.preventDefault();
+                });
+
+                if (c.hasClass('active')) {
+                    $('.dialog-screen-select-js').show();
+                } else {
+                    $('.dialog-screen-select-js').hide();
+                }
+            })
+
+            $('.dialog-black-mask,.job-js span,.company-js span').on('click', function () {
+                $('.dialog-screen-select-js').hide();
+                $('.recruit-select-nav .flex a').removeClass('active');
+            })
+
+ 
+            $('.job-js span:not(:first)').on('click', function () {
+                var a= $(this).html();
+                $('.recruit-select-nav .flex:nth-child(2) i').html(a);
+            })
+
+            $('.job-js span:first-child').on('click', function () {
+                $('.recruit-select-nav .flex:nth-child(2) i').html('发布的职位');
+            })
+
+            $('.company-js span:not(:first)').on('click', function () {
+                var a= $(this).html();
+                $('.recruit-select-nav .flex:first-child i').html(a);
+            })            
+
+            $('.company-js span:first-child').on('click', function () {
+                $('.recruit-select-nav .flex:first-child i').html('企业/个人主体');
+            })
+
+            $('.job-js span,.company-js span').on('click', function () {
+                $(this).addClass('active').siblings('span').removeClass('active');
+                $('.dialog-screen-select-js').hide();
+            })
+
+            //更多
+            $('.edit-bt').on('click', function () {
+                $('.more-bt').show();
+            })
+            $('.more-bt span').on('click', function () {
+                $('.more-bt').hide();
+
+                event.stopPropagation();
+
+                event.preventDefault();
+            })
+        })
+    </script>   
 </body>
 </html>

@@ -18,14 +18,19 @@
 <body>
     <div id="vue_recruit" class="basewrap" style="padding-bottom:7.6rem">
         <!--顶部栏-->
-        <div class="basewrap index-search-bar">
-            <div class="center">
-                <svg class="icon-search" aria-hidden="true">
-                    <use xlink:href="../css/icon.svg#search"></use>
-                </svg>
-                <input readonly placeholder="搜索" />
+        <div class="basewrap d-flex d-flex-center index-search-bar">
+            <a class="index"></a>
+            <div class="center flex" style="margin:0 1rem;">
+                <a href="javascript:;">
+                    <svg class="icon-search" aria-hidden="true">
+                        <use xlink:href="../sc/content/citytool/css/icon.svg#search"></use>
+                    </svg>
+                    <img src="https://j.vzan.cc/content/city/img/search_icon.png" style="display: block;width: 1.6rem;height: 1.6rem;position: absolute;top: 50%;left: 1.5rem;transform: translate(0,-50%);">
+                </a>
+                <input type="search" id="txtVal" placeholder="搜索">
             </div>
-        </div>
+            <div class="f16" style="color:#ff5a00;">搜索</div>
+        </div>  
 
         <!--banner图-->
         <div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
@@ -38,52 +43,56 @@
             <div class="swiper-pagination"></div>
         </div>
 
+        <!--数据-->
+        <div class="d-flex ta-c c666 f12 bg-f" style="line-height:3.6rem;margin-bottom: 1rem">
+            <div class="flex">职位量：1632</div>
+            <div class="flex">企业量：88</div>
+            <div class="flex">简历量：150</div>
+        </div>
+
         <!--图标-->
         <div class="d-flex recruit-icon">
             <a class="flex">
                 <span>
                     <i></i>
                 </span>
-                <p>招聘信息</p>
+                <p>找工作</p>
             </a>
             <a class="flex">
                 <span>
                     <i></i>
                 </span>
-                <p>求职信息</p>
+                <p>找人才</p>
             </a>
             <a class="flex">
                 <span>
                     <i></i>
                 </span>
-                <p>企业信息</p>
+                <p>入驻企业</p>
             </a>
         </div>
 
         <!--热门职位-->
         <div>
             <div class="d-flex d-flex-center recruit-title-cell">
-                <div class="f14 bold flex">
-                    <i class="icon-hot-job"></i>热门职位</div>
+                <div class="f16 bold flex">热门职位</div>
                 <div class="subscribe-bt">立即订阅</div>
-                <div class="shadow"></div>
             </div>
-            <div class="hot-position f14 ta-c" >
+            <div class="hot-position f15 ta-c" >
                 <a v-for="hotJob in hotJobs">{{hotJob.item}}</a>
             </div>
         </div>
 
         <!--认证企业-->
         <div>
-            <div class="d-flex d-flex-center recruit-title-cell mt">
-                <div class="f14 bold flex">
-                    <i class="icon-id-company"></i>认证企业</div>
-                <a>
+            <div class="d-flex d-flex-center recruit-title-cell">
+                <div class="f16 bold flex">认证企业</div>
+                <!-- <a>
                     <span class="number"><i>{{companyStrength}}</i>家实力企业</span>
                     <i class="arrow"></i>
-                </a>
+                </a> -->
             </div>
-            <div class="zong-income-cell bg-f" style="padding:0 1rem 1rem;">
+            <div class="zong-income-cell bg-f" style="padding:0 1rem 2rem;">
                 <div class="swiper-container swiper-container-free-mode authentic-enterprise">
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide" v-for="company in companys">
@@ -91,8 +100,8 @@
                                 <img class="img-wh-100" :src="company.img" />
                             </div>
                             <div class="d-flex flex flex-between flex-col">
-                                <p class="clamp2 f01 f12">{{company.name}}</p>
-                                <div class="f02 c666 f12">已发布&nbsp;<i class="mc">{{company.number}}</i>&nbsp;个职位</div>
+                                <p class="f01 f14">{{company.name}}</p>
+                                <div class="f02 c666 f12">{{company.number}}岗位</div>
                             </div>
                         </li>
                     </ul>
@@ -101,20 +110,56 @@
         </div>
 
         <!--最新推荐-->
-        <div class="d-flex recruit-title-cell" style="padding:0 0 0 1.2rem">
-            <div class="recommend-title f14 bold" style="margin-top:1.2rem;">
-                <i class="icon-recommend"></i>最新推荐
-            </div>
-            <div class="flex new-recommend-wrapper f14">
+        <div class="d-flex recruit-title-cell" style="padding:0">
+            <div class="flex new-recommend-wrapper f16">
                 <div class="new-recommend-list">
                     <a v-for="(job,index) in jobs" v-bind:class="{active:selectindex==index}" @click="checkItem(index)" class="new-recommend-item">{{job.item}}</a>	 
                 </div>                    
             </div>
-            <div class="shadow"></div>
         </div>
 
         <!--最新推荐-->
-        <div class="bg-f" style="padding:1.2rem;">
+        <div class="bg-f">
+            <!-- <div class="recurit-list">
+                <div class="top bottom-line">
+                    <div class="d-flex d-flex-center">
+                        <p class="clamp1 f16 f01 flex"><i class="zhiding">置顶</i>熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
+                        <p class="f16 money bold" style="color:#ff5a00;margin: 0 0 0 2rem">5000元/月</p>
+                    </div>
+                    <div class="d-flex d-flex-center">
+                        <p class="f02 clamp1 flex">
+                            <span>性别不限</span>
+                            <span>经验不限</span>
+                            <span>学历不限</span>
+                            <span>年龄不限</span>
+                        </p> 
+                        <p class="f12 c999" style="margin-top:1rem;">1小时前</p>
+                    </div>
+                    <div class="left">
+                        <div class="type">
+                            <span>社保</span>
+                            <span>公积金</span>
+                            <span>饭补</span>
+                            <span>交通补贴</span>
+                            <span>话补</span>
+                        </div> 
+                    </div> 
+
+                    <div class="d-flex d-flex-center" style="margin:2rem 0 0;"> 
+                        <div class="company-head">
+                            <img src="../img/02.jpg">
+                        </div>
+                        <div class="flex">
+                            <div class="f15" style="overflow:hidden">
+                                <span class="company-name clamp1">理智责任有限公司理智责任有限公司理智责任有限公司</span>
+                                <i class="vip"></i>
+                            </div>
+                            <div class="f12 c666" style="margin:10px 0 0;" >广州市天河区林和东路285号</div>
+                        </div>
+                        <div class="bt">申请</div>
+                    </div>
+                </div> 
+            </div>              -->
             <div class="bg-f recurit-list" v-for="recruitList in recruitLists">
                 <div class="d-flex top">
                     <div class="flex left">
@@ -145,34 +190,34 @@
 
     <!--底部导航-->
     <div class="fix-bl">
-        <div class="basewrap d-flex index-bottom-nav release"> 
+        <div class="basewrap d-flex index-bottom-nav release">
             <a class="flex active">
-                <i class="home"></i>
-                <p>首页</p>
-            </a>
-            <a class="flex">
                 <i class="icon_nav_zhaopinqiuzhi"></i>
                 <p>招聘求职</p>
-            </a>  
+            </a>
+            <a class="flex">
+                <i class="icon-find"></i>
+                <p>发现</p>
+            </a>                
             <a class="flex">
                 <i></i>
                 <p>发布</p>
-            </a>  
+            </a>
             <a class="flex">
-                <i class="icon-enterprise-entry"></i>
-                <p>发现</p>
-            </a>   
+                <i class="icon-enterprise-entry" style="width:2.6rem"></i>
+                <p>企业信息</p>
+            </a>
             <a class="flex">
-                <i class="me"></i>
+                <i class="me02"></i>
                 <p>我的招聘</p>
                 <em class="dot"></em>
-            </a>     
+            </a>
             <div class="circleicon">
                 <i></i>
                 <a href="javascript:;"></a>
-            </div>                  
+            </div>
         </div>
-    </div>    
+    </div>
 
     <script src="../js/jquery-1.10.2.js"></script>
     <script src="../js/vue.min.js"></script>
@@ -182,16 +227,23 @@
             el: '#vue_recruit',
             data: {
                 jobs: [
+                {item: '最新推荐'},
                 {item: '厨师'},
                 {item: '销售'},
                 {item: '外卖人员'},
                 {item: '快递员'},
-                {item: '客服'}
+                {item: '客服'},
+                {item: '厨师'},
+                {item: '销售'},
+                {item: '外卖人员'},
+                {item: '快递员'},
+                {item: '客服'}                
               ],
 
                 selectindex:0,
             
                 hotJobs:[
+                    {item: '厨师'},
                     {item: '厨师'},
                     {item: '销售'},
                     {item: '外卖人员'},
@@ -210,12 +262,12 @@
                 ],
 
                 companys:[
-                    {img:'../img/02.jpg',name:'广州市创盈网络信息科技有限公司',number:'2'},
+                    {img:'../img/02.jpg',name:'广州市创盈网络创盈网络信息科技有限公司',number:'2'},
                     {img:'../img/02.jpg',name:'广州市创盈网络信息科技有限公司',number:'2'},
                     {img:'../img/02.jpg',name:'广州市创盈网络信息科技有限公司',number:'2'}
                 ],
 
-                companyStrength:12,
+                // companyStrength:12,
 
                 recruitLists:[
                     {

@@ -111,8 +111,8 @@
 
 .recurit-list .type span{
     font-size: 1.2rem;
-    background: #fff6f0;
-    color: #fd781f;
+    background:rgba(255,90,0,.1);
+    color:#ff5a00;
     padding: 0 .5rem;
     height: 2rem;
     line-height: 2rem;
