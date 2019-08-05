@@ -1,19 +1,18 @@
 .pic-ul li.more .go,.shop-activity .size,.convenience-infor .icon-post-packet,
 .icon-prompt-love01,.icon-prompt-love02,.convenience-infor .icon-focus,
-.convenience-infor .to-top,.icon-eye,.convenience-infor .icon-location{
+.icon-eye,.convenience-infor .icon-location,
+.convenience-infor .top .name .vip,.convenience-infor .icon-link,.convenience-infor .function i{
     background-image: url(../img/tc-pic04.png);
     background-repeat: no-repeat;
     background-size:50rem;
 }
 
 .convenience-infor{
-    padding:2rem 1.2rem;;
-    margin: 0 1.2rem 2rem;
+    padding:2rem 0;
+    margin:0 1.2rem;
     position: relative;
     background: #fff;
-    border: 1px solid #f0f0f0;
     border-radius: 5px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1)
 }
 
 .convenience-infor-all.business{padding: 0 1.2rem;}
@@ -53,7 +52,6 @@
 
 .convenience-infor .top .name i{
     max-width: 45%;
-    color: #333;
     float: left;
     font-size: 1.4rem;
     line-height: 1.25;
@@ -62,6 +60,15 @@
     -webkit-box-orient: vertical;
     display: -webkit-box;
     -webkit-line-clamp: 1;
+}
+
+.convenience-infor .top .name .vip{
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    float: left;
+    background-position:-32.6rem -13.4rem;
+    margin:0 .5rem 0 0;
 }
 
 .convenience-infor .top .label{
@@ -77,7 +84,10 @@
     width: 4rem;
     height: 1.6rem;
     display: block;
-    background-position: -8.2rem -11.1rem;
+    background: #F90606;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center
 }
 
 .convenience-infor .content{
@@ -88,7 +98,7 @@
     display: block;
     float: left;
     margin-right: .5rem;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     background: #ff5a00;
     color: #fff;
     padding: 0 .8rem;
@@ -96,12 +106,12 @@
     line-height: 2rem;
     position: relative;
     max-width: 50%;
+    border-radius: 2px;
 }
 
 .convenience-infor .top .label span.job02{
     display: block;
     float: left;
-    margin-right: .5rem;
     font-size: 1.4rem;
     background:rgba(255,90,0,.1);
     border: 1px solid #ff5a00;
@@ -112,23 +122,9 @@
     position: relative;
     max-width: 50%;
     box-sizing: border-box;
+    border-radius: 2px;
 }
 
-/* .convenience-infor .top .label span.job:before{
-    content: " ";
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 1px solid #ffddc6;
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    box-sizing: border-box;
-    border-radius: 4px;
-} */
 
 .convenience-infor .top .call{
     background:linear-gradient(to right,#ff360e,#fa670f);
@@ -151,20 +147,22 @@
 }
 
 .convenience-infor .title{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 1.6;
     margin-bottom: .2rem;
     position: relative;
 }
 
+.convenience-infor .title>.bold{
+    font-size: 1.6rem;
+    margin:1rem 0 1rem;
+}
+
 .spread-js{
     display: block;
-    position: absolute;
-    bottom:0;
-    right: 0;
-    background: #fff;
-    padding-left: 5rem;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    color: #FF5A00;
+    margin: 1.5rem 0 0;
 }
 
 .convenience-infor .passage{
@@ -173,8 +171,17 @@
     font-size: 1.4rem;
 }
 
+.convenience-infor .icon-link{
+    width: 1.4rem;
+    height: 1.4rem;
+    display: inline-block;
+    margin-right: .6rem;
+    vertical-align: -.3rem;
+    background-position: -34.4rem -13.4rem;
+}
+
 .convenience-infor .pic-ul{
-    padding-top: 0;
+    padding-top:1.5rem;
 }
 
 .convenience-infor .pic-ul li {
@@ -291,6 +298,8 @@
 
 .convenience-infor .place-time{
     font-size: 1.2rem;
+    color:#999;
+    margin:0;
 }
 
 .convenience-infor .packet {
@@ -371,8 +380,6 @@
     -webkit-animation: coinrotate .5s forwards infinite;
     animation: coinrotate .5s forwards infinite;}
 
-.convenience-infor-all{padding: 1rem 0;}
-
 .convenience-infor-all .convenience-infor.bottom-line:last-child:after{display: none}  
   
   @keyframes coinrotate{
@@ -394,8 +401,18 @@
 
 .convenience-infor .function{
     position: relative;
-    color: #999;
-    margin-top: 1rem
+    color: #666;
+    margin-top: 1rem;
+    background: #f0f0f0;
+    padding: 0 1rem;
+    height: 3.2rem;
+}
+
+.convenience-infor .function i{
+    height: 1.5rem;
+    display: inline-block;
+    margin-right: .5rem;
+    vertical-align: -.4rem;
 }
 
 
