@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>发布招聘</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/release.css">
+    <style>
+    .upload-pic-ul li .f01 {position: absolute;top: 25%;left: 50%;transform: translate(-50%,0);width: 2rem;height: 2rem;display: block;background-position: -48rem -6.9rem;}
+    .upload-pic-ul li .f02 {position: absolute;top: 55%;left: 0;width: 100%;line-height: 1.3;}
+    .upload-pic-ul li {background: #F0F0F0;width: 30%;padding: 30% 0 0;position: relative;margin: 0 3.3% 1rem 0;float: left;}
+    .upload-pic-ul {padding:1.5rem 0 0;overflow: hidden;}
+    .upload-pic-ul li .f01 {position: absolute;top: 25%;left: 50%;transform: translate(-50%,0);width: 2rem;height: 2rem;display: block;background-position: -48rem -6.9rem;}
+    .upload-pic-ul li .f01,.upload-pic-ul li .close{background-image: url(../img/tc-pic04.png);background-size: 50rem;}
+    .upload-pic-ul li .close{position: absolute;z-index: 1;top: 0;right: 0;width: 1.6rem;
+        height: 1.6rem;background-position: -14rem -6.9rem;display: block;}
+    .upload-pic-ul img{position: absolute;top:0;left: 0;width:100%;height: 100%}
+    </style>
+</head>
+<body>
+    <div class="basewrap" style="padding: 0 0 5rem;">
+        <div class="write-cells bg-f" style="padding:0 0 0 1.5rem;">
+            <div class="d-flex d-flex-center write-cell bottom-line">
+                <div class="left f16">选手名称<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write ta-r" placeholder="个人或作品名称">
+                </div>                                                          
+            </div> 
+
+            <div class="f16" style="padding:2rem 0 0;">选手照片<i class="icon-require"></i></div>
+            <ul class="upload-pic-ul bg-f">
+                <li>
+                    <img src="">
+                    <i class="close"></i>
+                </li>
+                <li>
+                    <img src="">
+                    <i class="close"></i>
+                </li>
+                <li>
+                    <i class="f01"></i>
+                    <p class="f02 f12 c999 ta-c">点击上传图片<br><span>0/9</span></p>
+                </li>            
+            </ul>
+            <p class="c666 f12">尺寸400*400，大小≤5M（jpg、png、gif）</p>
+            <div class="f16 top-line" style="padding:2rem 0 0;margin: 15px 0 0;">选手简介<i class="icon-require"></i></div>
+            <div class="write-cells" style="padding:1rem 0 0;">
+                <textarea class="describe" placeholder="请输入岗位职责与要求" style="height:10rem;padding: 0 1.5rem 1.5rem 0"></textarea>
+            </div>
+        </div>
+
+        
+        <div class="write-cells bg-f" style="padding:0 0 0 1.5rem;margin: 1rem 0 0;">
+            <div class="f16" style="padding:2rem 0 0;">选手视频<i class="icon-require"></i></div>
+            <ul class="upload-pic-ul bg-f">
+                <li>
+                    <i class="f01"></i>
+                    <p class="f02 f12 c999 ta-c">点击上传视频<br><span>0/9</span></p>
+                    <video width="320" height="240" controls style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;">
+                        <source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4">
+                        <source src="https://www.runoob.com/try/demo_source/movie.ogg" type="video/ogg">
+                        您的浏览器不支持 video 标签。
+                    </video>
+                </li>            
+            </ul>
+            <p class="c666 f12">视频大小≤25M</p>
+            <div class="f16 top-line" style="padding:2rem 0 0;margin: 15px 0 0;">详情图片</div>
+            <ul class="upload-pic-ul bg-f">
+                <li>
+                    <i class="f01"></i>
+                    <p class="f02 f12 c999 ta-c">点击上传图片<br><span>0/9</span></p>
+                </li>            
+            </ul>
+            <p class="c666 f12" style="padding:0 0 2rem;">尺寸400*400，大小≤5M（jpg、png、gif）</p>
+        </div>      
+
+        <div class="write-cells bg-f" style="padding:0 0 0 1.5rem;margin: 1rem 0 0;">
+            <div class="d-flex d-flex-center write-cell bottom-line">
+                <div class="left f16" style="width:auto;">单行文本标题<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write ta-r" placeholder="点击输入">
+                </div>                                                          
+            </div> 
+            <div class="f16" style="padding:1.5rem 0 0;">多行文本标题<i class="icon-require"></i></div>
+            <div class="write-cells" style="padding:1rem 0 0;">
+                <textarea class="describe" placeholder="点击输入" style="height:5rem;padding: 0 1.5rem 1.5rem 0"></textarea>
+            </div>
+            <div class="f16 top-line" style="padding:2rem 0 0;">上传图片标题<i class="icon-require"></i></div>
+            <ul class="upload-pic-ul bg-f">
+                <li>
+                    <i class="f01"></i>
+                    <p class="f02 f12 c999 ta-c">点击上传图片<br><span>0/9</span></p>
+                </li>            
+            </ul>
+            <p class="c666 f12" style="padding:0 0 1.5rem;">图片大小≤5M</p>
+            <div class="f16 top-line" style="padding:2rem 0 0;">上传视频标题<i class="icon-require"></i></div>
+            <ul class="upload-pic-ul bg-f">
+                <li>
+                    <i class="f01"></i>
+                    <p class="f02 f12 c999 ta-c">
+                        点击上传视频<br><span>0/9</span></p>
+                </li>            
+            </ul>
+            <p class="c666 f12" style="padding:0 0 2rem;">图片大小≤25M</p>
+        </div>
+
+        <div class="write-cells bg-f" style="padding:0 0 0 1.5rem;margin: 1rem 0 0;">
+            <div class="d-flex d-flex-center write-cell bottom-line f12 c666">
+                请输入真实联系号码，便于后期领奖联系您（不会泄露其他人）                                                       
+            </div> 
+            <div class="d-flex d-flex-center write-cell bottom-line">
+                <div class="left f16">联系号码<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="write ta-r" placeholder="点击输入">
+                </div>                                                          
+            </div> 
+            <div class="d-flex d-flex-center write-cell bottom-line">
+                <div class="left f16">微信</div>
+                <div class="flex right">
+                    <input class="write ta-r" placeholder="选填">
+                </div>                                                          
+            </div>              
+            <div class="d-flex d-flex-center write-cell bottom-line">
+                <div class="left f16">联系地址</div>
+                <div class="flex right">
+                    <input class="write ta-r" placeholder="选填">
+                </div>                                                          
+            </div>           
+        </div>        
+
+    </div>
+
+
+    <div class="fix-bl">
+        <div class="f16 basewrap ta-c bold" style="line-height: 49px;background:#FF5370;color:#fff;">立即报名</div>
+    </div>
+</body>
+</html>
