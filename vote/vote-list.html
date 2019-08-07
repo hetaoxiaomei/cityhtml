@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>投票列表</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/new-swiper.css">
+    <style>
+        .vote-list li{margin:1.5rem 1.5rem 0;border-radius: 2px;background: #fff;position: relative;box-shadow:0 2px 5px rgba(51,51,51, .12)}
+        .vote-list li .end{display:none;}
+        .vote-list li .bt{font-size:14px;width: 7.5rem;height: 2.8rem;background: #FF5370;line-height: 2.8rem;color: #fff;text-align: center;border-radius: 2px;}
+        .vote-list li .time{height:2.4rem;line-height: 2.4rem;color: #fff;position:absolute;bottom:0;left:0;padding:0 1rem;
+        background:linear-gradient(to left,rgba(0,0,0,0),rgba(255,169,68,.4),#FF3576 60%,#E600F0);width:100%;}
+        .vote-list li .pic>img{width:100%;display:block;border-top-left-radius: 2px;border-top-right-radius: 2px;}
+        .vote-list li.gray .time{background:linear-gradient(to left,rgba(255,255,255,0),rgba(185,185,185,1) 45%)}
+        .vote-list li.gray .bt{display: none;}
+        .vote-list li.gray{color:#ccc}
+        .vote-list li.gray .end{display: block;background: rgba(46,46,46,.6);width: 8rem;height: 8rem;border-radius: 50%;position: absolute;bottom: 1.5rem;right: 2rem;font-size: 1.6rem;}
+        .vote-list li .end>div{width: 7rem;height: 7rem;box-sizing: border-box;border:1px solid #fff;border-radius: 50%;margin: .5rem 0 0 .5rem;text-align: center;
+        line-height: 7rem;transform: rotate(-30deg);color: #fff}
+    </style>
+</head>
+<body>
+    <div class="basewrap">
+        <div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img class="img-w-100" src="../img/01.jpg" />
+                </div>
+                <div class="swiper-slide">
+                    <img class="img-w-100" src="../img/01.jpg" />
+                </div>		
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>	
+        </div>   
+        
+        <ul class="vote-list">
+            <li>
+                <div class="pic rel">
+                    <img src="../img/03.jpg">
+                    <div class="f14 time bz">2019-07-24 12:00 投票进行中</div>
+                </div>
+                <div style="padding:1.5rem 1rem;">
+                    <p class="f16 clamp1 bold">我是爱丽丝的巧克力开好有感觉口让我惊呆...</p>
+                    <div class="d-flex d-flex-center f15" style="margin:1rem 0 0;">
+                        <div>选手：98人</div>
+                        <div style="margin:0 0 0 1rem;">总票数：1264票</div>
+                        <div class="flex"></div>
+                        <div class="bt">我要参与</div>
+                    </div>
+                </div>
+                <div class="end">
+                    <div>已结束</div>
+                </div>
+            </li>
+
+            <li class="gray">
+                <div class="pic rel">
+                    <img src="../img/03.jpg">
+                    <div class="f14 time bz">2019-07-24 12:00 投票已结束</div>
+                </div>
+                <div style="padding:1.5rem 1rem;">
+                    <p class="f16 clamp1 bold">我是爱丽丝的巧克力开好有感觉口让我惊呆...</p>
+                    <div class="d-flex d-flex-center f15" style="margin:1rem 0 0;">
+                        <div>选手：98人</div>
+                        <div style="margin:0 0 0 1rem;">总票数：1264票</div>
+                        <div class="flex"></div>
+                        <div class="bt">我要参与</div>
+                    </div>
+                </div>
+                <div class="end">
+                    <div>已结束</div>
+                </div>
+            </li>     
+
+        </ul>
+
+        <div class="ta-c f12 c999" style="padding:2.5rem 0;">已加载全部</div>
+
+    </div>
+
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+    	/*广告图*/
+	    var swiper = new Swiper('.swiper-container-topbanner', {
+	        pagination: '.swiper-container-topbanner .swiper-pagination',
+	        paginationClickable: true,
+	        autoplay:3000,
+	        centeredSlides: true,
+	        autoplayDisableOnInteraction: false,
+			loop:1
+	    }); 
+    </script>
+
+</body>
+</html>
