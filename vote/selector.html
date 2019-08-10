@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>选手详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        body{background: #fff;}
+        .selector-top{padding:2.5rem 1.5rem;position: relative;}
+        .selector-top .head{border-radius:2px;width:7.5rem;height:7.5rem;margin: 0 1rem 0 0;}
+        .selector-top .number{padding: .2rem .3rem;font-size: 1.1rem;background: linear-gradient(to bottom,#595959,#242424);
+                color: #fff;display: block;float: left;}
+        .selector-top .data{margin: 1.5rem 0 0;}
+        .selector-top .data i{font-size: 1.8rem;color: #ff5a00;font-weight: bold}
+        .selector-top .rule{position: absolute;top:2.5rem;right:1.5rem;width: 5.8rem;font-size:1.2rem;color: #999;text-align: center;padding:0 0 .4rem;}
+        .selector-top .arrow{display: inline-block;height: 6px;width: 6px;border-width: 1px 1px 0 0;border-color: #666;
+            border-style: solid;-webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);margin-top: -5px;}
+
+        .index-type-select-nav {background: #fff;height: 5rem;line-height: 5rem;}
+        .index-type-select-nav li {margin: 0;padding: 0 10px;height: 5rem;font-size: 1.6rem;position: relative;line-height: 5rem;text-align: center;color: #666;}
+        .index-type-select-nav li.active {color: #ff5a00;font-size: 1.6rem;}
+        .index-type-select-nav li:before {content: "";width: 6.4rem;height: .2rem;position: absolute;bottom: 0;left: 50%;transform: translate(-50%,0);background: #ff5a00;
+            display: none;border-radius: .2rem;}
+        .index-type-select-nav li.active:before {display: block;}
+        .selector-slide-bt>a {width: 4.4rem;height: 4.4rem;border-radius: 50%;line-height: 4.4rem;display: block;box-shadow: 0 0 1px #ccc;}
+        .selector-slide-bt {position: fixed;right: 1.5rem;bottom: 10rem;z-index: 2;}
+        .index-bottom-nav{background-color: #fff;height: 4.9rem;box-shadow: 0 0 15px rgba(0, 0, 0, .1);text-align: center;position: relative;}
+        .index-bottom-nav .bt{height:3.5rem;line-height: 1.5rem;font-size: 1.4rem;text-align: center;line-height: 3.5rem;border-radius: 2px;color: #fff;}
+        .index-bottom-nav .circleicon{margin:-2.6rem auto 0;;width:6.5rem;height: 6.5rem;border-radius: 50%;background: #fff;box-shadow: 0 0 15px rgba(0, 0, 0, .1);}
+        .index-bottom-nav .fangkuai{position:absolute;top:0;left:0;width: 100%;height: 100%;background: #fff;} 
+        .index-bottom-nav .icon-present{position: absolute;top:-2.2rem;left: 50%;transform: translate(-50%,0);width: 5.6rem;height: 5.6rem;display: block;background: url(img/icon-vote.png) no-repeat;background-position: -1.7rem -4.4rem;background-size: 50rem;}
+        .support-cell{margin:0 0 0 1.5rem;padding: 1.5rem 1.5rem 1.5rem 0}
+        .support-cell .head{width:4rem;height:4rem;display:block;border-radius:50%;margin: 0 .7rem 0 0;}
+    </style>
+</head>
+<body>
+    <div class="basewrap" style="padding:0 0 7rem"> 
+        <div class="d-flex selector-top">
+            <img class="head" src="../img/01.jpg">
+            <div class="flex">
+                <div style="overflow:hidden;margin: .5rem 0 0;">
+                    <span class="number">02号</span>
+                </div>
+                <div class="f16 clamp1" style="margin:.5rem 0 0;">那么美那么靓组合</div>
+                <div class="d-flex data c666 f12">
+                    <div class="flex">
+                        <i>7682</i>投票
+                    </div>
+                    <div class="flex ta-c">
+                        <i>7682</i>人气
+                    </div>
+                    <div class="flex ta-r">
+                        <i>7682</i>礼物
+                    </div>                    
+                </div>
+            </div>
+            <div class="rule bottom-line">活动规则<i class="arrow"></i></div>
+        </div>
+
+        <div style="height:1rem;background:#f8f8f8;"></div>
+        <!--详情-->
+        <ul class="d-flex basewrap index-type-select-nav bottom-line">
+            <li class="active flex">选手信息</li>
+            <li class="flex">支持列表</li>			
+        </ul>  
+        <!--详情-->
+        <div id="description-detail">
+            <div style="padding:1.5rem 1.5rem 2rem">
+                <video width="320" height="240" controls style="width: 100%;height: 100%;margin: 0 0 1rem">
+                    <source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4">
+                    <source src="https://www.runoob.com/try/demo_source/movie.ogg" type="video/ogg">
+                    您的浏览器不支持 video 标签。
+                </video>
+                <img src="../img/01.jpg" style="display:block;width:100%;margin: 0 0 1rem">
+                <p class="f18 bold" style="margin:2.5rem 0 1rem;">活动介绍：</p>
+                <p class="f14" style="line-height:1.6">网络投票是投票为中心的社会化网络服务，网络投票的票数的统计和显示完全由软件控制，无须人工参与，在一定程度上能够保证投票的公正性。
+                </p>                                                            
+            </div>
+            <div class="none" style="padding:1.5rem 0 0;">
+                <div class="d-flex d-flex-center bottom-line support-cell">
+                    <img class="head" src="../img/01.jpg">
+                    <div>
+                        <p class="f14">阿哲林熙为TA投出一票</p>
+                        <p class="c666" style="margin:.8rem 0 0;">2019-07-25 14:28:16</p>
+                    </div>
+                </div>
+                <div class="d-flex d-flex-center bottom-line support-cell">
+                    <img class="head" src="../img/01.jpg">
+                    <div>
+                        <p class="f14">阿哲林熙为TA投出一票</p>
+                        <p class="c666" style="margin:.8rem 0 0;">2019-07-25 14:28:16</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="fix-bl">
+        <div class="basewrap d-flex d-flex-center index-bottom-nav"> 
+            <a class="flex bt" style="background: #ff5a00;margin:0 0 0 1.5rem;">投TA一票</a>  
+            <div class="rel" style="width:9.5rem;height: 4.9rem;">
+                <div class="circleicon"></div>
+                <div class="fangkuai"></div>
+                <div class="icon-present"></div>
+            </div>
+            <a class="flex bt" style="background: #FF5370;margin:0 1.5rem 0 0;">分享助力</a>   
+        </div>
+    </div>
+
+    <div class="f14 ta-c selector-slide-bt">
+        <a class="bg-f c666" style="background:#f3f3f3;">返回</a>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.select-list-ul li .bt').on('click',function(){
+            $(this).addClass('active');
+            $(this).html('已投')
+        }) 
+
+        $('.index-type-select-nav li').on('click',function(){
+            $(this).addClass('active').siblings('li').removeClass('active');
+            var a=$(this).index();
+            $('#description-detail').children('div').hide().siblings('div').eq(a).show();
+        }) 
+    </script>
+
+</body>
+</html>
