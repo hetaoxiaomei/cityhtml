@@ -16,12 +16,7 @@
 </head>
 <body class="basewrap">
     <div style="padding:0 0 7rem;">
-        <!--导航-->
-        <ul class="d-flex index-type-select-nav">
-            <li class="active flex">全部</li>
-            <li class="flex">车找人</li>
-            <li class="flex">人找车</li>				
-        </ul>
+     
 
         <!--banner图-->
         <div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
@@ -37,7 +32,6 @@
             <div class="swiper-pagination"></div>		
         </div>  
 
-
         <!--订阅-->
         <div class="d-flex d-flex-center subscribe-cell">
             <div class="flex">
@@ -45,8 +39,7 @@
                 <p class="f12 c666" style="margin:.5rem 0 0;">订阅我，每天推送最新消息</p>
             </div>
             <div class="bt">+立即订阅</div>
-        </div>
-        
+        </div>           
 
         <!--搜索-->
         <div class="d-flex d-flex-center carpooling-serach">
@@ -59,6 +52,15 @@
             </div>            
             <div class="bt">查询</div>           
         </div> 
+
+        <!--导航-->
+        <div id="nav-js">
+            <ul class="d-flex basewrap index-type-select-nav">
+                <li class="active flex">全部</li>
+                <li class="flex">车找人</li>
+                <li class="flex">人找车</li>				
+            </ul>
+        </div>
 
         <!--拼车列表-->
         <div>
@@ -99,6 +101,43 @@
                     <li class="li04">备注：备注备注备注备注备注备注备注备注</li>        
                 </ul>                   
 
+                <ul class="carpooling-ul">
+                    <li class="d-flex d-flex-center bottom-line top">
+                        <div class="head">
+                            <img src="../img/02.jpg">
+                        </div>                        
+                        <div class="clamp1 f15">阿哲leon阿哲阿哲阿哲阿哲</div>
+                        <div class="label01 active">人找车&nbsp4人</div>
+                        <div class="flex"></div>
+                        <div class="call">
+                            <i></i>拨打电话
+                        </div>
+                    </li>
+                    <li class="d-flex" style="padding:1.5rem 1.2rem 0">
+                        <div class="zhiding">置顶</div>
+                        <div class="start-time">每天10:00 出发</div> 
+                        <div class="start-time">￥130/人</div>  
+                        <div class="flex"></div> 
+                        <div style="padding:.8rem 0 0 .8rem;">
+                            <i class="icon-shenglve"></i>
+                        </div>
+                    </li>                   
+                    <li class="starting-point">
+                        <div class="xu-line"></div>
+                        <div class="d-flex d-flex-center f15">
+                            <div class="dot01">起</div>
+                            <div class="flex">天河区林和天安人寿</div>
+                        </div>
+                        <div class="d-flex d-flex-center f16" style="margin:1rem 0 0;">
+                            <div class="dot02">终</div>
+                            <div class="flex">海珠区黄埔大道236号</div>
+                        </div>
+                    </li>
+                    <li class="li03">途径：珠江新城，广州塔，客村</li>
+                    <li class="li04">备注：备注备注备注备注备注备注备注备注</li>        
+                </ul>                   
+    
+
                 <!--已发车-->
                 <ul class="carpooling-ul gray">
                     <li class="d-flex d-flex-center bottom-line top">
@@ -107,7 +146,7 @@
                         </div>                        
                         <div class="clamp1 f15">阿哲leon</div>
                         <div class="label01">车找人&nbsp4空位</div>
-                        <div class="flex"></div>
+                        <div class="flex"></div> 
                         <div class="call">
                             <i></i>拨打电话
                         </div>
@@ -144,7 +183,7 @@
                         </div>                        
                         <div class="clamp1 f15">阿哲leon</div>
                         <div class="label01">车找人&nbsp4空位</div>
-                        <div class="flex"></div>
+                        <div class="flex"></div> 
                         <div class="call">
                             <i></i>拨打电话
                         </div>
@@ -239,6 +278,18 @@
 
         $('.carpooling-sort .flex').on('click',function(){
             $(this).addClass('active').siblings('.flex').removeClass('active');
+        })  
+
+        var a=$('#nav-js').offset().top;
+        $(window).scroll(function(){
+            
+            if($(window).scrollTop() >=a){
+                $('#nav-js').addClass('fix-tl');
+                $('#nav-js .index-type-select-nav').addClass('bottom-line')
+            }else{
+                $('#nav-js').removeClass('fix-tl');
+                $('#nav-js .index-type-select-nav').removeClass('bottom-line')
+            }
         })  
     </script>	
 </body>

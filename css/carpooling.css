@@ -56,9 +56,9 @@
 .carpooling-serach{
     box-sizing: border-box;
     padding: 0 1.2rem 0 0;
-    margin: 1rem 0 0;
     background: #fff;
     height: 5rem;
+    margin: 1rem 0;
 }
 
 .carpooling-serach .turn{
@@ -153,6 +153,8 @@
     box-sizing: border-box
 }
 
+.carpooling-ul .top .clamp1{max-width:26%;}
+
 .carpooling-ul.gray{
     -webkit-filter: grayscale(1); /* Webkit */
     filter: gray; /* IE6-9 */  
@@ -166,7 +168,7 @@
 }
 
 
-.carpooling-ul .label01{
+.carpooling-ul .label01,.carpooling-ul .label01.active{
     height:1.6rem;
     border-radius: 2px;
     font-size: 1.2rem;
@@ -181,6 +183,11 @@
 .carpooling-ul .label01{
     color: #2073F0;
     background: rgba(0,156,255,.1);
+}
+
+.carpooling-ul .label01.active{
+    color: #00b40d;
+    background: rgba(0,180,13,.1);
 }
 
 .carpooling-ul .label01.gray{
@@ -236,6 +243,22 @@
     border: 1px solid #2073F0;
 }
 
+.carpooling-ul .label01.active:before{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #00b40d;
+}
+
 
 
 
@@ -284,7 +307,7 @@
 
 .carpooling-ul .call{
     margin: 0 0 0 1rem;
-    width:9rem;
+    width:8.5rem;
     height:2.8rem;
     background:#2073F0;
     color: #fff;
