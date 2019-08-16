@@ -12,13 +12,14 @@
     overflow: hidden;
     background:#fff;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .recruit-icon>a{display: block;}
 
 .recruit-icon span{
-    width: 4.3rem;
-    height: 4.3rem;
+    width: 4.5rem;
+    height: 4.5rem;
     display: block;
     margin: 0 auto;
     border-radius: 50%;
@@ -30,30 +31,30 @@
     height: 100%;
 }
 
-.recruit-icon a:nth-child(1) span i{background-position:-12.3rem -2.4rem;}
+.recruit-icon a:nth-child(1) span i{background-position:-9.7rem -29.3rem;}
 
-.recruit-icon a:nth-child(2) span i{background-position:-16.8rem -2.4rem;}
+.recruit-icon a:nth-child(2) span i{background-position:-9.7rem -34rem;}
 
-.recruit-icon a:nth-child(3) span i{background-position:-21.3rem -2.4rem;}
+.recruit-icon a:nth-child(3) span i{background-position:-9.7rem -38.7rem;}
 
 .recruit-icon a:nth-child(1) span{
-    background:linear-gradient(to bottom,#ee0000,#ff7b61) ;
+    /* background:linear-gradient(to bottom,#ee0000,#ff7b61) ; */
     box-shadow: 0 2px 5px rgba(255,58,27,.35)
 }
 
 .recruit-icon a:nth-child(2) span{
-    background:linear-gradient(to bottom,#fd781f,#fd971f) ;
+    /* background:linear-gradient(to bottom,#fd781f,#fd971f) ; */
     box-shadow: 0 2px 5px rgba(253,120,31,.35)
 }
 
 .recruit-icon a:nth-child(3) span{
-    background:linear-gradient(to bottom,#107af1,#3fcbff) ;
-    box-shadow: 0 2px 5px rgba(0,145,255,.35)
+    /* background:linear-gradient(to bottom,#107af1,#3fcbff) ; */
+    box-shadow: 0 2px 5px rgba(13,40,255,.35)
 }
 
 
 .recruit-icon p{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #333;
     margin-top: .8rem;
 }
@@ -64,18 +65,19 @@
     line-height: 2.4rem;
     width: 6rem;
     font-size: 1.2rem;
-    color: #ff3a1b;
+    color: #ff5a00;
     text-align: center;
     position: relative
 }
 
 .recruit-title-cell{
-    padding:1.2rem;
+    padding:1.2rem 1.5rem;
     background: #fff;
     position: relative;
     overflow: hidden;
     height: 4.5rem;
-    box-sizing: border-box
+    box-sizing: border-box;
+    margin-top: 1rem !important;
 }
 
 .recruit-title-cell .number{
@@ -116,7 +118,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    border: 1px solid #ff3a1b;
+    border: 1px solid #ff5a00;
     -webkit-transform: scale(0.5);
     transform: scale(0.5);
     -webkit-transform-origin: 0 0;
