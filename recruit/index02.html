@@ -106,7 +106,7 @@
         </div>
 
         <!--最新推荐-->
-        <div class="d-flex recruit-title-cell" style="padding:0">
+        <div class="d-flex recruit-title-cell bottom-line" style="padding:0">
             <div class="flex new-recommend-wrapper f16">
                 <div class="new-recommend-list">
                     <a v-for="(job,index) in jobs" v-bind:class="{active:selectindex==index}" @click="checkItem(index)" class="new-recommend-item">{{job.item}}</a>	 
@@ -115,9 +115,9 @@
         </div>
 
         <!--最新推荐-->
-        <div class="bg-f">
+        <div>
             <div class="recurit-list">
-                <div class="top bottom-line">
+                <div class="top">
                     <div class="d-flex d-flex-center">
                         <p class="clamp1 f16 f01 flex"><i class="zhiding">置顶</i>熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
                         <p class="f16 money bold" style="color:#ff5a00;margin: 0 0 0 2rem">5000元/月</p>
@@ -129,7 +129,7 @@
                             <span>学历不限</span>
                             <span>年龄不限</span>
                         </p> 
-                        <p class="f12 c999" style="margin-top:1rem;">1小时前</p>
+                        <p class="f12 c999 time">1小时前</p>
                     </div>
                     <div class="left">
                         <div class="type">
@@ -150,12 +150,52 @@
                                 <span class="company-name clamp1">理智责任有限公司理智责任有限公司理智责任有限公司</span>
                                 <i class="vip"></i>
                             </div>
-                            <div class="f12 c666" style="margin:10px 0 0;" >广州市天河区林和东路285号</div>
+                            <div class="f12 c666 clamp1" style="margin:10px 0 0;line-height: 1.25" >广州市天河区林和东路285号</div>
                         </div>
                         <div class="bt">申请</div>
                     </div>
                 </div> 
-            </div>             
+            </div>   
+            <div class="recurit-list">
+                <div class="top">
+                    <div class="d-flex d-flex-center">
+                        <p class="clamp1 f16 f01 flex"><i class="zhiding">置顶</i>熟手收银员/人事专员/保洁阿姨/人事专员/保洁阿姨</p>
+                        <p class="f16 money bold" style="color:#ff5a00;margin: 0 0 0 2rem">5000元/月</p>
+                    </div>
+                    <div class="d-flex d-flex-center">
+                        <p class="f02 clamp1 flex">
+                            <span>性别不限</span>
+                            <span>经验不限</span>
+                            <span>学历不限</span>
+                            <span>年龄不限</span>
+                        </p> 
+                        <p class="f12 c999 time">1小时前</p>
+                    </div>
+                    <div class="left">
+                        <div class="type">
+                            <span>社保</span>
+                            <span>公积金</span>
+                            <span>饭补</span>
+                            <span>交通补贴</span>
+                            <span>话补</span>
+                        </div> 
+                    </div> 
+
+                    <div class="d-flex d-flex-center" style="margin:2rem 0 0;"> 
+                        <div class="company-head">
+                            <img src="../img/02.jpg">
+                        </div>
+                        <div class="flex">
+                            <div class="f15" style="overflow:hidden">
+                                <span class="company-name clamp1">理智责任有限公司理智责任有限公司理智责任有限公司</span>
+                                <i class="vip"></i>
+                            </div>
+                            <div class="f12 c666 clamp1" style="margin:10px 0 0;line-height: 1.25" >广州市天河区林和东路285号</div>
+                        </div>
+                        <div class="bt">申请</div>
+                    </div>
+                </div> 
+            </div>                                 
         </div>
              
     </div>
