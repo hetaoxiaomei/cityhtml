@@ -7,6 +7,7 @@
 .recurit-list{
     background: #fff;
     position: relative;
+    margin: 0 0 1rem;
 }
 
 .recurit-list .top_ding{
@@ -43,8 +44,8 @@
 .recurit-list .top .f02{
     font-size: 1.2rem;
     color: #666;
-    line-height: 1.2;
-    margin-top: 1rem;
+    line-height: 1.3;
+    margin-top: .6rem;
 }
 
 .recurit-list .top .f02 span:after{content: "丨";}
@@ -105,14 +106,14 @@
 
 .recurit-list .type{
     overflow: hidden;
-    margin-top: 1rem;
+    margin-top:.6rem;
     height:2rem;
 }
 
 .recurit-list .type span{
     font-size: 1.2rem;
-    background:rgba(255,90,0,.1);
-    color:#ff5a00;
+    background:rgba(160,160,160,.1);
+    color:#666;
     padding: 0 .5rem;
     height: 2rem;
     line-height: 2rem;
@@ -140,15 +141,17 @@
 
 .recurit-list .bt{
     font-size: 1.5rem;
-    color: #fd781f;
+    color: #ff5a00;
     height: 2.8rem;
     width: 6.5rem;
     border: 1px solid #ff5a00;
     border-radius: 1.4rem;
     text-align: center;
     line-height: 2.8rem;
-    margin: 1.2rem 0 0
+    margin: 0 0 0 1rem;
 }
+
+.recurit-list .top .time{margin: .6rem 0 0 3.5rem;line-height: 1.3}
 
 .recurit-list .vip{
     width: 1.6rem;
