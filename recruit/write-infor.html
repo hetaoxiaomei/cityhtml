@@ -12,6 +12,12 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/release.css">
     <link rel="stylesheet" type="text/css" href="../css/LArea.css">
+
+    <style>
+        #spread-js.top-line:before{
+            z-index: 2
+        }
+    </style>
 </head>
 <body>
     <div class="basewrap" style="padding: 0 0 10rem;">
@@ -56,8 +62,97 @@
                     <div class="radio active"><span></span>若干</div>
                 </div>                             
             </div>  
+            <!--展开-->
+            <div id="spread-js" class="top-line" style="height: auto;padding:0;">
+                <p class="ta-c f13 c666 write-cell " style="padding: 1.5rem 0 0;height: auto;">
+                    点击展开输入更多要求，精确招人<i class="arrow-right" style="display: inline-block;transform:rotate(90deg);vertical-align:-2px;"></i>
+                </p>
+  
+                <!--任职描述-->
+                <div class="none">
+                    <div class="d-flex d-flex-center write-cell bottom-line">
+                        <div class="left bold">性别要求</div>  
+                        <div class="flex right">
+                            <div class="recruit-type">
+                                <span class="active" style="margin-right:6%;width: 28%">不限</span>
+                                <span style="margin-right:6%;width: 28%">男</span>
+                                <span style="width: 28%">女</span>
+                            </div>   
+                        </div>                     
+                    </div>
+                    <div class="d-flex d-flex-center write-cell bottom-line">
+                        <div class="left bold">年龄要求</div>
+                        <div class="flex right" style="margin-left:0">
+                            <select class="c999 change">
+                                <option>年龄不限</option>
+                                <option>18岁以上</option>
+                            </select>
+                        </div>   
+                        <div class="arrow-right"></div>             
+                    </div> 
+                    <div class="d-flex d-flex-center write-cell bottom-line">
+                        <div class="left bold">学历要求</div>
+                        <div class="flex right" style="margin-left:0">
+                            <select class="c999 change">
+                                <option>学历不限</option>
+                                <option>高中以下</option>
+                                <option>高中</option>
+                                <option>中专/技校</option>
+                                <option>大专</option>
+                                <option>本科</option>
+                                <option>硕士</option>
+                                <option>博士</option>
+                                <option>MBA/EMBA</option>
+                                <option>其他</option>
+                            </select>
+                        </div>       
+                        <div class="arrow-right"></div>          
+                    </div>  
+                    <div class="d-flex d-flex-center write-cell bottom-line">
+                        <div class="left bold">经验要求</div>
+                        <div class="flex right" style="margin-left:0">
+                            <select class="c999 change">
+                                <option>经验不限</option>
+                                <option>无工作经验</option>
+                                <option>应届毕业生</option>
+                                <option>1年以下工作经验</option>
+                                <option>1-3年工作经验</option>
+                                <option>3-5年工作经验</option>
+                                <option>5-10年工作经验</option>
+                                <option>10年以上工作经验</option>
+                            </select>
+                        </div>  
+                        <div class="arrow-right"></div>              
+                    </div>   
+                    <!--单位福利-->
+                    <div class="bottom-line" style="padding: 0 1.5rem 0 0;">
+                        <div class="f14 bold" style="padding:1.5rem 0 0;">单位福利</div>
+                        <div style="padding:1.6rem 0;">
+                            <div id="company-welfare-js" class="company-welfare clearfix">
+                                <span class="active">交通补贴</span>
+                                <span>加班补贴</span>
+                                <span>餐补</span>
+                                <span>房补</span>
+                                <span>话补</span>
+                                <span>包吃</span>
+                                <span>包住</span>
+                                <span>医保</span>
+                                <span>社保</span>
+                                <span>年终奖</span>
+                                <span>住房公积金</span>
+                                <span>节日福利</span>
+                                <span>年假</span>
+                                <span>其他补贴</span>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+        
+       
+            </div>
+    
             <!--任职描述-->
-            <div class="f15 bold top-line" style="padding:2rem 0 0;">职位描述</div>
+            <div class="f15 bold" style="padding:2rem 0 0;">职位描述</div>
             <div class="write-cells" style="padding:1.2rem 0;">
                 <div>
                     <textarea class="describe" placeholder="请输入岗位职责与要求"></textarea>  
@@ -123,85 +218,7 @@
             </div>                                                                             
         </div> 
 
-        <!--任职描述-->
-        <div class="write-cells bg-f" style="padding:0 0 0 1.5rem;margin: 1rem 0 0;">
-            <div class="d-flex d-flex-center write-cell  bottom-line">
-                <div class="left bold">性别要求</div>               
-                <div class="flex sex"> 
-                    <div class="radio active" style="margin:0 12% 0 0;"><span></span>不限</div>
-                    <div class="radio" style="margin:0 12% 0 0;"><span></span>男</div>
-                    <div class="radio" style="margin:0;"><span></span>女</div>
-                </div>
-            </div>
-            <div class="d-flex d-flex-center write-cell">
-                <div class="left bold">年龄要求</div>
-                <div class="flex right" style="margin-left:0">
-                    <select class="c999 change">
-                        <option>年龄不限</option>
-                        <option>18岁以上</option>
-                    </select>
-                </div>   
-                <div class="arrow-right"></div>             
-            </div> 
-            <div class="d-flex d-flex-center write-cell top-line">
-                <div class="left bold">学历要求</div>
-                <div class="flex right" style="margin-left:0">
-                    <select class="c999 change">
-                        <option>学历不限</option>
-                        <option>高中以下</option>
-                        <option>高中</option>
-                        <option>中专/技校</option>
-                        <option>大专</option>
-                        <option>本科</option>
-                        <option>硕士</option>
-                        <option>博士</option>
-                        <option>MBA/EMBA</option>
-                        <option>其他</option>
-                    </select>
-                </div>       
-                <div class="arrow-right"></div>          
-            </div>  
-            <div class="d-flex d-flex-center write-cell top-line">
-                <div class="left bold">经验要求</div>
-                <div class="flex right" style="margin-left:0">
-                    <select class="c999 change">
-                        <option>经验不限</option>
-                        <option>无工作经验</option>
-                        <option>应届毕业生</option>
-                        <option>1年以下工作经验</option>
-                        <option>1-3年工作经验</option>
-                        <option>3-5年工作经验</option>
-                        <option>5-10年工作经验</option>
-                        <option>10年以上工作经验</option>
-                    </select>
-                </div>  
-                <div class="arrow-right"></div>              
-            </div>   
 
-        </div>        
- 
-        <div class="bg-f" style="margin-top:1rem;padding: 0 1.5rem;">
-            <!--单位福利-->
-            <div class="f14 bold" style="padding:1.2rem 0 0;">单位福利</div>
-            <div class="write-cells" style="padding:1.6rem 0;">
-                <div id="company-welfare-js" class="company-welfare clearfix">
-                    <span class="active">交通补贴</span>
-                    <span>加班补贴</span>
-                    <span>餐补</span>
-                    <span>房补</span>
-                    <span>话补</span>
-                    <span>包吃</span>
-                    <span>包住</span>
-                    <span>医保</span>
-                    <span>社保</span>
-                    <span>年终奖</span>
-                    <span>住房公积金</span>
-                    <span>节日福利</span>
-                    <span>年假</span>
-                    <span>其他补贴</span>
-                </div>
-            </div>
-        </div>
 
         <div class="f12" style="padding:1.5rem;color:#ff5a00;">· 置顶信息可有效提升浏览量</div>
     </div>
@@ -209,7 +226,7 @@
     <!--底部-->
     <div class="fix-bl" style="box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
         <div class="basewrap d-flex d-flex-center write-cell bz" style="padding:0 1.2rem;box-shadow: 0 0 15px rgba(0, 0, 0, .1);">
-            <div class="top-radio flex top-radio-js bold">信息置顶                   
+            <div class="top-radio flex top-radio-js bold">付费置顶                  
 
             </div>
             <div class="weui-cell__ft">
@@ -330,6 +347,11 @@
 
         $("#company-welfare-js span").on('click',function(){
             $(this).toggleClass("active");
+        })  
+
+        $("#spread-js>p").on('click',function(){
+            $(this).hide();
+            $(this).siblings('div').show()
         })  
 
     </script>
