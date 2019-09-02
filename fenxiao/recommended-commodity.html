@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>收益明细</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/fenxiao.css">
+    <style>
+        .income-cell{padding: 0}
+        .income-cell .head{width: 8rem;height:8rem;display:block;margin: 0 1.3rem 0 0;border-radius:5px;}
+        .income-cell .money{color:#FF1C1C;margin: .8rem 0 0}
+        .income-cell .name{line-height: 1.3;margin: .5rem 0 0;}
+        .income-cell .bottom{padding: 1rem;overflow: hidden;}
+        .income-cell .bottom .bt{float:right; color: #333;border:1px solid #999; margin: 0 0 0 2.6%;width: 23%;height: 2.7rem;text-align: center;line-height: 2.5rem;font-size: 1.3rem;border-radius:2px;}
+        .income-cell .bottom .bt:last-child{margin:0;}
+        .income-cell .xiajia-pic{display: block;position: absolute;top: 5.5rem;right:5.2rem;width: 5.5rem;}
+   </style>
+</head> 
+<body>
+    <div class="basewrap bz" style="padding:0 1rem 6rem;">
+        <div class="bz income-cell">
+            <div class="d-flex" style="padding: 1.5rem 1rem;">
+                <img class="head" src="">
+                <div class="flex">
+                    <div class="f16 clamp1 name">商品名称商品名称商品名称商品称商品称商品</div>
+                    <div class="f14" style="margin: 1.5rem 0 0">预计收益:<i class="f16 bold" style="color: #FF1C1C">￥999.00</i></div>   
+                    <div class="f13 c999" style="margin: .8rem 0 0;overflow: hidden;">
+                        <div class="fl">售价:￥999.00</div>
+                        <div class="fr">剩余:9999</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom top-line">
+                <div class="bt bz">推荐明细</div>
+                <div class="bt bz">好友列表</div>
+                <div class="bt bz">推荐链接</div>
+                <div class="bt bz">推荐海报</div>      
+            </div>
+            <img class="xiajia-pic" src="img/fenxiao05.png">
+        </div>
+
+        <!--剩余0-->
+        <div class="bz income-cell gray">
+            <div class="d-flex" style="padding: 1.5rem 1rem;">
+                <img class="head" src="img/fenxiao04.png" style=" -webkit-filter: grayscale(100%);filter: grayscale(100%);">
+                <div class="flex">
+                    <div class="f16 clamp1 name">商品名称商品名称商品名称商品称商品称商品</div>
+                    <div class="f14" style="margin: 1.5rem 0 0">预计收益:<i class="f16 bold">￥999.00</i></div>   
+                    <div class="f13 c999" style="margin: .8rem 0 0;overflow: hidden;">
+                        <div class="fl">售价:￥999.00</div>
+                        <div class="fr">剩余:0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom top-line">
+                <div class="bt bz">好友列表</div>
+                <div class="bt bz">推荐明细</div>
+            </div>
+            <img class="xiajia-pic" src="img/fenxiao05.png">
+        </div>
+    </div>
+
+    <div class="fix-bl">
+        <div class="basewrap d-flex bg-f ta-c c999 fenxiao-bottom-nav">
+            <a class="flex" href="recommended-rewards.html">
+                <i class="icon-fenxiao-index"></i>
+                <p class="f11">首页</p>
+            </a>
+            <a class="flex" href="rank.html">
+                <i class="icon-fenxiao-rank"></i>
+                <p class="f11">排行</p>     
+            </a>
+            <a class="flex active" href="recommended-commodity.html">
+                <i class="icon-fenxiao-me"></i>
+                <p class="f11">我的</p>
+            </a>
+        </div>
+    </div>
+
+    <!--进入分销中心-->
+    <div id="know-dialog" class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle" style="padding-bottom:2rem ">
+            <div class="f14 ta-c" style="line-height: 2;padding: 4rem 2rem 2rem">
+                您是同城分销员，请进入【分销中心】<br/>查看客户及收益
+            </div>
+            <div class="ta-c f16 dialog-bt" style="color: #fff;line-height: 4rem;height: 4rem;background: linear-gradient(to right,#FF9600,#FF6C00);width: 66.7%;margin: 0 auto;border-radius: 2rem;">进入分销中心</div>
+            <img class="close abs dialog-close" src="img/fenxiao01.png" style="width:1.5rem;display: block;top:1.2rem;right:1.2rem;"> 
+        </div>
+    </div>    
+
+
+    <!--复制链接-->
+    <div id="copy-dialog" class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <div class="bz income-cell">
+                <div class="d-flex" style="padding: 2.5rem 2rem 0;">
+                    <img class="head" src="">
+                    <div class="flex">
+                        <div class="f16 clamp2 name">商品名称商品名称商品名称商品称商品称商品</div>
+                        <div class="f16 bold" style="margin: 1rem 0 0;color: #FF1C1C"><i>￥999.00</i></div>   
+                    </div>
+                </div>
+            </div>
+            <div style="padding:1.5rem 2rem 0;">
+                <textarea class="f14 c333 bz" style="-webkit-appearance: none;appearance: none;border: 1px solid #F0F0F0;display:block;width:100%;height:11rem;padding:1rem;" placeholder="【同城名称12】生活周边服务，应有尽有！xxxxxxxxxxxxx"></textarea>
+            </div>            
+            <div style="padding: 2.5rem 0 2rem">
+                <div class="ta-c f16" style="color: #fff;line-height: 4rem;height: 4rem;background: linear-gradient(to right,#FF9600,#FF6C00);width: 66.7%;margin: 0 auto;border-radius: 2rem;">复制链接</div>
+            </div> 
+        </div>
+    </div>
+
+
+</body>
+</html>

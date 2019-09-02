@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>我的客户</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/fenxiao.css">
+    <style>
+        .out-date{width: 5rem;height: 5rem;position: absolute;top: 50%;left: 60%;transform: translate(-50%,-50%)}
+    </style>
+</head> 
+<body>
+    <div class="fix-tl">
+        <div class="d-flex d-flex-center bg-f bz ta-c f16 bold select-bar">
+            <div class="flex">已结算收益<i class="sort-arrow active"></i></div>
+            <div class="flex left-line">加入时间<i class="sort-arrow"></i></div>
+        </div>  
+    </div>  
+    <div class="basewrap bz" style="padding: 4.5rem 0 8rem;">
+        <div id="outdate" class="f13 c666 ta-c" style="padding: 1.4rem 0 .4rem;">什么是"已失效"？</div>
+
+        <div style="padding: 0 1rem;">
+            <div class="d-flex d-flex-center income-cell">
+                <img class="head" src="">
+                <div class="flex">
+                    <div class="d-flex d-flex-center">
+                        <div class="clamp1 f16 flex">半夜修水工</div>
+                        <div class="f13 bold">已结算：<i class="f16 c666" style="color: #FF1C1C">￥0.01</i></div>
+                    </div>
+                    <div class="d-flex d-flex-center" style="margin: 1rem 0 0;">
+                        <div class="c999 f12 flex">2019-07-16 13:04:59</div>
+                        <div class="c999 f13">待结算:999.00</div>
+                    </div>                    
+                </div>   
+            </div>
+            <!--失效变灰-->
+            <div class="d-flex d-flex-center income-cell">
+                <img class="head" src="img/fenxiao04.png" style="-webkit-filter: grayscale(100%);filter: grayscale(100%);">
+                <div class="flex">
+                    <div class="d-flex d-flex-center">
+                        <div class="clamp1 f16 flex">半夜修水工</div>
+                        <div class="f13 bold">已结算：<i class="f16 c666">￥0.01</i></div>
+                    </div>
+                    <div class="d-flex d-flex-center" style="margin: 1rem 0 0;">
+                        <div class="c999 f12 flex">2019-07-16 13:04:59</div>
+                        <div class="c999 f13">待结算:999.00</div>
+                    </div>                    
+                </div>
+                <img class="out-date" src="img/fenxiao02.png">   
+            </div>
+        </div>
+    </div>
+
+    <div id="outdate-dialog" class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <p  class="f16 bold ta-c" style="padding: 3rem 0 2rem">什么是“已失效”？</p>
+            <div class="f14" style="line-height: 2;padding: 0 2rem 2rem"> 分销员的每个客户都有保护期，客户在保护期内进入其他分销员链接，也无法被其他分销员抢走；客户过了保护期进入其他分销员链接，则会立即被抢走,即关系已失效。</div>
+            <div class="top-line ta-c f16 dialog-bt" style="color: #FF6600;line-height: 5rem">知道了</div>
+            <img class="close abs dialog-close" src="img/fenxiao01.png" style="width:1.5rem;display: block;top:1.2rem;right:1.2rem;"> 
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.dialog-black-mask').bind("touchmove",function(e){
+            e.preventDefault();
+        });    
+        
+        $('.dialog-bt,.dialog-close').on('click',function(){
+            $('#outdate-dialog').hide();
+        });   
+
+        $('#outdate').on('click',function(){
+            $('#outdate-dialog').show();
+        }) 
+
+        $('.select-bar .flex').on('click',function(){
+            $(this).children('.sort-arrow').toggleClass('active')
+        }) 
+
+    </script>
+
+
+</body>
+</html>

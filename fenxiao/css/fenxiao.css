@@ -1,0 +1,39 @@
+.ranking-list .icon,.income-ul .arrow,.icon-help,.select-tk .arrow,.date-select .content .arrow,.sort-arrow,.fenxiao-bottom-nav i,
+.shop-commodity .arrow{background-image: url(../img/fenxiao-pic.png);background-size: 50rem;background-repeat: no-repeat;}
+.ranking-list {height: 7.5rem;position: relative;overflow: hidden;}
+.ranking-list .li01 {margin: 0 2rem 0 0;width: 2.6rem;}
+.ranking-list .li02 .head {width: 4rem;height: 4rem;border-radius: 50%;overflow: hidden;margin-right: 1.5rem;}
+.ranking-list .icon {width: 2.6rem;height: 3.4rem;display: block;}
+.ranking-list .li01 .icon {margin: 0 auto;}
+.ranking-list.bottom-line:after {left: 4.6rem;}
+.ranking-list .li02 .name{line-height: 1.3;font-size: 1.4rem}
+.ranking-list .money{width:30%;color:#FF1C1C}
+
+.select-bar{padding: .8rem 0;height:4.5rem;}
+.select-bar>div.flex{height: 2.5rem;line-height: 2.5rem;}
+.select-bar .sort-arrow{width: 1rem;height: 1.1rem;display: inline-block;background-position:-9.8rem 0;margin: 0 0 0 .5rem;}
+.select-bar .sort-arrow.active{background-position: -10.9rem 0;}
+
+.select-bar{height: 4.5rem;padding:1rem 0}
+.select-bar ul{line-height: 2.5rem;}
+.select-bar ul li{position: relative}
+.select-bar ul li.active{color: #ff5a00}
+.select-bar ul li.active:after{display: block}
+.select-bar ul li:after{content: "";width:2.4rem;height: .3rem;background: linear-gradient(to right,#FF9600,#FF6C00);
+position: absolute;bottom: -1rem;left: 50%;transform: translate(-50%,0);border-radius: .2rem;display: none}
+
+.income-cell{margin:1rem 0 0;background: #fff;padding: 1.5rem 1rem;position: relative;border-radius:5px;}
+.income-cell .head{display: block;height:4.5rem;width:4.5rem;border-radius: 50%;margin: 0 1rem 0 0;}
+
+.fenxiao-bottom-nav{height: 4.9rem;box-shadow:0 2px 15px rgba(0,0,0,.06);}
+.fenxiao-bottom-nav i{display: block;margin: .7rem auto .5rem;width: 2rem;height: 2rem;}
+.fenxiao-bottom-nav .icon-fenxiao-index{background-position:0 -3.5rem;}
+.fenxiao-bottom-nav .active .icon-fenxiao-index{background-position:0 -5.6rem;}
+.fenxiao-bottom-nav .icon-fenxiao-rank{background-position:-2.1rem -3.5rem;}
+.fenxiao-bottom-nav .active .icon-fenxiao-rank{background-position:-2.1rem -5.6rem;}
+.fenxiao-bottom-nav .icon-fenxiao-me{background-position:-4.2rem -3.5rem;}
+.fenxiao-bottom-nav .active .icon-fenxiao-me{background-position:-4.2rem -5.6rem;}
+.fenxiao-bottom-nav a{color: #999}
+.fenxiao-bottom-nav a.active{color: #FF5A00}
+
+body{line-height: 1}

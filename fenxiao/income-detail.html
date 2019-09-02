@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>收益明细</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/fenxiao.css">
+    <style>
+        .income-cell{padding:0 1rem;}
+        .icon-help{width: 1.6rem;height: 1.6rem;display: block;background-position: -8.1rem 0;}
+        .income-cell .money{color:#FF1C1C;margin: .8rem 0 0}
+    </style>
+</head> 
+<body>
+    <div class="fix-tl">
+        <div class="d-flex d-flex-center bg-f bz ta-c f16 bold select-bar">
+            <div class="flex">
+                <ul class="d-flex d-flex-center">
+                    <li class="flex active">已结算</li>
+                    <li class="flex">待结算</li>
+                    <li class="flex">已退款</li>
+                </ul>
+            </div>
+            <div class="left-line" style="padding: 0 1.5rem;">
+                <i class="icon-help"></i>
+            </div>
+        </div>  
+    </div>  
+
+    <div class="basewrap bz" style="padding: 4.5rem 1rem 8rem;">
+        <div class="bz income-cell">
+            <div class="d-flex d-flex-center" style="padding: 1.5rem 0;">
+                <img class="head" src="">
+                <div class="flex">
+                    <div class="f16 clamp1">半夜修水工</div>
+                    <div class="f12 c999" style="margin: 1rem 0 0;">2019-01-01过期</div>
+                </div>
+                <div>
+                    <div class="f13 ta-r">收益</div>
+                    <div class="f17 bold money">￥0.01</div>
+                </div>
+            </div>
+            <div class="f13 top-line" style="padding: 1.2rem 0;">收益来源：购买商品</div>
+        </div>
+
+    </div>
+
+    <!--收益规则-->
+    <div id="income-rule" class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <p class="f16 bold ta-c" style="padding: 3rem 0 2rem">收益规则</p>
+            <div class="f14" style="line-height: 2;padding: 0 2rem 2rem">
+                <p>1、订单待收货、帖子未审核，收益为待结算;</p>
+                <p>2、订单已完成、帖子已通过，收益为已结算;</p>
+                <p>3、订单已退款、帖子未通过，收益为已退款;</p>
+                <p>4、订单已完成后退款成功，不扣已结算收益;</p>
+                <p>5、使用代金券、积分抵扣的订单不参与分销;</p>
+            </div>
+            <div class="top-line ta-c f16 dialog-bt" style="color: #FF6600;line-height: 5rem">知道了</div>
+            <img class="close abs dialog-close" src="img/fenxiao01.png" style="width:1.5rem;display: block;top:1.2rem;right:1.2rem;"> 
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.dialog-black-mask').bind("touchmove",function(e){
+            e.preventDefault();
+        });    
+    
+        $('.dialog-bt,.dialog-close').on('click',function(){
+            $('#income-rule').hide();
+        });   
+
+        $('.icon-help').on('click',function(){
+            $('#income-rule').show();
+        }) 
+
+    </script>
+    
+</body>
+</html>
