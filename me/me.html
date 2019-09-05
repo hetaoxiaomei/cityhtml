@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>我的个人中心</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city2018/css/tc-bottom-nav.css">
+    <link rel="stylesheet" type="text/css" href="css/me02.css">
+</head> 
+<body>
+    <div class="basewrap" style="padding: 0 0 7rem">
+
+        <div class="rel me-top">
+            <div class="d-flex d-flex-center bz infor">
+                <div class="bz head">
+                    <img src="">
+                </div>
+                <div class="cfff flex">
+                    <p class="f16 clamp1 name">暖橘子暖橘子暖橘子暖橘子暖橘子暖橘子暖橘子暖橘子</p>
+                    <p class="f12" style="margin:.5rem 0 0;"><i>ID:25451512</i><i>（推荐人: orz大师兄）</i></p>
+                </div>
+                <div class="f12 ta-c bt">
+                    <i class="icon-sign"></i>签到
+                </div>
+            </div>
+
+            <div class="d-flex data-ul">
+                <a class="flex">
+                    <p class="f01">2</p>
+                    <p class="f02">关注商家</p>
+                </a>
+                <a class="flex">
+                    <p class="f01">8</p>
+                    <p class="f02">代金券</p>
+                </a>  
+                <a class="flex">
+                    <p class="f01">1299</p>
+                    <p class="f02">积分</p>
+                </a>    
+                <a class="flex">
+                    <p class="f01">12</p>
+                    <p class="f02">消息</p>
+                </a>  
+                <a class="flex">
+                    <i class="icon"></i>
+                    <p class="f02">商家中心</p>
+                    <i class="left-line"></i>
+                </a>                                                             
+            </div>
+
+            <img src="img/me01.jpg" style="position: absolute;bottom: -.3rem;left: 0;width: 1rem;">
+            <img src="img/me03.jpg" style="position: absolute;bottom: -.3rem;right: 0;width: 1rem;">
+        </div>
+
+        <div class="dark-blue bz" style="padding: 0 1rem;">
+            <i class="trapezoid"></i>
+            <div class="d-flex d-flex-center fenxiao-center-cell" style="position: relative;width: auto;">
+                <i class="icon" style="background-position:-6.9rem 0;"></i>
+                <div class="flex bold f01">分销中心</div>
+                <div class="f02">开始赚钱<i class="arrow01"></i></div>
+            </div>
+        </div>
+
+        <div class="dark-blue bz none">
+            <i class="trapezoid"></i>
+            <div class="d-flex" style="height:6.2rem;">
+                <div class="flex rel left">
+                    <a class="d-flex d-flex-center fenxiao-center-cell">
+                        <i class="icon" style="background-position:-6.9rem 0;"></i>
+                        <div class="flex">
+                            <div class="bold f01">分销中心</div>
+                            <div class="f02" style="margin: .8rem 0 0;">开始赚钱<i class="arrow01"></i></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex rel right">
+                    <a class="d-flex d-flex-center fenxiao-center-cell">
+                        <i class="icon" style="background-position:-3.6rem 0;"></i>
+                        <div class="flex">
+                            <div class="bold f01">同城会员</div>
+                            <div class="f02" style="margin: .8rem 0 0;">享全城优惠<i class="arrow01"></i></div>
+                        </div>
+                    </a> 
+                </div>    
+            </div>   
+        </div>
+    
+        <!--分销中心提示-->
+        <div id="fenxiao-alert" class="none">
+            <div class="mask"></div>
+            <div class="content">
+                <img src="img/me04.png">
+                <div class="bt">知道了</div>
+            </div>
+        </div>
+
+        <!--我的订单-->
+        <div class="my-order-all">
+            <div class="d-flex d-flex-center my-order-title">
+                <div class="flex item f16 bold">商品订单</div>
+                <a>
+                    <span class="f12 c999">全部订单</span><i class="arrow01"></i>
+                </a>
+            </div>
+            <ul class="me-icon-ul">
+                <!--待付款-->
+                <li>
+                    <a>
+                        <i class="icon_pc01_daifukuan"></i>
+                        <p>待付款</p>
+                    </a>
+                </li>
+                <!--待发货-->
+                <li>
+                    <a>
+                        <i class="icon_pc01_daifahuo"></i>
+                        <p>待发货</p>
+                    </a>
+                </li>
+                <!--待收货-->
+                <li>
+                    <a>
+                        <i class="icon_pc01_daishouhuo">
+                            <em class="dot01">3</em>
+                        </i>
+                        <p>待收货</p>
+                    </a>
+                </li>
+                <!--已完成-->
+                <li>
+                    <a>
+                        <i class="icon_pc01_daipingjia"></i>
+                        <p>已完成</p>
+                    </a>
+                </li>
+                <!--退款/售后-->
+                <li>
+                    <a>
+                        <i class="icon_pc01_shouhou"></i>
+                        <p>退款/售后</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="d-flex me-icon-ul top-line">
+                <!--抢优惠-->
+                <li>
+                    <a>
+                        <i class="icon_pc01_qiangyouhui"></i>
+                        <p>抢优惠</p>
+                    </a>
+                </li>
+                <!--减价-->
+                <li>
+                    <a>
+                        <i class="icon_pc01_kanjia"></i>
+                        <p>减价</p>
+                    </a>
+                </li>
+                <!--拼团-->
+                <li>
+                    <a>
+                        <i class="icon_pc01_pintuan"></i>
+                        <p>拼团</p>
+                    </a>
+                </li>
+                <!--爱心价-->
+                <li>
+                    <a>
+                        <i class="icon_pc01_aixinjia"></i>
+                        <p>爱心价</p>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!--我的同城-->
+        <div class="my-order-all">
+            <div class="d-flex d-flex-center my-order-title">
+                <div class="flex item f16 bold">我的同城</div>
+            </div>
+            <ul class="me-icon-ul">
+                <li>
+                    <a>
+                        <i class="icon_pc01_fenleixinxi"></i>
+                        <p>分类信息</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="icon_pc01_choujiang"></i>
+                        <p>抽奖</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="icon_pc01_wodehuodong"></i>
+                        <p>活动</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="icon_wodetoupiao"></i>
+                        <p>投票</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="icon_chengshi114"></i>
+                        <p>114</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="icon_xuexiaohuodong"></i>
+                        <p>学校活动</p>
+                    </a>
+                </li>  
+                <li>
+                    <a>
+                        <i class="icon_pc01_zhaopinqiuzhi"></i>
+                        <p>招聘求职</p>
+                    </a>
+                </li>    
+                <li>
+                    <a>
+                        <i class="icon_pc01_fangchanzhongjie"></i>
+                        <p>房产中介</p>
+                    </a>
+                </li>      
+                <li>
+                    <a>
+                        <i class="icon_pc01_xiaoxitixing"><em class="dot01">3</em></i>
+                        <p>消息</p>
+                    </a>
+                </li>                                                           
+            </ul>
+        </div>
+
+        <!--我的服务-->
+        <div class="my-order-all">
+            <div class="d-flex d-flex-center my-order-title">
+                <div class="flex item f16 bold">我的服务</div>
+            </div>
+            <ul class="me-icon-ul">
+                <li>
+                    <a>
+                        <i class="icon_pc01_gouwuche"></i>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="icon_pc01_shouyizhichu"></i>
+                        <p>收益支出</p>
+                    </a>
+                </li>   
+                <li>
+                    <a>
+                        <i class="icon_pc01_wodefenxiao"></i>
+                        <p>我的分销</p>
+                    </a>
+                </li>     
+                <li>
+                    <a>
+                        <i class="icon_pc01_hongbaojilu"></i>
+                        <p>红包记录</p>
+                    </a>
+                </li>      
+                <li>
+                    <a>
+                        <i class="icon_pc01_bangzhuzhongxin"></i>
+                        <p>帮助中心</p>
+                    </a>
+                </li>   
+                <li>
+                    <a>
+                        <i class="icon_pc01_abouttongcheng"></i>
+                        <p>关于同城</p>
+                    </a>
+                </li>  
+                <li>
+                    <a>
+                        <i class="icon_pc01_shezhi"></i>
+                        <p>设置</p>
+                    </a>
+                </li> 
+                <li>
+                    <a>
+                        <i class="icon_pc01_tuijianjiangli"></i>
+                        <p>推荐奖励</p>
+                    </a>
+                </li>                                                                                                                                                    
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="tcFooter">
+        <footer class="tc-footer">
+            <div class="circleicon">
+                <a href="javascript:;"><i></i></a>
+            </div>
+            <ul class="bz">
+                <li>
+                    <a href="javascript:;">
+                        <i class="home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="shequ"></i>
+                        <span>便民信息</span> 
+                    </a>  
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i></i>
+                        <span>发布</span> 
+                    </a>  
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="haodian"></i>
+                        <span>本地商家</span>
+                    </a>   
+                </li>                   
+                <li>
+                    <a href="javascript:;">
+                        <i class="me"></i>
+                        <span>个人中心</span>
+                        <em class="dot"></em>
+                    </a>
+                </li>                                    
+            </ul>        
+        </footer>
+    </div>   
+    
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>    
+        $('#fenxiao-alert').bind("touchmove",function(e){
+            e.preventDefault();
+        });
+
+        $('#fenxiao-alert .bt').on('click',function(){
+            $('#fenxiao-alert').hide();
+        });
+
+        $('.me-top .infor .bt').on('click',function(){
+            $(this).addClass('active');
+            $(this).html('已签到')
+        });
+    </script>
+
+</body>
+</html>
