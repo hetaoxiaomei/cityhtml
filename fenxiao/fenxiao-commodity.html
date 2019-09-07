@@ -21,58 +21,80 @@
     </style>
 </head> 
 <body>
-    <div class="fix-tl">
-        <div class="d-flex d-flex-center bg-f bz ta-c f16 bold select-bar">
-            <div class="flex">收益<i class="sort-arrow"></i></div>
-            <div class="flex left-line">最新<i class="sort-arrow"></i></div>
-        </div>  
-    </div> 
+    <div id="vue_distribution">
+        <div class="fix-tl">
+            <div class="d-flex d-flex-center bg-f bz ta-c f16 bold select-bar">
+                <div class="flex left-line" @click="btnSelect(index)"  v-for="(select,index) in selects">{{select}}<i class="sort-arrow" :class='{active:selectIndex==index}'></i></div>
+            </div>  
+        </div> 
 
-    <div class="basewrap bz" style="padding: 4.5rem 1rem 8rem;">
-        <div class="bz income-cell">
-            <div class="d-flex" style="padding: 1.5rem 1rem;">
-                <img class="head" src="">
-                <div class="flex">
-                    <div class="f16 clamp1 name">商品名称商品名称商品名称商品称商品称商品</div>
-                    <div class="f14" style="margin: 1.5rem 0 0">预计收益:<i class="f16 bold" style="color: #FF1C1C">￥999.00</i></div>   
-                    <div class="f13 c999" style="margin: .8rem 0 0;overflow: hidden;">
-                        <div class="fl">售价:￥999.00</div>
-                        <div class="fr">剩余:9999</div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex d-flex-center bottom top-line">
-                <div class="f13">长期有效</div>
-                <div class="flex"></div>
-                <div class="bt bz">生成海报</div>
-                <div class="bt bz">生成链接</div>
-            </div>
-        </div>
-
-    </div>
-
-
-    <!--复制链接-->
-    <div id="copy-dialog" class="fix-tl-100 none">
-        <div class="dialog-black-mask"></div>
-        <div class="dialog-middle">
-            <div class="bz income-cell">
-                <div class="d-flex" style="padding: 2.5rem 2rem 0;">
-                    <img class="head" src="">
+        <div class="basewrap bz" style="padding: 4.5rem 1rem 8rem;">
+            <div class="bz income-cell" v-for="recommend in recommends">
+                <div class="d-flex" style="padding: 1.5rem 1rem;">
+                    <img class="head" :src="recommend.img">
                     <div class="flex">
-                        <div class="f16 clamp2 name">商品名称商品名称商品名称商品称商品称商品</div>
-                        <div class="f16 bold" style="margin: 1rem 0 0;color: #FF1C1C"><i>￥999.00</i></div>   
+                        <div class="f16 clamp1 name">{{recommend.name}}</div>
+                        <div class="f14" style="margin: 1.5rem 0 0">预计收益:<i class="f16 bold" style="color: #FF1C1C">￥{{recommend.money01}}</i></div>   
+                        <div class="f13 c999" style="margin: .8rem 0 0;overflow: hidden;">
+                            <div class="fl">售价:￥{{recommend.money02}}</div>
+                            <div class="fr">剩余:{{recommend.surplus}}</div>
+                        </div>
                     </div>
                 </div>
+                <div class="d-flex d-flex-center bottom top-line">
+                    <div class="f13">长期有效</div>
+                    <div class="flex"></div>
+                    <div class="bt bz">生成海报</div>
+                    <div class="bt bz">生成链接</div>
+                </div>
             </div>
-            <div style="padding:1.5rem 2rem 0;">
-                <textarea class="f14 c333 bz" style="-webkit-appearance: none;appearance: none;border: 1px solid #F0F0F0;display:block;width:100%;height:11rem;padding:1rem;" placeholder="【同城名称12】生活周边服务，应有尽有！xxxxxxxxxxxxx"></textarea>
-            </div>            
-            <div style="padding: 2.5rem 0 2rem">
-                <div class="ta-c f16" style="color: #fff;line-height: 4rem;height: 4rem;background: linear-gradient(to right,#FF9600,#FF6C00);width: 66.7%;margin: 0 auto;border-radius: 2rem;">复制链接</div>
-            </div> 
+
+        </div>
+
+        <!--复制链接-->
+        <div id="copy-dialog" class="fix-tl-100 none">
+            <div class="dialog-black-mask"></div>
+            <div class="dialog-middle">
+                <div class="bz income-cell">
+                    <div class="d-flex" style="padding: 2.5rem 2rem 0;">
+                        <img class="head" src="">
+                        <div class="flex">
+                            <div class="f16 clamp2 name">商品名称商品名称商品名称商品称商品称商品</div>
+                            <div class="f16 bold" style="margin: 1rem 0 0;color: #FF1C1C"><i>￥999.00</i></div>   
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:1.5rem 2rem 0;">
+                    <textarea class="f14 c333 bz" style="-webkit-appearance: none;appearance: none;border: 1px solid #F0F0F0;display:block;width:100%;height:11rem;padding:1rem;" placeholder="【同城名称12】生活周边服务，应有尽有！xxxxxxxxxxxxx"></textarea>
+                </div>            
+                <div style="padding: 2.5rem 0 2rem">
+                    <div class="ta-c f16" style="color: #fff;line-height: 4rem;height: 4rem;background: linear-gradient(to right,#FF9600,#FF6C00);width: 66.7%;margin: 0 auto;border-radius: 2rem;">复制链接</div>
+                </div> 
+            </div>
         </div>
     </div>
 
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script> 
+    <script>
+        var vm = new Vue({
+            el: '#vue_distribution',
+            data: { 
+                selects:['收益','最新'], 
+                recommends:[
+                    {img:'img/fenxiao04.png',name:'广州市创盈网络创盈网络信息科技有限公司',money01:'12.50',money02:'5.00',surplus:'50'},
+                    {img:'img/fenxiao04.png',name:'广州市创盈网络创盈网络信息科技有限公司',money01:'12.50',money02:'5.00',surplus:'50'}
+                ],
+                selectIndex:0
+            },
+            methods: {
+                btnSelect(index){
+                    this.selectIndex = index;
+                }
+            }
+        })
+    
+    </script>
+    
 </body>
 </html>

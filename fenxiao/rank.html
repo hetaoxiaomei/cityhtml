@@ -19,108 +19,121 @@
         .personal-rank .money{font-size: 1.9rem;margin: 1rem 0 0;color: #FF1C1C}
         .personal-rank .content{border-radius: 5px;background: #fff;height: 10rem;padding: 1.8rem 0 0;box-shadow: 0 2px 18px rgba(229,229,229,.7)}
         .personal-rank .number{font-size: 1.9rem;margin: 1rem 0 0}
-
    </style>
 </head> 
 <body>
-    <div class="basewrap bz rel" style="padding: 0 0 6rem;">
-        <img src="img/fenxiao04.png" style="display: block;height:113px;width: 100%;position: absolute;top: 0;left: 0;">
-        
-        <div class="personal-rank">
-            <div class="d-flex bz content">
-                <div class="flex ta-c" style="margin: .5rem 0 0;">
-                    <p class="f12 c666">排名</p>
-                    <p class="bold number">100</p>
-                </div>
-                <div style="max-width:30%">
-                    <img class="head" src="">
-                    <p class="c333 ta-c f13 clamp1 name">陈同学陈同学陈同学陈同学陈同学</p>
-                </div>
-                <div class="flex ta-c" style="margin: .5rem 0 0;">
-                    <p class="f12 c666">收益</p>
-                    <p class="bold money">￥100.00</p>
+    <div id="vue_distribution">
+        <div class="basewrap bz rel" style="padding: 0 0 6rem;">
+            <img src="img/fenxiao04.png" style="display: block;height:113px;width: 100%;position: absolute;top: 0;left: 0;">
+            
+            <div class="personal-rank">
+                <div class="d-flex bz content">
+                    <div class="flex ta-c" style="margin: .5rem 0 0;">
+                        <p class="f12 c666">排名</p>
+                        <p class="bold number">{{meRankNum}}</p>
+                    </div>
+                    <div style="max-width:30%">
+                        <img class="head" :src="meRankImg">
+                        <p class="c333 ta-c f13 clamp1 name">{{meRankName}}</p>
+                    </div>
+                    <div class="flex ta-c" style="margin: .5rem 0 0;">
+                        <p class="f12 c666">收益</p>
+                        <p class="bold money">￥{{meRankMoney}}</p>
+                    </div>
                 </div>
             </div>
+            <!--排行榜-->
+            <div style="border-radius: 5px;background: #fff;padding: 0 1.5rem 0 2.3rem;margin: 1rem 0 0;">
+                <div>
+                    <ul v-for="(ranking,index) in rankings" class="d-flex d-flex-center f15 ranking-list bottom-line">
+                        <li class="ta-c f14 bold li01">
+                            <i :class="getRankCls(index)">{{getRankText(index)}}</i>
+                        </li>
+                        <li class="flex li02">
+                            <div class="d-flex d-flex-center">
+                                <img class="head" :src="ranking.img">
+                                <div class="flex">
+                                    <p class="name clamp1">{{ranking.name}}</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bold f16 bz ta-r money">￥{{ranking.money}}</li>
+                    </ul>                  
+                </div>
+            </div>        
         </div>
-        <!--排行榜-->
-        <div style="border-radius: 5px;background: #fff;padding: 0 1.5rem 0 2.3rem;margin: 1rem 0 0;">
-            <div>
-                <ul class="d-flex d-flex-center f15 ranking-list bottom-line">
-                    <li class="ta-c f14 bold li01">
-                        <i class="icon" style="background-position:0 0;"></i>
-                    </li>
-                    <li class="flex li02">
-                        <div class="d-flex d-flex-center">
-                            <img class="head" src="../img/01.jpg">
-                            <div class="flex">
-                                <p class="name clamp1">欧阳娜娜</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="bold f16 bz ta-r money">￥500.00</li>
-                </ul>    
-                <ul class="d-flex d-flex-center f15 ranking-list bottom-line">
-                    <li class="ta-c f14 bold li01">
-                        <i class="icon" style="background-position:-2.7rem 0;"></i>
-                    </li>
-                    <li class="flex li02">
-                        <div class="d-flex d-flex-center">
-                            <img class="head" src="../img/01.jpg">
-                            <div class="flex">
-                                <p class="name clamp1">欧阳娜娜</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="bold f16 bz ta-r money">￥500.00</li>
-                </ul>                    
-                <ul class="d-flex d-flex-center f15 ranking-list bottom-line">
-                    <li class="ta-c f14 bold li01">
-                        <i class="icon" style="background-position:-5.4rem 0;"></i>
-                    </li>
-                    <li class="flex li02">
-                        <div class="d-flex d-flex-center">
-                            <img class="head" src="../img/01.jpg">
-                            <div class="flex">
-                                <p class="name clamp1">欧阳娜娜</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="bold f16 bz ta-r money">￥500.00</li>
-                </ul>  
-                <ul class="d-flex d-flex-center f15 ranking-list bottom-line">
-                    <li class="ta-c f14 bold li01">4</li>
-                    <li class="flex li02">
-                        <div class="d-flex d-flex-center">
-                            <img class="head" src="../img/01.jpg">
-                            <div class="flex">
-                                <p class="name clamp1">欧阳娜娜</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="bold f16 bz ta-r money">￥500.00</li>
-                </ul>                 
+
+        <div class="fix-bl">
+            <div class="basewrap d-flex bg-f ta-c c999 fenxiao-bottom-nav">
+                <a class="flex" href="recommended-rewards.html">
+                    <i class="icon-fenxiao-index"></i>
+                    <p class="f11">首页</p>
+                </a>
+                <a class="flex active" href="rank.html">
+                    <i class="icon-fenxiao-rank"></i>
+                    <p class="f11">排行</p>     
+                </a>
+                <a class="flex" href="recommended-commodity.html">
+                    <i class="icon-fenxiao-me"></i>
+                    <p class="f11">我的</p>
+                </a>
             </div>
-        </div>        
+        </div> 
     </div>
 
-    <div class="fix-bl">
-        <div class="basewrap d-flex bg-f ta-c c999 fenxiao-bottom-nav">
-            <a class="flex" href="recommended-rewards.html">
-                <i class="icon-fenxiao-index"></i>
-                <p class="f11">首页</p>
-            </a>
-            <a class="flex active" href="rank.html">
-                <i class="icon-fenxiao-rank"></i>
-                <p class="f11">排行</p>     
-            </a>
-            <a class="flex" href="recommended-commodity.html">
-                <i class="icon-fenxiao-me"></i>
-                <p class="f11">我的</p>
-            </a>
-        </div>
-    </div> 
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#vue_distribution',
+            data: {
+                meRankNum:'100',
+                meRankName:'小包',
+                meRankMoney:'50.00',
+                meRankImg:'../img/01.png',
+                rankings:[
+                    {img:'../img/01.png',name:'欧阳娜娜',time:'2019-08-12 12:10:05',money:'50.00'},
+                    {img:'../img/01.png',name:'欧阳娜娜',time:'2019-08-12 12:10:05',money:'50.00'},
+                    {img:'../img/01.png',name:'欧阳娜娜',time:'2019-08-12 12:10:05',money:'50.00'},
+                    {img:'../img/01.png',name:'欧阳娜娜',time:'2019-08-12 12:10:05',money:'50.00'},
+                    {img:'../img/01.png',name:'欧阳娜娜',time:'2019-08-12 12:10:05',money:'50.00'}
+                ]
+            },
 
+            methods: {
+                //截止目前
+                btnday:function () {
+                    var that =this;
+                    that.showday =true;
+                },
+                hiddenShowDay:function () {
+                    var that = this;
+                    that.showday = false;
+                }, 
+                dayContent:function (value) {
+                    var that = this;
+                    that.upToNow = value;
+                },  
+                getRankCls(index){
+                    if(index<=2){
+                        return `icon icon${index}`	//前三名添加的class是图片样式
+                    }else{
+                        return ''	
+                    }
+                }, 
+                               
+                //添加文字的方法
+                getRankText(index){
+                    if(index>2){
+                        return index+1	
+                    }
+                }
+                    
+            }
 
+        })
+    </script>
+   
 
 </body>
 </html>

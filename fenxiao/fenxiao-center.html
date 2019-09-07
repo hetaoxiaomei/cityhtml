@@ -36,156 +36,156 @@
 
 </head> 
 <body>
-    <div class="basewrap bz" style="padding: 0 1rem 8rem;">
-        <div class="d-flex fenxiao-infor">
-            <div class="head">
-                <img class="img-wh-100" src="img/">
-            </div>
-            <div class="flex">
-                <div class="d-flex" style="overflow: hidden">
-                    <div class="name clamp1">林同学林同学林同学林同学林同学</div>
-                    <div class="label">同城分销员</div>
+    <div id="vue_distribution">
+        <div class="basewrap bz" style="padding: 0 1rem 8rem;">
+            <div class="d-flex fenxiao-infor">
+                <div class="head">
+                    <img class="img-wh-100" src="">
                 </div>
-                <p class="f13" style="margin: .6rem 0 0;">ID:123456</p>
-                <p class="f12 c999" style="margin: 1.8rem 0 0;">2019-01-01过期</p>
+                <div class="flex">
+                    <div class="d-flex" style="overflow: hidden">
+                        <div class="name clamp1">林同学林同学林同学林同学林同学</div>
+                        <div class="label">同城分销员</div>
+                    </div>
+                    <p class="f13" style="margin: .6rem 0 0;">ID:123456</p>
+                    <p class="f12 c999" style="margin: 1.8rem 0 0;">2019-01-01过期</p>
+                </div>
+                <div class="bt">去提现</div>
             </div>
-            <div class="bt">去提现</div>
-        </div>
 
-        <div class="rel bg-f" style="border-radius: 5px;padding: 3rem 1.5rem 1.8rem;margin: 1rem 0 0;">
-            <div class="icon-help"></div>
-            <div class="date-select">
-                <div class="f13 c666 content"><span>截至目前</span><i class="arrow"></i></div>
-                <div id="select-tk" class="bz f15 c666 bg-f ta-c select-tk none">
-                    <div style="padding: 1.8rem 0;">近三十天</div>
-                    <div class="top-line" style="padding: 1.8rem 0;">近七天</div>
+            <div class="rel bg-f" style="border-radius: 5px;padding: 3rem 1.5rem 1.8rem;margin: 1rem 0 0;">
+                <div @click="btnfc()" class="icon-help"></div>
+                <div class="date-select">
+                    <div @click="btnday()" class="f13 c666 content"><span>{{upToNow}}</span><i class="arrow"></i></div>
+                    <div v-show="showday"  @click="hiddenShowDay()" id="select-tk" class="bz f15 c666 bg-f ta-c select-tk">
+                        <div @click="dayContent('近三十天')" style="padding: 1.8rem 0;">近三十天</div>
+                        <div @click="dayContent('近七天')" class="top-line" style="padding: 1.8rem 0;">近七天</div>
+                    </div>
+                </div>
+                <div class="f14 ta-c">已结算收益(元)</div>
+                <div class="ta-c bold" style="font-size: 2rem;margin: 1.8rem 0 0;">100.00</div>
+                <div class="f12 c999 ta-c bottom-line" style="margin: 1.5rem 0 0;padding: 0 0 1rem">待结算：999.00</div>
+                <div class="ta-c d-flex income-ul">
+                    <a class="flex rel">
+                        <div class="f14">客户数(人)</div>
+                        <div class="money">0</div>
+                        <div class="arrow" style="right: 2rem;"></div>
+                    </a>
+                    <a class="flex rel left-line">
+                        <div class="f14">客户成交额(元)</div>
+                        <div class="money">0.00</div>
+                        <div class="arrow" style="right: .5rem;"></div>
+                    </a>                
                 </div>
             </div>
-            <div class="f14 ta-c">已结算收益(元)</div>
-            <div class="ta-c bold" style="font-size: 2rem;margin: 1.8rem 0 0;">100.00</div>
-            <div class="f12 c999 ta-c bottom-line" style="margin: 1.5rem 0 0;padding: 0 0 1rem">待结算：999.00</div>
-            <div class="ta-c d-flex income-ul">
-                <a class="flex rel">
-                    <div class="f14">客户数(人)</div>
-                    <div class="money">0</div>
-                    <div class="arrow" style="right: 2rem;"></div>
-                </a>
-                <a class="flex rel left-line">
-                    <div class="f14">客户成交额(元)</div>
-                    <div class="money">0.00</div>
-                    <div class="arrow" style="right: .5rem;"></div>
-                </a>                
+
+            <div class="bg-f" style="border-radius: 5px;padding: 0 1rem;margin: 1rem 0 0;">
+                <p class="f16 c666 ta-c bottom-line" style="height: 4.8rem;line-height: 4.8rem;">目前排名在第<i style="color:#FF1C1C">1</i>位</p>
+                <div>
+                    <ul v-for="(ranking,index) in rankings" class="d-flex d-flex-center f15 ranking-list bottom-line">
+                        <li class="ta-c f14 bold li01">
+                            <i :class="getRankCls(index)">{{getRankText(index)}}</i>
+                        </li>
+                        <li class="flex li02">
+                            <div class="d-flex d-flex-center">
+                                <img class="head" :src="ranking.img">
+                                <div class="flex">
+                                    <p class="name clamp1">{{ranking.name}}</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="bold f16 bz ta-r money">￥{{ranking.money}}</li>
+                    </ul>    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="fix-bl">
+            <a href="open-fenxiao.html" class="ta-c f16 bold cfff bottom-bt">开始赚钱</a>
+        </div>
+
+        <!--收益规则-->
+        <div id="income-rule" class="fix-tl-100" v-show="show">
+            <div class="dialog-black-mask" @touchmove.prevent></div>
+            <div class="dialog-middle">
+                <p class="f16 bold ta-c" style="padding: 3rem 0 2rem">收益规则</p>
+                <div class="f14" style="line-height: 2;padding: 0 2rem 2rem">
+                    <p>1、订单待收货、帖子未审核，收益为待结算;</p>
+                    <p>2、订单已完成、帖子已通过，收益为已结算;</p>
+                    <p>3、订单已退款、帖子未通过，收益为已退款;</p>
+                    <p>4、订单已完成后退款成功，不扣已结算收益;</p>
+                    <p>5、使用代金券、积分抵扣的订单不参与分销;</p>
+                </div>
+                <div @click="hiddenShow()" class="top-line ta-c f16 dialog-bt" style="color: #FF6600;line-height: 5rem">知道了</div>
+                <img @click="hiddenShow()" class="abs dialog-close" src="img/fenxiao01.png" style="width:1.5rem;display: block;top:1.2rem;right:1.2rem;"> 
             </div>
         </div>
 
-        <div class="bg-f" style="border-radius: 5px;padding: 0 1rem;margin: 1rem 0 0;">
-            <p class="f16 c666 ta-c bottom-line" style="height: 4.8rem;line-height: 4.8rem;">目前排名在第<i style="color:#FF1C1C">1</i>位</p>
-            <div>
-                <ul class="d-flex d-flex-center f15 ranking-list bottom-line">
-                    <li class="ta-c f14 bold li01">
-                        <i class="icon" style="background-position:0 0;"></i>
-                    </li>
-                    <li class="flex li02">
-                        <div class="d-flex d-flex-center">
-                            <img class="head" src="../img/01.jpg">
-                            <div class="flex">
-                                <p class="name clamp1">欧阳娜娜</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="bold f16 bz ta-r money">￥500.00</li>
-                </ul>    
-                <ul class="d-flex d-flex-center f15 ranking-list bottom-line">
-                    <li class="ta-c f14 bold li01">
-                        <i class="icon" style="background-position:-2.7rem 0;"></i>
-                    </li>
-                    <li class="flex li02">
-                        <div class="d-flex d-flex-center">
-                            <img class="head" src="../img/01.jpg">
-                            <div class="flex">
-                                <p class="name clamp1">欧阳娜娜</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="bold f16 bz ta-r money">￥500.00</li>
-                </ul>                    
-                <ul class="d-flex d-flex-center f15 ranking-list bottom-line">
-                    <li class="ta-c f14 bold li01">
-                        <i class="icon" style="background-position:-5.4rem 0;"></i>
-                    </li>
-                    <li class="flex li02">
-                        <div class="d-flex d-flex-center">
-                            <img class="head" src="../img/01.jpg">
-                            <div class="flex">
-                                <p class="name clamp1">欧阳娜娜</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="bold f16 bz ta-r money">￥500.00</li>
-                </ul>  
-                <ul class="d-flex d-flex-center f15 ranking-list bottom-line">
-                    <li class="ta-c f14 bold li01">4</li>
-                    <li class="flex li02">
-                        <div class="d-flex d-flex-center">
-                            <img class="head" src="../img/01.jpg">
-                            <div class="flex">
-                                <p class="name clamp1">欧阳娜娜</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="bold f16 bz ta-r money">￥500.00</li>
-                </ul>                 
-                
-            </div>
-        </div>
-    </div>
-
-    <div class="fix-bl">
-        <a href="open-fenxiao.html" class="ta-c f16 bold cfff bottom-bt">开始赚钱</a>
-    </div>
-
-    <!--收益规则-->
-    <div id="income-rule" class="fix-tl-100 none">
-        <div class="dialog-black-mask"></div>
-        <div class="dialog-middle">
-            <p class="f16 bold ta-c" style="padding: 3rem 0 2rem">收益规则</p>
-            <div class="f14" style="line-height: 2;padding: 0 2rem 2rem">
-                <p>1、订单待收货、帖子未审核，收益为待结算;</p>
-                <p>2、订单已完成、帖子已通过，收益为已结算;</p>
-                <p>3、订单已退款、帖子未通过，收益为已退款;</p>
-                <p>4、订单已完成后退款成功，不扣已结算收益;</p>
-                <p>5、使用代金券、积分抵扣的订单不参与分销;</p>
-            </div>
-            <div class="top-line ta-c f16 dialog-bt" style="color: #FF6600;line-height: 5rem">知道了</div>
-            <img class="abs dialog-close" src="img/fenxiao01.png" style="width:1.5rem;display: block;top:1.2rem;right:1.2rem;"> 
-        </div>
     </div>
 
     <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
     <script>
-        $('.date-select .content').on('click',function(){
-            $('#select-tk').show();
-        }) 
+        var vm = new Vue({
+            el: '#vue_distribution',
+            data: {
+                show:false,
+                showday:false,
+                upToNow:'截至目前',
+                rankings:[
+                    {img:'../img/01.png',name:'欧阳娜娜',time:'2019-08-12 12:10:05',money:'50.00'},
+                    {img:'../img/01.png',name:'欧阳娜娜',time:'2019-08-12 12:10:05',money:'50.00'},
+                    {img:'../img/01.png',name:'欧阳娜娜',time:'2019-08-12 12:10:05',money:'50.00'},
+                    {img:'../img/01.png',name:'欧阳娜娜',time:'2019-08-12 12:10:05',money:'50.00'},
+                    {img:'../img/01.png',name:'欧阳娜娜',time:'2019-08-12 12:10:05',money:'50.00'}
+                ]
+            },
 
-        $('#select-tk>div').on('click',function(){
-            var content=$(this).html();
-            $('.date-select .content span').html(content);
-            $('#select-tk').hide();
-        }) 
+            methods: {
+                //点击弹窗
+                btnfc:function () {
+                    var that =this;
+                    that.show =true;
+                },
+    　　　　　　　//点击关闭
+                hiddenShow:function () {
+                    var that = this;
+                    that.show = false;
+                },
+                //截止目前
+                btnday:function () {
+                    var that =this;
+                    that.showday =true;
+                },
+                hiddenShowDay:function () {
+                    var that = this;
+                    that.showday = false;
+                }, 
+                dayContent:function (value) {
+                    var that = this;
+                    that.upToNow = value;
+                },  
+                getRankCls(index){
+                    if(index<=2){
+                        return `icon icon${index}`	//前三名添加的class是图片样式
+                    }else{
+                        return ''	
+                    }
+                }, 
+                               
+                //添加文字的方法
+                getRankText(index){
+                    if(index>2){
+                        return index+1	
+                    }
+                }
+                    
+            }
 
-        $('.dialog-black-mask').bind("touchmove",function(e){
-            e.preventDefault();
-        });    
-    
-        $('.dialog-bt,.dialog-close').on('click',function(){
-            $('#income-rule').hide();
-        });   
-
-        $('.icon-help').on('click',function(){
-            $('#income-rule').show();
-        }) 
-
+        })
     </script>
+   
 
 </body>
 </html>
