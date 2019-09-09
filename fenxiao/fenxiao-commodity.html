@@ -45,15 +45,15 @@
                     <div class="f13">长期有效</div>
                     <div class="flex"></div>
                     <div class="bt bz">生成海报</div>
-                    <div class="bt bz">生成链接</div>
+                    <div class="bt bz" @click="btnfc()">生成链接</div>
                 </div>
             </div>
 
         </div>
 
         <!--复制链接-->
-        <div id="copy-dialog" class="fix-tl-100 none">
-            <div class="dialog-black-mask"></div>
+        <div class="fix-tl-100" v-show="show">
+            <div class="dialog-black-mask" @touchmove.prevent></div>
             <div class="dialog-middle">
                 <div class="bz income-cell">
                     <div class="d-flex" style="padding: 2.5rem 2rem 0;">
@@ -68,7 +68,7 @@
                     <textarea class="f14 c333 bz" style="-webkit-appearance: none;appearance: none;border: 1px solid #F0F0F0;display:block;width:100%;height:11rem;padding:1rem;" placeholder="【同城名称12】生活周边服务，应有尽有！xxxxxxxxxxxxx"></textarea>
                 </div>            
                 <div style="padding: 2.5rem 0 2rem">
-                    <div class="ta-c f16" style="color: #fff;line-height: 4rem;height: 4rem;background: linear-gradient(to right,#FF9600,#FF6C00);width: 66.7%;margin: 0 auto;border-radius: 2rem;">复制链接</div>
+                    <div @click="hiddenShow()" class="ta-c f16" style="color: #fff;line-height: 4rem;height: 4rem;background: linear-gradient(to right,#FF9600,#FF6C00);width: 66.7%;margin: 0 auto;border-radius: 2rem;">复制链接</div>
                 </div> 
             </div>
         </div>
@@ -85,12 +85,23 @@
                     {img:'img/fenxiao04.png',name:'广州市创盈网络创盈网络信息科技有限公司',money01:'12.50',money02:'5.00',surplus:'50'},
                     {img:'img/fenxiao04.png',name:'广州市创盈网络创盈网络信息科技有限公司',money01:'12.50',money02:'5.00',surplus:'50'}
                 ],
-                selectIndex:0
+                selectIndex:0,
+                show:0
             },
             methods: {
                 btnSelect(index){
                     this.selectIndex = index;
-                }
+                },
+                //点击弹窗
+                btnfc:function () {
+                    var that =this;
+                    that.show =true;
+                },
+    　　　　　　　//点击关闭
+                hiddenShow:function () {
+                    var that = this;
+                    that.show = false;
+                }               
             }
         })
     
