@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>订单详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        .icon-tuikuan-fail{background-image:url(../img/tc-pic04.png);background-size:50rem;background-repeat: no-repeat;}
+        .select-ul{height: 3.7rem;line-height:3.7rem;}
+        .select-ul li{position: relative}
+        .select-ul li.active{color:#ff5a00;}
+        .select-ul li.active:before{content: '';position:absolute;bottom: 0;left: 50%;transform: translate(-50%,-50%);display: block;width: 2rem;height: .3rem;background: linear-gradient(to right,#FF9600,#FF6C00);border-radius: .2rem;}
+        .operation-bt{margin: 2rem 0 0 1.5rem;line-height:2.8rem;box-sizing: border-box;width: 8.5rem;height:3rem;font-size:1.4rem;text-align:center;border-radius:1.5rem;border:1px solid #333;color:#333;}
+        .operation-bt.active{border:1px solid #FF6600;color:#FF6600;}
+        .icon-tuikuan-fail{width: 1.5rem;height: 1.5rem;display: inline-block;background-position:-46.6rem -16.3rem;margin:0 .3rem 0 0;
+        vertical-align: -.3rem}
+   </style>
+</head>
+<body>
+    <div id="vue_commodity">
+        <div class="basewrap" style="padding: 0 0 6rem;">
+            <ul class="d-flex ta-c f14 select-ul">
+                <li @click="btnSelect(index)" class="flex" :class="{active:selectIndex==index}" v-for="(select,index) in selects">{{select}}</li>
+            </ul>
+            <!--待发货-->
+            <div style="padding:0 1.2rem;margin: 1rem 1rem 0;background: #fff;" v-for="commodity in commoditys01" v-if="cur==0">         
+                <div class="d-flex d-flex-center bottom-line">
+                    <div class="flex f13 c666" style="padding: 1.5rem 0;">
+                        <p>{{commodity.date}}</p>
+                        <p style="margin: .8rem 0 0;">订单编号：{{commodity.order}}</p>
+                    </div>
+                    <div class="f14" style="color:#FF6600;">{{commodity.state}}</div>
+                </div>
+
+                <div class="d-flex" style="padding: 1.5rem 0 0;" v-for="list in commodity.lists">
+                    <img :src="list.pic" style="display: block;width:9rem;height:9rem;margin:0 1rem 0 0;">
+                    <div class="flex">
+                        <div class="f14 clamp2" style="line-height: 1.4;margin:.3rem 0 0;">{{list.title}}</div>
+                        <div class="c666 f13 clamp1" style="margin:.6rem 0 0;line-height: 1.25">{{list.standard}}</div>
+                        <div class="f13" style="overflow: hidden;margin: 1.3rem 0 0;">
+                            <div class="fl">￥{{list.money}}</div>
+                            <div class="fr">x{{list.number}}</div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="d-flex top-line" style="padding: 2rem 0;margin:1.5rem 0 0;">
+                    <div class="flex"></div>
+                    <div>
+                        <div class="f14">合计实付：<i class="f17">￥{{commodity.money02}}</i><i class="f13">（含运费¥{{commodity.money03}}）</i></div>
+                        <div class="fr operation-bt active">发货</div>
+                    </div>
+                </div>
+            </div>
+
+            <!--评论中-->
+            <div style="padding:0 1.2rem;margin: 1rem 1rem 0;background: #fff;" v-for="commodity in commoditys02" v-if="cur==0">         
+                <div class="d-flex d-flex-center bottom-line">
+                    <div class="flex f13 c666" style="padding: 1.5rem 0;">
+                        <p>{{commodity.date}}</p>
+                        <p style="margin: .8rem 0 0;">订单编号：{{commodity.order}}</p>
+                    </div>
+                    <div class="f14" style="color:#FF6600;">{{commodity.state}}</div>
+                </div>
+
+                <div class="d-flex" style="padding: 1.5rem 0 0;" v-for="list in commodity.lists">
+                    <img :src="list.pic" style="display: block;width:9rem;height:9rem;margin:0 1rem 0 0;">
+                    <div class="flex">
+                        <div class="f14 clamp2" style="line-height: 1.4;margin:.3rem 0 0;">{{list.title}}</div>
+                        <div class="c666 f13 clamp1" style="margin:.6rem 0 0;line-height: 1.25">{{list.standard}}</div>
+                        <div class="f13" style="overflow: hidden;margin: 1.3rem 0 0;">
+                            <div class="fl">￥{{list.money}}</div>
+                            <div class="fr">x{{list.number}}</div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="d-flex top-line" style="padding: 2rem 0;margin:1.5rem 0 0;">
+                    <div class="flex"></div>
+                    <div>
+                        <div class="f14">合计实付：<i class="f17">￥{{commodity.money02}}</i><i class="f13">（含运费¥{{commodity.money03}}）</i></div>
+                        <div class="fr operation-bt">配送进度</div>
+                    </div>
+                </div>
+            </div>   
+            
+            <!--待收货-->
+            <div style="padding:0 1.2rem;margin: 1rem 1rem 0;background: #fff;" v-for="commodity in commoditys03" v-if="cur==0">         
+                <div class="d-flex d-flex-center bottom-line">
+                    <div class="flex f13 c666" style="padding: 1.5rem 0;">
+                        <p>{{commodity.date}}</p>
+                        <p style="margin: .8rem 0 0;">订单编号：{{commodity.order}}</p>
+                    </div>
+                    <div class="f14" style="color:#FF6600;">{{commodity.state}}</div>
+                </div>
+
+                <div class="d-flex" style="padding: 1.5rem 0 0;" v-for="list in commodity.lists">
+                    <img :src="list.pic" style="display: block;width:9rem;height:9rem;margin:0 1rem 0 0;">
+                    <div class="flex">
+                        <div class="f14 clamp2" style="line-height: 1.4;margin:.3rem 0 0;">{{list.title}}</div>
+                        <div class="c666 f13 clamp1" style="margin:.6rem 0 0;line-height: 1.25">{{list.standard}}</div>
+                        <div class="f13" style="overflow: hidden;margin: 1.3rem 0 0;">
+                            <div class="fl">￥{{list.money}}</div>
+                            <div class="fr">x{{list.number}}</div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="d-flex top-line" style="padding: 2rem 0;margin:1.5rem 0 0;">
+                    <div class="flex"></div>
+                    <div>
+                        <div class="f14">合计实付：<i class="f17">￥{{commodity.money02}}</i><i class="f13">（含运费¥{{commodity.money03}}）</i></div>
+                        <div class="fr operation-bt">物流详情</div>
+                    </div>
+                </div>
+            </div> 
+            
+            <!--待核销-->
+            <div style="padding:0 1.2rem;margin: 1rem 1rem 0;background: #fff;" v-for="commodity in commoditys04" v-if="cur==0">         
+                <div class="d-flex d-flex-center bottom-line">
+                    <div class="flex f13 c666" style="padding: 1.5rem 0;">
+                        <p>{{commodity.date}}</p>
+                        <p style="margin: .8rem 0 0;">订单编号：{{commodity.order}}</p>
+                    </div>
+                    <div class="f14" style="color:#FF6600;">{{commodity.state}}</div>
+                </div>
+
+                <div class="d-flex" style="padding: 1.5rem 0 0;" v-for="list in commodity.lists">
+                    <img :src="list.pic" style="display: block;width:9rem;height:9rem;margin:0 1rem 0 0;">
+                    <div class="flex">
+                        <div class="f14 clamp2" style="line-height: 1.4;margin:.3rem 0 0;">{{list.title}}</div>
+                        <div class="c666 f13 clamp1" style="margin:.6rem 0 0;line-height: 1.25">{{list.standard}}</div>
+                        <div class="f13" style="overflow: hidden;margin: 1.3rem 0 0;">
+                            <div class="fl">￥{{list.money}}</div>
+                            <div class="fr">x{{list.number}}</div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="d-flex top-line" style="padding: 2rem 0;margin:1.5rem 0 0;">
+                    <div class="flex"></div>
+                    <div>
+                        <div class="f14">合计实付：<i class="f17">￥{{commodity.money02}}</i><i class="f13">（含运费¥{{commodity.money03}}）</i></div>
+                    </div>
+                </div>
+            </div>  
+            
+            <!--买家申请退款-->
+            <div style="padding:0 1.2rem;margin: 1rem 1rem 0;background: #fff;" v-for="commodity in commoditys05" v-if="cur==0">         
+                <div class="d-flex d-flex-center bottom-line">
+                    <div class="flex f13 c666" style="padding: 1.5rem 0;">
+                        <p>{{commodity.date}}</p>
+                        <p style="margin: .8rem 0 0;">订单编号：{{commodity.order}}</p>
+                    </div>
+                    <div class="f14" style="color:#FF6600;">{{commodity.state}}</div>
+                </div>
+
+                <div class="d-flex" style="padding: 1.5rem 0 0;" v-for="list in commodity.lists">
+                    <img :src="list.pic" style="display: block;width:9rem;height:9rem;margin:0 1rem 0 0;">
+                    <div class="flex">
+                        <div class="f14 clamp2" style="line-height: 1.4;margin:.3rem 0 0;">{{list.title}}</div>
+                        <div class="c666 f13 clamp1" style="margin:.6rem 0 0;line-height: 1.25">{{list.standard}}</div>
+                        <div class="f13" style="overflow: hidden;margin: 1.3rem 0 0;">
+                            <div class="fl">￥{{list.money}}</div>
+                            <div class="fr">x{{list.number}}</div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="d-flex top-line" style="padding: 2rem 0;margin:1.5rem 0 0;">
+                    <div class="flex"></div>
+                    <div>
+                        <div class="f14">合计实付：<i class="f17">￥{{commodity.money02}}</i><i class="f13">（含运费¥{{commodity.money03}}）</i></div>
+                        <div class="fr operation-bt">同意退款</div>
+                        <div class="fr operation-bt">拒绝</div>
+                    </div>
+                </div>
+            </div>             
+
+            <!--退款失败-->
+            <div style="padding:0 1.2rem;margin: 1rem 1rem 0;background: #fff;" v-for="commodity in commoditys06" v-if="cur==0">         
+                <div class="d-flex d-flex-center bottom-line">
+                    <div class="flex f13 c666" style="padding: 1.5rem 0;">
+                        <p>{{commodity.date}}</p>
+                        <p style="margin: .8rem 0 0;">订单编号：{{commodity.order}}</p>
+                    </div>
+                    <div class="f14" style="color:#FF6600;"><i class="icon-tuikuan-fail"></i>{{commodity.state}}</div>
+                </div>
+
+                <div class="d-flex" style="padding: 1.5rem 0 0;" v-for="list in commodity.lists">
+                    <img :src="list.pic" style="display: block;width:9rem;height:9rem;margin:0 1rem 0 0;">
+                    <div class="flex">
+                        <div class="f14 clamp2" style="line-height: 1.4;margin:.3rem 0 0;">{{list.title}}</div>
+                        <div class="c666 f13 clamp1" style="margin:.6rem 0 0;line-height: 1.25">{{list.standard}}</div>
+                        <div class="f13" style="overflow: hidden;margin: 1.3rem 0 0;">
+                            <div class="fl">￥{{list.money}}</div>
+                            <div class="fr">x{{list.number}}</div>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="d-flex top-line" style="padding: 2rem 0;margin:1.5rem 0 0;">
+                    <div class="flex"></div>
+                    <div>
+                        <div class="f14">合计实付：<i class="f17">￥{{commodity.money02}}</i><i class="f13">（含运费¥{{commodity.money03}}）</i></div>
+                        <div class="fr operation-bt">重新退款</div>
+                    </div>
+                </div>
+            </div>   
+
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script> 
+    <script>
+        var vm = new Vue({
+            el: '#vue_commodity',
+            data: { 
+                selects:['全部','待付款','待发货','待收货','退款售后'],
+                selectIndex:0,
+                cur:0,
+                commoditys01:[
+                    {date:'2018-03-24 00:00',order:'123456789',state:'付款',money02:'20.00',money03:'5.00',
+                        lists:[
+                            {pic:'',title:'我是标题',standard:'大份',money:'952.00',number:'10'}
+                        ]
+                    }
+                ],
+                commoditys02:[
+                    {date:'2018-03-24 00:00',order:'123456789',state:'呼叫中',money02:'20.00',money03:'5.00',
+                        lists:[
+                            {pic:'',title:'我是标题',standard:'大份',money:'952.00',number:'10'}
+                        ]
+                    }
+                ],  
+                commoditys03:[
+                    {date:'2018-03-24 00:00',order:'123456789',state:'待收货',money02:'20.00',money03:'5.00',
+                        lists:[
+                            {pic:'',title:'我是标题',standard:'大份',money:'952.00',number:'10'}
+                        ]
+                    }
+                ],    
+                commoditys04:[
+                    {date:'2018-03-24 00:00',order:'123456789',state:'待核销',money02:'20.00',money03:'5.00',
+                        lists:[
+                            {pic:'',title:'我是标题',standard:'大份',money:'952.00',number:'10'}
+                        ]
+                    }
+                ],
+                commoditys05:[
+                    {date:'2018-03-24 00:00',order:'123456789',state:'买家申请退款',money02:'20.00',money03:'5.00',
+                        lists:[
+                            {pic:'',title:'我是标题',standard:'大份',money:'952.00',number:'10'}
+                        ]
+                    }
+                ],
+                commoditys06:[
+                    {date:'2018-03-24 00:00',order:'123456789',state:'退款失败',money02:'20.00',money03:'5.00',
+                        lists:[
+                            {pic:'',title:'我是标题',standard:'大份',money:'952.00',number:'10'}
+                        ]
+                    }
+                ]                                                           
+            },
+            methods: {
+                btnSelect(index){
+                    this.selectIndex = index;
+                }
+            }
+        })
+    
+    </script> 
+
+</body>
+</html>    

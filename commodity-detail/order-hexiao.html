@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>订单核销</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        .icon{background-image:url(../img/tc-pic04.png);background-size:50rem;background-repeat: no-repeat;}
+   </style>
+</head>
+<body>
+    <div id="vue_commodity">
+        <div class="basewrap" style="padding: 0 0 6rem;">
+            <div style="padding:0 1.2rem;margin: 1rem 1rem 0;background: #fff;" v-for="commodity in commoditys">
+                <div class="d-flex d-flex-center bottom-line">
+                    <i class="icon" style="width: 1.5rem;height:1.5rem;display:block;background-position:-48.3rem -16.3rem;margin: 0 .3rem 0 0"></i>
+                    <div class="flex f14 clamp1" style="margin: 1.5rem 0;line-height: 1.4">{{commodity.shopName}}店铺名称店铺名称店铺名称店铺名称店铺名称店铺名称店铺名称店铺名称</div>
+                </div>
+                <div class="d-flex" style="padding: 1.5rem 0 0;">
+                    <img src="commodity.pic" style="display: block;width:9rem;height:9rem;margin:0 1rem 0 0;">
+                    <div class="flex">
+                        <div class="f14 clamp2" style="line-height: 1.4;margin:.3rem 0 0;">{{commodity.title}}茶吗天下代金券简科技更给你姐，各级科技感阿卡哥几个昂科技阿卡哥几个昂科技</div>
+                        <div class="c666 f13 clamp1" style="margin:.6rem 0 0;line-height: 1.25">{{commodity.standard}}大份</div>
+                        <div class="f13" style="overflow: hidden;margin: 1.3rem 0 0;">
+                            <div class="fl">￥{{commodity.money}}</div>
+                            <div class="fr">x{{commodity.number}}</div>
+                        </div>
+                    </div>
+                </div>          
+                <div class="d-flex top-line" style="padding: 2rem 0;margin:1.5rem 0 0;">
+                    <div class="flex f15" style="line-height: 2.3rem;">核销数量</div>
+                    <div class="icon" style="width:2.3rem;height:2.3rem;background-position:-30rem -18rem;"></div>
+                    <div class="f17 ta-c" style="width: 3.3rem;line-height: 2.3rem;">{{commodity.heNumber}}</div>
+                    <div class="icon" style="width:2.3rem;height:2.3rem;background-position:-27.5rem -18rem;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fix-bl">
+            <div class="basewrap ta-c" style="height:4.9rem;font-size: 1.6rem;color:#fff;line-height: 4.9rem;background: linear-gradient(to right,#FF9600,#FF6C00)">确认核销</div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script> 
+    <script>
+        var vm = new Vue({
+            el: '#vue_commodity',
+            data: { 
+                selects:['全部','待付款','待发货','待收货','退款售后'],
+                selectIndex:0,
+                cur:0,
+                commoditys:[
+                    {pic:'',title:'我是标题',standard:'大份',money:'952.00',number:'10',heNumber:'10'}
+                ]                          
+            },
+            methods: {
+                btnSelect(index){
+                    this.selectIndex = index;
+                }
+            }
+        })
+    
+    </script> 
+
+</body>
+</html>    

@@ -15,10 +15,6 @@
 </head>
 <body>
     <div class="basewrap" style="padding: 0 0 4.9rem 0;">
-        <!-- <div style="width: 100%;">
-            <img src="../img/04.jpg" style="width: 100%;">
-        </div> -->
-
 		<div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -50,7 +46,7 @@
 
                 <!--赚钱-->
                 <div class="f12 ta-c cfff" style="margin:1.5rem 0 0;height:2.5rem;line-height: 2.5rem;background:linear-gradient(to right,#FF8F00,#FF6A00);border-radius:1.3rem;padding: 0 .7rem;"> 
-                    <i class="icon-earn" style="display:inline-block;margin: 0 .3rem 0 0;width:1.2rem;height:1.3rem;vertical-align: -.2rem"></i>赚￥18.54
+                    <i class="icon-earn"></i>赚￥18.54
                 </div>                
             </div>
             <div class="d-flex d-flex-center c999 f13" style="margin:1.8rem 0 0 ">
@@ -77,6 +73,43 @@
                     <div class="icon-arrow"></div>
                 </div>        
             </div>               
+        </div>
+
+        <!--使用规则-->
+        <div class="commodity-describe" style="margin-top:1rem">
+            <div class="f16 bold ta-c d-flex d-flex-center" style="line-height:4.5rem;">
+                <div class="flex"></div>
+                <div class="line01"></div>
+                <div>&nbsp;&nbsp;使用规则&nbsp;&nbsp;</div>
+                <div class="line01"></div>
+                <div class="flex"></div>
+            </div>
+
+            <div class="f15">
+                <div style="padding: 0 0 2rem;">
+                    <p class="f15 bold">使用有效期</p>
+                    <p style="margin: 1rem 0 0;">2018.03.03 00:00至 2018.03.03 00:00</p>
+                </div>
+                <div style="padding: 0 0 2rem;">
+                    <p class="f15 bold">使用时间</p>
+                    <p style="margin: 1rem 0 0;">08:00-16:00</p>
+                </div>       
+                <div style="padding: 0 0 2rem;">
+                    <p class="f15 bold">退款规则</p>
+                    <p style="margin: 1rem 0 0;">支持退款,过期后自动退</p>
+                </div>      
+                <div style="padding: 0 0 2rem;">
+                    <p class="f15 bold">联系电话</p>
+                    <p style="margin: 1rem 0 0;">020-88888</p>
+                </div>      
+                <div style="padding: 0 0 2rem;">
+                    <p class="f15 bold">其他说明</p>
+                    <p id="other-infor-js" class="clamp2" style="margin: 1rem 0 0;line-height: 1.6">啥的科技感坑过客观卡机，山东矿机亏几个借款金额开个搭嘎就看看鸡儿搭嘎呢你哥呢跟你那个！给你</p>
+                </div>                                                   
+            </div>
+
+            <div class="f15 ta-c spread-more-js">展开更多<i class="arrow"></i>
+            </div>
 
         </div>
 
@@ -144,10 +177,11 @@
                 <img src="../img/04.jpg" style="width:9rem;height:9rem;border-radius: 4px;margin: -2.6rem 1rem 0 0;">
                 <div class="flex" style="margin:.5rem 0 0;">
                     <div class="clamp2 f14 c333 bold" style="line-height:1.3">Copper Colour铜彩 夜神MOON主音箱线HIFI喇叭线高纯铜功放音响线</div>
-                    <div class="vip">
+                    <div class="vip none">
                         <i class="left">会员</i>
                         <i class="right">￥1500</i>
-                    </div>     
+                    </div>  
+                    <div class="f16 bold" style="color:#F90606;margin: .5rem 0 0">￥15.5</div>   
                 </div>
                 <i class="icon-close"></i>    
             </div>
@@ -319,16 +353,88 @@
         </div>
     </div>
 
-    <!--生成海报按钮-->
-    <!-- <div style="position:fixed;right:0;top:2.5rem;width: 6.4rem;height:2.5rem;background: #2F2D23;font-size: 12px;color:#D9AE6F;font-weight: bold;">
-        <img style="width:2.5rem;display: inline-block;margin: 0 .2rem 0 -1.25rem;" src="../img/tc-pic86.png">生成海报
-    </div> -->
+    <!--手机号-->
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <div style="padding:3.5rem 0 4rem">
+                <p class="f13 ta-c bold">为防止订单丢失，请先绑定手机号</p>
 
-    <!--分享赚钱按钮-->
-    <!-- <div style="position:fixed;right:0;top:2.5rem;width: 6.4rem;height:2.5rem;background: #2F2D23;font-size: 12px;color:#D9AE6F;font-weight: bold;">
-        <img style="width:2.5rem;display: inline-block;margin: 0 .2rem 0 -1.25rem;" src="../img/tc-pic85.png">分享赚钱
-    </div> -->
+                <div style="padding: 0 12.6%">
+                    <div class="d-flex d-flex-center bottom-line f15" style="padding: 3.5rem 0 1.5rem;">
+                        <div class="flex">
+                            <input placeholder="请输入您的手机号码" style="display: block;width:100%;">
+                        </div>
+                    </div>
+                    <div class="d-flex d-flex-center bottom-line f15" style="padding: 2.7rem 0 1.5rem;">
+                        <div class="flex">
+                            <input placeholder="请输入您的手机号码">
+                        </div>
+                        <div style="color: #FF6D00">获取</div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex top-line f16 ta-c" style="height: 5rem;line-height: 5rem;">
+                <div class="flex c999 right-line">取消</div>
+                <div class="flex" style="color: #FF6600">立即绑定</div>
+            </div>
+        </div>
+    </div>
 
+    <!--确认退款-->
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <div style="padding: 5rem 0">
+                <p class="f15 ta-c bold">已用3张，剩余7张</p>
+                <p class="ta-c" style="padding: 2rem 0 0">退款金额：<i style="font-size: 2.2rem;color: #FF6600;">20.89</i>元</p>
+            </div>
+            <div class="d-flex top-line f16 ta-c" style="height: 5rem;line-height: 5rem;">
+                <div class="flex c999 right-line">再想想</div>
+                <div class="flex" style="color: #FF6600">确认退款</div>
+            </div>
+        </div>
+    </div>
+
+    <!--什么是退款失败？--> 
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <p class="f15 ta-c bold" style="padding: 2.7rem 0 2rem;">什么是退款失败？</p>
+            <div class="f14" style="padding: 5rem 0;line-height: 1.45;padding: 0 9%;">
+                <p style="padding: 0 0 2rem;">1、微信支付商户余额小于退款金额，导
+                致退款失败，请充值足够余额，点击重新退款；</p>
+                <p style="padding: 0 0 2rem;">2、微信支付商户退款接口临时故障，导致退款失败，请直接点击重新退款；</p>                     
+            </div>
+            <div class="d-flex top-line f16 ta-c" style="height: 5rem;line-height: 5rem;">
+                <div class="flex" style="color: #FF6600">我知道了</div>
+            </div>
+        </div>
+    </div>
+
+    <!--确认拒绝-->
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <div class="bold f15 ta-c" style="padding:3rem 0;line-height: 2">确认拒绝吗？<br>请先与买家协商一致</div>
+            <div class="d-flex top-line f16 ta-c" style="height: 5rem;line-height: 5rem;">
+                <div class="flex c999 right-line">取消</div>
+                <div class="flex" style="color: #FF6600">确认拒绝</div>
+            </div>
+        </div>
+    </div>    
+
+    <!--确认退款-->
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <div class="bold f15 ta-c" style="padding:3rem 0;line-height: 2">确认退款吗？</div>
+            <div class="d-flex top-line f16 ta-c" style="height: 5rem;line-height: 5rem;">
+                <div class="flex c999 right-line">取消</div>
+                <div class="flex" style="color: #FF6600">确认退款</div>
+            </div>
+        </div>
+    </div>     
 
     <script src="../js/jquery-1.10.2.js"></script>
     <script src="../js/swiper.min.js"></script>
@@ -374,6 +480,11 @@
             var thisindex=$(this).index();
             $(this).addClass('active').siblings('.flex').removeClass('active');
             $('#coupon-zhang').children('div').hide().eq(thisindex).show();	    
+        }) 
+
+        $('.spread-more-js').on('click',function(){
+            $('#other-infor-js').removeClass('clamp2');
+
         }) 
             
     </script>

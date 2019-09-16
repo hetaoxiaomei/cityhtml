@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>订单详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        .icon-coupon,.icon-order,.icon-shop-infor,.icon-location05,.icon{background-image:url(../img/tc-pic04.png);background-size:50rem;background-repeat: no-repeat;}
+        .commodity-order{margin: 1rem 0 0;padding: 1.3rem 1rem;line-height: 1.3;position: relative;background: #fff;border-radius: 5px;}
+        .commodity-order .head{width: 6rem;height: 6rem;display: block;}
+        .icon-qr{position: absolute;top: -.3rem;right: 0;width: 2rem;height:2rem;display:block;background-image:url(../img/tc-pic04.png);background-size: 50rem;background-position:-42.2rem -16.3rem;}
+        .icon-coupon,.icon-order,.icon-shop-infor{position: absolute;top:16px;left:-24px;width: 1.8rem;height: 1.8rem;display: block;}
+        .icon-coupon{background-position:-36.9rem -16.3rem;}
+        .icon-order{background-position:-38.9rem -16.3rem;}
+        .icon-shop-infor{background-position:-34.9rem -16.3rem;}
+        .icon-location05{display: inline-block;width: 1.1rem;height:1.4rem;margin: 0 .3rem 0 0;}
+        .arrow{margin:.6rem .5rem 0 0;display:block;height: 6px;width: 6px;border-width: 1px 1px 0 0;border-color: #999;border-style: solid;transform: rotate(45deg);}
+    </style>
+</head>
+<body>
+    <div id="vue_commodity">
+        <div class="basewrap" style="padding: 0 1rem 6rem;">
+            <div class="d-flex commodity-order">
+                <img class="head" >
+                <div class="flex" style="margin: 0 0 0 1rem;">
+                    <div class="f15 clamp1">{{commodityName}}</div>
+                    <div class="d-flex" style="height: 1.6rem;">
+                        <div class="f13 c666 flex clamp1" style="margin: .2rem 0 0;line-height: 1.25;">{{commoditySpecifications}}</div>
+                        <i class="arrow"></i>
+                    </div>
+                    <div class="f13" style="overflow: hidden;margin: .8rem 0 0;">
+                        <div class="fl">￥{{commodityMoney}}</div>
+                        <div class="fr c666">x{{commodityNumber}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-f" style="border-radius:5px;padding:0 1.3rem 0 3.3rem;margin: 1rem 0 0;"  v-for="coupon in coupons">
+                <div class="rel" style="padding: 1.8rem 0;border-bottom:1px dashed #B0B0B0;">
+                    <div class="f15">核销券<i class="f13 c666" style="margin:0 0 0 1rem;">({{coupon.stock}}张可用)</i></div>
+                    <div class="f13 c666" style="margin: 1rem 0 0;">{{coupon.time}}</div>
+                    <i class="icon-coupon"></i>
+                </div>
+
+                <div class="f16 rel" style="padding: 0 0 2rem" >
+                    <div v-for="number in coupon.numbers">
+                        <div style="margin: 2rem 0 0;" :style='number.color'>{{number.code}}<i :class='number.showin' style="color:#B0B0B0;margin:0 0 0 1.4rem;">（已用）</i></div>
+                    </div>
+                    <div class="f13 c666" style="margin: 2rem 0 0;">共{{coupon.zhang}}张</div>
+                    <i class="icon-qr"></i>
+                </div>
+            </div>
+
+            <div class="bg-f" style="border-radius:5px;padding:0 1.3rem 0 3.3rem;margin: 1rem 0 0;">
+                <div class="rel clearfix" style="padding: 1.8rem 0;border-bottom:1px dashed #B0B0B0;">
+                    <div class="f15 fl">订单信息</div>
+                    <div class="c666 fr">投诉</div>
+                    <i class="icon-order"></i>
+                </div>
+                <div class="f13 rel" style="padding:.8rem 0 2rem">
+                    <div style="margin:1.2rem 0 0;">订单编号：{{orderNumber}}</div>
+                    <div style="margin:1.2rem 0 0;">下单时间：{{orderTime}}</div>
+                    <div style="margin:1.2rem 0 0;">用户昵称：{{orderName}}</div>
+                    <div style="margin:1.2rem 0 0;">用户电话：{{orderTel}}</div>                          
+                </div>
+            </div>
+
+            <div class="bg-f" style="border-radius:5px;padding:0 1.3rem 0 3.3rem;margin: 1rem 0 0;">
+                <div class="rel clearfix" style="padding: 1.8rem 0;border-bottom:1px dashed #B0B0B0;">
+                    <div class="f15">商家信息</div>
+                    <i class="icon-shop-infor"></i>
+                </div>
+                <div class="f16 rel d-flex d-flex-center" style="padding: 2rem 0;line-height: 1.3;">
+                    <img :src="comodityPic" style="display: block;width:4.5rem;height: 4.5rem;margin: 0 .7rem 0 0;" >  
+                    <div class="flex">
+                        <div class="clamp1">{{commodityShop}}</div> 
+                        <div class="f13 c666 clamp1" style="margin: .8rem 0 0;"><i class="icon-location05" style="background-position: -40.9rem -16.3rem;vertical-align: -.2rem;"></i>{{commodityLocal}}</div>
+                    </div>  
+                    <div class="icon" style="width:2rem;height:2.2rem;background-position: -44.4rem -16.3rem;margin: 0 0 0 1.6rem"></div>                   
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="fix-bl" v-if="type=='1'">
+            <div class="basewrap ta-c" style="height:4.9rem;font-size: 1.6rem;color:#fff;line-height: 4.9rem;background: linear-gradient(to right,#FF9600,#FF6C00)">申请退款</div>
+        </div>
+
+        <div class="fix-bl" v-else>
+            <div class="basewrap ta-c" style="height:4.9rem;font-size: 1.6rem;color:#666;line-height: 4.9rem;background: #D7D7D7">申请退款</div>
+        </div>
+  
+
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script> 
+    <script>
+        var vm = new Vue({
+            el: '#vue_commodity',
+            data: { 
+                commodityName:'茶吗天下代金券简科技更给你姐',
+                commoditySpecifications:'小份',
+                commodityNumber:'12',
+                commodityMoney:'50',
+                coupons:[
+                    {stock:'5',time:'2018-09-01 00:00:00 至 2019-09-01 00:00:00',zhang:'10',
+                        numbers:[
+                            {code:'1244683584785',showin:'',color:'color:#B0B0B0'},
+                            {code:'1244683584784',showin:'none',color:''},
+                            {code:'1244683584783',showin:'none',color:''}
+                        ]
+                    }
+                ],
+                orderNumber:'23456789',
+                orderTime:'2019-08-20 16:22:30',
+                orderName:'林同学',
+                orderTel:'1304201202',
+                commodityShop:'茶妈天下（东方宝泰店）',
+                comodityPic:'',
+                commodityLocal:'广州市天河区天安人寿中心中心27',
+                type:1
+            }
+        })
+    
+    </script> 
+</body>
+</html>    

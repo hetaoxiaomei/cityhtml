@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/release.css">
     <style>
-        .guige-plus,.upload-pic-ul li .f01,.upload-pic-ul li .close,.icon-help,.write-cell .arrow,.arrow02,.icon-delete{background-image: url(../img/tc-pic04.png);background-size: 50rem;}
+        .icon,.guige-plus,.upload-pic-ul li .f01,.upload-pic-ul li .close,.icon-help,.write-cell .arrow,.arrow02,.icon-delete{background-image: url(../img/tc-pic04.png);background-size: 50rem;}
         .write-cell .left{width:auto;}
         .upload-pic-ul{padding:2rem 0 0;overflow: hidden;}
         .upload-pic-ul li{background:#F0F0F0;width:30%;padding: 30% 0 0;position: relative;margin: 0 3.3% 1rem 0;float: left}
@@ -29,7 +29,13 @@
         .write-cell .arrow{width: .7rem;height: 1.1rem;background-position: -24.5rem -9.2rem;margin-left: 5px;}
         .arrow02{width:.7rem;height: 1.1rem;display: inline-block;background-position: -16.9rem -8.8rem;transform: rotate(90deg);margin:0 0 0 .5rem;vertical-align:-.2rem}
         .icon-delete{width:2.5rem;height: 2.5rem;display: block;background-position: -29.9rem -13.4rem;margin: 0 auto;}
-    </style>
+    
+        /*2019/9/12*/
+        .write-cell{padding: 0}
+        .arrow02{vertical-align:.2rem;  background: none;transform:rotate(135deg); display: inline-block;height: 6px;width: 6px;border-width: 1px 1px 0 0;border-color: #FF6600;border-style: solid;position: relative;}
+        .icon-select-radio{vertical-align: -.5rem;display:inline-block;width:2.2rem;height:2.2rem;margin: 0 .6rem 0 0;background-position:-17.5rem -21.4rem;}
+        .icon-select-radio.active{background-position:-15.1rem -21.4rem;}
+  </style>
 </head>
 <body>
     <div style="padding: 0 0 6.5rem;">
@@ -172,34 +178,60 @@
             <div id="add-guige-bt" class="f13" style="color:#ff5a00;position: absolute;top: 1rem;right: 1rem;"><i class="guige-plus"></i>添加规格</div>
         </div>   
         
+        <div class="f13 bold" style="overflow: hidden;margin: 2.6rem 0 .8rem 0">
+            <div class="fl" style="margin: 0 0 0 12%">
+                <i class="icon icon-select-radio active"></i>线上发货<i class="icon" style="vertical-align: -.3rem;width: 1.6rem;height:1.6rem;display:inline-block;background-position:-19.9rem -21.4rem;margin: 0 0 0 .4rem;"></i>
+            </div>
+            <div class="fr" style="margin: 0 12% 0 0">
+                <i class="icon icon-select-radio" style=""></i>到店核销<i class="icon" style="vertical-align: -.3rem;width: 1.6rem;height:1.6rem;display:inline-block;background-position:-19.9rem -21.4rem;margin: 0 0 0 .4rem;margin: 0 0 0 .4rem;"></i>
+            </div>
+        </div>
+
         <div class="box-shadow-kuang" style="margin:1.5rem 1.5rem 0;padding: 1.5rem 1.5rem 0;">
             <div class="d-flex d-flex-center">
                 <div class="flex"></div>
                 <i style="background: #ccc;display: block;width: 1.6rem;height: .1rem;"></i>
-                <div class="bold f16">&nbsp;&nbsp;配送信息&nbsp;&nbsp;</div>
+                <div class="bold f16">&nbsp;&nbsp;核销规则&nbsp;&nbsp;</div>
                 <i style="background: #ccc;display: block;width: 1.6rem;height: .1rem;"></i>
                 <div class="flex"></div>
             </div>
-
+<!-- 
             <ul class="express-ul">
                 <li class="active">快递发货</li>
                 <li style="margin: 0 6.3%;">同城配送</li>
                 <li>到店自提</li>
-            </ul>
+            </ul> -->
 
-            <div class="d-flex d-flex-center write-cell bottom-line top-line">
-                <div class="left bold">快递运费模板</div>
-                <div style="color: #E50909;margin: .6rem 2.2rem 0 .4rem;">*</div>
+            <div class="d-flex d-flex-center write-cell bottom-line">
+                <div class="left bold">使用有效期</div>
                 <div class="flex right">
-                    <input class="write ta-r" placeholder="点击选择">
+                    <input class="write ta-r" placeholder="购买当日起计算">
                 </div>      
                 <div class="arrow"></div>                                                    
             </div> 
-
-            <div id="peisong-bt" class="f13" style="padding: 1rem;position: absolute;top: .3rem;left: 50%;margin: 0 0 0 6rem;"><i class="icon-help"></i></div>
+            <div class="d-flex d-flex-center write-cell bottom-line">
+                <div class="left bold">有效天数</div>
+                <div class="flex right">
+                    <input class="write ta-r" placeholder="1-365天" style="padding: 0 1.2rem 0 0;box-sizing:border-box;">
+                </div>                                                        
+            </div>
+            <div class="d-flex d-flex-center write-cell bottom-line">
+                <div class="left bold">使用时间</div>
+                <div class="flex right">
+                    <input class="write ta-r" placeholder="09:00~18:00">
+                </div>      
+                <div class="arrow"></div>                                                    
+            </div>  
+            <div class="d-flex d-flex-center write-cell bottom-line">
+                <div class="left bold">退款服务</div>
+                <div class="flex right">
+                    <input class="write ta-r" placeholder="不可退">
+                </div>      
+                <div class="arrow"></div>                                                    
+            </div>                        
         </div>
         
-        <p id="select-more-js" class="ta-c f14" style="padding: 1.5rem;">选填更多参数<i class="arrow02"></i></p>
+        <p id="select-more-js" class="ta-c f14" style="padding: 1.5rem;color: #FF6600">选填更多参数<i class="arrow02"></i></p>
 
         <div id="other-js" class="box-shadow-kuang none" style="margin:1.5rem;padding: 1.5rem 1.5rem 0;">
             <div class="d-flex d-flex-center">
@@ -320,7 +352,7 @@
     </div> 
 
     <div class="fix-bl">
-        <a class=" f16 ta-c bold" style="padding:0;height: 4.9rem;background: #ff5a00;color: #fff;line-height: 4.9rem;display:block;">下一步</a>
+        <a class=" f16 ta-c bold" style="padding:0;height: 4.9rem;background:linear-gradient(to right,#FF9600,#FF6C00);color: #fff;line-height: 4.9rem;display:block;">下一步</a>
     </div>
 
     <!--配送信息-->
