@@ -201,6 +201,23 @@
     width: 100%;
 }
 
+.spread-more-js{
+    padding: 0 0 3rem;
+    color: #FF6600
+}
+
+.spread-more-js .arrow{
+    display: inline-block;
+    height: 6px;
+    vertical-align: .3rem;
+    width: 6px;
+    border-width: 1px 1px 0 0;
+    border-color: #FF6600;
+    border-style: solid;
+    transform: rotate(135deg);
+    margin: 0 0 0 5px
+}
+
 @media only screen and (min-width: 320px) and (max-width: 350px) {
     .coupon-zhang{width:290px}
     .coupon-zhang .money .i01{font-size: 32px;}
