@@ -1,4 +1,4 @@
-.icon-sign,.data-ul .icon,.fenxiao-center-cell .icon,.me-icon-ul li i{
+.me-top .infor .vip,.icon-sign,.data-ul .icon,.fenxiao-center-cell .icon,.me-icon-ul li i{
     background-image: url(../img/me02.png);
     background-repeat: no-repeat;
     background-size: 50rem;
@@ -242,6 +242,20 @@ body{line-height: 1}
     font-size:1.4rem;
     text-align:center;
     margin: 1.5rem 0 0 5rem;
+}
+
+.me-top .infor .name{
+    max-width: 60%;
+    float: left;
+}
+
+.me-top .infor .vip{
+    margin: 0 0 0 .5rem;
+    width: 3.7rem;
+    height:1.5rem;
+    display:inline-block;
+    background-position:-10.2rem 0;
+    vertical-align: -.3rem;
 }
 
 /*图标*/
