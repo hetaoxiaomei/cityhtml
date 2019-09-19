@@ -1,0 +1,57 @@
+
+    .bottom-nav i{background-image:url(../img/help-center01.png);background-size: 25rem;background-repeat:no-repeat;}
+    .icon-customer-service-search{background-repeat: no-repeat;background-size: 25rem;background-image:url(https://j.vzan.cc/content/city/images/tc-yh-01.png)}
+    
+    .customer-service-search input {width: 100%;height: 100%;display: block;color: #121212;font-size: 1.4rem;padding-right: 1rem;box-sizing: border-box;padding-left: 3rem;}
+    .customer-service-search-bar {margin: 1rem 1.5rem;}
+    .customer-service-search {height: 3rem;border-radius: .2rem;background: #fff;position: relative;box-sizing: border-box;}
+    .customer-service-search-bar .bt {height: 3rem;width: 5rem;color: #fff;background: #FF5A00;border-radius: .2rem;
+        margin-left: 1rem;line-height: 3rem;text-align: center;font-size: 1.4rem;}
+    .icon-customer-service-search {width: 1.6rem;height: 1.6rem;display: block;background-position: -23rem -18.3rem;position: absolute;left: 1rem;top: .7rem;}
+    .customer-service-cell .gray-dot {color: #ccc;margin-right: .5rem;}
+    .customer-service-cell {padding: 1.5rem;background: #fff;position: relative;font-size: 1.5rem;color: #121212;line-height: 1.25;overflow: hidden;}
+    
+    .customer-service-cell.other {background: #f2f2f2;padding: 1.2rem 1.5rem;font-size: 1.5rem;color: #121212;line-height: 1.25;overflow: hidden;position: relative;}
+    .customer-service-cell:after {content: " ";position: absolute;left: 0;bottom: 0;width: 100%;height: 1px;border-bottom: 1px solid #e5e5e5;-webkit-transform-origin: 0 100%;transform-origin: 0 100%;-webkit-transform: scaleY(0.5);transform: scaleY(0.5);}
+    .customer-service-cell.other:after{left: 15px;}
+    .bottom-nav{height: 5rem;background:#fff}
+    .bottom-nav i{margin: .6rem auto .4rem;width: 2.5rem;height:2.5rem;display:block;}
+    .icon-jiaocheng{background-position: -2.7rem 0;}
+    .icon-gonggao{background-position: -2.7rem -2.7rem;}
+    .bottom-nav>a.active .icon-jiaocheng{background-position: 0 0;}
+    .bottom-nav>a.active .icon-gonggao{background-position: 0 -2.7rem;}
+    .bottom-nav>a.active p{color: #ff6600}
+
+    .arrow-l{
+        display: block;
+        height: 6px;
+        width: 6px;
+        border-width: 1px 1px 0 0;
+        border-color: #999;
+        border-style: solid;
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    .arrow-r{
+        display:block;
+        height: 6px;
+        width: 6px;
+        border-width: 1px 1px 0 0;
+        border-color: #999;
+        border-style: solid;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    .arrow-d{
+        display:block;
+        height: 6px;
+        width: 6px;
+        border-width: 1px 1px 0 0;
+        border-color: #999;
+        border-style: solid;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        margin: -.5rem 0 0;
+    }

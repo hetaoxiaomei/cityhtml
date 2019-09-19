@@ -138,8 +138,9 @@ body{line-height: 1}
 /*列表*/
 .my-order-all{
     background:#fff;
-    border-radius:10px;
+    border-radius:5px;
     margin: 1rem 1rem 0;
+    overflow: hidden;
 }
 
 .my-order-title{
@@ -171,7 +172,7 @@ body{line-height: 1}
 }
 
 .me-icon-ul li a {
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
     display: block;
 }
 
