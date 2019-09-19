@@ -10,6 +10,7 @@
     <meta charset="utf-8">
     <title>订单详情</title>
     <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/bottom-navigation.css">
     <style>
         .icon-tuikuan-fail{background-image:url(../img/tc-pic04.png);background-size:50rem;background-repeat: no-repeat;}
         .select-ul{height: 3.7rem;line-height:3.7rem;}
@@ -24,10 +25,22 @@
 </head>
 <body>
     <div id="vue_commodity">
-        <div class="basewrap" style="padding: 0 0 6rem;">
-            <ul class="d-flex ta-c f14 select-ul">
+        <div class="bottom-line fix-tl" style="position: fixed">
+            <div class="d-flex index-search-bar">           
+                <div class="center flex" style="margin:0 1rem 0 0;border-radius:.2rem;">
+                    <svg class="icon-search" aria-hidden="true">
+                        <use xlink:href="../css/icon.svg#search"></use>
+                    </svg>
+                    <input readonly="" placeholder="搜索">
+                </div>  
+                <div style="background:#ff6600;color:#fff;font-size:1.4rem;padding:0 1.5rem;border-radius: .2rem;line-height:3rem;height: 3rem;">搜索</div>            
+            </div>
+            <ul class="d-flex ta-c f14 select-ul bg-f">
                 <li @click="btnSelect(index)" class="flex" :class="{active:selectIndex==index}" v-for="(select,index) in selects">{{select}}</li>
             </ul>
+        </div>
+
+        <div class="basewrap" style="padding: 7.7rem 0 6rem;">
             <!--待发货-->
             <div style="padding:0 1.2rem;margin: 1rem 1rem 0;background: #fff;" v-for="commodity in commoditys01" v-if="cur==0">         
                 <div class="d-flex d-flex-center bottom-line">
