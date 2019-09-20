@@ -55,3 +55,8 @@
         -webkit-transform: rotate(135deg);
         margin: -.5rem 0 0;
     }
+
+    .arrow-d.active{
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }       

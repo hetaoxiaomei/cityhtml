@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/help.css">
 </head>
 <body>
-    <div class="basewrap bz">
+    <div class="basewrap bz" style="padding: 0 0 5rem;">
         <div class="d-flex customer-service-search-bar">
             <div class="flex customer-service-search">
                 <input id="sotext" placeholder="不会用,搜一下">
@@ -86,5 +86,12 @@
         </div>
     </div>
 
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>
+        $('.customer-service-cell').on('click',function(){
+            $(this).siblings('ul').toggle();
+            $(this).children('.arrow-d').toggleClass('active');
+        })
+    </script>
 </body>
 </html>
