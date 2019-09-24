@@ -8,16 +8,18 @@
     <meta content="yes" name="apple-touch-fullscreen">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="utf-8">
-    <title>订单核销</title>
+    <title>帮助</title>
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="css/help.css">
 </head>
 <body>
     <div class="basewrap bz" style="padding: 0 0 5rem;">
-        <div class="d-flex customer-service-search-bar">
+        <a onclick="jump()"></a>
+        <div class="d-flex customer-service-search-bar bottom-line">
             <div class="flex customer-service-search">
-                <input id="sotext" placeholder="不会用,搜一下">
+                <input id="sotext" type="search" placeholder="不会用，搜一下">
                 <i class="icon-customer-service-search"></i>
+                <img class="delete" src="img/help03.png" style="display: none">
             </div>
             <div id="so" class="bt">搜索</div>
         </div>
@@ -92,6 +94,27 @@
             $(this).siblings('ul').toggle();
             $(this).children('.arrow-d').toggleClass('active');
         })
+
+        $('.customer-service-search input').on('click',function(){
+            $('.customer-service-search .delete').show()
+        })
+
+        $('.customer-service-search input').focus(function(){
+            if($(this).val() !== ""){
+               $('.customer-service-search .delete').show() 
+            }else{
+                $('.customer-service-search .delete').hide() 
+            }
+        })
+
+        $('.customer-service-search .delete').on('click',function(){
+            event.stopPropagation();
+            event.preventDefault();
+            $('.customer-service-search input').val(""); 
+            $(this).hide();
+
+        })
+
     </script>
 </body>
 </html>
