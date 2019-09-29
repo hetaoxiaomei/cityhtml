@@ -1,5 +1,5 @@
 
-.recommend-business .top-ding,.recommend-business .icon i,.recommend-business .icon02,
+.recommend-business .top-ding,.recommend-business .icon i,.recommend-business-all .icon02,
 .recommend-business .headicon,.recommend-business .icon-vip,.recommend-business .icon-location{
     background-image: url(../img/tc-pic04.png);
     background-repeat: no-repeat;
@@ -262,7 +262,7 @@
     color:#fff;
 }
 
-.recommend-business .icon02{
+.recommend-business-all .icon02{
     vertical-align: -.3rem;
     margin: 0 .5rem 0 0;
     width: 1.5rem;
