@@ -7,6 +7,7 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="yes" name="apple-touch-fullscreen">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta charset="utf-8">
     <title>微赞同城加盟商案例</title>
     <link rel="stylesheet" type="text/css" href="css/common.css">
@@ -181,23 +182,36 @@
             methods: {
                 checkItem:function(index){this.selectindex=index},
                 getData(){
-                    $.get("/sc/getsubarea", {pid:1}, function (data) {
+                    $.get("http://t4.vzan.com/icapi/getcasedata", {pid:1}, function (data) {
                         if (data.code == 1) {
 
                         }
                     });
                 },
-                postData(){
-                    $.post('/CityComment/setcpost', { Id: id, State: state, typename: 'state' }, function (data) {
-                        if (data.code == 1) {
+                // postData(){
+                //     $.post('http://t4.vzan.com/icapi/getcasedata', { Id: id, State: state, typename: 'state' }, function (data) {
+                //         if (data.code == 1) {
                             
-                        }
-                    });
-                }                
-            },
+                //         }
+                //     });
+                // }  
 
+
+
+
+                //四舍五入取整,已万为单位
+                // rounding(){
+                //     n=1848554.02;
+                //     n=Math.round((n/10000));
+                //     alert(n);
+                // }    
+    
+            },
             mounted:function(){
 
+            },
+            created:function(){
+                this.getData();
             }
         })
     </script>
@@ -216,6 +230,9 @@
         $('.call-js02').on('click',function(){
             $('.dialog-call-js02').fadeIn(200);
         })
+
+                        
+
 
     </script> 
 
