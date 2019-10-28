@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>评论管理弹窗</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+</head>
+<body>
+    <!--确定删除弹框-->
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <p style="text-align: center;font-size: 16px;padding: 80px 0 64px;">确定删除这条评论吗？</p>
+            <div class="d-flex top-line" style="overflow:hidden;font-size: 16px;text-align: center;font-weight: bold">
+                <div class="flex" style="height:49px;line-height: 49px;color: #999">取消</div>
+                <div class="flex left-line" style="height:49px;color:#fff;color:#ff5a00;line-height: 49px;">确定</div>
+            </div>
+        </div>
+    </div>
+
+    <!--拉黑原因弹框-->
+    <div class="fix-tl-100 none">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <p style="font-size: 16px;padding: 80px 0 64px;padding:30px 20px 0;font-weight: bold">拉黑原因</p>
+            <div style="margin: 20px 20px 30px;">
+                <textarea placeholder="请填写拉黑原因，最多300字" style="-webkit-appearance: none;font-size: 14px;overflow: auto;box-sizing: border-box;padding: 10px; display: block;width: 100%;height: 100px;border: 1px solid #ccc;border-radius: 4px;"></textarea>
+            </div>
+            <div class="d-flex top-line" style="overflow:hidden;font-size: 16px;text-align: center;font-weight: bold">
+                <div class="flex" style="height:49px;line-height: 49px;color: #999">取消</div>
+                <div class="flex left-line" style="height:49px;color:#fff;color:#ff5a00;line-height: 49px;">确定</div>
+            </div>
+        </div>
+    </div>
+
+    <!--警告用户弹框-->
+    <div class="fix-tl-100">
+        <div class="dialog-black-mask"></div>
+        <div class="dialog-middle">
+            <p style="font-size: 16px;padding: 80px 0 64px;padding:30px 20px;font-weight: bold;text-align:center">警告用户</p>
+            <div style="margin:0 20px;position: relative;">
+                <select class="change" style="color: #999;border: 1px solid #e5e5e5;border-radius:4px;height: 45px;padding: 0 30px 0 10px;font-size:14px;">
+                    <option>点击选择拉黑原因</option>
+                    <option>发布内容违法</option>
+                    <option>评论内容涉及色情内容</option>
+                </select>
+                <span style="position: absolute;top: 50%;right: 10px;transform: translate(0,-50%);width:0;height:0;border-right:6px solid transparent;border-left:6px solid transparent;border-top:8px solid #e5e5e5;"></span>
+            </div>
+            
+            <div style="margin: 20px;">
+                <textarea placeholder="填写警告原因，最多800字" style="-webkit-appearance: none;font-size: 14px;overflow: auto;box-sizing: border-box;padding: 10px; display: block;width: 100%;height: 100px;border: 1px solid #e5e5e5;border-radius: 4px;"></textarea>
+            </div>
+
+            <div style="margin:0 20px;padding: 0 0 30px;">
+                <input placeholder="内部备注，最多50字" style="font-size: 14px;box-sizing: border-box;width: 100%;border: 1px solid #e5e5e5;border-radius:4px;height: 45px;padding: 0 10px;">
+            </div>
+
+            <div class="d-flex top-line" style="overflow:hidden;font-size: 16px;text-align: center;font-weight: bold">
+                <div class="flex" style="height:49px;line-height: 49px;color: #999">取消</div>
+                <div class="flex left-line" style="height:49px;color:#ff5a00;line-height: 49px;">确定</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script>   
+        $("select.change").change(function () {
+            var selItem = $(this).val();
+            if (selItem == $(this).find('option:first').val()) {
+                $(this).css('color','#999999');
+            } else {
+                $(this).css('color','#333333');
+                
+            }
+        });
+        
+        $('.dialog-black-mask').bind("touchmove",function(e){
+            e.preventDefault();
+        });
+    </script>    
+</body>
+</html>
