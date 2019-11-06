@@ -22,13 +22,14 @@
         .fenxiao-table{border-collapse: collapse;width: 100%;box-sizing: border-box}
         .fenxiao-table tr{height: 4rem;color:#553E08;border-bottom:1px solid #D6CAB2;border-right:1px solid #D6CAB2;box-sizing: border-box}
         .fenxiao-table tr td{border-left:1px solid #D6CAB2;width: 50%;box-sizing: border-box}
+        .fenxiao-cell-all .fenxiao-cell:last-child:before{display: none}
     </style>
 </head> 
 <body>
     <div id="vue_fenxiao" v-show="isCreated" class="basewrap" style="background:#FFE2C6;padding: 0 0 6rem;">
         <img src="img/fenxiao07.png" style="display: block;width:100%;">
         <div style="padding: 0 1.5rem;">
-            <div style="border-radius:10px;background: #FFFDFC;padding:0 1.5rem;">
+            <div class="fenxiao-cell-all" style="border-radius:10px;background: #FFFDFC;padding:0 1.5rem;">
                 <div class="d-flex fenxiao-cell">
                     <img class="pic-number" src="img/fenxiao08.png">
                     <div class="flex">
