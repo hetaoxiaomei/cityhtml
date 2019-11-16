@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>电子票验票</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        body{background: #fff;}
+    </style>
+</head> 
+<body>
+    <div id="vue_activity" v-show="isCreated">
+        <div class="basewrap ta-c f14 c666 bz" style="padding: 0 2rem" v-if="type===0">
+            <img src="../img/tc-pic120.png" style="display: block;margin:20% auto 0;width:28%;">
+            <p class="bold f18 c333" style="margin: 3rem 0 0">验票成功</p>
+            <p style="margin: 1rem 0">活动：{{activity}}</p>
+            <p style="margin: 1rem 0">姓名：{{name}}</p>   
+            <p style="margin: 1rem 0">电话：{{tel}}</p>                       
+        </div>
+
+        <div class="basewrap ta-c f14 c666 bz" style="padding: 0 2rem" v-else-if="type===1">
+            <img src="../img/tc-pic121.png" style="display: block;margin:20% auto 0;width:28%;">
+            <p class="bold f18 c333" style="margin: 3rem 0 0">该用户已验票</p>
+            <p style="margin: 1rem 0">活动：{{activity}}</p>
+            <p style="margin: 1rem 0">姓名：{{name}}</p>   
+            <p style="margin: 1rem 0">电话：{{tel}}</p>                       
+        </div>
+        
+        <div class="basewrap ta-c f14 c666 bz" style="padding: 0 2rem" v-else-if="type===2">
+            <img src="../img/tc-pic122.png" style="display: block;margin:20% auto 0;width:28%;">
+            <p class="bold f18 c333" style="margin: 3rem 0 0">没有验票权限</p>
+            <p style="margin: 1rem 0">您不是该活动发布者，不能进行验票</p>                     
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_activity',        
+            data:{
+                type:0,
+                activity:'翻转课堂之《认知天性》',
+                name:'曾小贤',
+                tel:12345678912
+            },
+            methods:{
+
+            },
+            mounted:function(){
+
+            },
+            created: function () {
+                this.isCreated = true;
+            }             
+        })
+    </script>
+</body>
+</html>

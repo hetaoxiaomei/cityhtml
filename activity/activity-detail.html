@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>活动详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/new-swiper.css">
+    <style>
+        .icon01,.activity-bottom-nav .icon01{background: url(../img/tc-pic04.png);background-size:50rem}
+        .watch-number{padding:0 .7rem;line-height:2.4rem;height: 2.4rem;border-radius: 12px;background:rgba(0,0,0,.4);color: #fff;font-size: 1.3rem;position: absolute;top:1.5rem;right:1rem;z-index: 1;}
+        .watch-number .icon01{margin: 0 .5rem 0 0;width: 1.4rem;height: 1.2rem;display: inline-block;background-position: -47.6rem -18.7rem;vertical-align: -.2rem;}
+        .activity-bottom-nav{height: 4.9rem;text-align:center;background: #fff;box-shadow: 0 2px 10px rgba(0,0,0,.05);}
+        .activity-bottom-nav .li01{color: #666;font-size:1rem;width:5rem;cursor: pointer;}
+        .activity-bottom-nav .icon01{width: 2.2rem;height: 2.2rem;margin: 0 auto 5px;display: block;}
+        .participate-ul{margin: 1rem 0 0;overflow: hidden;}
+        .participate-ul li{float:left;width:10.5%;padding:10.5% 0 0;position:relative;margin: 0 2% 0 0;}
+        .participate-ul li img{position: absolute;top: 0;left: 0; width:100%;height:100%;display:block;}
+        .activity-main{padding: 0 1rem; position: relative;z-index: 5;height:6rem;margin:-1rem 1rem 0;border-radius: 5px;background:url(../img/tc-pic119.png);background-size: cover;}
+        .activity-main .time{font-size:1.4rem;color: #fff;overflow: hidden}
+        .activity-main .time i{width: 2.2rem;height:2.2rem;border-radius:3px;text-align: center;line-height: 2.2rem;text-align: center;display: block;background:#fff;color:#333;float: left;}
+        .activity-main .time em{padding:0 .5rem;display:block;float:left;line-height:2.2rem;}
+        .activity-main .f01{color:#fff;font-size:11px;margin: 0 0 .7rem;}
+        .icon-location01{width: 1.4rem;height:1.7rem;display: inline-block;background-position:-44.4rem -18.7rem;margin:0 .5rem 0 0;vertical-align: -.4rem;}
+        .icon-date01{width: 1.4rem;height:1.4rem;display: inline-block;background-position:-46rem -18.7rem;margin:0 .5rem 0 0;vertical-align: -.2rem;}
+        .orange-line{width: .3rem;height:1.4rem;background:#FF6600;display:inline-block;margin: 0 10px 0 0;vertical-align: -.2rem;}
+        .release-bt{margin: 3rem 2rem;background: #009CFF;color:#fff;height:4.4rem;line-height: 4.4rem;border-radius:2.2rem;text-align: center;font-size: 1.6rem;display: block}
+        .icon-plinglun01{vertical-align: -.2rem;margin: 0 .5rem 0 0;width:1.3rem;height:1.6rem;display: inline-block;background-position: -27rem -21.4rem;}
+    </style>
+</head> 
+<body>
+    <div id="vue_activity" v-show="isCreated">
+        <div class="basewrap" style="padding: 0 0 5rem">
+            <div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for='slide in slides'>
+                        <img class="img-w-100" :src="slide.img" />
+                    </div>	
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <div class="watch-number">
+                    <i class="icon01"></i>{{watchNumber}}
+                </div>
+            </div> 
+
+            <!--时间-->
+            <div class="d-flex d-flex-center activity-main">
+                <div class="flex" style="font-size:30px;color: #fff;">
+                    <i class="f16">￥</i>{{priceYuan}}<i class="f16">{{priceDot}}{{priceJiao}}</i>
+                    <i class="line-through f16" style="margin: 0 0 0 .5rem;">￥{{priceOrign}}</i>
+                </div>
+                <div class="cfff">
+                    <p class="f01">距活动结束还剩下</p>
+                    <div class="time" v-for="time in times">
+                        <i>{{time.hour}}</i>
+                        <em>:</em>
+                        <i>{{time.minute}}</i>
+                        <em>:</em>
+                        <i>{{time.second}}</i>
+                    </div>
+                </div>
+            </div>        
+
+            <!--认知天性-->
+            <div style="padding: 20px 10px;border-radius:5px;background:#fff;margin: 1rem;line-height: 1;" v-for="mainInfor in mainInfors">
+                <p class="f18 bold" style="line-height: 1.4;">{{mainInfor.title}}</p>
+                <div class="f13 c999 clamp1" style="margin: 1rem 0 0;">
+                    <i class="icon01 icon-location01"></i>{{mainInfor.local}}
+                </div>
+                <div class="f13 c999 clamp1" style="margin: 1rem 0 0;">
+                    <i class="icon01 icon-date01"></i>{{mainInfor.date}}</div>
+            </div>
+
+            <!--参与人数-->
+            <div class="bg-f" style="padding: 2rem 1rem;margin: 1rem;border-radius: 5px" v-for='participate in participates'>
+                <div style="font-size: 1.4rem;">已报名{{participate.people}}人，剩余<i style="color: #FF6600;">{{participate.quota}}</i>个名额</div> 
+                <ul class="participate-ul">
+                    <li v-for='pic in participate.pics'>
+                        <img :src='pic.img'>
+                    </li>                                
+                </ul>
+            </div>
+
+            <!--商家介绍-->
+            <div class="d-flex d-flex-center bg-f" style="padding: 2rem 1rem;margin: 1rem;border-radius: 5px" v-for='businessInfor in businessInfors'>
+                <img :src="businessInfor.img" style="width:6.5rem;height:6.5rem;border-radius:50%;margin:0 1rem 0 0;">
+                <div class="flex" style="line-height: 1.5">
+                    <p class="clamp2 f16 bold" style="margin: 0 0 .3rem;">{{businessInfor.title}}</p>
+                    <p class="clamp2 f13">{{businessInfor.detail}}</p>
+                </div>
+            </div>
+
+            <!--活动详情-->
+            <div class="f14 bg-f" style="margin:0 1rem;padding:2rem 1rem 1.5rem;border-radius: 5px;">
+                <div class="f16 bold" style="margin: 0 0 1rem;">
+                    <i class="orange-line"></i>活动详情</div>
+                <div class="f14" style="line-height: 1.5;">{{activityDetail}}</div>
+            </div>
+
+            <!--用户评论-->
+            <div class="f14 bg-f d-flex" style="margin:1rem 1rem 0;padding:2rem 1rem;border-radius: 5px;">
+                <div class="f16 bold flex"><i class="orange-line"></i>用户评论</div>
+                <div class="f16"><i class="icon01 icon-plinglun01"></i>评论</div>
+            </div>
+            <a class="release-bt">我也要发布活动</a>
+        </div>  
+
+        <!--我要报名-->
+        <div class="fix-bl" v-if="ok===0">
+            <ul class="basewrap d-flex d-flex-center activity-bottom-nav">
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -34.9rem -18.3rem;"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -37.3rem -18.3rem;"></span>
+                        <p>收藏</p>
+                    </a>
+                </li>
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -39.7rem -18.3rem;"></span>
+                        <p>转发</p>  
+                    </a>              
+                </li>
+                <li class="li01">
+                    <a >
+                        <span class="icon01" style="background-position: -42.1rem -18.3rem;"></span>
+                        <p>咨询</p>     
+                    </a>           
+                </li>
+                <li class="f16 bold flex" style="height: 4.9rem;line-height:4.9rem;background: linear-gradient(to right,#FF8F00,#FF6A00);color: #fff;">
+                    <a class="cfff">我要报名</a>
+                </li>
+            </ul>
+        </div> 
+        
+        <!--扫码验票-->
+        <div class="fix-bl" v-else-if="ok===1">
+            <ul class="basewrap d-flex d-flex-center activity-bottom-nav">
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -34.9rem -18.3rem;"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -39.7rem -18.3rem;"></span>
+                        <p>转发</p>
+                    </a>                
+                </li>
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -42.1rem -18.3rem;"></span>
+                        <p>咨询</p>  
+                    </a>              
+                </li>
+                <li class="f16" style="height: 4.9rem;line-height:1.4;width:44%;background: linear-gradient(to right,#FF8F00,#FF6A00);color: #fff;">
+                    <p class="f16 bold" style="padding: .6rem 0 0;">扫码验票</p>
+                    <p class="f12">(可直接使用微信扫码)</p>
+                </li>
+            </ul>
+        </div>        
+
+        <!--活动结束-->
+        <div class="fix-bl" v-else-if="ok===2">
+            <ul class="basewrap d-flex d-flex-center activity-bottom-nav">
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -34.9rem -18.3rem;"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -39.7rem -18.3rem;"></span>
+                        <p>转发</p>   
+                    </a>             
+                </li>
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -42.1rem -18.3rem;"></span>
+                        <p>咨询</p>   
+                    </a>             
+                </li>
+                <li class="f16 bold flex" style="line-height:4.9rem;width:44%;background:#666666;color: #fff;">活动结束</li>
+            </ul>
+        </div>      
+
+        <!--参与人数已满-->
+        <div class="fix-bl" v-else-if="ok===3">
+            <ul class="basewrap d-flex d-flex-center activity-bottom-nav">
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -34.9rem -18.3rem;"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -39.7rem -18.3rem;"></span>
+                        <p>转发</p>     
+                    </a>           
+                </li>
+                <li class="li01">
+                    <a>
+                        <span class="icon01" style="background-position: -42.1rem -18.3rem;"></span>
+                        <p>咨询</p>
+                    </a>                
+                </li>
+                <li class="f16 bold flex" style="line-height:4.9rem;width:44%;background: linear-gradient(to right,#FFCC00,#FFAE00);color: #fff;">参与人数已满</li>
+            </ul>
+        </div>     
+
+        <img class="shareFLoatBtn" src="https://j.vzan.cc/content/city/tool/images/tc-pic114.png" style="width:4rem;height:4rem;position: fixed;right: 1.2rem;bottom:12rem;z-index:2;display: block;">
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_activity',        
+            data:{
+                isCreated:false,
+                watchNumber:222,
+                slides:[
+                    {img:'http://i2cut.vzan.cc/image/jpg/2019/8/28/12202600d6144514db47018f47076b72f43366.jpg!640x360'},
+                    {img:'http://i2cut.vzan.cc/image/jpg/2019/5/30/0616048488d44cbd3b429a880fd670e032c86f.jpg!640x360'}
+                ],
+                priceYuan:29,
+                priceDot:'.',
+                priceJiao:5,
+                priceOrign:36.6,
+                times:[
+                    {hour:12,minute:30,second:56}
+                ],
+                mainInfors:[
+                    {
+                        title:'扭转课堂扭转课堂扭转课堂之《认知天性》',
+                        local:'广东省广州市天河区天安人寿中心天安人寿中心广州市天河区天安人寿中心天安人寿中心2701',
+                        date:'2019-10-31 08:00 至 11-13 18:00'
+                    }
+                ],
+                participates:[
+                    {
+                        people:1202,
+                        quota:48,
+                        pics:[
+                            {img:'../img/04.jpg'},
+                            {img:'../img/04.jpg'},
+                            {img:'../img/04.jpg'},
+                            {img:'../img/04.jpg'},
+                            {img:'../img/04.jpg'},
+                            {img:'../img/04.jpg'},
+                            {img:'../img/04.jpg'},
+                            {img:'../img/tc-pic118.jpg'}
+                        ]
+                    }
+                ],
+                businessInfors:[
+                    {img:'../img/04.jpg',title:'广州市微赞',detail:'微赞直播是领先的微信直播服务平台，可以帮助企业实现专业级微信视频直播，并提供全方位'},
+                ],
+                activityDetail:'微赞直播，建立于微信生态之上的专业企业直播平台，坐拥微信流量优势与社交优势，嵌入企业微信公众号，微信端一键创建和分享直播，高效助力企业营销。企业营销痛点出发，内置多种互动营销方式，数据分析与云端实时安全存储等功能，可实现高清直播并支持百万观看不卡顿。自创造以来，微赞能够克服过硬的技术实力与创新的优秀产品获得众多资本的青睐。截止到目前，微赞实现连续三年盈利，累计企业直播超150万场，服务了包括腾讯，京东，百度，中国银行，湖南广电等超60万企业用户，覆盖221个国家和地区的5亿用户。',
+                ok:0
+            },
+            methods:{
+
+            },
+            mounted:function(){
+                var swiper = new Swiper('.swiper-container-topbanner', {
+                    pagination: '.swiper-container-topbanner .swiper-pagination',
+                    paginationClickable: true,
+                    autoplay:3000,
+                    centeredSlides: true,
+                    autoplayDisableOnInteraction: false,
+                    loop:1
+                })
+            },
+            created: function () {
+                this.isCreated = true;
+            }          
+        })
+
+
+    </script>
+</body>
+</html>

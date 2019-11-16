@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>报名信息</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        .select-radio.active {border: none;background: url(../img/tc-pic04.png);background-position: -21.7rem -21.4rem;background-size: 50rem}
+        .select-radio {width: 2.3rem;height: 2.3rem;border-radius: 50%;border: 1px solid #c9c9c9;box-sizing: border-box}
+        .require {color: #ff1f1f;margin-left: .6rem;}
+    </style>
+</head>
+<body>
+    <div id="vue_city" v-show="isCreated" class="basewrap" style="padding: 0 0 6rem">
+        <div class="bg-f bold f15" style="padding: 2rem 1rem;margin:0 0 1rem;">
+            <div class="bold" style="padding:0 0 1.5rem;">姓名<i class="require">*</i></div>
+            <div style="height: 4.4rem;background:#F0F0F0;">
+                <input v-model.trim="name" class="f14 bz" placeholder="请输入姓名"
+                    style="display:block;width:100%;height: 4.4rem;padding: 0 1rem;color: #333">
+            </div>
+        </div>
+        <div class="bg-f bold f15" style="padding: 2rem 1rem;margin:0 0 1rem;">
+            <div class="bold" style="padding:0 0 1.5rem;">电话<i class="require">*</i></div>
+            <div style="height: 4.4rem;background:#F0F0F0;">
+                <input v-model.number="tel" class="f14 bz" type="tel" placeholder="请输入电话"
+                    style="display:block;width:100%;height: 4.4rem;padding: 0 1rem;color: #333">
+            </div>
+        </div>
+        <div class="bg-f bold f15" style="padding: 2rem 1rem;margin:0 0 1rem;">
+            <div class="bold" style="padding:0 0 1.5rem;">介绍<i class="require">*</i></div>
+            <div style="height: 14rem;background:#F0F0F0;">
+                <textarea v-model.trim="introduce" class="f14 bz" placeholder="填写介绍内容"
+                    style="line-height: 1.5;display:block;width:100%;height: 100%;padding:1rem;color: #333;background: transparent;"></textarea>
+            </div>
+        </div>
+
+        <div class="bg-f f15" style="margin:0 0 1rem;" v-for="question in questions">
+            <div class="bold bottom-line" style="padding:2.5rem 1rem;">{{question.title}}</div>
+            <div @click="checkElection(question)" v-for="(single,index) in question.singleElection"
+                class="d-flex d-flex-center bottom-line" style="height: 5.5rem;padding: 0 1rem;">
+                <div class="flex">{{single.election}}</div>
+                <div class="select-radio" :class="{active:question.isSelect==index}"></div>
+            </div>
+        </div>
+
+        <div class="bg-f f15" style="margin:0 0 1rem;">
+            <div class="bold bottom-line" style="padding:2.5rem 1rem;">兴趣爱好（可多选）</div>
+            <div class="d-flex d-flex-center bottom-line" style="height: 5.5rem;padding: 0 1rem;">
+                <div class="flex">足球</div>
+                <div class="select-radio"></div>
+            </div>
+            <div class="d-flex d-flex-center bottom-line" style="height: 5.5rem;padding: 0 1rem;">
+                <div class="flex">篮球</div>
+                <div class="select-radio"></div>
+            </div>
+            <div class="d-flex d-flex-center bottom-line" style="height: 5.5rem;padding: 0 1rem;">
+                <div class="flex">羽毛球</div>
+                <div class="select-radio"></div>
+            </div>            
+        </div>   
+
+        <div class="fix-bl">
+            <div class="basewrap d-flex bg-f" style="height: 4.9rem;line-height: 4.9rem">
+                <div class="flex bold" style="color: #FF5a00;padding: 0 1rem;"><i class="f16 bold c333">合计：</i><i
+                        class="f15">￥</i><em style="font-size: 2.9rem;">29</em><i class="f15">.50</i></div>
+                <div class="f16 bold ta-c cfff"
+                    style="background: linear-gradient(to right,#FF8F00,#FF6A00);height: 4.9rem;width:44%;">报名并支付</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#vue_city',
+            data: {
+                isCreated: false,
+                tel: '',
+                introduce: '',
+                questions: [
+                    {
+                        isSelect:'',
+                        title: '性别',
+                        singleElection: [
+                            { election: '男' },
+                            { election: '女' }
+                        ],
+                    },
+                    {
+                        isSelect:'',
+                        title: '性别',
+                        singleElection: [
+                            { election: '男' },
+                            { election: '女' }
+                        ],
+                    },
+                    {
+                        isSelect: '',
+                        title: '性别',
+                        singleElection: [
+                            { election: '男' },
+                            { election: '女' }
+                        ],
+                    },
+                ]
+            },
+            methods: {
+                checkElection: function (item) {
+                    this.question.isSelect=index;
+                }
+            },
+            mounted: function () {
+
+            },
+            created: function () {
+                this.isCreated = true;
+            },
+        })
+
+    </script>
+
+
+</body>
+
+</html>

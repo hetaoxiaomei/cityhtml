@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>设置报名信息</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/release.css">
+    <style>
+        .select-radio.active,.write-cell .delete,.icon-plus-gray,.icon-plus-infor{background: url(../img/tc-pic04.png);background-size:50rem}
+        .select-radio{width: 2.3rem;height:2.3rem;border-radius: 50%;border: 1px solid #c9c9c9;box-sizing:border-box;}
+        .select-radio.active{background-position:-21.7rem -21.4rem;border: none}
+        .icon-plus-img{width:2.6rem;height: 2.6rem;display: block;background-position:-24.2rem -21.4rem;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)}
+        .write-cell .arrow-right{margin-left:1rem;}
+        input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#999}
+        .write-cell{padding: 0 1rem;font-size: 1.5rem}
+        .write-cell .require{color: #ff1f1f;margin-left:.6rem}
+        .write-cell .right input.write{font-size: 1.5rem}
+        .icon-plus-infor{width:1.3rem;height: 1.3rem;display: inline-block;background-position:-39.9rem -11.1rem;margin: 0 .4rem 0 0;vertical-align: -.2rem}
+        .write-cell .delete{margin:0 1rem 0 0;display: block;width:2.2rem;height: 2.2rem;background-position:-32.5rem -18rem;}
+        .icon-plus-gray{vertical-align:-.2rem;margin:0 .65rem 0 0;width:1.3rem;height: 1.3rem;display: inline-block;background-position:-42.2rem -16.3rem}
+        .report-type-dialog li{width: 50%;text-align:center;font-size:1.4rem;color: #666;float: left;box-sizing: border-box;padding: 0 1.5% 3% 0;}
+        .report-type-dialog li:nth-child(2n){padding: 0 0 3% 1.5%;}
+        .report-type-dialog li>a{height: 4.5rem;line-height:4.5rem;background: #F6F8F9;display: block;cursor: pointer;}
+   </style>
+</head> 
+<body>
+    <div id="vue_city" v-show="isCreated" class="basewrap" style="padding: 0 0 7rem;">
+        <div class="d-flex d-flex-center write-cell bottom-line">
+            <div class="flex">显示已报名人数和报名人信息</div>
+            <div class="weui-cell__ft">
+                <input @click="checkReport()" class="weui-switch" type="checkbox">
+            </div>
+        </div>
+        <div class="d-flex d-flex-center write-cell bottom-line">
+            <div>报名人数</div> 
+            <div class="flex right">
+                <input v-modal.number="reportNumber" type="number" class="f14 bz ta-r write" placeholder="限制人数请输入，不输入默认不限制" maxlength="50">
+            </div>
+        </div>
+
+        <div style="margin: 10px 0 0;">
+            <div class="d-flex d-flex-center write-cell bottom-line" style="height: auto;padding:30px 10px;">
+                <div class="flex">
+                    <p>设置用户报名时的报名信息</p>
+                    <p style="font-size:1.2rem;color:#999;margin: 1rem 0 0;">姓名、手机、性别、年龄必选其中两项填写</p>
+                </div> 
+                <div class="arrow-right" style="transform: rotate(90deg);"></div>
+            </div>
+        </div>
+    
+
+        <div v-for="regular,index in regulars">
+            <div v-if="regular.type==0" class="d-flex d-flex-center write-cell bottom-line" @click="checkRequire(regular)">
+                <div class="flex">{{regular.title}}</div>
+                <div  class="select-radio" :class="{active:regular.require==true}"></div>
+            </div>            
+            <div v-else-if="regular.type==1" class="d-flex d-flex-center write-cell bottom-line">
+                <div @click="delQuestion(regular,index)" class="delete"></div>
+                <div class="flex">{{regular.title}}</div>
+                <div class="f15 c999">单行文本，{{regular.require?'必选':'非必选'}}</div>
+            </div>
+            <div v-else-if="regular.type==2" class="d-flex d-flex-center write-cell bottom-line">
+                <div @click="delQuestion(regular,index)" class="delete"></div>
+                <div class="flex">{{regular.title}}</div>
+                <div class="f15 c999">多行文本，{{regular.require?'必选':'非必选'}}</div>
+            </div>          
+            <div v-else-if="regular.type==3" class="d-flex d-flex-center write-cell bottom-line">
+                <div @click="delQuestion(regular,index)" class="delete"></div>
+                <div class="flex">{{regular.title}}</div>
+                <div class="f15 c999">单选问题，{{regular.require?'必选':'非必选'}}</div>
+            </div>                     
+            <div v-else-if="regular.type==4" class="d-flex d-flex-center write-cell bottom-line">
+                <div @click="delQuestion(regular,index)" class="delete"></div>
+                <div class="flex">{{regular.title}}</div>
+                <div class="f15 c999">多选问题，{{regular.require?'必选':'非必选'}}</div>
+            </div>                
+        </div>
+    
+
+        <div @click="addReport()" class="f16 ta-c cfff" style="border-radius: 5px;width:18rem;height: 4.5rem;margin: 2rem auto 0;line-height: 4.5rem;color: #ff6600;border:1px solid #ff6600;">
+            <i class="icon-plus-infor"></i>点击添加报名信息
+        </div>
+
+        <div class="fix-bl">
+            <div class="ta-c f16 cfff bold" style="height: 4.9rem;line-height: 4.9rem;background:linear-gradient(to right,#FF8F00,#FF6A00);">完成</div>    
+        </div>
+
+        <!--选择报名信息填写类型弹框-->
+        <div class="fix-tl-100" v-show="addDialog.seen">
+            <div @click="closeDialog"  class="dialog-black-mask"></div>
+            <div class="report-type-dialog bz" style="position: fixed;bottom: 0;left: 0;width: 100%;background: #fff;padding: 0 15px;">
+                <div class="f15 c666" style="padding: 20px 0;">选择报名信息填写类型</div>
+                <ul style="overflow: hidden">
+                    <li v-for="type,index in addDialog.types">
+                        <a @click="checkAddDialog(index)"><i class="icon-plus-gray"></i>{{type.optionTitle}}</a>
+                    </li>
+                </ul>
+                <div @click="closeDialog" style="height:4.5rem;background:#F6F8F9;text-align: center;line-height: 4.5rem;font-size: 1.6rem;color: #FF6600;margin: 10px 0 20px;">取消</div>
+            </div>
+        </div>
+
+        <!--添加文本弹框-->
+        <div class="fix-tl-100" style="background: #f5f5f5" v-show="addTextDialog.seen">
+            <div class="d-flex d-flex-center bz bottom-line bg-f fix-tl" style="position: fixed;height: 4.5rem;padding:0 1rem;">
+                <div class="f14 c999 bold" @click="closeAddTextDialog()">取消</div>
+                <div class="f16 flex ta-c bold">{{addTextDialog.optionTitle}}</div>
+                <div class="f14 bold" style="color: #ff6600" @click="saveAddTextDialog()">保存</div>
+            </div>
+            <div class="basewrap rel" style="margin:5.5rem 0 0;">
+                <div class="d-flex d-flex-center write-cell bottom-line">
+                    <div class="flex">报名时必填</div>
+                    <div class="weui-cell__ft">
+                        <input @click="checkTextRequire()" class="weui-switch" type="checkbox">
+                    </div>
+                </div>
+                <div class="d-flex d-flex-center write-cell bottom-line">
+                    <div class="require" style="margin-left:0;margin-right:.6rem;">*</div> 
+                    <div class="flex right">
+                        <input v-model.trim="addTextDialog.title" class="f14 bz write" placeholder="请填写名称 (单行文本限制输入20字)" maxlength="20">
+                    </div>
+                </div>
+            </div>
+        </div>     
+        
+        <!--添加选项弹框-->
+        <div class="fix-tl-100" style="background: #f5f5f5;overflow:auto" v-show="addSelectDialog.seen">
+            <div class="d-flex d-flex-center bz bottom-line bg-f fix-tl" style="position: fixed;height: 4.5rem;padding:0 1rem;">
+                <div class="f14 c999 bold" @click="closeAddSelecDialog()">取消</div>
+                <div class="f16 flex ta-c bold">{{addSelectDialog.optionTitle}}</div>
+                <div class="f14 bold" style="color: #ff6600" @click="saveAddSelecDialog()">保存</div>
+            </div>
+            <div class="basewrap" style="margin:5.5rem 0 0;">
+                <div class="d-flex d-flex-center write-cell bottom-line">
+                    <div class="flex">报名时必填</div>
+                    <div class="weui-cell__ft">
+                        <input @click="checkSelectRequire()" class="weui-switch" type="checkbox">
+                    </div>
+                </div>
+                <div style="margin: 1rem 0 0;">
+                    <div class="d-flex d-flex-center write-cell bottom-line">
+                        <div class="require" style="margin-left:0;margin-right:.6rem;">*</div> 
+                        <div class="flex right">
+                            <input v-model.trim="addSelectDialog.title" class="f14 bz write" placeholder="请填写名称 (单行文本限制输入20字)" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="d-flex d-flex-center write-cell bottom-line options" v-for="(option,index) in addSelectDialog.options">
+                        <div class="delete" @click="delOption(index)"></div>
+                        <div class="flex right">
+                            <input v-model.trim="option.write" class="bz write" :placeholder="option.placeholder+(index+1)" maxlength="20">
+                        </div>
+                    </div>
+                </div>
+                <div @click="addOption()" class="f16 ta-c cfff" style="border-radius: 5px;width: 18rem;height: 4.5rem;margin: 2rem auto;line-height: 4.5rem;color: rgb(255, 102, 0);border: 1px solid rgb(255, 102, 0);">
+                    <i class="icon-plus-infor"></i>点击添加选项
+                </div>
+            </div>  
+        </div>     
+          
+    </div>
+
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#vue_city',
+            data: {
+                isCreated: false,
+                state:false,
+                reportNumber:'',
+                addDialog:{
+                    seen:false,
+                    types:[
+                        {optionTitle:'单行文本'},
+                        {optionTitle:'多行文本'},
+                        {optionTitle:'单选问题'},
+                        {optionTitle:'多选问题'}
+                    ]
+                },
+                regulars:[
+                    {title:'性别',require:true,type:0},
+                    {title:'手机',require:false,type:0},
+                    {title:'性别',require:true,type:0},
+                    {title:'年龄',require:false,type:0},
+                    {title:'所在学校',require:false,type:1},
+                    {title:'介绍',require:false,type:2},
+                    {title:'是否已婚',require:true,type:3},
+                    {title:'日常爱好',require:false,type:4}
+                ],
+                addTextDialog:{ 
+                    optionTitle:'',
+                    seen:false,            
+                    state:false,
+                    title:''
+                },
+                addSelectDialog:{
+                    optionTitle:'',
+                    seen:false,
+                    state:false,
+                    title:'',
+                    options:[
+                        {placeholder:'请填写选项'},
+                        {placeholder:'请填写选项'}
+                    ]
+                }
+            },
+            methods: {
+                //已有选项问题操作
+                checkReport:function() {
+                    this.state=!this.state
+                },
+                checkRequire:function(regular){
+                    regular.require=!regular.require
+                },
+                delQuestion:function(regular,index){
+                    this.regulars.splice(index,1)
+                },
+
+                //添加问题弹框操作
+                addReport:function(){
+                    this.addDialog.seen=true
+                },
+                closeDialog:function(){
+                    this.addDialog.seen=false
+                },
+                checkAddDialog:function(index){
+                    var self = this;
+                    this.addDialog.seen=false;
+                    if(index==0||index==1){
+                        this.addTextDialog.seen=true;
+                        this.addTextDialog.optionTitle=this.addDialog.types[index].optionTitle
+                    }else{
+                        this.addSelectDialog.seen=true;
+                        this.addSelectDialog.optionTitle=this.addDialog.types[index].optionTitle
+                    }
+                },
+                //单文本多文本框操作
+                checkAddTextDialog:function(){
+                    this.addTextDialog.seen=true,
+                    this.addDialog.seen=false
+                },
+                closeAddTextDialog:function(){
+                    this.addTextDialog.seen=false
+                },
+                checkTextRequire:function(){
+                    this.addTextDialog.state=!this.addTextDialog.state
+                },
+                saveAddTextDialog:function(){
+                    this.addTextDialog.seen=false
+                },
+                //单选多选弹框操作
+                checkSelectRequire:function(){
+                    this.addSelectDialog.state=!this.addSelectDialog.state
+                },
+                addOption:function(){
+                   this.addSelectDialog.options.push({placeholder:'请填写选项'})
+                },
+                delOption:function(option,index){
+                    this.addSelectDialog.options.splice(index,1)
+                },
+                closeAddSelecDialog:function(){
+                    this.addSelectDialog.seen=false
+                },
+                saveAddSelecDialog:function(){
+                    this.addSelectDialog.seen=false
+                }
+            },
+            mounted: function () {
+                $('.dialog-black-mask').bind("touchmove",function(e){
+                    e.preventDefault();
+                });
+            },
+            created: function () {
+                this.isCreated = true;
+            }
+        })
+    </Script>
+
+</body>
+</html>

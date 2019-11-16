@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>电子票(待使用)</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/release.css">
+    <style>
+        .icon01{background: url(../img/tc-pic04.png);background-size:50rem}
+        .outdate{width: 6.5rem;height:6.5rem;display:block;background-position:-8rem -43.4rem;top: 0;right: 0;}
+        .outdate-mask{width: 100%;height:100%;top:0;left:0;background: rgba(255,255,255,.2);z-index: 2}
+        .icon-local01{width:1.4rem;height: 1.7rem;display:block;background-position: -44.4rem -18.7rem;margin: 0 1rem 0 0;}
+        .icon-date{width: 1.4rem;height: 1.4rem;display: inline-block;background-position: -46rem -18.7rem;margin: 0 1rem 0 0;}
+        .icon-tel{width:1.4rem;height:1.4rem;display:block;background-position: -32.3rem -21.4rem;margin: 0 1rem 0 0;}
+        .icon-people{vertical-align: -.3rem;width: 1.4rem;height: 1.5rem;display: inline-block;background-position: -33.9rem -21.4rem;margin: 0 1rem 0 0;}
+        .icon-money{vertical-align: -.2rem;width: 1.4rem;height: 1.4rem;display: inline-block;background-position: -30.7rem -21.4rem;margin: 0 1rem 0 0;}
+        .icon-exclamatory-mark{vertical-align: -.2rem;width: 1.3rem;height: 1.3rem;display: inline-block;background-position: -35.5rem -21.4rem;margin: 0 1rem 0 0;}
+    </style>
+</head> 
+<body>
+    <div id="vue_activity" v-show="isCreated">
+        <div class="basewrap" style="padding: 1.4rem 1rem 6.5rem" v-for="eticket in etickets">
+            <div class="bg-f ta-c rel" style="padding:2.6rem 0 2.4rem;border-radius: 5px;overflow: hidden;">
+                <div class="rel" style="width: 150px;height:150px;display:block;margin:0 auto;">
+                    <img :src="eticket.img" style="width:100%;height:100%;display:block;">
+                    <!--过期标签-->
+                    <div class="icon01 abs outdate"></div>
+                </div>
+                <p class="f16" style="margin: 1.5rem 0 0">{{eticket.qrnumber}}</p>
+                <p class="f16 bold" style="margin: .9rem 0 0">{{eticket.state}}</p>
+                <p class="f16 bold" style="margin: 2rem 0 0">{{eticket.title}}</p>
+                <!--过期蒙版-->
+                <div class="abs outdate-mask" v-show='eticket.ok'></div>
+            </div>
+
+            <div class="f13" style="padding:1.5rem 2rem;background: #fff;margin: 1rem 0 0;line-height: 1.5;border-radius: 5px;">
+                <div class="d-flex d-flex-center" style="margin:1rem 0 0;">
+                    <i class="icon01 icon-local01"></i>
+                    <div class="flex">{{eticket.address}}</div>
+                </div>
+                <div class="d-flex d-flex-center" style="margin:1rem 0 0;">
+                    <i class="icon01 icon-date"></i>
+                    <div class="flex">{{eticket.date}}</div>
+                </div>
+                <div class="d-flex d-flex-center" style="margin:1rem 0 0;">
+                    <i class="icon01 icon-tel"></i>
+                    <div class="flex">{{eticket.tel}}</div>
+                </div>          
+            </div>
+            
+            <div class="f13" style="padding: 2.5rem 2rem;background: #fff;margin: 1rem 0 0;line-height: 1.5;border-radius: 5px;">
+                <p class="f16 ta-c bold">用户详情</p>
+                <div class="d-flex" style="margin:1.5rem 0 0;" v-for="useInfor in eticket.useInfors">
+                    <div class="flex clamp1"><i class="icon01 icon-people"></i>{{useInfor.name}}</div>
+                    <div class="ta-c" style="width: 40%;"><i class="icon01 icon-tel" style="display: inline-block;vertical-align:-.3rem"></i>{{useInfor.tel}}</div>
+                    <div class="flex ta-r"><i class="icon01 icon-money"></i>￥{{useInfor.money}}</div>
+                </div>
+            </div>
+
+            <p class="f13 ta-c c999" style="padding:1.5rem 0 0;">
+                <i class="icon01 icon-exclamatory-mark"></i>请在活动入场时展示该电子票进行核销
+            </p>
+
+        </div>
+
+        <div class="fix-bl">
+            <div class="d-flex" style="height: 4.9rem;line-height: 4.9rem;">
+                <a class="bold f16 ta-c cfff" style="width:42.6%;background:linear-gradient(to right,#FFCC00,#FFAE00)">返回活动列表页</a>
+                <a class="bold f16 ta-c cfff flex" style="background:linear-gradient(to right,#FF8F00,#FF6A00)">查看我报名的活动</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_activity',        
+            data:{
+                isCreated:false,
+                etickets:[
+                    {
+                       img:'../img/baidu15.jpg',
+                       qrnumber:343344543322446778883,
+                       state:'待使用',
+                       title:'翻转课堂之《认知天性》',
+                       ok:true,
+                       address:'广东省广州市天河区天安人寿中心天安人寿中心2701',
+                       date:'2019-10-31 08:00 至 11-13 18:00',
+                       tel:13304456566,
+                       useInfors:[
+                           {name:'李小姐',tel:12345678912,money:125}
+                       ]
+                    }
+                ]
+            },
+            methods:{
+
+            },
+            mounted:function(){
+
+            },
+            created: function () {
+                this.isCreated = true;
+            } 
+        })
+
+    </script>
+
+</body>
+</html>

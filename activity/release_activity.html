@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>发布活动</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/release.css">
+    <style>
+        .select-radio.active,.icon-plus-img,.upload-pic-ul .close{background: url(../img/tc-pic04.png);background-size: 50rem}
+        .select-radio {width: 2.3rem;height: 2.3rem;border-radius: 50%;border: 1px solid #c9c9c9;box-sizing: border-box;}
+        .select-radio.active {border:none;background-position: -21.7rem -21.4rem;}
+        .icon-plus-img {width: 2.6rem;height: 2.6rem;display: block;background-position: -24.2rem -21.4rem;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%)}
+        .upload-img {border-radius: 2px;display: block;width: 100%;height: 100%;position: relative;z-index: 1}
+        .write-cell .arrow-right{margin-left: 1rem;}
+        textarea::-webkit-input-placeholder {color: #999}
+        .write-cell {padding: 0 1rem;font-size: 1.5rem}
+        .write-cell .require {color: #ff1f1f;margin-left: .6rem}
+        .write-cell .right input.write {font-size: 1.5rem}
+        .upload-pic {width: 7rem;height: 7rem;margin: 0 auto;background: #EDEFF2;border-radius: 2px}
+        .upload-pic-ul {overflow: hidden;padding: 0 1rem 2rem;}
+        .upload-pic-ul>li {float: left;margin-right: 1rem;position: relative;}
+        .upload-pic-ul .close {position: absolute;z-index: 1;top: 0;right: 0;width: 1.6rem;height: 1.6rem;background-position: -14rem -6.9rem;display: block;}
+        .write-cell select {font-size: 1.5rem;}
+        select>option{color: #333}
+    </style>
+</head>
+
+<body>
+    <div id="vue_activity" v-show="isCreated" class="basewrap" style="padding: 0 0 6rem">
+        <div class="ta-c bg-f" style="padding:2.5rem 0 2rem;margin: 0 0 1rem;">
+            <div class="rel upload-pic" @click="uploadImage()">
+                <i class="icon-plus-img"></i>
+                <img class="upload-img" :src="img" v-show="picSeen">
+            </div>
+            <p class="f15" style="margin: 1.5rem 0 .5rem;">点击添加活动海报</p>
+            <p class="c999 f12" style="line-height:1.6">图片尺寸1080*640，.jpg或.png格式，不超过4m<br>精美海报有助于增加报名量</p>
+        </div>
+
+        <div class="d-flex d-flex-center write-cell bottom-line">
+            <div>主题<i class="require">*</i></div>
+            <div class="flex right">
+                <input v-model.trim="theme" class="f14 bz ta-r write" placeholder="不少于5个字，最多50个字"
+                    maxlength="50">
+            </div>
+        </div>
+
+        <div class="d-flex d-flex-center write-cell bottom-line">
+            <div>开始时间<i class="require">*</i></div>
+            <div class="flex right">
+                <input class="f14 bz ta-r write" id="couponTime" type="text" placeholder="选择时间" v-model="CouponTime" />
+            </div>
+            <div class="arrow-right"></div>
+        </div>
+        <div class="d-flex d-flex-center write-cell bottom-line">
+            <div>结束时间<i class="require">*</i></div>
+            <div class="flex right">
+                <input v-model="EndTime" class="f14 bz ta-r write" id="endTime" type="text" placeholder="选择时间" readonly />
+            </div>
+            <div class="arrow-right"></div>
+        </div>
+        <div class="d-flex d-flex-center write-cell bottom-line">
+            <div>地点<i class="require">*</i></div>
+            <div class="flex right">
+                <input v-modal.trim="address" class="f14 bz ta-r write" placeholder="活动举办地点">
+            </div>
+        </div>
+        <div class="d-flex d-flex-center write-cell bottom-line">
+            <div>电话</div>
+            <div class="flex right">
+                <input v-modal.trim="tel" type="number" class="f14 bz ta-r write" placeholder="联系电话">
+            </div>
+        </div>
+
+        <div class="d-flex d-flex-center write-cell bottom-line">
+            <div>类型<i class="require">*</i></div>
+            <div class="flex">
+                <select v-model="typeSelected" class="f15 bz change" style="direction: rtl;padding: 0;" :style="typeSelected!=='请选择类型'?'color:#333333':'color:#999999'">
+                    <option v-for="(type,index) in types">{{type.option}}</option>
+                </select>
+            </div>
+            <div class="arrow-right"></div>
+        </div>
+
+        <div class="d-flex d-flex-center write-cell bottom-line">
+            <div>方式<i class="require">*</i></div>
+            <div class="flex">
+                <select v-model="modeSelected" class="f15 bz change" style="direction: rtl;padding: 0;" :style="modeSelected!=='请选择方式'?'color:#333333':'color:#999999'">
+                    <option v-for="(mode,index) in modes">{{mode.option}}</option>
+                </select>
+            </div>
+            <div class="arrow-right"></div>
+        </div>
+
+        <div class="bg-f" style="padding: 2rem 1rem .5rem;">
+            <div class="rel f15 bg-f" contenteditable="true" style="color:transparent;line-height: 1.6;min-height: 2rem">{{descripe}}
+                <textarea v-model="descripe" class="f15 bz" placeholder="活动详情描述(必填)" style="width:100%;height: 100%;position: absolute;top: 0;left: 0; line-height: 1.5;display:block;color: #333;background: transparent;"></textarea>
+            </div>
+        </div>
+
+        <ul class="upload-pic-ul bg-f" style="margin: 0 0 1rem;">
+            <li class="upload-pic" v-for="(pic,index) in dynamicPics" style="margin-top:1rem">
+                <i class="close" @click="delDynamicPics(index)" style="z-index: 2"></i>
+                <img class="upload-img" :src="pic.img">
+            </li>
+            <li class="upload-pic" @click="addDynamicPics()" style="margin-top:1rem" v-show="add">
+                <i class="icon-plus-img"></i>
+            </li>
+        </ul>
+
+        <div class="d-flex d-flex-center write-cell bottom-line">
+            <div class="flex">需要填写费用和报名信息</div>
+            <div class="weui-cell__ft" @click="checkWrite()">
+                <input class="weui-switch" type="checkbox">
+            </div>
+        </div>
+        <div class="d-flex d-flex-center write-cell bottom-line" v-show="fee_Infor.seen">
+            <div>费用<i class="require">*</i></div>
+            <div class="flex right">
+                <input v-model.number="fee_Infor.money" type="number" class="f14 bz ta-r write" placeholder="免费则填写0，城主/镇主可抽成部分金额">
+            </div>
+        </div>
+        <div class="d-flex d-flex-center write-cell bottom-line" v-show="fee_Infor.seen">
+            <div class="left">报名信息设置</div>
+            <div class="flex right">
+                <div class="bz ta-r write clamp1" :style="fee_Infor.setInfor=='点击设置'?'color:#999999':'color:#333333'">{{fee_Infor.setInfor}}</div>
+            </div>
+            <div class="arrow-right"></div>
+        </div>
+
+        <div class="d-flex d-flex-center write-cell">
+            <div>主办方信息（只能显示一个主办方）</div>
+        </div>
+
+        <div @click="checkShopSelect(index)" class="d-flex d-flex-center write-cell bottom-line" v-for="(shop,index) in shops">
+            <div class="flex">{{shop.name}}</div>
+            <div class="select-radio" :class="{active:selectShopIndex==index}"></div>
+        </div>
+
+        <!--单击选自定义信息-->
+        <div class="bg-f" v-show="selectShopIndex==2">
+            <div class="f15 bz" style="padding: 20px 10px 15px;">
+                主办方头像<i class="require">*</i><i style="color:#999;font-size: 1.3rem;">（建议上传图片为正方形或者200x200）</i>
+            </div>
+            <div class="rel upload-pic" style="margin:0 0 0 10px;" @click="checkShopImg()">
+                <i class="icon-plus-img"></i>
+                <img class="upload-img" :src="sponsor.img" v-show="sponsor.seen">
+            </div>
+            <div class="d-flex d-flex-center write-cell">
+                <div>主办方名称<i class="require">*</i></div>
+                <div class="flex right">
+                    <input v-model.trim="sponsor.name" class="f14 bz ta-r write" placeholder="输入名称" maxlength="50">
+                </div>
+            </div>
+            <div style="margin: 0 1rem;padding: 0 0 1rem;">
+                <textarea v-model.trim="sponsor.descripe" placeholder="输入主办方相关描述，150字以内" contenteditable="true"
+                    style="display: block;width:100%;height:100px;color: #333;font-size: 1.5rem;"></textarea>
+            </div>
+        </div>
+
+        <div class="fix-bl">
+            <div class="f16 bold ta-c cfff basewrap"
+                style="background: linear-gradient(to right,#FF8F00,#FF6A00);height: 4.9rem;line-height: 4.9rem">发布
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="https://j.vzan.cc/content/friend/20190320/js/jquery-weui.js?v=20190328"></script>
+    <link href="https://j.vzan.cc/content/friend/20190320/css/mobiscroll.custom-2.16.1.min.css" rel="stylesheet" />
+    <script src="https://j.vzan.cc/content/friend/20190320/js/mobiscroll.custom-2.16.1.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#vue_activity',
+            data: {
+                isCreated: false,
+                picSeen: false,
+                img:'https://i.vzan.cc/image/jpg/2017/4/22/15482347e49599646b4b1b84668ccc873e6696.jpg@!200x200',
+                theme: '',
+                CouponTime: '',
+                EndTime: '',
+                tel:'',
+                address: '海珠区',
+                typeSelected:'请选择类型',
+                types:[   
+                    { option: '请选择类型'},
+                    { option: '运动'},
+                    { option: '美食'}
+                ],
+                modeSelected:'请选择方式',
+                modes:[   
+                    { option: '请选择方式'},
+                    { option: '线上'},
+                    { option: '线下'}
+                ],
+                descripe:'',
+                dynamicPics:[
+                    {img:''},
+                    {img:''},
+                ],
+                add:true,
+                selectShopIndex:'',
+                shops:[
+                    {name:'A、店铺1'},
+                    {name:'B、店铺2'},
+                    {name:'C、店铺3'}
+                ],
+                sponsor:{
+                    img:'',
+                    seen:false,
+                    name:'',
+                    descripe:''
+                },
+                fee_Infor:{
+                    seen:false,
+                    money:'',
+                    setInfor:'点击设置'
+                }
+            },
+            methods: {
+                uploadImage: function () {
+                    this.picSeen = true
+                },
+                //日期时间
+                addDate(days) {
+                    if (days == undefined || days == '') {
+                        days = 1;
+                    }
+                    var date = new Date();
+                    date.setDate(date.getDate() + days);
+                    return date;
+                },
+                initTime() {
+                    var self = this;
+                    $("#couponTime,#endTime").mobiscroll().date({
+                        theme: "android-holo-light",
+                        mode: "scroller",
+                        display: "top",
+                        lang: "zh",
+                        dateOrder: 'yymmdd',
+                        dateFormat: "yy-mm-dd",
+                        stepMinute: 1,
+                        endYear: 2050,
+                        defaultValue: new Date(),
+                        onChange: function (event, inst) {
+                            vm.goods.CouponTime = event;
+                        },
+                        onClose: function (event, inst) {
+                            vm.goods.CouponTime = event;
+                        }
+                    });
+                    $("#validStartTime").mobiscroll().datetime({
+                        theme: "android-holo-light",
+                        mode: "scroller",
+                        display: "top",
+                        lang: "zh",
+                        dateOrder: 'yymmdd',
+                        dateFormat: "yy-mm-dd",
+                        timeWheels: 'HH:ii:ss',
+                        timeFormat: 'HH:ii:ss',
+                        stepMinute: 1,
+                        endYear: 2050,
+                        defaultValue: new Date(),
+                        onChange: function (event, inst) {
+                            vm.useRule.ValidStartTimeStr = event;
+                        },
+                        onClose: function (event, inst) {
+                            vm.useRule.ValidStartTimeStr = event;
+                        }
+                    });
+                    $("#validEndTime").mobiscroll().datetime({
+                        theme: "android-holo-light",
+                        mode: "scroller",
+                        display: "top",
+                        lang: "zh",
+                        dateOrder: 'yymmdd',
+                        dateFormat: "yy-mm-dd",
+                        timeWheels: 'HH:ii:ss',
+                        timeFormat: 'HH:ii:ss',
+                        stepMinute: 1,
+                        endYear: 2050,
+                        defaultValue: self.addDate(7),
+                        onChange: function (event, inst) {
+                            vm.useRule.ValidEndTimeStr = event;
+                        },
+                        onClose: function (event, inst) {
+                            vm.useRule.ValidEndTimeStr = event;
+                        }
+                    });
+                    $("#useStartTime").mobiscroll().time({
+                        theme: "android-holo-light",
+                        mode: "scroller",
+                        display: "top",
+                        lang: "zh",
+                        timeWheels: 'HH:ii:ss',
+                        timeFormat: 'HH:ii:ss',
+                        stepMinute: 1,
+                        endYear: 2050,
+                        defaultValue: new Date(new Date().setHours(8, 0, 0, 0)),
+                        onChange: function (event, inst) {
+                            vm.useRule.UseStartTimeStr = event;
+                        },
+                        onClose: function (event, inst) {
+                            vm.useRule.UseStartTimeStr = event;
+                        }
+                    });
+                    $("#useEndTime").mobiscroll().time({
+                        theme: "android-holo-light",
+                        mode: "scroller",
+                        display: "top",
+                        lang: "zh",
+                        timeWheels: 'HH:ii:ss',
+                        timeFormat: 'HH:ii:ss',
+                        stepMinute: 1,
+                        endYear: 2050,
+                        defaultValue: new Date(new Date().setHours(18, 0, 0, 0)),
+                        onChange: function (event, inst) {
+                            vm.useRule.UseEndTimeStr = event;
+                        },
+                        onClose: function (event, inst) {
+                            vm.useRule.UseEndTimeStr = event;
+                        }
+                        
+                    });
+                },
+
+                //删除详情图
+                delDynamicPics:function(index){
+                    var self = this;
+                    this.dynamicPics.pop({img:''});
+                    if (this.dynamicPics.length >= 9) {
+                        this.add=false;
+                    } else {
+                        this.add=true;
+                    }
+                },
+                 //添加详情图
+                addDynamicPics:function(){
+                    var self = this;
+                    this.dynamicPics.push({img:''});
+            	    //如果已经9张了，isAddImg为false，隐藏加号
+                    if (this.dynamicPics.length >= 9) {
+                        this.add=false;
+                    } else {
+                        this.add=true;
+                    }
+                },
+                //选择店铺
+                checkShopSelect:function(index){
+                    this.selectShopIndex=index
+                },
+                //上传主办方头像
+                checkShopImg:function(){
+                    this.sponsor.seen=true
+                },
+                //开关：需要填写费用和报名信息
+                checkWrite:function(){
+                    this.fee_Infor.seen=!this.fee_Infor.seen
+                },
+                saveData(){
+                    var self = this;
+                    if (self.time =='') {
+                        alert('请输入商品名称');
+                        return;
+                    }
+                }
+
+            },
+            mounted: function () {
+                this.initTime();
+            },
+            created: function () {
+                this.isCreated = true;
+            }
+        })
+
+    </script>
+</body>
+
+</html>
