@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>店铺入驻宣传页</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/new-swiper.css">
+    <style>
+        .icon01{background: url(img/settled_02.png);background-size:50rem}
+        .advantage-ul li{float: left;text-align: center;width: 50%;padding: 2rem 0 0;}
+        .advantage-ul li i{width:6.5rem;height:7.6rem;display: block;margin: 0 auto;}
+        .editionnav{height: 4.4rem;line-height: 4.4rem;}
+        .editionnav li i{display:none;background:#CCAD60;width: 7.7rem;height: .4rem;position: relative;bottom: .4rem;left: 50%;transform: translate(-50%,0);border-radius: .2rem;}
+        .editionnav li.active{color: #CCAD60;font-weight: bold}
+        .editionnav li.active i{display:block;} 
+        .function-ul{overflow: hidden;padding: 2rem 0 0;}
+        .function-ul li{float: left;width:25%;text-align: center;padding: 0 0 2rem;}
+        .function-ul li i{width:4.6rem;height: 4.6rem;display: block;margin: 0 auto}
+        .function-ul li p{margin: 1rem 0 0;font-size: 1.4rem;}
+        .set-meal{border: 1px solid #CCAD60;height:15.4rem;overflow: hidden;}
+        .set-meal .right span{position: absolute;left: 0;top:50%;transform: translate(0,-50%);width: 100%}
+        .set-meal .left{width: 11.8rem;height: 11.5rem;display: block;margin: 2rem 1.6rem 0 .6rem;}
+        .set-meal .right{height:15.4rem;border-left: 1px solid #CCAD60}
+        .set-meal .right .flex.top-line:before{border-bottom: 1px solid #CCAD60;}
+        .set-meal .right .flex.top-line:first-child:before{display: none}
+        .write-all{position: relative;}
+        .write-all:before{content:" ";width: 200%;height: 200%;position: absolute;top: 0;left: 0;border: 1px solid #F0F0F0;-webkit-transform: scale(0.5);transform: scale(0.5);-webkit-transform-origin: 0 0;transform-origin: 0 0;box-sizing: border-box;border-radius: 4px;}
+        .write-all input{height: 4.4rem;width: 100%;padding: 0 1rem;z-index: 2}
+        textarea::placeholder{color: #999;}
+        .submit-bt{border-radius:2.2rem;height: 4.4rem;line-height: 4.4rem;background: rgba(0,156,255,.3);color: #fff;margin: 2rem 0 0;}
+        .submit-bt.active{background: rgba(0,156,255,.6);}
+        .swiper-pagination-bullet{width:4px; height: 4px; display: inline-block; border-radius: 2px; background:rgba(255,255,255, .5);}
+        .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{margin: 0 .3rem}
+    </style>
+</head>
+<body>
+    <div id="vue_city" v-show="isCreated" class="basewrap" style="padding: 0 0 6rem;">
+        <div class="rel">
+            <img src="img/settled_01.png" style="width: 100%;display:block;height:26rem;position: absolute;top: 0;left: 0;">
+            <div class="rel ta-c cfff" style="font-size: 2.3rem;color:#fff;padding: 3rem 8% 0;z-index:2;">
+                <div>已有<i class="bold" style="color: #EDD27F;">{{data.shop}}</i>家入驻微赞官方同城</div>
+                <div class="f16" style="margin: 2rem 0 0;">入驻同城为商家带来了</div>
+                <div class="d-flex ta-c" style="color:#EDD27F;margin: 2rem 0 0;"> 
+                    <div class="flex">
+                        <p class="bold">{{data.vistor}}<i class="f12">万</i></p>
+                        <p class="f12 cfff" style="margin: 1rem 0 0;">访客人数</p>
+                    </div>
+                    <div class="flex">
+                        <p class="bold">{{data.order}}<i class="f12">次</i></p>
+                        <p class="f12 cfff" style="margin: 1rem 0 0;">完成订单</p>                        
+                    </div>
+                    <div class="flex">
+                        <p class="bold">{{data.cost}}<i class="f12">元/天</i></p>
+                        <p class="f12 cfff" style="margin: 1rem 0 0;">降低成本</p>                           
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
+            <div class="swiper-wrapper">
+                <div v-for="slide in slides" class="swiper-slide" style="display:block;background:transparent">
+                    <div class="bz" style="padding: 2rem 0 0;border-radius: 5px;height: 20rem;background: linear-gradient(45deg,#EAC88E,#CCAD60);position: relative;z-index: 1;margin: 1.5rem 1rem 0;">
+                        <img :src="slides.img" alt="" style=" display: block;border-radius:50%;width:6.8rem;height:6.8rem;border:1px solid #EDD27F;margin:0 auto;">
+                        <p class="f14 ta-c clamp1" style="margin: 1rem 0 0;line-height: 1.3;padding: 0 2rem;">{{slide.name}}</p>
+                        <div class="d-flex ta-c" style="color: #353535;margin: 2rem 0 0;font-size: 2.3rem;"> 
+                            <div class="flex">
+                                <p class="bold">{{slide.vistor}}<i class="f12">万</i></p>
+                                <p class="f12" style="margin: .8rem 0 0;">访客人数</p>
+                            </div>
+                            <div class="flex">
+                                <p class="bold">{{slide.order}}<i class="f12">次</i></p>
+                                <p class="f12" style="margin: .8rem 0 0;">完成订单</p>                        
+                            </div>
+                            <div class="flex">
+                                <p class="bold">{{slide.cost}}<i class="f12">元/天</i></p>
+                                <p class="f12" style="margin: .8rem 0 0;">降低成本</p>                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>	
+        </div>
+
+        <div class="bg-f" style="border-radius: 5px;margin:1rem 1rem 0;padding: 0 0 2rem;">
+            <ul class="advantage-ul" style="overflow: hidden;">
+                <li>
+                    <i class="icon01" style="background-position: 0 0;"></i>
+                    <p class="f18 bold f01" style="margin: 1.5rem 0 0;">增加曝光量</p>
+                    <p class="f02 f12 c666" style="margin: .7rem 0 0;line-height:1.8;">共享同城流量<br>微信生态，快速传播<br>店铺收藏，访客不丢</p>
+                </li>
+                <li>
+                    <i class="icon01" style="background-position: -6.7rem 0;"></i>
+                    <p class="f18 bold f01" style="margin: 1.5rem 0 0;">提升业绩</p>
+                    <p class="f02 f12 c666" style="margin: .7rem 0 0;line-height:1.8;">在线买单<br>一键拨号，业务通知<br>导航到店，顾客自来</p>
+                </li>  
+                <li>
+                    <i class="icon01" style="background-position: -13.4rem 0;"></i>
+                    <p class="f18 bold f01" style="margin: 1.5rem 0 0;">降低成本</p>
+                    <p class="f02 f12 c666" style="margin: .7rem 0 0;line-height:1.8;">每天几块钱，独立运营<br>不印传单，海报分享<br>城主协助，操作清晰</p>
+                </li>   
+                <li>
+                    <i class="icon01" style="background-position: -20.1rem 0;"></i>
+                    <p class="f18 bold f01" style="margin: 1.5rem 0 0;">玩法升级</p>
+                    <p class="f02 f12 c666" style="margin: .7rem 0 0;line-height:1.8;">摆脱传统叫卖<br>拼团砍价，客户带客<br>抽奖投票，盘活顾客</p>
+                </li>                                               
+            </ul>
+        </div>
+
+        <div class="bg-f" style="border-radius: 5px;margin:1rem 1rem 0;padding: 0 0 1rem;">
+            <ul class="d-flex bottom-line f16 ta-c editionnav">
+                <li class="flex" :class="{active:selectIndex==index}" v-for="(nav,index) in navs" @click="checkNav(index)">{{nav.type}}<i></i></li>
+            </ul>
+            <ul v-show="selectIndex===0" class="function-ul">
+                <li>
+                    <i class="icon01" style="background-position:0 -7.9rem;"></i>
+                    <p>店铺首页</p>
+                </li>
+                <li>
+                    <i class="icon01" style="background-position:0 -12.7rem;"></i>
+                    <p>店铺相册</p>
+                </li>       
+                <li>
+                    <i class="icon01" style="background-position:0 -17.5rem;"></i>
+                    <p>店铺公告</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:0 -22.3rem;"></i>
+                    <p>店铺红包</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:0 -27.1rem;"></i>
+                    <p>商家动态</p>
+                </li>  
+                <li>
+                    <i class="icon01" style="background-position:0 -31.9rem;"></i>
+                    <p>招聘店员</p>
+                </li>   
+                <li>
+                    <i class="icon01" style="background-position:0 -36.7rem;"></i>
+                    <p>在线买单</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:0 -41.5rem;"></i>
+                    <p>发布商品</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -36.7rem;"></i>
+                    <p>发布拼团</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -41.5rem;"></i>
+                    <p>发布砍价</p>
+                </li>  
+                <li>
+                    <i class="icon01" style="background-position:-9.6rem -7.9rem;"></i>
+                    <p>抽奖活动</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-9.6rem -12.7rem;"></i>
+                    <p>投票活动</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-9.6rem -17.5rem;"></i>
+                    <p>发布抢优惠</p>
+                </li>     
+                <li>
+                    <i class="icon01" style="background-position:-9.6rem -22.3rem;"></i>
+                    <p>发布爱心价</p>
+                </li>                                                                                                                                                                                               
+            </ul>                
+            <ul v-show="selectIndex===1" class="function-ul">
+                <li>
+                    <i class="icon01" style="background-position:0 -7.9rem;"></i>
+                    <p>店铺首页</p>
+                </li>
+                <li>
+                    <i class="icon01" style="background-position:0 -12.7rem;"></i>
+                    <p>店铺相册</p>
+                </li>       
+                <li>
+                    <i class="icon01" style="background-position:0 -17.5rem;"></i>
+                    <p>店铺公告</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:0 -22.3rem;"></i>
+                    <p>店铺红包</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:0 -27.1rem;"></i>
+                    <p>商家动态</p>
+                </li>  
+                <li>
+                    <i class="icon01" style="background-position:0 -31.9rem;"></i>
+                    <p>招聘店员</p>
+                </li>   
+                <li>
+                    <i class="icon01" style="background-position:0 -36.7rem;"></i>
+                    <p>在线买单</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:0 -41.5rem;"></i>
+                    <p>发布商品</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -7.9rem;"></i>
+                    <p>发布拼团</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -12.7rem;"></i>
+                    <p>发布砍价</p>
+                </li>  
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -17.5rem;"></i>
+                    <p>抽奖活动</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -22.3rem;"></i>
+                    <p>投票活动</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -27.1rem;"></i>
+                    <p>发布抢优惠</p>
+                </li>     
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -31.9rem;"></i>
+                    <p>发布爱心价</p>
+                </li>                                                                                                                                                                                               
+            </ul>
+        </div>
+
+        <div class="bg-f" style="border-radius: 5px;margin:1rem 1rem 0;padding: 1.5rem 1.5rem 2rem;">
+            <div class="set-meal">
+                <img class="fl left" src="img/settled_03.png">
+                <div class="d-flex flex-col f14 ta-c right" v-show="selectIndex===0">
+                    <div class="flex top-line rel" v-for="fee in fee_01"><span>{{fee.money}}</span></div>
+                </div>
+                <div class="d-flex flex-col f14 ta-c right" v-show="selectIndex===1">
+                    <div class="flex top-line rel" v-for="fee in fee_02"><span>{{fee.money}}</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-f" style="border-radius: 5px;margin:1rem 1rem 0;padding: 2rem 1rem;">
+            <div class="f16 bold ta-c">留言咨询</div>
+            <p class="f15 bold" style="padding: 1.5rem 0 1rem;">姓名<i style="color: #FF1C1C;margin:0 0 0 .4rem;">*</i></p>
+            <div class="write-all">
+                <input v-model.trim="message.name" class="f15 c333 bz rel" placeholder="请输入你的真实姓名或者姓氏" required>
+            </div>
+            <p class="f15 bold" style="padding: 1.5rem 0 1rem;">联系方式<i style="color: #FF1C1C;margin:0 0 0 .4rem;">*</i></p>
+            <div class="write-all">
+                <input v-model.trim="message.contact" class="f15 c333 bz rel" placeholder="请输入你的手机号码或者微信号" required>
+            </div>     
+            <p class="f15 bold" style="padding: 1.5rem 0 1rem;">我想要的店铺</p>
+            <div class="write-all">
+                <textarea v-model.trim="message.descripe" class="f15 c333 bz rel" placeholder="简单描述你的店铺是用来干嘛的，想用什么功能？" style="height: 13rem;display: block;padding:1rem;width:100%;background: transparent;"></textarea>
+            </div>  
+            <div class="f16 ta-c submit-bt" :class="{active:message.contact !== '' && message.contact !==''}">提交留言</div>                   
+        </div>
+
+
+        <div class="fix-bl" v-show="selectIndex===0">
+            <div class="d-flex ta-c" style="line-height: 4.9rem;">
+                <div class="f16 c333 bold" style="width: 16rem;background: #fff;">免费试用7天</div>
+                <div @click="openDialog()" class="f16 bold cfff flex" style="height: 4.9rem;background:linear-gradient(to right,#EAC88E,#CCAD60)">申请入驻高级版</div>
+            </div>
+        </div>
+
+        <div class="fix-bl" v-show="selectIndex===1">
+            <div class="d-flex ta-c" style="line-height: 4.9rem;">
+                <div @click="openDialog()" class="f16 bold cfff flex" style="height: 4.9rem;background:linear-gradient(to right,#EAC88E,#CCAD60)">申请入驻高级版</div>
+            </div>
+        </div>
+
+        <!--侧边按钮-->
+        <div style="position: fixed;right:1.8rem;bottom:9rem;">
+            <a class="icon01" style="display: block;width:4.6rem;height:4.6rem;background-position:-9.6rem -27.1rem;margin: 0 0 1rem;"></a>
+            <a class="icon01" style="display: block;width:4.6rem;height:4.6rem;background-position:-9.6rem -31.9rem;"></a>
+        </div>
+
+        <!--弹框-->
+        <div class="fix-tl-100" v-show="service.seen">
+            <div @click="closeDialog()" class="dialog-black-mask"></div>
+            <div class="dialog-middle" style="padding: 0 0 3rem">
+                <img :src="service.img" style="width: 17rem;height:17rem;margin: 4rem auto 2.5rem;display: block">
+                <p class="f13 c666 ta-c">扫码添加微信，咨询同城客服</p>
+                <p class="f14 ta-c" style="margin: 1rem 0 0">客服电话：<i style="color: #009CFF">{{service.tel}}</i></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_city',        
+            data:{
+                isCreated:false,
+                data:{
+                    shop:1523,
+                    vistor:120,
+                    order:516,
+                    cost:5.6
+                },
+                slides:[
+                    {img:'',name:'微赞官方达达跑腿.体验店',vistor:120,order:320,cost:5.6},
+                    {img:'',name:'微赞官方达达跑腿.体验店',vistor:120,order:320,cost:5.6},
+                    {img:'',name:'微赞官方达达跑腿.体验店',vistor:120,order:320,cost:5.6}
+                ],
+                seen:true,
+                navs:[
+                    {type:'基础版好店'},
+                    {type:'高级版好店'}
+                ],
+                selectIndex:1,
+                fee_01:[
+                    {money:'￥100/1个月'},
+                    {money:'￥200/3个月'},
+                    {money:'￥350/半月'},
+                    {money:'￥650/一年'}
+                ],
+                fee_02:[
+                    {money:'￥100/1个月'},
+                    {money:'￥200/3个月'},
+                    {money:'￥350/半月'},
+                    {money:'￥650/一年'},
+                    {money:'￥650/一年'},
+                    {money:'￥650/一年'}
+                ],
+                message:{
+                    name:'',
+                    contact:'',
+                    descripe:''
+                },
+                service:{
+                    seen:false,
+                    img:'',
+                    tel:1851152132  
+                }
+            },
+            methods:{
+                checkNav:function(index){
+                    this.selectIndex=index
+                },
+                closeDialog:function(){
+                    this.service.seen=false
+                },
+                openDialog:function(){
+                    this.service.seen=true
+                }
+            },
+            mounted:function(){
+                var swiper = new Swiper('.swiper-container-topbanner', {
+                    pagination: '.swiper-container-topbanner .swiper-pagination',
+                    paginationClickable: true,
+                    autoplay:2500,
+                    centeredSlides: true,
+                    autoplayDisableOnInteraction: false,
+                    loop:1
+                }); 
+            },
+            created: function () {
+                this.isCreated = true;
+            },        
+        })    
+    
+    </script>
+</body>
+</html>

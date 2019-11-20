@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>升级续费</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <style>
+        .icon01{background: url(img/settled_02.png);background-size:50rem}
+        .set-meal .bt{position:relative;height: 4.4rem;line-height:4.2rem;font-size:1.5rem;color:#FF6600;border:1px solid #FF6600;box-sizing:border-box;text-align:center;font-weight:bold;margin: 0 0 1rem;}
+        .set-meal .bt .dot{background:#ff1c1c;color: #fff;font-size: .9rem;width: 3.8rem;height: 1.8rem;border-radius: .9rem;border-bottom-left-radius: 0;
+        display:inline-block;text-align: center;line-height: 1.8rem;margin: 0 0 0 .4rem;vertical-align: 1rem;}
+        .set-meal .bt.active .dot{opacity: 1;background:#fff;color: #ff1c1c;}
+        .set-meal .bt.active{background: linear-gradient(to right,#FF8F00,#FF6A00);color:#fff;border: none;line-height:4.4rem;}
+        .set-meal .bt span{display: inline-block;}
+        .editionnav{height: 4.4rem;line-height: 4.4rem;}
+        .editionnav li i{display:none;background:linear-gradient(to right,#FF8F00,#FF6A00);width: 7.7rem;height: .4rem;position: relative;bottom: .4rem;left: 50%;transform: translate(-50%,0);border-radius: .2rem;}
+        .editionnav li.active{color: #FF6600;font-weight: bold}
+        .editionnav li.active i{display:block;} 
+        .function-ul{overflow: hidden;padding: 2rem 0 0;}
+        .function-ul li{float: left;width:25%;text-align: center;padding: 0 0 2rem;}
+        .function-ul li i{width:4.6rem;height: 4.6rem;display: block;margin: 0 auto}
+        .function-ul li p{margin: 1rem 0 0;font-size: 1.4rem;}
+ </style>
+</head>
+<body>
+    <div id="vue_city" v-show="isCreated" class="basewrap" style="padding: 0 0 6rem;">
+        <div class="basewrap f14 ta-c" style="background: linear-gradient(to right,#FF8F00,#FF6A00);color: #fff;line-height: 3.5rem;">升级付费</div>
+        <div class="f16 bold ta-c" style="padding: 2rem 0;">
+            当前店铺版本：<i style="color: #FF6600">高级版</i>
+        </div>
+
+        <div class="bg-f" style="border-radius: 5px;margin:0 1rem;padding: 0 0 1rem;">
+            <ul class="d-flex bottom-line f16 ta-c editionnav">
+                <li class="flex" :class="{active:selectIndex==index}" v-for="(nav,index) in navs" @click="checkNav(index)">{{nav.type}}<i></i></li>
+            </ul>
+            <ul v-show="selectIndex===0" class="function-ul">
+                <li>
+                    <i class="icon01" style="background-position:0 -7.9rem;"></i>
+                    <p>店铺首页</p>
+                </li>
+                <li>
+                    <i class="icon01" style="background-position:0 -12.7rem;"></i>
+                    <p>店铺相册</p>
+                </li>       
+                <li>
+                    <i class="icon01" style="background-position:0 -17.5rem;"></i>
+                    <p>店铺公告</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:0 -22.3rem;"></i>
+                    <p>店铺红包</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:0 -27.1rem;"></i>
+                    <p>商家动态</p>
+                </li>  
+                <li>
+                    <i class="icon01" style="background-position:0 -31.9rem;"></i>
+                    <p>招聘店员</p>
+                </li>   
+                <li>
+                    <i class="icon01" style="background-position:0 -36.7rem;"></i>
+                    <p>在线买单</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:0 -41.5rem;"></i>
+                    <p>发布商品</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -36.7rem;"></i>
+                    <p>发布拼团</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -41.5rem;"></i>
+                    <p>发布砍价</p>
+                </li>  
+                <li>
+                    <i class="icon01" style="background-position:-9.6rem -7.9rem;"></i>
+                    <p>抽奖活动</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-9.6rem -12.7rem;"></i>
+                    <p>投票活动</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-9.6rem -17.5rem;"></i>
+                    <p>发布抢优惠</p>
+                </li>     
+                <li>
+                    <i class="icon01" style="background-position:-9.6rem -22.3rem;"></i>
+                    <p>发布爱心价</p>
+                </li>                                                                                                                                                                                               
+            </ul>                
+            <ul v-show="selectIndex===1" class="function-ul">
+                <li>
+                    <i class="icon01" style="background-position:0 -7.9rem;"></i>
+                    <p>店铺首页</p>
+                </li>
+                <li>
+                    <i class="icon01" style="background-position:0 -12.7rem;"></i>
+                    <p>店铺相册</p>
+                </li>       
+                <li>
+                    <i class="icon01" style="background-position:0 -17.5rem;"></i>
+                    <p>店铺公告</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:0 -22.3rem;"></i>
+                    <p>店铺红包</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:0 -27.1rem;"></i>
+                    <p>商家动态</p>
+                </li>  
+                <li>
+                    <i class="icon01" style="background-position:0 -31.9rem;"></i>
+                    <p>招聘店员</p>
+                </li>   
+                <li>
+                    <i class="icon01" style="background-position:0 -36.7rem;"></i>
+                    <p>在线买单</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:0 -41.5rem;"></i>
+                    <p>发布商品</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -7.9rem;"></i>
+                    <p>发布拼团</p>
+                </li> 
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -12.7rem;"></i>
+                    <p>发布砍价</p>
+                </li>  
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -17.5rem;"></i>
+                    <p>抽奖活动</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -22.3rem;"></i>
+                    <p>投票活动</p>
+                </li>    
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -27.1rem;"></i>
+                    <p>发布抢优惠</p>
+                </li>     
+                <li>
+                    <i class="icon01" style="background-position:-4.8rem -31.9rem;"></i>
+                    <p>发布爱心价</p>
+                </li>                                                                                                                                                                                               
+            </ul>
+        </div>
+
+        <div style="margin: 1rem;">
+            <div class="f16 bg-f bold ta-c" style="padding: 2.4rem 1rem .5rem;">入驻续费</div>     
+            <div class="bg-f set-meal" style="padding: 1.5rem 1rem;">
+                <div :class="{active:selectIndex02==index}" @click="checkFee(index)" class="bt" v-for="(fee,index) in fees">
+                    <span :style="{'margin':(fee.seen==true?'0 0 0 3.8rem':'0')}">{{fee.money}}</span><i class="dot" v-show="fee.seen">优惠</i>
+                </div>
+            </div> 
+        </div>  
+
+        <div class="fix-bl">
+            <div class="d-flex ta-c" style="line-height: 4.9rem;">
+                <div class="f16 bold cfff flex" style="height: 4.9rem;background:linear-gradient(to right,#FF8F00,#FF6A00)">支付¥1000入驻</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_city',        
+            data:{
+                isCreated:false,
+                navs:[
+                    {type:'基础版好店'},
+                    {type:'高级版好店'}
+                ],
+                selectIndex:1,
+                selectIndex02:'',
+                fees:[
+                    {money:'一个月/¥100',seen:true},
+                    {money:'三个月/¥300',seen:false},
+                    {money:'半年/¥500',seen:false},
+                    {money:'一年/¥800',seen:false},
+                    {money:'两年/¥1000',seen:false}
+                ]
+            },
+            methods:{
+                checkNav:function(index){
+                    this.selectIndex=index
+                },
+                checkFee:function(index){
+                    this.selectIndex02=index
+                }
+            },
+            mounted:function(){
+
+            },
+            created: function () {
+                this.isCreated = true;
+            },        
+        })    
+    
+    </script>
+</body>
+</html>

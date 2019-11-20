@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>入驻填写页</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/release.css">
+    <style>
+        .icon01{background: url(../img/tc-pic04.png);background-size:50rem}
+        .write-cell{padding: 0 1.5rem;font-size: 1.5rem}
+        .write-cell .arrow-right{margin-left: 0;}
+        .write-cell .location .icon-fill-location{width: 1.7rem;height: 1.9rem;background-position:-38.8rem -21rem;}
+        .icon-agree{vertical-align: -.3rem;display: inline-block;width: 1.4rem;height: 1.4rem;background-position:-40.7rem -21rem;}
+        .icon-agree.active{background-position: -42.3rem -21rem;}
+        .set-meal .bt{position:relative;height: 4.4rem;line-height:4.2rem;font-size:1.5rem;color:#FF6600;border:1px solid #FF6600;box-sizing:border-box;text-align:center;font-weight:bold;margin: 0 0 1rem;}
+        .set-meal .bt .dot{font-size: 1.2rem;background:#ff1c1c;color: #fff;width: 3.8rem;height: 1.8rem;border-radius: .9rem;border-bottom-left-radius: 0;
+        display:inline-block;text-align: center;line-height: 1.8rem;margin: 0 0 0 .4rem;vertical-align: 1rem;}
+        .set-meal .bt.active .dot{opacity: 1;background:#fff;color: #ff1c1c;}
+        .set-meal .bt.active{background: linear-gradient(to right,#FF8F00,#FF6A00);color:#fff;border: none;line-height:4.4rem;}
+        .set-meal .bt span{display: inline-block;margin: 0 0 0 3.8rem;}
+ </style>
+</head>
+<body>
+    <div id="vue_city" v-show="isCreated" class="basewrap" style="padding: 0 0 6rem;">
+        <div class="f16 bg-f bold" style="padding: 2.4rem 1.5rem .5rem;">
+            <i style="display:inline-block;width:.3rem;height:1.4rem;background:#FF6600;margin: 0 1rem 0 0;vertical-align: -.2rem;"></i>店铺信息
+        </div>
+        <div class="write-cells bg-f">
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">店铺名称<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input v-model.trim="shop.name" class="write ta-r" placeholder="请输入店铺名" style="font-size:1.5rem;">
+                </div>                                                          
+            </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">主营业务<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <select @click="" class="c999 change" style="padding-right:1rem;font-size:1.5rem;direction: rtl">
+                        <option v-for="type in shop.shopType">{{type.option}}</option>
+                    </select>
+                </div>   
+                <div class="arrow-right"></div>                                                  
+            </div> 
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">区域<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input class="area bz" id="demo1" type="text" readonly="" placeholder="请选择区域" style="font-size: 1.5rem;text-align:right;padding:0 1rem 0 0;">
+                    <input id="value1" type="hidden" value="20,234,504">
+                </div>   
+                <div class="arrow-right"></div>            
+            </div>  
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">详细地址<i class="icon-require"></i></div>
+                <div class="flex right" style="margin-right:1.2rem">
+                    <input v-model.trim="shop.address" class="write" placeholder="请输入详细地址" style="font-size:1.5rem;text-align: right;">
+                </div>   
+                <div class="location left-line">
+                    <i class="icon-fill-location"></i>定位
+                </div>                                                       
+            </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">手机号码<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input v-model.number="shop.tel" class="write" type="tel" placeholder="请填写手机号码" style="font-size:1.5rem;text-align: right;">
+                </div>                                                      
+            </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">邀请码</div>
+                <div class="flex right">
+                    <input v-model.trim="shop.code" class="write" placeholder="选填" style="font-size:1.5rem;text-align: right;">
+                </div>                                                      
+            </div>            
+        </div> 
+
+        <div class="f16 bg-f bold" style="padding: 2.4rem 1.5rem .5rem;margin: 1rem 0 0;">
+            <i style="display:inline-block;width:.3rem;height:1.4rem;background:#FF6600;margin: 0 1rem 0 0;vertical-align: -.2rem;"></i>套餐选择
+        </div>  
+
+        <div class="bg-f set-meal" style="padding: 1.5rem;">
+            <div :class="{active:selectIndex02==index}" @click="checkFee(index)" class="bt" v-for="(fee,index) in fees">
+                <span :style="{'margin':(fee.seen==true?'0 0 0 3.8rem':'0')}">{{fee.money}}</span><i class="dot" v-show="fee.seen">优惠</i>
+            </div>
+        </div>   
+
+        <div class="f14" style="padding:1rem 1.5rem;">
+            <i class="icon01 icon-agree" :class="{active:agree==true}"  @click="checkAgree()"></i> 我已阅读并同意<i style="color: #FF1C1C">“店铺入驻须知”</i>
+        </div>
+
+        <div class="fix-bl">
+            <div class="d-flex ta-c" style="line-height: 4.9rem;">
+                <div class="f16 bold cfff flex" style="height: 4.9rem;background:linear-gradient(to right,#FF8F00,#FF6A00)">免费入驻，试用7天</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script> 
+    <script>
+        var vm = new Vue({
+            el:'#vue_city',        
+            data:{
+                isCreated:false,
+                selectIndex02:'',
+                fees:[
+                    {money:'一个月/¥100',seen:true},
+                    {money:'三个月/¥300',seen:false},
+                    {money:'半年/¥500',seen:false},
+                    {money:'一年/¥800',seen:false},
+                    {money:'两年/¥1000',seen:false}
+                ],
+                shop:{
+                    name:'',
+                    shopType:[
+                        {option:'请选择店铺分类'},
+                        {option:'美容'},
+                        {option:'美食'}
+                    ],
+                    address:'',
+                    tel:'',
+                    code:''
+               },
+                agree:false
+            },
+            methods:{
+                checkFee:function(index){
+                    this.selectIndex02=index
+                },
+                checkAgree:function(index){
+                    this.agree=!this.agree
+                }
+            },
+            mounted:function(){
+                $("select.change").change(function () {
+                    var selItem = $(this).val();
+                    if (selItem == $(this).find('option:first').val()) {
+                        $(this).css('color', '#999999');
+                    } else {
+                        $(this).css('color', '#333333');
+                    }
+                })
+            },
+            created: function () {
+                this.isCreated = true;
+            },        
+        })    
+    
+    </script>
+</body>
+</html>
