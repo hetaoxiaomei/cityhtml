@@ -6,6 +6,8 @@
     background-repeat: no-repeat;
 }
 
+[v-cloak]{display: none}
+
 .icon-music{width:3.4rem;height:3.4rem;display: block;margin: 0 auto 10px;background-position:0 0;float: left;}
 .icon-music.rotate{
     animation:rotate 1s linear infinite;
