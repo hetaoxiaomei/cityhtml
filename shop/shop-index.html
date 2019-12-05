@@ -13,7 +13,17 @@
     <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city/cards/index/css/new-swiper.css">
     <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city/storedetail/css/side-button.css">
     <link rel="stylesheet" type="text/css" href="css/shop-index.css">
-    <link rel="stylesheet" type="text/css" href="../css/evaluate_02.css">
+    <link rel="stylesheet" type="text/css" href="css/evaluate_02.css">
+    <link rel="stylesheet" type="text/css" href="css/shop-index-purple.css">
+    <style>
+        [v-cloak]{display: none}
+        .icon02{background: url(img/shop-index.png);background-size:50rem;background-repeat:no-repeat;}
+        .icon-earn, .icon-share, .icon-coupon, .icon-arrow, .icon-location, .icon-call, .detail-footer-nav .icon, .icon-close, .number-reduce, .number-plus {
+            background-image: url(../img/tc-pic04.png);
+            background-size: 50rem;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 <body>
     <div id="vue_shop" v-show="isCreated">
@@ -588,7 +598,7 @@
         </div>
 
         <!--购物选择弹窗-->
-        <div id="buy-dialog" class="fix-tl-100 none">
+        <div id="buy-dialog" class="fix-tl-100">
             <div class="dialog-black-mask"></div>
             <div class="fix-bl bg-f" style="border-top-left-radius: 5px;border-top-right-radius: 5px;">
                 <div class="d-flex bottom-line commodity bottom-line" style="border-radius: 5px; padding:0 3rem 1.5rem 1.5rem;">
@@ -633,9 +643,14 @@
                         <div class="f12" style="color:#F90606;">限购1件</div>
                     </div>
                 </div>
-                <div class="d-flex detail-footer-nav" style="margin: 1.5rem 0 0;">
+                <div class="d-flex detail-footer-nav" style="margin: 1.5rem 0 0;" v-if>
+                    <li class="flex bt" style="background:linear-gradient(to right,#ffc300,#ffa200);">立即购买</li>
+                    <li class="flex bt" style="background:linear-gradient(to right,#FF8F00,#FF6A00);">加入购物车</li>
+                </div>                 
+                <div class="d-flex detail-footer-nav" style="margin: 1.5rem 0 0;" v-else>
                     <li class="flex bt" style="background:linear-gradient(to right,#FF8F00,#FF6A00);">加入购物车</li>
                 </div>
+               
             </div>
         </div>        
 
