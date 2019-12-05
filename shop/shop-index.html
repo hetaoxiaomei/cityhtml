@@ -105,12 +105,14 @@
                             </li>                          
                         </ul>
 
-                        <ul class="top-line albumUl" v-show="spread==false">
-                            <li v-for="album,index in Infor.albums">
-                                <img :src="album.img" v-if="index<2">
-                                <p v-else>查看相册</p>
-                            </li>                                                                                
-                        </ul>
+                        <div class="top-line">
+                            <ul class="albumUl" v-show="spread==false">
+                                <li v-for="album,index in Infor.albums">
+                                    <img :src="album.img" v-if="index<10">
+                                    <p v-else>查看相册</p>
+                                </li>                                                                                
+                            </ul>
+                        </div>
 
                         <ul class="linkUl top-line" v-show="spread==false">
                             <li v-for="link in Infor.links">
@@ -598,7 +600,7 @@
         </div>
 
         <!--购物选择弹窗-->
-        <div id="buy-dialog" class="fix-tl-100">
+        <div id="buy-dialog" class="fix-tl-100 none">
             <div class="dialog-black-mask"></div>
             <div class="fix-bl bg-f" style="border-top-left-radius: 5px;border-top-right-radius: 5px;">
                 <div class="d-flex bottom-line commodity bottom-line" style="border-radius: 5px; padding:0 3rem 1.5rem 1.5rem;">
@@ -711,7 +713,15 @@
                     albums:[
                         {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
                         {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
-                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'}
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'}                                               
                     ],
                     links:[
                         {name:'外链名称'},

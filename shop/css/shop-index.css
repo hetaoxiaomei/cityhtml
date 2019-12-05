@@ -1,13 +1,4 @@
 
-.icon02{background: url(../img/shop-index.png);background-size:50rem;background-repeat:no-repeat;}
-.icon-earn, .icon-share, .icon-coupon, .icon-arrow, .icon-location, .icon-call, .detail-footer-nav .icon, .icon-close, .number-reduce, .number-plus {
-    background-image: url(../../img/tc-pic04.png);
-    background-size: 50rem;
-    background-repeat: no-repeat;
-}
-
-[v-cloak]{display: none}
-
 .icon-music{width:3.4rem;height:3.4rem;display: block;margin: 0 auto 10px;background-position:0 0;float: left;}
 .icon-music.rotate{
     animation:rotate 1s linear infinite;
@@ -63,10 +54,10 @@
 .shopData-cell .icon02{margin:0 .8rem 0 0;vertical-align:-.4rem;display: inline-block;height: 1.5rem;}
 .icon-time{width: 1.3rem;height:1.3rem;display:block;margin: 0 1.5rem 0 0;}
 .little-bt{display: block;margin: 0 0 0 2rem;font-weight: bold;width: 5rem;height: 2.5rem;line-height: 2.5rem;color: #fff;font-size: 1.2rem;border-radius: 1.3rem;text-align: center;background: linear-gradient(to right,#FF8F00,#FF6A00);}
-.albumUl{padding: 2rem 0;overflow: hidden;}
-.albumUl li{box-sizing: border-box;width: 31.4%;margin: 0 2.9% 0 0;padding: 24% 0 0;position: relative;float: left;border-radius: 5px;overflow: hidden;}
+.albumUl{-webkit-overflow-scrolling:touch;padding: 2rem 0;overflow: hidden;overflow-x: scroll;overflow-y: hidden;white-space: nowrap;}
+.albumUl li{box-sizing: border-box;width: 31.4%;margin: 0 2.9% 0 0;padding: 24% 0 0;position: relative;display: inline-block; border-radius: 5px;overflow: hidden;}
 .albumUl li:last-child{margin: 0;}
-.albumUl li:nth-child(3){border: 1px solid #E5E5E5} 
+.albumUl li:nth-child(11){border: 1px solid #E5E5E5} 
 .albumUl li img{position: absolute;top:0;left:0;display: block;width: 100%;height: 100%;}
 .albumUl li p{font-size:1.2rem;color:#999;text-align: center;position: absolute;top:50%;left:50%;transform: translate(-50%,-50%)}
 .linkUl{overflow: hidden;padding: 1rem 0 2rem;}
