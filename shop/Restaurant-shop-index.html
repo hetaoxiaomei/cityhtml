@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>活动详情</title>
+    <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city/newcity/newindex/css/common.css">
+    <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city/cards/index/css/new-swiper.css">
+    <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city/storedetail/css/side-button.css">
+    <link rel="stylesheet" type="text/css" href="css/Restaurant-shop-index.css">
+    <link rel="stylesheet" type="text/css" href="css/evaluate_02.css">
+    <link rel="stylesheet" type="text/css" href="css/shop-index-pink.css">
+    <style>
+        [v-cloak]{display: none}
+        .icon02{background-image: url(img/shop-index.png);background-size:50rem;background-repeat:no-repeat;}
+        .icon-earn, .icon-share, .icon-coupon, .icon-arrow, .icon-location, .icon-call, .detail-footer-nav .icon, .icon-close, .number-reduce, .number-plus {
+            background-image: url(../img/tc-pic04.png);
+            background-size: 50rem;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div id="vue_shop" v-show="isCreated">
+        <div class="basewrap" style="padding: 0 0 7rem">
+            <!--轮播-->
+            <div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for='slide in Infor.slides'>
+                        <img class="img-w-100" :src="slide.img" />
+                    </div>	
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <div style="width: 3.4rem;position:absolute;top:37px;right:5px;z-index: 2;">
+                    <i class="icon02 icon-music rotate"></i>
+                    <i class="icon02 icon-vr"></i>
+                </div>
+            </div> 
+            <!-- 营销活动 -->
+            <div style="margin: -1.5rem 1rem 0">
+                <!--店铺简介-->
+                <div class="bg-f" style="padding:1rem 0 0;margin:-1.5rem 0 0;border-radius: 5px;position: relative;z-index: 1">
+                    <!--公告-->
+                    <div class="d-flex d-flex-center gonggao-cell" style="margin: 0 0 1rem;">
+                        <div class="icon02 icon-notice"></div>
+                        <div class="flex f14" style="overflow: hidden;">
+                            <marquee marquee="0" behavior="scroll" loop="-1" scrollamount="6" scrolldelay="150">
+                                <p>
+                                    <a v-for="notice in Infor.notices">{{notice.strip}}</a>
+                                </p>
+                            </marquee>
+                        </div>
+                    </div>
+                    <!--关注店铺-->
+                    <div class="d-flex shopFous-cell" style="margin: 0 0 1rem;">
+                        <div class="rel pic">
+                            <img :src="Infor.shopPic">
+                            <div class="rest" v-show="Infor.rest">休息中</div>
+                        </div>
+                        <div class="flex center">
+                            <p class="f01 f16 bold clamp2"><i class="icon02 certificate" v-show="Infor.license"></i>{{Infor.name}}</p>
+                            <p class="f02"><i class="f12 c666">人均消费：</i><i class="f16 bold" style="color: #ff6600">{{Infor.perConsumption}}</i></p>
+                        </div>
+                        <div :class="{active:Infor.isActive==true}" class="bt" style="margin:2rem 0 0;" @click="checkFocus()">{{Infor.isActive?'已关注':'关注店铺'}}</div>
+                    </div>
+                    <div class="d-flex f12 c999 shopData-cell" style="padding: 0 1rem 2rem;">
+                        <div class="flex"><i class="icon02" style="width: 1.6rem;background-position:-8.8rem 0;"></i>{{Infor.data.focusNumber}}人关注</div>
+                        <div class="flex ta-c"><i class="icon02" style="width: 1.4rem;background-position:-10.7rem 0;"></i>{{Infor.data.shareNumber}}次分享</div>
+                        <div class="flex ta-r"><i class="icon02" style="width: 1.7rem;background-position:-12.3rem 0;"></i>{{Infor.data.comeNumber}}人来过</div>
+                    </div>
+
+                    <div class="top-line" style="margin: 0 1rem;">
+                        <ul class="albumUl">
+                            <li v-for="album,index in Infor.albums">
+                                <img :src="album.img" v-if="index<10">
+                                <p v-else>查看相册</p>
+                            </li>                                                                                
+                        </ul>
+
+                        <div class="d-flex d-flex-center" style="line-height: 1.25;margin:0 0 2rem;">
+                            <div class="icon02 icon-time" style="background-position: -7.3rem -1.7rem;"></div>
+                            <div class="flex">
+                                <p class="f14">{{Infor.businessHours.time}}</p>
+                                <p class="f12 c666" style="margin: .5rem 0 0;">{{Infor.businessHours.remark}}</p>
+                            </div>
+                        </div>
+                        <div class="d-flex d-flex-center" style="line-height: 1.25;margin:0 0 2rem;">
+                            <div class="icon02 icon-time" style="background-position: -10.3rem -1.7rem;"></div>
+                            <div class="flex" style="padding:0 1.5rem 0 0;">
+                                <p class="f14">{{Infor.address}}</p>
+                            </div>
+                            <div></div>
+                            <div style="border-left:1px solid #E5E5E5;height:22px;"></div>
+                            <a class="icon02" style="width: 2.6rem;height:2.1rem;display:block;background-position:-26.9rem 0;margin: 0 0 0 1.5rem;"></a>
+                            <a class="icon02" :href="'tel:'+Infor.tel" style="width: 2.1rem;height:2.1rem;display:block;background-position:-29.7rem 0;margin: 0 0 0 2rem;"></a>
+                        </div>   
+                    </div>   
+                    
+                    <div class="d-flex d-flex-center bg-f top-line" style="border-radius: 5px;padding: 1.5rem 0;margin: 0 1rem;border-radius: 5px;">
+                        <div class="icon02 icon-time" style="width:1.4rem;background-position: -14.8rem -1.7rem;margin: 0 1.4rem 0 0;"></div>
+                        <div class="flex" style="height: 1.5rem;overflow:hidden;padding:0 0 0 .6rem;">
+                            <div class="cashCoupon" v-for="cashCoupon in cashCoupons">{{cashCoupon.content}}<i class="icon02 left"></i><i class="icon02 right"></i></div>
+                        </div>
+                    </div>                    
+
+                    <div class="bg-f" style="margin: 0 1rem;">
+                        <div class="f12 c999 ta-c spread-bt" style="padding:0 0 1.5rem;" @click="checkSpread()">更多信息<i class="arrow"></i></div>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- 选择导航 -->
+            <div class="d-flex f16 ta-c bg-f bottom-line select-nav">
+                <div :class="{active:selectIndex==index}" class="flex" v-for="nav,index in navs" @click="checkNav(index)">
+                    {{nav.title}}<i></i>
+                </div>
+            </div>
+
+            <div class="bg-f" style="margin: 0 1rem;border-radius: 5px;" >
+                <div class="d-flex" v-if="selectIndex==0">
+                    <ul class="commodity-ul01">
+                        <li class="clamp2" :class="{active:selectIndex02==index}" v-for="nav,index in commodityNavsOne" @click="checkCommodityNavsOne(index)">
+                            <span>
+                                <i class="icon02" v-show="nav.iconBg!==''" :style="nav.iconBg"></i>{{nav.title}}
+                            </span>
+                        </li>
+                    </ul>
+
+                    <!--商品-->
+                    <div style="width: 77.5%">
+                        <!--抢优惠-->
+                        <div v-if="selectIndex02==0" style="padding: 0 1rem;">
+                            <div class="bottom-line" v-for="activity,index in activitys_01" style="padding: 1.5rem 0;">
+                                <div class="d-flex marketActivity-cell" style="padding: 0 0 .5rem;">
+                                    <div class="pic">
+                                        <img class="img-wh-100" :src="activity.img">
+                                    </div>
+                                    <div class="flex">
+                                        <div class="f16 clamp1 bold" style="margin: .3rem 0 0;">{{activity.name}}</div>
+                                        <div class="f02" style="line-height:1" :style="{margin:(activity.vipPrice!==''?'.8rem 0 0 0':'1.4rem 0 0 0')}">
+                                            <i class="f16 bold" style="color: #ff6600">￥{{activity.presentPrice}}</i>
+                                            <i class="f12 c999 line-through" v-show="activity.vipPrice!==''">¥{{activity.originalPrice}}</i>
+                                        </div>
+                                        <div style="margin: .5rem 0 0 0;line-height:1" v-show="activity.vipPrice==''"><i class="f12 c999 line-through">¥{{activity.originalPrice}}</i></div>
+                                        <div style="margin: .6rem 0 0 0;line-height:1" v-show="activity.vipPrice!==''">
+                                            <i class="vip">会员</i>
+                                            <i class="f16 bold">￥{{activity.vipPrice}}</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex d-flex-center">
+                                    <div class="flex f12 c999">剩余{{activity.surplus}}份</div>
+                                    <div class="buy01">立即抢购</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--减价-->
+                        <div v-else-if="selectIndex02==1" style="padding: 0 1rem;">
+                            <div class="bottom-line" v-for="activity,index in activitys_02" style="padding: 1.5rem 0;">
+                                <div class="d-flex marketActivity-cell" style="padding: 0 0 .5rem;">
+                                    <div class="pic">
+                                        <img class="img-wh-100" :src="activity.img">
+                                    </div>
+                                    <div class="flex">
+                                        <div class="f16 clamp1 bold" style="margin: .3rem 0 0;">{{activity.name}}</div>
+                                        <div class="f02" style="line-height:1" :style="{margin:(activity.vipPrice!==''?'.8rem 0 0 0':'1.4rem 0 0 0')}">
+                                            <i class="f16 bold" style="color: #ff6600">￥{{activity.presentPrice}}</i>
+                                        </div>
+                                        <div style="margin: .5rem 0 0 0;line-height:1"><i class="f12 c999 line-through">¥{{activity.originalPrice}}</i></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex d-flex-center">
+                                    <div class="flex f12 c999">剩余{{activity.surplus}}份</div>
+                                    <div class="buy01">立即参与</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--拼团-->
+                        <div v-else-if="selectIndex02==2" style="padding: 0 1rem;">
+                            <div class="bottom-line" v-for="activity,index in activitys_03" style="padding: 1.5rem 0;">
+                                <div class="d-flex marketActivity-cell" style="padding: 0 0 .5rem;">
+                                    <div class="pic">
+                                        <img class="img-wh-100" :src="activity.img">
+                                    </div>
+                                    <div class="flex">
+                                        <div class="f16 clamp1 bold" style="margin: .3rem 0 0;">{{activity.name}}</div>
+                                        <div class="f02" style="line-height:1" :style="{margin:(activity.vipPrice!==''?'.8rem 0 0 0':'1.4rem 0 0 0')}">
+                                            <i class="f16 bold" style="color: #ff6600">￥{{activity.presentPrice}}</i>
+                                            <i class="f12 c999 line-through" v-show="activity.vipPrice!==''">¥{{activity.originalPrice}}</i>
+                                        </div>
+                                        <div style="margin: .5rem 0 0 0;line-height:1" v-show="activity.vipPrice==''"><i class="f12 c999 line-through">¥{{activity.originalPrice}}</i></div>
+                                        <div style="margin: .6rem 0 0 0;line-height:1" v-show="activity.vipPrice!==''">
+                                            <i class="vip">会员</i>
+                                            <i class="f16 bold">￥{{activity.vipPrice}}</i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex d-flex-center">
+                                    <div class="flex f12 c999">剩余{{activity.surplus}}份</div>
+                                    <div class="buy01">去拼团</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--赞-->
+                        <div v-else-if="selectIndex02==3" style="padding: 0 1rem;">
+                            <div class="bottom-line" v-for="activity,index in activitys_04" style="padding: 1.5rem 0;">
+                                <div class="d-flex marketActivity-cell" style="padding: 0 0 .5rem;">
+                                    <div class="pic">
+                                        <img class="img-wh-100" :src="activity.img">
+                                    </div>
+                                    <div class="flex">
+                                        <div class="f16 clamp1 bold" style="margin: .3rem 0 0;">{{activity.name}}</div>
+                                        <div class="f02" style="line-height:1" :style="{margin:(activity.vipPrice!==''?'.8rem 0 0 0':'1.4rem 0 0 0')}">
+                                            <i class="f16 bold" style="color: #ff6600">￥{{activity.presentPrice}}</i>
+                                        </div>
+                                        <div style="margin: .5rem 0 0 0;line-height:1"><i class="f12 c999 line-through">¥{{activity.originalPrice}}</i></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex d-flex-center">
+                                    <div class="flex f12 c999">剩余{{activity.surplus}}份</div>
+                                    <div class="buy01">立即参与</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--全部商品-->
+                        <div v-else="selectIndex02==4">
+                            <div style="padding: 0 0 0 1rem;">
+                                <ul class="commodity-ul02">
+                                    <li :class="{active:selectIndex03==index}" v-for="nav,index in commodityNavsTwo" @click="checkCommodityNavsTwo(index)"><span>{{nav.title}}二个字</span></li>
+                                </ul>
+                            </div>
+                            <!--商品内容-->
+                            <div v-if>
+                                <div style="padding: 0 1rem;margin: -1.5rem 0 0;">
+                                    <div class="bottom-line" v-for="activity in commoditys" style="padding: 1.5rem 0;">
+                                        <div class="d-flex marketActivity-cell" style="padding: 0 0 .5rem;">
+                                            <div class="pic">
+                                                <img class="img-wh-100" :src="activity.img">
+                                            </div>
+                                            <div class="flex">
+                                                <div class="f16 clamp1 bold" style="margin: .3rem 0 0;">{{activity.name}}</div>
+                                                <div class="f02" style="line-height:1" :style="{margin:(activity.vipPrice!==''?'.8rem 0 0 0':'1.4rem 0 0 0')}">
+                                                    <i class="f16 bold" style="color: #ff6600">￥{{activity.presentPrice}}</i>
+                                                    <i class="f12 c999 line-through" v-show="activity.vipPrice!==''">¥{{activity.originalPrice}}</i>
+                                                </div>
+                                                <div style="margin: .5rem 0 0 0;line-height:1" v-show="activity.vipPrice==''"><i class="f12 c999 line-through">¥{{activity.originalPrice}}</i></div>
+                                                <div style="margin: .6rem 0 0 0;line-height:1" v-show="activity.vipPrice!==''">
+                                                    <i class="vip">会员</i>
+                                                    <i class="f16 bold">￥{{activity.vipPrice}}</i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex d-flex-center">
+                                            <div class="flex f12 c999">剩余{{activity.surplus}}份</div>
+                                            <div class="buy01">去购买</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--用户视觉无商品-->
+                            <div class="bg-f" style="padding:6rem 1rem;margin: 0 1rem;" v-else-if>
+                                <img src="img/shop-index03.png" style="display: block;margin:0 auto;width: 40%;">  
+                                <p class="f14 c999 ta-c" style="margin: 1rem 0 0;">店铺暂未添加商品</p>  
+                            </div>
+    
+                            <!--店主视觉无商品-->
+                            <div class="bg-f" style="padding:3rem 1rem 6rem;margin: 0 1rem;" v-else>
+                                <img src="img/shop-index03.png" style="display: block;margin:0 auto;width: 40%;">  
+                                <p class="f14 c999 ta-c" style="margin: 1rem 0 0;">店铺暂未添加商品</p>  
+                                <a class="plus-data-bt">添加商品</a>
+                                <div class="ta-r" style="margin:2.5rem 0 0;">
+                                    <sapn class="hiddenColumn">隐藏该栏目</sapn>
+                                </div>
+                            </div>
+
+                        </div>                             
+
+                    </div>
+                </div>
+
+                <!--简介-->
+                <div v-else-if="selectIndex==1">
+                    <div class="bg-f" style="padding:2.5rem 1rem 3.5rem;" v-if>
+                        <div class="f14" style="line-height: 1.6;margin: 0 0 1.5rem;">商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商商家介绍商家介绍商家介绍商家介绍商家介绍</div>
+                        <div class="rel" style="margin: 0 0 1.5rem;border-radius: 5px;overflow: hidden;">
+                            <video src="movie.ogg" controls="controls" style="width: 100%;display:block;"></video>
+                            <i class="icon02 video-start"></i>
+                        </div>
+                        <img src="" style="margin: 0 0 1.5rem;border-radius: 5px;overflow: hidden;display:block;">
+                    </div>
+    
+                    <!--用户视觉无简介-->
+                    <div class="bg-f" style="padding:6rem 1rem;" v-else-if="">
+                        <img src="img/shop-index02.png" style="display: block;margin:0 auto;width: 40%;">  
+                        <p class="f14 c999 ta-c" style="margin: 1rem 0 0;">商家暂无介绍</p>  
+                    </div>
+    
+                    <!--店主视觉无简介-->
+                    <div class="bg-f" style="padding:3rem 1rem 6rem;" v-else="">
+                        <img src="img/shop-index02.png" style="display: block;margin:0 auto;width: 40%;">  
+                        <p class="f14 c999 ta-c" style="margin: 1rem 0 0;">商家暂无介绍</p>  
+                        <a class="plus-data-bt">添加店铺介绍</a>
+                        <div class="ta-r" style="margin:2.5rem 0 0;">
+                            <sapn class="hiddenColumn">隐藏该栏目</sapn>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--评价-->
+                <div class="bg-f" style="padding: 2rem 1rem 0;" v-else-if="selectIndex==2">
+                    <div class="comment-big-bt"><img src="img/icon-edit.png">我要点评</div>
+                    <!--有评论-->
+                    <div style="margin: 0 auto;" v-if="">
+                        <!--个人评论-->
+                        <div class="p_list bottom-line">
+                            <div class="d-flex p_header">
+                                <div class="p_img"><img src="../img/02.jpg"></div>
+                                <div class="pc_name clamp1">繁华落尽.平淡归真繁华落尽繁华落尽</div>
+                                <div class="flex ta-r pc_time">2018.07.12</div>
+                            </div>
+                            <div class="p_content">
+                                <div class="p_txt">好评!!!礼貌且克制。实在是太厌烦某些饭店过于谄媚的殷勤，让人压力很大～这里的疏离与规矩更让人能享受吃饭的个人空间个人空间个人空间个人空间空</div>
+                                <div class="pImg">                 
+                                    <ul>                                                               
+                                        <li><img src="../img/02.jpg"></li>   
+                                        <li><img src="../img/02.jpg"></li>
+                                        <li><img src="../img/02.jpg"><p class="more">共6张</p></li>                          
+                                    </ul>            
+                                </div>
+                                <!--回复按钮-->
+                                <div class="p_bot">    
+                                    <a href="javascript:;" class="temp-comment-reply">回复</a>
+                                    <a class="temp-comment-more-set" href="javascript:;">
+                                        <img class="icon-post-admin" src="img/icon-more.png">更多 
+                                    </a>
+                                </div>                            
+                                <div class="p_pro">                                  
+                                    <p>                     
+                                        <a href="javascript:;">卡玛王子</a><i class="c333">&nbsp;回复&nbsp;</i><a href="javascript:;">客人</a><i class="c999">：</i>谢谢您的评价，您的好评是我们努力的动力。欢迎您下次的光临！
+                                    </p>                              
+                                    <p>                     
+                                        <a href="javascript:;">卡玛王子烘培坊</a><i class="c999">：</i>谢谢您的评价，您的好评是我们努力的动力。欢迎您下次的光临！
+                                    </p>                                                  
+                                </div>
+                            </div>
+                            <!--回复评论框--> 
+                            <div class="p_replay" style="display: block;">
+                                <ul class="temp-describe-photo post-wrap-pic-select clearfix bz" id="imgList" style="display: none;padding: 0 1.4rem;">
+                                    <li class="lastpost fl" id="btn-addimg" style="cursor:pointer;width:55px;height:55px;">
+                                        <img class="addfile" src="https://j.vzan.cc/content/city/images/pic.png" style="width:55px;height:55px;">
+                                    </li>
+                                </ul>
+                                <div class="pr_txt">
+                                    <div class="star-ping staronclock" style="margin-bottom: 1rem;display:none;" data-star="10">
+                                    </div>
+                                    <textarea id="txtContentAdd" class="pr_txtIn" placeholder="回复理智君"></textarea>
+                                </div>
+                                <div class="pr_bot">
+                                    <a id="btn-qqface" href="javascript:;" class="emjio">
+                                        <img src="img/icon-face.png" style="width: 100%">
+                                    </a>
+                                    <a id="reply-upload-img-btn" href="javascript:;" class="pic temp-upload-img">
+                                        <img src="img/icon-pic.png" style="width: 100%">
+                                    </a>
+                                    <a href="javascript:;" class="button1" id="cancle-reply-button" onclick="hideReply()">取消</a>
+                                    <a href="javascript:;" class="button2" id="send-repley-button">评价</a>
+                                </div>
+                                <!--QQ表情-->
+                                <div id="div-qqfaces">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!--用户视觉无评论-->
+                    <div class="bg-f" style="padding:6rem 0;" v-else-if>
+                        <img src="img/shop-index02.png" style="display: block;margin:0 auto;width: 40%;">  
+                        <p class="f14 c999 ta-c" style="margin: 1rem 0 0;">店铺暂未被评论</p>  
+                    </div>
+        
+                    <!--店主视觉无评论-->
+                    <div class="bg-f" style="padding:3rem 0 6rem;" v-else>
+                        <img src="img/shop-index02.png" style="display: block;margin:0 auto;width: 40%;">  
+                        <p class="f14 c999 ta-c" style="margin: 1rem 0 0;">店铺暂未被评论</p>  
+                        <div class="ta-r" style="margin:2.5rem 0 0;">
+                            <sapn class="hiddenColumn">隐藏该栏目</sapn>
+                        </div>
+                    </div>              
+                </div>                
+
+                <!--动态-->
+                <div v-else-if="selectIndex==3">
+                    <div class="bg-f bz" style="padding: 0 1rem;" v-if>
+                        <div class="commodity-dynamic" :class="index>0?'top-line':''" v-for="dynamic,index in dynamics">
+                            <div class="f01">{{dynamic.title}}</div>
+                            <div class="f02 clamp3">{{dynamic.content}}</div>
+                            <div class="spread">展开</div>
+                            <!--方图、竖图-->
+                            <img class="img01" :src="dynamic.img">
+                            <!--4:3图-->
+                            <img class="img02" :src="dynamic.img">                 
+                            <div class="date">{{dynamic.date}}</div>
+                        </div>
+                    </div>
+
+                    <!--用户视觉无动态-->
+                    <div class="bg-f" style="padding:6rem 1rem;" v-else-if>
+                        <img src="img/shop-index02.png" style="display: block;margin:0 auto;width: 40%;">  
+                        <p class="f14 c999 ta-c" style="margin: 1rem 0 0;">店铺暂未添加动态</p>  
+                    </div>
+
+                    <!--店主视觉无动态-->
+                    <div class="bg-f" style="padding:3rem 1rem 6rem;" v-else>
+                        <img src="img/shop-index02.png" style="display: block;margin:0 auto;width: 40%;">  
+                        <p class="f14 c999 ta-c" style="margin: 1rem 0 0;">店铺暂未添加动态</p>  
+                        <a class="plus-data-bt">添加动态</a>
+                        <div class="ta-r" style="margin:2.5rem 0 0;">
+                            <sapn class="hiddenColumn">隐藏该栏目</sapn>
+                        </div>
+                    </div> 
+                </div>
+
+
+                <!--招聘-->
+                <div v-else-if="selectIndex==4">
+                    <div v-if="">
+                        <div class="bg-f" style="padding: 0 1rem;">
+                            <div class="d-flex recurit-list"  v-for="recurit in recurits">
+                                <img class="img01" :src="recurit.img">
+                                <div class="flex">
+                                    <p class="title clamp1">{{recurit.title}}</p>
+                                    <p class="must clamp1">
+                                        <span v-for="must in recurit.musts">{{must.item}}</span>
+                                    </p>
+                                    <div class="welfare">
+                                        <span v-for="welfare in recurit.welfares">{{welfare.item}}</span>
+                                    </div>
+                                </div>
+                                <div style="margin: 0 0 0 1.5rem;">
+                                    <p class="money">6K-8K</p>
+                                    <p class="date">10:40</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="recruit-staff">招聘店员</a>
+                    </div>
+                    <!--用户视觉无评论-->
+                    <div class="bg-f" style="padding:6rem 1rem;" v-else-if>
+                        <img src="img/shop-index02.png" style="display: block;margin:0 auto;width: 40%;">  
+                        <p class="f14 c999 ta-c" style="margin: 1rem 0 0;">店铺暂未招聘</p>  
+                    </div>
+
+                    <!--店主视觉无评论-->
+                    <div class="bg-f" style="padding:3rem 1rem 6rem;" v-else>
+                        <img src="img/shop-index02.png" style="display: block;margin:0 auto;width: 40%;">  
+                        <p class="f14 c999 ta-c" style="margin: 1rem 0 0;">店铺暂未招聘</p>  
+                        <a class="plus-data-bt">招聘店员</a>
+                        <div class="ta-r" style="margin:2.5rem 0 0;">
+                            <sapn class="hiddenColumn">隐藏该栏目</sapn>
+                        </div>
+                    </div> 
+                </div>
+
+            </div>
+       
+
+        </div>
+
+        <!--底部导航-->
+        <div class="fix-bl" v-if="navBottom">
+            <div style="background: rgba(0,0,0,.5);height:4rem;text-align: center;color: #fff;line-height: 4rem;font-size: 1.4rem;">店铺已休息，停止下单</div>
+            <ul class="d-flex d-flex-center basewrap detail-footer-nav">
+                <li class="flex">
+                    <a>
+                        <i class="icon02" style="background-position:-8.2rem -3.6rem;"></i>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a>
+                        <i class="icon02" style="background-position:-10.5rem -3.6rem;"></i>
+                        <p>分享</p>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a>
+                        <i class="icon02" style="background-position:-12.8rem -3.6rem;">
+                            <em class="red-dot">8</em>
+                        </i>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li class="bt">在线买单</li>
+            </ul>
+        </div> 
+
+        <div class="fix-bl" v-else>
+            <div style="background: rgba(0,0,0,.5);height:4rem;text-align: center;color: #fff;line-height: 4rem;font-size: 1.4rem;">店铺已休息，停止下单</div>
+            <ul class="d-flex d-flex-center basewrap detail-footer-nav">
+                <li class="flex">
+                    <a>
+                        <i class="icon02" style="background-position:-8.2rem -3.6rem;"></i>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a>
+                        <i class="icon02" style="background-position:-10.5rem -3.6rem;"></i>
+                        <p>分享</p>
+                    </a>
+                </li>
+                <li class="bt">购物车(2)</li>
+            </ul>
+        </div>            
+        
+        <!--侧边栏-->
+        <div class="fast-navigation-fix">
+            <img class="pic-quick-navigation" src="https://j.vzan.cc/content/city/navigation/images/quick-navigation/quick-navigation.png">
+            <ul class="quick-navigation-ul">
+                <li>
+                    <a>
+                        <img src="img/shop.png">
+                        <p>店铺管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="temp-show-share-tips-img" style="cursor:pointer;">
+                        <img src="img/commodity.png">
+                        <p>商品管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="temp-show-share-tips-img" style="cursor:pointer;">
+                        <img src="img/dynamic.png">
+                        <p>动态管理</p>
+                    </a>
+                </li>                
+                <img class="pic-take-back none" src="https://j.vzan.cc/content/city/navigation/images/quick-navigation/take-back.png">
+            </ul>
+            <div class="fast-navigation-mask none"></div>
+        </div>
+
+        <!--购物选择弹窗-->
+        <div id="buy-dialog" class="fix-tl-100 none">
+            <div class="dialog-black-mask"></div>
+            <div class="fix-bl bg-f" style="border-top-left-radius: 5px;border-top-right-radius: 5px;">
+                <div class="d-flex bottom-line commodity bottom-line" style="border-radius: 5px; padding:0 3rem 1.5rem 1.5rem;">
+                    <img src="../img/04.jpg" style="width:10rem;height:10rem;border-radius: 5px;box-sizing: border-box;border: 1px solid #fff; margin: -2.6rem 1rem 0 0;">
+                    <div class="flex" style="margin:.5rem 0 0;">
+                        <div class="clamp2 f14 c333 bold" style="line-height:1.3">Copper Colour铜彩 夜神MOON主音箱线HIFI喇叭线高纯铜功放音响线</div>
+                        <div class="vip">
+                            <i class="left">会员</i>
+                            <i class="right">￥1500</i>
+                        </div>  
+                        <div class="f16 bold" style="color:#ff6600;margin: .5rem 0 0">￥15.5</div>   
+                    </div>
+                    <i class="icon-close"></i>    
+                </div>
+                <div style="max-height:200px;overflow:auto;">
+                    <div style="padding:1.5rem 0 0;margin:0 1.5rem;">
+                        <div class="f14 c333">颜色:</div>
+                        <div class="sd-option-all"><span class="stock active">蓝色</span><span class="stock">红色</span><span>黑色</span></div>
+                    </div>
+                    <div style="padding:1.5rem 0 0;margin:0 1.5rem;">
+                        <div class="f14 c333">尺寸:</div>
+                        <div class="sd-option-all"><span>S</span><span class="stock active">M</span><span class="stock">L</span></div>
+                    </div>
+                    <div style="padding:1.5rem 0 0;margin:0 1.5rem;">
+                        <div class="f14 c333">尺寸:</div>
+                        <div class="sd-option-all"><span>S</span><span class="stock active">M</span><span class="stock">L</span></div>
+                    </div>
+                    <div style="padding:1.5rem 0 0;margin:0 1.5rem;">
+                        <div class="f14 c333">尺寸:</div>
+                        <div class="sd-option-all"><span>S</span><span class="stock active">M</span><span class="stock">L</span></div>
+                    </div>                                              
+                </div>
+                <div style="margin:1rem 1.5rem 0;">
+                    <div class="d-flex d-flex-center top-line" style="padding: 1.5rem 1.5rem 1rem 0;">
+                        <div class="flex f14">购买数量:</div>
+                        <div class="number-reduce"></div>
+                        <div class="number-show">1</div>
+                        <div class="number-plus"></div>
+                    </div>
+                    <div class="d-flex" style="padding:0 1.5rem 0 0;">   
+                        <div class="f14 flex">剩余：999</div>
+                        <div class="f12" style="color:#F90606;">限购1件</div>
+                    </div>
+                </div>
+                <div class="d-flex detail-footer-nav" style="margin: 1.5rem 0 0;">
+                    <li class="flex bt" style="background:linear-gradient(to right,#FF8F00,#FF6A00);">加入购物车</li>
+                </div>
+            </div>
+        </div>    
+        
+        <!--店铺信息更多弹窗-->
+        <div id="MoreShopInfor" class="fix-tl-100" v-show="MoreShopInfor">
+            <div @click="closeMoreShopInfor()" class="dialog-black-mask"></div>
+            <div class="dialog" :class="{active:MoreShopInfor}">
+                <img @click="closeMoreShopInfor()" src="img/shop-index07.png" style="position:absolute;top:1.5rem;right:1.5rem;width:1.4rem;">    
+                <p class="f18 bold ta-c" style="padding: 0 1.5rem">重庆鸡公煲东长店</p>
+                <div class="f18 bold" style="margin: 2.5rem 1.5rem 0">最新公告</div>
+                <div class="f14 c666" style="margin: 1rem 1.5rem 0">春节期间凡事携带妻子小孩来我店消费满100元即可获赠价值50元的乐高玩具套餐</div>
+                <div class="f18 bold" style="margin: 2.5rem 1.5rem 0">营业时间</div>
+                <div class="f14 c666" style="margin: 1rem 1.5rem 0">
+                   <p>周一至周日 09:00 - 18:00营业</p> 
+                   <p>本店除了春节放假7天，其余时间全年不休</p> 
+                </div>    
+                <div class="f18 bold" style="margin: 2.5rem 1.5rem 0">店铺电话</div>
+                <div class="f14 c666" style="margin: 1rem 1.5rem 0">{{Infor.tel}}</div>    
+                <div class="f18 bold" style="margin: 2.5rem 1.5rem 0">店铺地址</div>
+                <div class="f14 c666" style="margin: 1rem 1.5rem 0">广东省广州市天河区林和东路285号</div>  
+                <div class="f18 bold" style="margin: 2.5rem 1.5rem 0">服务</div>    
+                <ul class="shopFunction" style="padding: 0 .5rem">
+                    <li v-for="equipment in Infor.equipments">
+                        <img :src="equipment.img">
+                        <p class="c666 ta-c">{{equipment.name}}</p>
+                    </li>                          
+                </ul>  
+                <div class="f18 bold" style="margin: 1rem 1.5rem 0">友情链接</div>  
+                <ul class="linkUl" style="padding: .5rem 1.5rem 0">
+                    <li v-for="link in Infor.links">
+                        <i class="icon02"></i>{{link.name}}
+                    </li>                                                                             
+                </ul>
+                <div class="d-flex d-flex-center" style="margin: 2.5rem 1.5rem 0">
+                    <div class="flex f18 bold">VR看店</div>
+                    <div class="little-bt02" style="">查看</div>
+                </div>    
+                <div class="d-flex d-flex-center" style="margin: 3rem 1.5rem 0">
+                    <div class="flex f18 bold">店主说</div>
+                    <div class="rel" @click="checkSaid()">
+                        <img src="img/shop-index04.png" style="height: 3.3rem;">
+                        <img :src="shopkeeperSaid?'img/shop-index06.png':'img/shop-index05.gif'" style="height: 1.5rem;top: .8rem;left: 1.2rem;position: absolute;">
+
+                    </div>
+                    <div class="f14 c333" style="margin:  0 0 0 1rem;">4"</div>
+                </div>     
+                <div class="f18 bold" style="margin: 1rem 1.5rem 0">福利群</div> 
+                <div>
+                    <img :src="Infor.welfareQr" style="width: 36%;margin:1.5rem auto 0;display: block">
+                    <p class="f12 c666 ta-c" style="margin: 1rem 0 0;">更多详情以及优惠资讯可以加群了解</p>
+                </div>                                                                     
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_shop',        
+            data:{
+                spread:true,
+                selectIndex:0,
+                selectIndex02:4,
+                selectIndex03:0,
+                navBottom:true,
+                MoreShopInfor:false,
+                Infor:{
+                    slides:[
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'}
+                    ],
+                    notices:[
+                        {strip:'1、请大家遵守本版发帖规则，文明发帖请大家遵守本版发帖规则。'},
+                        {strip:'2、请大家遵守本版发帖规则，文明发帖请大家遵守本版发帖规则。'}
+                    ],
+                    shopPic:'',
+                    rest:true,
+                    license:true,
+                    name:'店铺名称店铺名称店铺名称店铺名称店铺名称店铺名称',
+                    perConsumption:'￥100',
+                    isActive:false,
+                    data:{
+                        focusNumber:'111',
+                        shareNumber:'111',
+                        comeNumber:'111'
+                    },
+                    businessHours:{
+                        time:'周一至周六，19:00 - 00:00营业',
+                        remark:'本店除了春节放假7天，其余时间全年不休，欢迎大家在尝试。'
+                    },
+                    tel:'020-8888888',
+                    address:'广东省广州市天河区天安人寿中心27楼2703室',
+                    equipments:[
+                        {img:'img/shopFunction_01.png',name:'有线上网'},
+                        {img:'img/shopFunction_02.png',name:'WiFi'},
+                        {img:'img/shopFunction_03.png',name:'停车场'},
+                        {img:'img/shopFunction_04.png',name:'卫生间'},
+                        {img:'img/shopFunction_05.png',name:'热水淋浴'},
+                        {img:'img/shopFunction_06.png',name:'行李寄存'},
+                        {img:'img/shopFunction_07.png',name:'接送服务'},
+                        {img:'img/shopFunction_08.png',name:'送货上门'},
+                        {img:'img/shopFunction_09.png',name:'共享充电宝'},
+                        {img:'img/shopFunction_10.png',name:'独立包厢'}
+                    ],
+                    albums:[
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
+                        {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'}
+                    ],
+                    links:[
+                        {name:'外链名称'},
+                        {name:'外链名称'},
+                        {name:'外链名称'},
+                        {name:'外链名称'},
+                        {name:'外链名称'},
+                        {name:'外链名称'}
+                    ],
+                    welfareQr:''
+                },
+
+                cashCoupons:[
+                    {content:'满100减10'},
+                    {content:'30元'},
+                    {content:'20元'}
+                ],
+                //优惠
+                activitys_01:[
+                    {img:'',name:'店铺名称',presentPrice:'120.5',originalPrice:'150.8',vipPrice:'80.5',surplus:'20'},
+                    {img:'',name:'店铺名称',presentPrice:'120.5',originalPrice:'150.8',vipPrice:'',surplus:'20'}
+                ],
+                //砍价
+                activitys_02:[
+                    {img:'',name:'店铺名称',presentPrice:'120.5',originalPrice:'150.8',surplus:'20',minPrice:'100'},
+                    {img:'',name:'店铺名称',presentPrice:'120.5',originalPrice:'150.8',surplus:'20',minPrice:'100'}
+                ],
+                //拼团
+                activitys_03:[
+                    {img:'',name:'店铺名称',presentPrice:'120.5',originalPrice:'150.8',vipPrice:'',surplus:'20'},
+                    {img:'',name:'店铺名称',presentPrice:'120.5',originalPrice:'150.8',vipPrice:'80.5',surplus:'20'}
+                ],
+                 //赞           
+                 activitys_04:[
+                    {
+                        img:'',name:'店铺名称',presentPrice:'120.5',originalPrice:'150.8',surplus:'20',minPrice:'100',
+                        rules:[
+                            {number:'50',money:'10'},
+                            {number:'50',money:'10'}
+                        ]
+                    
+                    }
+                ] ,
+                navs:[
+                    {title:'商品'},
+                    {title:'简介'},
+                    {title:'评价'},
+                    {title:'动态'},
+                    {title:'招聘'}
+                ],
+                //商品无分类
+                commoditys:[
+                    {img:'',name:'店铺名称',presentPrice:'120.5',originalPrice:'150.8',vipPrice:'80.5',surplus:'20'},
+                    {img:'',name:'店铺名称',presentPrice:'120.5',originalPrice:'150.8',vipPrice:'',surplus:'20'}
+                ],
+                //动态
+                dynamics:[
+                    {title:'标题',content:'商家介绍',img:'',date:'2019-08-15 23:00'},
+                    {title:'标题',content:'商家介绍',img:'',date:'2019-08-15 23:00'}
+                ],
+                //动态
+                recurits:[
+                    {   
+                        title:'招牌信息招牌信息招牌信',
+                        musts:[
+                            {item:'性别不限'},
+                            {item:'年龄不限'},
+                            {item:'经验不限'}
+                        ],
+                        welfares:[
+                            {item:'社保'},
+                            {item:'公积金'},
+                            {item:'饭补'},   
+                            {item:'交通补贴'},
+                            {item:'话补'}
+                        ]
+
+                    }
+                ],
+                shopkeeperSaid:true,
+                //商品一级菜单
+                commodityNavsOne:[
+                    {title:'抢优惠',iconBg:'background-position:-18.1rem 0'},
+                    {title:'减价',iconBg:'background-position:-20.3rem 0'},
+                    {title:'拼团',iconBg:'background-position:-22.5rem 0'},   
+                    {title:'爱心价',iconBg:'background-position:-24.7rem 0'}, 
+                    {title:'全部商品',iconBg:''}                
+                ],
+                //商品二级菜单
+                commodityNavsTwo:[
+                    {title:'两个字'},
+                    {title:'三个字'},
+                    {title:'四个字'},   
+                    {title:'五个字'}, 
+                    {title:'六个字'}                
+                ]
+
+            },
+            methods:{
+                checkFocus:function(){
+                    this.Infor.isActive=!this.Infor.isActive
+                },
+                checkSpread:function(){
+                    this.MoreShopInfor=true
+                },
+                checkNav:function(index){
+                    this.selectIndex=index
+                },                
+                //吸顶
+                scrollTop:function(){
+                    var height=$('.select-nav').offset().top;
+                    $(window).scroll(function(){
+                        if($(window).scrollTop() >=height){
+                            $('.select-nav').addClass('fix-tl');
+                            $('.select-nav').css({"margin":"0","position":"fixed"})
+                        }else{
+                            $('.select-nav').removeClass('fix-tl');
+                            $('.select-nav').css({"margin":"1rem 1rem 0","position":"relative"});
+                            console.log(1)
+                        }
+                    })
+                },
+                //音乐播放条
+                checkSaid:function(){
+                    this.shopkeeperSaid=!this.shopkeeperSaid
+                },
+                //商品一级菜单
+                checkCommodityNavsOne:function(index){
+                    this.selectIndex02=index
+                },
+                //商品二级菜单
+                checkCommodityNavsTwo:function(index){
+                    this.selectIndex03=index
+                },
+                //关闭店铺更多信息弹窗
+                closeMoreShopInfor:function(){
+                    this.MoreShopInfor=false
+                }
+
+            },
+            mounted:function(){
+                var swiper = new Swiper('.swiper-container-topbanner', {
+                    paginationClickable: true,
+                    autoplay:3000,
+                    loop:1,
+                    pagination: '.swiper-pagination',
+                    paginationType: 'fraction'
+                })
+                $('.pic-quick-navigation').on('click',function(){
+                    $(this).hide();
+                    $('.quick-navigation-ul').addClass('active');
+                    $('.pic-take-back').show();
+                    $('.fast-navigation-mask').fadeIn(200);
+                })
+                $('.pic-take-back').on('click',function(){
+                    $(this).hide();
+                    $('.quick-navigation-ul').removeClass('active');
+                    $('.pic-quick-navigation').show();
+                    $('.fast-navigation-mask').fadeOut(200);
+                })
+                this.scrollTop()
+
+                 
+
+            },
+            created: function () {
+                this.isCreated = true;
+            }   
+
+        })
+
+    </script>
+</body>
+</html>

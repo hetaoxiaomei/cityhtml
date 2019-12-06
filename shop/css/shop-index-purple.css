@@ -8,4 +8,9 @@
 
 .select-nav>.flex.active{color: #4045ff;}
 
+.commodity-ul02 li.active{
+    border:1px solid #4045ff;
+    color: #4045ff;
+}
+
 
