@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>编辑店铺</title>
+    <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city/newcity/newindex/css/common.css">
+    <link rel="stylesheet" href="https://j.vzan.cc/content/city/settedin/css/release.css">
+    <style>
+        [v-cloak]{display: none}
+        .icon02{background-image: url(img/shop-index.png);background-size:50rem;background-repeat:no-repeat;}
+        .upload-pic-ul .close{background: url(../img/tc-pic04.png);background-size: 50rem;}
+
+        .write-cell {padding:0;}
+        .write-cell .arrow-right {margin-left: 0;}
+        .icon-plus-img{width: 2.6rem;height: 2.6rem;display: block;background-position: -19.7rem -2.2rem;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%)}
+        .upload-pic{width: 7rem;height: 7rem;background: #EDEFF2;border-radius: 2px;}
+        .upload-img {border-radius: 2px;display: block;width: 100%;height: 100%;position: relative;z-index: 1;}
+        .upload-pic-ul .close {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-position: -14rem -6.9rem;
+        display: block;
+    }
+    .upload-pic-ul>li {
+    float: left;
+    margin-right: 1rem;
+    position: relative;
+}
+    </style>
+</head>
+<body>
+    <div id="vue_write" class="basewrap" style="padding:0 0 7rem">
+        <div style="margin: 1rem 1rem 0;padding: 0 1rem;background: #fff;border-radius: 4px;">
+            <div class="ta-c f16 bold" style="padding:1.5rem 0 .5rem"><i style="color: #ccc">——</i>&nbsp;店铺基本信息&nbsp;<i style="color: #ccc">——</i></div>
+            
+            <div class="d-flex d-flex-center write-cell">
+                <div class="left bold">店铺名称<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input v-modal.trim="shop.name" placeholder="请填写" type="text" class="write" style="font-size: 1.5rem; text-align: right;">
+                </div> 
+            </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">店铺分类<i class="icon-require"></i></div>
+                <div class="flex right" style="margin-right:1rem;">
+                    <input v-modal.trim="shop.shopType" placeholder="请选择" class="write" style="font-size: 1.5rem; text-align: right;">
+                </div> 
+                <div class="arrow-right"></div>
+            </div>
+
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold" style="width: 20%;">区域<i class="icon-require"></i></div>
+                <div class="flex right" style="margin-right:.5rem;">
+                    <input v-modal.trim="shop.areaOne" placeholder="请选择" class="write" style="font-size: 1.5rem; text-align: right;">
+                </div> 
+                <div class="arrow-right"></div>
+                <div class="flex right" style="margin-right:.5rem;">
+                    <input v-modal.trim="shop.areaTwo" placeholder="请选择" class="write" style="font-size: 1.5rem; text-align: right;">
+                </div> 
+                <div class="arrow-right"></div>                
+            </div>
+
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">详细地址<i class="icon-require"></i></div>
+                <div class="flex right" style="margin-right:.5rem;text-align: right">
+                    <input v-modal.trim="shop.address" class="write" style="font-size: 1.5rem; text-align: right;">
+                </div>   
+                <div>   
+                    <i class="icon02" style="vertical-align: -.3rem; width: 1.3rem;height: 1.6rem;display: inline-block;background-position:-16.4rem -1.7rem;"></i>
+                    <i style="color: #ff5a00;">定位</i>
+                </div>
+     
+            </div>
+            <div class="d-flex d-flex-center write-cell top-line">
+                <div class="left bold">联系电话<i class="icon-require"></i></div>
+                <div class="flex right">
+                    <input v-modal.number="shop.tel" placeholder="请填写" type="text" class="write" style="font-size: 1.5rem; text-align: right;">
+                </div> 
+            </div>
+        </div>
+
+        <div style="margin: 1rem 1rem 0;padding: 0 1rem 2rem;background: #fff;border-radius: 4px;">
+            <div class="ta-c f16 bold" style="padding:1.5rem 0 .5rem"><i style="color: #ccc">——</i>&nbsp;店铺外观&nbsp;<i style="color: #ccc">——</i></div>
+            <div class="left bold f15" style="padding: 2rem 0 1.5rem">店铺头像<i class="icon-require"></i></div>
+            <div class="d-flex">
+                <div class="rel upload-pic" @click="uploadImage()">
+                    <i class="icon-plus-img icon02"></i>
+                    <img :src="shop.shopHead" v-show="picSeen" class="upload-img">
+                </div>
+                <div class="f14 c666 flex rel" style="line-height: 1.3;margin: 0 0 0 1rem;">
+                    <p class="abs" style="position: absolute;top:50%;left:0;transform:translate(0,-50%)">（200*200最佳，用于分享朋友圈）</p>
+                </div>
+            </div>
+            <div class="left bold f15" style="padding: 3rem 0 1.5rem">店铺介绍<i class="icon-require"></i></div>
+            <div class="bz" style="border:1px solid #cccccc;padding: 1rem 1rem 0;">
+                <textarea placeholder="支持图文混编，视频默认在文章开头" style="height: 18rem;display:block;width: 100%;font-size: 1.4rem;">{{shop.introduce}}</textarea>
+                <!--视频-->
+                <div v-show="videoSeen" class="rel" style="width:7rem;height:7rem;border-radius:3px;background: #999;margin: 1rem 0 0;">
+                    <img class="abs" src="../img/tc-pic104.png" style="display: block;width:2.5rem;height:2.5rem;top:50%;left: 50%;transform: translate(-50%,-50%)">
+                    <i @click="closeVideo()" class="icon02" style="width: 1.6rem;height:1.6rem;display:inline-block;background-position:-22.5rem -2.2rem;position:absolute;top:-.8rem;right:-.8rem"></i>
+                    <video :src="shop.shopVideo" style="display: block;width: 100%;height: 100%;border-radius:4px;"></video>
+                </div>
+                
+                <ul style="padding: 1.5rem 0;color: #666;font-size: 1.3rem;overflow: hidden;">
+                    <li class="fl"><i class="icon02" style="margin: 0 .8rem 0 0;vertical-align: -.5rem;width: 2.1rem;height:2.1rem;display:inline-block;background-position:-15.1rem -3.6rem;"></i>图片</li>
+                    <li @click="uploadVideo()" class="fl" style="margin: 0 0 0 3rem;"><i class="icon02" style="margin: 0 .8rem 0 0;vertical-align: -.5rem;width: 2.1rem;height:2.1rem;display:inline-block;background-position:-17.4rem -3.6rem;"></i>视频</li>
+                </ul>
+            </div>
+            <div class="left bold f15" style="padding: 3rem 0 2rem">店主说</div>
+            <div class="d-flex d-flex-center">
+                <div @click="voiceStart()" v-show="voiceSeen" class="rel" style="width:10rem;height:3.2rem;border:1px solid #ccc;border-radius: 5px;">
+                    <i @click="closeVoice()" class="icon02 voiceClose" style="width: 1.6rem;height:1.6rem;display:inline-block;background-position:-22.5rem -2.2rem;position:absolute;top:-.8rem;right:-.8rem"></i>
+                    <img v-if="voice" src="img/shop-index08.png" style="width: 1rem;height:1.5rem;display:block;position:absolute;top:.8rem;left:.7rem;">
+                    <img v-else src="img/shop-index09.gif" style="width: 1rem;height:1.5rem;display:block;position:absolute;top:.8rem;left:.7rem;">
+                </div>
+                <div v-show="voiceSeen" class="f14 bold" style="margin: 0 1rem;">{{shop.voiceSecond}}"</div>
+                <div @click="openVoice()" style="font-size: 1.4rem;background: rgba(255,90,0,.15); width:4.8rem;height: 2.4rem;color:#ff5a00;border-radius: 1.2rem;text-align: center;line-height: 2.4rem;">语音</div>
+            </div>
+
+            <div class="left bold f15" style="padding: 3rem 0 1.5rem">店内全景(VR)</div>
+            <div class="f15" style="height: 5rem;border:1px solid #ccc;">
+                <input v-model.trim="shop.VR" placeholder="请以https://为开头的VR地址" style="color: #333;width: 100%;font-size: 1.5rem;padding:0 1rem;box-sizing: border-box;line-height: 5rem;">
+            </div>
+        </div>
+
+        <div style="margin: 1rem 1rem 0;padding: 0 1rem 2rem;background: #fff;border-radius: 4px;">
+            <div class="ta-c f16 bold" style="padding:1.5rem 0 .5rem"><i style="color: #ccc">——</i>&nbsp;其他信息&nbsp;<i style="color: #ccc">——</i></div>
+            <div class="left bold f15" style="padding: 2rem 0 1.5rem">店铺轮播图</div>
+            <div class="upload-pic-ul" style="overflow: hidden">
+                <li class="rel upload-pic" v-for="(pic,index) in shop.dynamicPics" style="margin-top:1rem">
+                    <i class="close" @click="delDynamicPics(index)" style="z-index: 2"></i>
+                    <img class="upload-img" :src="pic.img">
+                </li>
+                <li class="rel upload-pic" @click="addDynamicPics()" style="margin-top:1rem" v-show="add">
+                    <i class="icon-plus-img icon02"></i>
+                </li>
+            </div>
+            
+            <div class="f14 c666 rel" style="line-height: 1.3;margin: 1rem 0 0 0;">（640*360px最佳）</p></div>
+
+            <div class="left bold f15" style="padding: 3rem 0 1.5rem">社群二维码</div>
+            <div class="d-flex">
+                <div class="rel upload-pic" @click="uploadCommunityQr()">
+                    <i class="icon-plus-img icon02"></i>
+                    <img v-show="communityQrSeen" :src="shop.communityQr" class="upload-img">
+                </div>
+                <div class="f14 c666 flex rel" style="line-height: 1.3;margin: 0 0 0 1rem;">
+                    <p class="abs" style="position: absolute;top:50%;left:0;transform:translate(0,-50%)">（展示在店铺首页、营销活动/商品详情；聚集精准粉丝，刺激二次消费）
+                    </p>
+                </div>
+            </div>  
+
+            <div class="left bold f15" style="padding: 3rem 0 1.5rem">客服二维码</div>
+            <div class="d-flex">
+                <div class="rel upload-pic" @click="uploadServiceQr()">
+                    <i class="icon-plus-img icon02"></i>
+                    <img v-show="serviceQrSeen" :src="shop.serviceQr" class="upload-img">
+                </div>
+                <div class="f14 c666 flex rel" style="line-height: 1.3;margin: 0 0 0 1rem;">
+                    <p class="abs" style="position: absolute;top:50%;left:0;transform:translate(0,-50%)">（可添加店主或者店员个人微信二维码）
+                    </p>
+                </div>
+            </div> 
+        </div>
+
+        <div class="fix-bl f16 bold ta-c" style="height: 4.9rem;background:#ff5a00;line-height:4.9rem;color:#fff;">保存生效</div>
+      
+    
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_write',        
+            data:{
+                picSeen:false,
+                videoSeen:false,
+                serviceQrSeen:false,
+                communityQrSeen:false,
+                addAlert:true,
+                add:true,
+                voice:true,
+                voiceSeen:false,
+                shop:{
+                    name:'',
+                    address:'',
+                    shopType:'',
+                    areaOne:'',
+                    areaTwo:'',
+                    tel:'',
+                    shopHead:'',
+                    shopVideo:'',
+                    introduce:'',
+                    VR:'',
+                    communityQr:'',
+                    serviceQr:'',
+                    dynamicPics:[],
+                    voiceSecond:'5'
+                }
+            },
+            methods:{
+                uploadImage: function () {
+                    this.picSeen = true;
+                    this.shop.shopHead='https://i.vzan.cc/image/jpg/2017/4/22/15482347e49599646b4b1b84668ccc873e6696.jpg@!200x200';
+                },
+                uploadVideo:function(){
+                    this.videoSeen=true
+                },
+                closeVideo:function(){
+                    this.videoSeen=false;
+                    this.shop.shopVideo='';
+                },
+                uploadCommunityQr:function(){
+                    this.communityQrSeen = true;
+                    this.shop.communityQr='https://i.vzan.cc/image/jpg/2017/4/22/15482347e49599646b4b1b84668ccc873e6696.jpg@!200x200'; 
+                },
+                uploadServiceQr:function(){
+                    this.serviceQrSeen= true;
+                    this.shop.serviceQr='https://i.vzan.cc/image/jpg/2017/4/22/15482347e49599646b4b1b84668ccc873e6696.jpg@!200x200'; 
+                },
+                //删除详情图
+                delDynamicPics:function(index){
+                    var self = this;
+                    this.shop.dynamicPics.pop({img:''});
+                    if (this.shop.dynamicPics.length >= 9) {
+                        this.add=false;
+                    } else {
+                        this.add=true;
+                    }
+                },
+                 //添加详情图
+                addDynamicPics:function(){
+                    var self = this;
+                    this.shop.dynamicPics.push({img:''});
+            	    //如果已经9张了，isAddImg为false，隐藏加号
+                    if (this.shop.dynamicPics.length >= 9) {
+                        this.add=false;
+                    } else {
+                        this.add=true;
+                    }
+                },
+                voiceStart:function(){
+                    this.voice=!this.voice
+                },
+                openVoice:function(){
+                    this.voiceSeen=true
+                },
+                closeVoice:function(){
+                    this.voice=true;
+                    this.voiceSeen=false;
+                    this.shop.voiceSecond='0';
+                }
+            },
+            mounted:function(){
+                $('.voiceClose').click(function(){
+                    event.stopPropagation();
+                    event.preventDefault();
+                })
+
+            },
+            created: function () {
+                
+            }
+        })
+
+
+    </script>
+</body>
+</html>

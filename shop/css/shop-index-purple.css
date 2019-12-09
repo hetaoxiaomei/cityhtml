@@ -1,16 +1,16 @@
-.plus-data-bt,.p_replay .button2,.select-nav>.flex i,.shopFous-cell .bt,.little-bt,.payOnline-bt,.marketActivity-cell .bt .buy,.detail-footer-nav .bt{
-    background: linear-gradient(to right,#4063ff,#4045ff);}
+.buy01,.plus-data-bt,.p_replay .button2,.select-nav>.flex i,.shopFous-cell .bt,.little-bt,.payOnline-bt,.marketActivity-cell .bt .buy,.detail-footer-nav .bt{
+    background: linear-gradient(to right,#bf40ff,#a340ff);}
 
 .marketActivity-cell .bt .surplus,.recruit-staff{
-    color: #4045ff;
-    background: rgba(64,69,255,.1)
+    color: #a340ff;
+    background: rgba(163,64,255,.1)
 }
 
-.select-nav>.flex.active{color: #4045ff;}
+.select-nav>.flex.active{color: #a340ff;}
 
 .commodity-ul02 li.active{
-    border:1px solid #4045ff;
-    color: #4045ff;
+    border:1px solid #a340ff;
+    color: #a340ff;
 }
 
 
