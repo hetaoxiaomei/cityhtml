@@ -20,7 +20,7 @@
         .write-cell .arrow-right {margin-left: 0;}
         .icon-plus-img{width: 2.6rem;height: 2.6rem;display: block;background-position: -19.7rem -2.2rem;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%)}
         .upload-pic{width: 7rem;height: 7rem;background: #EDEFF2;border-radius: 2px;}
-        .upload-img {border-radius: 2px;display: block;width: 100%;height: 100%;position: relative;z-index: 1;}
+        .upload-image {border-radius: 2px;display: block;width: 100%;height: 100%;position: relative;z-index: 1;}
         .upload-pic-ul .close {
         position: absolute;
         z-index: 1;
@@ -94,7 +94,7 @@
             <div class="d-flex">
                 <div class="rel upload-pic" @click="uploadImage()">
                     <i class="icon-plus-img icon02"></i>
-                    <img :src="shop.shopHead" v-show="picSeen" class="upload-img">
+                    <img :src="shop.shopHead" v-show="picSeen" class="upload-image">
                 </div>
                 <div class="f14 c666 flex rel" style="line-height: 1.3;margin: 0 0 0 1rem;">
                     <p class="abs" style="position: absolute;top:50%;left:0;transform:translate(0,-50%)">（200*200最佳，用于分享朋友圈）</p>
@@ -134,11 +134,11 @@
 
         <div style="margin: 1rem 1rem 0;padding: 0 1rem 2rem;background: #fff;border-radius: 4px;">
             <div class="ta-c f16 bold" style="padding:1.5rem 0 .5rem"><i style="color: #ccc">——</i>&nbsp;其他信息&nbsp;<i style="color: #ccc">——</i></div>
-            <div class="left bold f15" style="padding: 2rem 0 1.5rem">店铺轮播图</div>
+            <div class="left bold f15" style="padding: 2rem 0 .5rem">店铺轮播图</div>
             <div class="upload-pic-ul" style="overflow: hidden">
                 <li class="rel upload-pic" v-for="(pic,index) in shop.dynamicPics" style="margin-top:1rem">
                     <i class="close" @click="delDynamicPics(index)" style="z-index: 2"></i>
-                    <img class="upload-img" :src="pic.img">
+                    <img class="upload-image" :src="pic.img">
                 </li>
                 <li class="rel upload-pic" @click="addDynamicPics()" style="margin-top:1rem" v-show="add">
                     <i class="icon-plus-img icon02"></i>
@@ -151,7 +151,7 @@
             <div class="d-flex">
                 <div class="rel upload-pic" @click="uploadCommunityQr()">
                     <i class="icon-plus-img icon02"></i>
-                    <img v-show="communityQrSeen" :src="shop.communityQr" class="upload-img">
+                    <img v-show="communityQrSeen" :src="shop.communityQr" class="upload-image">
                 </div>
                 <div class="f14 c666 flex rel" style="line-height: 1.3;margin: 0 0 0 1rem;">
                     <p class="abs" style="position: absolute;top:50%;left:0;transform:translate(0,-50%)">（展示在店铺首页、营销活动/商品详情；聚集精准粉丝，刺激二次消费）
@@ -163,7 +163,7 @@
             <div class="d-flex">
                 <div class="rel upload-pic" @click="uploadServiceQr()">
                     <i class="icon-plus-img icon02"></i>
-                    <img v-show="serviceQrSeen" :src="shop.serviceQr" class="upload-img">
+                    <img v-show="serviceQrSeen" :src="shop.serviceQr" class="upload-image">
                 </div>
                 <div class="f14 c666 flex rel" style="line-height: 1.3;margin: 0 0 0 1rem;">
                     <p class="abs" style="position: absolute;top:50%;left:0;transform:translate(0,-50%)">（可添加店主或者店员个人微信二维码）
