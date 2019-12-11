@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="css/shop-index-purple.css">
     <style>
         [v-cloak]{display: none}
-        .icon02{background: url(img/shop-index.png);background-size:50rem;background-repeat:no-repeat;}
+        .icon02{background: url(img/shop-index.png?v=1211);background-size:50rem;background-repeat:no-repeat;}
         .icon-earn, .icon-share, .icon-coupon, .icon-arrow, .icon-location, .icon-call, .detail-footer-nav .icon, .icon-close, .number-reduce, .number-plus {
             background-image: url(../img/tc-pic04.png);
             background-size: 50rem;
@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-    <div id="vue_shop" v-show="isCreated">
+    <div id="vue_shop" v-cloak>
         <div class="basewrap" style="padding: 0 0 7rem">
             <!--轮播-->
             <div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
@@ -97,7 +97,13 @@
                             </div>
                             <div class="little-bt">导航</div>
                         </div>   
-                        
+                        <div class="d-flex d-flex-center" style="line-height: 1.25;margin:0 0 2rem;">
+                            <div class="icon02 icon-time" style="background-position: -18.1rem -2.2rem;"></div>
+                            <div class="flex">
+                                <p class="f14">更多详情以及优惠资讯可以加群了解</p>
+                            </div>
+                            <div class="little-bt">加群</div>
+                        </div>                           
                         <ul class="top-line shopFunction" v-show="spread==false">
                             <li v-for="equipment in Infor.equipments">
                                 <img :src="equipment.img">
@@ -868,9 +874,6 @@
                     $('.fast-navigation-mask').fadeOut(200);
                 })
                 this.scrollTop()
-
-                 
-
             },
             created: function () {
                 this.isCreated = true;
