@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>添加拼团</title>
+    <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js?v=0620"></script>
+    <script src="https://j.vzan.cc/content/city/js/??clipboard.min.js?v=2,baseutils.js?v=0620"></script>
+    <link href="https://j.vzan.cc/content/??/city2018/css/base.css?v=111,/css/loading.css?1,/city/css1/tongcheng.css?v=1113" rel="stylesheet" />
+    <link rel="stylesheet" href="https://j.vzan.cc/content/swiper/css/swiper-3.4.0.min.css" />
+    <link rel="stylesheet" href="https://j.vzan.cc/content/city2018/css/side-button.css?v=201802073">
+    <link rel="stylesheet" href="https://j.vzan.cc/content/city/recuritNew/css/??common.css,new-swiper.css">
+    <link rel="stylesheet" href="https://j.vzan.cc/content/city/newReruit/css/bottom-navigation.css" />
+        <link href="https://j.vzan.cc/content/city2018/css/swiper.css?v=20180122" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city/newvoucher/css/new-coupon.css?v=1.2">
+    <style>
+        .swiper-dialog-ad .swiper-slide {
+            background: transparent !important;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .SeBack a {
+            color: #FFF;
+            font-size: 16px;
+        }
+
+        .v_infor section {
+            width: auto !important;
+        }
+
+        a:hover {
+            text-decoration: none !important;
+        }
+
+        .v_infor *, .de_ul1 *, .txt *, .p10-b-ff *, .photo_list *, .jingpin-commodity-detail *, .temp-rich-content * {
+            max-width: 100% !important;
+        }
+
+        .v_infor iframe {
+            height: 200px;
+            width: 100%;
+        }
+
+        .temp-rich-content img {
+            border-width: 0 !important;
+        }
+
+        .temp-desc-img img, .temp-CanSeePostLink-btn, .close-layer, .weui-actionsheet__cell, .cl_d_img ul li img, #reply-upload-img-btn, .fl, .fl img, .temp-link-box, .temp-goback-btn, .temp-video-local, .temp-image-array img, .temp-reply-btn, #tc-alertad-close, .top_link > a, .qrcode_attention_popup, .temp-rich-content img, .temp-imagebox img, .temp-show-share-tips, .temp-linkad-box, .temp-text-link {
+            cursor: pointer !important;
+        }
+
+        .content_context .temp-imagebox {
+            margin-left: -0.8rem;
+        }
+        /*.Se_nav,.coupon_nav_li,.slnav,.zpHeader,.header{background: linear-gradient(to right, #ff911f, #ea490e)!important;}*/
+        .vinforImg img {
+            margin-top: 3px;
+        }
+
+        .vzan-ubb {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+        }
+
+        span {
+            white-space: normal !important;
+        }
+
+        .layui-m-layerbtn span[yes] {
+            color: #ff6356 !important;
+        }
+
+        .layui-m-layerbtn span[no] {
+            border-right: 1px solid #f7f7f7 !important;
+        }
+
+        .layui-m-layerbtn {
+            border-top: 1px solid #f5f5f5 !important;
+            background-color: #ffffff !important;
+        }
+
+        .image_top {
+            max-width: 418px !important;
+        }
+
+        .video_iframe {
+            width: 100% !important;
+            height: 200px !important;
+        }
+
+        .bd-shop-infor-cell.bianmin .name .call {
+            font-weight: normal !important;
+        }
+
+        .convenience-infor .top .name i {
+            margin-top: 0 !important;
+        }
+
+        .convenience-infor .top .name {
+            margin-bottom: 0 !important;
+        }
+
+        .convenience-infor .top .head {
+            width: 3.5rem !important;
+            height: 3.5rem !important;
+        }
+
+        #ping_iframe {
+            display: none !important;
+            opacity: 0;
+        }
+        /*BUG andriod scroll*/
+        .index-more-bt {
+            line-height: normal;
+        }
+
+        section {
+            box-sizing: border-box;
+            max-width: 100% !important;
+        }
+
+        .icon-guanbi {
+            z-index: 3;
+        }
+
+        .carList {
+            background-color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        img {
+            max-width: 100% !important;
+        }
+
+        iframe {
+            max-width: 100% !important;
+        }
+    </style>
+        <script src="https://j.vzan.cc/scripts/jquery2.1.4/jquery.min.js?v=0620"></script>
+    <script src="https://j.vzan.cc/content/city/js/baseutils.js?v=0620"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript"></script>
+
+    <script src="https://j.vzan.cc/content/plugin/layer_mobile/layer.js"></script>
+    <script src="https://j.vzan.cc/content/swiper/js/swiper-3.4.0.jquery.min.js"></script>
+    <!--Vue引用-->
+        <script src='https://j.vzan.cc/scripts/min/20170516/??vue.min.js?v=0519'></script>
+        <script src="https://j.vzan.cc/content/city/vuejs/vue.fun.js?v=190105"></script>
+    <script src="https://j.vzan.cc/content/city/asset/js/??toast.js,vue-http.js?v=190822"></script>
+    <script>
+        var _hmt = _hmt || [];
+        var G_CityInfoId = '110107';//全局同城AreaCode
+        var vzanBrowser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {/*移动终端浏览器版本信息*/
+                    trident: u.indexOf('Trident') > -1, /*IE内核*/
+                    presto: u.indexOf('Presto') > -1, /*opera内核*/
+                    webKit: u.indexOf('AppleWebKit') > -1, /*苹果、谷歌内核*/
+                    gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,/*火狐内核*/
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), /*是否为移动终端*/
+                    ios: !!u.match(/i[^;]+;( U;)? CPU.+Mac OS X/), /*ios终端*/
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, /*android终端或者uc浏览器*/
+                    iPhone: u.indexOf('iPhone') > -1 || (u.indexOf('Mac') > -1 && u.indexOf('Macintosh') < 0), /*是否为iPhone或者QQHD浏览器*/
+                    iPad: u.indexOf('iPad') > -1, /*是否iPad*/
+                    webApp: u.indexOf('Safari') == -1, /*是否web应该程序，没有头部与底部*/
+                    WindowsWechat: u.indexOf('WindowsWechat') > 0/*是否web应该程序，没有头部与底部*/
+                };
+            }(),
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        }
+        if ('2abe9b7b0ca10dfce990ae51ffe8f13d8664cbf3' != '') {
+            wx.config({ debug: false, appId: "wx9dc9ddc7b3eb7f8d", timestamp: "1576291687", nonceStr: "gemmy386W", signature: "2abe9b7b0ca10dfce990ae51ffe8f13d8664cbf3", jsApiList: ["checkJsApi", "onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ", "onMenuShareQZone", "onMenuShareWeibo", "hideMenuItems", "showMenuItems", "hideAllNonBaseMenuItem", "showAllNonBaseMenuItem", "translateVoice", "startRecord", "stopRecord", "onRecordEnd", "playVoice", "pauseVoice", "stopVoice", "uploadVoice", "downloadVoice", "chooseImage", "getLocalImgData", "previewImage", "uploadImage", "downloadImage", "getNetworkType", "openLocation", "getLocation", "hideOptionMenu", "showOptionMenu", "closeWindow", "scanQRCode", "chooseWXPay", "openProductSpecificView", "addCard", "chooseCard", "openCard"] });
+         }
+        var _local_hostdomain_name = location.hostname;
+        //如果是 cut.pengxun.cn 强制跳转到 https
+        if (_local_hostdomain_name == "cut.pengxun.cn" && location.href.indexOf("http://") == 0) {
+            location.href = location.href.replace("http:", "https:")
+        }
+        if (typeof (is_show_guanzhu) == "undefined") {
+            is_show_guanzhu = 0;
+        }
+    </script>
+    <style>
+        .tc-detail-second-hand-pic img {
+            cursor: pointer;
+        }
+
+        body .layui-m-layer .layui-m-layer-msg {
+            bottom: auto;
+        }
+
+        .temp_clear_img {
+            z-index: 999;
+        }
+        .showGZWrapper {
+            top: 50px;
+        }
+        .notShowGZWrapper {
+            top: 0px;
+        }
+        .alsh-all {
+            padding-top: 6.2rem;
+        }
+        .showGZWrapper4 {
+            top: 8.4rem;
+        }
+        .marginTopCommon{
+            margin-top:4.4rem;
+        }
+
+
+    </style>
+</head>
+<body class="basewrap rel">
+    <!--分享样式-->
+    <div id="div-sharedefault" class="fix-tl-100" style="display:none;">
+        <div class="dialog-black-mask" onclick="$('#div-sharedefault').hide();"></div>
+        <div class="fix-tl cfff ta-c">
+            <p class="f18" style="margin:42px 0 10px">点击右上角<img src="https://j.vzan.cc/content/city/tool/images/tc-pic95.png" style="width:40px;">按钮</p>
+            <p class="f18">选择分享给朋友<img src="https://j.vzan.cc/content/city/tool/images/tc-pic92.png" style="width:27px;height:27px;margin:0 0 0 10px;"></p>
+            <img src="https://j.vzan.cc/content/city/tool/images/tc-pic94.png" style="width:54px;position: absolute;top: 5px;right: 23px;">
+        </div>
+    </div>
+
+    <!--返回直播链接-->
+
+    <!--头部关注栏-->
+        <div class="GZWrapper" style="position:fixed;top:0;left:0;right:0px;z-index: 450;padding: 0 10px;height: 50px;background: #ededed;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;align-items: center;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;">
+            <div style="width:30px;height:30px;background:rgba(255,255,255,.7);border-radius: 50%;margin: 0 10px 0 0;">
+                <img src="http://wx.qlogo.cn/mmopen/C39ibJKUEY12YsIIm1ibvEH7qR6NLHwia9O29dvfZ0AZviaz5ibicE2m9eZaE4H9RcicXjpRcgJ7HBKzG3KuFl3AMEYN8OwT1zkBm0j/0" style="width:30px;height: 30px;border-radius: 50%; margin:0 5px 0 0;">
+            </div>
+            <div style="font-size:15px;font-weight:bold;flex: 1">更多精彩，长按关注222</div>
+            <div style="font-size:13px;color:#fff;width: 55px;height: 27px;border-radius: 28px;background: #FF6600;text-align: center;line-height: 27px;" onclick="openGZCode()">+关注</div>
+            <img src="http://j.vzan.cc/content/city/img/focus-banner-03.png" style="width:15px;margin:0 0 0 20px;" onclick="closeGZBtn()">
+        </div>
+        <!--占位div-->
+        <div style="height:50px;width:100%;" class="GZWrapper"></div>
+        <div id="guanzhu-qrcode-box" style="display:none;">
+            <div id="guanzhu-tips-title" style="display: block;width: 100%;height: 4rem;background-color:#17b5ee;color: #fff;font-size: 1.6rem;text-align: center;line-height:4rem;white-space: nowrap;">长按识别二维码关注公众号</div>
+            <img src="http://i2.vzan.cc/image/jpg/2019/10/5/111046b8ed1f6f13e74fe3b7602b7f3fa52528.jpg" style="display:block;margin:0 auto; width:250px; height:250px;margin-top: 10px;">
+            <div style="display: block;width: 100%;padding: 0;border-top: solid 1px #eee;white-space: nowrap;"><a style="display: block;height: 4rem;line-height: 4rem;font-size: 1.5rem;margin: 0 0;text-align: center;color: #00acff;" href="javascript:;">我们都关注了哦</a></div>
+        </div>
+        <script>
+            function closeGZBtn() {
+                $.get("/sc/CloseGZWrapper", {}, function (data) {
+                    console.log(data);
+                    $(".GZWrapper").hide();
+                    $(".showGZWrapper").css("top", "0px");
+                    $(".showGZWrapper4").css("top", "4.4rem");
+                    $(".tc-list-top-filter-fixed").removeClass("showGZWrapper2");
+                    $(".ddCon").removeClass("showGZWrapper3");
+                    $(".tc-list-top-filter-fixed").css("top", "0px");
+                    $(".Se_nav").css("top", "0px");
+                    $(".SeNAV").css("top", "0px");
+                    $(".zpHeader").css("top", "0px");
+                    $(".coupon_nav_li").css("top", "0px");
+                    $(".likeCateClass").css("top", "8.4rem");
+                    $(".fix-tl").removeClass("showGZWrapper4");
+                    $(".fix-tl").css("top", "0px");
+                    $(".slnav").css("top", "0px");
+                    $(".ph_send").css("top", "4.4rem");
+                    $(".marginTopCommon").css(" margin-top", "4.4rem");
+                });
+            }
+            function openGZCode() {
+                layer.closeAll();
+                layer.open({
+                    type: 1,
+                    content: $("#guanzhu-qrcode-box").html(),
+                    style: "width:80%;",
+                    success: function () {
+                        $(".GZWrapper").hide();
+                        $(".showGZWrapper").css("top", "0px");
+                        $(".showGZWrapper4").css("top", "4.4rem");
+                        $(".tc-list-top-filter-fixed").removeClass("showGZWrapper2");
+                        $(".ddCon").removeClass("showGZWrapper3");
+                        $(".tc-list-top-filter-fixed").css("top", "0px");
+                        $(".Se_nav").css("top", "0px");
+                        $(".SeNAV").css("top", "0px");
+                        $(".zpHeader").css("top", "0px");
+                        $(".coupon_nav_li").css("top", "0px");
+                        $(".likeCateClass").css("top", "4.4rem");
+                        $(".fix-tl").removeClass("showGZWrapper4");
+                        $(".fix-tl").css("top", "0px");
+                        $(".slnav").css("top", "0px");
+                        $(".ph_send").css("top", " 4.4rem");
+                        $(".windows_close").click(function () {
+                            layer.closeAll();
+                        });
+                        $(".windows_close30").click(function () {
+                            layer.closeAll();
+                        });
+                    }
+                });
+            }
+        </script>
+
+
+    <style type="text/css">
+    .fooder {
+        position: fixed;
+        left: 0;
+        height: 4.8rem;
+        line-height: 4.8rem;
+        width: 100%;
+    }
+
+    .ASbtn {
+        width: 100%;
+    }
+
+    .ASbtnIn {
+        width: 100%;
+        height: 4.8rem;
+        background: linear-gradient(to right,#FF8F00,#FF6A00);
+        color: #fff;
+        font-size: 1.6rem;
+        font-family: "微软雅黑";
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+
+    .upload_Bt {
+        margin-top: .1rem;
+        color: #ff5a00;
+        font-size: 1.3rem;
+        border: 1px solid #ff6600;
+        border-radius: 2px;
+        box-sizing: border-box;
+        padding: 3px;
+        display: block;
+        min-width: 4.5rem;
+    }
+</style>
+<link rel="stylesheet" href="https://j.vzan.cc/content/city/css/car-owner.css?v=120701041221">
+<link rel="stylesheet" href="https://j.vzan.cc/content/activenew/css/active-send.css">
+<link rel="stylesheet" type="text/css" href="https://j.vzan.cc/fcontent/styles/base.css?v=1608040730">
+<link rel="stylesheet" href="https://j.vzan.cc/content/city/css/voucher-detail.css">
+<link rel="stylesheet" href="https://j.vzan.cc/content/city/css/voucher-fabu.css">
+<script src="https://j.vzan.cc/content/city2018/js/city_p.js?v=0703"></script>
+<script src="https://j.vzan.cc/content/active/date/js/mobiscroll_002.js" type="text/javascript"></script>
+<script src="https://j.vzan.cc/content/active/date/js/mobiscroll_004.js" type="text/javascript"></script>
+<link href="https://j.vzan.cc/content/active/date/css/mobiscroll_002.css" rel="stylesheet" type="text/css">
+<link href="https://j.vzan.cc/content/active/date/css/mobiscroll.css" rel="stylesheet" type="text/css">
+<script src="https://j.vzan.cc/content/active/date/js/mobiscroll.js" type="text/javascript"></script>
+<script src="https://j.vzan.cc/content/active/date/js/mobiscroll_003.js" type="text/javascript"></script>
+<script src="https://j.vzan.cc/content/active/date/js/mobiscroll_005.js" type="text/javascript"></script>
+<link href="https://j.vzan.cc/content/active/date/css/mobiscroll_003.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/css/min/post-min.css">
+
+<style>
+    .todata, .fromdata {        margin-left: 0;    }
+    .temp_clear_img {        z-index: 9;    }
+        body {        padding-bottom: 3rem;    }
+    .upload_Bt {margin-top: .1rem;color: #ff5a00;font-size: 1.3rem;border: 1px solid #ff5a00;border-radius: 2px;box-sizing: border-box;padding: 3px;display: block;min-width: 4.5rem;
+    }
+    .fa_ul li {height: 5.5rem;font-size: 1.5rem;}
+    .f_center input{font-size: 1.5rem;text-align: right}
+    #spreadJs{line-height: 5.5rem;}
+    #spreadJs .icon_r{-webkit-transform:rotate(135deg);transform:rotate(135deg);margin: 0 0 0 .5rem;vertical-align:.4rem;}
+    #spreadJs .icon_r.active{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);vertical-align:-.2rem;}
+</style>
+
+<div id="vue_group" style="margin: 1rem 1rem 5rem;border-radius: 5px;overflow: hidden;line-height: 1">
+    <div class="faCon" style="margin-top:auto;">
+        <form id="ff">
+            <input type="hidden" name="Id" id="Id" value="0" />
+            <input type="hidden" name="ImgUrl" id="ImgUrl" />
+            <input type="hidden" name="ImageCount" id="ImageCount" value="0" />
+            <input type="hidden" name="ImageIds" id="ImageIds" value="" />
+            <input type="hidden" name="ImageIds2" id="ImageIds2" value="" />
+            <input type="hidden" name="StoreId" id="StoreId" value="8708748" />
+            <input type="hidden" name="RemainNum" id="RemainNum" value="0" />
+            <input type="hidden" name="CitySubId" id="CitySubId" value="0" />
+            <input type="hidden" id="videoUrl" name="videoUrl" value="">
+            <input type="hidden" id="hvid" name="hvid" value="0">
+
+            <div class="bg-f" style="border-radius: 5px;overflow: hidden;padding: 0 0 1.5rem;">
+                <div class="ptIn_s bg-f" style="height: 5.5rem;" onclick="javascript:location.href='/store/groupplay-110107'">
+                    <div class="flex f15" style="color:#ff6600;">拼团说明，商家必读</div>
+                    <div class="ptIn_r"><i></i></div>
+                </div>
+                <div style="padding: 0 1rem;">
+                    <div class="f15 bold" style="padding: 2rem 0 1.5rem;">选择商品<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                    <div class="d-flex d-flex-center">
+                        <a href="javascript:;" class="rel upload-pic temp-describe-photo postimg1" style="background:#EDEFF2;display: block;width: 7rem;height: 7rem;">
+                            <img class="addfile" src="http://j.vzan.cc/content/city/active/img/addImage.png" style="width: 100%; height: 100%;">
+                        </a>
+                        <div class="f14 c999 flex ta-l" style="padding: 0 0 0 10px;line-height: 1.4;">（点击方框选择参与拼团的商品，只能选一个拼团活动没有同城会员价优惠）</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faul" style="border-radius: 5px;overflow: hidden;padding: 0 1rem1.5rem;">
+                <ul class="fa_ul">
+                    <li>
+                        <div class="f_left bold">活动名称<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center"><input type="text" maxlength="40" placeholder="默认内容为商品名称，可修改" id="GroupName" name="GroupName"></div>
+                    </li>
+                    <li>
+                        <div class="f_left bold">拼团价<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center"><input type="text" maxlength="7" placeholder="请填写团购价格" value="" id="DiscountPrice_show" name="DiscountPrice_show" onkeyup="value=value.replace(/[^\d\.]/g, '')" onafterpaste="this.value=this.value.replace(/D/g, '')"></div>
+                        <div class="f_right" style="margin: 0 0 0 1rem;">元</div>
+                        <input id="DiscountPrice" name="DiscountPrice" type="hidden" value="0" />
+                    </li>
+                    <li>
+                        <div class="f_left bold">单买价格<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center"><input type="text" maxlength="7" placeholder="请填写单买价格" value="" id="UnitPrice_show" name="UnitPrice_show" onkeyup="value=value.replace(/[^\d\.]/g, '')" onafterpaste="this.value=this.value.replace(/D/g, '')"></div>
+                        <div class="f_right" style="margin: 0 0 0 1rem;">元</div>
+                        <input id="UnitPrice" name="UnitPrice" type="hidden" value="0" />
+                    </li>
+                    <li>
+                        <div class="f_left bold">原价<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center"><input type="text" maxlength="7" placeholder="请填写原价" value="" id="OriginalPrice_show" name="OriginalPrice_show" onkeyup="value=value.replace(/[^\d\.]/g, '')" onafterpaste="this.value=this.value.replace(/D/g, '')"></div>
+                        <div class="f_right" style="margin: 0 0 0 1rem;">元</div>
+                        <input id="OriginalPrice" name="OriginalPrice" type="hidden" value="0" />
+                    </li>
+                    <li>
+                        <div class="f_left bold">团长减价<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center"><input type="text" maxlength="7" placeholder="请填写团长减价" value="0" id="HeadDeduct" name="HeadDeduct" onkeyup="value=value.replace(/[^\d\.]/g, '')" onafterpaste="this.value=this.value.replace(/D/g, '')"></div>
+                        <div class="f_right" style="margin: 0 0 0 1rem;">元</div>
+                    </li>
+                    <li>
+                        <div class="f_left flex bold">积分抵用</div>
+                        <input class="weui_switch" id="IsIntegration" type="checkbox" />
+                    </li>
+                    <li style="display:none">
+                        <div class="f_left bold">抵用金额</div>
+                        <div class="f_center"><input type="text" placeholder="单件最大抵扣金额不填默认为1" id="IntegrationPrice_show" name="IntegrationPrice_show" maxlength="9" value="" onkeyup="value=value.replace(/[^\d\.]/g, '')" onafterpaste="this.value=this.value.replace(/D/g, '')"></div>
+                        <div class="f_right">元</div>
+                        <input id="IntegrationPrice" name="IntegrationPrice" type="hidden" value="0" />
+                    </li>                    
+                    <li>
+                        <div class="f_left bold">成团人数<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center"><input type="text" maxlength="5" value="2" id="GroupSize" name="GroupSize" onkeyup="value=value.replace(/\D/,'')" placeholder="建议填写2-100以内的整数"></div>
+                    </li>
+                    <li>
+                        <div class="f_left bold">生成数量<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center"><input type="text" maxlength="8" value="20" id="CreateNum" name="CreateNum" onkeyup="value=value.replace(/\D/,'')" placeholder="请填写发放数量"></div>
+                    </li>
+
+                    <li>
+                        <div class="f_left bold">成团时间限制（小时）<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center"><input type="text" maxlength="8" value="24" id="LimitHour" name="LimitHour" onkeyup="value=value.replace(/\D/,'')" placeholder="多少小时内必须成团"></div>
+                    </li>
+                    <li>
+                        <div class="f_left bold">最大拼团中数量<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center"><input type="text" maxlength="8" value="0" id="OpenGroupLimit" name="OpenGroupLimit" onkeyup="value=value.replace(/\D/,'')" placeholder="最大进行中的团数，0表示不限制"></div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="faul" style="border-radius: 5px;overflow: hidden;padding: 0 1rem1.5rem;">
+                <ul class="fa_ul">
+                    <li>
+                        <div class="f_left bold">开始时间<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center">
+                            <input type="text" id="ValidDateStart" placeholder="" name="ValidDateStart" value="2019-12-14 10:48:07" class="fromdata" readonly="readonly" unselectable="true">
+                        </div>
+                        <div class="f_right"><i class="icon_r"></i></div>
+                    </li>
+                    <li>
+                        <div class="f_left bold">结束时间<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center">
+                            <input type="text" id="ValidDateEnd" name="ValidDateEnd" value="2020-01-14 10:48:07" class="todata" readonly="readonly" unselectable="true">
+                        </div>
+                        <div class="f_right"><i class="icon_r"></i></div>
+                    </li>
+                    <li>
+                        <div class="f_left bold">兑换截止时间<i style="color: #E50909;vertical-align: -.2rem;">&nbsp;*</i></div>
+                        <div class="f_center">
+                            <input type="text" id="UserDateEnd" name="UserDateEnd" value="2020-02-14 10:48:07" class="todata" readonly="readonly" unselectable="true">
+                        </div>
+                        <div class="f_right"><i class="icon_r"></i></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div v-show="spreadSeen">
+                <div class="fatxt">
+                    <div class="fa_txt_title bold" style="font-size:1.5rem;">拼团描述</div>
+                    <div class="txt">
+                        <textarea class="txt_txt" placeholder="请输入优惠使用条件，优惠商品范围等 " maxlength="800" id="iptDescription" name="Description"></textarea>
+                    </div>
+                </div>
+                <div class="postImg">
+                    <div class="postImgimg">
+                        <ul id="imgcontrl">
+                            <li class="" style="background-color:#fff"><img class="postpic" src="https://j.vzan.cc/content/city/images/voucher/08.png" alt=""></li>
+                        </ul>
+                        <input type="hidden" name="imglist" id="imglist" />
+                    </div>
+                </div>
+                <div class="faul">
+                    <!--我要发帖视频-->
+                    <div class="clearfix post-video-all">
+                    </div>
+                    <ul class="fa_ul">
+                        <li>
+                            <div class="f_left">
+                                <p class="p01 bold">本地视频</p>
+                            </div>
+                            <div class="f_right" style="z-index:100; background-color:white;" id="upload-ext-container">
+                                <input class="code-input upload_Bt  temp-video-local" id="selectfiles" data-loadstate="0" data-areacode="110107" type="button" value="点击上传" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="faul">
+                    <ul class="fa_ul">
+                        <li>
+                            <div class="f_left bold">每用户限购</div>
+                            <div class="f_center">
+                                <select name="LimitNum" id="LimitNum" style="font-size: 1.4rem;">
+                                    <option value="0">不限</option>
+                                        <option value="1" >1</option>
+                                        <option value="2" >2</option>
+                                        <option value="3" >3</option>
+                                        <option value="4" >4</option>
+                                        <option value="5" >5</option>
+                                        <option value="6" >6</option>
+                                        <option value="7" >7</option>
+                                        <option value="8" >8</option>
+                                        <option value="9" >9</option>
+                                        <option value="10" >10</option>
+                                        <option value="11" >11</option>
+                                        <option value="12" >12</option>
+                                        <option value="13" >13</option>
+                                        <option value="14" >14</option>
+                                        <option value="15" >15</option>
+                                        <option value="16" >16</option>
+                                        <option value="17" >17</option>
+                                        <option value="18" >18</option>
+                                        <option value="19" >19</option>
+                                        <option value="20" >20</option>
+                                </select>
+                            </div>
+                            <div class="f_right"><i class="icon_r"></i></div>
+                        </li>
+                        <li>
+                            <div class="f_left bold">填写电话</div>
+                            <div class="f_center">
+                                <ul class="choose">
+                                    <li><input type="radio" class="check" name="Phone" value="0" id="NeedPhone" checked />需要</li>
+                                    <li><input type="radio" class="check" name="Phone" value="1" id="NotNeedPhone"  />不需要</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="faul" style="border-radius: 5px;overflow: hidden;padding: 0 1rem1.5rem;">
+                    <ul class="fa_ul">
+                        <li>
+                            <div class="f_left flex bold">凑团设置</div>
+                            <input class="weui_switch" id="IsIntegration" type="checkbox" />
+                        </li>
+                        <li>
+                            <div class="f_left flex bold">模拟成团</div>
+                            <input class="weui_switch" id="IsIntegration" type="checkbox" />
+                        </li> 
+                        <li>
+                            <div class="f_left flex bold">参与人数信息屏蔽</div>
+                            <input class="weui_switch" id="IsIntegration" type="checkbox" />
+                        </li>   
+
+                        <li>
+                            <div class="f_left flex bold">人人分销</div>
+                            <input class="weui_switch" id="IsFx"   type="checkbox" />
+                        </li>   
+                        <li id="FxRateLi" style="display:none">
+                            <div class="f_left bold">分销比例</div>
+                            <div class="f_center"><input type="tel" style="float: right;width: 60px;text-align: right;margin-right: 5px;" class="limitinput2" id="FxRate" name="FxRate" maxlength="3" value=""></div>
+                            <div class="f_right" style="margin-right: 10px;">%</div>
+                        </li>                                                                 
+                    </ul>
+                </div>
+            
+                <div class="faul">
+                    <ul class="fa_ul">
+                        <li>
+                            <div class="f_left bold">营销活动标签</div>
+                            <div class="f_center">
+                                <select class="sel" id="tagSelectHtml">
+                                </select>
+                            </div>
+                            <div class="f_right"><i class="icon_r"></i></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="VueExtendBox">
+                    <voucher ref="voucher" v-bind:itemid="itemid" v-bind:itemtype="itemType" v-bind:storeid="storeid" v-bind:code="code"></voucher>
+                </div>
+
+                <div class="fatxt">
+                    <div class="fa_txt_title bold" style="font-size:1.5rem;">联系电话</div>
+                    <div class="txt">
+                        <textarea class="txt_txt" placeholder="请输入联系电话" maxlength="800" ></textarea>
+                    </div>
+                </div> 
+
+                <div class="fatxt">
+                    <div class="fa_txt_title bold" style="font-size:1.5rem;">其他说明</div>
+                    <div class="txt">
+                        <textarea class="txt_txt" placeholder="是否可以叠加使用，是否需要提前预约，是否可以节假日使用" maxlength="800" id="iptDescription" name="Description"></textarea>
+                    </div>
+                </div>     
+                <div class="fatxt">
+                    <div class="fa_txt_title bold" style="font-size:1.5rem;">分享标题</div>
+                    <div class="txt">
+                        <textarea class="txt_txt" placeholder="建议20字内，超出部分无法显示，清空保存则使用默认文案" maxlength="800" id="iptDescription" name="Description"></textarea>
+                    </div>
+                </div>
+                <div class="fatxt">
+                    <div class="fa_txt_title bold" style="font-size:1.5rem;">分享描述</div>
+                    <div class="txt">
+                        <textarea class="txt_txt" placeholder="建议50字内，超出部分无法显示，清空保存则使用默认文案" maxlength="800" id="iptDescription" name="Description"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div @click="checkSpread()" id="spreadJs" class="faul f15 ta-c" style="height: 5rem;">{{spreadSeen?'收回':'填写更多信息'}}<i class="icon_r" :class="{active:spreadSeen}"></i></div> 
+
+            <div class="fap">
+                <div class="fap_left">说明</div>
+                <div class="fap_right">
+                    <p>1.拼团需要同城管理员审核后才可显示。</p>
+                    <p>2.拼团无法退款。</p>
+                </div>
+            </div>                           
+        </form>
+    </div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el:'#vue_group',        
+        data:{
+            spreadSeen:false
+        },
+        methods:{
+            checkSpread:function(){
+                this.spreadSeen=!this.spreadSeen
+            }
+        },
+        mounted:function(){},
+        created: function () {
+        }  
+    })
+</script>
+
+<div class="fooder" style="bottom:0">
+    <div class="ASbtn">
+        <input type="button" style="position: inherit;" class="ASbtnIn" value="发布拼团">
+    </div>
+</div>
+<script type="text/javascript" src="https://j.vzan.cc/content/ali/lib/plupload-2.1.2/js/plupload.full.min.js"></script>
+<script type="text/javascript" src="https://j.vzan.cc/content/videoupload/upload_city.js?v=190626"></script>
+<script id="VideoLocalPostOne_Tmp" type="text/html">
+    <div class="rel" style="width:110px;height: 110px;">
+        <img src="https://j.vzan.cc/static/vzan/web/tmpvideo.jpg" style="width:110px;height:110px;border-radius:5px;border:none" />
+        <i class="abs tem-video-remove" style="background-color: rgba(255,255,255,.5);cursor:pointer;" data-videotype="LOCAL"></i>
+    </div>
+</script>
+
+<script id="post_img_html_one" type="text/html">
+    <li>
+        <img  class="temp_img_one newimg" src="{FILEPATH}" id="{IMGID}" imgid="0" style="width:100%;height: 100%;">
+        <i class="temp_clear_img" style="cursor: pointer;"></i>
+        <div class="img_loading" id="{IMG_LOADING_ID}">
+            <div class="img_loading-bar"></div>
+            <img src="https://j.vzan.cc/static/vzan/web/img_loading.gif" class="img_upload_loading" style="width: 50%;height: 50%;min-height: 24px;margin: 25%;">
+        </div>
+    </li>
+</script>
+
+
+<link href="https://j.vzan.cc/content/weui/style/weui.min.css" rel="stylesheet" />
+<link href="https://j.vzan.cc/content/city/voucher/css/tc-write-infor.css" rel="stylesheet" />
+<style>
+    #cash-coupon-write .d-flex-center .width_03{
+        width:10rem !important;
+    }
+    .TimeRadio {
+        height: 1.6rem;
+        width: 1.6rem;
+        display: inline-block;
+        border-radius: 50%;
+        margin-right: 0.4rem;
+        box-sizing: border-box;
+        vertical-align: -.3rem;
+        background-image: url(https://j.vzan.cc/content/city/newcar/images/tc-yh-001.png);
+        background-repeat: no-repeat;
+        background-size: 50rem;
+        background-position: -20.7rem 0;
+    }
+    .TimeRadioActive {
+    background-position: -22.5rem 0;
+}
+</style>
+<script type="text/html" id="VoucherBar">
+    <div style="overflow:hidden">
+        <div v-if="itemid==0" class="d-flex d-flex-center write-infor-cell plr_10 bg-f mr-1">
+            <div class="write-title width_03 flex">
+                <p class="p01 bold">返现代金券<i class="c999 f-12rem">（可刺激二次消费）</i></p>
+            </div>
+            <div id="cash-coupon-bt"  class="weui_cell_ft">
+                <input class="weui_switch" @change="VoucherChange()" type="checkbox">
+            </div>
+        </div>
+
+        <div id="cash-coupon-write" ref="voucher" class="write-infor-cells margin-0 none">
+            <div class="d-flex d-flex-center write-infor-cell plr_10">
+                <div class="write-title width_03">
+                    <p class="p01"><label style="color:#ff6a00;">*</label>券的面额</p>
+                </div>
+                <div class="flex">
+                    <input type="tel" maxlength="5" onkeyup="value=value.replace(/\D/g, '')" onkeydown="value=value.replace(/\D/g, '')" v-model="model.VoucherMoney" class="shuru-input ta-l" placeholder="代金券金额（元）">
+                </div>
+            </div>
+            <div class="d-flex d-flex-center write-infor-cell plr_10">
+                <div class="write-title width_03">
+                    <p class="p01"><label style="color:#ff6a00;">*</label>发放数量</p>
+                </div>
+                <div class="flex">
+                    <input type="tel" maxlength="5" onkeyup="value=value.replace(/\D/g, '')" onkeydown="value=value.replace(/\D/g, '')" v-model="model.CreateNum" class="shuru-input ta-l" placeholder="代金券发放数量">
+                </div>
+            </div>
+            <div class="d-flex d-flex-center write-infor-cell plr_10">
+                <div class="write-title width_03">
+                    <p class="p01">使用范围</p>
+                </div>
+                <div class="flex">
+                    <i class="threshold active" @click="clicknomj" ref="nomj">无门槛</i><i id="manjian-js" ref="mj" @click="clickmj" class="threshold">满减</i>
+                </div>
+            </div>
+            <div ref="manjian" id="manjian-input" class="bottom-line none">
+                <div class="d-flex d-flex-center write-infor-cell plr_10">
+                    <div class="write-title width_03">
+                        <p class="p01">满额金额</p>
+                    </div>
+                    <div class="flex">
+                        <input type="tel" maxlength="5" onkeyup="value=value.replace(/\D/g, '')" onkeydown="value=value.replace(/\D/g, '')" v-model="model.Deducting" class="shuru-input ta-l" placeholder="0">
+                    </div>
+                    <div>元</div>
+                </div>
+            </div>
+            <div class="d-flex d-flex-center write-infor-cell plr_10">
+                <div class="write-title width_03">时间类型</div>
+                <div class="flex" style="padding-left: 0;">
+                    <div>
+                        <span class="TimeRadio" v-bind:class="{'TimeRadioActive':timeType==0}" @click="checkTimeType(0)"></span>
+                        <span @click="checkTimeType(0)">绝对时间</span>
+                        <span class="TimeRadio" v-bind:class="{'TimeRadioActive':timeType==1}" @click="checkTimeType(1)"></span>
+                        <span @click="checkTimeType(1)">相对时间</span>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex d-flex-center write-infor-cell plr_10" style="display:none" v-show="timeType==0">
+                <div class="write-title width_03">过期时间</div>
+                <div class="flex write arrow" style="padding-left: 0;">
+                    <input class="shuru-input ta-l" placeholder="" id="UseEndDate" name="UseEndDate" readonly="readonly" />
+                </div>
+            </div>
+            <div class="d-flex d-flex-center write-infor-cell plr_10" style="display:none" v-show="timeType==1">
+                <div class="write-title width_03">领后有效天数</div>
+                <div class="flex">
+                    <input class="shuru-input ta-l" v-model="model.ValidDays" placeholder="" type="tel" maxlength="5" onkeyup="value=value.replace(/\D/g, '')" onkeydown="value=value.replace(/\D/g, '')">
+                </div>
+            </div>
+            <div class="d-flex d-flex-center write-infor-cell plr_10">
+                <div class="write-title width_03" style="height:100px">使用说明</div>
+                <div class="flex">
+                    <textarea class="shuru-input ta-l" rows="3" style="height:100px;" v-model="model.UseDescription" placeholder="选填，50字以内" maxlength="50"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<link href="https://j.vzan.cc/content/active/date/css/mobiscroll.css" rel="stylesheet" type="text/css">
+<script src="https://j.vzan.cc/content/active/date/js/mobiscroll.js" type="text/javascript"></script>
+<script>
+    $(function () {       
+        var Voucher = {
+            id: 0,
+            CreateNum:0,
+            VoucherMoney: 0,
+            Deducting: 0,
+            UseStartDate: "",
+            UseEndDate: "",
+            ValidDays: 0,
+            State: 0,
+            ItemId: 0,
+            ItemType: 0,
+            StoreId: 0,
+            UseDescription:""
+        }
+        var voucherBar = Vue.extend({
+            template: "#VoucherBar",
+            data: function () {
+                return {
+                    model: Voucher,
+                    isVoucher: false,
+                    isAdd: false,
+                    timeType: 0,
+                };
+            },
+            methods: {
+                checkTimeType: function (type) { this.timeType = type; },
+                AddVoucher: function (itemid) {
+                    var thisVue = this;
+                    if (!thisVue.isAdd) {
+                        thisVue.isAdd = true;
+                        thisVue.model.ItemType = thisVue.itemtype;
+                        thisVue.model.ItemId = itemid;
+                        thisVue.model.StoreId = thisVue.storeid;
+                        $.post('/store/addvoucher-' + thisVue.code, {
+                            CreateNum: thisVue.model.CreateNum,
+                            VoucherMoney: thisVue.model.VoucherMoney,
+                            Deducting: thisVue.model.Deducting,
+                            UseStartDate: thisVue.model.UseStartDate,
+                            UseEndDate: thisVue.model.UseEndDate,
+                            ValidDays: thisVue.model.ValidDays,
+                            State: thisVue.model.State,
+                            ItemId: thisVue.model.ItemId,
+                            StoreId: thisVue.model.StoreId,
+                            ItemType: thisVue.model.ItemType,
+                            timeType: thisVue.timeType,
+                            UseDescription: thisVue.model.UseDescription
+                        }, function (result) {
+                            thisVue.isAdd = false;
+                            if (result.Success) {
+                            } else {
+                                TipMsg(result.msg);
+                            }
+                        })
+                    }
+                },
+                VoucherChange: function () {
+                    var thisVue = this;
+                    thisVue.isVoucher =!thisVue.isVoucher;
+                },
+                clickmj: function () {
+                    var thisVue = this;
+                    if (!$(thisVue.$refs.mj).hasClass("active")) {
+                        $(thisVue.$refs.manjian).toggle();
+                        $(thisVue.$refs.nomj).removeClass("active");
+                        $(thisVue.$refs.mj).addClass("active");
+                    }                    
+                },
+                clicknomj: function () {
+                    var thisVue = this;
+                    if (!$(thisVue.$refs.nomj).hasClass("active")) {
+                        $(thisVue.$refs.manjian).toggle();
+                        $(thisVue.$refs.mj).removeClass("active");
+                        $(thisVue.$refs.nomj).addClass("active");
+                        thisVue.model.Deducting = 0;
+                    }
+                },
+                clickAddVoucher: function () {
+                    //console.log("Voucher",this.model);
+                }
+            },
+            created: function () {
+                setTimeout(function () {
+                    var currYear = (new Date()).getFullYear();
+                    var opt = {};
+                    opt.date = { preset: 'date' };
+                    opt.datetime = { preset: 'datetime' };
+                    opt.time = { preset: 'time' };
+                    opt.default = {
+                        theme: 'android-ics light', //皮肤样式
+                        display: 'top', //显示方式
+                        mode: 'scroller', //日期选择模式
+                        dateFormat: 'yyyy-mm-dd',
+                        timeFormat: "HH:ii",
+                        lang: 'zh',
+                        minDate: new Date(),
+                        //maxDate: new Date(new Date().setMonth(new Date().getMonth() + 6)),
+                        showNow: true,
+                        nowText: "今天",
+                        startYear: currYear - 10, //开始年份
+                        endYear: currYear + 10 //结束年份
+                    };
+                    var optDate = $.extend(opt['date'], opt['default']);
+                    var optDateTime = $.extend(opt['datetime'], opt['default']);
+                    $("#UseStartDate").mobiscrolls(optDateTime);
+                    $("#UseEndDate").mobiscrolls(optDateTime);
+                }, 1000);
+            },
+            props: ["itemid", "itemtype", "storeid", "code"],
+            watch: {
+                isVoucher: function () {
+                    var thisVue = this;
+                    $(thisVue.$refs.voucher).toggle();                   
+                }
+            }
+        })
+        Vue.component("voucher", voucherBar);
+    })
+</script>
+<script>
+    var imgcounts = 0;
+    var serverlist = new Array();
+    var editimglist = new Array();
+    var imglistid = new Array();
+    var ImgUrl="";
+    var ImageCount=0;
+    var GroupName = "";
+    var DiscountPrice = "";
+    var UnitPrice = "";
+    var OriginalPrice = "";
+    var GroupSize = "";
+    var CreateNum = "";
+    var RemainNum = "";
+    var ValidDateStart = "";
+    var ValidDateEnd = "";
+    var UserDateEnd="";
+    var LimitNum = "";
+    var Description = "";
+    var StoreId = $("#StoreId").val();
+    var CitySubId = $("#CitySubId").val();
+    var IntegrationPrice = 0;
+    var IntegrationState = 0;
+    var IsFx=0;
+    var FxRate=0;
+    $(function () {
+        $("#IsFx").click(function() {
+            if ($("#IsFx:checked").length == 1) {
+                $($("#FxRate").parent().parent()).show();
+            } else {
+                $($("#FxRate").parent().parent()).hide();
+            }
+        });
+        var VoucherBox=new Vue({
+            el:"#VueExtendBox",
+            data:{
+                itemid:0,
+                itemType:2,
+                storeid:8708748,
+                code:110107,
+            }
+        })
+        if ('0' > 0)
+        {
+                                    
+            var _html = "";
+            if (editimglist.length > 0)
+            {
+                for (var i = 0; i < editimglist.length; i++) {
+                    _html += '<li><img src="' + editimglist[i] + '" automatic="1" alt="" ><i onclick="removeimg(this)" item="' + imglistid[i] + '"></i></li>';
+                }
+                $("#imgcontrl").prepend(_html);
+            }
+
+            if ($(".postImglist .temp_img_one").length > 0)
+            {
+                $(".fWord").hide();
+            }
+        }
+
+        //积分抵扣
+        if (0 == 1) {
+            $("#IsIntegration").attr("checked", "checked");
+            if ($("#IsIntegration:checked").length == 1) {
+                $($("#IntegrationPrice_show").parent().parent()).show();
+            }
+        }
+        $("#IsIntegration").click(function() {
+            if ($("#IsIntegration:checked").length == 1) {
+                $($("#IntegrationPrice_show").parent().parent()).show();
+            } else {
+                $($("#IntegrationPrice_show").parent().parent()).hide();
+            }
+        });
+
+        //上传图片之后提示尺寸语句消失
+        var title = $("b.facility");
+        var title = $('.postImglist ul');//the element I want to monitor
+        title.bind('DOMNodeInserted', function(e) {
+            //alert('element now contains: ' + $(e.target).html());
+            $(".fWord").hide();
+        });
+
+
+
+        wx.ready(function() {
+            $(".postpic").click(function() {
+                wx.chooseImage({
+                    count: 9,
+                    sizeType: ['compressed'],
+                    sourceType: ['album', 'camera'],
+                    success: function(res) {
+                        var length = res.localIds.length;
+                        if (serverlist.length + length + editimglist.length > 9) {
+                            return TipMsg('不能超过9个图片');
+                        }
+                        if (serverlist.length + length + editimglist.length == 9)
+                        {
+                            $(".postpic").hide();
+                        }
+                        var _html = "", prevhtml = "";
+                        for (var i = 0; i < length; i++) {
+                            var obj_id = res.localIds[i].replace(":", "").replace("//", "").replace("/", "");
+                            prevhtml = '<div class="img_loading"><div class="img_loading-bar"></div><img src="https://j.vzan.cc/static/vzan/web/img_loading.gif" class="img_upload_loading" id="loc_loading_'+obj_id+'" style="width: 50%;height: 50%;min-height: 24px;margin: 25%;"></div>';
+                            _html = '<li>' + prevhtml + '<img id="loc_img_' + obj_id+'" src="' + res.localIds[i] + '" alt="" ><i onclick="removeimg(this)"></i></li>';
+                            //var rethtml = $("#post_img_html_one").html().replace("{FILEPATH}", res.localIds[i]).replace("{IMGID}", "loc_img_" + obj_id).replace("{IMG_LOADING_ID}", "loc_loading_" + obj_id);
+                            $("#imgcontrl li").last().before(_html).show();
+                        }
+                        uploadimgDesc(res.localIds);
+                    }
+                });
+            });
+        });
+
+        //function priviewimg(_this) {
+        //    wx.previewImage({
+        //        current: $(_this).attr("src"),
+        //        urls: imglist
+        //    });
+        //}
+
+        function uploadimgDesc(localIds) {
+            iflag = 0;
+            var i = 0,length = localIds.length;
+            var imglist = new Array();
+            function uploadDesc() {
+                wx.uploadImage({
+                    localId: localIds[i],
+                    isShowProgressTips: 0,
+                    success: function(res) {
+                        i++
+                        imglist.push(res.serverId);
+                        if (i < length)
+                        {
+                            uploadDesc();
+                        }
+                        else {
+                            downloadimgDesc(imglist,localIds);
+                        }
+                    },
+                    fail: function(res) {
+                        iflag++
+                        if (iflag >= 4) {
+                            TipMsg("图片上传失败 , 请重试 !");
+                            var obj_id = imglist[i].replace(":", "").replace("//", "").replace("/", "");
+                            $("#" + "loc_img_" + obj_id).parent().remove();
+                            return;
+                        } else uploadDesc();
+                    }
+                });
+            }
+
+            uploadDesc();
+        }
+
+        // 下载图片
+        function downloadimgDesc(serverIds,localIds) {
+            var i = 0, length = serverIds.length;
+
+            function downloadDesc() {
+                wx.downloadImage({
+                    serverId: serverIds[i],
+                    success: function (res) {
+                        i++;
+                        if (serverIds.length > 0) {
+                            var mid = serverIds[i - 1];
+                            var obj_id = localIds[i - 1].replace(":", "").replace("//", "").replace("/", "");
+                            jQuery.ajax({
+                                type: "Post",async:false,
+                                url: "/sc/uploadcityimagepost-0",
+                                data: { mediaId: mid, itemType: 2, cityInfoId: G_CityInfoId,awm:0 },
+                                dataType: "json",
+                                success: function (data) {
+                                    if (data.id != -1) {
+                                        $("#imgcontrl>li").find(".img_loading:first").remove();
+                                        $("#" + "loc_loading_" + obj_id).remove();
+                                        $("#" + "loc_img_" + obj_id).attr("src", data.path);
+                                        serverlist.push(data.path);
+                                    } else {
+                                        $("#" + "loc_img_" + obj_id).parent().remove();
+                                        if (serverlist.length+ editimglist.length<= 0) {
+                                            $('.postpic').show();
+                                        }
+                                        alert("该图片上传失败，重新选择试试");
+                                    }
+                                },
+                                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    $("#" + "loc_img_" + obj_id).parent().remove();
+                                    if (serverlist.length+ editimglist.length <= 0) {
+                                        $('.postpic').hide();
+                                    }
+                                    alert("服务器开小差了！请重新上传。");
+                                }
+                            });
+                        }
+                        if (i < length) {
+                            downloadDesc();
+                        }
+                    }
+
+                });
+            }
+            downloadDesc();
+        };
+
+
+        var currYear = (new Date()).getFullYear();
+        var opt = {};
+        opt.date = { preset: 'date' };
+        opt.datetime = { preset: 'datetime' };
+        opt.time = { preset: 'time' };
+        opt.default = {
+            theme: 'android-ics light', //皮肤样式
+            display: 'top', //显示方式
+            mode: 'scroller', //日期选择模式
+            dateFormat: 'yyyy-mm-dd',
+            timeFormat: "HH:ii",
+            lang: 'zh',
+            minDate: new Date(),
+            //maxDate: new Date(new Date().setMonth(new Date().getMonth() + 6)),
+            showNow: true,
+            nowText: "今天",
+            startYear: currYear - 10, //开始年份
+            endYear: currYear + 10 //结束年份
+        };
+        function checkHtml(htmlStr) {
+            var  reg = /<[^>]+>/g;
+            return reg.test(htmlStr);
+        }
+        var optDate = $.extend(opt['date'], opt['default'])
+        var optDateTime = $.extend(opt['datetime'], opt['default'])
+        $("#ValidDateStart").mobiscrolls(optDateTime);
+        $("#ValidDateEnd").mobiscrolls(optDateTime);
+        $("#UserDateEnd").mobiscrolls(optDateTime);
+        $('.ASbtnIn').on('click', function () {
+            if(typeof($(".temp-video-local").attr("disabled")) =="undefined")
+            {
+
+            }
+            else
+            {
+                TipMsg_closeAll('视频还未上传完毕,请耐心等待！');
+                return;
+            }
+
+            //修改时
+            if(0>0)
+            {
+                //不是重发
+                if(0<=0)
+                {
+                    if (!confirm("拼团描述如果带有图片会删除，是否确认发布？")) {
+                        return false;
+                    }
+                }
+            }
+            var imglength = $(".temp_img_one").length;
+            if (imglength == 0) {
+                TipMsg("请上传至少一张主图");
+                return;
+            }
+            var cname = $('#GroupName').val();
+            if (cname.length == 0) return TipMsg("请填写团购名称");
+            if (cname.length > 40) {
+                TipMsg('团购名最多支持40个汉字！');
+                $('#GroupName').focus();
+                return;
+            }
+            GroupName = cname;
+            var bmoney = $('#DiscountPrice_show').val();
+            if (bmoney.length == 0) return TipMsg("请填写团购价格")
+            if (!IsNullOrEmpty(bmoney)) {
+                if (!/^[0-9]{1,7}(\.\d{0,2})?$/.test(bmoney)) {
+                    TipMsg("团购价格范围0.01-9999999.99");
+                    $('#BuyPrice_show').focus();
+                    return;
+                }
+                else {
+                    var price_save = bmoney * 1000000 / 10000;
+                    if (parseInt(price_save) < 1) {
+                        TipMsg("团购价格不能低于1分钱");
+                        $('#DiscountPrice_show').focus();
+                        return;
+                    }
+                    else
+                        $('#DiscountPrice').val(price_save);
+                }
+                needjudge = 1;
+            }
+            DiscountPrice = parseInt($('#DiscountPrice').val());
+
+            var cmoney = $('#UnitPrice_show').val();
+            if (cmoney.length == 0) return TipMsg("请填写单买价格")
+            if (!/^[0-9]{1,7}(\.\d{0,2})?$/.test(cmoney)) {
+                TipMsg("单买价格范围0.02-9999999.99");
+                $('#UnitPrice_show').focus();
+                return;
+            }
+            else {
+                var price_save = cmoney * 1000000 / 10000;
+                if (parseInt(price_save) < 1) {
+                    TipMsg("单买价格不能低于1分钱");
+                    $('#UnitPrice_show').focus();
+                    return;
+                }
+                else
+                    $('#UnitPrice').val(price_save);
+            }
+            if (1 == needjudge) {
+
+                if (parseInt(cmoney * 100) <= parseInt(bmoney * 100)) {
+                    TipMsg("单买价格必须大于团购价格");
+                    return;
+                }
+            }
+            UnitPrice = $('#UnitPrice').val();
+            var dmoney = $('#OriginalPrice_show').val();
+            if (dmoney.length == 0) return TipMsg("请填写原价")
+            if (!/^[0-9]{1,7}(\.\d{0,2})?$/.test(dmoney)) {
+                TipMsg("原价范围0.03-9999999.99");
+                $('#OriginalPrice_show').focus();
+                return;
+            }
+            else {
+                var price_save = dmoney * 1000000 / 10000;
+                if (parseInt(price_save) < 1) {
+                    TipMsg("原价不能低于1分钱");
+                    $('#OriginalPrice_show').focus();
+                    return;
+                }
+                else
+                    $('#OriginalPrice').val(price_save);
+            }
+            if (1 == needjudge) {
+
+                if (parseInt(dmoney * 100) <= parseInt(cmoney * 100)) {
+                    TipMsg("原价必须大于单买价格");
+                    return;
+                }
+            }
+            OriginalPrice = $('#OriginalPrice').val();
+
+            var hmoney = $('#HeadDeduct').val();
+            if (!IsNullOrEmpty(hmoney)) {
+                if (!/^[0-9]{1,7}(\.\d{0,2})?$/.test(hmoney)) {
+                    TipMsg("团长减价范围0-团购价格");
+                    $('#HeadDeduct').focus();
+                    return;
+                }
+            }
+            if (1 == needjudge) {
+                if (parseInt(bmoney * 100) <= parseInt(hmoney * 100)) {
+                    TipMsg("团长减价必须小于团购价格");
+                    return;
+                }
+            }
+            if ($("#IsFx:checked").length==1) {
+                IsFx=1;
+                if ($("#FxRate").val()==""||$("#FxRate").val()<=0||$("#FxRate").val()>99) {
+                    TipMsg("分销比例取值范围必须为1-99");
+                    return false;
+                }
+                FxRate=$("#FxRate").val();
+            }
+
+            var HeadDeduct = hmoney * 1000000 / 10000;
+
+            //积分抵扣
+            if ($("#IsIntegration:checked").length == 1) {
+                var imoney = $('#IntegrationPrice_show').val();
+                if (imoney.length === 0) {
+                    $('#IntegrationPrice_show').val("1");
+                    imoney = $('#IntegrationPrice_show').val();
+                };
+                if (!IsNullOrEmpty(imoney)) {
+                    if (!/^[0-9]{1,7}(\.\d{0,2})?$/.test(imoney)) {
+                        TipMsg("积分抵扣金额必须为数字，且最多为2位小数,最大为7位整数！");
+                        return false;
+                    } else {
+                        var price_save = imoney * 1000000 / 10000;
+                        if (0 != price_save && parseInt(price_save) < 1) {
+                            TipMsg("积分抵扣金额不能低于1分钱！");
+                            return false;
+                        } else {
+                            $('#IntegrationPrice').val(price_save);
+                        }
+                    }
+                    needjudge = 3;
+                }
+                IntegrationPrice = $('#IntegrationPrice').val();
+                IntegrationState = $("#IsIntegration:checked").length;
+                if (3 == needjudge) {
+                    if(HeadDeduct>0)
+                    {
+                        if (parseInt((DiscountPrice-HeadDeduct) * 100) <= parseInt(IntegrationPrice * 100)) {
+                            TipMsg("积分抵扣金额必须小于拼团价减去团长减价！");
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        if (parseInt(DiscountPrice * 100) <= parseInt(IntegrationPrice * 100)) {
+                            TipMsg("积分抵扣金额必须小于拼团价！");
+                            return false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                IntegrationPrice = 0;
+                IntegrationState = 0;
+            }
+
+            var startdate = $('#ValidDateStart').val();
+            var enddate = $('#ValidDateEnd').val();
+            var userend=$("#UserDateEnd").val();
+
+            if (new Date(enddate) < new Date(startdate)) {
+                TipMsg('结束时间要大于开始时间');
+                $('#ValidDateEnd').focus();
+                return;
+            }
+
+            var SDate=new Date(startdate);
+            var artDate= SDate.setDate(SDate.getDate()+2);
+            if (new Date(enddate) < artDate) {
+                TipMsg('活动时间要大于48小时');
+                $('#ValidDateEnd').focus();
+                return;
+            }
+            if (new Date(userend)<new Date(enddate)) {
+                TipMsg('消费截止时间要大于结束时间');
+                $('#UserDateEnd').focus();
+                return;
+            }
+            ValidDateStart = startdate;
+            ValidDateEnd = enddate;
+            UserDateEnd=userend;
+            var cnum = $('#CreateNum').val();
+            if (0 == cnum || IsNullOrEmpty(cnum)) {
+                TipMsg('请输入生成数量');
+                $('#CreateNum').focus();
+                return;
+            }
+            if (cnum < 1 || cnum > 99999999) {
+                TipMsg('生成数量必须在1-99999999');
+                $('#CreateNum').focus();
+                return;
+            }
+            CreateNum = cnum;
+            var dnum = $('#GroupSize').val();
+            if (0 == dnum || IsNullOrEmpty(dnum)) {
+                TipMsg('请填写成团人数');
+                $('#GroupSize').focus();
+                return;
+            }
+            if (dnum < 2 || dnum > 99999) {
+                TipMsg('成团人数必须在2-99999');
+                $('#GroupSize').focus();
+                return;
+            }
+
+            var LimitHour = $('#LimitHour').val();
+            if (0 == LimitHour || IsNullOrEmpty(LimitHour)) {
+                TipMsg('请填写成团时间限制');
+                $('#LimitHour').focus();
+                return;
+            }
+            var OpenGroupLimit = $('#OpenGroupLimit').val();
+            if (IsNullOrEmpty(OpenGroupLimit)) {
+                TipMsg('请填写成团时间限制');
+                $('#OpenGroupLimit').focus();
+                return;
+            }
+
+            GroupSize = dnum;
+            RemainNum = $('#RemainNum').val();
+            LimitNum = $('#LimitNum').val();
+            Description = $("#iptDescription").val();
+            $("#ImgUrl").val($(".temp-describe-photo .temp_img_one").eq(0).attr("src"));
+            $("#ImageCount").val($(".temp_img_one").length);
+            ImgUrl=$("#ImgUrl").val();
+            ImageCount=$("#ImageCount").val();
+            var strimglist = "";
+            $('.temp_img_one').each(function (i, n) {
+                if ($(n).attr('automatic') != 1 && $(n).attr('src').indexOf("//j.vzan.cc")  ==-1) {
+                    strimglist += "|" + $(n).attr('src');
+                }
+            });
+            var descimglist = "";
+            $('#imgcontrl img').each(function (i, n) {
+                if ($(n).attr('automatic') != 1 && $(n).attr('src').indexOf("//j.vzan.cc") ==-1) {
+                    descimglist += "|" + $(n).attr('src');
+                }
+            });
+            var NeedPhone = false;
+            if ($("input[name='Phone']:checked").val() == 0) {
+                NeedPhone = true;
+            }
+            if (checkHtml(Description)) {
+                TipMsg('团购描述暂不支持html标签');
+                $('#iptDescription').focus();
+                return;
+            }
+            if (VoucherBox.$refs.voucher.isVoucher) {//选择代金券
+                VoucherBox.$refs.voucher.model.UseEndDate=$("#UseEndDate").val();
+                VoucherBox.$refs.voucher.model.UseStartDate=$("#UseStartDate").val();
+                if (VoucherBox.$refs.voucher.model.CreateNum==0||VoucherBox.$refs.voucher.model.CreateNum=="") {
+                    TipMsg('代金券发放数量不能为0！');
+                    return;
+                }
+                if (VoucherBox.$refs.voucher.model.VoucherMoney==0||VoucherBox.$refs.voucher.model.VoucherMoney=="") {
+                    TipMsg('代金券面额不能为0！');
+                    return;
+                }
+                if (VoucherBox.$refs.voucher.timeType==0) {
+                    if (VoucherBox.$refs.voucher.model.UseEndDate=='') {
+                        TipMsg('请填写过期时间！');
+                        return;
+                    }
+                    if (new Date(VoucherBox.$refs.voucher.model.UseEndDate) <= new Date()) {
+                        TipMsg('代金券过期时间必须小于当前时间！');
+                        return;
+                    }
+                }else {
+                    if (VoucherBox.$refs.voucher.model.ValidDays==''||VoucherBox.$refs.voucher.model.ValidDays==0) {
+                        TipMsg('请填写领取有效天数！');
+                        return;
+                    }
+                }
+                console.log(VoucherBox.$refs.voucher.model);
+            }
+            //标签
+            var tagId = $("#tagSelectHtml").val();
+
+            $('.ASbtnIn').attr('disabled', 'disabled');
+            var videoUrl=$("#videoUrl").val();
+            $.ajax({
+                type: "POST",
+                url:  '/store/addgroup',
+                dataType: "json",
+                data: {
+                    Id: '0',
+                    GroupName: GroupName,
+                    ImgUrl: ImgUrl,
+                    ImageCount: ImageCount,
+                    DiscountPrice: DiscountPrice,
+                    UnitPrice: UnitPrice,
+                    OriginalPrice: OriginalPrice,
+                    ValidDateStart: ValidDateStart,
+                    ValidDateEnd: ValidDateEnd,
+                    UserDateEnd:UserDateEnd,
+                    GroupSize: GroupSize,
+                    CreateNum: CreateNum,
+                    RemainNum:RemainNum,
+                    LimitHour:LimitHour,OpenGroupLimit:OpenGroupLimit,
+                    LimitNum:LimitNum,
+                    Description: Description,
+                    StoreId: StoreId,
+                    CitySubId: CitySubId,
+                    HeadDeduct:HeadDeduct,
+                    ImgList: strimglist,
+                    DescImgList: descimglist,
+                    NeedPhone:NeedPhone,
+                    re: "0",
+                    videoUrl:videoUrl,
+                    IntegrationState: IntegrationState,
+                    IntegrationPrice: IntegrationPrice,
+                    tagId:tagId,
+                    IsFx:IsFx,
+                    FxRate:FxRate,
+                },
+                success: function (data) {
+                    if (data.code == 1) {
+                        if (VoucherBox.$refs.voucher.isVoucher) {
+                            VoucherBox.$refs.voucher.AddVoucher(data.Data.Id);
+                        }
+                        TipMsg(data.msg);
+                        setTimeout(function () {
+                            location.href = "/store/msgroup-110107?sid=" + 8708748+"&hxtype=true&manage=false&from=";
+                        }, 2000);
+                    } else {
+                        TipMsg(data.msg);
+                        $('.ASbtnIn').removeAttr('disabled');
+                    }
+                }});
+        });
+
+    });
+    function TipMsg(Msg) {
+        layer.open({
+            content: Msg
+            , skin: 'msg'
+            , time: 2
+        });
+    }
+    function removeimg(_this) {
+        if (confirm("你确定删除此图片么")) {
+            $(_this).parent().remove();
+            var val = $(_this).prev().attr("src");
+            //if (serverlist.length > 0) {
+            //    serverlist.remove(imglist.indexOf(val))
+            //}
+            serverlist = $.grep(serverlist, function (value) {
+                return value != val;
+            });
+            editimglist = $.grep(editimglist, function (value) {
+                return value != val;
+            });
+            //ViewBag.Resend==1 重发布
+            if (0 <= 0)
+            {
+                if ($(_this).attr("item") > 0) {
+                    $.ajax({
+                        type: "post",
+                        url: "/sc/delattimg",
+                        data: { imgid: $(_this).attr("item") },
+                        success: function (data) {
+                            if (data.code == 0) {
+                                TipMsg(data.msg);
+                                setTimeout(function () { window.location.reload() }, 500);
+                            }
+                        }
+                    })
+                }
+            }
+            if (serverlist.length + editimglist.length < 9) { $(".postpic").show(); }
+        }
+    }
+
+    //标签
+    $(function(){
+        var tid = 0;
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            url: "/store/GetTagList",
+            data: {cityInfoId: 1317},
+            success: function (data){
+                if (data != null) {
+                    var html = "<option value='0'>请选择标签</option>";
+                    for(var i = 0; i < data.length; i++){
+                        var tagId = data[i].Id;
+                        var tagName = data[i].tagName;
+                        var t = ("<option value='"+tagId+"'>"+tagName+"</option>");
+                        if (tid == tagId) {
+                            t = ("<option selected value='"+tagId+"'>"+tagName+"</option>");
+                        }
+                        html = html+t;
+                    }
+                    $("#tagSelectHtml").html(html);
+                }
+            }
+        });
+    })
+</script>
+
+    <!--如果是有关顶部注栏，部分fixed元素的top设置为top:50px  oyj -->
+        <style>
+            .tc-list-top-filter-fixed {
+                top: 50px;
+            }
+
+            .Se_nav {
+                top: 50px;
+            }
+
+            .SeNAV {
+                top: 50px;
+            }
+
+            .fix-tl {
+                top: 50px;
+            }
+
+            .zpHeader {
+                top: 50px;
+            }
+
+            .coupon_nav_li {
+                top: 50px;
+            }
+
+            .likeCateClass {
+                top: 8.4rem;
+            }
+
+            .slnav {
+                top: 50px;
+            }
+
+            .ph_send {
+                top: 8.4rem;
+            }
+
+            .marginTopCommon {
+                margin-top: 8.4rem;
+            }
+        </style>
+    <script src="https://j.vzan.cc/content/city/postutil/postutil.js?v=030805"></script>
+
+    <!--微信调试器-->
+    <script>
+        function postshare(shareItem) {
+            $.post("/sc/addshareitem", { itemid: shareItem.itemid, itemtype: shareItem.itemtype }, function (data) {
+                if (shareItem.itemtype == "red") {
+                    layer.open({
+                        content: '恭喜获得抢红包机会1次，最多奖励1次。一般人我不告诉他'
+                        , skin: 'footer'
+                        , end: function () {
+                            location.reload(true);
+                        }
+                    });
+                } else if (shareItem.itemtype == "sjred") {
+                    setTimeout(function () {
+                        if (window.location.href.indexOf('?') > 0) {
+                            location.href = window.location.href + "&v=1"
+                        } else {
+                            location.href = window.location.href + "?v=1"
+                        }
+
+                    }, 500)
+                } else if (shareItem.itemtype == "headlines") {
+                    setTimeout(function () {
+                        if (window.location.href.indexOf('?') > 0) {
+                            location.href = window.location.href + "&v=1"
+                        } else {
+                            location.href = window.location.href + "?v=1"
+                        }
+
+                    }, 500)
+                } else if (shareItem.itemtype == "strategy") {
+                    setTimeout(function () {
+                        if (window.location.href.indexOf('?') > 0) {
+                            location.href = window.location.href + "&v=1"
+                        } else {
+                            location.href = window.location.href + "?v=1"
+                        }
+
+                    }, 500)
+                } else if (shareItem.itemtype == "store") {//店铺添加分享数据
+                    if (shareItem.itemid == 'storeid') {
+                        shareItem.itemid = $("#hidStoreId").val();
+                    }
+                    //$.post("/sc/addshareitem", { itemtype: 'store', itemid: shareItem.itemid }, function (result) {
+                    //    console.log(result);
+                    //});
+                }
+            });
+        }
+
+        //分享配置 和解决input 输入框无法弹回界面
+        $(document).ready(function () {
+            setTimeout(function () {
+                wx.ready(function () {
+                    if ($("#hidShareInfo").length > 0) {
+                        var vzanShareInfo = eval("(" + $("#hidShareInfo").val() + ")");
+                        //2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+                        wx.onMenuShareAppMessage({
+                            title: vzanShareInfo.title,
+                            desc: vzanShareInfo.desc,
+                            link: vzanShareInfo.link,
+                            imgUrl: vzanShareInfo.imgUrl,
+                            success: function () {
+                                postshare(vzanShareInfo);
+                            }
+                        });
+                        //2.2 监听“分享到朋友圈”按钮点击、自定义分享内容及分享结果接口
+                        wx.onMenuShareTimeline({
+                            title: vzanShareInfo.title,
+                            link: vzanShareInfo.link,
+                            imgUrl: vzanShareInfo.imgUrl,
+                            success: function () {
+                                postshare(vzanShareInfo);
+                            }
+                        });
+                        //2.3 监听“分享到QQ”按钮点击、自定义分享内容及分享结果接口
+                        wx.onMenuShareQQ({
+                            title: vzanShareInfo.title,
+                            desc: vzanShareInfo.desc,
+                            link: vzanShareInfo.link,
+                            imgUrl: vzanShareInfo.imgUrl,
+                            success: function () {
+                                postshare(vzanShareInfo);
+                            }
+                        });
+                        //2.5 监听分享到qq空间
+                        wx.onMenuShareQZone({
+                            title: vzanShareInfo.title,
+                            desc: vzanShareInfo.desc,
+                            link: vzanShareInfo.link,
+                            imgUrl: vzanShareInfo.imgUrl,
+                            success: function () {
+                                postshare(vzanShareInfo);
+                            }
+                        });
+                        /*分享到微博*/
+                        wx.onMenuShareWeibo({
+                            title: vzanShareInfo.title,
+                            desc: vzanShareInfo.desc,
+                            link: vzanShareInfo.link,
+                            imgUrl: vzanShareInfo.imgUrl,
+                            success: function () {
+                                postshare(vzanShareInfo);
+                            }
+                        });
+                    }
+                    /*-----wx 分享-------*/
+                });
+            }, 1500);
+            //&& $("#noblur").val() == undefined
+            $("input,textarea").on("blur", function () {
+                if (vzanBrowser.versions.ios) {
+                    blurAdjust(this);
+                }
+            });
+        });
+
+
+        function TipMsg(Msg) {
+            layer.open({
+                content: Msg, skin: 'msg', time: 2
+            });
+        }
+
+        //解决微信浏览器不支持Object.assign这个函数
+        if (typeof Object.assign != 'function') {
+            // Must be writable: true, enumerable: false, configurable: true
+            Object.defineProperty(Object, "assign", {
+                value: function assign(target, varArgs) { // .length of function is 2
+                    'use strict';
+                    if (target == null) { // TypeError if undefined or null
+                        throw new TypeError('Cannot convert undefined or null to object');
+                    }
+                    var to = Object(target);
+                    for (var index = 1; index < arguments.length; index++) {
+                        var nextSource = arguments[index];
+                        if (nextSource != null) { // Skip over if undefined or null
+                            for (var nextKey in nextSource) {
+                                // Avoid bugs when hasOwnProperty is shadowed
+                                if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+                                    to[nextKey] = nextSource[nextKey];
+                                }
+                            }
+                        }
+                    }
+                    return to;
+                },
+                writable: true,
+                configurable: true
+            });
+        }
+
+        //解决苹果不回弹页面
+        function blurAdjust(e) {
+            setTimeout(function () {
+                if (document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
+                    return
+                }
+                if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { //判断iPhone|iPad|iPod|iOS
+                    var winHeight = $(window).height();//屏幕高度
+                    var offsetTop = $(e).offset().top;//元素距离顶部栏高度
+                    var rectTop = e.getBoundingClientRect().top || 0; //元素距离屏幕高度
+                    var scrollTop = (offsetTop - rectTop) || document.activeElement.scrollTop; //两者相等，只做兼容
+                    //console.log(winHeight, scrollTop, document.activeElement.scrollTop);
+                    if (offsetTop <= winHeight) {
+                        window.scrollTo(0, 0);
+                    } else {
+                        window.scrollTo(0, scrollTop);//滚动到原来位置
+                    }
+                }
+            }, 100);
+        }
+    </script>
+    <div style="display:none;">
+    <script>
+        var _hmt = _hmt || [];
+        var hm = document.createElement("script");
+        (function () {
+            hm.src = "//hm.baidu.com/hm.js?5c88f64ce16c5100a4a8509273257ce4";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</div>
+
+    <style>
+        .shareBlack {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 900;
+            display: none;
+        }
+
+        .Sblackin {
+            width: 300px;
+            height: 100%;
+            position: relative;
+            margin: 10px auto;
+        }
+
+        .sImg {
+            width: 100%;
+            height: auto;
+        }
+            /*.shareImg {width: 50px;height: auto;position: absolute;right: 2.4rem;top: 20px;}*/
+            .sImg img, .shareImg img {
+                width: 100%;
+                height: auto;
+            }
+
+        .coupon_nav_li {
+            padding: 0 0.3rem;
+        }
+
+        .layui-m-layercont {
+            padding: 25px 15px;
+            font-size: 16px;
+        }
+
+        .layui-m-layerbtn span[yes], .layui-m-layerbtn span[no] {
+            font-size: 16px;
+        }
+    </style>
+    <div class="shareBlack" style="display: none;">
+        <div class="Sblackin">
+            <div class="sImg"><img src="https://i.vzan.cc/image/png/2017/9/22/18150411594ac637da48fc936afd27463d402a.png" alt=""></div>
+        </div>
+    </div>
+    <link href="https://j.vzan.cc/content/city/css1/tc-dialog-save.css?v=0520" rel="stylesheet" />
+    <div class="dialog-save-fix temp-dialog-save" style="display:none;z-index:9999999">
+        <div class="word01"><i class="icon-save"></i>点击这里收藏</div>
+        <div class="word02">下次就可以在“我”的『收藏』快速回到这里啦！</div>
+        <a class="icon-save-close-a"><i class="icon-save-close"></i></a>
+        <i class="transparent-triangle"></i>
+    </div>
+    <!--抽奖的BUG-->
+
+<style>
+        .close01 {
+        background-position: -147px -348px;
+        width: 34px;
+        height: 34px;
+        position: absolute;
+        bottom: 12%;
+        left: 50%;
+        z-index: 1001;
+        display: block;
+        transform: translate(-50%,0);
+        -webkit-transform: translate(-50%,0);
+        background-image: url(https://j.vzan.cc/content/city/images/icon01.png);
+        background-repeat: no-repeat;
+        background-size: 500px;
+    }
+</style>
+<!--banner图-->
+<div class="fix-tl-100 swiper-dialog-ad-js" id="VueAlert" style="display:none" ref="Alerts">
+    <div class="swiper-container swiper-container-horizontal swiper-dialog-ad">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="item in Alert">
+                <div class="ad-all" v-if="item.ImageUrl!=null&&item.ImageUrl!=''">
+                    <span>
+                        <img v-if="item.AnnouncementLink==null&&item.AnnouncementLink==''" class="img-w-100" v-bind:src="item.ImageUrl" />
+                        <img v-else class="img-w-100"  v-bind:src="item.ImageUrl" @click="alertLink(item)" />
+                    </span>
+                    <div class="close01" @click="alertClose(item)"></div>
+                </div>
+                <div class="ad-all" style="text-align:center;" v-else>
+                    <p class="ad-title clamp1">{{ item.AnnouncementTitle}}</p>
+                    <p class="ad-f" v-html="item.Announcement">
+                    </p>
+                    <a class="check-detail top-line" v-if="item.AnnouncementLink!=null&&item.AnnouncementLink!=''" @click="alertLink(item)">查看详情</a>
+                    <div class="close01" @click="alertClose(item)"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var VueAlert = new Vue({
+            el: "#VueAlert",
+            data: {
+                adminAd:false,
+                ad:false,
+                isAdmin:true,
+                Alert: [],
+                pagetype:0,
+                cityAreaCode:110107,
+            },
+            methods:{
+                alertLink:function(item){
+                    var thisVue=this;
+                    this.alertClose(item);
+                    setTimeout(function(){
+                        location.href = item.AnnouncementLink;
+                    },300);
+                },
+                alertClose:function(item){
+                    var thisVue=this;
+                    for (var i = 0; i < thisVue.Alert.length; i++) {
+                        GetCookiesHours("isCloseAlertAdHours_"+thisVue.cityAreaCode+"_"+thisVue.Alert[i].Id, true, { path: "/", domain: _local_hostdomain_name, expires: thisVue.Alert[i].RateHours  });
+                    }
+                    setTimeout(function(){
+                        $(thisVue.$refs.Alerts).fadeOut(100);
+                    },360);
+
+                },
+                inArray:function(pArr,item){
+                    var contains=false;
+                    for (var i = 0; i < pArr.length; i++) {
+                        if (pArr[i].Id==item.Id) {
+                            contains=true;
+                        }
+                    }
+                    return contains;
+                },
+                load:function(){
+                    var thisVue=this;
+                    $.get("/sc/GetAlertAnnouncementList",{id:thisVue.cityAreaCode,pagetype:thisVue.pagetype},function(result){
+                        if (result.code==1) {
+                            for (var i = 0; i < result.data.length; i++) {
+                                var AdCookies=GetCookiesHours("isCloseAlertAdHours_"+thisVue.cityAreaCode+"_"+result.data[i].Id);
+                                if (AdCookies== undefined ||!AdCookies) {
+                                    thisVue.Alert=thisVue.Alert.concat(result.data[i]);
+                                    setTimeout(function(){
+                                        $(thisVue.$refs.Alerts).show();
+                                    },3000);                              
+                                }                      
+                            }
+                            console.log("alert",thisVue.Alert);
+                        }
+                    });
+                },
+            },
+            created:function(){
+                //console.log("pagetype",this.pagetype);
+                this.load();
+                this.$nextTick(function () {
+                    setTimeout(function () {
+                        var swiper = new Swiper('.swiper-dialog-ad', {
+                            pagination: '.swiper-dialog-ad .swiper-pagination',
+                            paginationClickable: true,
+                            centeredSlides: true,
+                            autoplay: 2000,
+                            speed: 2000,
+                            autoplayDisableOnInteraction: false,
+                        });
+                    }, 500)
+
+                })
+            }
+        })
+    })
+
+
+
+</script>
+    <script>
+        $(document).on("click", ".temp-show-share-tips", function () {
+            $(".shareBlack").show();
+        });
+        $(".shareBlack").click(function () {
+            $(this).hide();
+        });
+        $(".temp-dialog-save").click(function () {
+            $(this).fadeOut();
+        });
+        //返回按钮
+        $(".temp-goback-btn").click(function () {
+            document.referrer === "" ? location.href = $(this).data("href") : window.history.go(-1);
+        });
+        $(document).on("click", ".temp-link-box", function (e) {
+            location.href = $(this).data("href");
+            e.stopPropagation();
+        }).on("click", ".temp-desc-img img", function (e) {
+
+            if ($(this).parent()[0].tagName == "A") {
+                console.log($(this).parent()[0].tagName)
+                return;
+            }
+            var imgs = new Array();
+            $(".temp-desc-img img").each(function (i, o) {
+                if ($(o).attr("fullsrc")) {
+                    imgs.push($(o).attr("fullsrc"));
+                } else {
+                    imgs.push($(o).attr("src"));
+                }
+            })
+            var currentUrl = $(this).attr("src");
+            if ($(this).attr("fullsrc")) {
+                currentUrl = $(this).attr("fullsrc");
+            }
+            wx.previewImage({
+                current: currentUrl,
+                urls: imgs
+            });
+            e.stopPropagation();
+        });
+    </script>
+</body>
+</html>
