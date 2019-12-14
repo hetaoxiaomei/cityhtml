@@ -36,7 +36,7 @@
 
             <!--商品-->
             <div style="margin: 5.4rem 1rem 0;">
-                <div class="bg-f" style="padding: 0 1rem;margin:0 0 1rem" v-for="Infor in Infor_01">
+                <div class="bg-f" style="padding: 0 1rem;margin:0 0 1rem" v-for="Infor in Infors">
                     <div class="d-flex" style="background: #fff;border-radius:5px;padding: 1.5rem 0;">
                         <div style="width: 7rem;height:7rem;border-radius:5px;margin: 0 1rem 0 0;overflow: hidden;">
                             <img class="img-wh-100" :src="Infor.img">
@@ -86,7 +86,7 @@
                     {title:'进行中'},
                     {title:'已结束'}
                 ],
-                Infor_01:[
+                Infors:[
                     {   
                         state:'进行中',
                         img:'../img/04.jpg',
