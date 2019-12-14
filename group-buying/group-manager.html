@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>拼团管理</title>
+    <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city/newcity/newindex/css/common.css">
+    <style>
+        [v-cloak]{display: none}
+        .bottom-nav{font-weight: bold; color: #fff;line-height: 4.9rem;text-align: center;height: 4.9rem;font-size: 1.6rem;background: #fff;background: linear-gradient(to right,#FF8F00,#FF6A00);}
+        .top-nav{line-height: 4.4rem;font-size: 1.6rem;text-align: center;background:#fff;}
+        .top-nav li{position: relative;}
+        .top-nav li.active{color: #ff6600;font-weight: bold}
+        .top-nav li i{display: none;width: 2.4rem;height: .4rem;border-radius: .2rem;background: linear-gradient(to right,#FF8F00,#FF6A00);position: absolute;bottom: 0;left: 50%;transform: translate(-50%,0)}
+        .top-nav li.active i{display:block}
+        .icon-time{width: 1.3rem;display: inline-block;margin: 0 .5rem 0 0;vertical-align: -.2rem}
+        .edit-bt{overflow: hidden;padding: 1rem 0;}
+        .edit-bt .bt{float: right;padding: 0 1.2rem; margin: 0 0 0 1rem;display: block;border-radius:1.3rem;height: 2.5rem;line-height: 2.3rem; box-sizing: border-box;font-size:1.2rem;color: #666;text-align: center;border:1px solid #e5e5e5;}
+        .edit-bt .bt.active{background: linear-gradient(to right,#FF8F00,#FF6A00);border:none;color: #fff;line-height: 2.5rem;}
+        .edit-bt .bt:last-child{margin: 0;}
+   </style>
+</head>
+<body>
+    <div id="vue_group" v-cloak>
+        <div class="basewrap" style="border-radius: 5px;margin:0 auto;">
+            <div class="fix-tl">
+                <ul class="d-flex d-flex-center basewrap top-nav">
+                    <li class="flex" v-for="nav,index in navs" :class="{active:selectIndex==index}" @click="checkNav(index)">{{nav.title}}<i></i></li>
+                </ul>
+            </div>
+
+            <!--商品-->
+            <div style="margin: 5.4rem 1rem 0;">
+                <div class="bg-f" style="padding: 0 1rem;margin:0 0 1rem" v-for="Infor in Infor_01">
+                    <div class="d-flex" style="background: #fff;border-radius:5px;padding: 1.5rem 0;">
+                        <div style="width: 7rem;height:7rem;border-radius:5px;margin: 0 1rem 0 0;overflow: hidden;">
+                            <img class="img-wh-100" :src="Infor.img">
+                        </div>
+                        <div class="flex" style="margin: 0 0 0;">
+                            <div class="d-flex d-flex-center">
+                                <div class="f16 bold clamp1 flex" style="line-height: 1.5;">商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称</div>
+                                <div class="bold f13" style="color:#ff6600;margin: 0 0 0 1rem;">{{Infor.state}}</div>
+                            </div>
+                            <div style="height: 1.5rem;color: #ff6600;margin: 1rem 0 0;">
+                                <div class="bold f12 fl" style="line-height: .9">
+                                ￥<i class="f16">{{Infor.groupPrice}}</i>
+                                </div>
+                                <div class="line-through f12 fl" style="margin: .2rem 0 0 .5rem;color: #999;">¥{{Infor.originalPrice}}</div>
+                                <div class="bz f10 fl" style="margin: -.2rem 0 0 .5rem; color: #ff6600; display: inline-block;padding: 0 5px;border: 1px solid #ff6600;border-radius:1rem;height: 1.5rem;line-height: 1.3rem">{{Infor.groupPeople}}人团</div>
+                            </div>
+                            <div class="f12 c666" style="overflow: hidden;margin:.5rem 0 0;">
+                                <div class="fl">已售{{Infor.sale}}份</div>
+                                <div class="fl" v-show="Infor.stock!==''">&nbsp;还剩下{{Infor.stock}}份</div>
+                                <div class="fl" v-show="Infor.ratio!==''">&nbsp;/&nbsp;分销比例：{{Infor.ratio}}%</div>
+                            </div>
+                            <div class="f12 c666" style="margin: 1rem 0 0;"><img class="icon-time" src="img/group07.png" />{{Infor.time}}结束</div>
+                        </div>
+                    </div>
+                    <div class="top-line edit-bt">
+                        <a class="bt active">购买记录</a>
+                        <a class="bt" v-show="Infor.state=='已结束'">再发一个</a>
+                        <a class="bt" v-show="Infor.ratio!==''">推荐奖励</a>
+                        <a class="bt">删除</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <a class="bottom-nav fix-bl">发布拼团</a>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#vue_group',        
+            data:{
+                selectIndex:0,
+                navs:[
+                    {title:'全部'},
+                    {title:'进行中'},
+                    {title:'已结束'}
+                ],
+                Infor_01:[
+                    {   
+                        state:'进行中',
+                        img:'../img/04.jpg',
+                        groupPrice:'90.8',
+                        originalPrice:'50.8',
+                        groupPeople:'2',
+                        title:'智利车厘子进口新鲜水果胜美国黑珍珠智利车厘子进口新鲜水果胜美国黑珍珠',
+                        sale:'50',
+                        stock:'1',
+                        ratio:'5',
+                        time:'2019-12-23 16:29:23'
+                    },
+                    {   
+                        state:'已结束',
+                        img:'../img/04.jpg',
+                        groupPrice:'90.8',
+                        originalPrice:'50.8',
+                        groupPeople:'2',
+                        title:'智利车厘子进口新鲜水果胜美国黑珍珠智利车厘子进口新鲜水果胜美国黑珍珠',
+                        sale:'50',
+                        stock:'1',
+                        ratio:'5',
+                        time:'2019-12-23 16:29:23'
+                    }
+                ]
+            },
+            methods:{
+                checkNav:function(index){
+                    this.selectIndex=index
+                }
+            },  
+            mounted:function(){
+        
+
+            },
+            created: function () {
+            }  
+        })
+    
+    </script>    
+    
+</body>
+</html>
