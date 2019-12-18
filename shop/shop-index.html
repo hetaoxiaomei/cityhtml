@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="css/shop-index-purple.css">
     <style>
         [v-cloak]{display: none}
-        .icon02{background: url(img/shop-index.png?v=1211);background-size:50rem;background-repeat:no-repeat;}
+        .icon02{background-image: url(img/shop-index.png?v=1211);background-size:50rem;background-repeat:no-repeat;}
         .icon-earn, .icon-share, .icon-coupon, .icon-arrow, .icon-location, .icon-call, .detail-footer-nav .icon, .icon-close, .number-reduce, .number-plus {
             background-image: url(../img/tc-pic04.png);
             background-size: 50rem;
@@ -64,7 +64,7 @@
                             <div class="rest" v-show="Infor.rest">休息中</div>
                         </div>
                         <div class="flex center">
-                            <p class="f01 f16 bold clamp2"><i class="icon02 certificate" v-show="Infor.license"></i>{{Infor.name}}</p>
+                            <p class="f01 f16 bold clamp2"><i class="icon02 certificate" v-show="Infor.license" @click="openCertificate()"></i>{{Infor.name}}</p>
                             <p class="f02"><i class="f12 c666">人均消费：</i><i class="f16 bold" style="color: #ff6600">{{Infor.perConsumption}}</i></p>
                         </div>
                         <div :class="{active:Infor.isActive==true}" class="bt" style="margin:2rem 0 0;" @click="checkFocus()">{{Infor.isActive?'已关注':'关注店铺'}}</div>
@@ -129,6 +129,25 @@
                         <div class="f12 c999 ta-c spread-bt" style="padding:0 0 1.5rem;" @click="checkSpread()">{{spread?'展开':'收起'}}<i class="arrow" :class="{active:spread!==true}"></i></div>
                     </div> 
                 </div>
+
+                <section style="border-radius: 5px;padding: 1.5rem 1rem;margin: 1rem 0 0;border-radius: 5px;background:#fff;">
+                    <div class="d-flex d-flex-center" class="store-red-packet-top global-flex global-flex-center font-14 global-border global-border-bottom">
+                        <div class="store-red-packet-tag">
+                            <img src="https://j.vzan.cc/content/city/Trade/img/icon-red-packet.png" class="store-red-packet-signs">
+                        </div> 
+                        <div class="flex">
+                            <div class="swiper-container swiper-container-vertical readpack">
+                                <div class="swiper-wrapper" style="height: 2.5rem;line-height: 2.5rem;">
+                                    <div class="swiper-slide">
+                                        <p class="f14">商家撒了<span style="color: #FF1C1C;">￥1.00</span>红包</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="little-bt">领取</div>
+                    </div>                 
+                </section>
+
 
                 <div class="f16 ta-c payOnline-bt">在线买单</div>
                 
@@ -678,7 +697,24 @@
                 </div>
                
             </div>
-        </div>        
+        </div>  
+        
+
+        <!--营业执照弹窗-->
+        <div class="fix-tl-100" v-show="licenseDialog">
+            <div class="dialog-black-mask" @click="closelicenseDialog()"></div>
+            <div class="dialog-middle bz swing" style="padding: 1rem 1.5rem 1.5rem;">
+                <div class="global-flex global-flex-center store-licence-title">
+                    <p class="f16 bold ta-c" style="padding: 1.5rem 0 1.6rem;">营业执照</p> 
+                </div> 
+                <div class="store-licence-img" style="height: auto;">
+                    <img style="width: 100%" src="http://i2.vzan.cc/image/jpg/2019/11/2/14302511394b2c45fa47c29ae8fdeb45134473.jpg" fullsrc="http://i2.vzan.cc/image/jpg/2019/11/2/14302511394b2c45fa47c29ae8fdeb45134473.jpg">
+                </div>
+                <a @click="closelicenseDialog()" style="position: absolute;top: 0;right: 0;display: block;padding: 1.5rem;">
+                    <i class="icon-close" style="position:static"></i> 
+                </a>   
+            </div>
+        </div>
 
     </div>
 
@@ -695,6 +731,7 @@
                 spread03:true,
                 spread04:true,
                 selectIndex:0,
+                licenseDialog:false,
                 Infor:{
                     slides:[
                         {img:'http://i2cut.vzan.cc/image/jpg/2019/11/1/1704473b62476a0536432587d90313e51a7cf7.jpg!640x360'},
@@ -857,6 +894,12 @@
                             console.log(1)
                         }
                     })
+                },
+                openCertificate:function(){
+                    this.licenseDialog=true
+                },
+                closelicenseDialog:function(){
+                    this.licenseDialog=false
                 }
             },
             mounted:function(){
@@ -880,6 +923,14 @@
                     $('.fast-navigation-mask').fadeOut(200);
                 })
                 this.scrollTop()
+                var swiper = new Swiper('.readpack', {
+                    paginationClickable: true,
+                    autoplay:3000,
+                    loop:1,
+                    direction: 'vertical'
+                })
+                $('.dialog-black-mask').bind("touchmove",function(e){e.preventDefault();})
+              
             },
             created: function () {
                 this.isCreated = true;

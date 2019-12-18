@@ -399,3 +399,49 @@
     color:#009CFF;
     font-size:1.3rem;
 }
+
+/*2019.12.18红包轮播*/
+.store-red-packet-signs{
+    border-radius: 5px;
+    padding: 0 1rem 0 0;
+    border-radius: 5px;
+    height: 2.5rem; 
+}
+
+.swiper-container-vertical>.swiper-wrapper{
+    -webkit-box-orient:vertical;
+    -moz-box-orient:vertical;
+    -ms-flex-direction:column;
+    -webkit-flex-direction:column;
+    flex-direction:column}
+
+
+    .swing {
+        -webkit-transform-origin: top center;
+        transform-origin: top center;
+        -webkit-animation: swing 1s forwards;
+        animation: swing 1s forwards;
+    }    
+
+    @keyframes swing{
+        20% {
+            -webkit-transform: translate(-50%, -50%) rotate(15deg);
+            transform: translate(-50%, -50%) rotate(15deg);
+        }
+        40% {
+            -webkit-transform: translate(-50%, -50%) rotate(-10deg);
+            transform: translate(-50%, -50%) rotate(-10deg);
+        }
+        60% {
+            -webkit-transform: translate(-50%, -50%) rotate(5deg);
+            transform: translate(-50%, -50%) rotate(5deg);
+        }
+        80% {
+            -webkit-transform: translate(-50%, -50%) rotate(-5deg);
+            transform: translate(-50%, -50%) rotate(-5deg);
+        }
+        100% {
+            -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    }
