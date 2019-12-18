@@ -131,15 +131,15 @@
                 </div>
 
                 <section style="border-radius: 5px;padding: 1.5rem 1rem;margin: 1rem 0 0;border-radius: 5px;background:#fff;">
-                    <div class="d-flex d-flex-center" class="store-red-packet-top global-flex global-flex-center font-14 global-border global-border-bottom">
-                        <div class="store-red-packet-tag">
+                    <div class="d-flex d-flex-center">
+                        <div>
                             <img src="https://j.vzan.cc/content/city/Trade/img/icon-red-packet.png" class="store-red-packet-signs">
                         </div> 
                         <div class="flex">
                             <div class="swiper-container swiper-container-vertical readpack">
                                 <div class="swiper-wrapper" style="height: 2.5rem;line-height: 2.5rem;">
-                                    <div class="swiper-slide">
-                                        <p class="f14">商家撒了<span style="color: #FF1C1C;">￥1.00</span>红包</p>
+                                    <div class="swiper-slide" v-for="packet in packets">
+                                        <p class="f14">商家撒了<span style="color: #FF1C1C;">￥{{packet.money}}</span>红包</p>
                                     </div>
                                 </div>
                             </div>
@@ -869,7 +869,12 @@
                         ]
 
                     }
-                ]  
+                ] ,
+                //红包
+                packets:[
+                    {money:'1.00'},
+                    {money:'2.00'}
+                ] 
             },
             methods:{
                 checkFocus:function(){
