@@ -138,13 +138,14 @@
                         <div class="flex">
                             <div class="swiper-container swiper-container-vertical readpack">
                                 <div class="swiper-wrapper" style="height: 2.5rem;line-height: 2.5rem;">
-                                    <div class="swiper-slide" v-for="packet in packets">
-                                        <p class="f14">商家撒了<span style="color: #FF1C1C;">￥{{packet.money}}</span>红包</p>
+                                    <div class="d-flex swiper-slide" v-for="packet in packets">
+                                        <p class="f14 flex">商家撒了<span style="color: #FF1C1C;">￥{{packet.money}}</span>红包</p>
+                                        <div class="little-bt">领取</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="little-bt">领取</div>
+                        
                     </div>                 
                 </section>
 
