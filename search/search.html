@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="x5-page-mode" content="app">
+    <title>搜索页</title>
+    <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city/newcity/newindex/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/search.css">
+    <style>
+        [v-cloak]{display: none}
+    </style>
+</head>
+<body>
+    <div id="MainIndexVue" v-cloak>
+        <div id="suspension-search-all" class="searchUp">
+            <div id="suspension-search">
+                <a class="arrow-all">
+                    <i></i>返回
+                </a>
+                <div class="center flex left">
+                    <img class="img01" src="../img/tc-pic85.png" />
+                    <input v-model.trim="searchKeyword" type="text" placeholder="搜索关键字">
+                    <img v-show="searchKeyword!==''"  @click="delBt()" class="img02" src="../img/tc-pic117.png" />
+                </div>
+                <a class="bt" href="javascript:;">搜索</a>
+            </div> 
+            <!--历史记录-->
+            <div v-show="historyKeywords!==''">
+                <div class="search-record">
+                    <p class="bold" style="flex:1">历史记录</p>
+                    <img @click="delHistory()" src="../img/tc-pic126.png" class="icon-delete" />
+                </div> 
+                <ul class="search-record-ul">
+                    <li v-for="historyKeyword in historyKeywords">{{historyKeyword.item}}</li>
+                </ul>
+            </div> 
+            <div>
+                <div class="search-record">
+                    <p class="bold" style="flex:1">热门搜索</p>
+                </div> 
+                <ul class="search-record-ul">
+                    <li v-for="hotKeyword in hotKeywords">{{hotKeyword.item}}</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../js/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#MainIndexVue',
+            data:{
+                searchKeyword:'',
+                historyKeywords:[
+                    {item:'马自达'},
+                    {item:'马自达'},
+                    {item:'马自达'}
+                ],
+                hotKeywords:[
+                    {item:'宝马'},
+                    {item:'宝马'},
+                    {item:'宝马'}
+                ]
+            },
+            methods:{
+                delBt:function(){
+                    this.searchKeyword=''
+                },
+                delHistory:function(){
+                    this.historyKeywords=''
+                }
+            },
+            mounted:function(){
+               
+            },
+            created: function () {}
+        })
+    </script>
+</body>
+</html>
