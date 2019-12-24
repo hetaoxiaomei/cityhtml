@@ -32,7 +32,7 @@
     </style>
 </head>
 <body>
-    <div id="MainIndexVue" v-cloak>
+    <div id="MainIndexVue" v-cloak :class="{'fix-tl-100':selectTypeDialog==true}">
         <div class="basewrap" style="padding:9.9rem 0 1rem;">
             <div class="fix-tl">
                 <div class="basewrap">
@@ -234,7 +234,7 @@
             <div v-else-if="selectIndex==1">
                 <div class="d-flex d-flex-center bg-f f14" style="height: 5.5rem;padding: 0 1rem;">
                     <div class="flex">匹配&nbsp;<i style="color: #ff6600">(256)</i></div>
-                    <div class="matching-bt">商家服务<i></i></div>
+                    <div class="matching-bt" @click="openSelectTypeDialog()">{{CategorizationInfor}}<i></i></div>
                 </div>
                 <div v-if="">
                     <div class="convenience-infor-all business" style="background:#fff;margin:1rem 1rem 0;border-radius: 5px;overflow:hidden;"> 
@@ -353,7 +353,7 @@
             <div v-else-if="selectIndex==2">
                 <div class="d-flex d-flex-center bg-f f14" style="height: 5.5rem;padding: 0 1rem;">
                     <div class="flex">匹配&nbsp;<i style="color: #ff6600">(256)</i></div>
-                    <div class="matching-bt">商家服务<i></i></div>
+                    <div class="matching-bt" @click="openSelectTypeDialog_02()">{{business}}<i></i></div>
                 </div> 
                 <div v-if="">          
                     <div class="bg-f" style="padding: 1.5rem 0;margin:1rem 1rem 0;border-radius: 5px;">
@@ -484,6 +484,22 @@
             </div>
 
         </div>
+
+        <!--分类信息下拉选择框-->
+        <div class="fix-tl-100" v-show="selectTypeDialog" style="z-index: 9999">
+            <div class="dialog-black-mask" @click="closeSelectTypeDialog()"></div>
+            <div style="position: absolute;width:100%;background:#fff;bottom: 0;left: 0;">
+                <div class="d-flex" style="max-height: 400px;">
+                    <div class="flex" style="overflow: auto;-webkit-overflow-scrolling: touch;border-right:1px solid #f2f2f2;">
+                        <div v-for="item,index in classOne" @click="checkClassOne(index)" :style="{color:(colorActive==index?'#ff6600':'')}" class="bg-f f14 ta-c bottom-line right-line" style="line-height:4.5rem;">{{item.title}}</div>
+                    </div>
+                    <div class="flex" style="overflow: auto;-webkit-overflow-scrolling: touch;" v-show="classTwoSeen">
+                        <div v-for="item,index in classTwo" @click="checkClassTwo(index)" :style="{color:(colorActive_02==index?'#ff6600':'')}" class="bg-f f14 ta-c bottom-line" style="line-height:4.5rem;">{{item.title}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="../js/jquery-1.10.2.js"></script>
@@ -494,11 +510,41 @@
             data:{
                 selectIndex:0,
                 searchKeyword:'',
+                classTwoSeen:false,
+                colorActive:null,
+                colorActive_02:null,
+                selectTypeDialog:false,
+                CategorizationInfor:'商家服务',
+                business:'美食',
+                classOneSelect:'',
+                classTwoSelect:'',
                 navs:[
                     {item:'综合'},
                     {item:'分类信息'},
                     {item:'商家'},
                     {item:'商品'}
+                ],
+                classOne:[
+                    {title:'agga级'},
+                    {title:'一级'},
+                    {title:'一级'},
+                    {title:'一级'},
+                    {title:'一级'},
+                    {title:'一级'},
+                    {title:'一级'},
+                    {title:'一级'},
+                    {title:'一级'},
+                    {title:'一级'},
+                    {title:'一级'},
+                    {title:'一级'},                                        
+                    {title:'bb级'}
+                ],
+                classTwo:[
+                    {title:'全部'},
+                    {title:'二级'},
+                    {title:'二级'},
+                    {title:'二级'},
+                    {title:'二级'}
                 ]
             },
             methods:{
@@ -519,12 +565,44 @@
                 },
                 toInfor:function(index){
                     this.selectIndex=1
+                },
+                openSelectTypeDialog:function(){
+                    this.selectTypeDialog=true
+                },
+                openSelectTypeDialog_02:function(){
+                    this.selectTypeDialog=true
+                },
+                //选择栏
+                checkClassOne:function(index){
+                    var _this=this;
+                    _this.colorActive=index;
+                    if(_this.classTwo.length>0){
+                        _this.classTwoSeen=true;
+                         _this.classOneSelect=_this.classOne[index].title;
+                    }else{
+                        this.selectTypeDialog=false;
+                        _this.CategorizationInfor=_this.classOne[index].title;
+                    }
+                },
+                checkClassTwo:function(index){
+                   var _this=this;
+                   _this.colorActive_02=index;
+                   _this.selectTypeDialog=false;
+                   if(_this.classTwo[index].title=='全部'){
+                        _this.CategorizationInfor=_this.classOneSelect;
+                   }else{
+                     _this.CategorizationInfor=_this.classTwo[index].title;
+                   }
+                },
+                closeSelectTypeDialog:function(index){
+                    this.selectTypeDialog=false
                 }
+
             },
             mounted:function(){
-               
+
             },
-            created: function () {}
+            created: function(){}
         })
     </script>
 </body>
