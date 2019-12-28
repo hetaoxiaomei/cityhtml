@@ -1,0 +1,77 @@
+
+.index-search-bar{
+    background-image: url(../img/skin_peeler/skin01.jpg);
+    background-size: contain
+}
+
+.index-search-bar .right, .index-search-bar .left{
+    color: #fff !important;
+}
+
+.index-search-bar .right .icon-smiling-face,.index-search-bar .left .icon-qr-code{
+    fill: #fff !important;
+}
+
+.hot-sale-ul li .bt,.local-life-cell>a,.convenience-infor .top .call,.recommend-business .time{
+    background: #FF1C1C !important; 
+}
+
+.convenience-infor .icon-focus{
+    background-position: 0 0 !important;
+    background-image: url(../img/skin_peeler/skin.png) !important;
+}
+
+
+/*底部导航*/
+.skin-nav01{
+    height: 4.9rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .1);
+    text-align: center;
+    position: relative;
+    background-image: url(../img/skin_peeler/skin02.jpg) !important;
+}
+
+.tc-footer ul li.active a{
+    color: #FF1C1C !important;
+}
+
+/*入驻页面*/
+.indexIcon .write-infor-cell>a,.indexIcon .local_life_lunbo{
+    background: #FF1C1C !important;
+}
+
+/*个人中心页面*/
+.me-top{
+    background: url(../img/skin_peeler/skin03.png);
+    background-size: 100% 100%;
+}
+
+.me-top>img{display: none !important;}
+
+.pc_top_bg_01 {
+    background-image: url(../images/skin04.jpg);
+    background-size: 100% 100%;
+}
+
+/*店铺首页*/
+.buy01,.plus-data-bt,.p_replay .button2,.select-nav>.flex i,.shopFous-cell .bt,.little-bt,.payOnline-bt,.marketActivity-cell .bt .buy,.detail-footer-nav .bt{
+    background: linear-gradient(to right,#ff3e1c,#FF1C1C);}
+
+.marketActivity-cell .bt .surplus,.recruit-staff{
+    color: #FF1C1C;
+    background: rgba(255,28,28,.1)
+}
+
+.select-nav>.flex.active{color: #FF1C1C;}
+
+.commodity-ul02 li.active{
+    border:1px solid #FF1C1C;
+    color: #FF1C1C;
+}
+
+/*首页活动*/
+.index-activity li .f01,.index-activity li .f02{
+   color: #FDCE25; 
+   text-shadow: 1px 1px #8F711D
+}
+
