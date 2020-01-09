@@ -1,7 +1,7 @@
-.buy01,.plus-data-bt,.p_replay .button2,.select-nav>.flex i,.shopFous-cell .bt,.little-bt,.payOnline-bt,.marketActivity-cell .bt .buy,.detail-footer-nav .bt{
+.buy01,.plus-data-bt,.p_replay .button2,.select-nav>.flex i,.payOnline-bt,.marketActivity-cell .bt .buy,.detail-footer-nav .bt{
     background: linear-gradient(to right,#00b6ff,#0091ff);}
 
-.marketActivity-cell .bt .surplus,.recruit-staff{
+.marketActivity-cell .bt .surplus,.recruit-staff,.little-bt{
     color: #0091ff;
     background: rgba(0,145,255,.1)
 }

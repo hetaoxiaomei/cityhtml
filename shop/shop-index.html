@@ -14,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="https://j.vzan.cc/content/city/storedetail/css/side-button.css">
     <link rel="stylesheet" type="text/css" href="css/shop-index.css">
     <link rel="stylesheet" type="text/css" href="css/evaluate_02.css">
-    <!-- <link rel="stylesheet" type="text/css" href="css/shop-index-purple.css"> -->
-    <link rel="stylesheet" type="text/css" href="../css/skin.css">
+    <link rel="stylesheet" type="text/css" href="css/shop-index-purple.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/skin.css"> -->
     <style>
         [v-cloak]{display: none}
         .icon02{background-image: url(img/shop-index.png?v=1211);background-size:50rem;background-repeat:no-repeat;}
@@ -68,42 +68,48 @@
                             <p class="f01 f16 bold clamp2"><i class="icon02 certificate" v-show="Infor.license" @click="openCertificate()"></i>{{Infor.name}}</p>
                             <p class="f02"><i class="f12 c666">人均消费：</i><i class="f16 bold" style="color: #ff6600">{{Infor.perConsumption}}</i></p>
                         </div>
-                        <div :class="{active:Infor.isActive==true}" class="bt" style="margin:2rem 0 0;" @click="checkFocus()">{{Infor.isActive?'已关注':'关注店铺'}}</div>
+                        <div :class="{active:Infor.isActive==true}" class="bt f12" style="margin:2rem 0 0;" @click="checkFocus()">
+                            <span class="icon02 iconFocus"></span>
+                            {{Infor.isActive?'已关注':'关注'}}
+                        </div>
                     </div>
-                    <div class="d-flex f12 c999 shopData-cell" style="padding: 0 1rem 2rem;">
-                        <div class="flex"><i class="icon02" style="width: 1.6rem;background-position:-8.8rem 0;"></i>{{Infor.data.focusNumber}}人关注</div>
-                        <div class="flex ta-c"><i class="icon02" style="width: 1.4rem;background-position:-10.7rem 0;"></i>{{Infor.data.shareNumber}}次分享</div>
-                        <div class="flex ta-r"><i class="icon02" style="width: 1.7rem;background-position:-12.3rem 0;"></i>{{Infor.data.comeNumber}}人来过</div>
+                    <div class="d-flex f12 c999 shopData-cell" style="padding: 0 1rem 1.5rem;">
+                        <div>{{Infor.data.focusNumber}}人关注</div>
+                        <div style="margin:0 .5rem">丨</div>
+                        <div>{{Infor.data.shareNumber}}次分享</div>
+                        <div style="margin:0 .5rem">丨</div>
+                        <div>{{Infor.data.comeNumber}}人来过</div>
                     </div>
 
-                    <div class="bg-f top-line" style="padding:2rem 0 0;margin: 0 1rem;">
-                        <div class="d-flex d-flex-center" style="line-height: 1.25;margin:0 0 2rem;">
-                            <div class="icon02 icon-time" style="background-position:0 -9rem;"></div>
+                    <div class="bg-f top-line" style="padding:1.5rem 0 0;margin: 0 1rem;">
+                        <div class="d-flex d-flex-center rel" style="line-height: 1.25;margin:0 0 1.5rem 2.9rem;">
+                            <div class="icon02 icon-time abs" style="top:-.1rem;left: -2.9rem;background-position:0 -9rem;"></div>
                             <div class="flex">
                                 <p class="f14">{{Infor.businessHours.time}}</p>
-                                <p class="f12 c666" style="margin: .5rem 0 0;">{{Infor.businessHours.remark}}</p>
+                                <!-- <p class="f12 c666" style="margin: .5rem 0 0;">{{Infor.businessHours.remark}}</p> -->
                             </div>
                         </div>
-                        <div class="d-flex d-flex-center" style="line-height: 1.25;margin:0 0 2rem;">
+                        <!-- <div class="d-flex d-flex-center" style="line-height: 1.25;margin:0 0 2rem;">
                             <div class="icon02 icon-time" style="background-position: 0 -10.9rem;"></div>
                             <div class="flex">
                                 <p class="f14">{{Infor.tel}}</p>
                             </div>
-                            <a :href="'tel:'+Infor.tel" class="little-bt">联系</a>
-                        </div>
-                        <div class="d-flex d-flex-center" style="line-height: 1.25;margin:0 0 2rem;">
-                            <div class="icon02 icon-time" style="background-position: 0 -12.8rem;"></div>
+                        </div> -->
+                        <div class="d-flex d-flex-center rel" style="line-height: 1.25;margin:0 0 1.5rem 2.9rem;">
+                            <div class="icon02 icon-time abs" style="top:-.1rem;left: -2.9rem;background-position: 0 -20.2rem;"></div>
                             <div class="flex">
                                 <p class="f14">{{Infor.address}}</p>
                             </div>
-                            <div class="little-bt">导航</div>
+                            <div class="icon02 icon-time" style="margin: 0 0 0 2rem;height: 1.9rem;background-position: 0 -12.7rem;"></div>
+                            <div style="height: 1.1rem;width:.1rem;background: #ccc;margin: 0 2rem;"></div>
+                            <a :href="'tel:'+Infor.tel" class="icon02 icon-time" style="margin:0;background-position: 0 -10.9rem;"></a>
                         </div>   
-                        <div class="d-flex d-flex-center" style="line-height: 1.25;margin:0 0 2rem;" v-show="spread==false">
-                            <div class="icon02 icon-time" style="background-position:0 -14.7rem;"></div>
+                        <div class="d-flex rel" style="line-height: 1.25;margin:0 0 1.5rem 2.9rem;">
+                            <div class="icon02 icon-time abs" style="top:-.1rem;left: -2.9rem;background-position:0 -14.7rem;"></div>
                             <div class="flex">
                                 <p class="f14">更多详情以及优惠资讯可以加群了解</p>
                             </div>
-                            <div class="little-bt">加群</div>
+                            <div class="little-bt abs" style="top:50%;right:0;transform: translate(0,-50%)">加群</div>
                         </div>                           
                         <ul class="top-line shopFunction" v-show="spread==false">
                             <li v-for="equipment in Infor.equipments">
@@ -127,7 +133,7 @@
                             </li>                                                                             
                         </ul>
 
-                        <div class="f12 c999 ta-c spread-bt" style="padding:0 0 1.5rem;" @click="checkSpread()">{{spread?'展开':'收起'}}<i class="arrow" :class="{active:spread!==true}"></i></div>
+                        <div class="f12 c999 ta-c spread-bt" style="padding:0 0 1.5rem;" @click="checkSpread()">{{spread?'更多信息':'收起'}}<i class="arrow" :class="{active:spread!==true}"></i></div>
                     </div> 
                 </div>
 
@@ -176,9 +182,9 @@
                                         <i class="f12 c999 line-through" v-show="activity.vipPrice!==''">¥{{activity.originalPrice}}</i>
                                     </div>
                                     <div style="margin: .5rem 7rem 0 0;line-height:1" v-show="activity.vipPrice==''"><i class="f12 c999 line-through">¥{{activity.originalPrice}}</i></div>
-                                    <div style="margin: .6rem 7rem 0 0;line-height:1" v-show="activity.vipPrice!==''">
+                                    <div style="margin: .6rem 7rem 0 0;line-height:1;overflow: hidden;" v-show="activity.vipPrice!==''">
                                         <i class="vip">会员</i>
-                                        <i class="f16 bold">￥{{activity.vipPrice}}</i>
+                                        <i class="vipPrice">￥{{activity.vipPrice}}</i>
                                     </div>
                                     <div class="bt">
                                         <div class="surplus">剩余{{activity.surplus}}份</div>
@@ -243,9 +249,9 @@
                                         <i class="f12 c999 line-through" v-show="activity.vipPrice!==''">¥{{activity.originalPrice}}</i>
                                     </div>
                                     <div style="margin: .5rem 7rem 0 0;line-height:1" v-show="activity.vipPrice==''"><i class="f12 c999 line-through">¥{{activity.originalPrice}}</i></div>
-                                    <div style="margin: .6rem 7rem 0 0;line-height:1" v-show="activity.vipPrice!==''">
+                                    <div style="margin: .6rem 7rem 0 0;line-height:1;overflow: hidden;" v-show="activity.vipPrice!==''">
                                         <i class="vip">会员</i>
-                                        <i class="f16 bold">￥{{activity.vipPrice}}</i>
+                                        <i class="vipPrice">￥{{activity.vipPrice}}</i>
                                     </div>
                                     <div class="bt">
                                         <div class="surplus">剩余{{activity.surplus}}份</div>
@@ -349,9 +355,9 @@
                                         <i class="f12 c999 line-through" v-show="activity.vipPrice!==''">¥{{activity.originalPrice}}</i>
                                     </div>
                                     <div style="margin: .5rem 3.5rem 0 0;line-height:1" v-show="activity.vipPrice==''"><i class="f12 c999 line-through">¥{{activity.originalPrice}}</i></div>
-                                    <div style="margin: .6rem 3.5rem 0 0;line-height:1" v-show="activity.vipPrice!==''">
+                                    <div style="margin: .6rem 3.5rem 0 0;line-height:1;overflow: hidden;" v-show="activity.vipPrice!==''">
                                         <i class="vip">会员</i>
-                                        <i class="f16 bold">￥{{activity.vipPrice}}</i>
+                                        <i class="vipPrice">￥{{activity.vipPrice}}</i>
                                     </div>
                                     <div class="circle-bt icon02"></div>
                                 </div>
@@ -390,9 +396,9 @@
                                                 <i class="f12 c999 line-through" v-show="activity.vipPrice!==''">¥{{activity.originalPrice}}</i>
                                             </div>
                                             <div style="margin: .5rem 3.5rem 0 0;line-height:1" v-show="activity.vipPrice==''"><i class="f12 c999 line-through">¥{{activity.originalPrice}}</i></div>
-                                            <div style="margin: .6rem 3.5rem 0 0;line-height:1" v-show="activity.vipPrice!==''">
+                                            <div style="margin: .6rem 3.5rem 0 0;line-height:1;overflow: hidden;" v-show="activity.vipPrice!==''">
                                                 <i class="vip">会员</i>
-                                                <i class="f16 bold">￥{{activity.vipPrice}}</i>
+                                                <i class="vipPrice">￥{{activity.vipPrice}}</i>
                                             </div>
                                             <div class="circle-bt icon02"></div>
                                         </div>
@@ -756,7 +762,6 @@
                     },
                     businessHours:{
                         time:'周一至周六，19:00 - 00:00营业',
-                        remark:'本店除了春节放假7天，其余时间全年不休，欢迎大家在尝试。'
                     },
                     tel:'020-8888888',
                     address:'广东省广州市天河区天安人寿中心27楼2703室',

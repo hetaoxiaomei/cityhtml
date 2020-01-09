@@ -18,17 +18,65 @@
 .shopFous-cell .center{display:flex;flex-wrap: wrap;align-content: space-between;}
 .shopFous-cell{margin: 0 0 1rem;padding: 0 1rem;line-height: 1.25}
 .shopFous-cell .pic img{width:100%;height: 100%;display: block;}
-.shopFous-cell .bt{margin:0 0 0 2rem;font-weight: bold;width: 6.5rem;height:2.5rem;line-height: 2.5rem;color:#fff;font-size: 1.2rem;border-radius:1.3rem;text-align:center;background: linear-gradient(to right,#FF8F00,#FF6A00)}
-.shopFous-cell .bt.active{line-height: 2.5rem;box-sizing: border-box;background:#ccc;color:#fff}
+
+.shopFous-cell .bt{width:3.8rem; text-align: center;}
+
+.shopFous-cell .bt .iconFocus{
+    display: block;
+    margin: 0 auto .3rem;
+    width:1.7rem;
+    height: 1.5rem;
+    background-position:0 -22.1rem;
+}
+
+.shopFous-cell .bt.active .iconFocus{
+    background-position:0 -23.7rem;
+}
+
 .shopFous-cell .f02{width: 100%;}
-.shopFous-cell .rest{font-size:1.4rem;text-align: center;line-height: 6.5rem;position:absolute;width:100%;top:0;left:0;height:100%;color:#fff;background:rgba(0,0,0,.4)}  
+.shopFous-cell .rest{
+    font-size:1.2rem;
+    text-align: center;
+    position:absolute;
+    width:100%;
+    bottom:0;
+    left:0;
+    height:1.8rem;
+    line-height: 1.8rem;
+    color:#fff;
+    background:rgba(0,0,0,.5)} 
+
 .shopFous-cell .certificate{width: 1.4rem;height:1.5rem;display:inline-block;background-position: -15rem 0;margin:0 .4rem 0 0;vertical-align: -.2rem;}
 .cashCoupon{margin: 0 2.2rem 0 0;padding: 0 .1rem;position: relative;color: #FF1C1C;border: 1px solid #ef8888;border-left: none;border-right:none;float: left;height: 1.5rem;line-height: 1.3rem;box-sizing: border-box;font-size: 1rem;}
 .cashCoupon i{width: .6rem;height: 1.5rem;display: block;position: absolute;background-position: -14.2rem 0;}
 .cashCoupon i.left{top: -.1rem;left: -.6rem;}
 .cashCoupon i.right{top: -.1rem;right:-.6rem;transform: rotate(-180deg)}
 .marketActivity-cell{line-height: 1.25;padding: 1.5rem 0 0;position: relative;}
-.marketActivity-cell .vip{padding:0 .2rem;font-size: 1rem;color:#FFDCAE;background:#524029;border-radius:2px;text-align:center;vertical-align:.2rem;}
+.marketActivity-cell .vip{
+    float: left;
+    width: 3.3rem;
+    line-height: 1.7rem;
+    height: 1.7rem;
+    font-size: 1.2rem;
+    color:#EDD697;
+    background:linear-gradient(to right,#555555,#1C1C1C);
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    text-align:center;}
+
+.marketActivity-cell .vipPrice{
+    line-height: 1.7rem;
+    height: 1.7rem;
+    font-weight: bold;
+    float: left;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background:linear-gradient(to right,#EDD697,#D1B874);
+    font-size: 1.4rem;
+    padding: 0 .5rem;
+    color: #333
+}
+
 .marketActivity-cell .pic{overflow: hidden; height: 9rem;width: 9rem;border-radius: 5px;margin: 0 1rem 0 0;}
 .marketActivity-cell .type{line-height: 1.6rem;text-align: center;margin: 0 .4rem 0 0;font-weight: normal;font-size: 1.1rem;vertical-align: .1rem; display:inline-block;width:1.6rem;height:1.6rem;border-radius:2px;color:#fff;}
 .marketActivity-cell .bt{width: 7rem;border-radius:4px;overflow: hidden;position: absolute;bottom: 1rem;right: 0;}
@@ -53,8 +101,13 @@
 .shopFunction li{width: 20%;padding:1.5rem 0;float: left;}
 .shopFunction li img{display: block;width:1.6rem;height:1.6rem;margin:0 auto;margin:0 auto .7rem;}
 .shopData-cell .icon02{margin:0 .8rem 0 0;vertical-align:-.4rem;display: inline-block;height: 1.5rem;}
-.icon-time{width: 1.7rem;height:1.7rem;display:block;margin: 0 1.5rem 0 0;}
-.little-bt{display: block;margin: 0 0 0 2rem;font-weight: bold;width: 5rem;height: 2.5rem;line-height: 2.5rem;color: #fff;font-size: 1.2rem;border-radius: 1.3rem;text-align: center;background: linear-gradient(to right,#FF8F00,#FF6A00);}
+.icon-time{
+    width: 1.7rem;
+    height:1.7rem;
+    display:block;
+    margin: 0 1.2rem 0 0;
+}
+.little-bt{display: block;margin: 0 0 0 2rem;font-weight: bold;width: 5rem;height: 2.5rem;line-height: 2.5rem;color: #FF8E00;font-size: 1.2rem;border-radius: 1.3rem;text-align: center;background:#FFF0E5;}
 .albumUl{-webkit-overflow-scrolling:touch;padding: 2rem 0;overflow: hidden;overflow-x: scroll;overflow-y: hidden;white-space: nowrap;}
 .albumUl li{box-sizing: border-box;width: 31.4%;margin: 0 2.9% 0 0;padding: 24% 0 0;position: relative;display: inline-block; border-radius: 5px;overflow: hidden;}
 .albumUl li:last-child{margin: 0;}
@@ -72,7 +125,16 @@
 .select-nav{height:4.4rem;line-height: 4.4rem;margin: 1rem 1rem 0} 
 .select-nav>.flex{text-align: center;font-size:1.6rem;color: #333;position: relative;border-radius: .2rem;}
 .select-nav>.flex.active{color: #FF6600;font-weight: bold;}
-.select-nav>.flex i{position: absolute;bottom:0;left:50%;transform: translate(-50%,0);width:2.4rem;height:.4rem;border-radius:.4rem;background: linear-gradient(to right,#FF9600,#FF6C00);display: none}
+.select-nav>.flex i{
+    position: absolute;
+    bottom:.8rem;
+    left:50%;
+    transform: translate(-50%,0);
+    width:2.4rem;
+    height:.4rem;
+    border-radius:.4rem;
+    background: linear-gradient(to right,#FF9600,#FF6C00);
+    display: none}
 .select-nav>.flex.active i{display: block;}
 
 /*简介*/
