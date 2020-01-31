@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/shop-index.css">
     <link rel="stylesheet" type="text/css" href="css/evaluate_02.css">
     <link rel="stylesheet" type="text/css" href="css/shop-index-purple.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../css/skin.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/skin.css">
     <style>
         [v-cloak]{display: none}
         .icon02{background-image: url(img/shop-index.png?v=1211);background-size:50rem;background-repeat:no-repeat;}
@@ -28,7 +28,7 @@
 </head>
 <body>
     <div id="vue_shop" v-cloak>
-        <div class="basewrap" style="padding: 0 0 7rem">
+        <div class="basewrap" style="padding: 0 0 10rem">
             <!--轮播-->
             <div class="swiper-container swiper-container-horizontal swiper-container-topbanner">
                 <div class="swiper-wrapper">
@@ -46,7 +46,7 @@
             <!-- 营销活动 -->
             <div style="margin: 0 1rem">
                 <!--店铺简介-->
-                <div class="bg-f" style="padding:1rem 0 0;margin:-1.5rem 0 0;border-radius: 5px;position: relative;z-index: 1">
+                <div class="bg-f" :style="{margin:(Infor.slides.length==0?'1rem 0 0':'-1.5rem 0 0')}" style="padding:1rem 0 0;border-radius: 5px;position: relative;z-index: 1">
                     <!--公告-->
                     <div class="d-flex d-flex-center gonggao-cell" style="margin: 0 0 1rem;">
                         <div class="icon02 icon-notice"></div>
@@ -106,7 +106,7 @@
                         </div>   
                         <div class="d-flex rel" style="line-height: 1.25;margin:0 0 1.5rem 2.9rem;">
                             <div class="icon02 icon-time abs" style="top:-.1rem;left: -2.9rem;background-position:0 -14.7rem;"></div>
-                            <div class="flex">
+                            <div class="flex" style="padding: 0 5rem 0 0;">
                                 <p class="f14">更多详情以及优惠资讯可以加群了解</p>
                             </div>
                             <div class="little-bt abs" style="top:50%;right:0;transform: translate(0,-50%)">加群</div>
